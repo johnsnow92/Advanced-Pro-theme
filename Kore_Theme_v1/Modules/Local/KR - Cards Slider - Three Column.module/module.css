@@ -1,0 +1,148 @@
+.col3-slider-section .maxContainer{
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.col3-slides-heading{
+  position: relative;
+}
+.col3-slider-section h2{
+  color: #04264B;
+  font-size: 30px;
+  text-align: left;
+}
+.col3-slider-section .grey-box{
+  top: 0;
+}
+.col3-slides-wrap{
+  margin-bottom: 0;
+  margin-top: 50px;
+}
+.col3-slides-wrap .slick-slide{
+  margin: 0 12px;
+}
+.col3-slides-wrap .slick-list {
+  margin: 0 -12px;
+}
+.col-item .card-img{
+  min-height: 220px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-bottom: 15px;
+}
+.col-item h3{
+  font-size: 20px;
+  font-weight: 600;
+  color: #04264B;
+}
+.col-item a.card-btn{
+  font-size: 16px;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 20px;
+}
+.col3-slides-wrap{
+  position: relative;
+}
+.col3-slides-wrap ul.slick-dots{
+  display: block;
+  top: -84px;
+  right: 130px;
+  width: auto;
+}
+.col3-slides-wrap ul.slick-dots li{
+  margin: 0 4px;
+  padding: 0;
+  height: 8px;
+  width: 8px;
+}
+.col3-slides-wrap ul.slick-dots li button:before{
+  display: none;
+}
+.col3-slides-wrap ul.slick-dots li.slick-active button{
+  background-color: #01082f;
+}
+.col3-slides-wrap ul.slick-dots li button{
+  height: 8px;
+  width: 8px;
+  background-color: #c8c9d2;
+  border-radius: 100%;
+  margin: 0 auto;  
+}
+.col3-slides-wrap .arrow-left.slick-arrow{
+  position: absolute;
+  bottom: auto;
+  right: 62px;
+  top: -68px;
+  left: initial;
+  height: 48px;
+  width: 48px;
+  border-radius: 100%;
+  border: 2px solid #c4c4c4;
+}
+.col3-slides-wrap .arrow-right.slick-arrow{
+  position: absolute;
+  bottom: auto;
+  right: 0;
+  top: -68px;
+  left: initial;
+  height: 48px;
+  width: 48px;
+  border-radius: 100%;
+  border: 2px solid #c4c4c4;
+}
+.col3-slides-wrap .slick-next:before, 
+.col3-slides-wrap .slick-prev:before{
+  display: none;
+}
+.col3-slides-wrap .slick-arrow img{
+  width: 22px;
+  position: relative;
+  top: 12px;
+  left: 9px;
+}
+.col3-slides-wrap .arrow-right.slick-arrow img{
+  left: 13px;
+}
+
+
+@media screen and (max-width: 991px){
+  .col3-slides-wrap ul.slick-dots{
+    top: initial;
+    bottom: -70px;
+  }
+  .col3-slides-wrap .arrow-left.slick-arrow{
+    bottom: -110px;
+    top: initial;
+  }
+  .col3-slides-wrap .arrow-right.slick-arrow{
+    bottom: -110px;
+    top: initial;
+  }
+}
+@media screen and (max-width: 767px){
+  .col3-slides-wrap{
+    margin-top: 25px;
+  }
+  .col3-slides-wrap ul.slick-dots{
+    bottom: -45px;
+    top: auto;
+    right: auto;
+    left: auto;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

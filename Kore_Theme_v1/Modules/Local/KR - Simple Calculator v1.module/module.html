@@ -1,0 +1,146 @@
+{% if module.styles.show_hide_section %}
+{% require_css %}
+<style type="text/css">
+  .{{ name }}{
+    padding: {{ module.styles.section_padding_desktop.padding_top }}px 20px {{ module.styles.section_padding_desktop.padding_bottom }}px;
+  }
+  .{{ name }} .hero-banner *{
+    color: {{ module.styles.content_color.color }};
+    line-height: 1.4;
+  }
+  @media screen and (max-width: 991px){
+    .{{ name }}{
+      padding: {{ module.styles.section_padding_tablet.padding_top }}px 20px {{ module.styles.section_padding_tablet.padding_bottom }}px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .{{ name }}{
+      padding: {{ module.styles.section_padding_mobile.padding_top }}px 20px {{ module.styles.section_padding_mobile.padding_bottom }}px;
+    }
+  }
+
+</style>
+{% end_require_css %}
+<div class="dr-calc-v1 {{ name }}" style="background-color: {{ module.styles.background_color.color }};text-align: {{ module.styles.text_alignment }};">
+  <div class="maxContainer">
+    <div class="calc-outer-wrap">
+      {% if module.content %}
+      <div class="calc-content">
+        {{ module.content }}
+      </div>
+      {% endif %}
+      <div class="calc-col-flex">
+        <div class="calc-form">
+          <div class="text-grayed-out">
+            {{ module.calculator.average_daily_cost_of_empty_seat_text }}: <strong>$</strong><span class="tgo-value" id="ave_daily_cost_of_empty_seat">{{ module.calculator.average_daily_cost_of_empty_seat_value }}</span>
+          </div>
+          <div class="flex-field-group">
+            <div class="sub-heading">
+              <span>{{ module.calculator.number_of_empty_seats_text }}</span>
+            </div>
+            <div class="field-input">
+              <input type="range" id="num_empty_seats" name="num_empty_seats" value="{{ module.calculator.number_of_empty_seats_value }}" min="0" max="100" oninput="num_empty_seats_value.value=value" style="background-size: {{ module.calculator.number_of_empty_seats_value }}% 100%;">
+              <output id="num_empty_seats_value">5</output>
+            </div>
+          </div>
+          <div class="text-grayed-out">
+            {{ module.calculator.industry_average_time_to_hire_days_ }}: <span class="tgo-value" id="industry_ave_time_to_hire">{{ module.calculator.industry_average_time_to_hire_days_value }}</span>
+          </div>
+          <div class="flex-field-group">
+            <div class="sub-heading">
+              <span>{{ module.calculator.your_average_time_to_hire_text }}</span>
+            </div>
+            <div class="field-input">
+              <input type="range" id="ave_time_to_hire" name="ave_time_to_hire" value="20" min="0" max="100" oninput="ave_time_to_hire_value.value=value" style="background-size: {{ module.calculator.your_average_time_to_hire_value }}% 100%;">
+              <output id="ave_time_to_hire_value">{{ module.calculator.your_average_time_to_hire_value }}</output>
+            </div>
+          </div>
+          <div class="calc-btn-wrap">
+            <button id="calc-btn">Calculate</button>
+          </div>
+        </div>
+        <div class="results-block">
+          <div class="rb-inner">
+            <div class="rb-item">
+              <div class="rb-item-text">{{ module.results_block.total_daily_cost_of_empty_seats_text }}</div>
+              <div class="rb-total_cost_empty_seats rb-total-value" id="total_cost_empty_seats">
+                $<span>0</span>
+              </div>
+            </div>
+            <div class="rb-item">
+              <div class="rb-item-text">{{ module.results_block.total_potential_cost_of_empty_seats }}</div>
+              <div class="rb-total_potential_cost_empty_seats rb-total-value" id="total_potential_cost_empty_seats">
+                $<span>0</span>
+              </div>
+            </div>
+            <div class="separator-item">
+              {{ module.results_block.extra_text }}
+            </div>
+            <div class="rb-item">
+              <div class="rb-item-text">{{ module.results_block.potential_lost_revenue_savings_text }}</div>
+              <div class="rb-total_potential_lost_revenue_savings rb-total-value" id="total_potential_lost_revenue_savings">
+                $<span>0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% require_js position="footer" %}
+<script>
+  $(function(){
+
+    $('#calc-btn').on('click', function(){
+      let averageDailyCostOfEmptySeats = $('.text-grayed-out #ave_daily_cost_of_empty_seat').text();
+      let num_averageDailyCostOfEmptySeats = parseInt(averageDailyCostOfEmptySeats);
+      let numberOfEmptySeats = $('#num_empty_seats').val();
+      let num_numberOfEmptySeats = parseInt(numberOfEmptySeats);
+      let yourAverageTimeToHire = $('#ave_time_to_hire').val();
+      let num_yourAverageTimeToHire = parseInt(yourAverageTimeToHire);
+      let withDriverReach = num_yourAverageTimeToHire * .75;
+      let totalDailyCostOfEmptySeats = num_averageDailyCostOfEmptySeats * num_numberOfEmptySeats;
+      let totalPotentialCostOfEmptySeats = num_yourAverageTimeToHire * totalDailyCostOfEmptySeats;
+      let potentialLostRevenueSavings = withDriverReach * num_averageDailyCostOfEmptySeats;
+      
+      $('#total_cost_empty_seats span').text(totalDailyCostOfEmptySeats.toLocaleString());
+      $('#total_potential_cost_empty_seats span').text(totalPotentialCostOfEmptySeats.toLocaleString());
+      $('#total_potential_lost_revenue_savings span').text(potentialLostRevenueSavings.toLocaleString());
+      
+      console.log('numberOfEmptySeats: '+num_numberOfEmptySeats);
+      console.log('yourAverageTimeToHire: '+num_yourAverageTimeToHire);
+      console.log('averageDailyCostOfEmptySeats: '+num_averageDailyCostOfEmptySeats);
+      console.log('withDriverReach: '+withDriverReach);
+      console.log('totalDailyCostOfEmptySeats: '+totalDailyCostOfEmptySeats);
+      console.log('totalPotentialCostOfEmptySeats: '+totalPotentialCostOfEmptySeats);
+      console.log('potentialLostRevenueSavings: '+potentialLostRevenueSavings);
+
+    });
+    
+    const rangeInputs = document.querySelectorAll('input[type="range"]')
+    const numberInput = document.querySelector('input[type="number"]')
+
+    function handleInputChange(e) {
+      let target = e.target
+      if (e.target.type !== 'range') {
+        target = document.getElementById('range')
+      } 
+      const min = target.min
+      const max = target.max
+      const val = target.value
+
+      target.style.backgroundSize = (val - min) * 100 / (max - min) + '% 100%'
+    }
+
+    rangeInputs.forEach(input => {
+      input.addEventListener('input', handleInputChange)
+    })
+
+
+  });
+</script>
+{% end_require_js %}
+
+{% endif %}

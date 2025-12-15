@@ -1,0 +1,175 @@
+.kore-lp-richtext-1 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-lp-richtext-1 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-lp-richtext-1 .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-lp-richtext-1 .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.kore-lp-richtext-1 #cta .kore-button,
+.kore-lp-richtext-1 .kore-button {
+  display: inline-block !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  border: 1px solid transparent !important;
+  padding: 13px 20px !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  border-radius: 290486px !important;
+  -webkit-transition: all 200ms ease !important;
+  transition: all 200ms ease !important;
+  letter-spacing: 1px !important;
+}
+
+.kore-lp-richtext-1 #cta .kore-button:hover,
+.kore-lp-richtext-1 .kore-button:hover {
+  -webkit-transform: translate(0px, -3px) !important;
+  -ms-transform: translate(0px, -3px) !important;
+  transform: translate(0px, -3px) !important;
+  color: #fff !important;
+}
+
+.hub-col2-content-cta{
+  border-top: 1px solid #979797;
+  padding-top: 40px;
+}
+.hub-col2-content-cta p,
+.hub-col2-content-cta span{
+  font-size: 16px;
+  color: #828e97;
+  line-height: 1.5em;
+  margin-top: 0;
+}
+.hub-col2-content-cta p a{
+  color: #0cf;
+}
+.hub-col2-content-cta h3,.hub-col2-content-cta h2{
+  font-size: 26px;
+  font-weight: 700;
+  color: #3488b2;
+  text-transform: initial;
+  margin-bottom: 12px;
+}
+.hub-col2-content-cta h3 span,
+.hub-col2-content-cta h2 span{
+  font-size: 26px;
+  font-weight: 700;
+  color: #3488b2;
+  text-transform: initial;  
+}
+.hub-col2-content-cta blockquote{
+  border-left: 4px solid #3488b2;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.hub-col2-content-cta blockquote p,
+.hub-col2-content-cta blockquote span{
+  font-size: 18px;
+}
+.hub-col2-content-cta .col8 {
+  width: 67%;
+  float: left;
+  padding-right: 50px;
+}
+.hub-col2-content-cta .col4 {
+  width: 33%;
+  float: left;
+}
+.hub-col2-content-cta .hub-right-content ul{
+  list-style: none;
+  padding: 20px 0;
+}
+.hub-col2-content-cta .hub-right-content ul li{
+  padding-bottom: 5px;
+  font-size: 16px;
+/*   color: #797979; */
+  color: #828e97;
+  line-height: 1.5em;
+}
+.hub-col2-content-cta .hub-right-content ul li strong{
+  color: #3488b2;
+}
+.hub-sidebar-cta-wrapper{
+  padding: 30px 20px;
+  border: 1px solid #e6e6e6;
+  background-color: #fff;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.12);
+  text-align: center;
+}
+.hub-sidebar-cta-wrapper img{
+  width: 114px;
+  margin-bottom: 15px;
+}
+#hub-right-content .hub-sidebar-cta-wrapper span.hs-cta-wrapper a{
+  margin-top: 5px!important;
+  background-color: #3488b2 !important;
+  color: #fff !important;
+  border-radius: 50px!;
+  padding: 6px 17px!important;
+  text-transform: uppercase!important;
+  font-weight: 700!important;
+  letter-spacing: 1px!important;
+  font-size: 14px!important;
+}
+
+@media screen and (max-width: 991px){
+  .hub-col2-content-cta .col8{
+    width: 62%;
+    padding-right: 30px;
+  }
+  .hub-col2-content-cta .col4 {
+    width: 38%;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .hub-col2-content-cta{
+    padding-top: 20px;
+  }
+  .hub-col2-content-cta .col8 {
+    width: 100%;
+    float: none;
+    padding-right: 0;
+  }
+  .hub-col2-content-cta .col4 {
+    width: 100%;
+    float: none;
+    margin-top: 30px;
+  }
+  .hub-col2-content-cta .hub-right-content ul {
+    padding: 10px 0;
+  }
+  .hub-col2-content-cta blockquote{
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .hub-col2-content-cta blockquote p, 
+  .hub-col2-content-cta blockquote span {
+    font-size: 16px;
+  }
+}
+
+

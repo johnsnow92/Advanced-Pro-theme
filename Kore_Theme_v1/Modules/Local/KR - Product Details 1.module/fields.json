@@ -1,0 +1,996 @@
+[ {
+  "id" : "f7077bb1-a7b8-04b1-5931-96d1e6fd7e18",
+  "name" : "product_images",
+  "label" : "Product Images",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "20a833f6-9c67-890f-1d5d-acbf7bad52d2",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 4
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : [ {
+      "size_type" : "auto",
+      "src" : "https://25209581.fs1.hubspotusercontent-eu1.net/hubfs/25209581/heliox-flex-180kw-electric-vehicle-charging-station.png",
+      "alt" : "heliox-flex-180kw-electric-vehicle-charging-station",
+      "loading" : "lazy",
+      "width" : 1533,
+      "height" : 2152,
+      "max_width" : 1533,
+      "max_height" : 2152
+    }, {
+      "size_type" : "auto",
+      "src" : "https://25209581.fs1.hubspotusercontent-eu1.net/hubfs/25209581/heliox-flex-180kw-electric-vehicle-charging-station.png",
+      "alt" : "heliox-flex-180kw-electric-vehicle-charging-station",
+      "loading" : "lazy",
+      "width" : 1533,
+      "height" : 2152,
+      "max_width" : 1533,
+      "max_height" : 2152
+    }, {
+      "size_type" : "auto",
+      "src" : "https://25209581.fs1.hubspotusercontent-eu1.net/hubfs/25209581/heliox-flex-180kw-electric-vehicle-charging-station.png",
+      "alt" : "heliox-flex-180kw-electric-vehicle-charging-station",
+      "loading" : "lazy",
+      "width" : 1533,
+      "height" : 2152,
+      "max_width" : 1533,
+      "max_height" : 2152
+    }, {
+      "size_type" : "auto",
+      "src" : "https://25209581.fs1.hubspotusercontent-eu1.net/hubfs/25209581/heliox-flex-180kw-electric-vehicle-charging-station.png",
+      "alt" : "heliox-flex-180kw-electric-vehicle-charging-station",
+      "loading" : "lazy",
+      "width" : 1533,
+      "height" : 2152,
+      "max_width" : 1533,
+      "max_height" : 2152
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "image" : [ {
+      "size_type" : "auto",
+      "src" : "https://25209581.fs1.hubspotusercontent-eu1.net/hubfs/25209581/heliox-flex-180kw-electric-vehicle-charging-station.png",
+      "alt" : "heliox-flex-180kw-electric-vehicle-charging-station",
+      "loading" : "lazy",
+      "width" : 1533,
+      "height" : 2152,
+      "max_width" : 1533,
+      "max_height" : 2152
+    }, {
+      "size_type" : "auto",
+      "src" : "https://25209581.fs1.hubspotusercontent-eu1.net/hubfs/25209581/heliox-flex-180kw-electric-vehicle-charging-station.png",
+      "alt" : "heliox-flex-180kw-electric-vehicle-charging-station",
+      "loading" : "lazy",
+      "width" : 1533,
+      "height" : 2152,
+      "max_width" : 1533,
+      "max_height" : 2152
+    }, {
+      "size_type" : "auto",
+      "src" : "https://25209581.fs1.hubspotusercontent-eu1.net/hubfs/25209581/heliox-flex-180kw-electric-vehicle-charging-station.png",
+      "alt" : "heliox-flex-180kw-electric-vehicle-charging-station",
+      "loading" : "lazy",
+      "width" : 1533,
+      "height" : 2152,
+      "max_width" : 1533,
+      "max_height" : 2152
+    }, {
+      "size_type" : "auto",
+      "src" : "https://25209581.fs1.hubspotusercontent-eu1.net/hubfs/25209581/heliox-flex-180kw-electric-vehicle-charging-station.png",
+      "alt" : "heliox-flex-180kw-electric-vehicle-charging-station",
+      "loading" : "lazy",
+      "width" : 1533,
+      "height" : 2152,
+      "max_width" : 1533,
+      "max_height" : 2152
+    } ]
+  }
+}, {
+  "id" : "ad009a2e-e9e9-848c-d329-4bd8befb3198",
+  "name" : "product_name",
+  "label" : "Product Name",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Flex 180 kW"
+}, {
+  "id" : "78ed0fb1-9461-f9b4-7a04-c65e189e0895",
+  "name" : "product_link",
+  "label" : "Product Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+  "type" : "url",
+  "display_width" : null,
+  "default" : {
+    "type" : "EXTERNAL",
+    "href" : "https://www.heliox-energy.com/products/flex-180kw-rapid-charger",
+    "content_id" : null
+  }
+}, {
+  "id" : "76074975-f35b-be74-1bd7-411638cc50c4",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h2>Flex 180 kW</h2>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum.</p>"
+}, {
+  "id" : "72802cc0-7f4c-8a6e-79c0-699c7292886a",
+  "name" : "power",
+  "label" : "Power",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "80a0e69a-42fe-f1fd-56d0-19271064df01",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "180kW"
+  }, {
+    "id" : "554fd8fa-291b-a086-f02d-d9668b96b610",
+    "name" : "power_type",
+    "label" : "Power Type",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 2
+    },
+    "children" : [ {
+      "id" : "7bc3b2cb-c959-e0a6-b8cc-77d761cd4098",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "180kW"
+    }, {
+      "id" : "fe113f8c-0361-c243-0cdf-a1b10829fa56",
+      "name" : "url",
+      "label" : "URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "type" : "url",
+      "display_width" : null,
+      "default" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.heliox-energy.com/products/flex-180kw-rapid-charger",
+        "content_id" : null
+      }
+    }, {
+      "id" : "3736dffe-e9da-4987-34f1-0f11fd92a7e9",
+      "name" : "color",
+      "label" : "Color",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "full-color", "Full Color" ], [ "bordered", "Bordered" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "full-color"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "text" : "180kW",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.heliox-energy.com/products/flex-180kw-rapid-charger",
+        "content_id" : null
+      },
+      "color" : "full-color"
+    }, {
+      "text" : "180kW",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.heliox-energy.com/products/flex-180kw-rapid-charger",
+        "content_id" : null
+      },
+      "color" : "full-color"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "180kW",
+    "power_type" : [ {
+      "text" : "180kW",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.heliox-energy.com/products/flex-180kw-rapid-charger",
+        "content_id" : null
+      },
+      "color" : "full-color"
+    }, {
+      "text" : "180kW",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.heliox-energy.com/products/flex-180kw-rapid-charger",
+        "content_id" : null
+      },
+      "color" : "full-color"
+    } ]
+  }
+}, {
+  "id" : "fed2d94a-18b4-2f76-b76f-6b2dfa3b7b56",
+  "name" : "ideal_items",
+  "label" : "Ideal items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "6e0e97d4-21db-44d3-d194-d9e08f118dc5",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "E-Bus"
+  }, {
+    "id" : "f93efe71-0e3e-91b6-ef96-0ae3b7742996",
+    "name" : "color",
+    "label" : "Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#f47c1c",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "text" : "E-Bus",
+    "color" : {
+      "color" : "#f47c1c",
+      "opacity" : 100
+    }
+  }, {
+    "text" : "E-Bus",
+    "color" : {
+      "color" : "#f47c1c",
+      "opacity" : 100
+    }
+  } ]
+}, {
+  "id" : "9a556cc0-cb8e-58d6-6e9e-d0f6f3c73321",
+  "name" : "cta_strip",
+  "label" : "CTA Strip",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "63378879-fca8-d64e-412c-53858e1f4425",
+    "name" : "buttton",
+    "label" : "Buttton",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "ff2cc081-874d-1bb8-7aa4-b1ecd0ffb2d5",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Request Pricing"
+    }, {
+      "id" : "600c86d3-3294-0d67-36fa-1099a65e2702",
+      "name" : "url",
+      "label" : "URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "type" : "url",
+      "display_width" : null,
+      "default" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "text" : "Request Pricing",
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    }
+  }, {
+    "id" : "f8367f03-6371-7b3e-7865-8a3569a361aa",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><strong>Interested in ordering this charger?</strong> <br>Simply fill out your details and we'll get in touch.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "buttton" : {
+      "text" : "Request Pricing",
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    },
+    "content" : "<p><strong>Interested in ordering this charger?</strong> <br>Simply fill out your details and we'll get in touch.</p>"
+  }
+}, {
+  "id" : "27d27599-0792-1fd1-8147-ef8e87e60bc3",
+  "name" : "charging_estimator",
+  "label" : "Charging Estimator",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ce066db8-ab2d-9dd9-b5df-af5503e9a9cf",
+    "name" : "heading_text",
+    "label" : "Heading text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Charging Estimator"
+  }, {
+    "id" : "5b1457af-bd9d-158b-c38c-358bfdff7afd",
+    "name" : "charging_time",
+    "label" : "Charging time",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "33"
+  }, {
+    "id" : "c672e67d-34e0-2f5f-3614-d870b317d2e1",
+    "name" : "distance",
+    "label" : "Distance",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "100"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "heading_text" : "Charging Estimator",
+    "charging_time" : "33",
+    "distance" : "100"
+  }
+}, {
+  "id" : "a145ca2c-b2d2-7c91-7666-bdf77b145ee5",
+  "name" : "vehicle_type",
+  "label" : "Vehicle Type",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8fd328bd-31e0-e9f7-de15-af8db60906ea",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "E-Bus"
+  }, {
+    "id" : "144cd8a6-2ef4-5ff3-1e24-420ddbfb2fb8",
+    "name" : "power_type",
+    "label" : "Power Type",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 2
+    },
+    "children" : [ {
+      "id" : "d0e97f5a-4d42-2001-9ce9-9ad6cd4fd3ab",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "E-Bus"
+    }, {
+      "id" : "41a3bd60-12a6-35b8-d00c-dab9be24e6d7",
+      "name" : "url",
+      "label" : "URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+      "type" : "url",
+      "display_width" : null,
+      "default" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.heliox-energy.com/products/flex-180kw-rapid-charger",
+        "content_id" : null
+      }
+    }, {
+      "id" : "3b219932-8f82-4673-2414-a5ce22a5712c",
+      "name" : "color",
+      "label" : "Color",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "full-color", "Full Color" ], [ "bordered", "Bordered" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "full-color"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "text" : "E-Bus",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.heliox-energy.com/products/flex-180kw-rapid-charger",
+        "content_id" : null
+      },
+      "color" : "full-color"
+    }, {
+      "text" : "E-Bus",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.heliox-energy.com/products/flex-180kw-rapid-charger",
+        "content_id" : null
+      },
+      "color" : "full-color"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "E-Bus",
+    "power_type" : [ {
+      "text" : "E-Bus",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.heliox-energy.com/products/flex-180kw-rapid-charger",
+        "content_id" : null
+      },
+      "color" : "full-color"
+    }, {
+      "text" : "E-Bus",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.heliox-energy.com/products/flex-180kw-rapid-charger",
+        "content_id" : null
+      },
+      "color" : "full-color"
+    } ]
+  }
+}, {
+  "id" : "6a23d6c5-6d35-fe83-af3e-42ba9b1fc6f7",
+  "name" : "notes",
+  "label" : "Notes",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<ul>\n<li>Design for reference only. Design and product specifications are subject to change without notice.</li>\n<li>Figures shown are calculated based on average kWh charging speeds and average battery size across e-bus, e-truck and passenger vehicles. Real world km’s charged within 1 hour will vary depending on different factors including temperature, battery health etc.</li>\n</ul>"
+}, {
+  "id" : "51471c99-e568-109e-6402-2569e27e1443",
+  "name" : "field_group",
+  "label" : "Field group",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "5c5b4d51-6a7c-7964-5989-36bf0d35b16a",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Request Pricing"
+  }, {
+    "id" : "36b79b42-792b-655a-4496-5adaac35d2b3",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "Request Pricing",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+}, {
+  "id" : "511156bd-595a-08d4-8a47-13a0beacce86",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "952ec4b0-0062-4144-7451-31483f563fbc",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "cdd71f26-6ee3-8111-4f5e-db510dbe670e",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+}, {
+  "id" : "ee1e14b7-878b-5cab-7011-101a46363ab4",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "93448879-955b-2e09-f8e3-8f7a91698487",
+    "name" : "section_text_alignment",
+    "label" : "Section Text Alignment",
+    "help_text" : "The horizontal alignment of the text.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-left", "Left" ], [ "text-center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-center"
+  }, {
+    "id" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+    "name" : "section_background_type",
+    "label" : "Section Background Type",
+    "help_text" : "Choose the kind of background that displays on the section.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "1", "Image" ], [ "2", "Color" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "2"
+  }, {
+    "id" : "68d4dfad-7a62-af61-6246-8df16b3b34dc",
+    "name" : "section_background_image",
+    "label" : "Section Background Image",
+    "help_text" : "Specify an image to use as the background of the section.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    }
+  }, {
+    "id" : "a0ffcf0e-2357-9fd9-13ce-6170160f44c6",
+    "name" : "section_background_image_overlay",
+    "label" : "Section Background Image Overlay",
+    "help_text" : "Add a layer of color on top of the background image. You can also specify the opacity (e.g. 85%)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#272727",
+      "opacity" : 85
+    }
+  }, {
+    "id" : "182f6412-ec15-59c2-5efa-57608ac42370",
+    "name" : "section_background_color",
+    "label" : "Section Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+    "name" : "section_padding",
+    "label" : "Section Padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "custom", "Custom" ], [ "py-0", "Padding Top & Bottom - 0" ], [ "py-5", "Padding Top & Bottom - 5px" ], [ "py-10", "Padding Top & Bottom - 10px" ], [ "py-15", "Padding Top & Bottom - 15px" ], [ "py-20", "Padding Top & Bottom - 20px" ], [ "py-25", "Padding Top & Bottom - 25px" ], [ "py-30", "Padding Top & Bottom - 30px" ], [ "py-35", "Padding Top & Bottom - 35px" ], [ "py-40", "Padding Top & Bottom - 40px" ], [ "py-45", "Padding Top & Bottom - 45px" ], [ "py-50", "Padding Top & Bottom - 50px" ], [ "py-55", "Padding Top & Bottom - 55px" ], [ "py-60", "Padding Top & Bottom - 60px" ], [ "py-65", "Padding Top & Bottom - 65px" ], [ "py-70", "Padding Top & Bottom - 70px" ], [ "py-75", "Padding Top & Bottom - 75px" ], [ "py-80", "Padding Top & Bottom - 80px" ], [ "py-85", "Padding Top & Bottom - 85px" ], [ "py-90", "Padding Top & Bottom - 90px" ], [ "py-95", "Padding Top & Bottom - 95px" ], [ "py-100", "Padding Top & Bottom - 100px" ], [ "py-120", "Padding Top & Bottom - 120px" ], [ "py-150", "Padding Top & Bottom - 150px" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "custom"
+  }, {
+    "id" : "0b3d38f7-baa1-1c9b-40e2-c7c214a3260b",
+    "name" : "section_padding_desktop",
+    "label" : "Section Padding Desktop",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "95e41b90-9549-9e40-0adf-5461297f2276",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    }, {
+      "id" : "43ff9bc4-59cf-ca82-c684-675e8c4ae6fe",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 40,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "b1ffa917-3258-b89f-6ecc-901a79833a17",
+    "name" : "section_padding_tablet",
+    "label" : "Section Padding Tablet",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "fccc8999-bf4b-d6a4-facd-edda112c75b4",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    }, {
+      "id" : "1d9fd413-fde3-918e-b5a9-340769bca61e",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 40,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "178bf22b-d104-7eea-1c5b-70fb4655249a",
+    "name" : "section_padding_mobile",
+    "label" : "Section Padding Mobile",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "44a00dc9-10b3-0728-205b-2fb516857a42",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    }, {
+      "id" : "213e5ea8-36bb-a1a9-db56-9d8bfe455db2",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 40,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "96c75b2e-592c-4982-2f7c-5413f63c5def",
+    "name" : "section_id",
+    "label" : "Section ID",
+    "help_text" : "Enter a unique ID. This will be used to jump directly on this section.\n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "ee8ee9b8-cbf2-3314-a4e6-47e7f94c845f",
+    "name" : "section_class",
+    "label" : "Section Class",
+    "help_text" : "Add a few extra CSS class on this section so you can customize even further. \n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "190b3884-6ee7-f9bd-50b8-194570111d17",
+    "name" : "section_use_existing_portal_style",
+    "label" : "Section Use Existing Portal Style",
+    "help_text" : "Enable this option to use existing portal styling.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "4de3cddd-abe4-711a-e427-637386591162",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "help_text" : "Disable this option to hide this section on the page.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "215cac8f-576a-6b7d-23fc-dc7b2bde7a9e",
+    "name" : "filler",
+    "label" : "Filler",
+    "required" : false,
+    "locked" : false,
+    "children" : [ ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_text_alignment" : "text-center",
+    "section_background_type" : "2",
+    "section_background_image" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    },
+    "section_background_image_overlay" : {
+      "color" : "#272727",
+      "opacity" : 85
+    },
+    "section_background_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "section_padding" : "custom",
+    "section_padding_desktop" : {
+      "top" : 40,
+      "bottom" : 40
+    },
+    "section_padding_tablet" : {
+      "top" : 40,
+      "bottom" : 40
+    },
+    "section_padding_mobile" : {
+      "top" : 40,
+      "bottom" : 40
+    },
+    "section_id" : "",
+    "section_class" : "",
+    "section_use_existing_portal_style" : false,
+    "section_show_hide" : true,
+    "filler" : { }
+  }
+} ]

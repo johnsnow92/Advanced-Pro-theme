@@ -1,0 +1,153 @@
+[ {
+  "id" : "c5a1ebb8-58d7-9c34-1920-7602d98f645d",
+  "name" : "hero_section_image",
+  "label" : "Hero-section Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/modern-equipped-computer-lab%202-1.png",
+    "alt" : "modern-equipped-computer-lab 2-1",
+    "loading" : "lazy",
+    "width" : 727,
+    "height" : 528,
+    "max_width" : 727,
+    "max_height" : 528
+  }
+}, {
+  "id" : "205e73db-b61f-5d7d-c369-42c53a730fa5",
+  "name" : "main_heading",
+  "label" : "Main Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Helping businesses  deliver <span> exceptional buyer  </span>experiences. "
+}, {
+  "id" : "54df7e4f-cc1c-701d-4d7a-47e0886a9c6e",
+  "name" : "about_hero_section_h4",
+  "label" : "About Hero Section h4",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "About Us"
+}, {
+  "id" : "b79d8d5c-8986-db81-a8b8-8168a0c75efc",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<ul style=\"list-style-type: circle;\">\n<li><em>Value Proposition</em>: \"Fuel your sales team's success with real-time data and actionable insights that close deals faster.\"</li>\n<li><em>Focused Messaging</em>: \"Streamline your sales process with powerful tools designed to convert leads into customers—efficiently and effectively.\"</li>\n<li><em>Call to&nbsp; Action</em>: \"Unlock your sales potential with Surgepath Sales. Request a demo and see the difference firsthand!\"</li>\n</ul>"
+}, {
+  "id" : "2f886586-17ba-2da1-8d30-d6f8e13e3c42",
+  "name" : "content_1",
+  "label" : "Content-1",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p style=\"font-size: 14px;\"><span style=\"color: #000000;\">At Surgepath Sales, we believe that every business is unique. That’s why our approach is focused on understanding your specific needs, challenges, and goals. We work closely with your team to deliver tailored solutions that integrate seamlessly with your existing processes while unlocking new opportunities for efficiency and revenue growth.</span></p>"
+}, {
+  "id" : "a7b40ae7-2875-ca5e-0f32-e98691e9b6bd",
+  "name" : "read_more_button",
+  "label" : "Read More Button",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Read More"
+}, {
+  "id" : "b443ce38-6126-5845-45dc-679764e498b9",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "fec8d933-1953-2c96-d8ed-c675e1524df8",
+    "name" : "button_type",
+    "label" : "Button Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "primary-btn", "Primary" ], [ "secondary-btn", "Secondary" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "primary-btn"
+  }, {
+    "id" : "f4660614-8a4c-f774-4592-5d6a3f839f50",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "c983c2c7-c470-3907-e4a4-f926d7bfd955",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "GET STARTED"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "e54014a9-867f-ce34-aead-3296ac996c27",
+  "name" : "arrow_image",
+  "label" : "Arrow Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/arrow.png",
+    "alt" : "arrow",
+    "loading" : "lazy",
+    "width" : 61,
+    "height" : 126,
+    "max_width" : 61,
+    "max_height" : 126
+  }
+} ]

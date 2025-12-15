@@ -1,0 +1,166 @@
+{% import "../../macros/_macros.html" as macros %}  
+
+<div class="latest_projects  {{name}} dnd_padd {{ module.advanced_customization.css_class_selector }} {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }}" {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+    <div class="projects-top-wrp">
+      {{ macros.topContent(module.top_content, module.module_settings) }}
+    </div>
+
+    <div class="projects-outer-wrp flex_row flex_row{{name}} rowGap15">
+      {% for item in module.projects_group %}
+
+      {% set href = item.link.url.href %}
+      {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% elif item.link.url.type is equalto "CONTENT" %}
+      {% if item.bookmark_id %}
+      {% set href = href + '#'+ item.bookmark_id %}
+      {% else %}
+      {% set href = item.link.url.href %}
+      {% endif %}
+      {% endif %}
+
+      {% if loop.index == 1 %}
+      <div class="gutter  {% if item.item_settings.select_column_width  %}{{ item.item_settings.select_column_width }}{% else %}col4{% endif %}">
+      </div>
+      {% endif %}
+
+      <div class="item {% if item.show_content_default%}show_default{% endif %} {{ item.select_icon_type }}_ic_ty {% if not item.background_image.src %}noImage{% endif %} {% if item.item_settings.select_column_width  %}{{ item.item_settings.select_column_width }}{% else %}col4{% endif %}	{{ item.item_settings.select_item_height }}"
+           {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 100 + 200}}" {% endif %}
+           >
+        <div class="item_inner">
+          <div class="bg_img bg_el" style="background-image: url({{ item.background_image.src }})">
+          </div>
+          <div class="item_overlay bg_el">
+            <div class="overlay_bg bg_el {{ module.style.card_styles.select_background_theme }}">         
+            </div>
+            <div class="card bg_el"  >
+              <div class="card_inner">
+                {% if href %}<a href="{{ href }}"
+                                {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                                {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %} class="bg_el overlay_link"></a>{% endif %}
+
+                {% if (item.image.src and item.select_icon_type) == "image"  or (item.select_icon.name and item.select_icon_type == "fw")%}
+                <div class="icon_box sz_{{ module.style.card_styles.select_icon_size }}">
+                  <div class="icon_inner">
+                    {% if item.image.src and item.select_icon_type == "image" %}
+                    <span class="icon_img icon_sp">
+                      <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" title="{{ item.image.alt }}" width="{{ item.image.width }}" height="{{ item.image.height }}">
+                    </span>
+                    {% endif %}
+
+                    {% if item.select_icon.name and item.select_icon_type == "fw" %}
+                    <span class="icon_svg icon_sp">
+                      {% icon
+                name="{{ item.select_icon.name }}"
+                style="{{ item.select_icon.type }}"
+                unicode="{{ item.select_icon.unicode }}"
+                icon_set="{{ item.select_icon.icon_set }}"
+                %}
+                    </span>
+                    {% endif %}
+                  </div>
+                </div>
+                {% endif %}
+
+                {% if item.title %}
+                <{{ module.style.card_styles.select_title_tag }} class="title">
+                  {{ item.title }}
+                  </{{ module.style.card_styles.select_title_tag }}> 
+                  {% endif %}
+                  {% if item.content %}
+                  <div class="text_el">
+                {{ item.content }}
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  {% if module.button_group %}
+  <div class="bototm_btn pdlr10" {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+    {{ macros.buttonWithPopupGroup(module.button_group, false) }}
+  </div>
+  {% endif %}
+
+</div>
+{{ macros.buttonWithPopupGroup(module.button_group, true) }}
+{{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+</div>
+
+
+{% require_css %}
+<style>
+  {% if module.style.card_styles.select_background_theme != "custom" %}
+  .{{name}} .overlay_bg{
+    opacity:{{ module.style.card_styles.background_opacity/100 }};
+  }
+  {% endif %}
+
+  {% if module.style.card_styles.select_background_theme == "custom" %}
+  .{{name}} .overlay_bg{
+    background-color : {{ macros.color(module.style.card_styles.background_color) }}
+  }
+  {% endif %}
+
+  {% if module.style.card_styles.select_color_theme == "custom" %}
+  .{{name}} .item_inner *:not(a[class]):not(input) {
+    color : {{ macros.color(module.style.card_styles.color) }}
+  }
+
+  .{{name}} .item_inner svg {
+    fill : {{ macros.color(module.style.card_styles.color) }}
+  }
+  {% endif %}
+
+
+  @media(min-width:768px){
+    .latest_projects.{{name}} .item,
+    .latest_projects.{{name}} .item.small  {
+      height: {{ module.style.card_styles.change_one_column_height }}px;
+    }
+    .latest_projects.{{name}} .item.large  {
+      height: calc({{ module.style.card_styles.change_one_column_height }}px * 2 + 20px);
+    }
+
+
+  }
+  @media(max-width:767px){
+    .latest_projects.{{name}} .item  {
+      min-height: {{ module.style.card_styles.change_one_column_height }}px;
+      height:auto;
+    }
+  }
+</style>
+{% end_require_css %}
+
+
+{% require_js%}
+<script>
+
+  {% for item in module.projects_group %}
+  {% if loop.first %}
+
+  var iso = new Isotope( '.flex_row{{name}}', {
+                        itemSelector: '.item'
+                        });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    var iso = new Isotope( '.flex_row{{name}}', {
+                          itemSelector: '.item'
+                          });
+  });
+
+  {% endif %}
+  {% endfor %}
+
+</script>
+{% end_require_js%}

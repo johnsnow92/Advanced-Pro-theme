@@ -1,0 +1,40 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home - Opt 4 - Advanced Pro Theme
+
+  screenshotPath: ../assets/template-placeholder.png-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}<meta name="description" content="{{ page_meta.meta_description }}">{% endif %}
+  {% if brand_settings.favicon is defined and brand_settings.favicon.src %}<link rel="shortcut icon" href="{{ brand_settings.favicon.src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% include '../partials/header.hubl.html' %}
+    <main id="main-content" role="main">
+      <section class="section hero-minimal" style="padding: var(--spacing-4xl) 0; text-align: center;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-10" style="margin: 0 auto;">
+              <h1 style="font-size: 4.5rem; margin-bottom: var(--spacing-xl);">{% module "hero_headline" path="@hubspot/text", label="Headline", html="Minimal & Powerful" %}</h1>
+              <p class="lead" style="font-size: 1.75rem;">{% module "hero_subheadline" path="@hubspot/text", label="Subheadline" %}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      {% module "home_sections" path="@hubspot/rich_text", label="Content Sections" %}
+    </main>
+    {% include '../partials/footer.hubl.html' %}
+  </div>
+  {{ standard_footer_includes }}
+</body>
+</html>

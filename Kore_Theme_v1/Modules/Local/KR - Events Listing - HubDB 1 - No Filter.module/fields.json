@@ -1,0 +1,34 @@
+[ {
+  "id" : "f3e777c4-b93d-2dcb-f30f-c77d5316068f",
+  "name" : "hubdb_table",
+  "label" : "HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "display_width" : null,
+  "default" : 5855772
+}, {
+  "id" : "997ed0e3-bf1f-affc-8b7b-0220b076abe9",
+  "name" : "hubdbrow_field",
+  "label" : "HubDB row",
+  "required" : false,
+  "locked" : false,
+  "table_name_or_id" : "5855772",
+  "columns_to_fetch" : [ "title" ],
+  "display_columns" : [ "title" ],
+  "type" : "hubdbrow",
+  "display_width" : null,
+  "default" : {
+    "id" : 103337393332
+  }
+}, {
+  "id" : "bf4f16b1-8d2e-0408-8460-5b52e5ce561d",
+  "name" : "icon_field",
+  "label" : "Icon",
+  "required" : false,
+  "locked" : false,
+  "icon_set" : "fontawesome-5.14.0",
+  "type" : "icon",
+  "display_width" : null,
+  "default" : { }
+} ]

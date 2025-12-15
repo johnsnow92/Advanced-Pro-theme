@@ -1,0 +1,17 @@
+<div class="blog-feat-image__wrapper">
+  <div {% if module.listing_placeholder.button_url.href %}onclick="location.href='{{ module.listing_placeholder.button_url.href }}'"{% endif %} class="blog-feat-image" style="background-image: url('{{ module.listing_placeholder.image.src }}');"></div>
+</div>
+<div class="blog-post-content {{ module.section_settings.section_text_alignment }}">
+  <div class="blog-date">{{ module.listing_placeholder.tagline }}</div>
+  <div class="blog-title">
+    <h3>{{ module.listing_placeholder.title }}</h3>
+  </div>
+  <div class="blog-summary">{{ module.listing_placeholder.content }}</div>
+  {% if module.listing_placeholder.button_text %} 
+  <div class="placeholuder_button">
+    <a href="{{ module.listing_placeholder.button_url.href }}" class="hs-button primary">
+      {{ module.listing_placeholder.button_text }} 
+    </a>
+  </div>
+  {% endif %}
+</div>

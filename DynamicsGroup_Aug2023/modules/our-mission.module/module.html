@@ -1,0 +1,30 @@
+<div class="cm-mission">
+  <div class="cm-wrapper">
+    <div class="cm-left">
+      <h2>{{ module.section_heading }}</h2>
+      <div class="divider"></div>
+      <div class="cm-text">
+        {{ module.content }}
+      </div>
+    </div>
+    <div class="cm-right">
+      <div class="top-spacer">
+        {% if module.right_image.src %}
+        {% set sizeAttrs = 'width="{{ module.right_image.width }}" height="{{ module.right_image.height }}"' %}
+        {% if module.right_image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.right_image.width }}" height="{{ module.right_image.height }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.right_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.right_image.max_width }}" height="{{ module.right_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = module.right_image.loading != 'disabled' ? 'loading="{{ module.right_image.loading }}"' : '' %}
+        <img src="{{ module.right_image.src }}" alt="{{ module.right_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+        {% endif %}
+      </div>
+      <div class="cm-video">
+        <video controls autoplay loop muted>
+          <source type="video/webm" src="https://www.dynamics-group.com/wp-content/uploads/2020/08/Laser_Blast_Logo_1.mp4" />
+        </video>
+      </div>
+    </div>
+  </div>
+</div>

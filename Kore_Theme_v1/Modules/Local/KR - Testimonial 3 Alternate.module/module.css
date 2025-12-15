@@ -1,0 +1,107 @@
+.kore-alternate-testimonial-v1 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-alternate-testimonial-v1 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-alternate-testimonial-v1 .page-width.text-center {
+  text-align: center;
+}
+
+.kore-alternate-testimonial-v1 .flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+  background: #fff;
+  padding: 30px 20px;
+}
+
+.kore-alternate-testimonial-v1 .flex.last:last-child {
+  margin-bottom: 0;
+}
+
+.kore-alternate-testimonial-v1 .flex .col {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-alternate-testimonial-v1 .flex.left .col:first-child {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+  text-align: center;
+}
+
+.kore-alternate-testimonial-v1 .flex.right .col:last-child {
+  -ms-flex: 0 0 25%;
+  flex: 0 0 25%;
+  max-width: 25%;
+  text-align: center;
+}
+
+.kore-alternate-testimonial-v1 .quote-icon svg {
+  width: 60px;
+}
+
+.kore-alternate-testimonial-v1 .testimonial-image {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  border-radius: 100px;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+@media(max-width:1139px) {
+
+  .kore-alternate-testimonial-v1 .testimonial-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .kore-alternate-testimonial-v1 .flex {
+    padding: 30px 0;
+  }
+  
+}
+
+@media(max-width:767px) {
+  
+  .kore-alternate-testimonial-v1 .flex .col {
+    flex: 0 0 100%;
+    text-align: center;
+  }
+  
+  .kore-alternate-testimonial-v1 .flex .col:first-child {
+    margin-bottom: 20px;
+  }
+  
+  .kore-alternate-testimonial-v1 .flex.left .col:first-child,
+  .kore-alternate-testimonial-v1 .flex.right .col:last-child {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .kore-alternate-testimonial-v1 .flex.right .col:last-child {
+    order: 1;
+    margin-bottom: 20px;
+  }
+  
+  .kore-alternate-testimonial-v1 .flex.right .col:first-child {
+    order: 2;
+    margin-bottom: 0;
+  }
+  
+}

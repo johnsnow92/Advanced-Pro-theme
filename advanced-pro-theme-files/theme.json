@@ -1,0 +1,12 @@
+{
+  "label": "Advanced Pro Theme",
+  "preview_path": "./templates/home.hubl.html",
+  "screenshot_path": "./assets/theme-preview.png",
+  "enable_domain_stylesheets": false,
+  "version": "1.0.0",
+  "author": {
+    "name": "Custom Development",
+    "email": "dev@example.com",
+    "url": ""
+  }
+}

@@ -1,0 +1,354 @@
+.kore-lp-two-column-with-lists-scroll {
+  background-repeat: repeat, no-repeat !important;
+  background-position: 0px 0px, 0px 0px !important;
+  background-size: auto, cover !important;
+}
+
+.kore-lp-two-column-with-lists-scroll .logo {
+  padding: 20px;
+}
+
+.kore-lp-two-column-with-lists-scroll .logo a {
+  text-decoration: none; 
+}
+
+.kore-lp-two-column-with-lists-scroll .logo img {
+  width: 200px !important;
+}
+
+.kore-lp-two-column-with-lists-scroll .back-to-blog-link {
+  display: inline-block;
+  margin-left: 20px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  line-height: 14px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.kore-lp-two-column-with-lists-scroll .back-to-blog-link:hover {
+  color: hsla(0, 0%, 100%, 0.6) !important;
+  text-decoration: none;
+}
+
+.kore-lp-two-column-with-lists-scroll .page-width {
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-lp-two-column-with-lists-scroll .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-lp-two-column-with-lists-scroll .flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col:first-child {
+  -ms-flex: 0 0 52%;
+  flex: 0 0 52%;
+  max-width: 52%;
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col.form-col {
+  position: relative 
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col .form {
+  padding: 40px;
+  background-color: #0086D6;
+  background-size: cover;
+  box-shadow: 0 10px 16px 0 rgba(36,35,35,.10);
+  color: #fff;
+  background-color: rgb(0, 134, 214);
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col .form * {
+  color: #fff; 
+}
+
+
+.kore-lp-two-column-with-lists-scroll .flex .col .form .legal-consent-container ul {
+  margin: 0;
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col .form .legal-consent-container * {
+  font-size: 12px;
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col .form .legal-consent-container .field.hs-form-field {
+  margin-bottom: 0;
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col .form .legal-consent-container p{
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col .form .submitted-message {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.kore-lp-two-column-with-lists-scroll .lists {
+  padding-left: 0;
+  list-style: none;
+  max-width: 400px;
+}
+
+.kore-lp-two-column-with-lists-scroll .lists li a {
+  border: 0;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.35);
+  background-color: hsla(0,0%,100%,0);
+  display: block;
+  padding: 5px 5px;
+  text-decoration: none;
+}
+
+.kore-lp-two-column-with-lists-scroll .lists li a:hover {
+  opacity: 0.8;
+}
+
+.kore-lp-two-column-with-lists-scroll form {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 0 auto;
+  align-items: flex-end;
+  color: #fff;
+}
+
+.kore-lp-two-column-with-lists-scroll .form-text {
+  font-weight: 300;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.kore-lp-two-column-with-lists-scroll .form-text h3 {
+  font-size: 24px;
+}
+
+.kore-lp-two-column-with-lists-scroll .form-text ul {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.kore-lp-two-column-with-lists-scroll .form-text h1,
+.kore-lp-two-column-with-lists-scroll .form-text h2,
+.kore-lp-two-column-with-lists-scroll .form-text h3,
+.kore-lp-two-column-with-lists-scroll .form-text h4,
+.kore-lp-two-column-with-lists-scroll .form-text h5,
+.kore-lp-two-column-with-lists-scroll .form-text h6 {
+  color: #003057; 
+}
+
+.kore-lp-two-column-with-lists-scroll .form-title {
+  font-size: 16px;
+  margin: 0;
+}
+
+.kore-lp-two-column-with-lists-scroll .hs-form-field {
+  flex: 1; 
+}
+
+.kore-lp-two-column-with-lists-scroll .hs-form-required {
+  display: none;
+}
+
+.kore-lp-two-column-with-lists-scroll .hs-error-msgs {
+  margin: 0;
+  position: absolute;
+  bottom: -32px;
+}
+
+.kore-lp-two-column-with-lists-scroll .hs-error-msg {
+  font-size: 12px; 
+
+}
+
+.kore-lp-two-column-with-lists-scroll .hs-email input {
+  border-radius: 290486px;
+  color: #003 !important;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px !important;
+  border: 1px solid transparent;
+}
+
+.kore-lp-two-column-with-lists-scroll .hs-email input:focus {
+  outline: 0; 
+}
+
+.kore-lp-two-column-with-lists-scroll .hs-submit {
+  margin-top: 0;
+}
+
+.kore-lp-two-column-with-lists-scroll .hs-submit input {
+
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  letter-spacing: 2px !important;
+  padding: 8px 20px !important;
+}
+
+.kore-lp-two-column-with-lists-scroll .hs-submit input:hover {
+
+  -webkit-transform: translate(0px, 0px) !important;
+  -ms-transform: translate(0px, 0px) !important;
+  transform: translate(0px, 0px) !important;
+}
+
+.kore-lp-two-column-with-lists-scroll .hs-email {
+  padding-right: 12px; 
+  margin-bottom: 0;
+  position: relative;
+}
+
+.kore-lp-two-column-with-lists-scroll .hs-form-field > label {
+  color: #003057;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.kore-lp-two-column-with-lists-scroll .legal-consent-container .hs-form-booleancheckbox-display input {
+  margin-top: 3px;
+}
+
+.kore-lp-two-column-with-lists-scroll .legal-consent-container li {
+  padding-bottom: 0;
+}
+
+.kore-lp-two-column-with-lists-scroll .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.kore-lp-two-column-with-lists-scroll .content strong {
+  font-weight: 600;
+}
+
+.kore-lp-two-column-with-lists-scroll .content span strong {
+  color: hsla(0, 0%, 100%, 0.65);
+}
+
+.kore-lp-two-column-with-lists-scroll #cta .cta_button {
+  display: inline-block !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  border: 1px solid transparent !important;
+  padding: 13px 20px !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  border-radius: 290486px !important;
+  -webkit-transition: all 200ms ease !important;
+  transition: all 200ms ease !important;
+  letter-spacing: 1px !important;
+}
+
+.kore-lp-two-column-with-lists-scroll #cta .cta_button:hover {
+  -webkit-transform: translate(0px, -3px) !important;
+  -ms-transform: translate(0px, -3px) !important;
+  transform: translate(0px, -3px) !important;
+  color: #fff !important;
+}
+.kore-lp-two-column-with-lists-scroll form {
+  display: block;
+}
+
+.legal-consent-container~.hs_recaptcha {
+  margin: 0 0 10px !important;!i;!;
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col .form .hs-richtext {
+  margin: 0 0 9px;
+}
+
+.grecaptcha-badge {
+  margin: 0 !important;!i;!;
+}
+
+.kore-lp-two-column-with-lists-scroll .form-title {
+  padding: 0;
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col .form .field > label {
+  margin: 0 0 10px;
+  display: block;
+}
+
+.kore-lp-two-column-with-lists-scroll .flex .col .form .field {
+  margin: 0 0 13px !important;!i;!;
+}
+@media(max-width:992px) {
+
+  .kore-lp-two-column-with-lists-scroll .flex .col {
+    flex: 0 0 100%; 
+  }
+
+  .kore-lp-two-column-with-lists-scroll .flex .col:first-child {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .kore-lp-two-column-with-lists-scroll .flex .col.form-col {
+    padding: 0;
+  }
+
+}
+
+@media(max-width:767px) {
+
+  .kore-lp-two-column-with-lists-scroll .flex .col .form {
+    padding: 40px 20px;
+  }
+
+  .kore-lp-two-column-with-lists-scroll .logo img {
+    width: 150px !important;
+  }
+
+  .kore-lp-two-column-with-lists-scroll .back-to-blog-link {
+    display: none;
+  }
+
+  .kore-lp-two-column-with-lists-scroll .hs-submit {
+    margin-top: 20px;
+  }
+
+}
+
+@media(max-width:479px) {
+
+  .kore-lp-two-column-with-lists-scroll form {
+    display: block;
+  }
+
+  .kore-lp-two-column-with-lists-scroll .hs-submit input {
+    margin-top: 0 !important; 
+  }
+
+  .kore-lp-two-column-with-lists-scroll .hs-submit input {
+    width: 100%; 
+  }
+
+  .kore-lp-two-column-with-lists-scroll .hs-email {
+    padding-right: 0; 
+  }
+
+}

@@ -1,0 +1,73 @@
+[ {
+  "id" : "b2d7fdea-e87c-3d7d-81c9-6f4362e2fc6c",
+  "name" : "menu_text",
+  "label" : "Menu Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Sub-topics"
+}, {
+  "id" : "bb818b22-512f-692e-1a04-24db6cd18a39",
+  "name" : "menu",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "c6e15f38-ab6b-d787-c873-9bb767852723",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Introduction"
+  }, {
+    "id" : "b6092fbd-b9e0-ce48-ca95-39a0946bf9ca",
+    "name" : "target",
+    "label" : "Target",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "intro"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "text" : "Introduction",
+    "target" : "intro"
+  }, {
+    "text" : "Introduction",
+    "target" : "intro"
+  }, {
+    "text" : "Introduction",
+    "target" : "intro"
+  }, {
+    "text" : "Introduction",
+    "target" : "intro"
+  } ]
+}, {
+  "id" : "d4557ff3-bc8a-ec16-e4a0-3357b46b140a",
+  "name" : "section_show_hide",
+  "label" : "Section Show/Hide",
+  "help_text" : "Disable this option to hide this section on the page.",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+} ]

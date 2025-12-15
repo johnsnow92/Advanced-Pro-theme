@@ -1,0 +1,162 @@
+[ {
+  "id" : "cb6c2cfc-c94a-ce15-a1f5-4925c107aec8",
+  "name" : "top_text",
+  "label" : "Top Text",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "a46b6885-c9a9-617e-223a-12c9b06ceca0",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h2>Insert your call-to-action here</h2>\n<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span></p>"
+}, {
+  "id" : "df650ede-1111-e3e7-c27d-d37d7d9de116",
+  "name" : "options",
+  "label" : "Options",
+  "required" : false,
+  "locked" : true,
+  "display" : "select",
+  "choices" : [ [ "1", "Button" ], [ "2", "Form" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "1"
+}, {
+  "id" : "246e529b-e741-abb5-e799-474e52dc2155",
+  "name" : "form",
+  "label" : "Form",
+  "required" : false,
+  "locked" : true,
+  "visibility" : {
+    "controlling_field" : "df650ede-1111-e3e7-c27d-d37d7d9de116",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "2",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "9127b23a-42f5-2c51-411b-4a20aef5de40",
+    "name" : "form",
+    "label" : "Form",
+    "required" : false,
+    "locked" : true,
+    "type" : "form",
+    "display_width" : null,
+    "default" : {
+      "form_id" : "e9d72dc5-fae1-46fe-b604-f5c9d42da045",
+      "response_type" : "inline",
+      "message" : "Thank you for submitting the form.",
+      "gotowebinar_webinar_key" : null,
+      "form_type" : "HUBSPOT"
+    }
+  }, {
+    "id" : "c7fa5d62-a4b6-57b8-daaf-4b0b023c44d3",
+    "name" : "bottom_text",
+    "label" : "Bottom Text",
+    "required" : false,
+    "locked" : true,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "By entering your email you expressly consent to receive our newsletter every week and other material related to us."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "form" : {
+      "form_id" : "e9d72dc5-fae1-46fe-b604-f5c9d42da045",
+      "response_type" : "inline",
+      "message" : "Thank you for submitting the form.",
+      "gotowebinar_webinar_key" : null,
+      "form_type" : "HUBSPOT"
+    },
+    "bottom_text" : "By entering your email you expressly consent to receive our newsletter every week and other material related to us."
+  }
+}, {
+  "id" : "67b51678-1c0b-f47d-a50d-01c8510d86a7",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : true,
+  "visibility" : {
+    "controlling_field" : "df650ede-1111-e3e7-c27d-d37d7d9de116",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "1",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "98cb1746-6b61-f539-063a-5f9012476a9a",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Button Text"
+  }, {
+    "id" : "7ef42d81-9940-1ee6-a2db-e32009dbc071",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "Button Text",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }
+}, {
+  "id" : "46f81f6d-2255-936d-18de-94f0d72930bb",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/ContractSafe%20July%202017%20Folder/Images/hero-banner.jpg",
+    "alt" : "hero-banner",
+    "loading" : "lazy",
+    "width" : 1280,
+    "height" : 720,
+    "max_width" : 1280,
+    "max_height" : 720
+  }
+} ]

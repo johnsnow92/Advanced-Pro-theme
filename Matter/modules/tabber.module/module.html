@@ -1,0 +1,324 @@
+{% import "../../macros/_macros.html" as macros %}  
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="tabber {{name}} dnd_padd {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} {% if item.include_form and item.select_form.form_id %}form_add{% endif %} {% if module.module_settings.first_item_open %}first_item_open{% endif %} {{ module.module_settings.select_layout_type }}_lay_type {{ module.module_settings.tab_alignment }}_tab_al {{ module.module_settings.select_media_alignment }}_media_al">
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+    {{ macros.topContent(module.top_content, module.module_settings) }}
+
+    <div class="flex_row {{ module.module_settings.select_layout_type }} {{ module.module_settings.select_media_alignment }}">
+      <div class="media-col {% if module.module_settings.select_layout_type == "full_column" %}col12{% else %}col6{% endif %}">   
+        {% for item in module.tabber_items %}        
+        <div class="tab-content {% if item.make_default_active %}active{% endif %} {% if module.module_settings.first_item_open %}{% if loop.first  %}active{% endif %}{% endif %}  media_ty_{{ item.media_group.select_icon_type }}"
+             id="tab{{loop.index}}">
+
+          {% if module.module_settings.select_layout_type == "full_column" %}
+          <div class="flex_row {% if not item.bottom_content  and item.button_group|length == 0  and item.include_form == false %}full_width_force{% endif %}">     
+            {% endif %}
+
+            <div class="media_wrapper num{{loop.index}} {% if module.module_settings.select_layout_type == "full_column" %}col6{% endif %}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.tab_content_animation }}" data-aos-delay="100"{% endif %}>
+              {% if item.media_group.select_media_type == "image" %}
+              <div class="img-wrap ">
+                {% if item.media_group.image_field.src %}
+                {% set sizeAttrs = 'width="{{ item.media_group.image_field.width }}" height="{{ item.media_group.image_field.height }}"' %}
+                {% if item.media_group.image_field.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.media_group.image_field.width }}" height="{{ item.media_group.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.media_group.image_field.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.media_group.image_field.max_width }}" height="{{ item.media_group.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.media_group.image_field.loading != 'disabled' ? 'loading="{{ item.media_group.image_field.loading }}"' : '' %}
+                <img src="{{ item.media_group.image_field.src }}" alt="{{ item.media_group.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                {% endif %}
+              </div>          
+              {% endif %}
+
+              {% if item.media_group.select_media_type == "video" %}
+              <div class="video-wrap vid_{{loop.index}}">
+                {% if item.media_group.select_video_type == "normal_video" %}
+                {% if item.media_group.video_src %}
+                <div class="video_box cm_vb">
+                  <div class="inner_spacer" style="height:{{ item.media_group.video_size_options.height }}px; {% if item.media_group.video_size_options.full_width %}width:100%; {% else %}width:{{ item.media_group.video_size_options.width }}px;{% endif %}">
+                    
+                    {% if item.media_group.select_icon_type or item.media_group.poster_image.src %}
+                    <div class="vid_trigger video_trigger">
+                      <div class="overlay bg_el"></div>
+                      {% if item.media_group.poster_image.src %}
+                      <div class="poster_image" style="background-image: url({{ item.media_group.poster_image.src }})"></div>
+                      {% endif %}
+                      <div class="vid_icn {{item.media_group.select_icon_color}}">
+                        {% if item.media_group.select_icon_type =='icon' %}
+                          {% icon
+                            name="{{ item.media_group.icon_field.name }}"
+                            style="{{ item.media_group.icon_field.type }}"
+                            unicode="{{ item.media_group.icon_field.unicode }}"
+                            icon_set="{{ item.media_group.icon_field.icon_set }}"
+                          %}                    
+                        {% else %}
+                          {% if item.media_group.icon_image.src %}
+                          <img src="{{ item.media_group.icon_image.src }}" alt="{{ item.media_group.icon_image.alt }}">
+                          {% endif %}
+                        {% endif %}
+                      </div>
+                    </div>
+                    {% endif %}
+                    <video src="{{ item.media_group.video_src }}" controls style="height:{{ item.media_group.video_size_options.height }}px; {% if item.media_group.video_size_options.full_width %}width:100%; {% else %}width:{{ item.media_group.video_size_options.width }}px;{% endif %}"></video>
+                  </div>
+                </div>
+                {% endif %}
+                {% endif %}
+                {% if item.media_group.select_video_type == "external_video" %}
+                {% if item.media_group.external_video_url%}
+                <div class="iframe_box cm_vb">
+                  <div class="inner_spacer" style="height:{{ item.media_group.video_size_options.height }}px; {% if item.media_group.video_size_options.full_width %}width:100%; {% else %}width:{{ item.media_group.video_size_options.width }}px;{% endif %}">
+                    {% if item.media_group.select_icon_type or item.media_group.poster_image.src %}
+                    <div class="vid_trigger video_trigger">
+                      <div class="overlay bg_el"></div>
+                      {% if item.media_group.poster_image.src %}
+                      <div class="poster_image" style="background-image: url({{ item.media_group.poster_image.src }})"></div>
+                      {% endif %}
+                      <div class="vid_icn {{item.media_group.select_icon_color}}">
+                        {% if item.media_group.select_icon_type =='icon' %}
+                          {% icon
+                            name="{{ item.media_group.icon_field.name }}"
+                            style="{{ item.media_group.icon_field.type }}"
+                            unicode="{{ item.media_group.icon_field.unicode }}"
+                            icon_set="{{ item.media_group.icon_field.icon_set }}"
+                          %}                    
+                        {% else %}
+                          {% if item.media_group.icon_image.src %}
+                          <img src="{{ item.media_group.icon_image.src }}" alt="{{ item.media_group.icon_image.alt }}">
+                          {% endif %}
+                        {% endif %}
+                      </div>
+                    </div>
+                    {% endif %}
+                    {% if item.media_group.external_video_url is string_containing "youtube.com" %}
+                    <iframe src="{% if item.media_group.poster_image.src or item.media_group.select_icon_type %}{% else %}{{ item.media_group.external_video_url }}{% endif %}" data-src="{% if item.media_group.poster_image.src or item.media_group.select_icon_type %}{{ item.media_group.external_video_url|split('?')|first }}?autoplay=1&loop=1&mute=1&showinfo=0&controls=1&playlist={{ item.media_group.external_video_url|split('?')|first|split('/')|last }}{% else %}{{ item.media_group.external_video_url }}{% endif %}" frameborder="0" allowFullScreen class="iframe_video {% if item.media_group.poster_image.src or item.media_group.select_icon_type %}{% else %} no_trigger_iframe{% endif %}" style="height:{{ item.media_group.video_size_options.height }}px; {% if item.media_group.video_size_options.full_width %}width:100%; {% else %}width:{{ item.media_group.video_size_options.width }}px;{% endif %}"></iframe>
+                    {% else %}
+                    <iframe src="{% if item.media_group.poster_image.src or item.media_group.select_icon_type %}{% else %}{{ item.media_group.external_video_url }}{% endif %}" data-src="{% if item.media_group.poster_image.src or item.media_group.select_icon_type %}{{ item.media_group.external_video_url|split('?')|first }}?autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0{% else %}{{ item.media_group.external_video_url }}{% endif %}" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video {% if item.media_group.poster_image.src or item.media_group.select_icon_type %}{% else %} no_trigger_iframe{% endif %}" style="height:{{ item.media_group.video_size_options.height }}px; {% if item.media_group.video_size_options.full_width %}width:100%; {% else %}width:{{ item.media_group.video_size_options.width }}px;{% endif %}"></iframe>
+                    {% endif %}
+                  </div>
+                </div>
+                {% endif %}
+                {% endif %}
+              </div>
+              {% endif %}
+            </div>
+
+
+
+            {% if module.module_settings.select_layout_type == "full_column" %}
+            <div class="full-content-col col6">     
+              {% endif %}
+
+              {% if item.bottom_content %}
+              <div class="rich_cont" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.tab_content_animation }}" data-aos-delay="100"{% endif %}>
+                {{ item.bottom_content }}
+              </div>
+              {% endif %}
+
+              {% if item.button_group %}
+              <div class="cont-btn" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.tab_content_animation }}" data-aos-delay="100"{% endif %}>
+                {{ macros.buttonWithPopupGroup(item.button_group, false ,'parent_index'~loop.index) }}
+              </div>
+               {% endif %}
+
+              {% if item.include_form %}
+              <div class="form-wrap" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.tab_content_animation }}" data-aos-delay="100"{% endif %}>
+                <div class="form-title">
+                  <{{ item.form_title_size }}>
+                  {{ item.form_title }}
+                  </{{ item.form_title_size }}>
+                </div>
+                  {% form
+		form_to_use="{{ item.select_form.form_id }}"
+		response_response_type="{{ item.select_form.response_type }}"
+		response_message="{{ item.select_form.message }}"
+		response_redirect_id="{{ item.select_form.redirect_id }}"
+		response_redirect_url="{{item.select_form.redirect_url}}"
+		gotowebinar_webinar_key="{{ item.select_form.gotowebinar_webinar_key }}"
+	%}
+                  </div>
+                  {% endif %}
+
+                  {% if module.module_settings.select_layout_type == "full_column" %}  
+                </div>
+                {% endif %}
+
+                {% if module.module_settings.select_layout_type == "full_column" %}
+              </div>     
+              {% endif %}
+
+            </div>
+            {% endfor %}
+          </div>
+
+          <div class="content-col  {{ module.module_settings.tab_alignment }} {% if module.module_settings.select_layout_type == "full_column" %}col12{% else %}col6{% endif %}">
+            {% for item in module.tabber_items %}
+            <div class="tab-title-item {% if item.make_default_active %}active{% endif %} {% if module.module_settings.first_item_open %}{% if loop.first  %}active{% endif %}{% endif %}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.tab_animation }}" data-aos-delay="{{loop.index * 100}}"{% endif %}>
+              <a class="tab-trigger" href="#tab{{loop.index}}"></a>
+              <{{ module.style.tab.select_title_tag }} class="tab-title">
+                {{ item.title }}
+                </{{ module.style.tab.select_title_tag }}>
+                {% if module.module_settings.select_layout_type != "full_column" %}
+                <div class="cont">
+              {{ item.content }}
+            </div>
+            {% endif %}
+
+          </div>
+          {% endfor %}
+        </div>
+
+      </div>
+
+      {% if module.button_group %}
+      <div class="btm-btn" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="100"{% endif %}>
+        {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+      </div>
+      {% endif %}
+
+    </div>
+
+
+    {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+
+    {% for item in module.tabber_items %}    
+    {{ macros.buttonWithPopupGroup(item.button_group, true ,'parent_index'~loop.index) }}
+    {% endfor %}
+    
+    {% if module.button_group %}
+    {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+    {% endif %}
+  </div>
+
+  {% require_css %}
+  <style>
+
+    {% for item in module.tabber_items %}  
+    .tabber.{{name}} .media-col .tab-content .media_wrapper.num{{loop.index}} .video_trigger .overlay{
+      background: rgba({{ item.media_group.overlay_color.color|convert_rgb }}, {{ item.media_group.overlay_color.opacity/100 }});
+    }    
+    {% endfor %}
+
+    {% if module.module_settings.select_layout_type == "two_column" %}
+    .tabber.{{name}} .{{ module.style.tab.display_order.order_1 }} {
+      order: 1;
+    }
+    .tabber.{{name}} .{{ module.style.tab.display_order.order_2 }} {
+      order: 2;
+    }
+    .tabber.{{name}} .{{ module.style.tab.display_order.order_3 }} {
+      order: 3;
+    }
+    .tabber.{{name}} .{{ module.style.tab.display_order.order_4 }} {
+      order: 4;
+    }
+    {% endif %}
+
+    .tabber.{{name}} .tab-title-item{
+      {% if module.style.tab.select_background_theme == "bg_primary" %}
+      background-color: rgba({{theme.global_colors.ac_primary_color.color|convert_rgb}},{{theme.global_colors.ac_primary_color.opacity/100 }});
+      {% endif %}
+
+      {% if module.style.tab.select_background_theme == "bg_secondary" %}
+      background-color: rgba({{theme.global_colors.ac_secondary_color.color|convert_rgb}},{{theme.global_colors.ac_primary_color.opacity/100 }});
+      {% endif %}
+
+      {% if module.style.tab.select_background_theme == "custom" %}
+      background-color: rgba({{ module.style.tab.background_color.color|convert_rgb }},{{ module.style.tab.background_color.opacity/100 }});
+      {% endif %}
+    }
+
+    .tabber.{{name}} .tab-title-item *{
+      {% if module.style.tab.select_content_theme == "custom" %}
+      color: rgba({{ module.style.tab.color_field.color|convert_rgb }},{{ module.style.tab.color_field.opacity/100 }});
+      {% endif %}
+    }
+
+    .tabber.{{name}} .tab-title-item *{
+      {% if module.style.tab.select_content_theme == "theme" %}
+      color: rgba({{ theme.global_colors.secondary_color.color|convert_rgb }},{{ theme.global_colors.secondary_color.opacity/100 }});
+      {% endif %}
+    }
+    /* active */
+    .tabber.{{name}} .tab-title-item.active,
+    .tabber.{{name}} .tab-title-item:hover{
+      {% if module.style.active_tab.select_background_theme == "bg_primary" %}
+      background-color: rgba({{theme.global_colors.ac_primary_color.color|convert_rgb}},{{theme.global_colors.ac_primary_color.opacity/100 }});
+      {% endif %}
+
+      {% if module.style.active_tab.select_background_theme == "bg_secondary" %}
+      background-color: rgba({{theme.global_colors.ac_secondary_color.color|convert_rgb}},{{theme.global_colors.ac_primary_color.opacity/100 }});
+      {% endif %}
+
+      {% if module.style.active_tab.select_background_theme == "custom" %}
+      background-color: rgba({{ module.style.active_tab.background_color.color|convert_rgb }},{{ module.style.active_tab.background_color.opacity/100 }});
+      {% endif %}
+    }
+
+    .tabber.{{name}} .tab-title-item.active *,
+    .tabber.{{name}} .tab-title-item:hover *{
+      {% if module.style.active_tab.select_content_theme == "custom" %}
+      color: rgba({{ module.style.active_tab.color_field.color|convert_rgb }},{{ module.style.active_tab.color_field.opacity/100 }});
+      {% endif %}
+    }
+
+    .tabber.{{name}} .tab-title-item.active *,
+    .tabber.{{name}} .tab-title-item:hover *{
+      {% if module.style.active_tab.select_content_theme == "theme" %}
+      color: rgba({{ theme.global_colors.secondary_color.color|convert_rgb }},{{ theme.global_colors.secondary_color.opacity/100 }});
+      {% endif %}
+    }
+    {% for item in module.tabber_items %} 
+    {% if item.media_group.select_icon_color == 'custom' %}
+    .{{name}} .vid_{{loop.index}} svg{
+      fill:{{ macros.color(item.media_group.icon_color) }};
+    }
+    {% endif %}
+    {% endfor %}
+
+  </style>
+  {% end_require_css %}
+
+
+
+  {% require_js %}
+  <script>
+
+
+    var tabberwrap = document.querySelectorAll(".tabber.{{name}}");
+
+                                               Array.from(tabberwrap).forEach(function(tabber) {
+      tabber.addEventListener("click", function(e) {
+        if (e.target.classList.contains("tab-trigger")) {
+          e.preventDefault();
+          var tab = e.target;
+          var panels = e.target.parentElement.parentElement.parentElement.querySelectorAll(
+            ".tab-content"
+          );
+          Array.from(tab.parentElement.parentElement.children)
+            .filter(function(tabF) {
+            return tab !== tabF
+          }).forEach(function(tab) {
+            tab.classList.remove("active")
+          });
+          tab.parentElement.classList.add("active");
+          panels.forEach(function(panel) {
+            tab.href.split("#").pop() === panel.getAttribute("id")
+              ? panel.classList.add("active")
+            : panel.classList.remove("active")
+          });
+        }
+      });
+    });
+
+
+  </script>
+
+  {% end_require_js %}
+
+
+

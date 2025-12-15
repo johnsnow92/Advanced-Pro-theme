@@ -1,0 +1,143 @@
+<div class="office-referral-home-banner kore-module">
+
+  <div class="home-banner-slide-wrap">
+    {% for item in module.slide_background_image %}
+    <div class="office-referral-home-banner-absolute" style="background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(0, 0, 0, 0.6))), url({{ item.src }}); background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({{ item.src }});"></div>
+    {% endfor %}
+
+  </div>
+
+
+  {% if module.header_show_hide %}
+  <!-- HTML to show when checked -->
+  <div class="header-flex">
+    <div class="header-col">
+      {% if module.header.logo.src %}
+      <a href="{{ module.header.url.href }}">
+        {% set sizeAttrs = 'width="{{ module.header.logo.width }}" height="{{ module.header.logo.height }}"' %}
+        {% if module.header.logo.size_type == 'auto' %}
+        {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+        {% elif module.header.logo.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.header.logo.max_width }}px; max-height: {{ module.header.logo.max_height }}px"' %}
+        {% endif %}
+        <img src="{{ module.header.logo.src }}" alt="{{ module.header.logo.alt }}" {{ sizeAttrs }}>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="content-wrap">
+
+    <div class="page-width">
+      <div class="text-center">
+        {% if module.tagline.text %}
+        <div class="tagline mb-25 font-size-{{ module.tagline.font_size }} {{ module.tagline.font_weight }}" style="color: {{ module.tagline.font_color.color }};">
+          {{ module.tagline.text }}
+        </div>
+        {% endif %}
+
+        {% if module.heading.text %}
+        {% if module.heading.type == "h1" %} 
+        <div class="heading mb-15">
+          <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h1>
+        </div>
+        {% elif module.heading.type == "h2" %}
+        <div class="heading mb-15">
+          <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h2>
+        </div>
+        {% elif module.heading.type == "h3" %}
+        <div class="heading mb-15">
+          <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h3>
+        </div>
+        {% elif module.heading.type == "h4" %}
+        <div class="heading mb-15">
+          <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h4>
+        </div>
+        {% elif module.heading.type == "h5" %}
+        <div class="heading mb-15">
+          <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h5>
+        </div>
+        {% elif module.heading.type == "h6" %}
+        <div class="heading mb-15">
+          <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h6>
+        </div>
+        {% endif %}
+        {% endif %}
+
+
+        {% if module.subheading.text %}
+        {% if module.subheading.type == "h2" %}
+        <div class="subheading mb-15">
+          <h2 class="font-size-{{ module.subheading.font_size }} {{ module.subheading.font_weight }} line-height-12" style="color: {{ module.subheading.font_color.color }};">
+            {{ module.subheading.text }}
+          </h2>
+        </div>
+        {% elif module.subheading.type == "h3" %}
+        <div class="subheading mb-15">
+          <h3 class="font-size-{{ module.subheading.font_size }} {{ module.subheading.font_weight }} line-height-12" style="color: {{ module.subheading.font_color.color }};">
+            {{ module.subheading.text }}
+          </h3>
+        </div>
+        {% elif module.subheading.type == "h4" %}
+        <div class="subheading mb-15">
+          <h4 class="font-size-{{ module.subheading.font_size }} {{ module.subheading.font_weight }} line-height-12" style="color: {{ module.subheading.font_color.color }};">
+            {{ module.subheading.text }}
+          </h4>
+        </div>
+        {% elif module.subheading.type == "h5" %}
+        <div class="subheading mb-15">
+          <h5 class="font-size-{{ module.subheading.font_size }} {{ module.subheading.font_weight }} line-height-12" style="color: {{ module.subheading.font_color.color }};">
+            {{ module.subheading.text }}
+          </h5>
+        </div>
+        {% elif module.subheading.type == "h6" %}
+        <div class="subheading mb-15">
+          <h6 class="font-size-{{ module.subheading.font_size }} {{ module.subheading.font_weight }} line-height-12" style="color: {{ module.subheading.font_color.color }};">
+            {{ module.subheading.text }}
+          </h6>
+        </div>
+        {% endif %}
+        {% endif %}
+
+
+        {% if module.content %}
+        <div class="content parent font-size-16" id="cta">
+          {{ module.content }}
+        </div>
+        {% endif %}
+      </div>
+
+      <div class="search-bar-wrapper">
+        <form action="/office-map" id="locationField" class="w-form question">
+          <input name="city" type="text" class="search-input w-input" maxlength="256" placeholder="Where do you need an office?" id="autocomplete" required="">
+          <div class="question address-block">
+            <input name="street_number" class="field" id="street_number" >
+            <input name="premise" class="field" id="premise">
+            <input name="route" class="field" id="route">
+            <input name="locality" class="field" id="locality">
+            <input name="postal_town" class="field" id="postal_town">
+            <input name="postal_code" class="field" id="postal_code">
+            <input name="country" class="field" id="country">
+          </div>
+          <input type="submit" value="Find an Office" class="search-btn w-button">
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

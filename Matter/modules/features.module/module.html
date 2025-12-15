@@ -1,0 +1,244 @@
+{% import "../../macros/_macros.html" as macros %}
+
+<div class="feat-wrap dnd_padd {{ module.module_settings.number_of_columns }}_row {{name}} {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} {% if module.module_settings.enable_slider %} per_view{{ slider_settings.slides_per_view }} {% if slider_settings.autoplay %}autoplay_true{% endif %} {% if slider_settings.dots %}dots_true{% endif %} {% if slider_settings.arrows %}arrows_trw{% endif %} {% if slider_settings.loop %}loop_true{% endif %}{% endif %}" 
+     {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+    <div class="inner">
+      <div class="upper-content">
+        {{ macros.topContent(module.top_content, module.module_settings) }}
+      </div>
+      {% if module.module_settings.enable_slider %}
+      <div class="glide">
+        <div class="glide__track " data-glide-el="track">
+          {% endif %}
+          <div class="feat-item-wrp flex_row {% if module.module_settings.enable_slider %}glide__slides{% endif %} {{ module.style.card.icon_position }} {{ module.style.card.content_alignment }} {{ module.style.card.icon_size }}_icon {% if module.style.card.include_hover_effect_on_cards %}shadowadd{% endif %} {% if module.module_settings.enable_masonry and not module.module_settings.enable_slider %}masonadd{% endif %}">
+            {% for item in module.feature_items %}
+            <div class="featitem {{ module.module_settings.number_of_columns }} num{{loop.index}} {{ item.select_icon_type }}_ic_type" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 100}}" {% endif %}>
+              <div class="outer_wrap {% if module.style.card.select_background_theme != "custom" %}{{ module.style.card.select_background_theme }}{% endif %}">
+                {% if item.select_icon_type %}
+                <div class="left-media">
+
+                  {% if item.include_link_at_icon %}
+                  {% set href = item.link_at_icon.url.href %}
+                  {% if item.link_at_icon.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                  {% endif %}
+                  {% endif %}
+
+                  {% if item.select_icon_type == "image" %}
+                  {% if item.image_field.src %}
+                  <div class="img-wrap">
+                    {% if item.include_link_at_icon %}
+                    {% if href %}
+                    <a href="{{ href }}" class="bg_el"
+                       {% if item.link_at_icon.open_in_new_tab %}target="_blank"{% endif %}
+                       {% if item.link_at_icon.rel %}rel="{{ item.link_at_icon.rel }}"{% endif %}>
+                    </a>{% endif %}{% endif %}
+                    {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+                    <img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} >
+                  </div>
+                  {% endif %}
+
+                  {% elif item.select_icon_type == "icon" %}
+                  {% if item.icon_field.name %}
+                  <div class="icon-wrap {% if item.icon_color != "custom" %}{{ item.icon_color }}{% endif %}">
+                    {% if item.include_link_at_icon %}
+                    {% if href %}
+                    <a href="{{ href }}" class="bg_el"
+                       {% if item.link_at_icon.open_in_new_tab %}target="_blank"{% endif %}
+                       {% if item.link_at_icon.rel %}rel="{{ item.link_at_icon.rel }}"{% endif %}>
+                    </a>{% endif %}{% endif %}
+                    {% icon
+                      name="{{ item.icon_field.name }}"
+                      style="{{ item.icon_field.type }}"
+                      unicode="{{ item.icon_field.unicode }}"
+                      icon_set="{{ item.icon_field.icon_set }}"
+                    %}
+                  </div>
+                  {% endif %}
+                  {% endif %}
+                </div>
+                {% endif %}
+
+                <div class="right-content {% if not item.select_icon_type %}fullcontent{% endif %}">
+                  {{ item.description }}
+                  <div class="btn-wrap">
+                    {{ macros.buttonWithPopupGroup(item.button_group, false,'parent_index'~loop.index) }}
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            {% endfor %}
+          </div>
+
+          {% if module.module_settings.enable_slider %}
+        </div>
+        {% if module.module_settings.enable_slider %}
+        {{ macros.sliderControls(module.module_settings.slider_options , module.feature_items, module.module_settings.enable_animation) }}
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if module.button_group %}
+      <div class="btn-wrap" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+        {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+
+  {% for item in module.feature_items %}
+  {% if item.button_group %}
+  {{ macros.buttonWithPopupGroup(item.button_group, true,'parent_index'~loop.index) }}
+  {% endif %}
+  {% endfor %}
+
+
+  {% if module.button_group %}
+  {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+  {% endif %}
+</div>
+
+
+
+{% require_css %}
+<style>
+  {% for item in module.feature_items %}
+  {% if item.icon_color == "custom" %}
+  .feat-wrap.{{name}} .feat-item-wrp .num{{loop.index}} .left-media svg{
+    fill: rgba({{ item.color_field.color|convert_rgb }},{{ item.color_field.opacity/100 }})
+  } 
+  {% endif %}
+
+  {% if module.style.card.select_background_theme == "custom" %}
+  .{{name}} .feat-item-wrp .featitem.num{{loop.index}} .outer_wrap{
+    background-color: rgba({{ module.style.card.background_color.color|convert_rgb }},{{ module.style.card.background_color.opacity/100 }});
+  }
+  {% endif %}
+
+  {% if module.style.card.select_background_theme %}
+  .{{name}} .feat-item-wrp .featitem.num{{loop.index}} .outer_wrap{
+    padding: 15px 10px;
+    border-radius: 4px;
+  }
+  {% endif %}
+
+  {% if module.style.card.select_font_color_theme == "custom" %}
+  .{{name}} .feat-item-wrp .featitem.num{{loop.index}} .right-content > *{
+    color: rgba({{ module.style.card.color_field_1.color|convert_rgb }},{{ module.style.card.color_field_1.opacity/100 }})
+  }
+  {% endif %}
+
+  {% endfor %}
+
+
+  {% if module.style.card.spacing.spacing %}
+  .{{name}}.feat-wrap .feat-item-wrp .featitem .outer_wrap {
+    {{ module.style.card.spacing.spacing.css }}
+  }
+  {% endif %}
+
+
+  {% if module.style.card.spacing.change_mobile_spacing %}
+  @media(max-width:767px){
+    .{{name}}.feat-wrap .feat-item-wrp .featitem .outer_wrap {
+      {{ module.style.card.spacing.mobile_spacing.css }}
+    }
+  }
+  {% endif %}
+
+</style>
+{% end_require_css %}
+
+{% require_js %}
+<script>
+
+  {# slider options #}
+  {% if module.module_settings.enable_slider %}
+  {% if module.module_settings.slider_options.slides_per_view > 3 %}
+  {% set tabslides = 3 %}
+  {% else %}
+  {% set tabslides = module.module_settings.slider_options.slides_per_view %}
+  {% endif %}
+
+  {% if module.module_settings.slider_options.slides_per_view > 2%}
+  {% set slides768 = 2 %}
+  {% else %}
+  {% set slides768 = module.module_settings.slider_options.slides_per_view %}
+  {% endif %}
+
+  {% set gtename = name|replace("-","_")%}
+
+  var config_{{gtename}} = {
+    {% if module.module_settings.slider_options.loop %}
+    type:'carousel',
+    {% endif %}
+    {% if not module.module_settings.slider_options.loop %}
+    rewind: false,
+    {% endif %}
+    {% if  module.module_settings.slider_options.slides_per_view %}
+    perView:{{ module.module_settings.slider_options.slides_per_view }},
+    {% endif %}
+    perTouch: 1,
+    gap:0,
+    {% if module.module_settings.slider_options.autoplay %}
+    autoplay: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
+    {% endif %}
+    breakpoints: {
+    992: {
+    perView: {{tabslides}}
+  },
+      768: {
+        perView: {{slides768}}
+      },
+        600: {
+          perView: 1
+        }
+      }
+  }
+  var glide = new Glide(".{{name}}.feat-wrap .glide",config_{{gtename}})
+  glide.mount()
+
+  {% endif %}
+
+
+
+  {% if module.module_settings.enable_masonry and not module.module_settings.enable_slider %}
+  var iso = new Isotope( '.feat-wrap.{{name}} .feat-item-wrp', {
+                        itemSelector: '.featitem',
+                        //                         layoutMode: 'fitRows'
+                        });
+  document.addEventListener('DOMContentLoaded', function () {
+    var iso = new Isotope( '.feat-wrap.{{name}} .feat-item-wrp', {
+                          itemSelector: '.featitem',
+                          //                           layoutMode: 'fitRows'
+                          });
+  })
+  {% endif %}
+
+
+</script>
+{% end_require_js %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,296 @@
+.kore-newsletter {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  overflow: hidden;
+}
+
+.kore-newsletter .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-newsletter .flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.kore-newsletter .col {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-newsletter .col.sidebar { 
+  flex: 0 0 25%;
+}
+
+.kore-newsletter .resources-filter {  
+  margin-bottom: 0px;
+}
+
+.kore-newsletter .resources-filter h4 {
+  margin: 0;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1;
+  color: #FFF;
+}
+
+.kore-newsletter .resources-filter ul li a {
+  display: block;
+  padding: 7px 20px;
+  border-bottom: 1px solid #e6e6e6;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  line-height: 1.6em;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.kore-newsletter .resources-filter ul li a:hover {
+  padding-left: 30px;
+}
+
+.kore-newsletter .resources-header {
+  margin: 0;
+}
+
+.kore-newsletter .resources-header h4 {
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: 1px;
+  line-height: 1.2;
+  color: #fff;
+  padding: 20px;
+}
+
+.kore-newsletter .resources-filter ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #fff;
+}
+
+.kore-newsletter .resources-header a {
+  padding: 14px 10px 13px;
+  float: right;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.kore-newsletter .resources-header a:hover {
+  padding-right: 13px;
+  padding-left: 13px;
+  border-bottom-style: none;
+  border-bottom-color: #000;
+  background-color: #e0232e;
+}
+
+.kore-newsletter .resources-list{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  background-color: #fff;
+} 
+ 
+.kore-newsletter .resources-list .resource-box {
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding: 20px;
+}
+
+.kore-newsletter .resource-box .resource-image {
+  height: 180px;
+  text-align: center;
+  margin-bottom: 15px;  
+}
+
+.kore-newsletter .resource-box .resource-image img {
+  height: 180px;
+  width: auto;
+  object-fit: cover;
+}
+
+.kore-newsletter .resource-box .resource-tags {  
+  margin-top: 10px;
+}
+
+.kore-newsletter .resource-box .resource-tags a {
+  display: inline-block;
+  margin-top: 5px;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: 1px solid #e0232e;
+  border-radius: 30px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 400;
+  line-height: 1em;
+  vertical-align: middle;
+}
+
+.kore-newsletter .resource-box h3 {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #e0232e;
+  font-size: 18px;
+  line-height: 1.3em;  
+}
+
+.kore-newsletter .newsletter .resource-box h3 {
+  margin-top: 0;
+}
+
+.kore-newsletter .resource-box h3 a {
+  font-size: 18px;
+  text-decoration: none;
+  border: none;
+}
+
+.kore-newsletter .resource-box .resource-tags a:hover {
+  background-color: rgba(224, 35, 46, .2);
+}
+
+.kore-newsletter .resource-box p {
+  margin-bottom: 15px;
+  color: #1C3E54;
+  font-size: 14px;
+  line-height: 1.4em;
+}
+
+.kore-newsletter .resource-box a.resource-link {
+  display: block;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #e6e6e6;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: #282827;
+  line-height: 1.6em;  
+  border-top: 1px solid #e6e6e6;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.kore-newsletter .resource-box a.resource-link:hover {
+  border-top-color: #e0232e;  
+  padding-left: 10px;
+  border-bottom-color: #e0232e;
+  color: #e0232e;
+}
+
+.kore-newsletter .resource-box a.resource-link strong {
+  font-size: 14px;  
+}
+
+.kore-newsletter .more-wrapper {
+  margin-top: 20px;
+}
+
+.kore-newsletter .more-wrapper .more-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 12px 30px 13px;
+  border-radius: 0px;
+  background-color: #ffffff;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-size: 16px;
+  line-height: 1.2em;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+}
+
+.kore-newsletter .more-wrapper .more-btn:hover {
+  background-color: #b71116;
+  color: #fff;
+}
+
+.kore-newsletter .more-wrapper .more-btn:not(:last-child) {
+  margin-right: 10px;
+}
+
+.kore-newsletter .more-wrapper .view-all {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 12px 30px 13px;
+  border: 1px solid transparent;
+  border-radius: 0px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.2em;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  
+  .kore-newsletter .col,
+  .kore-newsletter .col.sidebar {
+    flex: 0 0 100%;
+  }
+
+  .kore-newsletter .resource-box .resource-image,
+  .kore-newsletter .resource-box .resource-image img {
+    height: auto;  
+  }
+  
+  .kore-newsletter .resources-list .resource-box {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .kore-newsletter .newsletter .resource-box h3 {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .kore-newsletter .newsletter .resource-box .resource-image{
+    height: auto !important;
+  }
+  
+  .kore-newsletter .resources-filter ul li a {
+    padding-left: 10px;  
+  }
+  
+  .kore-newsletter .resources-header {
+    margin: 30px 0 0 0;
+  }
+  
+  .kore-newsletter .more-wrapper .more-btn,
+  .kore-newsletter .more-wrapper .view-all {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .kore-newsletter .more-wrapper .more-btn:not(:last-child) {
+    margin-right: 0; 
+  } 
+
+}

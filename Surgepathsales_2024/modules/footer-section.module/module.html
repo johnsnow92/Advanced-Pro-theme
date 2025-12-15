@@ -1,0 +1,165 @@
+<footer class="footer-section bg-primary">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="left">
+        <div class="logo">
+          {% if module.logo_image.src %}
+          {% set sizeAttrs = 'width="{{ module.logo_image.width|escape_attr }}" height="{{ module.logo_image.height|escape_attr }}"' %}
+          {% if module.logo_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.logo_image.width|escape_attr }}" height="{{ module.logo_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.logo_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.logo_image.max_width|escape_attr }}" height="{{ module.logo_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.logo_image.loading != 'disabled' ? 'loading="{{ module.logo_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.logo_image.src|escape_url }}" alt="{{ module.logo_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+        <div class="text-content">
+          {{ module.content }}
+        </div>
+        <div class="social-media-main">
+          <span>{{ module.social_media_title }}</span>
+          {% for item in module.social_media %}
+          <div class="social-media-icon">
+            {% set href = item.social_media_link.url.href %}
+            {% if item.social_media_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            <a
+               {% if item.social_media_link.url.type is equalto "CALL_TO_ACTION"  %}
+               href="{{ href }}"
+               {% else %}
+               href="{{ href|escape_url }}"
+               {% endif %}
+               {% if item.social_media_link.open_in_new_tab %}
+               target="_blank"
+               {% endif %}
+               {% if item.social_media_link.rel %}
+               rel="{{ item.social_media_link.rel|escape_attr }}"
+               {% endif %}
+               >
+              {% if item.social_media_image.src %}
+              {% set sizeAttrs = 'width="{{ item.social_media_image.width|escape_attr }}" height="{{ item.social_media_image.height|escape_attr }}"' %}
+              {% if item.social_media_image.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.social_media_image.width|escape_attr }}" height="{{ item.social_media_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.social_media_image.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.social_media_image.max_width|escape_attr }}" height="{{ item.social_media_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.social_media_image.loading != 'disabled' ? 'loading="{{ item.social_media_image.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.social_media_image.src|escape_url }}" alt="{{ item.social_media_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="middle">
+        {% for item in module.footer_main_links_group %}
+        <div class="main-links">
+          <h3>{{ item.links_title }}</h3>
+          <div class="main-link-items">
+            {% for item2 in item.link_items %}
+            <div class="link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="9" height="15" viewBox="0 0 9 15" fill="none">
+                <path d="M9 7.5L1.71417 9.53674e-07L0 1.76456L5.57651 7.50499L0 13.2454L1.71417 15L9 7.5Z" fill="white"/>
+              </svg>
+              {% set href = item2.footer_list_item_link.url.href %}
+              {% if item2.footer_list_item_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a
+                 {% if item2.footer_list_item_link.url.type is equalto "CALL_TO_ACTION"  %}
+                 href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                 {% else %}
+                 href="{{ href|escape_url }}"
+                 {% endif %}
+                 {% if item2.footer_list_item_link.open_in_new_tab %}
+                 target="_blank"
+                 {% endif %}
+                 {% if item2.footer_list_item_link.rel %}
+                 rel="{{ item2.footer_list_item_link.rel|escape_attr }}"
+                 {% endif %}
+                 >
+                {{ item2.footer_list_item_text }}
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+
+      <div class="right">
+        <h3>{{ module.footer_right_title }}</h3>
+        <div class="content">{{ module.footer_right_content }}</div>
+        <div class="form">
+          {% form
+            form_to_use="{{ module.form_field.form_id }}"
+            response_response_type="{{ module.form_field.response_type }}"
+            response_message="{{ module.form_field.message }}"
+            response_redirect_id="{{ module.form_field.redirect_id }}"
+            response_redirect_url="{{module.form_field.redirect_url}}"
+            gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+          %}
+          <span class="form-input-icon"></span>
+        </div>
+        <div class="contact-details">
+          {% for item in module.contact_details %}
+          <div class="main-contact">
+            <span class="icon">
+              {% if item.contact_icon.src %}
+              {% set sizeAttrs = 'width="{{ item.contact_icon.width|escape_attr }}" height="{{ item.contact_icon.height|escape_attr }}"' %}
+              {% if item.contact_icon.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.contact_icon.width|escape_attr }}" height="{{ item.contact_icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.contact_icon.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.contact_icon.max_width|escape_attr }}" height="{{ item.contact_icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.contact_icon.loading != 'disabled' ? 'loading="{{ item.contact_icon.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.contact_icon.src|escape_url }}" alt="{{ item.contact_icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+            </span>
+            <span class="contact-text">
+              <a href="tel:+1 (586) 474-4528">
+                {% set href = item.contact_link.url.href %}
+                {% if item.contact_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% endif %}
+                <a
+                   {% if item.contact_link.url.type is equalto "CALL_TO_ACTION"  %}
+                   href="{{ href }}"
+                   {% else %}
+                   href="{{ href|escape_url }}"
+                   {% endif %}
+                   {% if item.contact_link.open_in_new_tab %}
+                   target="_blank"
+                   {% endif %}
+                   {% if item.contact_link.rel %}
+                   rel="{{ item.contact_link.rel|escape_attr }}"
+                   {% endif %}
+                   >
+                  {{ item.contact_text }}
+                </a>
+              </a>
+            </span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+
+    <div class="footer2">
+      <div class="copyright">
+        <a href="#">
+          {{ module.cpyright_text }}
+        </a>
+      </div>
+      <div class="designby">
+
+        <a href="https://www.krishangtechnolab.com/" target="_blank">{{ module.design_by_text }}{{ module.link_text }}</a>
+      </div>
+    </div>
+  </div>
+</footer>

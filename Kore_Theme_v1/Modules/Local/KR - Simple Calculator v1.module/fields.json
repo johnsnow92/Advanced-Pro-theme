@@ -1,0 +1,372 @@
+[ {
+  "id" : "17964127-d213-81c8-0bc1-621e53e12f09",
+  "name" : "styles",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "3e576297-02cc-8ca4-b4fc-e02ba6c4f4da",
+    "name" : "show_hide_section",
+    "label" : "Show/Hide: Section",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "cbb5711f-8524-9032-59ae-81942fd4df92",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "76e5dc83-b89d-4ac2-440d-080eba8719d1",
+    "name" : "section_padding_desktop",
+    "label" : "Section Padding: Desktop",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "aac20b9c-6386-5e34-8823-5f1ee162465c",
+      "name" : "padding_top",
+      "label" : "Padding Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    }, {
+      "id" : "3874b134-aadb-8981-5049-0d5dc6e1b626",
+      "name" : "padding_bottom",
+      "label" : "Padding Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 80
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "padding_top" : 60,
+      "padding_bottom" : 80
+    }
+  }, {
+    "id" : "7f06f920-b5ee-647f-8acb-adbafbab97f8",
+    "name" : "section_padding_tablet",
+    "label" : "Section Padding: Tablet",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "6d1c1572-a6bf-da20-4199-24a98f1b02d7",
+      "name" : "padding_top",
+      "label" : "Padding Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    }, {
+      "id" : "aa2f0df6-5f3e-a182-2d05-e17da8462939",
+      "name" : "padding_bottom",
+      "label" : "Padding Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 80
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "padding_top" : 60,
+      "padding_bottom" : 80
+    }
+  }, {
+    "id" : "d6559e9c-4988-ff3f-4940-f7e4f04461c9",
+    "name" : "section_padding_mobile",
+    "label" : "Section Padding: Mobile",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "7449d144-b997-7730-9335-bd9b8fadcae9",
+      "name" : "padding_top",
+      "label" : "Padding Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    }, {
+      "id" : "cf76e3e8-7dc5-7e1f-a4a3-99a7858c2e58",
+      "name" : "padding_bottom",
+      "label" : "Padding Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "padding_top" : 40,
+      "padding_bottom" : 40
+    }
+  }, {
+    "id" : "e317390a-150f-ceee-be74-0bb9bcfd2942",
+    "name" : "text_alignment",
+    "label" : "Text Alignment",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "center", "Center" ], [ "left", "Left" ], [ "right", "Right" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "center"
+  }, {
+    "id" : "74e3e109-8e00-18bf-de9e-57645e7e6e18",
+    "name" : "content_color",
+    "label" : "Content Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "show_hide_section" : true,
+    "background_color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    },
+    "section_padding_desktop" : {
+      "padding_top" : 60,
+      "padding_bottom" : 80
+    },
+    "section_padding_tablet" : {
+      "padding_top" : 60,
+      "padding_bottom" : 80
+    },
+    "section_padding_mobile" : {
+      "padding_top" : 40,
+      "padding_bottom" : 40
+    },
+    "text_alignment" : "center",
+    "content_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "fdac575d-3fff-c06e-2de9-df8c12a603d3",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h2>Heading text goes here . . .</h2>\n<p style=\"font-size: 20px;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dapibus bibendum purus, sit amet interdum dolor.</p>"
+}, {
+  "id" : "408e0fea-e9f6-f57d-52f1-addd9f4286a3",
+  "name" : "calculator",
+  "label" : "Calculator",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "43c40269-7f8e-4200-76a9-38588a81285a",
+    "name" : "average_daily_cost_of_empty_seat_text",
+    "label" : "Average Daily Cost of Empty Seat Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Average Daily Cost of Empty Seat"
+  }, {
+    "id" : "f3f3e771-63ed-cdbd-a7a4-c924743052a5",
+    "name" : "average_daily_cost_of_empty_seat_value",
+    "label" : "Average Daily Cost of Empty Seat Value",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 1000
+  }, {
+    "id" : "cdf7a3bf-f97b-9298-c49f-298a6b6552b0",
+    "name" : "number_of_empty_seats_text",
+    "label" : "Number of Empty Seats Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Number of Empty Seats"
+  }, {
+    "id" : "c4a69faa-48e5-3fff-5574-5cce3284cce2",
+    "name" : "number_of_empty_seats_value",
+    "label" : "Number of Empty Seats Value",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 5
+  }, {
+    "id" : "79200df4-9baf-9d10-9b8e-0186a8e2c6dd",
+    "name" : "industry_average_time_to_hire_days_",
+    "label" : "Industry Average Time to Hire(days)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Industry Average Time to Hire(days)"
+  }, {
+    "id" : "805d51f8-7907-aa23-3645-063c7bc9939b",
+    "name" : "industry_average_time_to_hire_days_value",
+    "label" : "Industry Average Time to Hire(days) Value",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 30
+  }, {
+    "id" : "e22372b3-a81d-6013-c2fd-0388d80e5dce",
+    "name" : "your_average_time_to_hire_text",
+    "label" : "Your Average Time to Hire Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Your Average Time to Hire"
+  }, {
+    "id" : "62ddea76-6f7b-ce8f-bf72-3d8476cd2459",
+    "name" : "your_average_time_to_hire_value",
+    "label" : "Your Average Time to Hire Value",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 20
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "average_daily_cost_of_empty_seat_text" : "Average Daily Cost of Empty Seat",
+    "average_daily_cost_of_empty_seat_value" : 1000,
+    "number_of_empty_seats_text" : "Number of Empty Seats",
+    "number_of_empty_seats_value" : 5,
+    "industry_average_time_to_hire_days_" : "Industry Average Time to Hire(days)",
+    "industry_average_time_to_hire_days_value" : 30,
+    "your_average_time_to_hire_text" : "Your Average Time to Hire",
+    "your_average_time_to_hire_value" : 20
+  }
+}, {
+  "id" : "11833c19-d69a-d017-f542-cb19fdcb8663",
+  "name" : "results_block",
+  "label" : "Results Block",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "8c0bb5ca-41c5-b805-a73e-34d63103b8b6",
+    "name" : "total_daily_cost_of_empty_seats_text",
+    "label" : "Total Daily Cost of Empty Seats Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Total daily cost of empty seats"
+  }, {
+    "id" : "9ab48980-5626-80b5-1d7f-f2bacd382ed3",
+    "name" : "total_potential_cost_of_empty_seats",
+    "label" : "Total Potential Cost of Empty Seats",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Total Potential Cost of Empty Seats"
+  }, {
+    "id" : "2be14792-ea82-ba91-9f27-8086eec337fb",
+    "name" : "extra_text",
+    "label" : "Extra Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "With <strong>DriverReach</strong> (25% time reduction)"
+  }, {
+    "id" : "a9d38540-af7a-fc02-68f4-a1cf6911c5ff",
+    "name" : "potential_lost_revenue_savings_text",
+    "label" : "Potential Lost Revenue Savings Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Potential lost revenue savings"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "total_daily_cost_of_empty_seats_text" : "Total daily cost of empty seats",
+    "total_potential_cost_of_empty_seats" : "Total Potential Cost of Empty Seats",
+    "extra_text" : "With <strong>DriverReach</strong> (25% time reduction)",
+    "potential_lost_revenue_savings_text" : "Potential lost revenue savings"
+  }
+} ]

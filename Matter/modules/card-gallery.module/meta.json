@@ -1,0 +1,27 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 96592964221,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/plugins/glide.css",
+    "name" : "glide.css"
+  } ],
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/plugins/glide.js",
+    "name" : "glide.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../js/plugins/isotop.js",
+    "name" : "isotop.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../js/plugins/parallax.js",
+    "name" : "parallax.js"
+  } ],
+  "label" : "Card Gallery",
+  "icon" : "fontawesome-5.14.0:Images",
+  "is_available_for_new_content" : true
+}

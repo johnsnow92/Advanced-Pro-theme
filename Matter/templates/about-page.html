@@ -1,0 +1,1386 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: About Page
+screenshotPath: ../images/template-previews/about-page.jpg
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main id="main-content" class="body-container-wrapper about-page">
+  {% dnd_area 'header_area', label='Header Section', class="top-dnd-area" %}
+  {% dnd_section
+    padding={
+      "default" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      }
+    },
+    full_width=true
+  %}
+  {% dnd_column
+      offset=0,
+      width=12
+    %}
+  {% dnd_row %}
+  {% dnd_module
+          path="../modules/banner",
+          offset=0,
+          width=12,
+          background_options={
+            "background_image" : {
+              "alt" : "Union",
+              "height" : 976,
+              "max_height" : 976,
+              "max_width" : 2160,
+              "src" : get_asset_url('../images/about_banner.jpg'),
+              "width" : 2160
+            },
+            "overlay_color" : {
+              "color" : "#026780",
+              "opacity" : 50
+            },
+            "select_background_type" : "image"
+          },
+               
+          include_breadcrumb=true,
+          module_settings={
+            "animation_type" : "fade-up"
+          },
+          style={
+            "container" : {
+              "select_size" : "theme_center"
+            }
+          }
+        %}
+  {% module_attribute "banner_content" %}
+  <h1>About Us</h1>
+  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+
+  {% dnd_area 'main_area', label='Main Section' , class="main-dnd-area" %}
+
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/two-column-content",
+        offset=0,
+        width=12,
+        left_column={
+          "button_group" : [ ],
+          "content" : "<h2>Ahmet minim mallet non Deseronto ullamco est sit.</h2><h5>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</h5><ul><li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li><li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li></ul>",
+          "include_features" : false
+        },
+        right_column={
+          "image_content" : {
+            "image_field" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "image_flow" : "vertical",
+            "image_items" : [ {
+              "image" : {
+                "alt" : "Our Team",
+                "height" : 2880,
+                "loading" : "lazy",
+                "max_height" : 2880,
+                "max_width" : 1920,
+                "size_type" : "auto",
+                "src" : get_asset_url('../images/our__team_2.jpg'),
+                "width" : 1920
+              },
+              "image_item" : {
+                "loading" : "lazy",
+                "size_type" : "auto",
+                "src" : ""
+              }
+            }, {
+              "image" : {
+                "alt" : "Our Team",
+                "height" : 248,
+                "loading" : "lazy",
+                "max_height" : 248,
+                "max_width" : 265,
+                "size_type" : "auto",
+                "src" : get_asset_url('../images/our__team_1.jpg'),
+                "width" : 265
+              }
+            } ],
+            "images_height" : 400,
+            "multiple_content_items" : [ {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-button",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<h5>Lorem Ipsum is simply dummy text of the Printing.</h5><p>It is a long established fact that a reader will be distracted.</p>",
+              "content_type" : "cont_img",
+              "image" : {
+                "loading" : "lazy",
+                "size_type" : "auto",
+                "src" : ""
+              }
+            } ],
+            "number_of_image" : "double"
+          },
+          "select_media_type" : "image",
+          "video_content" : {
+            "include_popup" : false,
+            "poster_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "video_type" : "file"
+          }
+        },
+        module_settings={
+          "content_alignment" : "left",
+          "content_vertical_alignment" : "flex_center"
+        },
+        style={
+          "background" : {
+            "select_background_theme" : "",
+            "select_background_type" : ""
+          },
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "left" : { },
+                "right" : { },
+                "top" : { }
+              }
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/card-gallery",
+        offset=0,
+        width=12,
+        top_content={
+          "title" : "Who We Are"
+        },
+        items_group=[ {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Mission",
+            "height" : 50,
+            "loading" : "lazy",
+            "max_height" : 50,
+            "max_width" : 50,
+            "size_type" : "auto",
+            "src" :  get_asset_url('../images/mission.svg') ,
+            "width" : 50
+          },
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : {
+            "name" : "Address Book",
+            "type" : "REGULAR",
+            "unicode" : "f2b9"
+          },
+          "select_icon_type" : "image",
+          "title" : "Our Mission"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "vision",
+            "height" : 50,
+            "loading" : "lazy",
+            "max_height" : 50,
+            "max_width" : 50,
+            "size_type" : "auto",
+            "src" :  get_asset_url('../images/vision_icon.svg') ,
+            "width" : 50
+          },
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Our Vision"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Value",
+            "height" : 50,
+            "loading" : "lazy",
+            "max_height" : 50,
+            "max_width" : 50,
+            "size_type" : "auto",
+            "src" :  get_asset_url('../images/value-svg.svg') ,
+            "width" : 50
+          },
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Our Value"
+        } ]
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% dnd_section
+padding={
+  "default" : {
+    "bottom" : "0px",
+    "top" : "0px"
+  }
+},
+full_width=true
+%}
+  {% dnd_column
+  offset=0,
+  width=12
+%}
+  {% dnd_row %}
+  {% dnd_module
+      path="../modules/counter-section",
+      offset=0,
+      width=12,
+      button_group=[ ],
+      module_settings={
+        "content_alignment" : "text_center",
+        "number_of_columns" : "col3"
+      },
+      top_content={
+        "button_group" : [ ],
+        "content" : "",
+        "title" : ""
+      },
+      counter_items=[ {
+        "content" : "Employees",
+        "icon_color" : {
+          "color" : "#495057",
+          "opacity" : 100
+        },
+        "icon_field" : { },
+        "image_field" : {
+          "alt" : "Employees",
+          "height" : 30,
+          "loading" : "lazy",
+          "max_height" : 30,
+          "max_width" : 30,
+          "size_type" : "auto",
+          "src" : get_asset_url('../images/employee-svg.svg'),
+          "width" : 30
+        },
+        "suffix" : "+",
+        "select_icon_type" : "image",
+        "value" : "400"
+      }, {
+        "content" : "Projects Done",
+        "icon_color" : {
+          "color" : "#495057",
+          "opacity" : 100
+        },
+        "icon_field" : { },
+        "image_field" : {
+          "alt" : "Projects Done",
+          "height" : 30,
+          "loading" : "lazy",
+          "max_height" : 30,
+          "max_width" : 30,
+          "size_type" : "auto",
+           "src" : get_asset_url('../images/project-done-svg.svg'),
+          "width" : 30
+        },
+        "suffix" : "+",
+        "select_icon_type" : "image",
+        "value" : "4500"
+      }, {
+        "content" : "Cups Of Coffee",
+        "icon_color" : {
+          "color" : "#495057",
+          "opacity" : 100
+        },
+        "icon_field" : { },
+        "image_field" : {
+          "alt" : "Cups Of Coffee",
+          "height" : 30,
+          "loading" : "lazy",
+          "max_height" : 30,
+          "max_width" : 30,
+          "size_type" : "auto",
+          "src" : get_asset_url('../images/coffee-cup-svg.svg'),
+          "width" : 30
+        },
+        "suffix" : "+",
+        "select_icon_type" : "image",
+        "value" : "1500"
+      }, {
+        "content" : "Happy Clients",
+        "icon_color" : {
+          "color" : "#495057",
+          "opacity" : 100
+        },
+        "icon_field" : { },
+        "image_field" : {
+          "alt" : "Happy Clients",
+          "height" : 80,
+          "loading" : "lazy",
+          "max_height" : 80,
+          "max_width" : 80,
+          "size_type" : "auto",
+          "src" : get_asset_url('../images/happy-client-svg.svg'),
+          "width" : 80
+        },
+        "suffix" : "+",
+        "select_icon_type" : "image",
+        "value" : "500"
+      } ],
+      style={
+        "spacing" : {
+          "spacing" : {
+            "padding" : {
+              "bottom" : {
+                "units" : "px",
+                "value" : 0
+              },
+              "left" : { },
+              "right" : { },
+              "top" : {
+                "units" : "px",
+                "value" : 0
+              }
+            }
+          }
+        },
+        "card" : {
+            "color_field" : {
+              "color" : "#026780",
+              "opacity" : 100
+            },
+            "select_title_color_theme" : "custom"
+          }
+      }
+    %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% dnd_section
+padding={
+  "default" : {
+    "bottom" : "0px",
+    "top" : "0px"
+  }
+},
+full_width=true
+%}
+  {% dnd_column
+  offset=0,
+  width=12
+%}
+  {% dnd_row %}
+  {% dnd_module
+      path="../modules/team",
+      offset=0,
+      width=12,
+      top_content={
+        "button_group" : [ ]
+      },
+      button_group=[ ],
+      team_group=[ {
+        "button_color_theme" : "hs-button",
+        "enable_link" : true,
+        "link_field" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "<p>It is a long established fact that a reader will be distracted by when looking at its layout.</p>",
+        "member_designation" : "Account Executive", 
+        "member_image" : {
+          "alt" : "Bessie Cooper",
+          "height" : 258,
+          "max_height" : 258,
+          "max_width" : 177,
+          "src" : get_asset_url('../images/bessie-cooper.png'),
+          "width" : 177
+        },
+        "member_name" : "Bessie Cooper",
+        "read_more_text" : "Read More",
+        "social_group" : [ {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Facebook F",
+            "type" : "REGULAR",
+            "unicode" : "f39e"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Instagram",
+            "type" : "REGULAR",
+            "unicode" : "f16d"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Twitter",
+            "type" : "REGULAR",
+            "unicode" : "f099"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "LinkedIn In",
+            "type" : "REGULAR",
+            "unicode" : "f0e1"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ]
+      }, {
+        "button_color_theme" : "hs-button",
+        "enable_link" : true,
+        "link_field" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "<p>It is a long established fact that a reader will be distracted by when looking at its layout.</p>",
+        "member_designation" : "Senior UX/UI designer",
+        "member_image" : {
+          "alt" : "Albert Flores",
+          "height" : 258,
+          "max_height" : 258,
+          "max_width" : 177,
+          "src" : get_asset_url('../images/albert-flores.png'),
+          "width" : 177
+        },
+        "member_name" : "Albert Flores",
+        "read_more_text" : "Read More",
+        "social_group" : [ {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Facebook F",
+            "type" : "REGULAR",
+            "unicode" : "f39e"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Instagram",
+            "type" : "REGULAR",
+            "unicode" : "f16d"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Twitter",
+            "type" : "REGULAR",
+            "unicode" : "f099"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "LinkedIn In",
+            "type" : "REGULAR",
+            "unicode" : "f0e1"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ]
+      }, {
+        "button_color_theme" : "hs-button",
+        "enable_link" : true,
+        "link_field" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "<p>It is a long established fact that a reader will be distracted by when looking at its layout.</p>", 
+        "member_designation" : "Enterprise Mobility Expert",
+        "member_image" : {
+          "alt" : "Savannah Nguyen",
+          "height" : 258,
+          "max_height" : 258,
+          "max_width" : 177,
+          "src" : get_asset_url('../images/savannah-nguyen.png'),
+          "width" : 177
+        },
+        "member_name" : "Savannah Nguyen",
+        "read_more_text" : "Read More",
+        "social_group" : [ {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Facebook F",
+            "type" : "REGULAR",
+            "unicode" : "f39e"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Instagram",
+            "type" : "REGULAR",
+            "unicode" : "f16d"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Twitter",
+            "type" : "REGULAR",
+            "unicode" : "f099"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "LinkedIn In",
+            "type" : "REGULAR",
+            "unicode" : "f0e1"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ]
+      }, {
+        "button_color_theme" : "hs-button",
+        "enable_link" : true,
+        "link_field" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "<p>It is a long established fact that a reader will be distracted by when looking at its layout.</p>",
+        "member_designation" : "Marketing Manager",
+        "member_image" : {
+          "alt" : "Darrell Steward",
+          "height" : 258,
+          "max_height" : 258,
+          "max_width" : 177,
+          "src" : get_asset_url('../images/darrell-steward.png'),
+          "width" : 177
+        },
+        "member_name" : "Darrell Steward",
+        "read_more_text" : "Read More",
+        "social_group" : [ {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Facebook F",
+            "type" : "REGULAR",
+            "unicode" : "f39e"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Instagram",
+            "type" : "REGULAR",
+            "unicode" : "f16d"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Twitter",
+            "type" : "REGULAR",
+            "unicode" : "f099"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "background_color" : {
+            "color" : "#FFF9FC",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "LinkedIn In",
+            "type" : "REGULAR",
+            "unicode" : "f0e1"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ]
+      } ],
+              style={
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "left" : { },
+                "right" : { },
+                "top" : { }
+              }
+            }
+          }
+        }
+    %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% end_dnd_area %}
+  {% dnd_area 'bottom_area_hs', label='Bottom Section' , class="bottom-dnd-area" %}
+  {% dnd_section %}
+  {% dnd_column
+    offset=0,
+    width=12,
+    padding={
+      "default" : {
+        "left" : "0px",
+        "right" : "0px"
+      }
+    }
+  %}
+  {% dnd_row
+      padding={
+        "default" : {
+          "bottom" : "30px"
+        }
+      }
+    %}
+  {% dnd_column
+        offset=0,
+        width=2
+      %}
+  {% dnd_row %}
+  {% dnd_module
+            path="@hubspot/horizontal_spacer",
+            offset=0,
+            width=12
+          %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% dnd_column
+        offset=2,
+        width=8
+      %}
+  {% dnd_row %}
+  {% dnd_module
+            path="@hubspot/rich_text",
+            offset=0,
+            width=12
+          %}
+  {% module_attribute "html" %}
+  <h2 style="text-align: center;" data-aos="fade-up">Frequently Asked Questions?</h2>
+  <p style="text-align: center;margin-left: auto;margin-right: auto;max-width: 550px;" data-aos="fade-up">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% dnd_column
+        offset=10,
+        width=2
+      %}
+  {% dnd_row %}
+  {% dnd_module
+            path="@hubspot/horizontal_spacer",
+            offset=0,
+            width=12
+          %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_row %}
+  {% dnd_row %}
+  {% dnd_column
+        offset=0,
+        width=6
+      %}
+  {% dnd_row %}
+  {% dnd_module
+            path="../modules/accordion",
+            offset=0,
+            width=12,
+            accordion_items=[ {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-sec-btn",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+              "include_button" : false,
+              "include_form" : false,
+              "open_by_default" : true,
+              "select_form" : {
+                "message" : "Thanks for submitting the form.",
+                "response_type" : "inline"
+              },
+              "title" : "Q1. It is a long established fact?"
+            }, {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-sec-btn",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+              "include_button" : false,
+              "include_form" : false,
+              "open_by_default" : false,
+              "select_form" : {
+                "message" : "Thanks for submitting the form.",
+                "response_type" : "inline"
+              },
+              "title" : "Q2. It is a long established fact?"
+            }, {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-sec-btn",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+              "include_button" : false,
+              "include_form" : false,
+              "open_by_default" : false,
+              "select_form" : {
+                "message" : "Thanks for submitting the form.",
+                "response_type" : "inline"
+              },
+              "title" : "Q3. It is a long established fact?"
+            }, {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-sec-btn",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+              "include_button" : false,
+              "include_form" : false,
+              "open_by_default" : false,
+              "select_form" : {
+                "message" : "Thanks for submitting the form.",
+                "response_type" : "inline"
+              },
+              "title" : "Q4. It is a long established fact?"
+            }, {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-sec-btn",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+              "include_button" : false,
+              "include_form" : false,
+              "open_by_default" : false,
+              "select_form" : {
+                "message" : "Thanks for submitting the form.",
+                "response_type" : "inline"
+              },
+              "title" : "Q5. It is a long established fact?"
+            } ],
+            accordion_settings={
+              "animation_type" : "fade-down"
+            },
+            style={
+              "spacing" : {
+                "spacing" : {
+                  "padding" : {
+                    "bottom" : {
+                      "units" : "px",
+                      "value" : 0
+                    },
+                    "left" : {
+                      "units" : "px",
+                      "value" : 0
+                    },
+                    "right" : {
+                      "units" : "px",
+                      "value" : 0
+                    },
+                    "top" : {
+                      "units" : "px",
+                      "value" : 0
+                    }
+                  }
+                }
+              }
+            },
+            button_group=[ ]
+          %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% dnd_column
+        offset=6,
+        width=6
+      %}
+  {% dnd_row %}
+  {% dnd_module
+            path="../modules/accordion",
+            offset=0,
+            width=12,
+            accordion_items=[ {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-sec-btn",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+              "include_button" : false,
+              "include_form" : false,
+              "open_by_default" : false,
+              "select_form" : {
+                "message" : "Thanks for submitting the form.",
+                "response_type" : "inline"
+              },
+              "title" : "Q6. It is a long established fact?"
+            }, {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-sec-btn",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+              "include_button" : false,
+              "include_form" : false,
+              "open_by_default" : false,
+              "select_form" : {
+                "message" : "Thanks for submitting the form.",
+                "response_type" : "inline"
+              },
+              "title" : "Q7. It is a long established fact?"
+            }, {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-sec-btn",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+              "include_button" : false,
+              "include_form" : false,
+              "open_by_default" : false,
+              "select_form" : {
+                "message" : "Thanks for submitting the form.",
+                "response_type" : "inline"
+              },
+              "title" : "Q8. It is a long established fact?"
+            }, {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-sec-btn",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+              "include_button" : false,
+              "include_form" : false,
+              "open_by_default" : false,
+              "select_form" : {
+                "message" : "Thanks for submitting the form.",
+                "response_type" : "inline"
+              },
+              "title" : "Q9. It is a long established fact?"
+            }, {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-sec-btn",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+              "include_button" : false,
+              "include_form" : false,
+              "open_by_default" : false,
+              "select_form" : {
+                "message" : "Thanks for submitting the form.",
+                "response_type" : "inline"
+              },
+              "title" : "Q10. It is a long established fact?"
+            } ],
+            accordion_settings={
+              "animation_type" : "fade-down"
+            },
+            button_group=[ ],
+            style={
+              "spacing" : {
+                "spacing" : {
+                  "padding" : {
+                    "bottom" : {
+                      "units" : "px",
+                      "value" : 0
+                    },
+                    "left" : {
+                      "units" : "px",
+                      "value" : 0
+                    },
+                    "right" : {
+                      "units" : "px",
+                      "value" : 0
+                    },
+                    "top" : {
+                      "units" : "px",
+                      "value" : 0
+                    }
+                  }
+                }
+              }
+            }
+          %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% include_dnd_partial path="../sections/bottom-pane-section.html" %} 
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

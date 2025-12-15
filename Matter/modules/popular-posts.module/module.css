@@ -1,0 +1,59 @@
+.sidebar-popular-posts .related-post-item-inner {
+  display: flex;
+  column-gap: 20px;
+}
+
+.sidebar-popular-posts .related-image img {
+  border-radius: 4px;
+}
+
+.sidebar-popular-posts .related-image {
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  padding-top: 100%;
+  background-repeat: no-repeat;
+}
+
+.sidebar-popular-posts h3.popular-heading {
+  margin-bottom: 30px;
+}
+
+.sidebar-popular-posts .related-title {
+  font-style: normal;
+  font-weight: 500;
+}
+
+.sidebar-popular-posts .related-post-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.sidebar-popular-posts .related-content-col svg {
+  width: 10px;
+  height: 10px;
+}
+
+.sidebar-popular-posts .related-content-col .icon_svg {
+  line-height: 0;
+  display: inline-block;
+}
+
+.sidebar-popular-posts .related-content-col .meta_wrap {
+  row-gap: 5px;
+  align-items: center;
+}
+
+
+.sidebar-popular-posts .related-content-col span.meta_tags {
+  display: block;
+}
+
+.sidebar-popular-posts .related-content-col span.meta_tags > span {
+  display: inline;
+  vertical-align: middle;
+}
+
+.sidebar-popular-posts .related-content-col span.meta_tags .icon_svg {
+  margin-right: 1px;
+}

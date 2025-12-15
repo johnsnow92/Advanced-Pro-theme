@@ -1,0 +1,79 @@
+[ {
+  "id" : "5bd97db5-0861-2be5-b80f-b32cda2ae77a",
+  "name" : "image_heart",
+  "label" : "Image Heart",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://3454910.fs1.hubspotusercontent-na1.net/hubfs/3454910/3f7ffa_79732b5825074206a26e05a8bce7c093_mv2-1.png",
+    "alt" : "3f7ffa_79732b5825074206a26e05a8bce7c093_mv2-1",
+    "loading" : "lazy",
+    "width" : 1337,
+    "height" : 1192,
+    "max_width" : 1337,
+    "max_height" : 1192
+  }
+}, {
+  "id" : "494f9404-b75d-ab39-4e6b-1a2b301dfb42",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h2 class=\"font_0\" style=\"line-height: 0.6em; text-align: center; font-size: 60px;\"><span style=\"font-size: 32px;\">Stay connected with Melissa and Lori!</span></h2>"
+}, {
+  "id" : "65dec909-a170-10f7-6992-9288744c3c21",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://3454910.fs1.hubspotusercontent-na1.net/hubfs/3454910/3f7ffa_8fd665b7fde242f6ac6c6c492352bbf4_mv2.png",
+    "alt" : "3f7ffa_8fd665b7fde242f6ac6c6c492352bbf4_mv2",
+    "loading" : "lazy",
+    "width" : 1165,
+    "height" : 884,
+    "max_width" : 1165,
+    "max_height" : 884
+  }
+}, {
+  "id" : "ca272d1c-1b60-b5d4-ea56-57f01c0bfa98",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : true,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#f3c8b8",
+    "opacity" : 100
+  }
+}, {
+  "id" : "4f9f0f67-5dd1-5a60-b4a6-efd5b565117c",
+  "name" : "form",
+  "label" : "Form",
+  "required" : false,
+  "locked" : true,
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "00490747-1b2e-44d5-ac8f-0074ef58f25f",
+    "response_type" : "inline",
+    "message" : "Thank you for submitting the form.",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+} ]

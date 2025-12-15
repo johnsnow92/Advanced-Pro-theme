@@ -1,0 +1,42 @@
+<div class="cm-our-design">
+  <div class="page-center">
+    <div class="cm-top">
+      <div class="cm-title">
+        <h2>{{ module.section_heading }}</h2>
+        <div class="cm-divider"></div>
+      </div>
+    </div>
+    <div class="cm-bottom">
+      <div class="cm-row">
+        <div class="cm-left">
+          <ul>
+            {% for item in module.content_item %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="cm-right">
+          <ul>
+            {% for item in module.right_featured_item %}
+            <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+          {% if module.bottom_features or module.cta_field %}
+          <div class="right-bottom">
+            <div class="inner-wrap">
+              {% for item in module.bottom_features %}
+              <ul>
+                <li>{{ item }}</li>
+              </ul>
+              {% endfor %}
+            </div>
+            <div class="btn-wrapper">
+              {% cta guid="{{ module.cta_field }}" %}
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,164 @@
+[ {
+  "id" : "testimonials",
+  "name" : "testimonials",
+  "label" : "Testimonials",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "customer_name",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "photo",
+    "name" : "photo",
+    "label" : "Customer Photo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://via.placeholder.com/150",
+      "alt" : "Customer photo",
+      "width" : 150,
+      "height" : 150
+    }
+  }, {
+    "id" : "customer_name",
+    "name" : "customer_name",
+    "label" : "Customer Name",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Customer Name"
+  }, {
+    "id" : "title",
+    "name" : "title",
+    "label" : "Job Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Job Title"
+  }, {
+    "id" : "company",
+    "name" : "company",
+    "label" : "Company Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Company Name"
+  }, {
+    "id" : "quote",
+    "name" : "quote",
+    "label" : "Testimonial Quote",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : true,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "This is an amazing testimonial that highlights the value of our product or service."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "photo" : {
+      "src" : "https://via.placeholder.com/150",
+      "alt" : "Customer photo",
+      "width" : 150,
+      "height" : 150
+    },
+    "customer_name" : "John Smith",
+    "title" : "CEO",
+    "company" : "Tech Corp",
+    "quote" : "This product has transformed our business operations. Highly recommended!"
+  }, {
+    "photo" : {
+      "src" : "https://via.placeholder.com/150",
+      "alt" : "Customer photo",
+      "width" : 150,
+      "height" : 150
+    },
+    "customer_name" : "Sarah Johnson",
+    "title" : "Marketing Director",
+    "company" : "Digital Solutions",
+    "quote" : "Outstanding service and support. The team went above and beyond our expectations."
+  }, {
+    "photo" : {
+      "src" : "https://via.placeholder.com/150",
+      "alt" : "Customer photo",
+      "width" : 150,
+      "height" : 150
+    },
+    "customer_name" : "Michael Chen",
+    "title" : "CTO",
+    "company" : "Innovation Labs",
+    "quote" : "A game-changer for our industry. The ROI has been incredible."
+  } ]
+}, {
+  "id" : "auto_scroll",
+  "name" : "auto_scroll",
+  "label" : "Enable Auto-Scroll",
+  "help_text" : "Automatically scroll through testimonials",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "scroll_interval",
+  "name" : "scroll_interval",
+  "label" : "Auto-Scroll Interval (seconds)",
+  "help_text" : "Time in seconds between automatic scrolls",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "auto_scroll",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "display" : "text",
+  "min" : 3,
+  "max" : 30,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 5
+}, {
+  "id" : "show_navigation",
+  "name" : "show_navigation",
+  "label" : "Show Navigation Arrows",
+  "help_text" : "Display left and right navigation arrows",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "heading",
+  "name" : "heading",
+  "label" : "Section Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "What Our Customers Say"
+} ]

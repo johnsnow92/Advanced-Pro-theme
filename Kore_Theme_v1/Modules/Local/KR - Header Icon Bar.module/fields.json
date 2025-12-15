@@ -1,0 +1,246 @@
+[ {
+  "id" : "e462c711-1393-342a-e80b-5c565a87e86d",
+  "name" : "styles",
+  "label" : "Style",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "42c1b63f-5c7f-b897-a350-d6751544ea00",
+    "name" : "show_hide_module",
+    "label" : "Show/Hide: Module",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "show_hide_module" : true
+  }
+}, {
+  "id" : "101a4e92-3bde-f301-9067-a7d3998aac6f",
+  "name" : "icons",
+  "label" : "Icons",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "32a48f24-587d-120c-2751-3e45116a42c3",
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "88f78027-634b-40c2-b85a-a47a250693f1",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://8241172.fs1.hubspotusercontent-na1.net/hubfs/8241172/Images/icon-veneers.svg",
+      "alt" : "icon-veneers",
+      "loading" : "lazy",
+      "width" : 35,
+      "height" : 12,
+      "max_width" : 35,
+      "max_height" : 12
+    }
+  }, {
+    "id" : "32a48f24-587d-120c-2751-3e45116a42c3",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Veneers"
+  }, {
+    "id" : "2ec0dfa6-a6cb-d2e6-f465-fd4ffa91424f",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://8241172.fs1.hubspotusercontent-na1.net/hubfs/8241172/Images/icon-veneers.svg",
+      "alt" : "icon-veneers",
+      "loading" : "lazy",
+      "width" : 35,
+      "height" : 12,
+      "max_width" : 35,
+      "max_height" : 12
+    },
+    "text" : "Veneers",
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://8241172.fs1.hubspotusercontent-na1.net/hubfs/8241172/Images/icon-veneers.svg",
+      "alt" : "icon-veneers",
+      "loading" : "lazy",
+      "width" : 35,
+      "height" : 12,
+      "max_width" : 35,
+      "max_height" : 12
+    },
+    "text" : "Veneers",
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://8241172.fs1.hubspotusercontent-na1.net/hubfs/8241172/Images/icon-veneers.svg",
+      "alt" : "icon-veneers",
+      "loading" : "lazy",
+      "width" : 35,
+      "height" : 12,
+      "max_width" : 35,
+      "max_height" : 12
+    },
+    "text" : "Veneers",
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://8241172.fs1.hubspotusercontent-na1.net/hubfs/8241172/Images/icon-veneers.svg",
+      "alt" : "icon-veneers",
+      "loading" : "lazy",
+      "width" : 35,
+      "height" : 12,
+      "max_width" : 35,
+      "max_height" : 12
+    },
+    "text" : "Veneers",
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://8241172.fs1.hubspotusercontent-na1.net/hubfs/8241172/Images/icon-veneers.svg",
+      "alt" : "icon-veneers",
+      "loading" : "lazy",
+      "width" : 35,
+      "height" : 12,
+      "max_width" : 35,
+      "max_height" : 12
+    },
+    "text" : "Veneers",
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://8241172.fs1.hubspotusercontent-na1.net/hubfs/8241172/Images/icon-veneers.svg",
+      "alt" : "icon-veneers",
+      "loading" : "lazy",
+      "width" : 35,
+      "height" : 12,
+      "max_width" : 35,
+      "max_height" : 12
+    },
+    "text" : "Veneers",
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ]
+}, {
+  "id" : "1d1d943b-14a0-3596-cdd6-54f8465c3ccc",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "ba04f86d-c6f1-e705-27d9-9a91e165749d",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Book Now"
+  }, {
+    "id" : "fcec7a3e-a3d2-b773-0a31-3ce12c4b7cda",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.mulgravedentalgroup.com.au/book-online",
+      "content_id" : null
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "Book Now",
+    "url" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.mulgravedentalgroup.com.au/book-online",
+      "content_id" : null
+    }
+  }
+}, {
+  "id" : "5aa618d7-041c-9ab7-7c0c-40e986add851",
+  "name" : "tel_number",
+  "label" : "Tel Number",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "03 9562 5156"
+} ]

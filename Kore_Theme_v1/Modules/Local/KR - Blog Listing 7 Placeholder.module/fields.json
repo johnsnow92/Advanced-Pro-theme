@@ -1,0 +1,112 @@
+[ {
+  "id" : "0a314d46-968f-2f93-662c-a1522767f19e",
+  "name" : "listing_placeholder",
+  "label" : "Listing Placeholder",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "93a58064-ec8d-3e42-76cf-34b8825f9514",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent10.net/hubfs/2450960/social-suggested-images/640x434-38.jpg",
+      "alt" : "640x434-38",
+      "loading" : "lazy",
+      "width" : 640,
+      "height" : 434,
+      "max_width" : 640,
+      "max_height" : 434
+    }
+  }, {
+    "id" : "b52932d8-9fbd-db4a-ee8f-27b76db1adb9",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "e05e632c-640f-e1f1-b804-fb58ef7a4b0f",
+    "name" : "tagline",
+    "label" : "Tagline",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Lorem ipsum text here"
+  }, {
+    "id" : "09f53475-7d58-99ff-828e-549ade59731c",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "f6223b4f-8784-f5d4-6503-40b1d93212d6",
+    "name" : "cta",
+    "label" : "HubSpot CTA",
+    "required" : false,
+    "locked" : false,
+    "type" : "cta",
+    "display_width" : null
+  }, {
+    "id" : "f7c68d5c-d77a-4170-6703-295ee2a448b6",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Button Text"
+  }, {
+    "id" : "ba10da30-70b4-f5b6-819a-ed3bcd481a73",
+    "name" : "button_url",
+    "label" : "Button URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "type" : "EXTERNAL",
+      "href" : "https://nycdatascience.com/blog/",
+      "content_id" : null
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent10.net/hubfs/2450960/social-suggested-images/640x434-38.jpg",
+      "alt" : "640x434-38",
+      "loading" : "lazy",
+      "width" : 640,
+      "height" : 434,
+      "max_width" : 640,
+      "max_height" : 434
+    },
+    "tagline" : "Lorem ipsum text here",
+    "button_text" : "Button Text",
+    "button_url" : {
+      "type" : "EXTERNAL",
+      "href" : "https://nycdatascience.com/blog/",
+      "content_id" : null
+    }
+  }
+} ]

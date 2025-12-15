@@ -1,0 +1,47 @@
+.kore-sidebar-sticky-cta {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-sidebar-sticky-cta .image {
+  background-position: 50% 50%;
+  background-size: cover;
+  min-height: 150px;
+}
+
+.kore-sidebar-sticky-cta .page-width {
+  padding: 0 !important;
+}
+
+.kore-sidebar-sticky-cta .main-wrap {
+  padding: 20px 20px;
+}
+
+.kore-sidebar-sticky-cta .main-wrap .heading,
+.kore-sidebar-sticky-cta .main-wrap .heading * {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.kore-sidebar-sticky-cta #cta .cta_button,
+.kore-sidebar-sticky-cta .simple a {
+  
+}
+
+.kore-sidebar-sticky-cta #cta .cta_button:hover,
+.kore-sidebar-sticky-cta .simple a:hover {
+  
+}
+
+.kore-sidebar-sticky-cta .bottom-text {
+  margin-top: 10px;
+}
+
+@media(max-width:1139px) {
+  
+  .kore-sidebar-sticky-cta {
+    display: none;
+  }
+  
+}

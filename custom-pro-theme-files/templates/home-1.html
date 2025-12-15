@@ -1,0 +1,107 @@
+<!--
+  templateType: page
+  label: Home - Option 1
+  isAvailableForNewContent: true
+-->
+
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+{# Hero Section #}
+{% dnd_area "hero_section" label="Hero Section" class="dnd-section" %}
+  {% dnd_section
+    vertical_alignment="MIDDLE",
+    background_image={
+      "backgroundPosition": "MIDDLE_CENTER",
+      "backgroundSize": "cover"
+    }
+  %}
+    {% dnd_column offset=0, width=12 %}
+      {% dnd_row padding={
+        "top": 100,
+        "bottom": 100
+      } %}
+        {% dnd_module
+          path="@hubspot/rich_text"
+        %}
+          {% module_attribute "html" %}
+            <div class="hero-content text-center">
+              <h1>Welcome to Our Amazing Website</h1>
+              <p class="lead">We provide exceptional solutions to help your business grow</p>
+              <a href="#" class="btn btn-primary">Get Started</a>
+              <a href="#" class="btn btn-secondary">Learn More</a>
+            </div>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+{% end_dnd_area %}
+
+{# Features Section #}
+{% dnd_area "features_section" label="Features" class="dnd-section" %}
+  {% dnd_section vertical_alignment="TOP" background_color={ color: "#f8f9fa", opacity: 100 } %}
+    {% dnd_column offset=0, width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/rich_text"
+        %}
+          {% module_attribute "html" %}
+            <div class="section-header text-center">
+              <h2>Our Features</h2>
+              <p>Everything you need to succeed</p>
+            </div>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+
+    {% dnd_column offset=0, width=4 %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/icon-text.module" %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+
+    {% dnd_column offset=4, width=4 %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/icon-text.module" %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+
+    {% dnd_column offset=8, width=4 %}
+      {% dnd_row %}
+        {% dnd_module path="../modules/icon-text.module" %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+{% end_dnd_area %}
+
+{# Call to Action #}
+{% dnd_area "cta_section" label="Call to Action" class="dnd-section" %}
+  {% dnd_section
+    vertical_alignment="MIDDLE",
+    background_color={ color: "#0066CC", opacity: 100 }
+  %}
+    {% dnd_column offset=0, width=12 %}
+      {% dnd_row %}
+        {% dnd_module
+          path="@hubspot/rich_text"
+        %}
+          {% module_attribute "html" %}
+            <div class="cta-content text-center" style="color: #fff; padding: 60px 20px;">
+              <h2 style="color: #fff;">Ready to Get Started?</h2>
+              <p style="color: #fff;">Join thousands of satisfied customers today</p>
+              <a href="/contact" class="btn btn-primary" style="background: #fff; color: #0066CC;">Contact Us</a>
+            </div>
+          {% end_module_attribute %}
+        {% end_dnd_module %}
+      {% end_dnd_row %}
+    {% end_dnd_column %}
+  {% end_dnd_section %}
+{% end_dnd_area %}
+
+{% endblock body %}

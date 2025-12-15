@@ -1,0 +1,103 @@
+[ {
+  "id" : "17f8fab1-c3ef-9891-57a0-ed6f2d8b8de5",
+  "name" : "blurb_text",
+  "label" : "Blurb Text",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>From the CEO's desk: Perspectives on CompanyName Rebranding.<span>&nbsp;</span><a href=\"https://preview.hs-sites.com/_hcms/preview/template/multi?is_buffered_template_layout=true&amp;portalId=484997&amp;tc_deviceCategory=undefined&amp;template_layout_id=28375327890&amp;updated=1587044976713#\">KNOW MORE</a></p>"
+}, {
+  "id" : "18cf1c9b-9b31-3f0f-3fb2-780ec329152e",
+  "name" : "social_icon",
+  "label" : "Social Icon",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "bf0f831d-2f9b-db2d-6218-dff5366364c9",
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "bf0f831d-2f9b-db2d-6218-dff5366364c9",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "twitter",
+      "unicode" : "f099",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "839227f0-1347-8cd0-820d-2c2dced4f10a",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "icon" : {
+      "name" : "twitter",
+      "unicode" : "f099",
+      "type" : "REGULAR"
+    },
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "icon" : {
+      "name" : "twitter",
+      "unicode" : "f099",
+      "type" : "REGULAR"
+    },
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ]
+}, {
+  "id" : "32bdc9ce-00c0-c9e4-1022-0fd9dc5e1fa7",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "show_loading" : false,
+  "type" : "logo",
+  "display_width" : null,
+  "default" : {
+    "override_inherited_src" : true,
+    "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/hubsnackslogo.svg",
+    "alt" : "hubsnackslogo",
+    "width" : 400,
+    "height" : 400
+  }
+}, {
+  "id" : "b895d7b9-e708-ef25-cf2c-7349d5eed6e4",
+  "name" : "menu",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu",
+  "display_width" : null
+} ]

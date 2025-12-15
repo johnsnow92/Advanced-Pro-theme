@@ -1,0 +1,1597 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Home Page V4
+screenshotPath: ../images/template-previews/home-page-v4.jpg
+-->
+{% extends "./layouts/base.html" %}
+{% block body %}
+
+<div class="banner_area home_page_v4_banner_area">
+  {% dnd_area 'header_area', label='Banner Section' ,class="top-dnd-area" %}
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/banner-slider",
+        offset=0,
+        width=12,
+        slider_setting={
+          "navigation" : true,
+          "navigation_group" : {
+            "pagination_type" : "custom_nav"
+          },
+          "select_navigator_type" : "number_bullets"
+        },
+        slides_group=[ {
+          "animations" : {
+            "animation_type" : "fade-up",
+            "enable_animation" : true
+          },
+          "background_options" : {
+            "background_color" : {
+              "color" : "#026780",
+              "opacity" : 100
+            },
+            "background_image" : {
+              "alt" : "Home v4 Banner",
+              "height" : 780,
+              "max_height" : 780,
+              "max_width" : 1170,
+              "src" : get_asset_url('../images/banner-images/home_v4.jpg'),
+              "width" : 1170
+            },
+            "background_image_position" : "center center",
+            "enable_parallax" : false,
+            "overlay_color" : {
+              "color" : "#026780",
+              "opacity" : 30
+            },
+            "select_background_type" : "image",
+            "select_color" : [ {
+              "color" : "#026780",
+              "opacity" : 100
+            }, {
+              "color" : "#026780",
+              "opacity" : 100
+            } ],
+            "select_gradient_direction" : "to top",
+            "video_url" : "https://player.vimeo.com/video/842733575"
+          },
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Get Started",
+            "popup_content" : "<h3>Add content here</h3><h6>Add content here</h6>",
+            "popup_styles" : {
+              "background_color" : {
+                "color" : "#FFF",
+                "opacity" : 100
+              },
+              "color" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "select_background_theme" : "custom",
+              "select_color_theme" : "theme"
+            },
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std",
+            "select_form" : {
+              "message" : "Thanks for submitting the form.",
+              "response_type" : "inline"
+            },
+            "video_url" : "https://player.vimeo.com/video/842733575"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+          "heading" : "Home V4 Slide One",
+          "select_content_alignment" : "text_right",
+          "select_slider_heading_type" : "h1"
+        }, {
+          "animations" : {
+            "animation_type" : "fade-up",
+            "enable_animation" : true
+          },
+          "background_options" : {
+            "background_color" : {
+              "color" : "#026780",
+              "opacity" : 100
+            },
+            "background_image" : {
+              "alt" : "Home V4 Banner",
+              "height" : 780,
+              "max_height" : 780,
+              "max_width" : 1170,
+              "src" : get_asset_url('../images/banner-images/home_v4.jpg'),
+              "width" : 1170
+            },
+            "background_image_position" : "center center",
+            "enable_parallax" : false,
+            "overlay_color" : {
+              "color" : "#026780",
+              "opacity" : 30
+            },
+            "select_background_type" : "image",
+            "select_color" : [ {
+              "color" : "#026780",
+              "opacity" : 100
+            }, {
+              "color" : "#026780",
+              "opacity" : 100
+            } ],
+            "select_gradient_direction" : "to top",
+            "video_url" : "https://player.vimeo.com/video/842733575"
+          },
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Get Started",
+            "popup_content" : "<h3>Add content here</h3><h6>Add content here</h6>",
+            "popup_styles" : {
+              "background_color" : {
+                "color" : "#FFF",
+                "opacity" : 100
+              },
+              "color" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "select_background_theme" : "custom",
+              "select_color_theme" : "theme"
+            },
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std",
+            "select_form" : {
+              "message" : "Thanks for submitting the form.",
+              "response_type" : "inline"
+            },
+            "video_url" : "https://player.vimeo.com/video/842733575"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+          "heading" : "Home V4 Slide Two",
+          "select_content_alignment" : "text_left",
+          "select_slider_heading_type" : "h1"
+        }, {
+          "animations" : {
+            "animation_type" : "fade-up",
+            "enable_animation" : true
+          },
+          "background_options" : {
+            "background_color" : {
+              "color" : "#026780",
+              "opacity" : 100
+            },
+            "background_image" : {
+              "alt" : "Home V4 Banner",
+              "height" : 780,
+              "max_height" : 780,
+              "max_width" : 1170,
+               "src" : get_asset_url('../images/banner-images/home_v4.jpg'),
+              "width" : 1170
+            },
+            "background_image_position" : "center center",
+            "enable_parallax" : false,
+            "overlay_color" : {
+              "color" : "#026780",
+              "opacity" : 30
+            },
+            "select_background_type" : "image",
+            "select_color" : [ {
+              "color" : "#026780",
+              "opacity" : 100
+            }, {
+              "color" : "#026780",
+              "opacity" : 100
+            } ],
+            "select_gradient_direction" : "to top",
+            "video_url" : "https://player.vimeo.com/video/842733575"
+          },
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Get Started",
+            "popup_content" : "<h3>Add content here</h3>\n<h6>Add content here</h6>",
+            "popup_styles" : {
+              "background_color" : {
+                "color" : "#FFF",
+                "opacity" : 100
+              },
+              "color" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "select_background_theme" : "custom",
+              "select_color_theme" : "theme"
+            },
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std",
+            "select_form" : {
+              "message" : "Thanks for submitting the form.",
+              "response_type" : "inline"
+            },
+            "video_url" : "https://player.vimeo.com/video/842733575"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+          "heading" : "Home V4 Slide Three",
+          "select_content_alignment" : "text_center",
+          "select_slider_heading_type" : "h1"
+        }, {
+          "animations" : {
+            "animation_type" : "fade-up",
+            "enable_animation" : true
+          },
+          "background_options" : {
+            "background_color" : {
+              "color" : "#026780",
+              "opacity" : 100
+            },
+            "background_image" : {
+              "alt" : "Home V4 Banner",
+              "height" : 780,
+              "max_height" : 780,
+              "max_width" : 1170,
+              "src" : get_asset_url('../images/banner-images/home_v4.jpg'),
+              "width" : 1170
+            },
+            "background_image_position" : "center center",
+            "enable_parallax" : false,
+            "overlay_color" : {
+              "color" : "#026780",
+              "opacity" : 30
+            },
+            "select_background_type" : "image",
+            "select_color" : [ {
+              "color" : "#026780",
+              "opacity" : 100
+            }, {
+              "color" : "#026780",
+              "opacity" : 100
+            } ],
+            "select_gradient_direction" : "to top",
+            "video_url" : "https://player.vimeo.com/video/842733575"
+          },
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Get Started",
+            "popup_content" : "<h3>Add content here</h3>\n<h6>Add content here</h6>",
+            "popup_styles" : {
+              "background_color" : {
+                "color" : "#FFF",
+                "opacity" : 100
+              },
+              "color" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "select_background_theme" : "custom",
+              "select_color_theme" : "theme"
+            },
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std",
+            "select_form" : {
+              "message" : "Thanks for submitting the form.",
+              "response_type" : "inline"
+            },
+            "video_url" : "https://player.vimeo.com/video/842733575"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+          "heading" : "Home V4 Slide Four",
+          "select_content_alignment" : "text_right",
+          "select_slider_heading_type" : "h1"
+        } ]
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+</div>
+
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper home_page_v4_page">
+  {# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+  {% dnd_area 'dnd__area_1' class='home_dnd_area_Top middle-dnd-area', label='Top Section' %}
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/two-column-content",
+        offset=0,
+        width=12,
+        left_column={
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Explore More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<h2>Lorem Ipsum is simply dummy text of the Printing.</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+          "features" : [ {
+            "content_type" : "num",
+            "image_field_1" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "suffix" : "+",
+            "title" : "Years Of Experiences",
+            "value" : "15"
+          }, {
+            "content_type" : "num",
+            "image_field_1" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "suffix" : "+",
+            "title" : "Professional Engineers",
+            "value" : "60"
+          }, {
+            "content_type" : "num",
+            "image_field_1" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "suffix" : "+",
+            "title" : "Complete Projects", 
+            "value" : "80"
+          }, {
+            "content_type" : "num",
+            "image_field_1" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "suffix" : "+",
+            "title" : "Company Location",
+            "value" : "10"
+          } ],
+          "form_title" : "",
+          "include_features" : true,
+          "include_form" : false,
+          "select_form" : {
+            "message" : "Thanks for submitting the form.",
+            "response_type" : "inline"
+          },
+          "select_form_title_size" : "h3"
+        },
+        style={
+          "background" : {
+            "select_background_theme" : "",
+            "select_background_type" : ""
+          }
+        },
+          module_settings={
+        "features" : {
+          "select_title_tag" : "p"
+        }
+      },
+        right_column={
+          "icon_image" : {
+            "alt" : "Vector",
+            "height" : 50,
+            "loading" : "lazy",
+            "max_height" : 50,
+            "max_width" : 50,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/video_play.svg'),
+            "width" : 50
+          },
+          "select_icon_type" : "image",
+          "select_media_type" : "video",
+          "video_content" : {
+            "poster_image" : {
+              "alt" : "whart we do",
+              "height" : 526,
+              "loading" : "lazy",
+              "max_height" : 526,
+              "max_width" : 825,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/video-poster1.jpg'),
+              "width" : 825
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+
+  {% dnd_area 'dnd__area_2' class='home_dnd_area_Main main-dnd-area', label='Main Section' %}
+
+  {% dnd_section
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+       path="../modules/content-filter",
+        offset=0,
+        width=12,
+        card_group={
+          "cards" : [
+          {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "DevOps",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "DevOps",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_1.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          },
+          {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "DevOps",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "DevOps",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_2.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          }, {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "Application Development",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "Application Development",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_3.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          }, {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "Web Development",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "Web Development",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_4.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          }, {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "Mobile Application",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "Mobile Application",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_5.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          }, {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "User Interface Design",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "User Interface Design",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_6.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          },
+          {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "User Interface Design",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "User Interface Design",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_7.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          },
+          {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "User Interface Design",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "User Interface Design",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_8.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          },
+          {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "User Interface Design",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "User Interface Design",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_9.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          },
+          {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "User Interface Design",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "User Interface Design",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_10.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          },
+          {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "User Interface Design",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "User Interface Design",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_11.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          },
+          {
+            "button_group" : [ {
+              "button_link" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "button_text" : "View Project",
+              "select_button_theme" : "hs-sec-btn",
+              "select_button_type" : "std"
+            } ],
+            "category" : "User Interface Design",
+            "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+            "image_field" : {
+              "alt" : "User Interface Design",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/project-images/gallery_12.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum has been."
+          }
+          ],
+          "include_all_text" : true
+        },
+        module_settings={
+          "color" : {
+            "color" : "#FFF",
+            "opacity" : 100
+          },
+          "overlay_color" : {
+            "color" : "#026780",
+            "opacity" : 60
+          },
+          "select_card_color" : "custom",
+          "select_overlay_color" : "custom"
+        },
+        button_group=[ ],
+        top_content={
+        "button_group" : [ ],
+        "title":"Amazing Collection Of Project",
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>"
+        },
+          style={
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "top" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                 "bottom" : {
+                  "units" : "px",
+                  "value" : 80
+                },
+                "left" : { },
+                "right" : { }
+
+              }
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% dnd_section
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/card-gallery", 
+        offset=0,
+        width=12,
+           top_content={
+          "button_group" : [ ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "title" : "Our Helpful Services For You"
+        },
+         items_group=[ {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+          "alt" : "Speakers",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 40,
+            "size_type" : "auto",
+           "src" : get_asset_url('../images/icon-images/megaphone.svg'),
+            "width" : 40
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "src" : ""
+            },
+            "background_opacity" : 100,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "custom",
+            "select_overlay_background_color" : "bg_primary"
+          },
+          "select_icon" : { },
+         "select_icon_type" : "image",
+     "title" : "After-Sale Consultation"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+           "alt" : "Media",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 40,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/video.svg'),
+            "width" : 40
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "src" : ""
+            },
+            "background_opacity" : 100,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "custom",
+            "select_overlay_background_color" : "bg_primary"
+          },
+          "select_icon" : { },
+                 "select_icon_type" : "image",
+              "title" : "Pre-Purchase Consultation"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Shield",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 40,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/shield.svg'),
+            "width" : 40
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "src" : ""
+            },
+            "background_opacity" : 100,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "custom",
+            "select_overlay_background_color" : "bg_primary"
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+     "title" : "Your Purchase is Refundable"
+        } ],
+
+        module_settings={
+          "enable_slider" : true,
+          "include_hover_effect" : true,
+          "slider_options" : {
+            "arrows" : false,
+            "autoplay" : true
+          }
+        },
+        style={
+          "card" : {
+            "include_hover_effect" : true,
+            "include_shadow_effect" : true
+          },
+          "spacing" : {
+            "change_mobile_spacing" : true,
+            "mobile_spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 50
+                },
+                "left" : { },
+                "right" : { },
+                "top" : {
+                  "units" : "px",
+                  "value" : 50
+                }
+              }
+            },
+            "spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                 "top" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "left" : { },
+                "right" : { }
+              }
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/two-column-content",
+        offset=0,
+        width=12,
+        left_column={
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Explore More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<h2>Lorem Ipsum is simply dummy text of the Printing.</h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. It is a long established fact that a reader will be distracted.</p>",
+          "form_title" : "",
+          "include_form" : false,
+          "select_form_title_size" : "h2"
+        },
+        module_settings={
+          "content_alignment" : "right",
+          "left_column_width" : "5",
+          "right_column_width" : "7"
+        },
+        right_column={
+          "icon_color" : {
+            "color" : "#FFF",
+            "opacity" : 100
+          },
+          "icon_field" : {
+            "name" : "Play Circle",
+            "type" : "REGULAR",
+            "unicode" : "f144"
+          },
+          "icon_image" : {
+            "loading" : "lazy",
+            "size_type" : "auto",
+            "src" : ""
+          },
+          "image_content" : {
+            "border_radius" : 5,
+            "cover_the_image" : false,
+            "enable_parallax" : false,
+            "image_field" : {
+              "loading" : "lazy",
+              "size_type" : "exact",
+              "src" : ""
+            },
+            "image_flow" : "horizontal",
+            "image_items" : [ {
+              "image_item" : {
+                "loading" : "lazy",
+                "size_type" : "auto",
+                "src" : ""
+              }
+            } ],
+            "images_height" : 350,
+            "multiple_content_items" : [ {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Our Story",
+                "select_button_theme" : "hs-sec-btn",
+                "select_button_type" : "std",
+                "remove_hover_effect" : true
+              } ],
+              "content" : "<h3>Lorem Ipsum is simply dummy text of the Printing.</h3><p>It is a long established fact that a reader will be distracted.</p>",
+              "content_type" : "cont_sec",
+              "image" : {
+                "loading" : "lazy",
+                "size_type" : "auto",
+                "src" : ""
+              },
+              "select_background_theme" : "bg_primary",
+              "select_color_theme" : "custom",
+              "text_color" : {
+                "color" : "#FFF",
+                "opacity" : 100
+              }
+            }, {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Explore More",
+                "select_button_theme" : "hs-button",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<h5>Lorem Ipsum is simply dummy text of the Printing.</h5><p>It is a long established fact that a reader will be distracted.</p>",
+              "content_type" : "cont_img",
+              "image" : {
+                "alt" : "Office",
+                "height" : 219,
+                "loading" : "lazy",
+                "max_height" : 219,
+                "max_width" : 370,
+                "size_type" : "auto",
+                "src" : get_asset_url('../images/hom_v4_two-col1.jpg'),
+                "width" : 370
+              }
+            }, {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Explore More",
+                "select_button_theme" : "hs-button",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<h5>Lorem Ipsum is simply dummy text of the Printing.</h5><p>It is a long established fact that a reader will be distracted.</p>",
+              "content_type" : "cont_img",
+              "image" : {
+                "alt" : "Meet",
+                "height" : 161,
+                "loading" : "lazy",
+                "max_height" : 161,
+                "max_width" : 265,
+                "size_type" : "auto",
+                "src" : get_asset_url('../images/hom_v4_two-col2.jpg'),
+                "width" : 265
+              }
+            }, {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Explore More",
+                "select_button_theme" : "hs-button",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<h5>Lorem Ipsum is simply dummy text of the Printing.</h5><p>It is a long established fact that a reader will be distracted.</p>",
+              "content_type" : "cont_img",
+              "image" : {
+                "alt" : "Work",
+                "height" : 219,
+                "loading" : "lazy",
+                "max_height" : 219,
+                "max_width" : 370,
+                "size_type" : "auto",
+                "src" : get_asset_url('../images/hom_v4_two-col3.jpg'),
+                "width" : 370
+              }
+            } ],
+            "number_of_image" : "multiple"
+          },
+          "select_icon_color" : "bg_primary_svg",
+          "select_icon_type" : "",
+          "select_media_type" : "image",
+          "video_content" : {
+            "embedded_url" : "https://player.vimeo.com/video/842733575",
+            "include_popup" : false,
+            "poster_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "video_type" : "external"
+          }
+        },
+        style={
+          "background" : {
+            "select_background_theme" : "",
+            "select_background_type" : ""
+          },
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "top" : { },
+                "left" : { },
+                "right" : { },
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 0
+                }
+              }
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/testimonials-slider",
+        offset=0,
+        width=12,
+        module_settings={
+          "animation_type" : "fade-up",
+          "content_animation_type" : "fade-right",
+          "image_animation_type" : "fade-left",
+          "select_image_alignment" : "left",
+          "slider_options" : {
+            "arrows" : false
+          }
+        },
+        testimonials_group=[ {
+          "add_rating" : true,
+          "auth_name" : "Marvin McKinney",
+          "content" : "<p>“It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.”</p>",
+          "designation" : "Enterprise Mobility Expert",
+          "image" : {
+            "alt" : "Marvin McKinney",
+            "height" : 248,
+            "loading" : "lazy",
+            "size_type" : "exact",
+            "src" :  get_asset_url('../images/author/Marvin-McKinney.jpg'),
+            "width" : 265
+          },
+          "rating" : "5"
+        }, {
+          "add_rating" : true,
+          "auth_name" : "Robert Fox",
+          "content" : "<p>“It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.”</p>",
+          "designation" : "Operations Manager",
+          "image" : {
+            "alt" : "Robert Fox",
+            "height" : 248,
+            "loading" : "lazy",
+            "size_type" : "exact",
+            "src" :  get_asset_url('../images/author/Robert-Fox.jpg'),
+            "width" : 265
+          },
+          "rating" : "5"
+        }, {
+          "add_rating" : true,
+          "auth_name" : "Brooklyn Simmons",
+          "content" : "<p>“It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.”</p>",
+          "designation" : "Programs Manager",
+          "image" : {
+            "alt" : "Brooklyn Simmons",
+            "height" : 248,
+            "loading" : "lazy",
+            "size_type" : "exact",
+            "src" :  get_asset_url('../images/author/Brooklyn-Simmons.jpg'),
+            "width" : 265
+          },
+          "rating" : "5"
+        } ],
+        style={
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "left" : { },
+                "right" : { },
+                "top" : { }
+              }
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% include_dnd_partial path="../sections/team-v2-section.html" %} 
+
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/blog-feed-v2",
+        offset=0,
+        width=12,
+        button_group=[ ],
+         style={
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : { },
+                "left" : { },
+                "right" : { },
+                "top" : {
+                  "units" : "px",
+                  "value" : 0
+                }
+              }
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+  {% dnd_area 'dnd__area_3' class='home_dnd_area_Bottom bottom-dnd-area', label='Bottom Section' %}
+  {% include_dnd_partial path="../sections/bottom-pane-section.html" %} 
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

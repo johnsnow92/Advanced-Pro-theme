@@ -1,0 +1,314 @@
+.kore-pricing-table-2 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-pricing-table-2 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-pricing-table-2 .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-pricing-table-2 .card-wrap-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  margin: 0 -20px;
+}
+
+.kore-pricing-table-2 .card-wrap-flex .col-flex {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-pricing-table-2 .card-wrap-flex .col-flex:first-child {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.kore-pricing-table-2 #cta .cta_button,
+.kore-pricing-table-2 .simple a {
+  box-sizing: border-box !important;
+  -webkit-font-smoothing: antialiased !important;
+  cursor: pointer !important;
+  -moz-user-select: none !important;
+  -webkit-user-select: none !important;
+  -o-user-select: none !important;
+  user-select: none !important;
+  display: inline-block !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  -moz-transition: all .4s ease !important;
+  -webkit-transition: all .4s ease !important;
+  -o-transition: all .4s ease !important;
+  border-radius: 290486px !important;
+  border-width: 0px !important;
+  color: rgb(255,255,255) !important;
+  height: auto !important;
+  transition: all .4s ease !important;
+  padding: 14px 20px !important;
+  text-shadow: none !important;
+  width: auto !important;
+  font-size: 1rem !important;
+  line-height: 1.5em !important;
+  letter-spacing: 1px !important;
+}
+
+.kore-pricing-table-2 #cta .cta_button:hover,
+.kore-pricing-table-2 .simple a:hover {
+  -webkit-transform: translate(0px, -3px) !important;
+  -ms-transform: translate(0px, -3px) !important;
+  transform: translate(0px, -3px) !important;
+  color: #fff !important;
+}
+
+.kore-pricing-table-2 .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #444;
+  padding-bottom: 10px;
+  display: inline-block;
+  color: #444;
+}
+
+.kore-pricing-table-2 .flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  margin: 0 -12px;
+}
+
+.kore-pricing-table-2 .card {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 10px 12px;
+  padding: 30px 20px;
+  overflow: hidden;
+}
+
+.kore-pricing-table-2 .card.invisible {
+  padding: 0;
+  display: none;
+}
+
+.kore-pricing-table-2 .card.border-radius {
+  position: relative;
+  padding: 0;
+  border: 1px solid rgba(51, 51, 51, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+  text-align:center;
+}
+
+.kore-pricing-table-2 .card.no-border-radius {
+  padding: 0;
+}
+
+.kore-pricing-table-2 .card.text-center {
+  text-align: center;
+}
+
+.kore-pricing-table-2 .card.text-center .icon,
+.kore-pricing-table-2 .card.text-center .image {
+  margin-right: auto;
+  margin-left: auto;
+}
+.kore-pricing-table-2 .card-price {
+  padding-bottom: 20px;
+  font-weight: 600;
+  font-size: 42px;
+  color: #35b729;
+}
+.kore-pricing-table-2 .card-features p {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding: 13px 10px 13px;
+  margin: 0;
+}
+.kore-pricing-table-2 .price-btn {
+  display: inline-grid;
+  margin-bottom: 0;
+}
+.kore-pricing-table-2 .price-btn a {
+  padding: 12px 20px;
+  background-color: #35b729;
+  color: #fff;
+  display: inline-block;
+  margin-top: 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  font-size: 17px;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.kore-pricing-table-2 .price-btn a:hover{
+  text-decoration:none;
+  color: #fff!important;
+  -webkit-transform: translate(0px, -2px);
+  -ms-transform: translate(0px, -2px);
+  transform: translate(0px, -2px);
+}
+.kore-pricing-table-2 .card .icon,
+.kore-pricing-table-2 .card .image {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.kore-pricing-table-2 .card-text {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+}
+.kore-pricing-table-2 .card .background-image {
+  margin: -30px -20px 30px;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 168px;
+}
+
+.kore-pricing-table-2 .card .card-title {
+  margin-bottom: 15px;
+  background-color: #400080;
+  padding: 20px;
+}
+.kore-pricing-table-2 .card .card-title h3{
+  color: #fff;
+  font-weight: bold;
+}
+
+.kore-pricing-table-2 .card .card-title.card-title-bg {
+  margin-right: -20px;
+  margin-left: -20px;
+  padding: 20px;
+}
+
+.kore-pricing-table-2 .card .card-title.card-title-bg.card-title-bg-no-space {
+  margin-top: -30px;
+}
+
+.kore-pricing-table-2 .card .card-text p:last-child {
+  margin-bottom: 0;
+}
+
+.kore-pricing-table-2 .divider {
+  width: 100%;
+}
+
+.kore-pricing-table-2 .footer-text strong {
+  color: #00aff0;
+  font-size: 24px;
+}
+
+.card-copy-text{
+  display: block;
+  padding-right: 0;
+  padding-bottom: 10px;
+  padding-left: 0;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
+  opacity: 0.9;
+  color: #888;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding-top: 5px;
+}
+.card-feature-text{
+  border-top: 1px solid #35b729;
+  border-bottom: 1px solid #35b729;
+  color: #888;
+  padding: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.card-body{
+  padding-bottom: 20px;
+}
+
+@media(max-width:1139px) {
+
+  .max-width-850, .container-fluid .row-fluid .max-width-850 {
+    max-width: 100%;
+  }
+
+  .kore-pricing-table-2 .card-wrap-flex .col-flex:first-child {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .kore-pricing-table-2 .card-wrap-flex .col-flex {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+
+}
+
+@media(max-width:767px) {
+
+  .kore-pricing-table-2 .flex {
+    margin: 0;  
+  }
+
+  .kore-pricing-table-2 .card {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+
+  .kore-pricing-table-2 .card .background-image { 
+    height: 200px;
+  }
+
+  .kore-pricing-table-2 .footer-text strong {
+    color: #00aff0;
+    font-size: 20px;
+  }
+
+}

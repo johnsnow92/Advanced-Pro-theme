@@ -1,0 +1,156 @@
+[ {
+  "id" : "5ab64b8b-bc65-1455-ef3f-1aea13d6f0dd",
+  "name" : "items",
+  "label" : "Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "d2179175-05fe-57cb-5f90-b1f5306bb8dd",
+    "default" : 3
+  },
+  "visibility" : {
+    "controlling_field" : "a48f2b45-3a35-a431-ebb6-96a862c60971",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "18002851-690a-4e08-8ee9-4c59f7e4154f",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent10.net/hubfs/5633517/Blog/Images/img-1.jpeg",
+      "alt" : "img-1",
+      "width" : 1280,
+      "height" : 853,
+      "max_width" : 1280,
+      "max_height" : 853
+    }
+  }, {
+    "id" : "89ebb687-181e-db1c-63e6-bbdd9b8d2495",
+    "name" : "publish_date",
+    "label" : "Publish Date",
+    "required" : false,
+    "locked" : false,
+    "type" : "date",
+    "display_width" : null,
+    "default" : 1593576000000
+  }, {
+    "id" : "d2179175-05fe-57cb-5f90-b1f5306bb8dd",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Lorem ipsum dolor sit amet"
+  }, {
+    "id" : "19c7a171-8b56-0087-b020-6ff6a3eb511f",
+    "name" : "short_content",
+    "label" : "Short Content",
+    "required" : false,
+    "locked" : false,
+    "placeholder" : "",
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu."
+  }, {
+    "id" : "29ddb196-f632-8650-6a99-c0bf3c9b9f37",
+    "name" : "url_field",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.localogy.com/",
+      "content_id" : null
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent10.net/hubfs/5633517/Blog/Images/img-1.jpeg",
+      "alt" : "img-1",
+      "width" : 1280,
+      "height" : 853,
+      "max_width" : 1280,
+      "max_height" : 853
+    },
+    "publish_date" : 1593576000000,
+    "title" : "Lorem ipsum dolor sit amet",
+    "short_content" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.",
+    "url_field" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.localogy.com/",
+      "content_id" : null
+    }
+  }, {
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent10.net/hubfs/5633517/Blog/Images/img-1.jpeg",
+      "alt" : "img-1",
+      "width" : 1280,
+      "height" : 853,
+      "max_width" : 1280,
+      "max_height" : 853
+    },
+    "publish_date" : 1593576000000,
+    "title" : "Lorem ipsum dolor sit amet",
+    "short_content" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.",
+    "url_field" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.localogy.com/",
+      "content_id" : null
+    }
+  }, {
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent10.net/hubfs/5633517/Blog/Images/img-1.jpeg",
+      "alt" : "img-1",
+      "width" : 1280,
+      "height" : 853,
+      "max_width" : 1280,
+      "max_height" : 853
+    },
+    "publish_date" : 1593576000000,
+    "title" : "Lorem ipsum dolor sit amet",
+    "short_content" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu.",
+    "url_field" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.localogy.com/",
+      "content_id" : null
+    }
+  } ]
+}, {
+  "id" : "a48f2b45-3a35-a431-ebb6-96a862c60971",
+  "name" : "enable_section",
+  "label" : "Enable Section?",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+} ]

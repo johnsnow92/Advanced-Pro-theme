@@ -1,0 +1,347 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: About Us - Advanced Pro Theme
+  screenshotPath: ../images/templates/about-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+
+  {% if page_meta.meta_description %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+  {% endif %}
+
+  <!-- Favicon -->
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}">
+  {% endif %}
+
+  <!-- Theme CSS -->
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+
+  <!-- Theme JS -->
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+
+  <!-- Standard Header Includes -->
+  {{ standard_header_includes }}
+</head>
+
+<body class="{{ builtin_body_classes }}">
+
+  <div class="body-wrapper">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Header -->
+    {% global_partial path="../partials/header.hubl.html" %}
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+
+      <!-- Hero Section - Drag and Drop Area -->
+      {% dnd_area "hero_section"
+        label="Hero Section",
+        class="dnd-section dnd-section-hero"
+      %}
+        {% dnd_section
+          vertical_alignment="MIDDLE",
+          max_width=1200
+        %}
+          {% dnd_module
+            path="@hubspot/rich_text",
+            html="<h1>About Us</h1><p class='lead'>Learn more about our company, mission, and the team behind our success.</p>",
+            offset=0,
+            width=12
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+
+      <!-- Main Content Area - Drag and Drop Area -->
+      {% dnd_area "main_content"
+        label="Main Content Area",
+        class="dnd-section dnd-section-content"
+      %}
+        {% dnd_section
+          vertical_alignment="TOP",
+          max_width=1200
+        %}
+          {% dnd_column
+            offset=0,
+            width=6
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/rich_text",
+                html="<h2>Our Story</h2><p>Tell your company's story here. Share your journey, your passion, and what makes your business unique.</p><p>This flexible content area allows you to add any module you need - text, images, videos, forms, and more.</p>",
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+
+          {% dnd_column
+            offset=6,
+            width=6
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/linked_image",
+                img={
+                  "alt": "About us image",
+                  "src": "https://via.placeholder.com/600x400",
+                  "width": 600,
+                  "height": 400
+                },
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+
+        {% dnd_section
+          vertical_alignment="MIDDLE",
+          max_width=1200,
+          background_color={
+            "color": "#f8f9fa",
+            "opacity": 100
+          },
+          padding={
+            "top": 80,
+            "right": 20,
+            "bottom": 80,
+            "left": 20
+          }
+        %}
+          {% dnd_column
+            offset=0,
+            width=12
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/rich_text",
+                html="<h2 style='text-align: center;'>Our Mission & Values</h2><p style='text-align: center;' class='lead'>Share your company's mission statement and core values that guide your work.</p>",
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+
+        {% dnd_section
+          vertical_alignment="TOP",
+          max_width=1200
+        %}
+          {% dnd_column
+            offset=0,
+            width=4
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/rich_text",
+                html="<div style='text-align: center; padding: 2rem;'><div style='font-size: 48px; margin-bottom: 1rem;'>🎯</div><h3>Our Mission</h3><p>Describe your company mission and purpose.</p></div>",
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+
+          {% dnd_column
+            offset=4,
+            width=4
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/rich_text",
+                html="<div style='text-align: center; padding: 2rem;'><div style='font-size: 48px; margin-bottom: 1rem;'>💡</div><h3>Our Vision</h3><p>Share your vision for the future.</p></div>",
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+
+          {% dnd_column
+            offset=8,
+            width=4
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/rich_text",
+                html="<div style='text-align: center; padding: 2rem;'><div style='font-size: 48px; margin-bottom: 1rem;'>⭐</div><h3>Our Values</h3><p>Highlight your core company values.</p></div>",
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+
+      <!-- Team Section - Drag and Drop Area -->
+      {% dnd_area "team_section"
+        label="Team Section",
+        class="dnd-section dnd-section-team"
+      %}
+        {% dnd_section
+          vertical_alignment="TOP",
+          max_width=1200,
+          padding={
+            "top": 80,
+            "right": 20,
+            "bottom": 80,
+            "left": 20
+          }
+        %}
+          {% dnd_column
+            offset=0,
+            width=12
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/rich_text",
+                html="<h2 style='text-align: center;'>Meet Our Team</h2><p style='text-align: center;' class='lead'>The talented people who make it all happen.</p>",
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+
+        {% dnd_section
+          vertical_alignment="TOP",
+          max_width=1200
+        %}
+          {% dnd_column
+            offset=0,
+            width=3
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/linked_image",
+                img={
+                  "alt": "Team member",
+                  "src": "https://via.placeholder.com/300x300",
+                  "width": 300,
+                  "height": 300
+                },
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+              {% dnd_module
+                path="@hubspot/rich_text",
+                html="<div style='text-align: center; padding: 1rem;'><h4>Team Member Name</h4><p>Position/Title</p></div>",
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+
+          {% dnd_column
+            offset=3,
+            width=3
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/linked_image",
+                img={
+                  "alt": "Team member",
+                  "src": "https://via.placeholder.com/300x300",
+                  "width": 300,
+                  "height": 300
+                },
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+              {% dnd_module
+                path="@hubspot/rich_text",
+                html="<div style='text-align: center; padding: 1rem;'><h4>Team Member Name</h4><p>Position/Title</p></div>",
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+
+          {% dnd_column
+            offset=6,
+            width=3
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/linked_image",
+                img={
+                  "alt": "Team member",
+                  "src": "https://via.placeholder.com/300x300",
+                  "width": 300,
+                  "height": 300
+                },
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+              {% dnd_module
+                path="@hubspot/rich_text",
+                html="<div style='text-align: center; padding: 1rem;'><h4>Team Member Name</h4><p>Position/Title</p></div>",
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+
+          {% dnd_column
+            offset=9,
+            width=3
+          %}
+            {% dnd_row %}
+              {% dnd_module
+                path="@hubspot/linked_image",
+                img={
+                  "alt": "Team member",
+                  "src": "https://via.placeholder.com/300x300",
+                  "width": 300,
+                  "height": 300
+                },
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+              {% dnd_module
+                path="@hubspot/rich_text",
+                html="<div style='text-align: center; padding: 1rem;'><h4>Team Member Name</h4><p>Position/Title</p></div>",
+                offset=0,
+                width=12
+              %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+
+    </main>
+
+    <!-- Global Footer -->
+    {% global_partial path="../partials/footer.hubl.html" %}
+
+  </div>
+
+  <!-- Standard Footer Includes -->
+  {{ standard_footer_includes }}
+
+</body>
+</html>

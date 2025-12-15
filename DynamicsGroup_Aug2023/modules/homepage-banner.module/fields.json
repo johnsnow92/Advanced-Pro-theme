@@ -1,0 +1,156 @@
+[ {
+  "id" : "87092cd1-8c2e-4fbe-35e6-d90e566dc3d1",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Design.<br>Manufacturing.<br>Prototyping."
+}, {
+  "id" : "fa894e61-1a51-e90b-2476-dc98461d13e5",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Your Manufacturing Partner.</p>"
+}, {
+  "id" : "d3c6ab0a-bfe2-1344-cca4-31483704ba5d",
+  "name" : "button_type",
+  "label" : "Button Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null
+}, {
+  "id" : "e6335aa3-488f-3a4a-797f-e81b0a122d3b",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "button_type",
+    "controlling_value_regex" : "std",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "b5fab68d-d80e-3b93-5e86-0d1cb632907d",
+  "name" : "button_link",
+  "label" : "Button Link",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "button_type",
+    "controlling_value_regex" : "std",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "704ac232-bc3a-7629-3b38-7030dfa9734f",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "button_type",
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : null,
+    "access" : null
+  },
+  "type" : "cta",
+  "display_width" : null
+}, {
+  "id" : "82088864-d1eb-42ca-7d98-f8b23cb90ef1",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/mechanic-73.png",
+    "alt" : "Design",
+    "loading" : "lazy",
+    "width" : 1920,
+    "height" : 1100,
+    "max_width" : 1920,
+    "max_height" : 1100
+  }
+}, {
+  "id" : "7e7a12b1-9f35-eb9f-f2a6-33dc812b4b1e",
+  "name" : "parallax_image",
+  "label" : "Parallax Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/design11.png",
+    "alt" : "Design",
+    "loading" : "lazy",
+    "width" : 830,
+    "height" : 657,
+    "max_width" : 830,
+    "max_height" : 657
+  }
+}, {
+  "id" : "4a2b0e82-b5fa-42fd-13db-0490330b3767",
+  "name" : "right_image",
+  "label" : "Right Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/mechanic-57-1.png",
+    "alt" : "Dynamics Group",
+    "loading" : "lazy",
+    "width" : 798,
+    "height" : 1052,
+    "max_width" : 798,
+    "max_height" : 1052
+  }
+} ]

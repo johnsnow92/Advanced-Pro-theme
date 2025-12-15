@@ -1,0 +1,165 @@
+.accordion_wrap .acc-item .acc-content {
+  display: none;
+  padding: 10px 25px;
+  box-shadow: 0px 1px 2px rgba(22, 22, 22, 0.1);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.accordion_wrap .btm-btn {
+  padding-top: 20px;
+}
+
+.accordion_wrap .acc-item {
+  border-radius: 4px;
+}
+
+.accordion_wrap .acc-item.activeaccord .acc-content {
+  display: block;
+}
+
+.accordion_wrap .acc-form {
+  margin-top: 20px;
+}
+
+.accordion_wrap .acc-item {
+  position: relative;
+}
+
+.accordion_wrap .acc-item .acctitle {
+  position: relative;
+  padding: 14px 10px 9px;
+  cursor: pointer;
+  box-shadow: 0px 1px 2px rgba(22, 22, 22, 0.1);
+  border-radius: 4px 4px 0px 0px;
+  line-height:1.5;
+}
+
+.accordion_wrap .acc-item .acctitle > * {
+  pointer-events: none;
+}
+
+.accordion_wrap .acc-item .carrortwrap {
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  right: 15px;
+}
+
+.accordion_wrap .acc-item .acctitle img.up {
+  display: none;
+}
+
+.accordion_wrap .acc-item.activeaccord .acctitle img.down{
+  display: block;
+}
+
+.accordion_wrap .acc-item.activeaccord .acctitle .down.arrow {
+  transform: rotate(180deg);
+}
+
+.accordion_wrap .acc-item.activeaccord .acctitle img.up {
+  display: block;
+}
+
+.accordion_wrap .acc-item.activeaccord .acctitle .right {
+  transform: rotate(90deg);
+}
+
+.accordion_wrap .acc-item .carrortwrap svg.right.arrow {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.accordion_wrap .acc-item .carrortwrap .custom-icon svg{
+  width: 1em;
+  height: 1em;
+}
+
+.accordion_wrap .acc-item .acctitle * {
+  margin: 0;
+} 
+
+.accordion_wrap .acc-item .acc-content .acc-btn-wrap a {
+  margin-bottom: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.accordion_wrap .acc-item .acc-content .desc {
+  margin-bottom: 15px;
+}
+
+.accordion_wrap .custom-container .accord_outer{
+  overflow: hidden;
+}
+
+.accordion_wrap .acc-item .acc-content .desc {
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.accordion_wrap .acc-item .acc-content .desc p:last-child {
+  margin-bottom: 0;
+}
+
+.accordion_wrap .acc-item:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.accordion_wrap .acc-item .carrortwrap svg,
+.accordion_wrap .acc-item .carrortwrap img {
+  width: 15px;
+  transition: all .5s ease;
+}
+
+.accordion_wrap .acc-item .carrortwrap .custom-icon {
+  line-height: 0;
+}
+
+.accordion_wrap .acc-item .carrortwrap svg{
+  fill:currentColor;
+}
+
+.accordion_wrap .acc-item .acctitle.activeaccord .custom-icon.horizontal_hover svg {
+  transform: rotate(90deg);
+}
+
+.accordion_wrap .acc-item .acctitle h6 {
+  pointer-events: auto;
+}
+
+.accordion_wrap .acc-item .acctitle.activeaccord .custom-icon.vertical_hover svg {
+  transform: rotate(-180deg);
+}
+.accordion_wrap .acc-item .acc-content .acc-btn-wrap .btn_row {
+  justify-content: unset;
+}
+
+.accordion_wrap .acc-item .carrortwrap svg.plus {
+  display: block;
+}
+
+.accordion_wrap .acc-item .carrortwrap svg.minus {
+  display: none;
+}
+
+.accordion_wrap .acc-item.activeaccord svg.plus {
+  display: none;
+}
+
+.accordion_wrap .acc-item.activeaccord svg.minus {
+  display: block;
+}
+
+.accordion_wrap .acc-item .acctitle h4 > span {
+  padding-right: 20px;
+  display: inline-block;
+}
+
+.accordion_wrap.noImageNdParallax {
+overflow: visible
+}

@@ -1,0 +1,127 @@
+{% import "../../macros/_macros.html" as macros %}  
+<div class="why_choose_us_sec  {{name}} dnd_padd {{ module.advanced_customization.css_class_selector }} {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }}" {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+    <div class="main_row flex_row">
+      <div class="left_col col6">
+        <div class="left_inner">
+          <div class="content_wrap" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.content_animation_type }}"  {% endif %}>
+            {% if module.title %}
+            <{{ module.select_title_tag }} class="title">
+              {{ module.title }}
+              </{{ module.select_title_tag }}>
+              {% endif %}
+              {% if module.content_box %}
+              <div class="text_box">
+            {{ module.content_box }}
+          </div>
+          {% endif %}
+        </div>
+
+        {% if module.button_group %}
+        <div class="btn_wrapper" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.content_animation_type }}" data-aos-delay="300" {% endif %}>
+          {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+    <div class="right_col col6 flex_row">
+      {% set loopCount = module.features_group|length %}
+      {% for row in module.features_group|batch(2) %}
+      {% set loopGet = loopCount %}
+      <div class="features_row row{{loop.index}} col6  ic_ty_{{ item.select_icon_type }}">
+        {% if row %}
+        {% for item in row %}
+        {% if item %}
+        {% if  item.title or item.suffix or item.value or item.image.src and item.select_icon_type == "image" or item.select_icon.name and item.select_icon_type == "fw" %}
+        <div class="feat_item  it{{loop.index}}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.features_animation_type }}"
+             data-aos-delay="{{loopGet + loop.index * 150 + 50}}" {% endif %}>
+          <div class="item_inner {{ module.style.card.select_background_theme }}">
+            
+               {% if (item.image.src and item.select_icon_type == "image") or (item.select_icon.name and item.select_icon_type == "fw") %}
+            <div class="icon_box">
+              <div class="icon_inner">
+                {% if item.image.src and item.select_icon_type == "image" %}
+                <span class="icon_img icon_sp">
+                  <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" title="{{ item.image.alt }}" width="{{ item.image.width }}" height="{{ item.image.height }}">
+                </span>
+                {% endif %}
+
+                {% if item.select_icon.name and item.select_icon_type == "fw" %}
+                <span class="icon_svg icon_sp">
+                  {% icon
+                name="{{ item.select_icon.name }}"
+                style="{{ item.select_icon.type }}"
+                unicode="{{ item.select_icon.unicode }}"
+                icon_set="{{ item.select_icon.icon_set }}"
+                %}
+                </span>
+                {% endif %}
+              </div>
+            </div>
+              {% endif %}
+
+            {% if item.suffix or item.value  %}
+            <{{ module.style.card.select_value_size }} class="counter_wrap {{ module.style.card.select_color_theme }}">
+              {% if item.prefix  %}  <span class="prefix">{{ item.prefix }}</span>{% endif %}
+              {% if item.value  %}  <span class="counter purecounter" data-purecounter-start="0" data-purecounter-end="{{ item.value|replace(',','')|replace('.','') }}"> {{ item.value }}</span>{% endif %}
+              {% if item.suffix  %}  <span class="suffix">{{ item.suffix }}</span>{% endif %}
+              </{{ module.style.card.select_value_size }}>
+              {% endif %}
+              {% if item.title  %}
+              <p class="counter_label">
+            {{ item.title }}
+            </p>
+          {% endif %}
+
+        </div>
+      </div>
+      {% endif %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+{{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+</div>
+
+
+{% require_css %}
+<style>
+
+  {% if module.style.card.select_background_theme == "custom" %}
+  .why_choose_us_sec.{{name}} .item_inner{
+    background: {{  macros.color(module.style.card.background_color) }}
+  }
+  {% endif %}
+
+  {% if module.style.card.select_color_theme == "custom" %}
+  .why_choose_us_sec.{{name}} h2.counter_wrap{
+    color: {{  macros.color(module.style.card.color) }}
+  }
+  {% endif %}
+
+  {% if module.style.card.select_title_color_theme == "custom" %}
+  .why_choose_us_sec.{{name}} .counter_label{
+    color: {{  macros.color(module.style.card.title_color) }}
+  }
+  {% endif %}
+
+  {% if module.style.card.select_icon_color_theme == "custom" %}
+  .why_choose_us_sec.{{name}} .icon_svg{
+    fill: {{  macros.color(module.style.card.icon_color) }}
+  }
+  {% endif %}
+</style>
+{% end_require_css%}
+
+
+

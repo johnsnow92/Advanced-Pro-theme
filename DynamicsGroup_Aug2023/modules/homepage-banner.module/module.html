@@ -1,0 +1,66 @@
+<div class="cm-home-banner">
+  <div class="cm-wrapper">
+    <div class="cm-row">
+      <div class="cm-left">
+        <div class="right-inner">
+          <div class="cm-content">
+            <div class="top-spacer"></div>
+            <h1>{{ module.heading }}</h1>
+            <div class="cm-divider"></div>
+            <div class="cm-text">
+              {{ module.content }}
+            </div>
+            <div class="btn-wrapper">
+              {% if module.button_type=="std" %}
+              {% set href = module.button_link.url.href %}
+              {% if module.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a href="{{ href }}" class="hs-button"
+                 {% if module.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                 {% if module.button_link.rel %}rel="{{ module.button_link.rel }}"{% endif %}
+                 >
+                {{ module.button_text }}
+              </a>
+              {% endif %}
+              {% if module.button_type=="cta" %}
+              {% cta guid="{{ module.cta_field }}" %}
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cm-right">
+        <div class="parallax-section">
+          <div class="et_parallax_bg_wrap">
+            <div class="et_parallax_bg jarallax" style="background-image:url({{ module.parallax_image.src }});"></div>
+          </div> 
+          <div class="et_pb_image_wrap">
+            {% if module.image_field.src %}
+            {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+            {% if module.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.image_field.max_width }}" height="{{ module.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+            <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+        </div>
+        <div class="et_pb_image_wrap1">
+          {% if module.right_image.src %}
+          {% set sizeAttrs = 'width="{{ module.right_image.width }}" height="{{ module.right_image.height }}"' %}
+          {% if module.right_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.right_image.width }}" height="{{ module.right_image.height }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.right_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.right_image.max_width }}" height="{{ module.right_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.right_image.loading != 'disabled' ? 'loading="{{ module.right_image.loading }}"' : '' %}
+          <img src="{{ module.right_image.src }}" alt="{{ module.right_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

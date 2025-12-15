@@ -1,0 +1,142 @@
+.contractsafe-2020-testimonial {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  position: relative;
+}
+
+.contractsafe-2020-testimonial .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.contractsafe-2020-testimonial .page-width.text-center {
+  text-align: center; 
+}
+
+.contractsafe-2020-testimonial .line-divider {
+  width: 72px;
+  height: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  background-color: #0d4eb5;
+}
+
+.contractsafe-2020-testimonial .slide .line-divider {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+
+.contractsafe-2020-testimonial .customer-testimonial {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+}
+
+.contractsafe-2020-testimonial .customer-testimonial.slick-initialized {
+  visibility: visible;
+  opacity: 1;    
+}
+
+.contractsafe-2020-testimonial .slick-prev,
+.contractsafe-2020-testimonial .slick-next {
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+}
+
+.contractsafe-2020-testimonial .slick-prev {
+  left: -100px; 
+}
+
+.contractsafe-2020-testimonial .slick-next {
+  right: -100px;
+}
+
+.contractsafe-2020-testimonial .slick-dots {
+  margin-top: 50px;
+  margin-bottom: 0;
+  position: static;
+  bottom: 0;
+}
+
+.contractsafe-2020-testimonial .slick-dots li button:before {
+  font-size: 20px;
+  color: #fff;
+}
+
+.contractsafe-2020-testimonial .slick-dots li.slick-active button:before {
+  color: #fff;
+}
+
+/* Adjust left & right margins based on .slide padding */
+.contractsafe-2020-testimonial .customer-testimonial {
+  margin: 0 -20px;
+}
+
+.contractsafe-2020-testimonial .customer-testimonial .slide {
+  padding: 30px 30px; 
+  background-color: #fff;
+  text-align: left;
+  margin: 0 12px;
+  border-radius: 6px;
+}
+
+.contractsafe-2020-testimonial .customer-testimonial .slide .quote-icon img {
+  width: 25px;
+  display: block;
+}
+
+.contractsafe-2020-testimonial .customer-testimonial .slide .quote-name {
+  display: inline-block;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.contractsafe-2020-testimonial .customer-testimonial .slide .quote-name,
+.contractsafe-2020-testimonial .customer-testimonial .slide .quote-name * {
+  color: #03172c;
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
+.contractsafe-2020-testimonial .customer-testimonial .slide .quote-description,
+.contractsafe-2020-testimonial .customer-testimonial .slide .quote-description * {
+  font-size: 16px;
+}
+
+.contractsafe-2020-testimonial .customer-testimonial .slide .quote-description p:last-child {
+  margin-bottom: 0; 
+}
+
+@media(max-width:1139px) {
+  
+  .contractsafe-2020-testimonial .customer-testimonial .slide {
+    padding: 30px 20px;
+  }
+  
+  .contractsafe-2020-testimonial .customer-testimonial .slide .quote-description,
+  .contractsafe-2020-testimonial .customer-testimonial .slide .quote-description * {
+    font-size: 16px;
+  }
+  
+  .contractsafe-2020-testimonial .slick-slider {
+    position: static;  
+  }
+  
+  .contractsafe-2020-testimonial .slick-prev {
+    left: 0;
+  }
+  
+  .contractsafe-2020-testimonial .slick-next {
+    right: 0;
+  }
+  
+  
+}

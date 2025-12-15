@@ -1,0 +1,272 @@
+.kr-table-1{
+  padding: 60px 20px;
+}
+.maxContainer{
+  max-width: 1080px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+.kr-table-1 h2{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 44px;
+  line-height: 1.2em;
+  font-weight: 400;
+  text-transform: initial;
+ 
+}
+.matrix-wrapper{
+  padding: 40px 0 0;
+   display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+}
+.matrix-column{
+  margin-bottom:20px
+}
+.matrix-column.featured-col .matrix-column-wrapper{
+  background-color: #ebedf4;
+}
+.matrix-column-wrapper{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  min-height: auto;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  border: 1px solid gray;
+  text-align: left;
+}
+.matrix-title{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.matrix-title h4{
+  padding-left: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.matrix-price-info{
+  padding: 20px 20px 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #f7f7f7;
+}
+.matrix-price-info .m-price span.price-val{
+  margin-bottom: 0px;
+  font-size: 50px;
+  line-height: 1.1em;
+  font-weight: 600;
+}
+.matrix-price-info .m-price span.sign{
+  font-size: 40px;
+  line-height: 1.1em;
+  font-weight: 600;
+}
+.matrix-price-info .ptext{
+  font-size: 14px;
+  line-height: 1.6em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.matrix-column.enterprise .matrix-price-info{
+  padding-top: 45px;
+}
+.matrix-column .matrix-price-info a.price-btn{
+  padding: 8px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  background-color: #4990e2;
+  color: #fff;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: inherit;
+}
+.matrix-column .matrix-price-info a.price-btn:hover{
+  background-color: #fbe748;
+  color: #24252a;
+}
+.matrix-column.enterprise .matrix-price-info a.price-btn{
+  border-color: #4990e2;
+  background-color: transparent;
+  color: #4990e2;
+}
+.matrix-column.enterprise .matrix-price-info a.price-btn:hover{
+  border-color: #fbe748;
+  background-color: #fbe748;
+  color: #24252a;
+}
+.price-calc a{
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.4em;
+  color: #373943;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+.price-calc a:hover{
+  color: #373943;
+}
+.price-calc a:focus,
+.price-calc a:active{
+  color: #4990e2;
+}
+.price-calc a.annual{
+  margin-right: 3px;
+}
+.price-calc a span.active:before{
+  content: '';
+  background: #666666;
+  height: 6px;
+  width: 6px;
+  border-radius: 100px;
+  display: block;
+  position: relative;
+  top: 0.16em;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0 auto;
+}
+.price-calc a span{
+  background: #dedede;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 13px;
+  width: 13px;
+  border-radius: 100%;
+  border: 1px solid #a7a7a7;
+}
+.price-calc{
+  padding-bottom: 3px;
+}
+.matrix-icon {
+  display:block;
+  width: 100%;
+  background: white;
+  text-align:center;
+  padding: 15px;
+}
+.matrix-items-wrapper{
+  position: relative;
+  background: #f1f1f1;
+}
+.matrix-items-wrapper p{
+  padding: 15px;
+  margin-bottom: 0;
+  margin:0;
+  border-bottom: 1px solid #cfd2dc;
+}
+.matrix-more-features{
+  display: none;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+.kr-table-1 .price-footer-text{
+  text-align:center;
+}
+.btn-price {
+    padding: 15px 20px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.col-view-more {
+    background: #f9f6f6;
+    padding: 13px;
+    border-top: 1px solid lightgray;
+    text-transform: uppercase;
+    text-align: center;
+}
+.view-more{
+  display: inline-block;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: transparent;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: #24252a;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+}
+.view-more:hover{
+  color: #4990e2;
+}
+.exclude_yes{
+  opacity: 0.3;
+}
+
+@media screen and (max-width: 767px){
+  .kr-table-1{
+    padding: 40px 20px 0;    
+  }
+  .kr-table-1 h2{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 38px;
+  }
+  .matrix-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .matrix-column {
+    margin-bottom: 60px;
+  }
+  .matrix-column.enterprise .matrix-price-info{
+    padding-top: 30px;
+    padding-bottom: 25px;
+  }
+  .col-view-more{
+    display: inline-block;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: transparent;
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+    color: #24252a;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+  }  
+  .view-more-sec{
+    display: none;
+  }
+}

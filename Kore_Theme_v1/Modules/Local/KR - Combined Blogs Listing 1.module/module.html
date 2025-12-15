@@ -1,0 +1,117 @@
+<div class="media-list-section">
+  <div class="media-filter-wrap">
+
+    <div class="filter-select-wrap">
+      <select name="post_subjet" id="post_subject" class="media--input filter1">
+        <option value="show-all">Posts by Topic</option>
+        <option value="eureka-math">EUREKA MATH</option>
+        <option value="geodes">GEODES</option>
+        <option value="aha-blog">General</option>
+        <option value="phd-science">PhD Science</option>
+        <option value="witwisdom">WIT & WISDOM</option>
+      </select>
+    </div>
+
+    <div class="filter-select-wrap">
+      <select name="media_type" id="media_type" class="media--input filter2">
+        <option value="show-all">Media Type</option>
+        <option value="media-mentions">Media Mentions</option>
+        <option value="press-releases">Press Releases</option>
+      </select>
+    </div>
+
+    <div class="filter-select-wrap">
+      <div id="site-search" class="site-search">
+        <form>
+          <input class="search-input" id="search" type="search" name="term" placeholder="Search...">
+          <i class='fa fa-search'></i>
+        </form>
+      </div>
+    </div>
+    <a href="javascript:void(0)" id="reset-filter" class="reset-filter">Reset Filters</a>
+
+  </div>
+
+  {% set blog_one_posts = blog_recent_tag_posts(5951790975, 'news', 200) %}
+  {% set blog_two_posts = blog_recent_tag_posts(5952627937, 'news', 200) %}
+  {% set blog_three_posts = blog_recent_tag_posts(30018388541, 'news', 200) %}
+  {% set blog_four_posts = blog_recent_tag_posts(34356563670, 'news', 200) %}
+  {% set blog_five_posts = blog_recent_tag_posts(34356563674, 'news', 200) %}
+  
+  {% set all_posts = (blog_one_posts + blog_two_posts + blog_three_posts + blog_four_posts + blog_five_posts) | sort(true, false, 'publish_date')  %} 
+
+  <div class="media-list-items">
+    <div class="media-inner-wrap">
+      <div class="media-topics">
+        {% if module.heading_text %}
+        <h2>{{ module.heading_text }}</h2>
+        {% endif %}
+        <div class="topic-lists">
+          {% for item in module.tag %}
+          <a href="javascript:void(0)" data-tag="{{ item.slug }}" class="topic-item">{{ item.name }}</a>
+          {% endfor %}          
+          <a href="javascript:void(0)" id="reset-filter" class="reset-filter tag-reset-filter">Reset Filters</a>
+
+        </div>
+      </div>
+      <div class="media-lists">
+        <div class="media-list-wrap">
+          {% set blog_eureka_math = '/eureka' %}
+          {% set blog_geodes = '/geodes' %}
+          {% set blog_gm_blog = '/aha-blog' %}
+          {% set blog_phd_science = '/phd-science' %}
+          {% set blog_witwisdom = '/witwisdom' %}
+
+          {% for post in all_posts %}
+ 
+          {% set post_url = post.absolute_url %}
+          {% set anchor_link = '' %}
+          {% set newTab = '' %}
+          {% set custom_url = post.widgets.module_167609282825123.body.external_link %}
+          
+          {% if custom_url %}
+            {% set anchor_link = post.widgets.module_167609282825123.body.external_link %}
+            {% set newTab = 'target="_blank"' %}
+          {% else %}
+            {% set anchor_link = post.absolute_url %}
+            {% set newTab = '' %}
+          {% endif %}
+
+          <div class="post-item {% if post_url is containing blog_eureka_math %}eureka-math{% elif post_url is containing blog_geodes %}geodes{% elif post_url is containing blog_gm_blog %}aha-blog{% elif post_url is containing blog_phd_science %}phd-science{% elif post_url is containing blog_witwisdom %}witwisdom{% endif %} {% for tag in post.tag_list %}tag-{{ tag.slug }} {% endfor %} type-{{ post.widgets.module_167609282825123.body.media_type }}">
+            <div class="post-inner">
+              <div class="featured-img" style="background-image: url('{{ post.featured_image }}');">
+                <a href="{{ anchor_link }}" {{ newTab }}></a>
+              </div>
+              <div class="post-body">
+                {% if post.tag_list %}
+                <div id="post-topics">
+                  {% for tag in post.tag_list %}
+                  <a class="topic-link" href="{{ post.parent_blog.absolute_url }}/tag/{{ tag.slug }}">{{ tag.name }}</a>{% if not loop.last %}{% endif %}
+                  {% endfor %}
+                </div>
+                {% endif %}
+                <h3 class="post_title"><a href="{{ anchor_link }}">{{ post.name }}</a></h3>
+                <div class="post-content"><p>{{ post.post_list_content|striptags|truncatehtml(150, '...' , false) }}</p></div>
+              </div>
+
+            </div>
+            <a href="{{ anchor_link }}" {{ newTab }} class="post-link"></a>
+          </div>
+                    
+          {% endfor %}
+        </div>
+        <div class="pagination-list">
+          <!--           <a href="javascript:void(0)" class="arrow-icon"><i class="fa fa-angle-left" aria-hidden="true"></i></a> -->
+        </div>               
+        
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% require_js %}
+<script>
+
+</script>
+{% end_require_js %}

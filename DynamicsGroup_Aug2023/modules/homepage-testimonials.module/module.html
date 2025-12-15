@@ -1,0 +1,53 @@
+<div class="cm-home-testi">
+  <div class="cm-wrapper">
+    <div class="cm-row">
+      <div class="cm-left">
+        <div class="top-spacer"></div>
+        <div class="parallax-section">
+          <div class="et_parallax_bg_wrap">
+            <div class="et_parallax_bg jarallax" style="background-image:url({{ module.parallax_image.src }});"></div>
+          </div> 
+          <div class="et_pb_image_wrap">
+            {% if module.image_field.src %}
+            {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+            {% if module.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.image_field.max_width }}" height="{{ module.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+            <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="cm-right">
+        <div class="right-inner">
+          <div class="right-img">
+            {% if module.quote_image.src %}
+            {% set sizeAttrs = 'width="{{ module.quote_image.width }}" height="{{ module.quote_image.height }}"' %}
+            {% if module.quote_image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.quote_image.width }}" height="{{ module.quote_image.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.quote_image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.quote_image.max_width }}" height="{{ module.quote_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = module.quote_image.loading != 'disabled' ? 'loading="{{ module.quote_image.loading }}"' : '' %}
+            <img src="{{ module.quote_image.src }}" alt="{{ module.quote_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+          <div class="testi-slider">
+            {% for item in module.testimonial_content %}
+            <div class="cm-item">
+              <div class="item-inner">
+                {{ item }}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />

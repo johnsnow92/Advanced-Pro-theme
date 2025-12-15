@@ -1,0 +1,61 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+{# Fontawesome for demo only, you need to place it on portal main CSS #}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+<div class="kore-navigation-bray-leino-events-footer">
+  <div class="page-width">
+    
+    <div class="social">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#" target="_blank">
+            <i class="fab fa-linkedin-in fa-lg"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" target="_blank">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" target="_blank">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" target="_blank">
+            <i class="fab fa-facebook-f fa-lg"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="flex">
+      <div class="col">
+        
+        {% if module.copyright  %}
+        {{ module.copyright }}
+        {% endif %}
+
+        <div class="horizontal-simple-menu">
+          {% simple_menu menu_tree="{{ module.simple_menu }}" orientation='horizontal' %}
+        </div>
+
+      </div>
+
+      <div class="col image">
+        
+        {% if module.image.src %}
+        {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+        {% if module.image.size_type == 'auto' %}
+        {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+        {% elif module.image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image.max_width }}px; max-height: {{ module.image.max_height }}px"' %}
+        {% endif %}
+        <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" {{ sizeAttrs }}>
+        {% endif %}
+        
+      </div>
+    </div>
+  </div>
+</div>

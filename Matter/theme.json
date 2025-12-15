@@ -1,0 +1,17 @@
+{
+  "label": "Matter Theme",
+  "version":"1.0",
+  "preview_path": "./templates/home-page.html",
+  "screenshot_path": "./images/template-previews/home-page.jpg",
+  "enable_domain_stylesheets": false,
+  "license": "./license.txt",
+  "responsive_breakpoints": [
+    {
+      "name": "mobile",
+      "mediaQuery": "@media (max-width: 767px)",
+      "previewWidth": {
+        "value": 477
+      }
+    }
+  ]
+}

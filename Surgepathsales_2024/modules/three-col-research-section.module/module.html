@@ -1,0 +1,36 @@
+<section class="research-sec">
+  <div class="container">
+    <h2>
+      {{ module.main_heading }}
+    </h2>
+
+    <div class="card-div">
+      {% for item in module.card_group %}
+      <div class="card">
+        <div class="card-img-back">
+          {% if item.card_icon.src %}
+          {% set sizeAttrs = 'width="{{ item.card_icon.width|escape_attr }}" height="{{ item.card_icon.height|escape_attr }}"' %}
+          {% if item.card_icon.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.card_icon.width|escape_attr }}" height="{{ item.card_icon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.card_icon.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.card_icon.max_width|escape_attr }}" height="{{ item.card_icon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = item.card_icon.loading != 'disabled' ? 'loading="{{ item.card_icon.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.card_icon.src|escape_url }}" alt="{{ item.card_icon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}       
+        </div>
+
+        <div class="card-detail">
+          <h4>
+            {{ item.card_heading }}
+          </h4>
+          {{ item.card_contant }} 
+
+          <a href="" class="card-link">{{ item.link_text }}</a>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

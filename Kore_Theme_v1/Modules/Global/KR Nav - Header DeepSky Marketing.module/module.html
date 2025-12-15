@@ -1,0 +1,26 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+{# Fontawesome for demo only, you need to place it on portal main CSS #}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+<div class="kore-navigation-deepsky-marketing-header">
+  <div class="page-width">
+    <div class="flex">
+      <div class="col">
+        {% logo
+        override_inherited_src="{{ module.logo.override_inherited_src }}"
+        src="{{ module.logo.src }}"
+        alt="{{ module.logo.alt }}"
+        width="{{ module.logo.width }}"
+        height="{{ module.logo.height }}"
+        suppress_company_name="{{ module.logo.suppress_company_name }}"
+      %}
+      </div>
+      <div class="col">
+        <div class="custom-menu-primary">
+          {% menu id="{{ module.menu }}" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

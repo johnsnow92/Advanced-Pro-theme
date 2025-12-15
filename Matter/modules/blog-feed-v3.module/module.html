@@ -1,0 +1,427 @@
+{% import "../../macros/_macros.html" as macros %}
+
+<div class="blog-feedv3   theme2 {{name}} dnd_padd {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} feed_{{ module.feed_group.select_feed_type }}"
+     {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+
+  <div class="page-center {{ module.style.container.select_size }}">
+    {% if module.top_content %}
+    <div class="blogfeed-top-wrp">
+      {{ macros.topContent(module.top_content, module.module_settings) }}
+    </div>
+    {% endif %}
+    
+    <div class="feed-outer-wrp flex_row rowGap15">
+
+      {% set max_posts = module.feed_group.number_of_posts %}
+      {% set rec_posts = [] %}
+
+      {% if  module.feed_group.select_feed_type != "posts_by_title" %}
+
+      {% if  module.feed_group.select_feed_type == "recent_posts" %}
+      {% set rec_posts = rec_posts + blog_recent_posts(module.feed_group.select_blog , max_posts + 1) %}
+      {% endif %}
+
+      {% if  module.feed_group.select_feed_type == "popular_posts" %}
+      {% set rec_posts = blog_popular_posts(module.feed_group.select_blog, max_posts + 1) %}
+      {% endif %}
+
+      {% if  module.feed_group.select_feed_type == "posts_by_tag" %}
+      {% set rec_posts = blog_recent_tag_posts(module.feed_group.select_blog,module.feed_group.select_tag, max_posts + 1) %}
+
+      {% endif %}
+
+      {% set i = 0 %}
+
+
+      <div class="left_col {% if max_posts >= 2 %}col7{% else %}col12{% endif %}">
+        {% for post in rec_posts %}
+
+
+
+        {% if content.absolute_url != post.absolute_url and i < max_posts %}  
+        {% if loop.index == 1%}
+        <div class="recent-post-item3  {% if module.feed_settings.featured_image == "false" or not post.post_list_summary_featured_image%}noImage{% endif %}" {% if module.module_settings.enable_animation %} data-aos-delay="{{loop.index * 100 + 200}}" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+          <div class="item_inner">
+            {% if module.feed_settings.featured_image %}
+            {% if post.post_list_summary_featured_image %}
+
+            <div class="hs-featured-wrp">
+              <div class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
+              </div>
+              <a class="overlay bg_el" href="{{ post.absolute_url }}">  </a>
+            </div>
+            {% endif %}
+            {% endif %}
+            <div class="post-btm">
+              <div class="meta_wrap">
+                {% if module.feed_settings.author %}
+                <span class="blog-author">
+                  <span class="icon_img">
+                    <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Alternate User1_layer"><path d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"></path></g></svg>
+                  </span>
+                  <span class="value_m">
+                    <a class="author-link" href="{{ blog_author_url(module.feed_group.select_blog, post.blog_post_author.slug) }}">
+                      {{ post.blog_post_author.display_name }}
+                    </a>
+                  </span>
+                </span>
+                {% endif %}
+
+                {% if module.feed_settings.date %}
+                <span class="item-date">
+                  <span class="icon_img">
+                    <svg style="fill: currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="Alternate Calendar1_layer"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></g></svg>
+                  </span>
+                  {{ macros.dateFormat(module.feed_settings.select_date_format, post)}}
+                </span>
+                {% endif %}
+
+                {% if module.feed_settings.tags %}
+                <span class="meta_tags">
+                  <span class="icon_img">
+                    <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="tag1_layer"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></g></svg>
+                  </span>
+                  <span class="value_m">
+                    {% for tag in post.tag_list %}
+                    <a href="{{ blog_tag_url(module.feed_group.select_blog, tag.slug) }}">
+                      {{tag.name}}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                  </span>
+                </span>
+                {% endif %}
+              </div>
+
+              {% if module.feed_settings.title %}
+              <{{ module.style.card.select_first_post_title_tag }} class="recent-post-title">
+                <a href="{{ post.absolute_url }}">{{ post.name}}</a>
+                </{{ module.style.card.select_first_post_title_tag }}>
+                {% endif %}
+
+                {% if module.feed_settings.description %}
+                {% if post.widgets.listing_summary.body.value %}
+                <p class="item_descr">{{ post.widgets.listing_summary.body.value }}</p>
+            {% else %}
+            {% if post.post_list_content %}
+            <p class="item_descr">{{ post.post_list_content|safe|truncatehtml(250, '' , false)|striptags }}</p>
+            {% endif %}
+            {% endif %}
+            {% endif %}
+
+            {% if module.feed_settings.read_more %}
+            <div class="read-more">
+              <a class href="{{ post.absolute_url }}">{{ module.feed_settings.read_more_text }}</a>
+            </div>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+      {% endif %}
+      {% set i = i + 1 %}          
+      {% endif %}
+      {% endfor %}
+    </div>
+
+    {% if max_posts >= 2 %}
+    <div class="right_col col5">
+
+      {% for post in rec_posts %}
+
+
+      {% if content.absolute_url != post.absolute_url and i < max_posts %}  
+      <div class="recent-post-item3 {% if loop.index == 1%}first_post{% endif %} {% if module.feed_settings.featured_image == "false" or not post.post_list_summary_featured_image%}noImage{% endif %}" {% if module.module_settings.enable_animation %} data-aos-delay="{{loop.index * 100 + 200}}" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+
+        <div class="item_inner flex_row">
+          {% if module.feed_settings.featured_image %}
+          {% if post.post_list_summary_featured_image %}
+
+          <div class="hs-featured-wrp col4">
+            <div class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
+            </div>
+            <a class="overlay bg_el" href="{{ post.absolute_url }}">  </a>
+          </div>
+          {% endif %}
+          {% endif %}
+          <div class="post-btm col8">
+            <div class="meta_wrap">
+              {% if module.feed_settings.author %}
+              <span class="blog-author">
+                <span class="icon_img">
+                  <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Alternate User1_layer"><path d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"></path></g></svg>
+                </span>
+                <span class="value_m">
+                  <a class="author-link" href="{{ blog_author_url(module.feed_group.select_blog, post.blog_post_author.slug) }}">
+                    {{ post.blog_post_author.display_name }}
+                  </a>
+                </span>
+              </span>
+              {% endif %}
+
+              {% if module.feed_settings.date %}
+              <span class="item-date">
+                <span class="icon_img">
+                  <svg style="fill: currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="Alternate Calendar1_layer"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></g></svg>
+                </span>
+                {{ macros.dateFormat(module.feed_settings.select_date_format, post)}}
+              </span>
+              {% endif %}
+
+              {% if module.feed_settings.tags %}
+              <span class="meta_tags">
+                <span class="icon_img">
+                  <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="tag1_layer"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></g></svg>
+                </span>
+                <span class="value_m">
+                  {% for tag in post.tag_list %}
+                  <a href="{{ blog_tag_url(module.feed_group.select_blog, tag.slug) }}">
+                    {{tag.name}}</a>{% if not loop.last %}, {% endif %}
+                  {% endfor %}
+                </span>
+              </span>
+              {% endif %}
+            </div>
+
+            {% if module.feed_settings.title %}
+            <{{ module.style.card.select_title_tag }} class="recent-post-title">
+              <a href="{{ post.absolute_url }}">{{ post.name}}</a>
+              </{{ module.style.card.select_title_tag }}>
+              {% endif %}
+
+              {% if module.feed_settings.description %}
+              {% if post.widgets.listing_summary.body.value %}
+              <p class="item_descr">{{ post.widgets.listing_summary.body.value }}</p>
+          {% else %}
+          {% if post.post_list_content %}
+          <p class="item_descr">{{ post.post_list_content|safe|truncatehtml(100, '' , false)|striptags }}</p>
+          {% endif %}
+          {% endif %}
+          {% endif %}
+
+          {% if module.feed_settings.read_more %}
+          <div class="read-more">
+            <a class href="{{ post.absolute_url }}">{{ module.feed_settings.read_more_text }}</a>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+
+    {% set i = i + 1 %}          
+    {% endif %}
+    {% endfor %}
+
+  </div>
+  {% endif %}
+
+  {% endif %}
+
+  {# post by title#}
+
+  {% if  module.feed_group.select_feed_type == "posts_by_title" %}
+  <div class="left_col {% if module.feed_group.field_group|length >= 2 %}col7{% else %}col12{% endif %}">
+    {% for item in module.feed_group.field_group %}
+
+
+
+    {% set post = content_by_id(item.select_post) %}
+    {% if loop.index == 1%}
+    <div class="recent-post-item3  {% if module.feed_settings.featured_image == "false" or not post.post_list_summary_featured_image%}noImage{% endif %}" {% if module.module_settings.enable_animation %} data-aos-delay="{{loop.index * 100 + 200}}" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+      <div class="item_inner">
+        {% if module.feed_settings.featured_image %}
+        {% if post.post_list_summary_featured_image %}
+
+        <div class="hs-featured-wrp">
+          <div class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
+          </div>
+          <a class="overlay bg_el" href="{{ post.absolute_url }}">  </a>
+        </div>
+        {% endif %}
+        {% endif %}
+        <div class="post-btm">
+          <div class="meta_wrap">
+            {% if module.feed_settings.author %}
+            <span class="blog-author">
+              <span class="icon_img">
+                <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Alternate User1_layer"><path d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"></path></g></svg>
+              </span>
+              <span class="value_m">
+                <a class="author-link" href="{{ blog_author_url(post.content_group_id, post.blog_post_author.slug) }}">
+                  {{ post.blog_post_author.display_name }}
+                </a>
+              </span>
+            </span>
+            {% endif %}
+
+            {% if module.feed_settings.date %}
+            <span class="item-date">
+              <span class="icon_img">
+                <svg style="fill: currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="Alternate Calendar1_layer"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></g></svg>
+              </span>
+              {{ macros.dateFormat(module.feed_settings.select_date_format, post)}}
+            </span>
+            {% endif %}
+
+            {% if module.feed_settings.tags %}
+            <span class="meta_tags">
+              <span class="icon_img">
+                <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="tag1_layer"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></g></svg>
+              </span>
+              <span class="value_m">
+                {% for tag in post.tag_list %}
+                <a href="{{ blog_tag_url(post.content_group_id, tag.slug) }}">
+                  {{tag.name}}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+              </span>
+            </span>
+            {% endif %}
+          </div>
+
+          {% if module.feed_settings.title %}
+          <{{ module.style.card.select_first_post_title_tag }} class="recent-post-title">
+            <a href="{{ post.absolute_url }}">{{ post.name}}</a>
+            </{{ module.style.card.select_first_post_title_tag }}>
+            {% endif %}
+
+            {% if module.feed_settings.description %}
+            {% if post.widgets.listing_summary.body.value %}
+            <p class="item_descr">{{ post.widgets.listing_summary.body.value }}</p>
+        {% else %}
+        {% if post.post_list_content %}
+        <p class="item_descr">{{ post.post_list_content|safe|truncatehtml(100, '' , false)|striptags }}</p>
+        {% endif %}
+        {% endif %}
+        {% endif %}
+
+        {% if module.feed_settings.read_more %}
+        <div class="read-more">
+          <a class href="{{ post.absolute_url }}">{{ module.feed_settings.read_more_text }}</a>
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+
+{% if module.feed_group.field_group|length >= 2 %}
+<div class="right_col col5">
+
+  {% for item in module.feed_group.field_group %}
+  {% set post = content_by_id(item.select_post) %}
+
+
+
+  <div class="recent-post-item3 {% if loop.index == 1%}first_post{% endif %}  {% if module.feed_settings.featured_image == "false" or not post.post_list_summary_featured_image%}noImage{% endif %}" {% if module.module_settings.enable_animation %} data-aos-delay="{{loop.index * 100 + 200}}" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+
+    <div class="item_inner flex_row">
+      {% if module.feed_settings.featured_image %}
+      {% if post.post_list_summary_featured_image %}
+
+      <div class="hs-featured-wrp col4">
+        <div class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
+        </div>
+        <a class="overlay bg_el" href="{{ post.absolute_url }}">  </a>
+      </div>
+      {% endif %}
+      {% endif %}
+      <div class="post-btm col8">
+        <div class="meta_wrap">
+          {% if module.feed_settings.author %}
+          <span class="blog-author">
+            <span class="icon_img">
+              <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Alternate User1_layer"><path d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"></path></g></svg>
+            </span>
+            <span class="value_m">
+              <a class="author-link" href="{{ blog_author_url(post.content_group_id, post.blog_post_author.slug) }}">
+                {{ post.blog_post_author.display_name }}
+              </a>
+            </span>
+          </span>
+          {% endif %}
+
+          {% if module.feed_settings.date %}
+          <span class="item-date">
+            <span class="icon_img">
+              <svg style="fill: currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="Alternate Calendar1_layer"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></g></svg>
+            </span>
+            {{ macros.dateFormat(module.feed_settings.select_date_format, post)}}
+          </span>
+          {% endif %}
+
+          {% if module.feed_settings.tags %}
+          <span class="meta_tags">
+            <span class="icon_img">
+              <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="tag1_layer"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></g></svg>
+            </span>
+            <span class="value_m">
+              {% for tag in post.tag_list %}
+              <a href="{{ blog_tag_url(post.content_group_id, tag.slug) }}">
+                {{tag.name}}</a>{% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </span>
+          </span>
+          {% endif %}
+        </div>
+
+        {% if module.feed_settings.title %}
+        <{{ module.style.card.select_title_tag }} class="recent-post-title">
+          <a href="{{ post.absolute_url }}">{{ post.name}}</a>
+          </{{ module.style.card.select_title_tag }}>
+          {% endif %}
+
+          {% if module.feed_settings.description %}
+          {% if post.widgets.listing_summary.body.value %}
+          <p class="item_descr">{{ post.widgets.listing_summary.body.value }}</p>
+      {% else %}
+      {% if post.post_list_content %}
+      <p class="item_descr">{{ post.post_list_content|safe|truncatehtml(100, '' , false)|striptags }}</p>
+      {% endif %}
+      {% endif %}
+      {% endif %}
+
+      {% if module.feed_settings.read_more %}
+      <div class="read-more">
+        <a class href="{{ post.absolute_url }}">{{ module.feed_settings.read_more_text }}</a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endfor %}
+
+</div>
+{% endif %}
+
+{% endif %}
+</div>
+{% if module.button_group %}
+<div class="bototm_btn pdlr10" {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+  {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+</div>
+{% endif %}
+</div>
+
+{% if module.button_group %}
+{{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+{% endif %}
+{{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+
+</div>
+
+
+
+
+
+
+
+
+
+

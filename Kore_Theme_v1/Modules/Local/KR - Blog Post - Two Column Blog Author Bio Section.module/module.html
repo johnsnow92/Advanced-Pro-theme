@@ -1,0 +1,28 @@
+{% if content.blog_post_author %}
+<!-- Author Bio -->    
+<div class="author-bio-wrap">
+	<div class="about">About the author</div>
+	<div class="author-bio">
+		{% if content.blog_post_author.avatar %}<div class="author-profile" style="background-image: url('{{ content.blog_post_author.avatar }}');"></div>{% endif %}
+		<div class="author-info">
+			{% if content.blog_post_author.display_name %}<h3>{{ content.blog_post_author.display_name }}</h3>{% endif %}
+			{% if content.blog_post_author.bio %}<p>{{ content.blog_post_author.bio }}</p>{% endif %}
+			<div class="website">
+				<strong>Website:</strong> <a href="{{ content.blog_post_author.website }}">{{ content.blog_post_author.website }}</a>
+			</div>
+			<div class="author-socials">
+				{% if content.blog_post_author.facebook %}
+				<a href="{{ content.blog_post_author.facebook }}" target="_blank" class="hs-author-social-link hs-social-facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+				{% endif %}
+				{% if content.blog_post_author.linkedin %}
+				<a href="{{ content.blog_post_author.linkedin }}" target="_blank" class="hs-author-social-link hs-social-linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+				{% endif %}
+				{% if content.blog_post_author.twitter %}
+				<a href="{{ content.blog_post_author.twitter }}" target="_blank" class="hs-author-social-link hs-social-twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+				{% endif %}
+			</div>
+
+		</div>
+	</div>
+</div>
+{% endif %}

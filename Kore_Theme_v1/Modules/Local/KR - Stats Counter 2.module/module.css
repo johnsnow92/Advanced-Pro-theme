@@ -1,0 +1,116 @@
+.ks-stats-counter-2 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.ks-stats-counter-2 .page-width {
+  max-width: 1200px!important;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.ks-stats-counter-2 .page-width.text-center {
+  text-align: center; 
+}
+
+.ks-stats-counter-2 .tagline {
+  opacity: 1;
+  letter-spacing: 0;
+  background-color: #f42131!important;
+  display: inline-block;
+  color: #fff;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  font-size: 17px;
+}
+
+.ks-stats-counter-2 #cta .kore-button,
+.ks-stats-counter-2 .kore-button {
+  display: inline-block !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  border: 1px solid transparent !important;
+  padding: 13px 20px !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  border-radius: 290486px !important;
+  -webkit-transition: all 200ms ease !important;
+  transition: all 200ms ease !important;
+  letter-spacing: 1px !important;
+}
+
+.ks-stats-counter-2 #cta .kore-button:hover,
+.ks-stats-counter-2 .kore-button:hover {
+  -webkit-transform: translate(0px, -3px) !important;
+  -ms-transform: translate(0px, -3px) !important;
+  transform: translate(0px, -3px) !important;
+  color: #fff !important;
+}
+
+.ks-stats-counter-2 .hs-embed-wrapper {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.stats-counter-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-top: 60px;
+}
+.stats-counter-wrap .stat-item{
+  width: 33.33%;
+  padding: 0 30px;
+}
+.stats-counter-wrap .stat-svg{
+  fill: #f42131!important;
+}
+.stats-counter-wrap .stat-num{
+  font-size: 70px;
+  color: #fff;
+  padding: 15px 0 8px;
+}
+.stats-counter-wrap .stat-text{
+  color: #fff;
+  font-size: 18px;
+}
+.stats-counter-wrap .stat-num span.mm{
+  font-size: 54px;
+  position: relative;
+  left: -8px;
+}
+
+@media screen and (max-width: 991px){
+  .stats-counter-wrap .stat-num{
+    font-size: 45px;
+  }
+  .stats-counter-wrap .stat-num span.mm{
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 767px){
+  .ks-stats-counter-2 .tagline{
+    margin-bottom: 20px;
+  }
+  .stats-counter-wrap{
+    padding-top: 40px;
+  }
+  .stats-counter-wrap .stat-item {
+    padding: 0;
+    width: 100%;
+    margin-bottom: 50px;
+}
+}
+
+
+
+
+
+

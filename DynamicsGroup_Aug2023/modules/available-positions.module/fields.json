@@ -1,0 +1,79 @@
+[ {
+  "id" : "0df63c45-6042-e7cd-1c17-8760fe0ae669",
+  "name" : "section_heading",
+  "label" : "Section Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Available Positions"
+}, {
+  "id" : "af42d528-8bfc-3c45-ac41-b803ba1596e8",
+  "name" : "jobs",
+  "label" : "Jobs",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "c332a1d8-459b-4d94-d85d-dff491831ca5",
+    "name" : "position",
+    "label" : "Position",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "CNC Machinist"
+  }, {
+    "id" : "ccdfc11e-1806-5fbb-7095-ad086cd5d067",
+    "name" : "location",
+    "label" : "Location",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Madison Heights, MI"
+  }, {
+    "id" : "0a740027-eb13-06a9-2585-15a0bdebcb81",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Apply"
+  }, {
+    "id" : "798df300-23b3-300e-3198-b33c30ab2636",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

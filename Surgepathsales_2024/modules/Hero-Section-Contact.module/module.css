@@ -1,0 +1,288 @@
+.Contact_Hero_Section{
+  padding: 93px 0 100px 0;
+}
+
+.Hero_Section .about-sub-heading h4{
+  font-size: 20px;
+  color: #FF7F16;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.Contact_Hero_Section h1{
+  color: #fff;
+  font-weight: 600;
+}
+
+.Contact_Hero_Section .content p{
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.Contact_Hero_Section .row{
+  gap: 70px;
+}
+.Contact_Hero_Section .column_1{
+padding-top: 0;
+}
+.Contact_Hero_Section .column_1{
+  width: 52%;
+  padding:58px 0 40px 0;
+}
+.Contact_Hero_Section  .column_2{
+  width: 50%;
+}
+
+.Contact_Hero_Section .column_1 .btn-section {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+}
+
+.Contact_Hero_Section .column_2 img {
+  height: 775px;
+  position: absolute;
+  right: -178px;
+  top: 21px;
+}
+.Contact_Hero_Section .column_2{
+  position: relative;
+}
+.row{
+  display: flex;
+}
+
+
+.location{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.location_text h4{
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff !important;
+  margin: 0 !important;
+}
+
+
+.location_icon img{
+  vertical-align: bottom;
+}
+.Contact_Hero_Section .location a.location_icon {
+  background: white;
+  height: 51px;
+  width: 51px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  justify-content: center;
+}
+.location_text a{
+  font-size: 16px;
+  font-weight: 400;
+  color: #DADADA;
+}
+
+/*  */
+
+.Contact_Hero_Section .blob img {
+  left: 195px;
+  position: absolute;
+  top: 198px;
+  z-index: -1;
+}
+
+.about-sub-heading h4:after {
+  border: 1px solid #fb8a2e;
+  content: "";
+  width: 53px;
+  rotate: 0deg;
+  margin: 15px;
+}
+.arrow-image img{
+  bottom: 0;
+  left: 42%;
+  position: absolute;
+}
+
+.Contact_Hero_Section .form-title, form label, form legend{
+  display: none;
+}
+
+.Contact_Hero_Section .form{
+  background: #fff;
+  padding:  58px 58px 130px 53px;
+  color: #000 !important;
+  border-radius :10px;
+}
+
+
+
+.Contact_Hero_Section .input .hs-input{
+  background: #F3F3F3 !important;
+  border: none;
+}
+
+.Contact_Hero_Section .input .hs-input{
+  margin-bottom: 23px !important;
+}
+
+form .hs-button, form input[type=submit]{
+  background: #00234C !important;
+  border-radius: 41px !important;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;   
+}
+
+.Contact_Hero_Section form input[type=email]::placeholder{
+  color: #0B0B0B !important;
+  font-size: 16px;
+}
+
+.Contact_Hero_Section form input[type=text]::placeholder{
+  color: #0B0B0B !important;
+  font-size: 16px;
+}
+
+form textarea.hs-input.hs-fieldtype-textarea::placeholder{
+  color: #0B0B0B !important;
+  font-size: 16px;
+}
+
+/* ======================================================= */
+@media(max-width:1440px){
+  .Contact_Hero_Section {
+    padding: 85px 0 65px;
+  }
+  .Contact_Hero_Section .form {
+    padding: 48px 48px 100px 53px;
+  }
+  .Contact_Hero_Section .column_1 {
+    padding: 0;
+  }
+  .Contact_Hero_Section .row {
+    display: flex;
+    align-items: center;
+  }
+  .Contact_Hero_Section .form {
+    padding: 46px 32px 85px 32px;
+  }
+  .input .hs-input{z-index: 0 !important;}
+}
+@media(max-width:1200px){
+  .Contact_Hero_Section .row{
+    flex-wrap: nowrap;
+  }
+
+  .Contact_Hero_Section .content,  .Contact_Hero_Section h1 {
+    text-align: left;
+  }
+  .Contact_Hero_Section .column_1 {
+    padding: 0;
+  }
+  .Contact_Hero_Section .row {
+    gap: 55px;
+  }
+}
+@media(max-width:1024px){
+  .Contact_Hero_Section h1 {
+    font-size: 50px;
+    line-height: 56px;
+    margin-bottom: 18px;
+  }
+  .Contact_Hero_Section .row {
+    flex-wrap: wrap;
+  }
+  .Contact_Hero_Section .column_1 {
+    width: 100%;
+  }
+  .Contact_Hero_Section .about-sub-heading h4 {
+    justify-content: center;
+  } 
+  .Contact_Hero_Section .content, .Contact_Hero_Section h1 {
+    text-align: center;
+  }
+  .Contact_Hero_Section .row {
+    gap: 45px;
+    justify-content: center;
+  }
+  .Contact_Hero_Section .column_2 {
+    width: 55%;
+  }
+  .Contact_Hero_Section .input .hs-input {
+    margin: 15px 0;
+    width: 100%;
+  }
+  .Contact_Hero_Section .form {
+    padding: 38px 30px 70px 30px;
+  }
+  form .hs-button, form input[type=submit] {
+    font-size: 15px;
+    padding: 12px 45px;
+  }
+  .Contact_Hero_Section form .input .hs-input {
+    margin-bottom: 15px !important;
+  }
+  .location {
+    gap: 15px;
+    padding-bottom: 25px;
+  }
+  .location_text h4 {
+    font-size: 22px;
+  }
+  .Contact_Hero_Section {
+    padding: 70px 0 65px;
+  }
+}
+@media (max-width: 768px) {
+  .Contact_Hero_Section .column_2 {
+    width: 67%;
+  }
+  .Contact_Hero_Section h1 {
+    font-size: 46px;
+    line-height: 50px;
+  }
+  .Contact_Hero_Section {
+    padding: 60px 0 65px;
+  }
+  .Contact_Hero_Section .form {
+    padding: 30px;
+  }
+}
+@media (max-width: 560px) {
+  .Contact_Hero_Section h1 {
+    font-size: 41px;
+    line-height: 45px;
+  }
+  .Contact_Hero_Section .content p {
+    font-size: 16px;
+  }
+  .location {
+    padding-bottom: 20px;
+  }
+  .Contact_Hero_Section .column_2 {
+    width: 82%;
+  }
+  .Contact_Hero_Section .row {
+    gap: 35px;
+  }
+  .location_text a {
+    font-size: 14px;
+  }
+}
+@media (max-width: 465px) {
+  .Contact_Hero_Section h1{
+    font-size: 33px;
+  } 
+  .Contact_Hero_Section .column_2{
+    width: 100%;
+  }
+}

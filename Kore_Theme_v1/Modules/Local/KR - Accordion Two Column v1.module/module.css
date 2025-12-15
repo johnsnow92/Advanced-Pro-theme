@@ -1,0 +1,167 @@
+.accordion-section .maxContainer{
+  max-width: 1040px;
+  margin: 0 auto;
+}
+.acc-heading-content h2{
+  color: #04264B;
+  font-size: 32px;
+  text-align: center;
+}
+
+.acc-flex-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.accordion-lists{
+  width: 58%;
+  padding-right: 80px;
+}
+.acc-media-col{
+  width: 42%;
+}
+.acc-media-col .media-img .img-item,
+.acc-media-mobile .media-img .img-item{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 430px;  
+}
+.acc-media-col .media-acc{
+  display: none;
+}
+.acc-media-col .media-acc.media-acc-1{
+  display: block;
+}
+.acc-media-col .media-video-wrap,
+.acc-media-mobile .media-video-wrap{
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.acc-media-col .media-video-wrap video,
+.acc-media-mobile .media-video-wrap video{
+  height: 100%;
+    object-fit: cover;
+    position: absolute;
+    width: 100%;  
+}
+.tab-body{
+  margin-top: 70px;
+}
+.acc-body{
+  display: none;
+  padding-left: 60px;
+  padding-top: 20px;
+}
+.acc-body *{
+  font-size: 16px;
+  font-weight: 400;
+}
+.acc-body p:last-of-type{
+  margin-bottom: 0;
+}
+.acc-item{
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
+  color: #04264B;
+  border-bottom: 2px solid #EBF1F4;
+  padding: 22px 40px 26px 0;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+.acc-heading{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.acc-heading .acc-icon{
+  width: 40px;
+  margin-right: 20px;
+}
+.acc-heading span{
+  display: inline-block;
+  width: 350px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #04264B;
+}
+.acc-item .acc-collapse{
+  position: absolute;
+  top: 50%;
+  right: -4px;
+  margin-top: -16px;
+}
+.acc-item.active .acc-collapse img.minus{
+  display: block;
+}
+.acc-item.active .acc-collapse img.plus{
+  display: none;
+}
+.acc-item .acc-collapse img.minus{
+  position: relative;
+  top: 7px;
+  left: -5px;
+  display: none;
+}
+.acc-item .acc-collapse img:last-of-type{
+  display: none;
+}
+.tab-body-wrap:not(:first-child){
+  display: none;
+}
+.acc-item:last-child{
+  border: none;
+}
+.acc-media-mobile{
+  display: none;
+}
+
+@media screen and (max-width: 991px){
+  .tab-body {
+    margin-top: 40px;
+}
+  .acc-heading .acc-icon{
+    margin-bottom: 8px;
+  }
+  .acc-body{
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .tab-heading .tab-item{
+    font-size: 17px;
+  }
+  .accordion-lists {
+    padding-right: 0;
+    width: 100%;
+}
+  .acc-media-col{
+    width: 100%;
+    display: none;
+  }
+  .acc-heading span{
+    font-size: 18px;
+  }
+  .acc-item{
+    padding: 22px 50px 26px 0;
+  }
+  .acc-media-mobile{
+    display: block;
+    padding-top: 20px;
+  }
+  .acc-item .acc-collapse{
+    margin-top: 0;
+    top: 65px;
+  }
+  .acc-media-mobile .media-img .img-item, 
+  .acc-media-col .media-img .img-item{
+    min-height: 250px;
+  }
+  .acc-media-mobile .media-video-wrap, 
+  .acc-media-col .media-video-wrap{
+    min-height: 280px!important;
+  }
+}

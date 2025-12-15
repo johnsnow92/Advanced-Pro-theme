@@ -1,0 +1,66 @@
+{% require_css %}
+<style type="text/css">
+  {% scope_css %}
+  .testimonial-slider{
+    background-color: {{ module.settings.background_color.color }};
+  }
+  .testimonial-slider{
+    padding: {{ module.settings.padding_desktop.top }}px 20px {{ module.settings.padding_desktop.bottom }}px;
+  }
+
+
+  @media screen and (max-width: 991px){
+    .testimonial-slider{
+      padding: {{ module.settings.padding_tablet.top }}px 20px {{ module.settings.padding_tablet.bottom }}px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .testimonial-slider{
+      padding: {{ module.settings.padding_mobile_.top }}px 20px {{ module.settings.padding_mobile_.bottom }}px;
+    }
+  }
+
+  {% end_scope_css %} 
+</style>
+{% end_require_css %}
+
+<div class="testimonial-slider">
+  <div class="maxContainer">
+    <div class="testimonial-heading">
+      {{ module.content }}
+    </div>
+    <div class="testimonial-slider-wrap">
+      {% for item in module.slides %}
+      <div class="ts-item">
+        <div class="ts-flex-col">
+          <div class="ts-content">
+            <div class="ts-logo">
+              {% if item.logo.src %}
+              {% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}"' %}
+              {% if item.logo.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.logo.width }}" height="{{ item.logo.height }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.logo.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.logo.max_width }}" height="{{ item.logo.max_height }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.logo.loading != 'disabled' ? 'loading="{{ item.logo.loading }}"' : '' %}
+              <img src="{{ item.logo.src }}" alt="{{ item.logo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+            </div>
+            <div class="ts-quote">
+              {{ item.content }}
+            </div>
+            <div class="ts-details">
+              <div class="profile-img" style="background-image: url('{{ item.profile_image.src }}');background-color: #EBF1F4;"></div>
+              <div class="slide-info">
+                <div class="name">{{ item.item_name }}</div>
+                <div class="title">{{ item.title }}</div>
+              </div>
+            </div>
+          </div>
+          <div class="ts-img" style="background-image: url('{{ item.right_image.src }}');"></div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

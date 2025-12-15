@@ -1,0 +1,228 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 11,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161785661296170",
+        "label" : "KR - Rich Text 1",
+        "type" : "custom_widget",
+        "params" : {
+          "section_settings" : {
+            "section_background_type" : "4",
+            "section_padding_desktop" : {
+              "top" : 50,
+              "bottom" : 50
+            },
+            "section_padding_tablet" : {
+              "top" : 50,
+              "bottom" : 50
+            },
+            "section_padding_mobile" : {
+              "top" : 50,
+              "bottom" : 50
+            }
+          },
+          "heading" : {
+            "text" : "Whoops, looks like this page doesn't <br>exist.",
+            "type" : "h1",
+            "font_size" : 42,
+            "font_weight" : ""
+          },
+          "css_style" : "",
+          "content_color" : {
+            "color" : "#fff",
+            "opacity" : 100
+          },
+          "css_id" : "",
+          "content" : "",
+          "css_class" : "",
+          "schema_version" : 2,
+          "button" : {
+            "text" : "GO BACK HOME"
+          },
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text 1",
+          "per_widget_wrapper_html" : "",
+          "tagline" : "ERROR",
+          "wrapping_html" : "",
+          "widget_name" : "KR - Rich Text 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161785652434760",
+        "label" : "KR - Blog Recent Posts 1",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Blog Recent Posts 1",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Blog Recent Posts 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161785653523262",
+        "label" : "KR - Rich Text 1",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "button" : {
+            "text" : "READ MORE"
+          },
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text 1",
+          "per_widget_wrapper_html" : "",
+          "section_settings" : {
+            "section_text_alignment" : "text-left",
+            "section_background_color" : {
+              "color" : "#F6F6F6",
+              "opacity" : 100
+            },
+            "section_padding_desktop" : {
+              "top" : 60,
+              "bottom" : 60
+            },
+            "section_padding_tablet" : {
+              "top" : 50,
+              "bottom" : 50
+            },
+            "section_padding_mobile" : {
+              "top" : 50,
+              "bottom" : 50
+            }
+          },
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Rich Text 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161785654755164",
+        "label" : "KR - CTA 1",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - CTA 1",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - CTA 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

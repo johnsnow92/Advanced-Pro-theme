@@ -1,0 +1,320 @@
+{% import "../../macros/_macros.html" as macros %}  
+<div class="dnd_padd accordion_wrap styleChanger {{ module.accordion_settings.choice_field }} {% if not module.style.background.select_background_type == "image" and not module.style.background.enable_parallax == true %}noImageNdParallax{% endif %} {{ module.advanced_customization.css_class_selector }} {{name}} {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %}" id="{{ module.advanced_customization.css_id_selector }}">
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+
+    {{ macros.topContent(module.top_content, module.module_settings) }}
+
+    <div class="accord_outer">
+      {% for item in module.accordion_items %}
+      <div class="acc-item {% if item.open_by_default %}activeaccord{% endif %} {% if item.include_button %}btnAdd{% endif %} {% if item.include_form %}formAdd{% endif %}" {% if module.accordion_settings.enable_animation %}data-aos="{{ module.accordion_settings.animation_type }}" data-aos-delay="{{loop.index * 150 + 200}}" {% endif %}>
+        <div class="acctitle {{ module.style.title_style.select_background_type }} {% if module.accordion_settings.choice_field == "show_active" %}showctive_acc{% elif module.accordion_settings.choice_field == "show_all" %}showall_acc{% endif %}">
+          <{{ module.title_format }}> 
+          <span>{{ item.title }}</span>
+          <div class="carrortwrap">
+            {% if module.icon == "carrot_updown" %}
+            <svg class="down arrow" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" aria-hidden="true"><g id="angle-down1_layer"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"></path></g></svg>
+            {% elif module.icon == "plusmin" %}
+            <svg class="plus" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="plus1_layer"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></g></svg>
+            <svg class="minus" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="minus1_layer"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></g></svg>            {% elif module.icon == "carrot_right" %}
+            <svg class="right arrow" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512" aria-hidden="true"><g id="Caret Right1_layer"><path d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"></path></g></svg>
+            {% elif module.icon == "custom" %}
+            <span class="custom-icon {{ module.active_icon_hover }}_hover">
+              {% icon
+              name="{{ module.icon_field.name }}"
+              style="{{ module.icon_field.type }}"
+              unicode="{{ module.icon_field.unicode }}"
+              icon_set="{{ module.icon_field.icon_set }}"
+            %}
+            </span>
+            {% endif %}
+          </div>
+          </{{ module.title_format }}>
+        </div>
+        <div class="acc-content {{ module.style.content.select_background_theme }}"{% if item.open_by_default %} style="display: block;"{% endif %}>
+          {% if item.content %}
+          <div class="desc">
+            {{ item.content }}
+          </div>
+          {% endif %}
+          
+          {% if item.include_button %}
+          <div class="acc-btn-wrap" {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+            {{ macros.buttonWithPopupGroup(item.button_group, false ,'parent_index'~loop.index) }}
+          </div>
+          {% endif %}
+
+          {% if item.include_form %}
+          <div class="acc-form">
+            <{{ module.accordion_settings.form_title_size }}>
+            {{ item.form_title }}
+            </{{ module.accordion_settings.form_title_size }}>
+            {% form
+            form_to_use="{{ item.select_form.form_id }}"
+            response_response_type="{{ item.select_form.response_type }}"
+            response_message="{{ item.select_form.message }}"
+            response_redirect_id="{{ item.select_form.redirect_id }}"
+            response_redirect_url="{{item.select_form.redirect_url}}"
+            gotowebinar_webinar_key="{{ item.select_form.gotowebinar_webinar_key }}"
+          %}
+          </div>
+            {% endif %}
+            </div>
+          </div>
+
+          {% endfor %}
+        </div>
+        {% if module.button_group %}
+        <div class="btm-btn" {% if module.accordion_settings.enable_animation %} data-aos-delay="200" data-aos="{{ module.accordion_settings.animation_type }}"{% endif %}>
+          {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec2') }}
+        </div>
+        {% endif %}
+
+
+      </div>
+
+      {% for item in module.accordion_items %}
+      {{ macros.buttonWithPopupGroup(item.button_group, true ,'parent_index'~loop.index) }}
+      {% endfor %}
+
+      {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+
+      {% if module.button_group %}
+      {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec2') }}
+      {% endif %}
+    </div>
+
+    {% require_css %}
+    <style>
+
+      /*  title border and background style  */
+      {% if module.style.title_style.select_background_type == "custom" %}
+      .accordion_wrap.{{name}} .acc-item {  
+        background-color: rgba({{ module.style.title_style.background_color.color|convert_rgb }},{{ module.style.title_style.background_color.opacity*0.01 }});
+      }
+      {% endif %}
+
+      {% if module.style.active_title_style.select_background_type == "bg_primary" %}
+      .accordion_wrap.{{name}} .acc-item:hover .acctitle{
+        background-color: rgba({{theme.global_colors.ac_primary_color.color|convert_rgb}},{{theme.global_colors.ac_primary_color.opacity*0.01}});
+      }
+      /* active title border and background style  */
+      .accordion_wrap.{{name}} .acc-item.activeaccord .acctitle {
+        background-color: rgba({{theme.global_colors.ac_primary_color.color|convert_rgb}},{{theme.global_colors.ac_primary_color.opacity*0.01}});
+      }
+      {% elif module.style.active_title_style.select_background_type == "bg_secondary" %}
+      .accordion_wrap.{{name}} .acc-item:hover .acctitle{
+        background-color: rgba({{theme.global_colors.ac_secondary_color.color|convert_rgb}},{{theme.global_colors.ac_secondary_color.opacity*0.01}});
+      }
+      /* active title border and background style  */
+      .accordion_wrap.{{name}} .acc-item.activeaccord .acctitle {
+        background-color: rgba({{theme.global_colors.ac_secondary_color.color|convert_rgb}},{{theme.global_colors.ac_secondary_color.opacity*0.01}});
+      }
+      {% elif module.style.active_title_style.select_background_type == "custom" %}
+      .accordion_wrap.{{name}} .acc-item:hover{
+        background-color: rgba({{ module.style.active_title_style.background_color.color|convert_rgb }},{{ module.style.active_title_style.background_color.opacity*0.01 }});
+      }
+      /* active title border and background style  */
+      .accordion_wrap.{{name}} .acc-item.activeaccord .acctitle{
+        background-color: rgba({{ module.style.active_title_style.background_color.color|convert_rgb }},{{ module.style.active_title_style.background_color.opacity*0.01 }});
+      }
+      {% endif %}
+
+      {% if module.style.content.select_background_theme == "custom" %}
+      .accordion_wrap.{{name}} .acc-item .acc-content{
+        background-color: rgba({{ module.style.content.background_color.color|convert_rgb }},{{ module.style.content.background_color.opacity*0.01 }});
+      }
+      {% endif %}
+
+      .accordion_wrap.{{name}} .acc-item .acctitle{
+        padding-top:{{ module.style.title_style.spacing.top }}px;
+        padding-bottom:{{ module.style.title_style.spacing.bottom }}px;
+        padding-left:{{ module.style.title_style.spacing.left }}px;
+        padding-right:{{ module.style.title_style.spacing.right }}px;
+      }
+
+      {% if module.style.title_style.select_color_theme == "custom" %}
+      .accordion_wrap.{{name}} .acc-item .acctitle * {
+        color: rgba({{ module.style.title_style.color_field.color|convert_rgb }},{{ module.style.title_style.color_field.opacity/100 }});
+      }
+      {% endif %}
+
+      {% if module.style.active_title_style.select_color_theme == "custom" %}
+      .accordion_wrap.{{name}} .acc-item.activeaccord .acctitle *{
+        color: rgba({{ module.style.active_title_style.color.color|convert_rgb }},{{ module.style.active_title_style.color.opacity/100 }});
+      }
+      {% endif %}
+
+      {% if module.style.active_title_style.select_color_theme == "custom" %}
+      .accordion_wrap.{{name}} .acc-item:hover .acctitle *{
+        color: rgba({{ module.style.active_title_style.color.color|convert_rgb }},{{ module.style.active_title_style.color.opacity/100 }});
+      }
+      {% endif %}
+
+      .accordion_wrap.{{name}} .acc-item .acc-content{
+        padding: {{ module.style.content.spacing.top }}px {{ module.style.content.spacing.right }}px {{ module.style.content.spacing.bottom }}px {{ module.style.content.spacing.left }}px;
+      }
+
+/*       .accordion_wrap.{{name}} .acc-item .carrortwrap{
+        right:{{ module.style.title_style.spacing.right }}px;
+      } */
+
+    </style>
+    {% end_require_css %}
+
+
+    {% require_js %}
+    <script>
+
+      // Setup slideUp Function
+      function slideUp(element, timing) {
+        element.style.transitionProperty = 'height, margin, padding';
+        element.style.transitionDuration = timing + 'ms';
+        element.style.boxSizing = 'border-box';
+        element.style.height = element.offsetHeight + 'px';
+        element.offsetHeight;
+        element.style.overflow = 'hidden';
+        element.style.height = 0;
+        element.style.paddingTop = 0;
+        element.style.paddingBottom = 0;
+        element.style.marginTop = 0;
+        element.style.marginBottom = 0;
+        window.setTimeout(function() {
+          element.style.display = 'none';
+          element.style.removeProperty('height');
+          element.style.removeProperty('padding-top');
+          element.style.removeProperty('padding-bottom');
+          element.style.removeProperty('margin-top');
+          element.style.removeProperty('margin-bottom');
+          element.style.removeProperty('overflow');
+          element.style.removeProperty('transition-duration');
+          element.style.removeProperty('transition-property');
+        }, timing);
+      }
+
+      // Setup slideDown Function
+      function slideDown(element, timing) {
+        element.style.removeProperty('display');
+        var display = window.getComputedStyle(element).display;
+        if (display === 'none') {
+          display = 'block';
+        }
+        element.style.display = display;
+        var height = element.offsetHeight;
+        element.style.overflow = 'hidden';
+        element.style.height = 0;
+        element.style.paddingTop = 0;
+        element.style.paddingBottom = 0;
+        element.style.marginTop = 0;
+        element.style.marginBottom = 0;
+        element.offsetHeight;
+        element.style.transitionProperty = 'height, margin, padding';
+        element.style.transitionDuration = timing + 'ms';
+        element.style.height = height + 'px';
+        element.style.removeProperty('padding-top');
+        element.style.removeProperty('padding-bottom');
+        element.style.removeProperty('margin-top');
+        element.style.removeProperty('margin-bottom');
+        window.setTimeout(function() {
+          element.style.removeProperty('height');
+          element.style.removeProperty('overflow');
+          element.style.removeProperty('transition-duration');
+          element.style.removeProperty('transition-property');
+        }, timing);
+      }
+
+      // slideToggle function
+      function toggleFunction(element, timing) {
+        var _display = window.getComputedStyle(element, null).display;
+        if (_display === 'none') {
+          return slideDown(element, timing);
+        } else {
+          return slideUp(element, timing);
+        }
+      }
+
+    </script>
+    {% end_require_js %}
+
+
+    {% if module.accordion_settings.choice_field == "show_active" %}
+    {% require_js %}
+    <script>
+
+      // Menu Toggle transition and active class
+      var slideTransition = {{ module.accordion_settings.toggle_speed * 100 }};
+      var openMenuClass = 'activeaccord';
+
+      var accordionTriggers = document.querySelectorAll('.accordion_wrap .acctitle.showctive_acc');
+      Array.prototype.slice.call(accordionTriggers).forEach(function(ele, index) {
+        ele.addEventListener('click', function(e) {
+          // filter siblings menu
+          var _siblings = Array.prototype.filter.call(ele.parentNode.parentNode.children, function(sibling){
+            return sibling !== ele;
+          });
+
+          // close siblings menu
+          Array.prototype.slice.call(_siblings).forEach(function(el, index) {
+            if (el.children.length >= 2) {
+              el.classList.remove(openMenuClass);
+              el.children[0].classList.remove(openMenuClass);
+              var _display1 = window.getComputedStyle(el.children[1], null).display;
+              _display1 !== 'none' ? slideUp(el.children[1], slideTransition) : null;          
+            }
+          });
+
+          // open active menu
+          var _display = window.getComputedStyle(ele.nextElementSibling, null).display;
+          if (_display === 'none') {
+            ele.classList.toggle(openMenuClass);
+            ele.parentElement.classList.toggle(openMenuClass);
+            slideDown(ele.nextElementSibling, slideTransition);        
+          }
+        });
+      });
+
+    </script>
+    {% end_require_js %}
+    {% endif %}
+
+
+    {% if module.accordion_settings.choice_field == "show_all" %}
+    {% require_js %}
+    <script>
+
+      // Menu Toggle transition and active class
+      var slideTransition = {{ module.accordion_settings.toggle_speed * 100 }};
+      var openMenuClass = 'activeaccord';
+
+      var accordionTriggers = document.querySelectorAll('.accordion_wrap .acc-item .acctitle.showall_acc');
+      Array.prototype.slice.call(accordionTriggers).forEach(function(ele, index) {
+        ele.addEventListener('click', function(e) {
+          // filter siblings menu
+          var _siblings = Array.prototype.filter.call(ele.parentNode.parentNode.children, function(sibling){
+            return sibling !== ele;
+          });
+
+          // open active menu
+          var _display = window.getComputedStyle(ele.nextElementSibling, null).display;
+          if (_display === 'none') {
+            ele.classList.toggle(openMenuClass);
+            ele.parentElement.classList.toggle(openMenuClass);
+            slideDown(ele.nextElementSibling, slideTransition);      
+          }
+          else {
+            ele.classList.toggle(openMenuClass);
+            ele.parentElement.classList.toggle(openMenuClass);
+            slideUp(ele.nextElementSibling, slideTransition);        
+          }
+
+        });
+      });
+
+    </script>
+    {% end_require_js %}
+    {% endif %}
+
+

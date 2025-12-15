@@ -1,0 +1,197 @@
+.dr-calc-v1 .maxContainer{
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.calc-content{
+  max-width: 780px;
+  margin: 0 auto;
+  margin-bottom: 55px;
+}
+.calc-content h2{
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.calc-content p{
+  line-height: 1.2;
+}
+.calc-col-flex{
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  /*   max-width: 850px; */
+  margin: 0 auto;
+}
+.calc-form{
+  width: 65%;
+  /*   border-right: 1px solid #eae9e9; */
+  padding-right: 30px;
+}
+.results-block{
+  width: 35%;
+  padding-left: 40px;
+}
+.flex-field-group{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.flex-field-group .sub-heading{
+  width: 40%;
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 500;
+  padding-right: 15px;
+}
+.flex-field-group .field-input{
+  width: 60%;
+  text-align: right;
+}
+.flex-field-group .field-input input[type="range"]{
+  vertical-align: middle;
+  -webkit-appearance: none;
+  width: 90%;
+  height: 5px;
+  background: rgba(0,0,0,.05);
+  border-radius: 5px;
+  background-image: linear-gradient(#1881ea, #1881ea);    
+  background-repeat: no-repeat;  
+}
+.flex-field-group .field-input input[type="range"]:hover{
+  background-image: linear-gradient(#1881ea, #1881ea);
+}
+.flex-field-group .field-input input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #1881ea;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background .3s ease-in-out;
+}
+.flex-field-group .field-input input[type="range"]::-moz-range-thumb{
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #1881ea;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background .3s ease-in-out;
+}
+.flex-field-group .field-input input[type="range"]::-ms-thumb{
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #1881ea;
+  cursor: ew-resize;
+  box-shadow: 0 0 2px 0 #555;
+  transition: background .3s ease-in-out;
+}
+.flex-field-group .field-input output{
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  margin-left: 6px;
+  font-size: 20px;
+  width: 20px;
+  font-weight: 600;
+}
+.text-grayed-out{
+  color: rgba(0,0,0,.3);
+  font-weight: 500;
+  padding-bottom: 4px;
+}
+.text-grayed-out span{
+  font-weight: bold;
+}
+.calc-form .calc-btn-wrap{
+  text-align: right;
+}
+.calc-form .calc-btn-wrap button{
+  background-color: #f9812f;
+  border-radius: 8px;
+  color: #fff;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+  padding: 8px 20px;
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+  letter-spacing: 1px;
+  margin-top: 0;
+}
+.results-block .rb-inner{
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  padding: 30px;
+  border-radius: 20px;
+}
+.results-block .rb-item{
+  margin-bottom: 20px;
+}
+.results-block .rb-item:last-child{
+  margin-bottom: 0;
+}
+.results-block .rb-item-text{
+  font-size: 17px;
+  font-weight: bold;
+  text-transform: uppercase;
+  max-width: 210px;
+  line-height: 1.2;
+  margin-bottom: 4px;
+}
+.results-block .rb-item .rb-total-value{
+  color: #f7994a;
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.results-block .separator-item{
+  border-bottom: 1px solid #eae9e9;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+.results-block .separator-item strong{
+  color: #1881ea;
+}
+
+@media screen and (max-width: 767px){
+  .calc-form{
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
+  .results-block {
+    width: 100%;
+    padding-left: 0;
+  }
+  .flex-field-group .sub-heading{
+    width: 100%;
+    font-size: 20px;
+    padding-right: 0;
+    padding-top: 14px;
+  }
+  .flex-field-group .field-input input[type="range"]{
+    width: 100%;
+  }
+  .flex-field-group .field-input{
+    margin-top: 15px;
+    width: 100%;
+  }
+  .flex-field-group{
+    margin-bottom: 20px;
+  }
+  .flex-field-group .field-input output{
+    font-size: 22px;
+  }
+  .calc-content h2{
+    font-size: 32px;
+  }
+}

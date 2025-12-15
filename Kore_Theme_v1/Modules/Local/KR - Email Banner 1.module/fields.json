@@ -1,0 +1,39 @@
+[ {
+  "id" : "b97e6cc7-8b2e-3e5f-a42e-3b4e2a663fba",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://fs.hubspotusercontent00.net/hubfs/6602609/20210707-ASB_9270.jpg",
+    "alt" : "20210707-ASB_9270",
+    "loading" : "lazy",
+    "width" : 3543,
+    "height" : 2365
+  }
+}, {
+  "id" : "b3d3012d-69b7-5531-762a-4bf850df710c",
+  "name" : "main_heading",
+  "label" : "Main Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Your Heading Goes Here"
+}, {
+  "id" : "e3fecba9-f93e-6849-c4d1-553ec87ed801",
+  "name" : "sub_heading",
+  "label" : "Sub Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna."
+} ]

@@ -1,0 +1,62 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Book A Meeting Page
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+  {% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--landing-page"
+%}
+
+  {# KR - Hero Two Column 1 #}
+
+  {% dnd_section
+    vertical_alignment="TOP",full_width=True
+  %}
+  {% dnd_module path="/Kore_Theme_v1/Modules/Local/KR - Hero Two Column 1", label="KR - Hero Two Column 1" %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# KR - Hero Two Column 1 #}
+  
+ 
+  
+   {# KR - Content Two Column 1 #}
+  
+  {% dnd_section
+    vertical_alignment="TOP",full_width=True
+  %}
+  {% dnd_module path="/Kore_Theme_v1/Modules/Local/KR - Content Two Column 1", label="KR - Content Two Column 1" %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+
+  {# KR - Content Two Column 1 #}
+  
+  {# KR - Logo Strip #}
+  
+  {% dnd_section
+    vertical_alignment="TOP",full_width=True
+  %}
+  {% dnd_module path="/Kore_Theme_v1/Modules/Local/KR - Logo Strip", label="KR - Logo Strip" %}
+  {% end_dnd_module %}
+  {% end_dnd_section %}
+
+{# KR - Logo Strip #}
+{# KR - Cards 1 #}
+
+{% dnd_section
+  vertical_alignment="TOP",full_width=True
+%}
+{% dnd_module path="/Kore_Theme_v1/Modules/Local/KR - Cards 1", label="KR - Cards 1" %}
+{% end_dnd_module %}
+{% end_dnd_section %}
+
+ {# KR - Cards 1 #}
+
+
+  {% end_dnd_area %}
+  {% endblock body %}

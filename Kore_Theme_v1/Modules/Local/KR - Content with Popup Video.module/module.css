@@ -1,0 +1,57 @@
+.kore-content-with-popup-video {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-content-with-popup-video .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-content-with-popup-video .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-content-with-popup-video .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.kore-content-with-popup-video .simple .icon svg {
+  width: 20px;
+  padding-right: 5px;
+}
+
+.kore-content-with-popup-video .simple {
+  display: inline-block;
+}
+
+.kore-content-with-popup-video .button .simple:not(:last-child) {
+  margin-right: 15px;
+}
+
+.kore-content-with-popup-video .video-link {
+  width: 60px;
+}
+
+.lity-close:focus {
+  outline: 0;
+}
+
+@media(max-width:767px) {
+  
+  .kore-content-with-popup-video .button .simple {
+    display: block;
+  }
+  
+  .kore-content-with-popup-video .button .simple:not(:last-child) {
+    margin-right: 0;
+  }
+  
+  .kore-content-with-popup-video .button .simple a {
+    width: 100%;
+  }
+  
+}

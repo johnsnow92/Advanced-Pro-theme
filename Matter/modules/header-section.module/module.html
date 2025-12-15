@@ -1,0 +1,784 @@
+
+
+{% import "../../macros/_macros.html" as macros %}  
+
+
+{% set globleIco = get_asset_url('../../images/globe_icon.png') %}
+{% set top_social = module.top_section.social_icons%}
+<!--  -->
+
+
+
+<!--  -->
+
+{% macro navigation_items() %}
+{% set menu = menu(module.top_section_copy.menu_section.primary_menu, "site_root").children %}
+
+{% macro render_link_item(link, depth) %}
+<li  class="header__menu-item header__menu-item--depth-{{ depth }} {{ "active-branch" if link.activeBranch }} {{ "active" if link.activeNode }} {{ "header__menu-item--has-submenu" if link.children && depth  < module.top_section_copy.menu_section.max_levels }} hs-skip-lang-url-rewrite {% if link.children|length == 2 %} two_items {% elif link.children|length == 3 %} three_items {% elif link.children|length > 3  %} more_items{% else %} single_item{% endif %}{% if link.children|length > 1 %} more_than_1{% endif %}">
+  <a class="header__menu-link {{ "header__menu-link--toggle" if link.children && depth < module.top_section_copy.menu_section.max_levels }} {{ "header__menu-link--active-link" if link.activeNode }}" href="{{ link.url }}" {{ 'aria-haspopup="true" aria-expanded="false"' if link.children && depth < module.top_section_copy.menu_section.max_levels }} {{ 'aria-current="page"' if link.activeNode }} {{ 'target="_blank" rel="noopener"' if link.linkTarget }}>{{ link.label }}{% if link.label && link.children && depth  < module.top_section_copy.menu_section.max_levels %}
+    <div class="child-trigger">
+      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none">
+        <path d="M4.91888 6.76113L0.242419 2.15319C-0.0808065 1.8347 -0.0808065 1.3197 0.242419 1.0046L1.01954 0.238867C1.34276 -0.0796225 1.86543 -0.0796225 2.18521 0.238867L5.5 3.50508L8.81479 0.238867C9.13801 -0.0796225 9.66068 -0.0796225 9.98046 0.238867L10.7576 1.0046C11.0808 1.32309 11.0808 1.83809 10.7576 2.15319L6.08112 6.76113C5.76477 7.07962 5.24211 7.07962 4.91888 6.76113Z" fill="#212429"/>
+      </svg>
+    </div>
+    {% endif %}</a>
+  {% if link.label && link.children && depth  < module.top_section_copy.menu_section.max_levels %}
+  <div class="mobile-child-trigger"></div>
+  {% endif %}
+  {% if link.children %}
+  {% if depth && depth < module.top_section_copy.menu_section.max_levels %}
+  <ul class="header__menu-submenu header__menu-submenu--level-{{ depth + 1 }} no-list">
+    {% set depth = depth + 1 %}
+    {% for sublink in link.children %}
+    {{ render_link_item(sublink, depth) }}
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endif %}
+</li>
+{% endmacro %}
+
+{% for link in menu %}
+{{ render_link_item(link, 1) }}
+{% endfor %}
+
+{% endmacro %}
+<!-- desktop menu -->
+
+{% if module.top_section_copy.menu_section.change_mobile_menu %}
+
+{% macro mobile_navigation_items() %}
+{% set menu = menu(module.top_section_copy.menu_section.mobile_menu, "site_root").children %}
+
+{% macro mobile_render_link_item(link, depth) %}
+<li class="header__menu-item header__menu-item--depth-{{ depth }} {{ "active" if link.activeNode }} {{ "header__menu-item--has-submenu" if link.children && depth  < module.top_section_copy.menu_section.max_levels }} hs-skip-lang-url-rewrite {% if link.children|length == 2 %} two_items {% elif link.children|length == 3 %} three_items {% elif link.children|length > 3  %} more_items{% else %} single_item{% endif %}{% if link.children|length > 1 %} more_than_1{% endif %}">
+  <a class="header__menu-link {{ "header__menu-link--toggle" if link.children && depth < module.top_section_copy.menu_section.max_levels }} {{ "header__menu-link--active-link" if link.activeNode }}" href="{{ link.url }}" {{ 'aria-haspopup="true" aria-expanded="false"' if link.children && depth < module.top_section_copy.menu_section.max_levels }} {{ 'aria-current="page"' if link.activeNode }} {{ 'target="_blank" rel="noopener"' if link.linkTarget }}>{{ link.label }}{% if link.label && link.children && depth  < module.top_section_copy.menu_section.max_levels %}
+    <div class="child-trigger">
+      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none">
+        <path d="M4.91888 6.76113L0.242419 2.15319C-0.0808065 1.8347 -0.0808065 1.3197 0.242419 1.0046L1.01954 0.238867C1.34276 -0.0796225 1.86543 -0.0796225 2.18521 0.238867L5.5 3.50508L8.81479 0.238867C9.13801 -0.0796225 9.66068 -0.0796225 9.98046 0.238867L10.7576 1.0046C11.0808 1.32309 11.0808 1.83809 10.7576 2.15319L6.08112 6.76113C5.76477 7.07962 5.24211 7.07962 4.91888 6.76113Z" fill="#212429"/>
+      </svg>
+    </div>
+    {% endif %}</a>
+  {% if link.label && link.children && depth  < module.top_section_copy.menu_section.max_levels %}
+  <div class="mobile-child-trigger"></div>
+  {% endif %}
+  {% if link.children %}
+  {% if depth && depth < module.top_section_copy.menu_section.max_levels %}
+  <ul class="header__menu-submenu header__menu-submenu--level-{{ depth + 1 }} no-list">
+    {% set depth = depth + 1 %}
+    {% for sublink in link.children %}
+    {{ mobile_render_link_item(sublink, depth) }}
+    {% endfor %}
+  </ul>
+  {% endif %}
+  {% endif %}
+</li>
+{% endmacro %}
+
+{% for link in menu %}
+{{ mobile_render_link_item(link, 1) }}
+{% endfor %}
+
+{% endmacro %}
+
+{% endif %}
+<!--  -->
+
+
+{% macro desktop_navigation() %}
+<div class="mobile-close-icon">
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1"><path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/></svg>
+</div>
+<nav class="header__menu header__menu--desktop" >
+  <ul class="header__menu-wrapper no-list  {% if module.top_section_copy.menu_section.change_mobile_menu %}desktop_menu_list{% endif %}">
+    {{ navigation_items() }}
+  </ul>
+  {% if module.top_section_copy.menu_section.change_mobile_menu %}
+  <ul class="header__menu-wrapper no-list mobile_menu_list">
+    {{ mobile_navigation_items() }}
+  </ul>
+  {% endif %}
+
+
+  {{ mobile_top_section() }}
+
+</nav>
+{% endmacro %}
+
+
+<!--  -->
+
+
+{# language switcher code #}
+{# Language switcher #}
+
+
+
+
+{% macro language_switcher(viewport) %}
+
+
+<div class="header__language-switcher">
+  <div class="header__language-switcher-label">
+    {% language_switcher "language_switcher"
+          display_mode="{{ module.top_section_copy.language.Display_mode }}",
+          overrideable=false
+        %}
+  </div>
+  <div class="custom-icon">
+    <div class="globe-icon">
+      <img src="{{ globleIco }}">
+      <svg xmlns="http://www.w3.org/2000/svg" width="11" height="7" viewBox="0 0 11 7" fill="none">
+        <path d="M4.91888 6.76113L0.242419 2.15319C-0.0808065 1.8347 -0.0808065 1.3197 0.242419 1.0046L1.01954 0.238867C1.34276 -0.0796225 1.86543 -0.0796225 2.18521 0.238867L5.5 3.50508L8.81479 0.238867C9.13801 -0.0796225 9.66068 -0.0796225 9.98046 0.238867L10.7576 1.0046C11.0808 1.32309 11.0808 1.83809 10.7576 2.15319L6.08112 6.76113C5.76477 7.07962 5.24211 7.07962 4.91888 6.76113Z" fill="#212429"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+{% endmacro %}
+{# language switcher code end  #}
+
+
+
+
+
+{# header top section menu inside macro #}
+{% macro mobile_top_section() %}
+{# top section ends #}
+{% if (module.top_section.address_section.icon_field_1.name or module.top_section.address_section.text_field) or (module.top_section.contact_section.icon_field.name or module.top_section.contact_section.text_field) or ( module.top_section.social_icons.include_social_share and module.top_section.social_icons.social_item ) or (module.top_section_copy.button_section.include_button and module.top_section_copy.button_section.button_setting)%}
+<div class="top-section mobile_section">
+  <div class="page-center">
+    <div class="cst-inner-wrapper flex_row">
+
+
+      {% if not module.top_section.remove_section %}
+      {# contact wrapper #}
+      {% if (module.top_section.address_section.icon_field_1.name or module.top_section.address_section.text_field) or (module.top_section.contact_section.icon_field.name or module.top_section.contact_section.text_field)%}
+      <div class="contact-wrapper col8">
+
+        {# address section #}
+        {% if module.top_section.address_section.icon_field_1.name or module.top_section.address_section.text_field %}
+        <div class="address-section {% if module.top_section.address_section.hide_at_desktop %}desktop_hide{% endif %} {% if module.top_section.address_section.hide_at_mobile %}mobile_hide{% endif %}">
+          {% if module.top_section.address_section.icon_field_1.name %}
+          <div class="book-icon section-icon">
+            {% icon
+            name="{{ module.top_section.address_section.icon_field_1.name }}"
+            style="{{ module.top_section.address_section.icon_field_1.type }}"
+            unicode="{{ module.top_section.address_section.icon_field_1.unicode }}"
+            icon_set="{{ module.top_section.address_section.icon_field_1.icon_set }}"
+          %}
+          </div>
+          {% endif %}
+
+          {% if module.top_section.address_section.text_field %}
+          <div class="text">
+            <h4>
+              {{ module.top_section.address_section.text_field }}
+            </h4>
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+        {# address section ends #}
+
+        {# contact section #}
+        {% if module.top_section.contact_section.icon_field.name or module.top_section.contact_section.text_field %}
+        <div class="contact-section {% if module.top_section.contact_section.hide_at_desktop %}desktop_hide{% endif %} {% if module.top_section.contact_section.hide_at_mobile %}mobile_hide{% endif %}">
+          {% if module.top_section.contact_section.text_field %}<a href="tel:{{ module.top_section.contact_section.text_field|replace('-','')|replace(' ','')|replace('(','')|replace(')','') }}">{% endif %}
+          {% if module.top_section.contact_section.icon_field.name %}
+          <div class="tel-icon section-icon">
+            {% icon
+              name="{{ module.top_section.contact_section.icon_field.name }}"
+              style="{{ module.top_section.contact_section.icon_field.type }}"
+              unicode="{{ module.top_section.contact_section.icon_field.unicode }}"
+              icon_set="{{ module.top_section.contact_section.icon_field.icon_set }}"
+            %}
+          </div>
+          {% endif %}
+          {% if module.top_section.contact_section.text_field %}
+          <div class="text">
+            <h4>
+              {{ module.top_section.contact_section.text_field }}
+            </h4>
+          </div>
+          {% endif %}
+          {% if module.top_section.contact_section.text_field %}</a>{% endif %}
+        </div>       
+        {% endif %}
+        {# contact section ends #}
+
+      </div>
+      {% endif %}
+      {# contact wrapper ends #}
+
+      {% endif %}
+
+      {% if not module.top_section.remove_section %}
+      {# social share #}
+      {% if module.top_section.social_icons.include_social_share and module.top_section.social_icons.social_item %}
+      <div class="social-share col4 {% if top_social.include_social_share %}top_social_add{% endif %}  {% if module.top_section.social_icons.hide_at_mobile %}mobile_hide{% endif %}">
+        <ul class="header_social-share_ul">
+          {% for item in module.top_section.social_icons.social_item %}
+          {% if item.icon_field_2.name or item.image.src %}
+          <li class="ic_it ic{{loop.index}} ty_{{item.select_icon_type}}">
+            {% set href = item.link_field.url.href %}
+            {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            {% if href %}<a href="{{ href }}"
+                            {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                            {% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}>{% endif %}
+
+            {% if item.select_icon_type == "image" and item.image.src %}
+            {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+            <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }}>
+            {% endif %}
+
+            {% if item.select_icon_type == "icon" and item.icon_field_2.name %}
+            {% icon
+              name="{{ item.icon_field_2.name }}"
+              style="{{ item.icon_field_2.type }}"
+              unicode="{{ item.icon_field_2.unicode }}"
+              icon_set="{{ item.icon_field_2.icon_set }}"
+            %}
+            {% endif %}
+            {% if href %}</a>{% endif %}
+          </li>
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {# social share ends #}
+      {% endif %}
+
+
+      {# button group #}
+      {% if module.top_section_copy.button_section.include_button %}
+      {% if module.top_section_copy.button_section.button_setting %}
+      {% for item in module.top_section_copy.button_section.button_setting %}
+      <div class="btn-section col12 {% if item.hide_at_desktop %}desktop_hide{% endif %}  {% if item.hide_at_mobile %}mobile_hide{% endif %}">
+        {% if item.button_type == "std" %}
+        {% set href = item.link_field_2.url.href %}
+        {% if item.link_field_2.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a href="{{ href }}"  class="{% if item.button_theme%} {{item.button_theme}}{% else %}hs-button{% endif %}"
+           {% if item.link_field_2.open_in_new_tab %}target="_blank"{% endif %}
+           {% if item.link_field_2.rel %}rel="{{ item.link_field_2.rel }}"{% endif %}>
+          {{ item.text_field_1 }}
+          {% endif %}
+        </a>
+        {% if item.button_type == "cta" %}
+        {% cta guid="{{ item.cta_field }}" %}
+        {% endif %}
+
+        {% if item.button_type  == "pop_up"%}
+        <a data-id="trigger_{{name}}_{{loop.index}}_mob" class="popup {% if item.button_theme%} {{item.button_theme}}{% else %}hs-button{% endif %}" href="javascript:;">
+          {{ item.text_field_1 }}
+        </a>
+
+        <div class="popup-wrapper popup-type-{{item.popup_type}}" id="trigger_{{name}}_{{loop.index}}_mob">
+          <div class="csutom-section-popup">
+            <div class="inner-popup-container">
+              <div class="popup-inner-wrapper">
+                <div class="close-icon popup-hdr">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1"><path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/></svg>
+                </div>
+                {% if  item.popup_type == 'pop_form' %}
+                {% if item.form_field_1.form_id %}
+                {% form
+                          form_to_use="{{ item.form_field_1.form_id }}"
+                          response_response_type="{{ item.form_field_1.response_type }}"
+                          response_message="{{ item.form_field_1.message }}"
+                          response_redirect_id="{{ item.form_field_1.redirect_id }}"
+                          response_redirect_url="{{item.form_field_1.redirect_url}}"
+                          gotowebinar_webinar_key="{{ item.form_field_1.gotowebinar_webinar_key }}"
+                        %}
+                {% endif %}
+                {% endif %}
+
+                {% if item.popup_type == 'content' %}
+                {{ item.content }}
+                {% endif %}
+
+                {% if item.popup_type == 'video' %}
+
+                {% if item.video_type == 'file' %}
+                <video src="" data-src="{{ item.video_src }}" loop controls class="videoSrc videoTag"/>
+                {% endif %}
+                {% if item.video_type == 'external' %}
+                <div class="cst-external-video">
+                  {% if item.external_video_url is string_containing "youtube.com" %}
+                  <iframe src="" data-src="{{ item.external_video_url|split('?')|first }}?autoplay=1&loop=1&mute=1&showinfo=0&controls=0&playlist={{ item.external_video_url|split('?')|first|split('/')|last }}"  frameborder="0" allowFullScreen class="iframe_video videoSrc"></iframe>
+                  {% else %}
+                  <iframe src="" data-src="{{ item.external_video_url|split('?')|first }}?autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0"  frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video videoSrc"></iframe>
+                  {% endif %}   
+                </div>
+                {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endif %}
+      {# button group ends #}
+
+    </div>
+  </div>
+</div>
+{% endif %}
+{# top section #}
+{% endmacro %}
+{# end  #}
+
+
+{% set menuMenuEffect = module.top_section_copy.menu_section.select_mobile_menu_effect %}
+
+
+
+<header class="header {{ module.advanced_customization.css_class_selector }} {% if not module.top_section_copy.menu_section.include_menu %}no_menu{% endif %} {% if menuMenuEffect %}{{menuMenuEffect}}{% else %}toggle_current_menu{% endif %}" {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+
+  {# alert section #}
+  {% if not module.alert_section.remove_section %}
+  {% if module.alert_section.alert_message_text %}
+  <div class="alert-section">
+    <div class="page-center">
+      <div class="text-alert">
+        {{ module.alert_section.alert_message_text }}
+      </div>
+      <div class="close-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect width="16" height="16" fill="#1E1E1E"/>
+          <rect width="1440" height="6116" transform="translate(-1297 -18)" fill="white"/>
+          <rect x="-1297" y="-18" width="1440" height="50" fill="#F2FCFF"/>
+          <path d="M5.46875 5.46875C5.75 5.1875 6.21875 5.1875 6.5 5.46875L7.96875 6.96875L9.46875 5.46875C9.75 5.1875 10.2188 5.1875 10.5 5.46875C10.8125 5.78125 10.8125 6.25 10.5 6.53125L9.03125 8L10.5 9.46875C10.8125 9.78125 10.8125 10.25 10.5 10.5312C10.2188 10.8438 9.75 10.8438 9.46875 10.5312L7.96875 9.0625L6.5 10.5312C6.21875 10.8438 5.75 10.8438 5.46875 10.5312C5.15625 10.25 5.15625 9.78125 5.46875 9.46875L6.9375 8L5.46875 6.53125C5.15625 6.25 5.15625 5.78125 5.46875 5.46875ZM16 8C16 12.4375 12.4062 16 8 16C3.5625 16 0 12.4375 0 8C0 3.59375 3.5625 0 8 0C12.4062 0 16 3.59375 16 8ZM8 1.5C4.40625 1.5 1.5 4.4375 1.5 8C1.5 11.5938 4.40625 14.5 8 14.5C11.5625 14.5 14.5 11.5938 14.5 8C14.5 4.4375 11.5625 1.5 8 1.5Z" fill="#495057"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endif %}
+  {# alert section ends #}
+
+  {# top section #}
+  {% if not module.top_section.remove_section %}
+  {# if no content filled #}
+  {% if (module.top_section.address_section.icon_field_1.name or module.top_section.address_section.text_field) or (module.top_section.contact_section.icon_field.name or module.top_section.contact_section.text_field) or (module.top_section.social_icons.include_social_share and module.top_section.social_icons.social_item) %}
+  <div class="top-section">
+    <div class="page-center">
+      <div class="cst-inner-wrapper flex_row">
+
+        {# contact wrapper #}
+        {% if (module.top_section.address_section.icon_field_1.name or module.top_section.address_section.text_field) or (module.top_section.contact_section.icon_field.name or module.top_section.contact_section.text_field) %}
+        <div class="contact-wrapper col8">
+
+          {# address section #}
+          {% if module.top_section.address_section.icon_field_1.name or module.top_section.address_section.text_field %}
+          <div class="address-section {% if module.top_section.address_section.hide_at_desktop %}desktop_hide{% endif %} {% if module.top_section.address_section.hide_at_mobile %}mobile_hide{% endif %}">
+            {% if module.top_section.address_section.icon_field_1.name %}
+            <div class="book-icon section-icon">
+              {% icon
+            name="{{ module.top_section.address_section.icon_field_1.name }}"
+            style="{{ module.top_section.address_section.icon_field_1.type }}"
+            unicode="{{ module.top_section.address_section.icon_field_1.unicode }}"
+            icon_set="{{ module.top_section.address_section.icon_field_1.icon_set }}"
+          %}
+            </div>
+            {% endif %}
+
+            {% if module.top_section.address_section.text_field %}
+            <div class="text">
+              <h4>
+                {{ module.top_section.address_section.text_field }}
+              </h4>
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+          {# address section ends #}
+
+          {# contact section #}
+          {% if module.top_section.contact_section.icon_field.name or module.top_section.contact_section.text_field %}
+          <div class="contact-section {% if module.top_section.contact_section.hide_at_desktop %}desktop_hide{% endif %} {% if module.top_section.contact_section.hide_at_mobile %}mobile_hide{% endif %}">
+            {% if module.top_section.contact_section.text_field %}<a href="tel:{{ module.top_section.contact_section.text_field|replace('-','')|replace(' ','')|replace('(','')|replace(')','') }}">{% endif %}
+            {% if module.top_section.contact_section.icon_field.name %}
+            <div class="tel-icon section-icon">
+              {% icon
+              name="{{ module.top_section.contact_section.icon_field.name }}"
+              style="{{ module.top_section.contact_section.icon_field.type }}"
+              unicode="{{ module.top_section.contact_section.icon_field.unicode }}"
+              icon_set="{{ module.top_section.contact_section.icon_field.icon_set }}"
+            %}
+            </div>
+            {% endif %}
+            {% if module.top_section.contact_section.text_field %}
+            <div class="text">
+              <h4>
+                {{ module.top_section.contact_section.text_field }}
+              </h4>
+            </div>
+            {% endif %}
+            {% if module.top_section.contact_section.text_field %}</a>{% endif %}
+          </div>       
+          {% endif %}
+          {# contact section ends #}
+
+        </div>
+        {% endif %}
+        {# contact wrapper ends #}
+
+        {# social share #}
+        {% if module.top_section.social_icons.include_social_share and module.top_section.social_icons.social_item %}
+        <div class="social-share{% if (module.top_section.address_section.icon_field_1.name or module.top_section.address_section.text_field) or (module.top_section.contact_section.icon_field.name or module.top_section.contact_section.text_field) %} col4{% else %} col12{% endif %} {% if top_social.include_social_share %}top_social_add{% endif %} desktop_social_shares {% if module.top_section.social_icons.hide_at_desktop %}desktop_hide{% endif %}">
+          <ul class="header_social-share_ul">
+            {% for item in module.top_section.social_icons.social_item %}
+            {% if item.icon_field_2.name or item.image.src %}
+            <li class="ic_it ic{{loop.index}} ty_{{item.select_icon_type}}">
+              {% set href = item.link_field.url.href %}
+              {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a href="{{ href }}"
+                 {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                 {% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}>
+                {% if item.select_icon_type == "image" and item.image.src %}
+                <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" >
+                {% endif %}
+
+                {% if item.select_icon_type == "icon" and item.icon_field_2.name %}
+                {% icon
+                  name="{{ item.icon_field_2.name }}"
+                  style="{{ item.icon_field_2.type }}"
+                  unicode="{{ item.icon_field_2.unicode }}"
+                  icon_set="{{ item.icon_field_2.icon_set }}"
+                %}
+                {% endif %}
+              </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {# social share ends #}
+
+      </div>
+
+    </div>
+  </div>
+  <hr class="top-section_hr">
+  {% endif %}
+  {% endif %}
+  {# top section ends #}
+
+  {% if not module.top_section_copy.remove_section %}
+
+  <div class="primary-container primary-container-{{name}} {% if module.top_section_copy.logo_section.change_sticky_header_logo and module.top_section_copy.enable_sticky_effect %}stickyLogo_changes{% endif %}">
+    <div class="primary-section">
+      <div class="page-center">
+        <div class="container-wrapper">
+          {# logo section #}
+          <div class="logo-section">
+            {% set href = module.top_section_copy.logo_section.link_field_1.url.href %}
+            {% if module.top_section_copy.logo_section.link_field_1.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            {% set loadingAttr = module.top_section_copy.logo_section.logo_field.loading != 'disabled' ? '{{ module.top_section_copy.logo_section.logo_field.loading }}' : '' %}
+            {% set loadingAttr = module.top_section_copy.logo_section.sticky_header_logo.loading != 'disabled' ? '{{ module.top_section_copy.logo_section.sticky_header_logo.loading }}' : '' %}
+
+            {% if module.top_section_copy.logo_section.change_sticky_header_logo and module.top_section_copy.enable_sticky_effect %}
+            <div class="static_logo">
+              {% endif %}
+              {% logo
+              override_inherited_src="{{ module.top_section_copy.logo_section.logo_field.override_inherited_src }}"
+              src="{{ module.top_section_copy.logo_section.logo_field.src }}"
+              alt="{{ module.top_section_copy.logo_section.logo_field.alt }}"
+              width="{{ module.top_section_copy.logo_section.logo_field.width }}"
+              height="{{ module.top_section_copy.logo_section.logo_field.height }}"
+              loading="{{ loadingAttr }}"
+              link="{{ href }}"
+              open_in_new_tab="{% if module.top_section_copy.logo_section.link_field_1.open_in_new_tab %}true{% else %}false{% endif %}"
+              suppress_company_name="{{ module.top_section_copy.logo_section.logo_field.suppress_company_name }}"
+            %}
+              {% if module.top_section_copy.logo_section.change_sticky_header_logo and module.top_section_copy.enable_sticky_effect %}
+            </div>
+            {% endif %}
+
+            {% if module.top_section_copy.logo_section.change_sticky_header_logo and module.top_section_copy.enable_sticky_effect %}
+            <div class="sticky_logo">
+              {% logo
+              override_inherited_src="{{ module.top_section_copy.logo_section.sticky_header_logo.override_inherited_src }}"
+              src="{{ module.top_section_copy.logo_section.sticky_header_logo.src }}"
+              alt="{{ module.top_section_copy.logo_section.sticky_header_logo.alt }}"
+              width="{{ module.top_section_copy.logo_section.sticky_header_logo.width }}"
+              height="{{ module.top_section_copy.logo_section.sticky_header_logo.height }}"
+              loading="{{ loadingAttr }}"
+              link="{{ href }}"
+              open_in_new_tab="{% if module.top_section_copy.logo_section.link_field_1.open_in_new_tab %}true{% else %}false{% endif %}"
+              suppress_company_name="{{ module.top_section_copy.logo_section.sticky_header_logo.suppress_company_name }}"
+            %}
+            </div>
+
+            {% endif %}
+
+            {% if module.top_section_copy.logo_section.tagline %}<div class="header_logo_tagline"><small>{{ module.top_section_copy.logo_section.tagline }}</small></div>{% endif %}
+          </div>
+          {# logo section ends #}
+
+          {# menu group #}
+          {% if module.top_section_copy.menu_section.include_menu %}
+          <div class="nav col-4  {% if module.top_section_copy.menu_section.include_menu %}menuAdd{% endif %} al_{{ module.top_section_copy.menu_section.select_alignment }} {% if module.top_section_copy.menu_section.include_megamenu %} megamenu{% else%} no_megamenu{% endif %}">
+            {{ desktop_navigation() }}
+          </div>
+          {% endif %}
+          {# menu group ends  #}
+
+          <div class="right-section">
+
+            {# language switcher #}
+            {% if module.top_section_copy.language.include_language_swicher %}
+            <div class="langauge {% if module.top_section_copy.language.hide_at_desktop %}desktop_hide{% endif %}  {% if module.top_section_copy.language.hide_at_mobile %}mobile_hide{% endif %}">
+              {% if content.translated_content.values()|selectattr("published")|length or is_listing_view and group.translations %}
+              <div class="header__language-switcher-col">
+                {{ language_switcher() }}
+              </div>
+              {% endif %}
+            </div>
+            {% endif %}
+            {# language switcher ends #}
+
+            {# site search #}
+            {% if module.top_section_copy.site_search_input.include_search %}
+            <div class="search {% if module.top_section_copy.site_search_input.hide_at_desktop %}desktop_hide{% endif %} {% if module.top_section_copy.site_search_input.hide_at_mobile %}mobile_hide{% endif %}">
+              <div class="search-icon-container {% if not module.top_section_copy.button_section.include_button %}no_btn{% endif %} ">     
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect width="20" height="20" fill="#1E1E1E"/>
+                  <rect width="1440" height="6116" transform="translate(-1050 -150)" fill="white"/>
+                  <g filter="url(#filter0_d_73_2)">
+                    <rect x="-1050" y="-30" width="1440" height="80" fill="white"/>
+                  </g>
+                  <path d="M16.2508 8.12381C16.2508 9.91652 15.6687 11.5725 14.6882 12.9161L19.6338 17.8646C20.1221 18.3528 20.1221 19.1456 19.6338 19.6338C19.1455 20.1221 18.3525 20.1221 17.8642 19.6338L12.9186 14.6853C11.5748 15.6696 9.91845 16.2476 8.1254 16.2476C3.6369 16.2476 0 12.6114 0 8.12381C0 3.63619 3.6369 0 8.1254 0C12.6139 0 16.2508 3.63619 16.2508 8.12381ZM8.1254 13.748C11.231 13.748 13.7507 11.2288 13.7507 8.12381C13.7507 5.0188 11.231 2.49963 8.1254 2.49963C5.01978 2.49963 2.50012 5.0188 2.50012 8.12381C2.50012 11.2288 5.01978 13.748 8.1254 13.748Z" fill="#212429"/>
+                  <defs>
+                    <filter id="filter0_d_73_2" x="-1051" y="-30" width="1442" height="82" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                      <feOffset dy="1"/>
+                      <feGaussianBlur stdDeviation="0.5"/>
+                      <feComposite in2="hardAlpha" operator="out"/>
+                      <feColorMatrix type="matrix" values="0 0 0 0 0.0862745 0 0 0 0 0.0862745 0 0 0 0 0.0862745 0 0 0 0.1 0"/>
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_73_2"/>
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_73_2" result="shape"/>
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            {% endif %}
+            {# site search ends #}
+
+
+            {# button group #}
+            {% if module.top_section_copy.button_section.include_button %}
+            <div class="button-section-container btn{{module.top_section_copy.button_section.button_setting|length}}">
+              {% for item in module.top_section_copy.button_section.button_setting %}
+              <div class="btn-section {% if item.hide_at_desktop %}desktop_hide{% endif %}  {% if item.hide_at_mobile %}mobile_hide{% endif %}">
+                {% if item.button_type == "std" %}
+                {% set href = item.link_field_2.url.href %}
+                {% if item.link_field_2.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% endif %}
+                <a href="{{ href }}"  class="{% if item.button_theme%} {{item.button_theme}}{% else %}hs-button{% endif %}"
+                   {% if item.link_field_2.open_in_new_tab %}target="_blank"{% endif %}
+                   {% if item.link_field_2.rel %}rel="{{ item.link_field_2.rel }}"{% endif %}>
+                  {{ item.text_field_1 }}
+                  {% endif %}
+                </a>
+                {% if item.button_type == "cta" %}
+                {% cta guid="{{ item.cta_field }}" %}
+                {% endif %}
+
+                {% if item.button_type  == "pop_up"%}
+                <a data-id="trigger_{{name}}_{{loop.index}}" class="popup {% if item.button_theme %}{{item.button_theme}}{% else %}hs-sec-btn {% endif %}" href="javascript:;">
+                  {{ item.text_field_1 }}
+                </a>
+
+                <div class="popup-wrapper popup-type-{{item.popup_type}}" id="trigger_{{name}}_{{loop.index}}">
+                  <div class="csutom-section-popup">
+                    <div class="inner-popup-container">
+                      <div class="popup-inner-wrapper">
+                        <div class="close-icon popup-hdr">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1"><path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/></svg>
+                        </div>
+                        {% if  item.popup_type == 'pop_form' %}
+                        {% if item.form_field_1.form_id %}
+                        {% form
+                          form_to_use="{{ item.form_field_1.form_id }}"
+                          response_response_type="{{ item.form_field_1.response_type }}"
+                          response_message="{{ item.form_field_1.message }}"
+                          response_redirect_id="{{ item.form_field_1.redirect_id }}"
+                          response_redirect_url="{{item.form_field_1.redirect_url}}"
+                          gotowebinar_webinar_key="{{ item.form_field_1.gotowebinar_webinar_key }}"
+                        %}
+                        {% endif %}
+                        {% endif %}
+
+                        {% if item.popup_type == 'content' %}
+                        {{ item.content }}
+                        {% endif %}
+
+                        {% if item.popup_type == 'video' %}
+
+                        {% if item.video_type == 'file' %}
+                        <video src="" data-src="{{ item.video_src }}" loop controls class="videoSrc videoTag"/>
+                        {% endif %}
+                        {% if item.video_type == 'external' %}
+                        <div class="cst-external-video">
+                          {% if item.external_video_url is string_containing "youtube.com" %}
+                          <iframe src="" data-src="{{ item.external_video_url|split('?')|first }}?autoplay=1&loop=1&mute=1&showinfo=0&controls=0&playlist={{ item.external_video_url|split('?')|first|split('/')|last }}"  frameborder="0" allowFullScreen class="iframe_video videoSrc"></iframe>
+                          {% else %}
+                          <iframe src="" data-src="{{ item.external_video_url|split('?')|first }}?autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0"  frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video videoSrc"></iframe>
+                          {% endif %}   
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+            {# button group ends #}
+
+            {# hamburger #}
+            {% if module.top_section_copy.menu_section.include_menu %}
+            <div class="cst-humburger-icon">
+              <span class="trigger"></span>
+              <span class="trigger"></span>
+              <span class="trigger"></span>
+            </div>
+            {% endif %}
+            {# hamburger ends #}
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if module.top_section_copy.site_search_input.include_search %}
+  <div class="header-search-inner">
+    <div class="search-suggestion">
+      <div class="hs-search-field">
+        <div class="hs-search-field__bar">
+          <form data-hs-do-not-collect="true" action="/{{ site_settings.content_search_results_page_path }}">
+            {% if module.top_section_copy.site_search_input.field_label %}
+            <label for="term">{{ module.top_section_copy.site_search_input.field_label }}</label>
+            {% endif %}
+            <input type="text" class="hs-search-field__input" name="term" autocomplete="off" aria-label="{{  module.top_section_copy.site_search_input.field_label || "Search" }}" placeholder="{{ module.top_section_copy.site_search_input.placeholder_text }}">
+
+            {% if module.top_section_copy.site_search_input.content_types.website_pages %}
+            <input type="hidden" name="type" value="SITE_PAGE">
+            {% endif %}
+            {% if module.top_section_copy.site_search_input.content_types.landing_pages %}
+            <input type="hidden" name="type" value="LANDING_PAGE">
+            {% endif %}
+            {% if module.top_section_copy.site_search_input.content_types.blog_posts %}
+            <input type="hidden" name="type" value="BLOG_POST">
+            <input type="hidden" name="type" value="LISTING_PAGE">
+            {% endif %}
+            {% if module.top_section_copy.site_search_input.content_types.knowledge_articles %}
+            <input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">
+            {% endif %}
+
+            {% if module.top_section_copy.site_search_input.include_search_button %}
+            <button aria-label="Search">{% icon name="search" style="solid" %}</button>
+            {% endif %}
+          </form>
+
+          {% if module.top_section_copy.site_search_input.include_additional_content %}
+          <div class="search-content">
+            <div class="cont">
+              {{ module.top_section_copy.site_search_input.content_group.content }}
+            </div>
+
+            {% if module.top_section_copy.site_search_input.content_group.button_group %}
+            <div class="hs_small_btn">
+              {{ macros.buttonGroup(module.top_section_copy.site_search_input.content_group.button_group ) }}
+            </div>
+            {% endif %}
+
+          </div>
+          {% endif %}
+
+        </div>
+        <ul class="hs-search-field__suggestions"></ul>
+      </div>
+      <div class="header-search-close">
+        <div class="header-search-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1"><path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/></svg>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% endif %}
+
+</header>
+
+{% if not module.top_section_copy.remove_section %}
+{% if module.top_section_copy.enable_sticky_effect %}
+{% require_js %}
+<script>
+
+  // STICKY HEADER 
+  var headerStickySection{{name}} = document.querySelector('.header .primary-container.primary-container-{{name}}');                                                         
+                                                           if (headerStickySection{{name}}) {         
+    window.addEventListener('scroll', function() {
+      var headerOffset{{name}} = headerStickySection{{name}}.getBoundingClientRect().top;   
+      var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+      if (headerOffset{{name}} <= 0 && scrollTop !== 0) {
+        headerStickySection{{name}}.classList.add('sticky_header_active');
+        headerStickySection{{name}}.closest('.header').classList.add('sticky_header_active_wrap');
+        document.body.classList.add('sticky_header');
+      } else {
+        headerStickySection{{name}}.classList.remove('sticky_header_active');
+        headerStickySection{{name}}.closest('.header').classList.remove('sticky_header_active_wrap');
+        document.body.classList.remove('sticky_header');
+      }    
+    });
+  }    
+
+  function setSectionHeight(classNm) {
+    var section = document.querySelector(classNm);
+    if (section) {
+      var sectionHeight = section.offsetHeight;
+      section.parentElement.style.minHeight = sectionHeight + 'px';
+    }
+  }
+  window.addEventListener('resize', function() {
+    setTimeout(function() {
+      setSectionHeight('.header .primary-container-{{name}} .primary-section');
+                       }, 100);
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    setSectionHeight('.header .primary-container-{{name}} .primary-section');
+                     });
+
+</script>
+{% end_require_js %}
+{% endif %}
+{% endif %}
+
+

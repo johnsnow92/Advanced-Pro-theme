@@ -1,0 +1,53 @@
+.kore-custom-slider {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-custom-slider .page-width {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-custom-slider .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-custom-slider .heading,
+.kore-custom-slider .heading * {
+  letter-spacing: 2px;
+}
+
+.kore-custom-slider .slick-slide img {
+  margin: 0 auto; 
+}
+
+.kore-custom-slider .customer-logos {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+}
+
+.kore-custom-slider .customer-logos.slick-initialized {
+  visibility: visible;
+  opacity: 1;    
+}
+
+/* Adjust left & right margins based on .slide padding */
+.kore-custom-slider .customer-logos {
+  margin: 0 -20px;
+}
+
+.kore-custom-slider .customer-logos .slide {
+  padding: 0 20px; 
+  display: inline-block;
+  vertical-align: middle;
+  float: none;
+}
+
+.kore-custom-slider .customer-logos .slide img.filter {
+  -webkit-filter: brightness(200%);
+  filter: brightness(200%);
+}

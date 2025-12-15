@@ -1,0 +1,44 @@
+<div class="hero-slider" data-autoplay="{{ module.autoplay }}" data-speed="{{ module.autoplay_speed }}" style="min-height: {{ module.slider_height }}px;">
+  <div class="hero-slider__track">
+    {% for slide in module.slides %}
+    <div class="hero-slider__slide" {% if slide.background_image.src %}style="background-image: url('{{ slide.background_image.src }}');"{% endif %}>
+      <div class="hero-slider__overlay"></div>
+      <div class="hero-slider__content">
+        <div class="container">
+          <h1 class="hero-slider__heading">{{ slide.heading }}</h1>
+          <p class="hero-slider__subheading">{{ slide.subheading }}</p>
+          {% if slide.button_text %}
+          <a href="{{ slide.button_link.href }}" class="btn btn-primary hero-slider__button">
+            {{ slide.button_text }}
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+  {% if module.show_navigation %}
+  <button class="hero-slider__nav hero-slider__nav--prev" aria-label="Previous slide">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="15 18 9 12 15 6"></polyline>
+    </svg>
+  </button>
+  <button class="hero-slider__nav hero-slider__nav--next" aria-label="Next slide">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </button>
+  {% endif %}
+  
+  {% if module.show_dots %}
+  <div class="hero-slider__dots">
+    {% for slide in module.slides %}
+    <button class="hero-slider__dot{% if loop.index == 1 %} active{% endif %}" 
+            data-slide="{{ loop.index0 }}" 
+            aria-label="Go to slide {{ loop.index }}">
+    </button>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>

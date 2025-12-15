@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "categories" : [ "MEDIA" ],
+  "host_template_types" : [ "ANY" ],
+  "module_id" : 197621005448,
+  "label" : "Hero Slider",
+  "icon" : "image",
+  "is_available_for_new_content" : true
+}

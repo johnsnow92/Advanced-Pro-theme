@@ -1,0 +1,35 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+{# Required jQuery version 1.11.x, if changing HS jQuery version causing issue to existing pages then, add the jQuery CDN here to make it work #}
+
+{# Fontawesome for demo only, you need to place it on portal main CSS #}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+{% if module.enable_section %}
+  <div class="kr-blog-listing-1-banner">
+    <div class="posts">
+      {% for item in module.items %}
+        <div class="post" style="background-image: url({{ item.background_image.src }});">
+          <div class="post__content">
+            {% if item.publish_date %}
+              <h5>{{ item.publish_date | datetimeformat('%B %d, %Y') }}</h5>
+            {% endif %}
+            
+            {% if item.url_field.href and item.title %}
+              <h4>
+                <a href="{{ item.url_field.href }}">{{ item.title }}</a>
+              </h4>
+            {% endif %}
+            
+            {% if item.short_content %}
+              <p>{{ item.short_content }}</p>
+            {% endif %}
+            {% if item.url_field.href and item.title %}
+              <a class="featured_link" href="{{ item.url_field.href }}">Read more</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

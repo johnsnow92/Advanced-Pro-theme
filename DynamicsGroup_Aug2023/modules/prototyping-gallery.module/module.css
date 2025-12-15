@@ -1,0 +1,72 @@
+.cm-proto-gallery {
+  position: relative;
+}
+
+.cm-proto-gallery a {
+  display: block;
+  position: relative;
+}
+
+.cm-proto-gallery .shadow-overlay {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+.cm-proto-gallery .shadow-overlay .box-shadow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: inset 0px 0px 0px 8px #ffffff;
+}
+
+.cm-proto-gallery .shadow-overlay img {
+  width: 100%;
+  position: relative;
+}
+
+.cm-proto-gallery 
+.et_overlay {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: hsla(0,0%,100%,.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+  background-color: rgba(0,0,0,0.3);
+}
+
+.cm-proto-gallery .et_overlay:before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-size: 32px;
+  transition: all .4s;
+  content: '0';
+  color: #ffffff;
+  font-family: 'ETmodules';
+  font-weight: 400;
+}
+
+.cm-proto-gallery .shadow-overlay:hover .et_overlay {
+  z-index: 3;
+  opacity: 1;
+}
+.cm-proto-gallery .et_overlay:before {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

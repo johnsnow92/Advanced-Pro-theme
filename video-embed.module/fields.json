@@ -1,0 +1,78 @@
+[ {
+  "id" : "section_title",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "video_url",
+  "name" : "video_url",
+  "label" : "Video URL",
+  "help_text" : "Enter a YouTube, Vimeo, or direct video URL",
+  "required" : true,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "aspect_ratio",
+  "name" : "aspect_ratio",
+  "label" : "Aspect Ratio",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "16:9", "16:9 (Widescreen)" ], [ "4:3", "4:3 (Standard)" ], [ "1:1", "1:1 (Square)" ], [ "21:9", "21:9 (Ultrawide)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "16:9"
+}, {
+  "id" : "autoplay",
+  "name" : "autoplay",
+  "label" : "Autoplay Video",
+  "help_text" : "Note: Most browsers require muted autoplay",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "show_controls",
+  "name" : "show_controls",
+  "label" : "Show Video Controls",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "mute",
+  "name" : "mute",
+  "label" : "Mute Video",
+  "help_text" : "Required for autoplay in most browsers",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "loop",
+  "name" : "loop",
+  "label" : "Loop Video",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+} ]

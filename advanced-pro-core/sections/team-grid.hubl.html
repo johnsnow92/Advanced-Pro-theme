@@ -1,0 +1,39 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Team - Grid Layout
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: team-grid.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  max_width=1200,
+  padding={"top": 80, "bottom": 80}
+%}
+  {% dnd_module path="@hubspot/rich_text" width=12, offset=0 %}
+    {% module_attribute "html" %}
+      <div style="text-align: center;">
+        <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 3rem;">Meet Our Team</h2>
+        <div style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+          {% set team_cards = [
+            {"name": "Team Member 1", "role": "Position", "image": "https://via.placeholder.com/300x300"},
+            {"name": "Team Member 2", "role": "Position", "image": "https://via.placeholder.com/300x300"},
+            {"name": "Team Member 3", "role": "Position", "image": "https://via.placeholder.com/300x300"},
+            {"name": "Team Member 4", "role": "Position", "image": "https://via.placeholder.com/300x300"}
+          ] %}
+          {% for member in team_cards %}
+            <div style="text-align: center; padding: 1rem 0;">
+              <img src="{{ member.image }}" alt="{{ member.name }}" style="width: 100%; border-radius: 12px; margin-bottom: 1rem;">
+              <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">{{ member.name }}</h3>
+              <p style="color: #007bff; font-weight: 500; margin-bottom: 0.75rem;">{{ member.role }}</p>
+              <div style="display: flex; gap: 0.75rem; justify-content: center;">
+                <a href="#" style="color: #007bff; font-size: 1.25rem;">in</a>
+                <a href="#" style="color: #007bff; font-size: 1.25rem;">??</a>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

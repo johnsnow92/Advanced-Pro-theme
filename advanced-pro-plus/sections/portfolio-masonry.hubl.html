@@ -1,0 +1,54 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Portfolio - Masonry Grid
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: portfolio-masonry.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  max_width=1200,
+  padding={"top": 80, "bottom": 80}
+%}
+  {% dnd_row %}
+    {% dnd_column width=12 %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <h2 style="text-align: center; font-size: 3rem; font-weight: 700; margin-bottom: 3rem;">Our Work</h2>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+  {% end_dnd_row %}
+  {% dnd_row %}
+    {% dnd_column width=6 %}
+      {% dnd_module path="@hubspot/linked_image" %}
+        {% module_attribute "img" %}
+          {"src": "https://via.placeholder.com/600x400", "alt": "Project 1"}
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+    {% dnd_column width=6 %}
+      {% dnd_module path="@hubspot/linked_image" %}
+        {% module_attribute "img" %}
+          {"src": "https://via.placeholder.com/600x800", "alt": "Project 2"}
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+  {% end_dnd_row %}
+  {% dnd_row %}
+    {% dnd_column width=4 %}
+      {% dnd_module path="@hubspot/linked_image" %}
+        {% module_attribute "img" %}
+          {"src": "https://via.placeholder.com/400x400", "alt": "Project 3"}
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+    {% dnd_column width=8 %}
+      {% dnd_module path="@hubspot/linked_image" %}
+        {% module_attribute "img" %}
+          {"src": "https://via.placeholder.com/800x400", "alt": "Project 4"}
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+  {% end_dnd_row %}
+{% end_dnd_section %}

@@ -1,0 +1,410 @@
+{% import "../../macros/_macros.html" as macros %}  
+
+
+{% set slider_settings = module.module_settings.slider_options %}
+
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="career-opportunities {{name}} dnd_padd styleChanges {{ module.module_settings.number_of_columns }}_row {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }}  {% if module.module_settings.enable_slider %} per_view{{ slider_settings.slides_per_view }} {% if slider_settings.autoplay %}autoplay_true{% endif %} {% if slider_settings.dots %}dots_true{% endif %} {% if slider_settings.arrows %}arrows_trw{% endif %} {% if slider_settings.loop %}loop_true{% endif %}{% endif %}">
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+    {{ macros.topContent(module.top_content, module.module_settings) }}
+
+
+    {% if module.module_settings.enable_slider %}
+    <div class="glide">
+      <div class=" glide__track " data-glide-el="track">
+        {% endif %}
+        <div class="flex_row career_row {{ module.style.card.select_icon_size }}_icon {% if module.module_settings.enable_slider %}glide__slides{% endif %} {% if module.module_settings.enable_masonry and not module.module_settings.enable_slider %}masonadded{% endif %} ">
+          {% for item in module.career_items %}
+          <div class="item-wrap num{{loop.index}} {{ module.module_settings.number_of_columns }} ic_{{ item.select_icon_type }} icTheme_{{ item.select_icon_color_theme }} {% if item.add_more_information %}moreInfo_add{% endif %}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 100}}" {% endif %}>
+            <div class="col-inner {{ module.style.card.icon_position }} {{ module.style.card.select_content_alignment }} {% if module.style.card.select_card_background_theme != "custom" %}{{ module.style.card.select_card_background_theme }}{% endif %} {% if item.border_radius > 0 %}radiusadd{% endif %}"> 
+
+              {% if item.select_icon_type == "image" and item.image_field.src %}
+              <div class="left-img">
+                <div class="left-inner">
+                  {% if item.image_field.src %}
+                  <div class="img-wrap">
+                    {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+                    <img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} />
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+
+              {% if item.select_icon_type == "icon" and item.icon_field.name %}
+              <div class="left-img">
+                <div class="left-inner">
+                  {% if item.icon_field.name %}
+                  <div class="icon-wrap {% if item.select_icon_color_theme != "custom" %}{{ item.select_icon_color_theme }}{% endif %}">
+                    {% icon
+      name="{{ item.icon_field.name }}"
+      style="{{ item.icon_field.type }}"
+      unicode="{{ item.icon_field.unicode }}"
+      icon_set="{{ item.icon_field.icon_set }}"
+    %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+
+              <div class="right-cont {% if not item.select_icon_type %}fullcont{% endif %}">
+                <div class="right-inner">
+                  <div class="job-type">
+                    <span class="badge {% if module.style.card.batch.select_background_theme != "custom" %}{{ module.style.card.batch.select_background_theme }}{% endif %} {% if module.style.card.batch.select_content_color != "custom" %}{{ module.style.card.batch.select_content_color }}{% endif %}"> {{ item.job_type }}</span>
+                  </div>
+                  <div class="designation">
+                    <{{ module.style.card.select_title_type }}>{{ item.designation }}</{{ module.style.card.select_title_type }}>
+                  </div>
+                    <div class="location">
+                      {{ item.location }}
+                    </div>
+                    {% if item.add_more_information %}
+                    <div class="read-more">
+                      <span class="read_trigger" data-id="more{{name}}_{{loop.index}}">{{ item.additional_content.read_more_text }}</span>
+                    </div>
+                    {% endif %}
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+            {% if module.module_settings.enable_slider %}
+          </div>
+          {% if module.module_settings.enable_slider %}
+          {{ macros.sliderControls(module.module_settings.slider_options , module.career_items, module.module_settings.enable_animation) }}
+          {% endif %}
+        </div>
+        {% endif %}
+
+        {% if module.button_group %}
+        <div class="btm-btn" {% if module.module_settings.enable_animation %} data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+          {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+        </div>
+        {% endif %}
+
+      </div>
+
+      {% for item in module.career_items %}
+      <div class="career_popup num{{loop.index}}" id="more{{name}}_{{loop.index}}">
+        <div class="carrer_modal">
+          <div class="modal__box {% if module.style.card.select_card_background_theme != "custom" %}{{ module.style.card.select_card_background_theme }}{% endif %}">
+            <div class="inner_row {{ module.style.card.select_icon_size }}_icon">
+
+              {% if item.select_icon_type == "image" and item.image_field.src %}
+              <div class="left-img">
+                <div class="left-inner">
+                  {% if item.image_field.src %}
+                  <div class="img-wrap">
+                    {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+                    <img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} />
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+
+              {% if item.select_icon_type == "icon" and item.icon_field.name %}
+              <div class="left-img">
+                <div class="left-inner">
+                  {% if item.icon_field.name %}
+                  <div class="icon-wrap {% if item.select_icon_color_theme != "custom" %}{{ item.select_icon_color_theme }}{% endif %}">
+                    {% icon
+                      name="{{ item.icon_field.name }}"
+                      style="{{ item.icon_field.type }}"
+                      unicode="{{ item.icon_field.unicode }}"
+                      icon_set="{{ item.icon_field.icon_set }}"
+                    %}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+
+              <div class="right-cont {% if not item.select_icon_type %}fullcont{% endif %}">
+                <div class="right-inner">
+                  <div class="job-type">
+                    <span class="badge {% if module.style.card.batch.select_background_theme != "custom" %}{{ module.style.card.batch.select_background_theme }}{% endif %} {% if module.style.card.batch.select_content_color != "custom" %}{{ module.style.card.batch.select_content_color }}{% endif %}"> {{ item.job_type }}</span>
+                  </div>
+                  <div class="designation">
+                    <{{ module.style.card.select_title_type }}>{{ item.designation }}</{{ module.style.card.select_title_type }}>
+                  </div>
+                    <div class="location">
+                      {{ item.location }}
+                    </div>
+                    </div>
+                  </div>
+                  {% if item.add_more_information %}
+                  <div class="more-content">
+                    {% if item.additional_content.social_icons %}
+                    <div class="social-icon">
+                      {% for item2 in item.additional_content.social_icons %}
+                      <div class="social-item {% if module.style.card.select_social_icon_color_theme != "custom" %}{{ module.style.card.select_social_icon_color_theme }}{% endif %}">
+                        {% set href = item2.link_field.url.href %}
+                        {% if item2.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                        {% set href = "mailto:" + href %}
+                        {% endif %}
+                        <a href="{{ href }}"
+                           {% if item2.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                           {% if item2.link_field.rel %}rel="{{ item2.link_field.rel }}"{% endif %}
+                           >
+                          {% if item2.icon_field_1.name %}
+                          {% icon
+                            name="{{ item2.icon_field_1.name }}"
+                            style="{{ item2.icon_field_1.type }}"
+                            unicode="{{ item2.icon_field_1.unicode }}"
+                            icon_set="{{ item2.icon_field_1.icon_set }}"
+                          %}
+                          {% endif %}
+                        </a>
+                      </div>
+                      {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    {% if item.additional_content.content %}
+                    <div class="desc">
+                      {{ item.additional_content.content }}
+                    </div>
+                    {% endif %}
+
+                    {% if item.additional_content.button_group %}
+                    <div class="popup-btn">
+                      {{ macros.buttonWithPopupGroup(item.additional_content.button_group, false,'additional_sec') }}
+                    </div>
+                    {% endif %}
+
+                    {% if item.additional_content.include_form %}
+                    <div class="form-wrap">
+                      <{{ module.style.card.select_form_title_size }}>
+                      {{ item.additional_content.form_title }}
+                      </{{ module.style.card.select_form_title_size }}>
+                      {% form
+                        form_to_use="{{ item.additional_content.form_field.form_id }}"
+                        response_response_type="{{ item.additional_content.form_field.response_type }}"
+                        response_message="{{ item.additional_content.form_field.message }}"
+                        response_redirect_id="{{ item.additional_content.form_field.redirect_id }}"
+                        response_redirect_url="{{item.additional_content.form_field.redirect_url}}"
+                        gotowebinar_webinar_key="{{ item.additional_content.form_field.gotowebinar_webinar_key }}"
+                      %}
+                    </div>
+                      {% endif %}
+                      </div>
+                      {% endif %}
+                    </div>
+                    <div class="closeIcon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path></svg>
+                    </div>
+                  </div>
+                </div>                
+              </div>
+              {% endfor %}
+
+
+              {% for item in module.career_items %}
+              {{ macros.buttonWithPopupGroup(item.additional_content.button_group, true,'additional_sec') }}
+              {% endfor %}
+
+              {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+
+              {% if module.button_group %}
+              {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+              {% endif %}
+
+            </div>
+
+
+
+            {% require_css %}    
+            <style>
+
+             
+              {% for item in module.career_items %}
+              {% if item.select_icon_color_theme == "custom" %}
+              .{{name}} .career_popup *:not(a[class]):not(input),
+              .career-opportunities.{{name}} .num{{loop.index}} .left-img .icon-wrap{
+                fill: rgba({{ item.color_field.color|convert_rgb }}, {{ item.color_field.opacity/100 }});
+              }
+              
+                {% else %}
+               {% if module.style.content.select_color_theme == "custom" %}
+              .module_97299864460 *:not(a[class]):not(input):not(.popup_modal *) {
+                fill: {{ macros.color(module.style.content.color) }};
+              }
+              {% endif %}
+              
+              {% endif %}
+
+              .career-opportunities.{{name}} .num{{loop.index}} .left-img .img-wrap img{
+                border-radius: {{ item.border_radius }}%;
+              }
+
+              {% endfor %}
+
+              /* */
+              {% if module.style.card.select_color_theme == "custom" %}
+              .{{name}} .career_popup *:not(a[class]):not(input),
+              .career-opportunities.{{name}} .item-wrap *:not(a[class]):not(input):not(.popup_modal *){
+                color: {{macros.color(module.style.card.color)}}
+              }
+              
+              
+              {% else %}
+               {% if module.style.content.select_color_theme == "custom" %}
+              .module_97299864460 *:not(a[class]):not(input):not(.popup_modal *) {
+                fill: {{ macros.color(module.style.content.color) }};
+              }
+              {% endif %}
+
+              
+              {% endif %}
+              /*  */
+
+              {% if module.style.card.select_social_icon_color_theme == "custom" %}
+              .career-opportunities.{{name}} .career_popup .social-icon .social-item{
+                fill: rgba({{ module.style.card.icon_color.color|convert_rgb }},{{ module.style.card.icon_color.opacity/100 }});
+              }
+              
+                {% else %}
+               {% if module.style.content.select_color_theme == "custom" %}
+              .module_97299864460 *:not(a[class]):not(input):not(.popup_modal *) {
+                fill: {{ macros.color(module.style.content.color) }};
+              }
+              {% endif %}
+              
+              {% endif %}
+
+              .career-opportunities.{{name}} .job-type span.badge{
+                {% if module.style.card.batch.select_background_theme == "custom" %}
+                background-color: rgba({{ module.style.card.batch.background_color.color|convert_rgb }},{{ module.style.card.batch.background_color.opacity/100 }}); 
+                {% endif %}
+
+                {% if module.style.card.batch.select_content_color == "custom" %}
+                color: {{macros.color(module.style.card.batch.content_color )}} !important;
+                {% endif %}
+              }
+
+              {% if module.style.card.select_card_background_theme == "custom" %}
+              .career-opportunities.{{name}} .item-wrap .col-inner,
+              .career-opportunities.{{name}} .career_popup .modal__box{
+                background-color: rgba({{ module.style.card.background_color.color|convert_rgb }}, {{ module.style.card.background_color.opacity/100 }});
+              }
+              {% endif %}
+
+              {% if module.style.card.batch.select_content_color == "primary_acc_font" %}
+              .career-opportunities.{{name}} .job-type span.badge{
+                color: rgba({{theme.global_colors.ac_primary_color.color|convert_rgb}},{{theme.global_colors.ac_primary_color.opacity/100 }} ) !important;
+              }
+              {% endif %}
+
+              {% if module.style.card.batch.select_content_color == "second_acc_font" %}
+              .career-opportunities.{{name}} .job-type span{
+                color: rgba({{theme.global_colors.ac_secondary_color.color|convert_rgb}},{{theme.global_colors.ac_secondary_color.opacity/100 }} ) !important;
+              }
+              {% endif %}
+
+
+              {% if module.style.card.spacing.spacing %}
+              .career-opportunities.{{name}} .item-wrap .col-inner{
+                {{ module.style.card.spacing.spacing.css }}
+              }
+              {% endif %}
+
+
+              {% if module.style.card.spacing.change_mobile_spacing %}
+              @media(max-width:767px){
+                .career-opportunities.{{name}} .item-wrap .col-inner{
+                  {{ module.style.card.spacing.mobile_spacing.css }}
+                }
+              }
+              {% endif %} 
+
+
+            </style>    
+
+            {% end_require_css %}
+
+
+
+            {% require_js %}
+            <script>
+
+              {# slider options #}
+              {% if module.module_settings.enable_slider %}
+              {% if module.module_settings.slider_options.slides_per_view > 3%}
+              {% set tabslides = 3 %}
+              {% else %}
+              {% set tabslides = module.module_settings.slider_options.slides_per_view %}
+              {% endif %}
+
+              {% if module.module_settings.slider_options.slides_per_view > 2%}
+              {% set slides768 = 2 %}
+              {% else %}
+              {% set slides768 = module.module_settings.slider_options.slides_per_view %}
+              {% endif %}
+
+              {% set gtename = name|replace("-","_")%}
+
+              var config_{{gtename}} = {
+                {% if module.module_settings.slider_options.loop %}
+                type:'carousel',
+                {% endif %}
+                {% if not module.module_settings.slider_options.loop %}
+                rewind: false,
+                {% endif %}
+                {% if  module.module_settings.slider_options.slides_per_view %}
+                perView:{{ module.module_settings.slider_options.slides_per_view }},
+                {% endif %}
+                perTouch: 1,
+                gap:0,
+                {% if module.module_settings.slider_options.autoplay %}
+                autoplay: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
+                {% endif %}
+                breakpoints: {
+                992: {
+                perView: {{tabslides}}
+              },
+                  768: {
+                    perView: {{slides768}}
+                  },
+                    600: {
+                      perView: 1
+                    }
+                  }
+              }
+              var glide = new Glide(".career-opportunities.{{name}} .glide",config_{{gtename}})
+              glide.mount()
+
+              {% endif %}
+
+
+              {% if module.module_settings.enable_masonry and not module.module_settings.enable_slider %}
+              var iso = new Isotope( '.career-opportunities.{{name}} .career_row', {
+                                    itemSelector: '.item-wrap',
+                                    //                         layoutMode: 'fitRows'
+                                    });
+              document.addEventListener('DOMContentLoaded', function () {
+                var iso = new Isotope( '.career-opportunities.{{name}} .career_row', {
+                                      itemSelector: '.item-wrap',
+                                      //                           layoutMode: 'fitRows'
+                                      });
+              })
+              {% endif %}
+            </script>
+            {% end_require_js %}
+
+
+
+
+
+
+
+
+

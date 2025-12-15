@@ -1,0 +1,54 @@
+[ {
+  "id" : "fac62003-30e3-9415-08e1-4835e1ef3342",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/proto4.jpeg",
+    "alt" : "proto4",
+    "loading" : "lazy",
+    "width" : 909,
+    "height" : 768,
+    "max_width" : 909,
+    "max_height" : 768
+  }
+}, {
+  "id" : "8e5a5bcc-0a3b-23bc-d7fc-f994a424a75e",
+  "name" : "image_width",
+  "label" : "Image Width",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "auto", "Auto" ], [ "custom", "Custom" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "auto"
+}, {
+  "id" : "ae3a7d8b-e5f1-efea-3e4e-81f25b595f9f",
+  "name" : "image_max_width_in_px_",
+  "label" : "Image Max Width (In px)",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "image_width",
+    "controlling_value_regex" : "custom",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "placeholder" : "",
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+} ]

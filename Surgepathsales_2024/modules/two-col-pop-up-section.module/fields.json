@@ -1,0 +1,76 @@
+[ {
+  "id" : "11e74263-f5a7-64a5-5d02-e9c7c8ae31c2",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/ebook1.jpg",
+    "alt" : "ebook1",
+    "loading" : "lazy",
+    "width" : 554,
+    "height" : 628,
+    "max_width" : 554,
+    "max_height" : 628
+  }
+}, {
+  "id" : "c8e75fd6-798e-1227-c1b7-1e0afbe685d4",
+  "name" : "heading_span",
+  "label" : "Heading Span",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Blog"
+}, {
+  "id" : "eca0e4ea-f64a-ef51-caaf-1d4acf1930b5",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "A Beginner's Guide To Create Shareble Infographics."
+}, {
+  "id" : "0f4032e4-863b-a750-e421-f741896ba54d",
+  "name" : "para",
+  "label" : "para",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.&nbsp;</p>"
+}, {
+  "id" : "45c6f81b-153e-53d5-39ea-32c2e1e47d9f",
+  "name" : "btn_text",
+  "label" : "Btn Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Let's talk about your project"
+}, {
+  "id" : "f6578a7d-8f8b-2964-eed0-d92aada3be61",
+  "name" : "pop_up_form",
+  "label" : "Pop Up Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "bf20ccda-0341-443c-b14b-d16e3d4ecfcf",
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form.",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+} ]

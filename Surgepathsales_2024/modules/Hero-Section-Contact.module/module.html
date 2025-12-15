@@ -1,0 +1,91 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!-- Font-awsome cdn -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /> -->
+
+<section class="Hero_Section background Contact_Hero_Section">   
+  <div class="container">
+    <div class="row">
+      <div class="column_1">
+        <div class="about-sub-heading">
+          <h4>
+            {{ module.about_hero_section_h4 }}
+          </h4>
+
+        </div>
+        <h1>{{ module.main_heading }}</h1>
+        <div class="content">{{ module.content }}</div>
+
+        {% for item in module.contact_location_group %}
+        <div class="location">
+          <div class="location_icon">
+            <!-- <i class="fa-solid fa-house"></i> -->
+            <a href="#" class="location_icon">
+              {% if item.demo_image.src %}
+              {% set sizeAttrs = 'width="{{ item.demo_image.width|escape_attr }}" height="{{ item.demo_image.height|escape_attr }}"' %}
+              {% if item.demo_image.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.demo_image.width|escape_attr }}" height="{{ item.demo_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.demo_image.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.demo_image.max_width|escape_attr }}" height="{{ item.demo_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.demo_image.loading != 'disabled' ? 'loading="{{ item.demo_image.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.demo_image.src|escape_url }}" alt="{{ item.demo_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+            </a>
+          </div>
+
+          <div class="location_text">
+            <h4>
+              {{ item.location_text }}
+            </h4>
+
+            {% set href = item.contact_link.url.href %}
+            {% if item.contact_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            <a
+               {% if item.contact_link.url.type is equalto "CALL_TO_ACTION"  %}
+               href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+               {% else %}
+               href="{{ href|escape_url }}"
+               {% endif %}
+               {% if item.contact_link.open_in_new_tab %}
+               target="_blank"
+               {% endif %}
+               {% if item.contact_link.rel %}
+               rel="{{ item.contact_link.rel|escape_attr }}"
+               {% endif %}
+               >
+              {{ item.location_span_text }}
+            </a>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+
+      <div class="column_2">
+        <div class="form">
+          {% form
+	form_to_use="{{ module.contact_form.form_id }}"
+	response_response_type="{{ module.contact_form.response_type }}"
+	response_message="{{ module.contact_form.message }}"
+	response_redirect_id="{{ module.contact_form.redirect_id }}"
+	response_redirect_url="{{module.contact_form.redirect_url}}"
+	gotowebinar_webinar_key="{{ module.contact_form.gotowebinar_webinar_key }}"
+%}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+

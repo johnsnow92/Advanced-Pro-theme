@@ -1,0 +1,412 @@
+[ {
+  "id" : "9febc5cf-f88d-39ad-d3de-614bf74ba696",
+  "name" : "align_vertical",
+  "label" : "Align vertical",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "d033d2c5-dd0d-095a-c10a-b54be97cbeeb",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h1><span style=\"color: #1771f1;\">Increase sales</span>, <span style=\"color: #1771f1;\">reduce operational cost</span>, and deliver a <span style=\"color: #1771f1;\">delightful customer experience</span> with the #1 AI tool for Movers</h1>\n<p>Use Yembo’s AI-enabled virtual surveys, Visual Inventory and built-in tools like integrated Estimating, SMS communications to improve profitability in any economy</p>"
+}, {
+  "id" : "1f4dd79f-b35b-0a68-9519-f57ea2317946",
+  "name" : "form",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "c2a00496-72b0-40cf-83b3-ef3564b5d769",
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form.",
+    "gotowebinar_webinar_key" : null
+  }
+}, {
+  "id" : "d63c7419-5787-a98c-87e1-c0601a4a60da",
+  "name" : "media_type",
+  "label" : "Media type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "video", "Video" ], [ "image", "Image" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "video"
+}, {
+  "id" : "31c746fe-8bca-882e-9954-2d72b2f0ba7b",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "media_type",
+    "controlling_value_regex" : "image",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://yembo.ai/hubfs/Yembo_April2023/image/612e87991992d341880be38d_mockup-of-a-woman-working-on-a-macbook-2316-el1%20(2).png",
+    "alt" : "612e87991992d341880be38d_mockup-of-a-woman-working-on-a-macbook-2316-el1 (2)",
+    "loading" : "lazy",
+    "width" : 1920,
+    "height" : 1280,
+    "max_width" : 1920,
+    "max_height" : 1280
+  }
+}, {
+  "picker" : "video",
+  "id" : "e654d92b-d4e0-e2de-7849-992812370fde",
+  "name" : "video_file",
+  "label" : "Video file",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "media_type",
+    "controlling_value_regex" : "video",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "type" : "file",
+  "display_width" : null,
+  "default" : "https://yembo.ai/hubfs/612e426f10567d98eedb874e_Moving%20Site%20Hero_300821-transcode.mp4"
+}, {
+  "id" : "132631f9-0297-2f60-3a0a-5bdd17a4b6e8",
+  "name" : "video_height",
+  "label" : "Video height",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 430
+}, {
+  "id" : "d1d6b639-ffac-dcda-d7d9-332445179ac1",
+  "name" : "poster_image",
+  "label" : "Poster image",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "media_type",
+    "controlling_value_regex" : "video",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : ""
+  }
+}, {
+  "id" : "fc5745bc-273e-f9f8-5de2-f67ecaa8ac0f",
+  "name" : "remove_black_line_on_video",
+  "label" : "Remove black line on video",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "159d3cbe-beb2-0559-262a-94bb68ba703e",
+  "name" : "banner_overlay_image1",
+  "label" : "Banner overlay image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://yembo.ai/hubfs/circle-stroke.png",
+    "alt" : "circle-stroke",
+    "width" : 358,
+    "height" : 498,
+    "max_width" : 358,
+    "max_height" : 498
+  }
+}, {
+  "id" : "aa13cfd0-d8ea-0014-df50-3546b0352f1d",
+  "name" : "add_bottom_icons",
+  "label" : "Add Bottom Icons",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "b5fd2646-776a-c0ee-dc7f-8f8c7571c3d6",
+  "name" : "bottom_icons",
+  "label" : "Bottom Icons",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "add_bottom_icons",
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "5c71ce0a-8620-7e6a-35df-f12202771ed5",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Moving"
+  }, {
+    "id" : "8c995fb8-2eee-676a-330b-387231b5a1c6",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://yembo.ai/hubfs/Truck.png",
+      "alt" : "Truck",
+      "loading" : "lazy",
+      "width" : 41,
+      "height" : 40,
+      "max_width" : 41,
+      "max_height" : 40
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://yembo.ai/hubfs/Truck.png",
+      "alt" : "Truck",
+      "loading" : "lazy",
+      "width" : 41,
+      "height" : 40,
+      "max_width" : 41,
+      "max_height" : 40
+    },
+    "text" : "Moving"
+  }, {
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://yembo.ai/hubfs/Truck.png",
+      "alt" : "Truck",
+      "loading" : "lazy",
+      "width" : 41,
+      "height" : 40,
+      "max_width" : 41,
+      "max_height" : 40
+    },
+    "text" : "Moving"
+  }, {
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "https://yembo.ai/hubfs/Truck.png",
+      "alt" : "Truck",
+      "loading" : "lazy",
+      "width" : 41,
+      "height" : 40,
+      "max_width" : 41,
+      "max_height" : 40
+    },
+    "text" : "Moving"
+  } ]
+}, {
+  "id" : "fbc2c285-e0e1-54d0-7aaa-f5ff7c1f79e3",
+  "name" : "settings",
+  "label" : "Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "05335e92-e679-1a18-7a0a-2327ae5e4ee1",
+    "name" : "background_gradient_css",
+    "label" : "Background gradient CSS",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "background: linear-gradient(180deg, rgba(235, 232, 255, 0.77) -10.72%, rgba(232, 244, 255, 0) 56.13%);"
+  }, {
+    "id" : "68c607d9-535a-8237-9d99-42d51833b9df",
+    "name" : "padding_desktop",
+    "label" : "Padding (Desktop)",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c7a2858d-3959-fb67-991c-413540a0b3d2",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 200
+    }, {
+      "id" : "682b2f2d-c2ed-ea41-389c-742746812232",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 120
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 200,
+      "bottom" : 120
+    }
+  }, {
+    "id" : "d2d3888c-2428-cbda-a555-aa9853d9282f",
+    "name" : "padding_tablet",
+    "label" : "Padding (Tablet)",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "a8486a4b-c2de-b0e9-d865-11aa32fa7652",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 120
+    }, {
+      "id" : "87611ff8-abd7-e1d2-6384-20acd7e303b0",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 80
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 120,
+      "bottom" : 80
+    }
+  }, {
+    "id" : "d2b3b0cc-100f-89ac-b0bf-150bd4da11c9",
+    "name" : "padding_mobile_",
+    "label" : "Padding (Mobile)",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "a8ea373f-2e0c-0dd8-ff1f-019c23fcdca2",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 100
+    }, {
+      "id" : "bd588654-987a-a82a-fc12-c56296d2458c",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 100,
+      "bottom" : 60
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_gradient_css" : "background: linear-gradient(180deg, rgba(235, 232, 255, 0.77) -10.72%, rgba(232, 244, 255, 0) 56.13%);",
+    "padding_desktop" : {
+      "top" : 200,
+      "bottom" : 120
+    },
+    "padding_tablet" : {
+      "top" : 120,
+      "bottom" : 80
+    },
+    "padding_mobile_" : {
+      "top" : 100,
+      "bottom" : 60
+    }
+  }
+} ]

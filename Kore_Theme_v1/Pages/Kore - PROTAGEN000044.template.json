@@ -1,0 +1,241 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 4,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_16176215322851599",
+        "label" : "Flexible column",
+        "type" : "widget_container",
+        "params" : {
+          "css_class" : "",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_16176216121901607",
+          "label" : "KR - Hero Single Column 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Hero Single Column 1",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Hero Single Column 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_16176219637771621",
+          "label" : "KR - Simple Menu",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Simple Menu",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Simple Menu",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_16176215985901605",
+          "label" : "KR - Rich Text 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text 1",
+            "per_widget_wrapper_html" : "",
+            "section_settings" : {
+              "section_text_alignment" : "text-left"
+            },
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Rich Text 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_16176215604191601",
+          "label" : "KR - Events Table 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Events Table 1",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "event" : [ {
+              "time" : "12:30 - 1:30PM",
+              "content" : "<p><strong>Leadership Panel: Update on Management Initiatives in the Trump Administration</strong></p>\n<ul role=\"list\">\n<li>Office of Management and Budget (Dustin Brown)</li>\n<li>Office of Personnel Management</li>\n<li>Government Accountability Office</li>\n<li>White House</li>\n</ul>"
+            }, {
+              "time" : "12:30 - 1:30PM",
+              "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+            }, {
+              "time" : "12:30 - 1:30PM",
+              "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+            }, {
+              "time" : "12:30 - 1:30PM",
+              "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+            }, {
+              "time" : "12:30 - 1:30PM",
+              "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+            }, {
+              "time" : "12:30 - 1:30PM",
+              "content" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+            } ],
+            "css_id" : "",
+            "widget_name" : "KR - Events Table 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_16176215670871603",
+          "label" : "KR - CTA 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - CTA 1",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - CTA 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        } ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

@@ -1,0 +1,69 @@
+<div class="cm-design-banner {% if not module.boolean_field %}no-parallax{% endif %}">
+  <div class="cm-wrapper">
+    <div class="cm-row">
+      <div class="cm-left">
+        <div class="parallax-section">
+          <div class="et_parallax_bg_wrap">
+            <div class="et_parallax_bg {% if module.boolean_field %}jarallax{% endif %}" style="background-image:url({{ module.parallax_image.src }});"></div>
+          </div> 
+          <div class="et_pb_image_wrap">
+            {% if module.image_field.src %}
+            {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+            {% if module.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.image_field.max_width }}" height="{{ module.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+            <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class="cm-right">
+        <div class="right-inner">
+          <div class="cm-content">
+            <h1>{{ module.heading }}</h1>
+            <div class="cm-divider"></div>
+            <div class="cm-text">
+              {{ module.content }}
+            </div>
+            <div class="btn-wrapper">
+              {% if module.button_type=="std" %}
+              {% set href = module.button_link.url.href %}
+              {% if module.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a href="{{ href }}" class="hs-button"
+                 {% if module.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                 {% if module.button_link.rel %}rel="{{ module.button_link.rel }}"{% endif %}
+                 >
+                {{ module.button_text }}
+              </a>
+              {% endif %}
+              {% if module.button_type=="cta" %}
+              {% cta guid="{{ module.cta_field }}" %}
+              {% endif %}
+            </div>
+            {% if module.contact_number %}
+            <div class="contact-number">
+              <div class="cm-icon"></div>
+              <h3 class="module_header"><span>{{ module.contact_number }}</span></h3>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% require_js %}
+{% if module.boolean_field %}
+<script>
+  jarallax(document.querySelectorAll('.jarallax'), {
+    speed: 0.9
+  });
+</script>
+{% endif %}
+{% end_require_js %}

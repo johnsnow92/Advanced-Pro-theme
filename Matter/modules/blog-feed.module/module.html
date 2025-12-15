@@ -1,0 +1,433 @@
+{% import "../../macros/_macros.html" as macros %}  
+
+
+
+<div class="blog-feed {{ module.module_settings.select_number_of_columns }}_row  blog_{{ module.feed_group.select_blog }} tag_{{ module.feed_group.select_tag }} count_{{ module.feed_group.number_of_posts }} feeTy_{{ module.feed_group.select_feed_type }} {{module.feed_settings.select_blog_theme}} {{name}} dnd_padd {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }}  icon_color_{{ module.feed_settings.select_icon_color_theme }} {% if module.feed_settings.featured_image %}img_true{% endif %} {% if module.feed_settings.title %}title_add{% endif %} {% if module.feed_settings.author %}author_add{% endif %} {% if module.feed_settings.date %}date_true{% endif %} {{ module.feed_settings.select_date_format }} {% if module.feed_settings.tags %}tags{% endif %} {% if module.feed_settings.description %}description{% endif %} {% if module.feed_settings.read_more %}readMore_add{% endif %}"
+     {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+    {% if module.top_content %}
+    <div class="blogfeed-top-wrp">
+      {{ macros.topContent(module.top_content, module.module_settings) }}
+    </div>
+    {% endif %}
+
+    {% if module.module_settings.enable_slider %}<div class="glide">
+    <div class=" glide__track " data-glide-el="track">{% endif %}
+
+      <div class="feed-outer-wrp flex_row {% if module.module_settings.enable_slider %}glide__slides{% else %}rowGap15{% endif %}">
+
+        {% set max_posts = module.feed_group.number_of_posts %}
+        {% set rec_posts = [] %}
+
+        {% if  module.feed_group.select_feed_type != "posts_by_title" %}
+
+        {% if  module.feed_group.select_feed_type == "recent_posts" %}
+        {% set rec_posts = rec_posts + blog_recent_posts(module.feed_group.select_blog , max_posts) %}
+        {% endif %}
+
+        {% if module.feed_group.select_feed_type == "popular_posts" %}
+        {% set rec_posts = blog_popular_posts(module.feed_group.select_blog, max_posts) %}
+        {% endif %}
+
+        {% if  module.feed_group.select_feed_type == "posts_by_tag" %}
+        {% set rec_posts = blog_recent_tag_posts(module.feed_group.select_blog,module.feed_group.select_tag, max_posts) %}
+
+        {% endif %}
+
+
+        {% set checkCount = rec_posts|length%}
+
+        {% set i = 0 %}
+        {% for post in rec_posts %}
+
+
+
+
+        {% if content.absolute_url != post.absolute_url and i < max_posts %}  
+        <div class="recent-post-item {{ module.module_settings.select_number_of_columns }} {% if module.feed_settings.featured_image == "false" or not post.post_list_summary_featured_image%}noImage{% endif %}" {% if module.module_settings.enable_animation %} data-aos-delay="{{loop.index * 100 + 200}}" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+          <div class="item_inner {% if module.style.card.select_background_theme != "custom" %}{{ module.style.card.select_background_theme }}{% endif %}">
+            {% if module.feed_settings.featured_image %}
+            {% if post.post_list_summary_featured_image %}
+
+            <div class="hs-featured-wrp">
+
+              <div class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
+              </div>
+
+              {% if module.feed_settings.select_blog_theme  == "theme2" %}
+              <div class="overlay_icon bg_el">
+                <span class="icon-wrap {% if module.feed_settings.select_icon_color_theme != "custom" %}{{ module.feed_settings.select_icon_color_theme }}{% endif %}">
+                  {% icon
+                    name="{{ module.feed_settings.icon_field.name }}"
+                    style="{{ module.feed_settings.icon_field.type }}"
+                    unicode="{{ module.feed_settings.icon_field.unicode }}"
+                    icon_set="{{ module.feed_settings.icon_field.icon_set }}"
+                  %}
+                </span>
+              </div>
+              {% endif %}
+              <a class="overlay bg_el" href="{{ post.absolute_url }}">  </a>
+
+              {% if module.feed_settings.select_blog_theme  == "theme1" %}
+              {% if module.feed_settings.tags %}
+              <div class="tags_wrap bg_el">
+                <span>
+                  {% for tag in post.tag_list %}
+                  <a href="{{ blog_tag_url(module.feed_group.select_blog, tag.slug) }}">
+                    {{tag.name}}</a>{% if not loop.last %}, {% endif %}
+                  {% endfor %}
+                </span>
+              </div>
+              {% endif %}
+              {% endif %}
+
+            </div>
+
+            {% endif %}
+            {% endif %}
+
+
+
+            <div class="post-btm">
+
+              <div class="meta_wrap">
+                {% if module.feed_settings.author %}
+                <span class="blog-author">
+                  <span class="icon_img">
+                    <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Alternate User1_layer"><path d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"></path></g></svg>
+                  </span>
+                  <span class="value_m">
+                    <a class="author-link" href="{{ blog_author_url(module.feed_group.select_blog, post.blog_post_author.slug) }}">
+                      {{ post.blog_post_author.display_name }}
+                    </a>
+                  </span>
+                </span>
+                {% endif %}
+
+                {% if module.feed_settings.date %}
+                <span class="item-date">
+                  <span class="icon_img">
+                    <svg style="fill: currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="Alternate Calendar1_layer"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></g></svg>
+                  </span>
+                  {{ macros.dateFormat(module.feed_settings.select_date_format, post)}}
+                </span>
+                {% endif %}
+
+
+
+                {% if module.feed_settings.tags %}
+                {% if not post.post_list_summary_featured_image or module.feed_settings.featured_image == "false" or module.feed_settings.select_blog_theme  == "theme2" %}
+                <span class="meta_tags">
+                  <span class="icon_img">
+                    <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="tag1_layer"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></g></svg>
+                  </span>
+                  <span class="value_m">
+                    {% for tag in post.tag_list %}
+                    <a href="{{ blog_tag_url(module.feed_group.select_blog, tag.slug) }}">
+                      {{tag.name}}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                  </span>
+                </span>
+                {% endif %}
+                {% endif %}
+
+              </div>
+
+              {% if module.feed_settings.title %}
+              <{{ module.style.card.select_title_type }} class="recent-post-title">
+                <a href="{{ post.absolute_url }}">{{ post.name}}</a>
+                </{{ module.style.card.select_title_type }}>
+                {% endif %}
+
+
+                {% if module.feed_settings.description %}
+                {% if post.widgets.listing_summary.body.value %}
+                <p class="item_descr">{{ post.widgets.listing_summary.body.value }}</p>
+            {% else %}
+            {% if post.post_list_content %}
+            <p class="item_descr">{{ post.post_list_content|safe|truncatehtml(100, '' , false)|striptags }}</p>
+            {% endif %}
+            {% endif %}
+            {% endif %}
+
+            {% if module.feed_settings.read_more %}
+            <div class="read-more">
+              <a class="{{ module.feed_settings.button_theme }}" href="{{ post.absolute_url }}">{{ module.feed_settings.read_more_text }}</a>
+            </div>
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+      {% set i = i + 1 %}          
+      {% endif %}
+
+      {% endfor %}
+
+
+      {% endif %}
+
+      {# post by title#}
+      {% if  module.feed_group.select_feed_type == "posts_by_title" %}
+      
+      
+      {% set checkCount = module.feed_group.field_group|length%}
+      
+      {% for item in module.feed_group.field_group %}
+      {% set post = content_by_id(item.select_post) %}
+
+
+
+
+      <div class="recent-post-item {{ module.module_settings.select_number_of_columns }} {% if module.feed_settings.featured_image == "false" or not post.post_list_summary_featured_image%}noImage{% endif %}" {% if module.module_settings.enable_animation %} data-aos-delay="{{loop.index * 100 + 200}}" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+        <div class="item_inner {% if module.style.card.select_background_theme != "custom" %}{{ module.style.card.select_background_theme }}{% endif %}">
+          {% if module.feed_settings.featured_image %}
+          {% if post.post_list_summary_featured_image %}
+
+          <div class="hs-featured-wrp">
+
+            <div class="feature_img" style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});">
+            </div>
+
+            {% if module.feed_settings.select_blog_theme  == "theme2" %}
+            <div class="overlay_icon bg_el">
+              <span class="icon-wrap {% if module.feed_settings.select_icon_color_theme != "custom" %}{{ module.feed_settings.select_icon_color_theme }}{% endif %}">
+                {% icon
+	name="{{ module.feed_settings.icon_field.name }}"
+	style="{{ module.feed_settings.icon_field.type }}"
+	unicode="{{ module.feed_settings.icon_field.unicode }}"
+	icon_set="{{ module.feed_settings.icon_field.icon_set }}"
+%}
+              </span>
+            </div>
+            {% endif %}
+            <a class="overlay bg_el" href="{{ post.absolute_url }}">  </a>
+
+            {% if module.feed_settings.select_blog_theme  == "theme1" %}
+            {% if module.feed_settings.tags %}
+            <div class="tags_wrap bg_el">
+              <span>
+                {% for tag in post.tag_list %}
+                <a href="{{ blog_tag_url(post.content_group_id, tag.slug) }}">
+                  {{tag.name}}</a>{% if not loop.last %}, {% endif %}
+                {% endfor %}
+              </span>
+            </div>
+            {% endif %}
+            {% endif %}
+
+          </div>
+
+          {% endif %}
+          {% endif %}
+
+
+
+          <div class="post-btm">
+
+            <div class="meta_wrap">
+              {% if module.feed_settings.author %}
+              <span class="blog-author">
+                <span class="icon_img">
+                  <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Alternate User1_layer"><path d="M256 288c79.5 0 144-64.5 144-144S335.5 0 256 0 112 64.5 112 144s64.5 144 144 144zm128 32h-55.1c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16H128C57.3 320 0 377.3 0 448v16c0 26.5 21.5 48 48 48h416c26.5 0 48-21.5 48-48v-16c0-70.7-57.3-128-128-128z"></path></g></svg>
+                </span>
+                <span class="value_m">
+                  <a class="author-link" href="{{ blog_author_url(post.content_group_id, post.blog_post_author.slug) }}">
+                    {{ post.blog_post_author.display_name }}
+                  </a>
+                </span>
+              </span>
+              {% endif %}
+
+              {% if module.feed_settings.date %}
+              <span class="item-date">
+                <span class="icon_img">
+                  <svg style="fill: currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="Alternate Calendar1_layer"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></g></svg>
+                </span>
+                {{ macros.dateFormat(module.feed_settings.select_date_format, post)}}
+              </span>
+              {% endif %}
+
+              {% if module.feed_settings.tags %}
+              {% if not post.post_list_summary_featured_image or module.feed_settings.featured_image == "false" or module.feed_settings.select_blog_theme  == "theme2" %}
+              <span class="meta_tags">
+                <span class="icon_img">
+                  <svg style="fill:currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="tag1_layer"><path d="M0 252.118V48C0 21.49 21.49 0 48 0h204.118a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882L293.823 497.941c-18.745 18.745-49.137 18.745-67.882 0L14.059 286.059A48 48 0 0 1 0 252.118zM112 64c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"></path></g></svg>
+                </span>
+                <span class="value_m">
+                  {% for tag in post.tag_list %}
+                  <a href="{{ blog_tag_url(post.content_group_id∏, tag.slug) }}">
+                    {{tag.name}}</a>{% if not loop.last %}, {% endif %}
+                  {% endfor %}
+                </span>
+              </span>
+              {% endif %}
+              {% endif %}
+
+            </div>
+
+
+            {% if module.feed_settings.title %}
+            <{{ module.style.card.select_title_type }} class="recent-post-title">
+              <a href="{{ post.absolute_url }}">{{ post.name}}</a>
+              </{{ module.style.card.select_title_type }}>
+              {% endif %}
+
+              {% if module.feed_settings.description %}
+              {% if post.widgets.listing_summary.body.value %}
+              <p class="item_descr">{{ post.widgets.listing_summary.body.value }}</p>
+          {% else %}
+          {% if post.post_list_content %}
+          <p class="item_descr">{{ post.post_list_content|safe|truncatehtml(100, '' , false)|striptags }}</p>
+          {% endif %}
+          {% endif %}
+          {% endif %}
+
+          {% if module.feed_settings.read_more %}
+          <div class="read-more">
+            <a class="{{ module.feed_settings.button_theme }}" href="{{ post.absolute_url }}">{{ module.feed_settings.read_more_text }}</a>
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+
+    </div>
+
+
+
+    {% if module.module_settings.enable_slider %}
+    {% if checkCount >= 1 %}
+
+    {% if module.feed_group.select_feed_type != "posts_by_title" %}
+    {{ macros.sliderControls(module.module_settings.slider_options , rec_posts, module.module_settings.enable_animation) }}
+    {% else %}
+    {{ macros.sliderControls(module.module_settings.slider_options , module.feed_group.field_group, module.module_settings.enable_animation) }}
+    {% endif %}  
+
+    {% endif %}
+    {% endif %}
+
+    {% if module.button_group %}
+    <div class="bototm_btn pdlr10" {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+      {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+    </div>
+    {% endif %}
+    {% if module.module_settings.enable_slider %}
+  </div>
+</div>
+{% endif %}
+
+</div>
+
+{{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+{% if module.button_group %}
+{{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+{% endif %}
+
+</div>
+
+
+
+
+
+
+
+
+{% require_css %}
+<style>
+  {% if module.style.card.select_background_theme == "custom" %}
+  .blog-feed.{{name}} .recent-post-item .item_inner {
+    background-color: rgba({{ module.style.card.background_color.color|convert_rgb }},{{ module.style.card.background_color.opacity/100 }});
+  }
+  {% endif %}
+
+  {% if module.style.card.select_content_color_theme == "custom" %}
+  .blog-feed.{{name}} .recent-post-item p.item_descr,
+  .blog-feed.{{name}} .meta_wrap > span a,
+  .blog-feed.{{name}} .meta_wrap span.value_m,
+  .blog-feed.{{name}} h3.recent-post-title a,
+  .blog-feed.{{name}} .tags_wrap a,
+  .blog-feed.{{name}} .tags_wrap span,
+  .blog-feed.{{name}} .meta_wrap span.icon_img svg path,
+  .blog-feed.{{name}} .recent-post-item .post-btm{
+    color: rgba({{ module.style.card.content_color.color|convert_rgb }},{{ module.style.card.content_color.opacity/100 }});
+  }
+  {% endif %}
+
+
+  {% if module.feed_settings.select_icon_color_theme  == "custom" %}
+  .blog-feed.{{name}}.theme2 .overlay_icon.bg_el .icon-wrap{
+    fill: rgba({{ module.feed_settings.icon_color.color|convert_rgb }},{{ module.feed_settings.icon_color.opacity/100 }});
+  }
+  {% endif %}
+</style>
+{% end_require_css %}
+
+
+
+
+{# slider options #}
+{% if module.module_settings.enable_slider %}
+
+{% if checkCount >= 1 %}
+
+
+{# breakpoint #}
+{% if module.module_settings.slider_options.slides_per_view > 3 %}
+{% set tabslides = 3 %}
+{% else %}
+{% set tabslides = module.module_settings.slider_options.slides_per_view %}
+{% endif %}
+
+{% if module.module_settings.slider_options.slides_per_view > 2 %}
+{% set slides768 = 2 %}
+{% else %}
+{% set slides768 = module.module_settings.slider_options.slides_per_view %}
+{% endif %}
+
+{% set gtename = name|replace("-","_")%}
+{% require_js %}
+<script>
+  var config_{{gtename}} = {
+    type:'carousel',
+    {% if  module.module_settings.slider_options.slides_per_view %}
+    perView:{{ module.module_settings.slider_options.slides_per_view }},
+    {% endif %}
+    perTouch: 1,
+    gap:0,
+    {% if module.module_settings.slider_options.autoplay %}
+    autoplay: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
+    {% endif %}
+    breakpoints: {
+    992: {
+    perView: {{tabslides}}
+  },
+      768: {
+        perView: {{slides768}}
+      },
+        600: {
+          perView: 1
+        }
+      }
+  }
+  var glide = new Glide(".{{name}} .glide",config_{{gtename}})
+  glide.mount()
+
+</script>
+{% end_require_js %}
+{% else %}
+
+{% endif %}
+
+{% endif %}
+
+

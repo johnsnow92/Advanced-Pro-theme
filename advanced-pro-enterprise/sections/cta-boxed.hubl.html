@@ -1,0 +1,22 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: CTA - Boxed
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: cta-boxed.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  max_width=1200,
+  padding={"top": 80, "bottom": 80}
+%}
+  {% dnd_module path="@hubspot/rich_text" width=12 %}
+    {% module_attribute "html" %}
+      <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 4rem 3rem; border-radius: 20px; text-align: center; color: white;">
+        <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 1rem;">Ready to Get Started?</h2>
+        <p style="font-size: 1.25rem; margin-bottom: 2.5rem; opacity: 0.95;">Join thousands of satisfied customers today</p>
+        <a href="#" style="display: inline-block; padding: 1.25rem 3rem; background: white; color: #667eea; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.125rem;">Start Free Trial</a>
+      </div>
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

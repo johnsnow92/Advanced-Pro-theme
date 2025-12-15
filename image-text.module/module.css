@@ -1,0 +1,134 @@
+/* Image & Text Module Styles */
+.image-text-module {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.image-text-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Image Styles */
+.image-text-image {
+  flex: 1;
+  min-width: 0;
+}
+
+.image-text-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Styles */
+.image-text-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.image-text-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+  line-height: 1.2;
+  color: #333;
+}
+
+.image-text-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  color: #666;
+}
+
+.image-text-body p {
+  margin: 0 0 16px 0;
+}
+
+.image-text-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Button Styles */
+.image-text-button-wrapper {
+  margin-top: 24px;
+}
+
+.image-text-button {
+  display: inline-block;
+  padding: 12px 32px;
+  background-color: #0066cc;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.image-text-button:hover {
+  background-color: #0052a3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Position - Right */
+.image-position-right .image-text-container {
+  flex-direction: row-reverse;
+}
+
+/* Image Position - Left (default) */
+.image-position-left .image-text-container {
+  flex-direction: row;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .image-text-container {
+    flex-direction: column !important;
+    gap: 24px;
+  }
+
+  .image-text-heading {
+    font-size: 1.5rem;
+  }
+
+  .image-text-body {
+    font-size: 0.95rem;
+  }
+
+  .image-text-button {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .image-text-module {
+    padding: 24px 0;
+  }
+
+  .image-text-container {
+    padding: 0 16px;
+    gap: 20px;
+  }
+
+  .image-text-heading {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+  }
+
+  .image-text-body {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+}

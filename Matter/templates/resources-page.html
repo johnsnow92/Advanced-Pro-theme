@@ -1,0 +1,298 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Resources Page
+screenshotPath: ../images/template-previews/resources-page.jpg
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main id="main-content" class="body-container-wrapper resources_page">
+  {% dnd_area 'header_area', label='Banner Section' ,class="top-dnd-area" %}
+  {% dnd_section
+    padding={
+      "default" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      }
+    },
+    full_width=true
+  %}
+  {% dnd_column
+      offset=0,
+      width=12
+    %}
+  {% dnd_row %}
+  {% dnd_module
+          path="../modules/banner",
+          offset=0,
+          width=12,
+          background_options={
+            "background_image" : {
+              "alt" : "Resource Banner",
+              "height" : 976,
+              "max_height" : 976,
+              "max_width" : 2160,
+              "src" : get_asset_url('../images/resource_banner.jpg'),
+              "width" : 2160
+            },
+            "overlay_color" : {
+              "color" : "#026780",
+              "opacity" : 50
+            },
+            "select_background_type" : "image"
+          },
+          breadcrumb_menu=,
+          include_breadcrumb=true,
+          module_settings={
+            "animation_type" : "fade-up"
+          },
+          style={
+            "container" : {
+               "select_size" : "theme_center"
+            }
+          }
+        %}
+  {% module_attribute "banner_content" %}
+  <h1>Our Resources</h1>
+  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+  {% dnd_area 'main_area', label='Main Section' ,class="main-dnd-area" %}
+
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/content-filter",
+        offset=0,
+        width=12,
+        button_group=[ ],
+        card_group={
+          "cards" : [ {
+            "button_group" : [ ],
+            "category" : "Events",
+            "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+            "image_field" : {
+              "alt" : "Events",
+              "height" : 430,
+              "loading" : "lazy",
+              "max_height" : 430,
+              "max_width" : 550,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/filter_image1.jpg'),
+              "width" : 550
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "There are many variations of passages of Lorem Ipsum available."
+          }, {
+            "button_group" : [ ],
+            "category" : "Case Studies",
+            "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+            "image_field" : {
+              "alt" : "Case Studies",
+              "height" : 430,
+              "loading" : "lazy",
+              "max_height" : 430,
+              "max_width" : 550,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/filter_image2.jpg'),
+              "width" : 550
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "There are many variations of passages of Lorem Ipsum available."
+          }, {
+            "button_group" : [ ],
+            "category" : "Webinars",
+            "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+            "image_field" : {
+              "alt" : "Webinars",
+              "height" : 430,
+              "loading" : "lazy",
+              "max_height" : 430,
+              "max_width" : 550,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/filter_image3.jpg'),
+              "width" : 550
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "There are many variations of passages of Lorem Ipsum available."
+          }, {
+            "button_group" : [ ],
+            "category" : "Tour & Trip",
+            "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+            "image_field" : {
+              "alt" : "Tour & Trip",
+              "height" : 430,
+              "loading" : "lazy",
+              "max_height" : 430,
+              "max_width" : 550,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/filter_image4.jpg'),
+              "width" : 550
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "There are many variations of passages of Lorem Ipsum available."
+          }, {
+            "button_group" : [ ],
+            "category" : "Awards",
+            "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+            "image_field" : {
+              "alt" : "Awards",
+              "height" : 430,
+              "loading" : "lazy",
+              "max_height" : 430,
+              "max_width" : 550,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/filter_image5.jpg'),
+              "width" : 550
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "There are many variations of passages of Lorem Ipsum available."
+          }, {
+            "button_group" : [ ],
+            "category" : "Party",
+            "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+            "image_field" : {
+              "alt" : "Party",
+              "height" : 430,
+              "loading" : "lazy",
+              "max_height" : 430,
+              "max_width" : 550,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/filter_image6.jpg'),
+              "width" : 550
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "There are many variations of passages of Lorem Ipsum available."
+          } ],
+          "include_all_text" : true,
+          "select_filter_label_tag" : "h3"
+        },
+        module_settings={
+          "column_count" : "col4",
+          "filter_theme_group" : {
+            "active_background_color" : {
+              "color" : "#F2FCFF",
+              "opacity" : 100
+            },
+            "active_color" : {
+              "color" : "#495057",
+              "opacity" : 100
+            },
+            "background_color" : {
+              "color" : "#F7F8F9",
+              "opacity" : 100
+            },
+            "color_field" : {
+              "color" : "#495057",
+              "opacity" : 100
+            },
+            "select_active_tag_background_theme" : "custom",
+            "select_active_tag_color_theme" : "custom",
+            "select_tag_background_theme" : "custom",
+            "select_tag_color_theme" : "custom"
+          },
+          "select_content_alignment" : "text_left",
+          "select_filter_style" : "type_2"
+        },
+        style={
+          "card" : {
+
+          },
+            "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 50
+                },
+                "left" : { },
+                "right" : { },
+                "top" : { }
+              }
+            }
+          }
+        },
+        top_content={
+          "button_group" : [ ],
+          "title" : "Resources"
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+  {% dnd_area 'bottom_area_hs', label='Bottom Section' ,class="bottom-dnd-area" %}
+  {% include_dnd_partial path="../sections/bottom-pane-section.html" %} 
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

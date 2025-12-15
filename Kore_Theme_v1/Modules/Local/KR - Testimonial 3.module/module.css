@@ -1,0 +1,197 @@
+.kore-testimonial-3-wrap {
+  background-color: #f9f9f9;
+}
+
+.kore-testimonial-3 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  position: relative;
+}
+
+.kore-testimonial-3 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-testimonial-3 .page-width.text-center {
+  text-align: center; 
+}
+
+
+
+.kore-testimonial-3 .customer-testimonial {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+}
+
+.kore-testimonial-3 .customer-testimonial.slick-initialized {
+  visibility: visible;
+  opacity: 1;    
+}
+
+.kore-testimonial-3 .slick-prev,
+.kore-testimonial-3 .slick-next {
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+}
+
+.kore-testimonial-3 .slick-prev {
+  left: -60px; 
+}
+
+.kore-testimonial-3 .slick-next {
+  right: -60px;
+}
+
+.kore-testimonial-3 .slick-dots {
+  position: static;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+.kore-testimonial-3 .slick-dots li button:before {
+  font-size: 16px;
+}
+
+/* Adjust left & right margins based on .slide padding */
+.kore-testimonial-3 .customer-testimonial {
+  margin: 0 -20px;
+}
+
+.kore-testimonial-3 .customer-testimonial .slide {
+  padding: 10px 0 0; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .slide-inner-wrap {
+  position: relative;
+  padding: 30px 30px 30px; 
+  background-color: #fff;
+  box-shadow: 0 7px 6px -3px rgba(0, 0, 0, 0.1);
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .slide-inner-wrap .slide-flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items:center;
+  margin: 0 -20px;
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .slide-inner-wrap .slide-flex .slide-col {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .slide-inner-wrap .slide-flex .slide-col:first-child {
+  -ms-flex: 0 0 30%;
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .quote-icon img {
+  position: absolute;
+  left: 40px;
+  top: -60px;
+  right: auto;
+  bottom: auto;
+  z-index: -1;
+}
+
+.kore-testimonial-3 .customer-testimonial .client-image {
+  width: 180px;
+  height: 180px;
+  margin: 10px auto;
+  border-radius: 160px;
+
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .quote-name {
+  display: inline-block;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
+  padding: 0 20px;
+  margin-bottom: 0;
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .quote-name,
+.kore-testimonial-3 .customer-testimonial .slide .quote-name * {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .quote-company-name,
+.kore-testimonial-3 .customer-testimonial .slide .quote-company-name * {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .quote-company-name {
+  margin-bottom: 20px; 
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .quote-description,
+.kore-testimonial-3 .customer-testimonial .slide .quote-description * {
+  font-size: 18px;
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .quote-description p:last-child {
+  margin-bottom: 0; 
+}
+
+.kore-testimonial-3 .customer-testimonial .slide .slide-inner-wrap .slide-flex .slide-col.text-left:first-child {
+    max-width: 100%;
+    flex: unset;
+}
+@media(max-width:1139px) {
+
+  .kore-testimonial-3 .customer-testimonial .slide .quote-description,
+  .kore-testimonial-3 .customer-testimonial .slide .quote-description * {
+    font-size: 16px;
+  }
+
+  .kore-testimonial-3 .slick-slider {
+    position: static;  
+  }
+
+  .kore-testimonial-3 .slick-prev {
+    left: 0;
+  }
+
+  .kore-testimonial-3 .slick-next {
+    right: 0;
+  }
+
+  .kore-testimonial-3 .customer-testimonial .slide {
+    padding: 0px 0 0;
+  }
+
+}
+
+@media(max-width:767px) {
+
+
+  .kore-testimonial-3 .customer-testimonial .slide .slide-inner-wrap .slide-flex .slide-col {
+    flex: 0 0 100%;
+  }
+
+  .kore-testimonial-3 .customer-testimonial .slide .slide-inner-wrap .slide-flex .slide-col:first-child {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .kore-testimonial-3 .customer-testimonial .client-image {
+    width: 150px;
+    height: 150px;
+  }
+
+}

@@ -1,0 +1,62 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Search Results - Advanced Pro Theme
+  screenshotPath: ../images/templates/search-results-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Search Results | {{ site_settings.company_name }}</title>
+  <meta name="robots" content="noindex, follow">
+  {% if brand_settings.favicon is defined and brand_settings.favicon.src %}<link rel="shortcut icon" href="{{ brand_settings.favicon.src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    {% include '../partials/header.hubl.html' %}
+    <main id="main-content" role="main">
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+              <h1>Search Results{% if request.query_dict.q %} for "{{ request.query_dict.q }}"{% endif %}</h1>
+              <form action="/search" method="get" style="margin: var(--spacing-xl) 0;">
+                <div class="search-box">
+                  <input type="search" name="q" class="form-control" placeholder="Search..." value="{{ request.query_dict.q }}" aria-label="Search">
+                  <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+              </form>
+
+              <!-- Search Results Module -->
+              {% module "search_results_display"
+                path="@hubspot/rich_text",
+                label="Search Results Display",
+                html="<p>Configure HubSpot search or use custom search implementation here. Query: {{ request.query_dict.q }}</p>"
+              %}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% include '../partials/footer.hubl.html' %}
+  </div>
+  {{ standard_footer_includes }}
+  <style>
+  .search-box { display: flex; gap: var(--spacing-sm); }
+  .search-box .form-control { flex: 1; }
+  .search-count { margin: var(--spacing-xl) 0; color: var(--color-gray-600); }
+  .search-result-item { padding: var(--spacing-xl); border-bottom: 1px solid var(--color-gray-200); }
+  .search-result-item h3 { margin-bottom: var(--spacing-sm); }
+  .search-result-item h3 a { color: var(--color-primary); text-decoration: none; }
+  .result-url { color: var(--color-gray-600); font-size: var(--font-size-sm); margin-bottom: var(--spacing-sm); }
+  .no-results { padding: var(--spacing-3xl); text-align: center; background: var(--color-gray-50); border-radius: var(--radius-lg); }
+  .pagination { display: flex; justify-content: center; gap: var(--spacing-xs); list-style: none; padding: 0; margin: var(--spacing-2xl) 0; }
+  .pagination-link { display: block; padding: var(--spacing-sm) var(--spacing-md); background: white; border: 1px solid var(--color-gray-300); border-radius: var(--radius-md); color: var(--color-gray-700); text-decoration: none; }
+  .pagination-item.active .pagination-link { background: var(--color-primary); color: white; border-color: var(--color-primary); }
+  </style>
+</body>
+</html>

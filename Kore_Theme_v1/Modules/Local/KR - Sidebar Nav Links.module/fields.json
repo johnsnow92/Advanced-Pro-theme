@@ -1,0 +1,36 @@
+[ {
+  "id" : "a1da840d-99f2-f8d8-46a9-1ca5ac8db5c9",
+  "name" : "styles",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "6dcf612d-2676-10fc-adbb-eb80741be3c3",
+    "name" : "show_hide_module",
+    "label" : "Show/Hide: Module",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "show_hide_module" : false
+  }
+}, {
+  "id" : "2ca1dbb0-e449-dc7b-1b54-67ffc4756b7d",
+  "name" : "icon_field",
+  "label" : "Icon",
+  "required" : false,
+  "locked" : false,
+  "icon_set" : "fontawesome-5.14.0",
+  "type" : "icon",
+  "display_width" : null,
+  "default" : { }
+} ]

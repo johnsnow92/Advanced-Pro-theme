@@ -1,0 +1,38 @@
+{% set grid_cols = module.grid_columns|int %}
+{% set card_class = module.card_style %}
+{% set icon_size_class = module.icon_size %}
+{% set text_align_class = module.text_alignment %}
+
+<div class="icon-text-module">
+  {% if module.heading %}
+    <div class="icon-text-header">
+      <h2 class="icon-text-heading">{{ module.heading }}</h2>
+      {% if module.subheading %}
+        <p class="icon-text-subheading">{{ module.subheading }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="icon-text-grid icon-text-grid--cols-{{ grid_cols }}">
+    {% for item in module.items %}
+      <div class="icon-text-card icon-text-card--{{ card_class }} icon-text-card--{{ text_align_class }}">
+        <div class="icon-text-card__icon icon-text-card__icon--{{ icon_size_class }}">
+          {% if item.icon_type == 'icon' %}
+            <i class="fa{{ item.icon.type|lower|first }} fa-{{ item.icon.name }}"></i>
+          {% elif item.icon_type == 'image' and item.image.src %}
+            <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" class="icon-text-card__image">
+          {% endif %}
+        </div>
+
+        <div class="icon-text-card__content">
+          <h3 class="icon-text-card__heading">{{ item.heading }}</h3>
+          {% if item.description %}
+            <div class="icon-text-card__description">
+              {{ item.description }}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>

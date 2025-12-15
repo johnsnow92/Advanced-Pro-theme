@@ -1,0 +1,148 @@
+<!--
+templateType: global_partial
+label: Website header
+-->
+
+<div class="header-wrapper">
+  {% dnd_area 'header_dnd_area_top' class='header_dnd_sec header_top_sec', label='Top Section' %}{% end_dnd_area %}
+{% module "header_section" path="../../modules/header-section", label="Header Section" 
+        alert_section={
+          "alert_message_text" : "<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour <a href=\"#\">believable</a>.</p>"
+        },
+        top_section={
+          "address_section" : {
+            "icon_field_1" : {
+              "name" : "Address Book",
+              "type" : "SOLID",
+              "unicode" : "f2b9"
+            },
+            "text_field" : "4140 Parker Ave, St. Louis, MO 63116"
+          },
+          "contact_section" : {
+            "icon_field" : {
+              "name" : "Alternate Phone",
+              "type" : "SOLID",
+              "unicode" : "f879"
+            },
+            "text_field" : "(207) 555-0119"
+          },
+          "social_icons" : {
+            "social_item" : [ {
+              "icon_field_2" : {
+                "name" : "Facebook F",
+                "type" : "REGULAR",
+                "unicode" : "f39e"
+              },
+              "link_field" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              }
+            }, {
+              "icon_field_2" : {
+                "name" : "Instagram",
+                "type" : "REGULAR",
+                "unicode" : "f16d"
+              },
+              "link_field" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              }
+            }, {
+              "icon_field_2" : {
+                "name" : "Twitter",
+                "type" : "REGULAR",
+                "unicode" : "f099"
+              },
+              "link_field" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              }
+            }, {
+              "icon_field_2" : {
+                "name" : "LinkedIn In",
+                "type" : "REGULAR",
+                "unicode" : "f0e1"
+              },
+              "link_field" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              }
+            } ]
+          }
+        },
+        top_section_copy={
+          "button_section" : {
+            "button_setting" : [ {
+              "button_type" : "cta",
+              "cta_field" : "6e85b412-036c-4b79-95a3-445b397e30d7",
+              "form_field_1" : {
+                "message" : "Thanks for submitting the form.",
+                "response_type" : "inline"
+              },
+              "link_field_2" : {
+                "no_follow" : false,
+                "open_in_new_tab" : false,
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              }
+            } ]
+          },
+          "language" : {
+            "Display_mode" : "localized",
+            "add_language_switcher" : true
+          },
+          "logo_section" : {
+            "link_field_1" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "logo_field" : {
+              "alt" : "Matter Logo",
+              "height" : 25,
+              "override_inherited_src" : true,
+              "src" : get_asset_url('../../images/Matter Logo.png'),
+              "suppress_company_name" : true,
+              "width" : 132
+            }
+          },
+          "menu_section" : {
+            "include_megamenu" : true,
+            "max_levels" : 5,
+            "primary_menu" : 96689526076
+          },
+          "site_search_input" : {
+            "content_types" : {
+              "blog_posts" : true,
+              "knowledge_articles" : false,
+              "landing_pages" : false,
+              "website_pages" : true
+            },
+            "include_search_button" : true,
+            "placeholder_text" : "Search"
+          }
+        }
+      %}
+    {% dnd_area 'header_dnd_area_bottom' class='header_dnd_sec header_bottom_sec', label='Bottom Section' %}{% end_dnd_area %}
+</div>

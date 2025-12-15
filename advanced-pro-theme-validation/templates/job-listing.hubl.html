@@ -1,0 +1,88 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Job Listing - Advanced Pro Theme
+  screenshotPath: ../images/templates/job-listing-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}<meta name="description" content="{{ page_meta.meta_description }}">{% endif %}
+  {% if brand_settings.favicon is defined and brand_settings.favicon.src %}<link rel="shortcut icon" href="{{ brand_settings.favicon.src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% include '../partials/header.hubl.html' %}
+    <main id="main-content" role="main">
+      <section class="section section-hero section-hero-page" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white;">
+        <div class="container">
+          <div class="row align-center">
+            <div class="col-12 col-lg-10 text-center">
+              <h1 style="color: white;">Open Positions</h1>
+              <p class="lead" style="color: rgba(255,255,255,0.9);">Find your next career opportunity with us</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-3 mb-5">
+              <div class="job-filters-sidebar">
+                <h3>Filter Jobs</h3>
+                <div class="filter-group">
+                  <h4>Department</h4>
+                  <label><input type="checkbox" value="engineering"> Engineering</label>
+                  <label><input type="checkbox" value="design"> Design</label>
+                  <label><input type="checkbox" value="marketing"> Marketing</label>
+                  <label><input type="checkbox" value="sales"> Sales</label>
+                </div>
+                <div class="filter-group">
+                  <h4>Location</h4>
+                  <label><input type="checkbox" value="remote"> Remote</label>
+                  <label><input type="checkbox" value="sf"> San Francisco</label>
+                  <label><input type="checkbox" value="ny"> New York</label>
+                  <label><input type="checkbox" value="austin"> Austin</label>
+                </div>
+                <div class="filter-group">
+                  <h4>Type</h4>
+                  <label><input type="checkbox" value="fulltime"> Full-time</label>
+                  <label><input type="checkbox" value="parttime"> Part-time</label>
+                  <label><input type="checkbox" value="contract"> Contract</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-9">
+              <div class="job-list-header">
+                <h2><span id="job-count">12</span> Open Positions</h2>
+                <select class="form-control" style="width: auto;">
+                  <option>Most Recent</option>
+                  <option>Department</option>
+                  <option>Location</option>
+                </select>
+              </div>
+              {% module "job_listings" path="@hubspot/rich_text", label="Job Listings", html="<p>Add job listing items here</p>" %}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% include '../partials/footer.hubl.html' %}
+  </div>
+  {{ standard_footer_includes }}
+  <style>
+  .job-filters-sidebar { padding: var(--spacing-xl); background: var(--color-gray-50); border-radius: var(--radius-lg); position: sticky; top: calc(var(--spacing-2xl) + 70px); }
+  .filter-group { margin-bottom: var(--spacing-xl); }
+  .filter-group h4 { margin-bottom: var(--spacing-md); font-size: var(--font-size-md); }
+  .filter-group label { display: block; margin-bottom: var(--spacing-sm); cursor: pointer; }
+  .job-list-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-xl); flex-wrap: wrap; gap: var(--spacing-md); }
+  </style>
+</body>
+</html>

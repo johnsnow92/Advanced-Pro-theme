@@ -1,0 +1,58 @@
+.kore-cards-hover-scroll {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-cards-hover-scroll .flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -12px;
+}
+
+.kore-cards-hover-scroll .flex .col {
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding: 10px 12px;
+}
+
+.kore-cards-hover-scroll .toc-block-wrap {
+  padding: 20px;
+  max-width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  min-height: 180px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  text-decoration: none !important;
+}
+
+.kore-cards-hover-scroll .toc-block-wrap:hover {
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+}
+
+@media(max-width:767px) {
+
+  .kore-cards-hover-scroll .flex .col {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+}

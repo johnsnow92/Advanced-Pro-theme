@@ -1,0 +1,32 @@
+{% import "../../macros/_macros.html" as macros %}  
+
+{% set bg_opt = module.background_options %}
+
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="{{name}} dnd_padd cnt-wit-bg-wrp {{ module.advanced_customization.css_class_selector }} {{ bg_opt.select_background_type }}_bg_ty  {{ bg_opt.select_color_theme }}_bg_th {{ bg_opt.background_image_position }}_bg_pos {{ bg_opt.select_video_type }}_vid_ty {{ bg_opt.select_gradient_direction }}_grad_dir {% if bg_opt.enable_parallax %}enable_parallax{% endif %}">
+  {{ macros.backgroundOptions(name, module.background_options) }}
+  <div class="page-center pdlr10 {{ module.style.container.select_size }}">
+
+    <div class="content_widget {{ module.module_settings.select_content_alignment }}" {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %} {% if module.module_settings.change_content_maximum_width %} style="max-width:{{ module.module_settings.content_maximum_width }}px; {% if module.module_settings.select_content_alignment == 'text_center' %} margin-left: auto;margin-right: auto;{% elif module.module_settings.select_content_alignment == 'text_right' %} margin-left: auto;{% endif %}"{% endif %}>
+      {% if module.title %}
+      <{{ module.select_title_tag }} class="title">
+        {{ module.title }}
+        </{{ module.select_title_tag }}>
+        {% endif %}
+        {{ module.content_rich }}
+
+        {% if module.button_group %}
+        {{ macros.buttonWithPopupGroup(module.button_group, false) }}
+        {% endif %}
+
+        </div>
+
+    </div>
+    {{ macros.buttonWithPopupGroup(module.button_group, true) }}
+  </div>
+
+
+
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}

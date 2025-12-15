@@ -1,0 +1,278 @@
+[ {
+  "id" : "bbf8061e-49ee-beea-8311-f99fdda55844",
+  "name" : "hubdb_table",
+  "label" : "HubDB table",
+  "required" : false,
+  "locked" : false,
+  "type" : "hubdbtable",
+  "display_width" : null,
+  "default" : 2655949
+}, {
+  "id" : "87a033af-1e72-ae57-ad05-7e8d45238e34",
+  "name" : "filter_header",
+  "label" : "Filter Header",
+  "help_text" : "Add a header.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Resource Library"
+}, {
+  "id" : "4d0fd4ee-81aa-d454-008e-93a132137c67",
+  "name" : "result_message",
+  "label" : "Result message",
+  "help_text" : "Add a header.",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "No result found"
+}, {
+  "id" : "2acfc133-2617-bfe0-4c45-3b0242d83543",
+  "name" : "hubdb_columns",
+  "label" : "HubDB Columns",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "bbd55e95-a453-11be-650f-779b1bf40132",
+    "name" : "filter_1",
+    "label" : "Filter 1",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "dbbeb09a-ed64-f240-11bf-1125c1f0f0e8",
+      "name" : "filter_label",
+      "label" : "Filter label",
+      "inline_help_text" : "Make sure your HubDB Multi-select or Select column variable name must be \"filter1\" and your the column label can be anything eg: Books",
+      "required" : false,
+      "locked" : false,
+      "placeholder" : "Multi-select/select Column Name",
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Resources"
+    }, {
+      "id" : "45920492-2966-b21a-d0a2-6b3431d31553",
+      "name" : "column_type",
+      "label" : "Column Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "select", "Select" ], [ "multi-select", "Multi Select" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "multi-select"
+    }, {
+      "id" : "7b17f791-d802-ea90-85aa-aabefa0cabfa",
+      "name" : "show_filter",
+      "label" : "Show Filter",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "filter_label" : "Resources",
+      "column_type" : "multi-select",
+      "show_filter" : true
+    }
+  }, {
+    "id" : "3bd69546-7bc5-2c3f-2338-3e67b393641c",
+    "name" : "filter_2",
+    "label" : "Filter 2",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "dc0e8c06-d61e-d27d-e09f-4ed42db5e0b7",
+      "name" : "filter_label",
+      "label" : "Filter label",
+      "inline_help_text" : "Make sure your HubDB Multi-select or Select column variable name must be \"filter2\" and your the column label can be anything eg: Books",
+      "required" : false,
+      "locked" : false,
+      "placeholder" : "Multi-select/select Column Name",
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Applications"
+    }, {
+      "id" : "e4a9f727-88c6-9c61-5245-09aa9f708d33",
+      "name" : "column_type",
+      "label" : "Column Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "select", "Select" ], [ "multi-select", "Multi Select" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "multi-select"
+    }, {
+      "id" : "42cbea49-e044-4828-72d5-194316fc4295",
+      "name" : "show_filter",
+      "label" : "Show Filter",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "filter_label" : "Applications",
+      "column_type" : "multi-select",
+      "show_filter" : true
+    }
+  }, {
+    "id" : "7e26b060-f75b-4dce-e42b-f9ae007c0030",
+    "name" : "filter_3",
+    "label" : "Filter 3",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "e9742e1b-5bd7-9c41-fb32-82fb7dd15a98",
+      "name" : "filter_label",
+      "label" : "Filter label",
+      "inline_help_text" : "Make sure your HubDB Multi-select or Select column variable name must be \"filter3\" and your the column label can be anything eg: Books",
+      "required" : false,
+      "locked" : false,
+      "placeholder" : "Multi-select/select Column Name",
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Industries"
+    }, {
+      "id" : "9e38f825-0b31-70e7-4f7c-ac00d5cee604",
+      "name" : "column_type",
+      "label" : "Column Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "select", "Select" ], [ "multi-select", "Multi Select" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "multi-select"
+    }, {
+      "id" : "051ae4ea-8552-d7dc-357a-5352fc8f1f5c",
+      "name" : "show_filter",
+      "label" : "Show Filter",
+      "required" : false,
+      "locked" : false,
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "filter_label" : "Industries",
+      "column_type" : "multi-select",
+      "show_filter" : true
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "filter_1" : {
+      "filter_label" : "Resources",
+      "column_type" : "multi-select",
+      "show_filter" : true
+    },
+    "filter_2" : {
+      "filter_label" : "Applications",
+      "column_type" : "multi-select",
+      "show_filter" : true
+    },
+    "filter_3" : {
+      "filter_label" : "Industries",
+      "column_type" : "multi-select",
+      "show_filter" : true
+    }
+  }
+}, {
+  "id" : "4baa130d-8aba-2b6f-e783-0e5722b7ce79",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "help_text" : "Customized settings for the section.",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "112b9fbb-ed01-afd1-ebcd-931ee7f64727",
+    "name" : "filter_background_color",
+    "label" : "Filter Background Color",
+    "help_text" : "Add a plain color to the background.",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#f6f6f6",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "44ff69f6-4de6-9a77-0f31-003065fe4510",
+    "name" : "cards_per_page",
+    "label" : "Cards per page",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "min" : 3,
+    "max" : 12,
+    "step" : 3,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 6
+  }, {
+    "id" : "5aa55cd5-839a-0487-36db-24c721990f09",
+    "name" : "custom_class",
+    "label" : "Custom Class",
+    "help_text" : "Add a custom class (usually for developers).",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "filter_background_color" : {
+      "color" : "#f6f6f6",
+      "opacity" : 100
+    },
+    "cards_per_page" : 6,
+    "custom_class" : ""
+  }
+} ]

@@ -1,0 +1,14 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 129534573987,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/plugins/parallax.js",
+    "name" : "parallax.js"
+  } ],
+  "label" : "Timeline",
+  "icon" : "fontawesome-5.14.0:Line%20Chart:SOLID",
+  "is_available_for_new_content" : true
+}

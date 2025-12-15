@@ -1,0 +1,369 @@
+{% import "../../macros/_macros.html" as macros %}  
+{% set button_spacing = theme.buttons.primary_btn.vertical_padding / 2 ~ 'px' ~ ' ' ~ theme.buttons.primary_btn.horizontal_padding / 2 ~ 'px' %}
+{% set button_spacing_md = theme.buttons.primary_btn.vertical_padding / 2.5 ~ 'px' ~ ' ' ~ theme.buttons.primary_btn.horizontal_padding / 2.5 ~ 'px' %}
+
+{% set btn_font = theme.typography.body_text.body_text.size * .99  %}
+{% set btn_mb_font = theme.typography.body_text.body_text.size * 0.8  %}
+
+{% set md = module.navigation_group %}
+{% set btn_bg = module.style.navigation.select_background_theme %}
+{% set btn = module.style.navigation %}
+<div class="navbar_module_wrapper {{ module.style.navigation.select_buttons_alignment }}">
+  <div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+       class="cm_nv_wrp {{ module.style.navigation.select_alignment }} {{name}} dnd_padd {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }}">
+    {{ macros.sectionBackgroundStyle(name, module.style) }}
+    {{ macros.sectionSpacing(name, module.style) }}
+    {{ macros.customContainer(name, module.style) }}
+
+    <div class="page-center {{ module.style.container.select_size }}">
+      <div class="cm_nv_inner">
+        {% if md.button_group|length > 0  %}
+        <div class="btn_row">             
+          {% for item in md.button_group %}
+          {% if item.select_button_type %}  
+          <div class="btn_item" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}"  data-aos-delay="{{loop.index * 50 + 200 }}"  {% endif %}>                           
+            {% if item.select_button_type == "std" %}       
+            {% set href = item.button_link.url.href %}
+            {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% elif item.button_link.url.type is equalto "CONTENT" %}
+            {% if item.bookmark_id %}
+            {% set newId = item.bookmark_id|replace(' ','-')|replace(',','')|replace('_','-')|replace('&','')%}
+            {% set href = href + '#'+ newId %}
+            {% else %}
+            {% set href = item.button_link.url.href %}
+            {% endif %}
+            {% endif %}
+            {% if  btn_bg != 'simple_link' %} <h4>{% endif %}
+            <a href="{{ href }}" class="{{btn_bg}} {{ module.style.navigation.select_button_size }} icPos_{{ item.select_icon_position }} {% if item.select_icon_type %}icon_add {{item.select_icon_type}} {% endif %}"
+               {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+               {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}>
+              {% if item.select_icon_type == "image" and item.icon_image.src %}
+              <span class="icon_box"><img src="{{ item.icon_image.src }}" alt="{{ item.icon_image.alt }}" /></span>
+              {% endif %}
+              {% if item.select_icon_type == "svg" and  item.svg_icon.name %}
+              <span class="icon_box">
+                {% icon	name="{{ item.svg_icon.name }}" style="{{ item.svg_icon.type }}" unicode="{{ item.svg_icon.unicode }}" icon_set="{{ item.svg_icon.icon_set }}"%}
+              </span>
+              {% endif %}
+              {% if item.select_icon_type %}<span class="link__text">{% endif %}
+              {{ item.button_text }}
+              {% if item.select_icon_type %}</span>{% endif %}
+            </a>
+            {% if btn_bg != 'simple_link' %} </h4> {% endif %}
+            {% endif %}
+
+            <!--  -->
+            {% if item.select_button_type == "popup_form" %}
+            {% if  btn_bg != 'simple_link' %} <h4>{% endif %}
+            <a data-id="modal_{{name}}_ind{{loop.index}}" href="javascript:;" class="popupBtn popup_form {{btn_bg}} {{ module.style.navigation.select_button_size }} icPos_{{ item.select_icon_position }} {% if item.select_icon_type %}icon_add {{item.select_icon_type}} {% endif %}">
+              {% if item.select_icon_type == "image" and item.icon_image.src %}
+              <span class="icon_box"><img src="{{ item.icon_image.src }}" alt="{{ item.icon_image.alt }}" /></span>
+              {% endif %}
+              {% if item.select_icon_type == "svg" and  item.svg_icon.name %}
+              <span class="icon_box">
+                {% icon	name="{{ item.svg_icon.name }}" style="{{ item.svg_icon.type }}" unicode="{{ item.svg_icon.unicode }}" icon_set="{{ item.svg_icon.icon_set }}"%}
+              </span>
+              {% endif %}
+              {% if item.select_icon_type %}<span class="link__text">{% endif %}
+              {{ item.button_text }}
+              {% if item.select_icon_type %}</span>{% endif %}
+            </a>
+            {% if btn_bg != 'simple_link' %} </h4> {% endif %}
+            {% endif %}
+
+            <!--              -->
+
+            {% if item.select_button_type == "popup_video" %}
+            {% if  btn_bg != 'simple_link' %} <h4>{% endif %}
+            <a data-id="modal_{{name}}_ind{{loop.index}}" href="javascript:;" class="popupBtn popup_video {{btn_bg}} {{ module.style.navigation.select_button_size }} icPos_{{ item.select_icon_position }} {% if item.select_icon_type %}icon_add {{item.select_icon_type}} {% endif %}">
+              {% if item.select_icon_type == "image" and item.icon_image.src %}
+              <span class="icon_box"><img src="{{ item.icon_image.src }}" alt="{{ item.icon_image.alt }}" /></span>
+              {% endif %}
+              {% if item.select_icon_type == "svg" and  item.svg_icon.name %}
+              <span class="icon_box">
+                {% icon	name="{{ item.svg_icon.name }}" style="{{ item.svg_icon.type }}" unicode="{{ item.svg_icon.unicode }}" icon_set="{{ item.svg_icon.icon_set }}"%}
+              </span>
+              {% endif %}
+              {% if item.select_icon_type %}<span class="link__text">{% endif %}
+              {{ item.button_text }}
+              {% if item.select_icon_type %}</span>{% endif %}
+            </a>
+            {% if btn_bg != 'simple_link' %} </h4> {% endif %}
+            {% endif %}
+            <!--              -->
+
+            {% if item.select_button_type == "popup_content" %}
+            {% if  btn_bg != 'simple_link' %} <h4>{% endif %}
+            <a data-id="modal_{{name}}_ind{{loop.index}}" href="javascript:;" class="popupBtn popup_content {{btn_bg}} {{ module.style.navigation.select_button_size }}  icPos_{{ item.select_icon_position }} {% if item.select_icon_type %}icon_add {{item.select_icon_type}} {% endif %}">
+
+              {% if item.select_icon_type == "image" and item.icon_image.src %}
+              <span class="icon_box"><img src="{{ item.icon_image.src }}" alt="{{ item.icon_image.alt }}" /></span>
+              {% endif %}
+              {% if item.select_icon_type == "svg" and  item.svg_icon.name %}
+              <span class="icon_box">
+                {% icon	name="{{ item.svg_icon.name }}" style="{{ item.svg_icon.type }}" unicode="{{ item.svg_icon.unicode }}" icon_set="{{ item.svg_icon.icon_set }}"%}
+              </span>
+              {% endif %}
+              {% if item.select_icon_type %}<span class="link__text">{% endif %}
+              {{ item.button_text }}
+              {% if item.select_icon_type %}</span>{% endif %}
+            </a>
+            {% if btn_bg != 'simple_link' %} </h4> {% endif %}
+            {% endif %}
+
+            <!--              -->
+            {% if item.select_button_type == "cta" %}
+            {% cta guid="{{ item.cta_field }}" %}
+            {% endif %}
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        {% endif  %}
+      </div>
+    </div>
+  </div>
+  <!--    -->
+
+  {# to add popup modal html#}
+
+  {% for item in md.button_group %}
+  {% if item.select_button_type == "popup_form" or item.select_button_type == "popup_content" or item.select_button_type == "popup_video" %} 
+  <div class="popup_modal" id="modal_{{name}}_ind{{loop.index}}">
+    <div class="popup_modal_inner">
+      <div class="popup_modal_box {{item.popup_styles.select_background_theme}} {{ item.popup_styles.select_color_theme }}">
+        <div class="popup_modal_box_inner">
+
+          {% if item.select_button_type == "popup_video" %}
+          <div class="video_box">
+            {% if item.select_popup_video_type == "file" %}
+            {% if item.select_video %}
+            <div class="bnr_vid2">
+              <video loop muted autoplay controls data-src="{{ item.select_video }}" src="" class="videoTag videoSrc"></video>
+            </div> 
+            {% endif %}
+            {% endif %}
+            {% if item.select_popup_video_type == "external" %}
+            {% if item.video_url %}
+            {% if item.video_url is string_containing "youtube.com" %}
+            <div class="bnr_vid2">
+              <iframe src="" data-src="{{ item.video_url|split('?')|first }}?autoplay=1&loop=1&mute=1&showinfo=0&controls=0&playlist={{ item.video_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video videoSrc"></iframe>
+            </div> 
+            {% else %}
+            <div class="bnr_vid2">
+              <iframe src="" data-src="{{ item.video_url|split('?')|first }}?autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video videoSrc"></iframe>
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endif %}
+          </div>
+          {% endif %}
+
+          {% if item.popup_content %}
+          <div class="content_box">
+            {{ item.popup_content }}
+          </div>
+          {% endif %}
+
+          {% if item.select_button_type == "popup_form" and item.select_form.form_id %}
+          <div class="form__box">
+            {% form
+            form_to_use="{{ item.select_form.form_id }}"
+            response_response_type="{{ item.select_form.response_type }}"
+            response_message="{{ item.select_form.message }}"
+            response_redirect_id="{{ item.select_form.redirect_id }}"
+            response_redirect_url="{{item.select_form.redirect_url}}"
+            gotowebinar_webinar_key="{{ item.select_form.gotowebinar_webinar_key }}"
+          %}
+          </div>
+          {% endif %}
+        </div>
+
+
+      </div>
+      <div class="closeIcon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path></svg>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+  <!--  -->
+
+</div>
+
+<!--  -->
+
+
+{% for item in md.button_group %}
+{% require_css %}
+<style>
+  {% if item.popup_styles.select_background_theme == "custom" %}
+  #modal_{{name}}_ind{{loop.index}} .popup_modal_box{
+    background: {{macros.color(item.popup_styles.background_color)}};
+  }
+  {% endif %}
+
+  {% if item.popup_styles.select_color_theme == "custom" %}
+  #modal_{{name}}_ind{{loop.index}} *:not(a[class]):not(input){
+    color: {{ macros.color(item.popup_styles.color) }};
+  }
+  {% endif %}
+</style>
+{% end_require_css %}
+{% endfor %}
+
+
+{% if  module.style.navigation.select_button_size  =='small_btn' %}
+{% require_css %}
+<style>
+  .{{name}} .cm_nv_inner .small_btn:not(.simple_link){
+    padding:{{button_spacing}};
+    font-size:{{btn_font}}px;
+  }
+  @media(max-width:767px){
+    .{{name}} .cm_nv_inner .small_btn:not(.simple_link){
+      padding:{{button_spacing_md}};
+      font-size:{{btn_mb_font}}px;
+    }
+  }
+</style>
+{% end_require_css %}
+{% endif %}
+
+{% require_css %}
+<style>
+  {% if btn_bg =='custom' %}
+  .{{name}} .cm_nv_inner .custom{
+    background-color:{{macros.color(btn.background_color)}};
+    color:{{macros.color(btn.color)}};
+    border-color:{{macros.color(btn.color)}};
+    border-style:solid;
+  }
+  .{{name}} .cm_nv_inner .custom:hover{
+    background-color:{{macros.color(btn.hover_background_color)}};
+    color:{{macros.color(btn.hover_color)}}; 
+    border-color:{{macros.color(btn.hover_color)}};
+  }
+
+  {% endif %}
+
+
+.{{name}} a.icon_add{
+    gap:{{ module.style.navigation.icon_text_in_between_spacing }}px
+  }
+
+</style>
+{% end_require_css %}
+
+
+
+
+
+{% if module.module_settings.enable_sticky_effect %}
+{% require_js %}
+<script>
+  function setSectionHeight(classNm) {
+    var section = document.querySelector(classNm);
+    if (section) {
+      var sectionHeight = section.offsetHeight;
+      section.parentElement.style.minHeight = sectionHeight + 'px';
+    }
+  }
+
+  window.addEventListener('resize', function() {
+    setTimeout(function() {
+      setSectionHeight('.{{name}}.cm_nv_wrp');
+                       }, 100);
+  });
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    setSectionHeight('.{{name}}.cm_nv_wrp');
+
+    var headerStickySection = document.querySelector('.header .primary-section');
+    var navbarSection = document.querySelector('.{{name}}.cm_nv_wrp');
+
+    if (headerStickySection && navbarSection) {      
+      var navbarOffset = navbarSection.offsetTop;
+
+      window.addEventListener('scroll', function() {
+        var topOffset = parseInt(navbarOffset);
+        if (headerStickySection.parentElement.classList.contains('sticky_header_active')) {
+          var headerHeight = headerStickySection.offsetHeight;
+          topOffset = parseInt(navbarOffset - headerHeight);
+        }
+
+        if (document.body.scrollTop >= topOffset || document.documentElement.scrollTop >= topOffset) {
+          navbarSection.classList.add('sticky_active');
+          if (headerStickySection.parentElement.classList.contains('sticky_header_active')) {
+            navbarSection.style.top = headerStickySection.offsetHeight + 'px';
+          }
+        } else {
+          navbarSection.classList.remove('sticky_active');
+          if (headerStickySection.parentElement.classList.contains('sticky_header_active')) {
+            navbarSection.style.top = '0px';
+          }
+        }
+      });
+    }
+  });
+</script>
+{% end_require_js %}
+{% endif %}
+
+
+
+{% require_js %}
+<script>
+
+  var btnAnchor =  document.querySelectorAll('.{{name}} .btn_item a[href*="#"]');
+  Array.prototype.slice.call(btnAnchor).forEach(function(ele, index) {
+    ele.addEventListener('click', function(e) {
+      var headerWrap = document.querySelector('.header .primary-section');
+      var navBarWrap =  document.querySelector('.{{name}}');
+                                               var href = this.getAttribute("href");
+      var getHash = href.split('#')[1];
+      var elem = document.querySelector("#"+getHash);
+
+      var headerHeight = headerWrap.offsetHeight;
+      var navBarWrapHeight = navBarWrap.offsetHeight;
+      var newOff =  elem.offsetTop - navBarWrapHeight - navBarWrapHeight - 10;
+      console.log(elem + 'elem ');
+      console.log( newOff +' off');
+
+      smoothScrollBackToTop(e, newOff);
+      e.stopPropagation();
+      e.preventDefault();
+    });
+  });
+
+  function smoothScrollBackToTop(e, targetPos=0) {
+    e.preventDefault();
+    var targetPosition = targetPos;
+    var startPosition = window.pageYOffset;
+    var distance = targetPosition - startPosition;
+    var duration = 750;
+    var start = null;
+    window.requestAnimationFrame(step);
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      var progress = timestamp - start;
+      window.scrollTo(0, easeInOutCubic(progress, startPosition, distance, duration));
+      if (progress < duration) window.requestAnimationFrame(step);
+    }
+  }
+  function easeInOutCubic(t, b, c, d) {
+    t /= d/2;
+    if (t < 1) return c/2*t*t*t + b;
+    t -= 2;
+    return c/2*(t*t*t + 2) + b;
+  };
+
+
+</script>
+{% end_require_js %}
+
+
+

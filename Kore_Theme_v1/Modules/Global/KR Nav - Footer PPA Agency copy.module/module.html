@@ -1,0 +1,21 @@
+<div class="kore-navigation-ppa-agency-footer">KR Nav - Header PPA Agency
+  <div class="page-width">
+    <div class="separator"></div>
+    <div class="flex">
+      <div class="col">
+        {% if module.blurb_text %}
+        {{ module.blurb_text }}
+        {% endif %}
+      </div>
+      
+      <div class="col">
+        <div class="simple-menu">
+          {% simple_menu menu_tree="{{ module.simple_menu }}" %}
+        </div>
+      </div>
+    </div>
+    <div class="back-to-top">
+      <a href="#" class="footer-up"></a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+.kore-event-table-2 .heading {
+  padding: 20px;
+  text-align:center;
+}
+.kore-event-table-2 .kore-ev {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  margin-bottom: 30px;
+}
+.kore-event-table-2 .kore-ev-date {
+  padding: 20px;
+  text-align: right;
+}
+.kore-event-table-2 .kore-ev-content {
+  padding: 20px;
+  text-align: left;
+  font-size: 16px;
+  font-weight:normal;
+}
+.kore-event-table-2 p {
+    font-size:16px;
+}
+.kore-event-table-2 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-event-table-2 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-event-table-2 .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-event-table-2 .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+.kore-event-table-2 .buttons-404 {
+  margin-top:20px;
+}

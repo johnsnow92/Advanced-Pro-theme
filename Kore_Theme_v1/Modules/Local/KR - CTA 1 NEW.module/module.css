@@ -1,0 +1,172 @@
+.kore-lp-cta-1 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-lp-cta-1 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-lp-cta-1 .page-width.text-center {
+  text-align: center;
+}
+
+.kore-lp-cta-1 .cta-wrap {
+  border-radius: 5px;
+}
+
+.kore-lp-cta-1 .tagline,
+.kore-lp-cta-1 .tagline * {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.kore-lp-cta-1 #cta .kore-button,
+.kore-lp-cta-1 .kore-button,
+.kore-lp-cta-1 .simple a {
+  
+}
+
+.kore-lp-cta-1 #cta .kore-button:hover,
+.kore-lp-cta-1 .kore-button:hover,
+.kore-lp-cta-1 .simple a:hover {
+ 
+}
+
+.kore-lp-cta-1 .cta-form .hs_error_rollup {
+  display: none;
+}
+
+.kore-lp-cta-1 .cta-form .hs-error-msg {
+  color: #fff;
+  font-size: 12px;
+}
+
+.kore-lp-cta-1 .cta-form .form-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.kore-lp-cta-1 .cta-form form {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.kore-lp-cta-1 .cta-form form > div.hs-email {
+  -ms-flex: 0 0 58.333333%;
+  flex: 0 0 58.333333%;
+  max-width: 58.333333%;
+}
+
+.kore-lp-cta-1 .cta-form form .hs-submit {
+  -ms-flex: 0 0 41.666667%;
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+
+.kore-lp-cta-1 .cta-form form > div > div.hs-submit {
+  -ms-flex: 0 0 41.666667%;
+  flex: 0 0 41.666667%;
+  max-width: 41.666667%;
+}
+
+.kore-lp-cta-1 .cta-form form .hs-email input  {
+  display: block;
+  width: 100%;
+  padding: 12px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-top-left-radius: 290486px;
+  border-bottom-left-radius: 290486px;
+}
+
+.kore-lp-cta-1 .cta-form form .hs-submit input {
+  display: inline-block;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 12px 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 0px 290486px 290486px 0px;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  width: 100%;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.kore-lp-cta-1 .cta-form form .hs-submit input:hover {
+  cursor: pointer;
+  -webkit-transform: translate(0px,0px);
+  -ms-transform: translate(0px,0px);
+  transform: translate(0px,0px);
+}
+
+.kore-lp-cta-1 .cta-form form .hs-submit input:focus {
+  outline: 0;
+}
+
+.kore-lp-cta-1 .cta-form .hs-error-msgs {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 0;
+  margin: 0;
+}
+
+.kore-lp-cta-1 .cta-form form .hs-form-field > label {
+  display: none;
+}
+
+.kore-lp-cta-1 .cta-form form .hs-richtext.hs-main-font-element {
+  display: none;
+}
+
+.kore-lp-cta-1 .cta-offer,
+.kore-lp-cta-1 .cta-offer * {
+  opacity: 0.7;
+}
+
+@media(max-width:767px) {
+  
+  .kore-lp-cta-1 #cta .kore-button,
+  .kore-lp-cta-1 .kore-button,
+  .kore-lp-cta-1 .simple a {
+    padding: 15px 25px !important;
+    font-size: 18px !important;
+  }
+
+}
+
+@media(max-width:320px) {
+  
+  .kore-lp-cta-1 #cta .kore-button,
+  .kore-lp-cta-1 .kore-button,
+  .kore-lp-cta-1 .simple a {
+    font-size: 16px !important;
+  }
+
+}

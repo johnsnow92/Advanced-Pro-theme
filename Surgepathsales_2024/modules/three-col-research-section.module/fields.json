@@ -1,0 +1,164 @@
+[ {
+  "id" : "ad2bd6fe-a3be-b9b3-b1e1-f351052e33c6",
+  "name" : "main_heading",
+  "label" : "Main Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "market research services "
+}, {
+  "id" : "0b114cca-2e30-6740-a481-49081fef5cfa",
+  "name" : "card_group",
+  "label" : "Card group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 6,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "3e8208af-208b-1e7c-2508-e754bad35f57",
+    "name" : "card_icon",
+    "label" : "Card Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/market-research%201-1.svg",
+      "alt" : "market-research 1-1",
+      "loading" : "lazy",
+      "width" : 40,
+      "height" : 40,
+      "max_width" : 40,
+      "max_height" : 40
+    }
+  }, {
+    "id" : "3059e166-bc18-8cfe-f3f7-1ddfe33ccfd7",
+    "name" : "card_heading",
+    "label" : "Card Heading",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "qualitative research"
+  }, {
+    "id" : "9c01bd75-7e06-dcf5-4611-6cd4cfc166c1",
+    "name" : "card_contant",
+    "label" : "Card Contant",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span>SurgePath Sales is the leading video messaging and asynchronous communications platform for go-to-market teams.</span></p>"
+  }, {
+    "id" : "5946773a-991d-26c5-8af8-87832c4d2372",
+    "name" : "link_text",
+    "label" : "Link Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Read More"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "card_icon" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/market-research%201-1.svg",
+      "alt" : "market-research 1-1",
+      "loading" : "lazy",
+      "width" : 40,
+      "height" : 40,
+      "max_width" : 40,
+      "max_height" : 40
+    },
+    "card_heading" : "qualitative research",
+    "card_contant" : "<p><span>SurgePath Sales is the leading video messaging and asynchronous communications platform for go-to-market teams.</span></p>",
+    "link_text" : "Read More"
+  }, {
+    "card_icon" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/market-research%201-1.svg",
+      "alt" : "market-research 1-1",
+      "loading" : "lazy",
+      "width" : 40,
+      "height" : 40,
+      "max_width" : 40,
+      "max_height" : 40
+    },
+    "card_heading" : "qualitative research",
+    "card_contant" : "<p><span>SurgePath Sales is the leading video messaging and asynchronous communications platform for go-to-market teams.</span></p>",
+    "link_text" : "Read More"
+  }, {
+    "card_icon" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/market-research%201-1.svg",
+      "alt" : "market-research 1-1",
+      "loading" : "lazy",
+      "width" : 40,
+      "height" : 40,
+      "max_width" : 40,
+      "max_height" : 40
+    },
+    "card_heading" : "qualitative research",
+    "card_contant" : "<p><span>SurgePath Sales is the leading video messaging and asynchronous communications platform for go-to-market teams.</span></p>",
+    "link_text" : "Read More"
+  }, {
+    "card_icon" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/market-research%201-1.svg",
+      "alt" : "market-research 1-1",
+      "loading" : "lazy",
+      "width" : 40,
+      "height" : 40,
+      "max_width" : 40,
+      "max_height" : 40
+    },
+    "card_heading" : "qualitative research",
+    "card_contant" : "<p><span>SurgePath Sales is the leading video messaging and asynchronous communications platform for go-to-market teams.</span></p>",
+    "link_text" : "Read More"
+  }, {
+    "card_icon" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/market-research%201-1.svg",
+      "alt" : "market-research 1-1",
+      "loading" : "lazy",
+      "width" : 40,
+      "height" : 40,
+      "max_width" : 40,
+      "max_height" : 40
+    },
+    "card_heading" : "qualitative research",
+    "card_contant" : "<p><span>SurgePath Sales is the leading video messaging and asynchronous communications platform for go-to-market teams.</span></p>",
+    "link_text" : "Read More"
+  }, {
+    "card_icon" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/market-research%201-1.svg",
+      "alt" : "market-research 1-1",
+      "loading" : "lazy",
+      "width" : 40,
+      "height" : 40,
+      "max_width" : 40,
+      "max_height" : 40
+    },
+    "card_heading" : "qualitative research",
+    "card_contant" : "<p><span>SurgePath Sales is the leading video messaging and asynchronous communications platform for go-to-market teams.</span></p>",
+    "link_text" : "Read More"
+  } ]
+} ]

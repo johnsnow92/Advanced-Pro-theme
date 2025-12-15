@@ -1,0 +1,96 @@
+<section class="our-mission philosophy background">
+  <div class="container">
+    <div class="row">   
+      <div class="our-mission-images">
+        <div class="philosophy-sec-img-1">
+          {% if module.philosophy_section_image_1.src %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image_1.width|escape_attr }}" height="{{ module.philosophy_section_image_1.height|escape_attr }}"' %}
+          {% if module.philosophy_section_image_1.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image_1.width|escape_attr }}" height="{{ module.philosophy_section_image_1.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.philosophy_section_image_1.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image_1.max_width|escape_attr }}" height="{{ module.philosophy_section_image_1.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.philosophy_section_image_1.loading != 'disabled' ? 'loading="{{ module.philosophy_section_image_1.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.philosophy_section_image_1.src|escape_url }}" alt="{{ module.philosophy_section_image_1.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+
+        <div class="philosophy-sec-img-4">
+          {% if module.philosophy_section_image4.src %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image4.width|escape_attr }}" height="{{ module.philosophy_section_image4.height|escape_attr }}"' %}
+          {% if module.philosophy_section_image4.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image4.width|escape_attr }}" height="{{ module.philosophy_section_image4.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.philosophy_section_image4.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image4.max_width|escape_attr }}" height="{{ module.philosophy_section_image4.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.philosophy_section_image4.loading != 'disabled' ? 'loading="{{ module.philosophy_section_image4.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.philosophy_section_image4.src|escape_url }}" alt="{{ module.philosophy_section_image4.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+
+        <div class="philosophy-sec-img-3">
+          {% if module.philosophy_section_image3.src %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image3.width|escape_attr }}" height="{{ module.philosophy_section_image3.height|escape_attr }}"' %}
+          {% if module.philosophy_section_image3.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image3.width|escape_attr }}" height="{{ module.philosophy_section_image3.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.philosophy_section_image3.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image3.max_width|escape_attr }}" height="{{ module.philosophy_section_image3.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.philosophy_section_image3.loading != 'disabled' ? 'loading="{{ module.philosophy_section_image3.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.philosophy_section_image3.src|escape_url }}" alt="{{ module.philosophy_section_image3.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+
+
+        <div class="philosophy-sec-img-2">
+          {% if module.philosophy_section_image2.src %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image2.width|escape_attr }}" height="{{ module.philosophy_section_image2.height|escape_attr }}"' %}
+          {% if module.philosophy_section_image2.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image2.width|escape_attr }}" height="{{ module.philosophy_section_image2.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.philosophy_section_image2.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.philosophy_section_image2.max_width|escape_attr }}" height="{{ module.philosophy_section_image2.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.philosophy_section_image2.loading != 'disabled' ? 'loading="{{ module.philosophy_section_image2.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.philosophy_section_image2.src|escape_url }}" alt="{{ module.philosophy_section_image2.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+
+      </div>
+
+      <div class="our-mission-content">
+        <h2>
+          {{ module.our_mission_content_h2 }}
+        </h2>
+
+        <li>
+          {{ module.our_mission_content_text }}
+        </li>
+
+        <div class="btn-section">
+          {% for item in module.button %}
+          {% set href = item.button_link.url.href %}
+          {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a class="{{ item.button_type }}"
+             {% if item.button_link.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" 
+             {% else %}
+             href="{{ href|escape_url }}"
+             {% endif %}
+             {% if item.button_link.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if item.button_link.rel %}
+             rel="{{ item.button_link.rel|escape_attr }}"
+             {% endif %}
+             >
+            {{ item.button_text }}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

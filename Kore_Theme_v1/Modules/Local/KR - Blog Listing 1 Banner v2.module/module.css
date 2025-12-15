@@ -1,0 +1,207 @@
+.kr-blog-listing-1-banner .slick-slider {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+}
+
+.kr-blog-listing-1-banner .slick-slider.slick-initialized {
+  visibility: visible;
+  opacity: 1;    
+}
+
+.kr-blog-listing-1-banner .post {
+  position: relative;
+  height: 70vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.kr-blog-listing-1-banner .post__content {
+/*   background-color: rgba(246, 36, 89, 0.8); */
+  background-color: rgba(23, 47, 50, .85);
+  width: 40%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 44px 40px;
+  text-align: left !important;
+}
+
+.kr-blog-listing-1-banner .post__content h4 {
+  margin: 10px 0;
+}
+
+.kr-blog-listing-1-banner .post__content h4 a {  
+  color: #fff;
+  font-size: 22px;
+  line-height: 1.3em;
+  font-weight: 700;
+  text-decoration: none;
+  outline: 0;
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.kr-blog-listing-1-banner .post__content a.featured_link{
+  text-align: center;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+  position: relative;
+  width: auto;
+  margin-top: 15px;
+  font-family: "Montserrat",Sans-serif;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  font-size: 14px;
+  line-height: 21px;
+  fill: #fff;
+  color: #fff;
+  background-color: transparent;
+  border-radius: 3px 3px 3px 3px;
+  padding: 5px 15px 5px 15px;
+  display: inline-block;
+  transition: background .3s,border .3s,border-radius .3s,box-shadow .3s;
+  transition: background .3s,border .3s,border-radius .3s,box-shadow .3s,-webkit-border-radius .3s,-webkit-box-shadow .3s;
+  text-decoration: none;
+}
+
+.kr-blog-listing-1-banner .post__content a.featured_link:hover{
+  opacity: 0.9;
+}
+
+.kr-blog-listing-1-banner .post__content h4 a:hover { 
+  opacity: 0.9; 
+}
+
+.kr-blog-listing-1-banner .post__content h5 {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 1.6em;
+  font-weight: 300;
+}
+
+.kr-blog-listing-1-banner .post__content p {  
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6em;
+  margin: 0;
+}
+
+.kr-blog-listing-1-banner button.slick-arrow {
+  top: unset;
+  bottom: 0;
+  transform: unset;
+  background-color: #f52459;
+  font-size: 0;
+  width: 60px;
+  height: 60px;
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  z-index: 2;
+}
+
+.kr-blog-listing-1-banner button.slick-arrow:hover {
+  opacity: 0.9;
+}
+
+.kr-blog-listing-1-banner button.slick-prev {
+  right: 70px;
+  left: unset;
+}
+
+.kr-blog-listing-1-banner button.slick-next {
+  right: 0;
+}
+
+.kr-blog-listing-1-banner button.slick-prev::before,
+.kr-blog-listing-1-banner button.slick-next::before {
+  content: '\f105' !important;
+  font-family: "Font Awesome 5 Free";
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  opacity: 1;
+  line-height: 0 !important;
+  width: 12px;
+  height: 12px;
+  vertical-align: -8px;
+}
+
+.kr-blog-listing-1-banner button.slick-prev::before {
+  content: '\f104' !important;
+}
+
+@media (max-width: 1024px) {
+  
+  .kr-blog-listing-1-banner .post {
+    background-attachment: initial;
+  }
+  
+}
+
+@media (max-width: 991px) {
+  
+  .kr-blog-listing-1-banner .post {
+    height: 512px;
+  }
+  
+  .kr-blog-listing-1-banner .post__content {
+    width: 70%;
+  }
+  
+  .kr-blog-listing-1-banner button.slick-prev {
+    right: 15%;
+  }
+  
+  .kr-blog-listing-1-banner button.slick-arrow {
+    width: 15%;
+  }
+  
+  .kr-blog-listing-1-banner button.slick-next {  
+    background-color: #172F32;
+  }
+  
+}
+
+@media (max-width: 480px) {
+  
+  .kr-blog-listing-1-banner .post {
+    height: 400px;
+  }
+  
+  .kr-blog-listing-1-banner .post__content {
+    width: 100%;
+    padding: 20px 20px;
+    text-align: left;
+    bottom: 60px;
+  }
+  
+  .kr-blog-listing-1-banner .post__content * {
+    font-size: 14px !important;
+    line-height: 1.3em;
+  }
+  
+  .kr-blog-listing-1-banner button.slick-arrow {
+    width: 50%;
+  }
+  
+  .kr-blog-listing-1-banner button.slick-prev {
+    right: unset;
+    left: 0;
+  }
+  .kr-blog-listing-1-banner .post__content h4,
+  .kr-blog-listing-1-banner .post__content h4 a{
+    font-size: 18px!important;
+  }
+  .kr-blog-listing-1-banner .post__content a.featured_link{
+    
+  }
+  
+}

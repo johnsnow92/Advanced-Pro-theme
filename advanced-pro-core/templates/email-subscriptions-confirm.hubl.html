@@ -1,0 +1,42 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Email Subscriptions Confirmation - Advanced Pro Theme
+
+  screenshotPath: ../assets/template-placeholder.png-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subscription Confirmed | {{ site_settings.company_name }}</title>
+  <meta name="robots" content="noindex, nofollow">
+  {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    {% global_partial path="../partials/header.hubl.html" %}
+    <main id="main-content" role="main">
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8 text-center" style="margin: 0 auto;">
+              <div class="confirm-icon">✓</div>
+              <h1>Subscription Confirmed!</h1>
+              <p class="lead">Thank you for subscribing to our emails. We'll keep you updated with our latest news and content.</p>
+              <a href="/" class="btn btn-primary btn-lg" style="margin-top: var(--spacing-xl);">Return Home</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% global_partial path="../partials/footer.hubl.html" %}
+  </div>
+  {{ standard_footer_includes }}
+  <style>
+  .confirm-icon { width: 120px; height: 120px; background: var(--color-primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 4rem; margin: var(--spacing-4xl) auto var(--spacing-xl); font-weight: 700; }
+  </style>
+</body>
+</html>

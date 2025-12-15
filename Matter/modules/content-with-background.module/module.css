@@ -1,0 +1,23 @@
+.cnt-wit-bg-wrp .content_widget h2 {
+  margin-bottom: 10px;
+}
+
+.cnt-wit-bg-wrp .content_widget .btn_row {
+  width: 100%;
+}
+
+.cnt-wit-bg-wrp  .btn_item {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 15px;
+  row-gap: 15px;
+  justify-content: center;
+}
+
+.cnt-wit-bg-wrp h2.title {
+  margin-bottom: 9px;
+}
+
+.cnt-wit-bg-wrp a.popup_video span.icon {
+  display: none;
+}

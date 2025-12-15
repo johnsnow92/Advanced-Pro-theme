@@ -1,0 +1,27 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Hero - Split Layout
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: hero-split.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  vertical_alignment="MIDDLE",
+  max_width=1200,
+  padding={"top": 80, "bottom": 80}
+%}
+  {% dnd_module path="@hubspot/rich_text" width=6, offset=0 %}
+    {% module_attribute "html" %}
+      <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">Split Hero Section</h1>
+      <p style="font-size: 1.25rem; color: #666; margin-bottom: 2rem; line-height: 1.75;">Perfect for showcasing your product or service with compelling imagery.</p>
+      <a href="#" style="display: inline-block; padding: 1rem 2.5rem; background: #007bff; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Learn More</a>
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+
+  {% dnd_module path="@hubspot/linked_image" width=6, offset=6 %}
+    {% module_attribute "img" %}
+      {"src": "https://via.placeholder.com/600x400", "alt": "Hero Image", "loading": "eager"}
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

@@ -1,0 +1,576 @@
+[ {
+  "id" : "e8f186d3-15de-cb38-51e9-0d57c8bd60e4",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://22325314.fs1.hubspotusercontent-na1.net/hubfs/22325314/humphrey-muleba-Cc-CQTUkbH0-unsplash.jpg",
+    "alt" : "humphrey-muleba-Cc-CQTUkbH0-unsplash",
+    "loading" : "lazy",
+    "width" : 937,
+    "height" : 873,
+    "max_width" : 937,
+    "max_height" : 873
+  }
+}, {
+  "id" : "4e845533-c040-f7f1-8c4a-53857bfc2ad1",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Guarding Employee Health"
+  }, {
+    "id" : "3f7dbd9d-b933-afa4-3236-de1e6c98749d",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "h2"
+  }, {
+    "id" : "94c60699-141a-6a27-065b-1098f4d00ac7",
+    "name" : "font_size",
+    "label" : "Font Size",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "text",
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 46
+  }, {
+    "id" : "f165ad00-29b1-c18e-1932-a11c783406d7",
+    "name" : "font_weight",
+    "label" : "Font Weight",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "font-weight-100", "Thin" ], [ "font-weight-300", "Light" ], [ "font-weight-400", "Regular" ], [ "font-weight-500", "Medium" ], [ "font-weight-600", "Semi Bold" ], [ "font-weight-700", "Bold" ], [ "font-weight-800", "Extra Bold" ], [ "font-weight-900", "Black" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "font-weight-700"
+  }, {
+    "id" : "6fdcd2c0-3f94-8d4e-deee-c015896110f4",
+    "name" : "font_color",
+    "label" : "Font Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#212645",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "d53f845c-9268-55e4-6a79-6fb02082b427",
+    "name" : "highlighted_text_color",
+    "label" : "Highlighted Text Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#6673F2",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "Guarding Employee Health",
+    "type" : "h2",
+    "font_size" : 46,
+    "font_weight" : "font-weight-700",
+    "font_color" : {
+      "color" : "#212645",
+      "opacity" : 100
+    },
+    "highlighted_text_color" : {
+      "color" : "#6673F2",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "76074975-f35b-be74-1bd7-411638cc50c4",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "d95fb173-9eaf-ffa0-8ad3-6657e9443a67",
+  "name" : "content_color",
+  "label" : "Content Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#212645",
+    "opacity" : 100
+  }
+}, {
+  "id" : "778dd49a-cccb-b961-8dfe-1dad7f784ab1",
+  "name" : "content_link_color",
+  "label" : "Content Link Color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "76074975-f35b-be74-1bd7-411638cc50c4",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "baf41429-3312-db24-5b53-1692cc3debb1",
+  "name" : "content_link_color_hover",
+  "label" : "Content Link Color Hover",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "76074975-f35b-be74-1bd7-411638cc50c4",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "09268a65-c59a-6bfa-0f84-d3964365e0a1",
+  "name" : "items",
+  "label" : "Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "3246ffd8-e322-197e-b9f2-e8f3a44e3a4f",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "acc28e3a-5174-73be-97b5-cbee7a4083a2",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p style=\"font-size: 20px;\">Health Guardianship review of group-level health risks, stratified to empower both <strong>prevention</strong> and <strong>treatment</strong></p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "content" : "<p style=\"font-size: 20px;\">Health Guardianship review of group-level health risks, stratified to empower both <strong>prevention</strong> and <strong>treatment</strong></p>"
+  }, {
+    "content" : "<p style=\"font-size: 20px;\">Health Guardianship review of group-level health risks, stratified to empower both <strong>prevention</strong> and <strong>treatment</strong></p>"
+  }, {
+    "content" : "<p style=\"font-size: 20px;\">Health Guardianship review of group-level health risks, stratified to empower both <strong>prevention</strong> and <strong>treatment</strong></p>"
+  } ]
+}, {
+  "id" : "d68afdbb-0eda-a5b0-d1ba-d8861061423f",
+  "name" : "social_links",
+  "label" : "Social Links",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "3246ffd8-e322-197e-b9f2-e8f3a44e3a4f",
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "fc8b914c-8292-7321-f2a6-25d3a99e3b7f",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "36de2649-1443-9d87-2308-dff5f72df5ad",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://22325314.fs1.hubspotusercontent-na1.net/hubfs/22325314/icon-phone.png",
+      "alt" : "icon-phone",
+      "loading" : "lazy",
+      "width" : 21,
+      "height" : 23,
+      "max_width" : 21,
+      "max_height" : 23
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22325314.fs1.hubspotusercontent-na1.net/hubfs/22325314/icon-phone.png",
+      "alt" : "icon-phone",
+      "loading" : "lazy",
+      "width" : 21,
+      "height" : 23,
+      "max_width" : 21,
+      "max_height" : 23
+    }
+  }, {
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22325314.fs1.hubspotusercontent-na1.net/hubfs/22325314/icon-phone.png",
+      "alt" : "icon-phone",
+      "loading" : "lazy",
+      "width" : 21,
+      "height" : 23,
+      "max_width" : 21,
+      "max_height" : 23
+    }
+  }, {
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22325314.fs1.hubspotusercontent-na1.net/hubfs/22325314/icon-phone.png",
+      "alt" : "icon-phone",
+      "loading" : "lazy",
+      "width" : 21,
+      "height" : 23,
+      "max_width" : 21,
+      "max_height" : 23
+    }
+  }, {
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://22325314.fs1.hubspotusercontent-na1.net/hubfs/22325314/icon-phone.png",
+      "alt" : "icon-phone",
+      "loading" : "lazy",
+      "width" : 21,
+      "height" : 23,
+      "max_width" : 21,
+      "max_height" : 23
+    }
+  } ]
+}, {
+  "id" : "ee1e14b7-878b-5cab-7011-101a46363ab4",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "93448879-955b-2e09-f8e3-8f7a91698487",
+    "name" : "section_text_alignment",
+    "label" : "Section Text Alignment",
+    "help_text" : "The horizontal alignment of the text.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-left", "Left" ], [ "text-center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-left"
+  }, {
+    "id" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+    "name" : "section_background_type",
+    "label" : "Section Background Type",
+    "help_text" : "Choose the kind of background that displays on the section.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "1", "Image" ], [ "2", "Color" ], [ "3", "Default Color" ], [ "4", "Default Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "2"
+  }, {
+    "id" : "68d4dfad-7a62-af61-6246-8df16b3b34dc",
+    "name" : "section_background_image",
+    "label" : "Section Background Image",
+    "help_text" : "Specify an image to use as the background of the section.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://22325314.fs1.hubspotusercontent-na1.net/hubfs/22325314/hero-banner-1.jpg",
+      "alt" : "hero-banner-1",
+      "width" : 1920,
+      "height" : 785
+    }
+  }, {
+    "id" : "a0ffcf0e-2357-9fd9-13ce-6170160f44c6",
+    "name" : "section_background_image_overlay",
+    "label" : "Section Background Image Overlay",
+    "help_text" : "Add a layer of color on top of the background image. You can also specify the opacity (e.g. 85%)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 0
+    }
+  }, {
+    "id" : "182f6412-ec15-59c2-5efa-57608ac42370",
+    "name" : "section_background_color",
+    "label" : "Section Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "ded7ebfb-5db9-1343-1ff9-abc735ba6ab3",
+    "name" : "section_inner_container_width",
+    "label" : "Section Inner Container Width",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 1100
+  }, {
+    "id" : "96c75b2e-592c-4982-2f7c-5413f63c5def",
+    "name" : "section_id",
+    "label" : "Section ID",
+    "help_text" : "Enter a unique ID. This will be used to jump directly on this section.\n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "ee8ee9b8-cbf2-3314-a4e6-47e7f94c845f",
+    "name" : "section_class",
+    "label" : "Section Class",
+    "help_text" : "Add a few extra CSS class on this section so you can customize even further. \n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "190b3884-6ee7-f9bd-50b8-194570111d17",
+    "name" : "section_use_existing_portal_style",
+    "label" : "Section Use Existing Portal Style",
+    "help_text" : "Enable this option to use existing portal styling.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "4de3cddd-abe4-711a-e427-637386591162",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "help_text" : "Disable this option to hide this section on the page.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "215cac8f-576a-6b7d-23fc-dc7b2bde7a9e",
+    "name" : "filler",
+    "label" : "Filler",
+    "required" : false,
+    "locked" : false,
+    "children" : [ ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_text_alignment" : "text-left",
+    "section_background_type" : "2",
+    "section_background_image" : {
+      "src" : "https://22325314.fs1.hubspotusercontent-na1.net/hubfs/22325314/hero-banner-1.jpg",
+      "alt" : "hero-banner-1",
+      "width" : 1920,
+      "height" : 785
+    },
+    "section_background_image_overlay" : {
+      "color" : "#fff",
+      "opacity" : 0
+    },
+    "section_background_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "section_inner_container_width" : 1100,
+    "section_id" : "",
+    "section_class" : "",
+    "section_use_existing_portal_style" : false,
+    "section_show_hide" : true,
+    "filler" : { }
+  }
+} ]

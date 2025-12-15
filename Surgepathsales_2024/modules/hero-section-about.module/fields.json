@@ -1,0 +1,169 @@
+[ {
+  "id" : "fc92b4ce-5816-0e3e-acc5-b6d7a446f10e",
+  "name" : "full_width_banner_or_half_width_banner",
+  "label" : "Full Width Banner Or Half Width Banner",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "full_width", "Full Width" ], [ "half_width", "Half Width" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "half_width"
+}, {
+  "id" : "c5a1ebb8-58d7-9c34-1920-7602d98f645d",
+  "name" : "hero_section_image",
+  "label" : "Hero-section Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Mask%20group%20(1)-2.png",
+    "alt" : "Mask group (1)-2",
+    "loading" : "lazy",
+    "width" : 723,
+    "height" : 721,
+    "max_width" : 723,
+    "max_height" : 721
+  }
+}, {
+  "id" : "205e73db-b61f-5d7d-c369-42c53a730fa5",
+  "name" : "main_heading",
+  "label" : "Main Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Helping businesses  deliver <span> exceptional buyer  </span>experiences. "
+}, {
+  "id" : "54df7e4f-cc1c-701d-4d7a-47e0886a9c6e",
+  "name" : "about_hero_section_h4",
+  "label" : "About Hero Section h4",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "About Us"
+}, {
+  "id" : "b79d8d5c-8986-db81-a8b8-8168a0c75efc",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p><span style=\"font-size: 12px; color: #000000;\">In today’s competitive landscape, sales teams need more than just ambition—they need intelligent, data-driven tools to fuel their success. At Surgepath Sales, we empower businesses with innovative sales enablement solutions that drive revenue growth, expand market share, and optimize team performance. Whether you’re looking to close deals faster, streamline your sales processes, or unlock new market opportunities, Surgepath Sales is the partner you need to elevate your sales game.</span></p>"
+}, {
+  "id" : "b443ce38-6126-5845-45dc-679764e498b9",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "fec8d933-1953-2c96-d8ed-c675e1524df8",
+    "name" : "button_type",
+    "label" : "Button Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "primary-btn", "Primary" ], [ "secondary-btn", "Secondary" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "primary-btn"
+  }, {
+    "id" : "f4660614-8a4c-f774-4592-5d6a3f839f50",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "c983c2c7-c470-3907-e4a4-f926d7bfd955",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "GET STARTED"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "d5c403fc-2fe5-de84-190f-c53be4d80f86",
+  "name" : "blob_background",
+  "label" : "Blob Background",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Blob.png",
+    "alt" : "Blob",
+    "loading" : "lazy",
+    "width" : 384,
+    "height" : 524,
+    "max_width" : 384,
+    "max_height" : 524
+  }
+}, {
+  "id" : "e54014a9-867f-ce34-aead-3296ac996c27",
+  "name" : "arrow_image",
+  "label" : "Arrow Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/arrow.png",
+    "alt" : "arrow",
+    "loading" : "lazy",
+    "width" : 61,
+    "height" : 126,
+    "max_width" : 61,
+    "max_height" : 126
+  }
+} ]

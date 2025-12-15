@@ -1,0 +1,114 @@
+{% import "../../macros/_macros.html" as macros %}  
+
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="sidebar-popular-posts {{name}} dnd_padd {{ module.advanced_customization.css_class_selector }} {{ module.number_of_posts }}_count_post {% if module.featured_image %}img_add{% endif %} {% if module.tags %}tags_add{% endif %} {% if module.date %}date_add{% endif %} {% if module.post_title %}title_add{% endif %}">
+  <div class="page-center">
+    <div class="sidebar-popular-posts-inner">
+      <div class="popular-header">
+        <{{ module.heading_tag }} class="popular-heading">
+          {{ module.heading }}
+          </{{ module.heading_tag }}>
+          </div>
+
+
+        <div class="popular-items-wrap">
+          <div class="popular-items-inner">
+            {% set max_posts = module.number_of_posts %}
+            {% set post_list = [] %}
+            {% set post_list = post_list + blog_popular_posts( module.select_blog, max_posts + 1 ) %}
+            {% set i = 0 %}
+            {% for post in post_list %}
+            {% if content.absolute_url != post.absolute_url and i < max_posts %}
+            <div class="related-post-item" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 150 + 200}}" {% endif %}>
+              <div class="related-post-item-inner {% if module.featured_image == false or not post.featured_image %}no-image {% endif %}">
+                {% if module.featured_image == True %}
+                {% if post.featured_image %}
+                <div class="related-image-wrp span3">
+                  <a href="{{post.absolute_url}}" class="overlay_link bg_el"></a>
+                  <div class="related-image" {% if post.featured_image %} style="background-image:url({{ post.featured_image }});" {% endif %}>
+                  </div>
+                </div>
+                {% endif %}
+                {% endif %}
+                <div class="related-content-col {% if not post.featured_image %} span12 {% else %}span9{% endif %}">
+
+                  <div class="meta_wrap">
+
+                    {# Author #}
+                    {% if module.author %}
+                    <span class="blog-author">
+                      <span class="icon_svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="21" viewBox="0 0 18 21">
+                          <path d="M8.8756 10.1435C11.677 10.1435 13.9474 7.87313 13.9474 5.07177C13.9474 2.27041 11.677 0 8.8756 0C6.07424 0 3.80383 2.27041 3.80383 5.07177C3.80383 7.87313 6.07424 10.1435 8.8756 10.1435ZM7.06482 12.0455C3.16193 12.0455 0 15.2074 0 19.1103C0 19.7601 0.526989 20.2871 1.17681 20.2871H16.5744C17.2242 20.2871 17.7512 19.7601 17.7512 19.1103C17.7512 15.2074 14.5893 12.0455 10.6864 12.0455H7.06482Z"/>
+                        </svg>
+                      </span>
+                      <span class="value_m">
+                        <a class="author-link" href="{{ blog_author_url(module.select_blog, post.blog_post_author.slug) }}">
+                          {{ post.blog_post_author.display_name }}
+                        </a>
+                      </span>
+                    </span>
+                    {% endif %}
+
+                    {# Date #}
+                    {% if module.date %}
+
+                    <span class="item-date">
+                      <span class="icon_svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="21" viewBox="0 0 19 21">
+                          <path d="M5.82177 0C6.5231 0 7.08971 0.566612 7.08971 1.26794V2.53589H12.1615V1.26794C12.1615 0.566612 12.7281 0 13.4294 0C14.1308 0 14.6974 0.566612 14.6974 1.26794V2.53589H16.5993C17.6493 2.53589 18.5012 3.38778 18.5012 4.4378V6.33971H0.75V4.4378C0.75 3.38778 1.6019 2.53589 2.65191 2.53589H4.55383V1.26794C4.55383 0.566612 5.12044 0 5.82177 0ZM0.75 7.60766H18.5012V18.3852C18.5012 19.4352 17.6493 20.2871 16.5993 20.2871H2.65191C1.6019 20.2871 0.75 19.4352 0.75 18.3852V7.60766ZM3.28589 10.7775V12.0455C3.28589 12.3941 3.57117 12.6794 3.91986 12.6794H5.1878C5.53648 12.6794 5.82177 12.3941 5.82177 12.0455V10.7775C5.82177 10.4288 5.53648 10.1435 5.1878 10.1435H3.91986C3.57117 10.1435 3.28589 10.4288 3.28589 10.7775ZM8.35766 10.7775V12.0455C8.35766 12.3941 8.64294 12.6794 8.99163 12.6794H10.2596C10.6083 12.6794 10.8935 12.3941 10.8935 12.0455V10.7775C10.8935 10.4288 10.6083 10.1435 10.2596 10.1435H8.99163C8.64294 10.1435 8.35766 10.4288 8.35766 10.7775ZM14.0634 10.1435C13.7147 10.1435 13.4294 10.4288 13.4294 10.7775V12.0455C13.4294 12.3941 13.7147 12.6794 14.0634 12.6794H15.3313C15.68 12.6794 15.9653 12.3941 15.9653 12.0455V10.7775C15.9653 10.4288 15.68 10.1435 15.3313 10.1435H14.0634ZM3.28589 15.8493V17.1172C3.28589 17.4659 3.57117 17.7512 3.91986 17.7512H5.1878C5.53648 17.7512 5.82177 17.4659 5.82177 17.1172V15.8493C5.82177 15.5006 5.53648 15.2153 5.1878 15.2153H3.91986C3.57117 15.2153 3.28589 15.5006 3.28589 15.8493ZM8.99163 15.2153C8.64294 15.2153 8.35766 15.5006 8.35766 15.8493V17.1172C8.35766 17.4659 8.64294 17.7512 8.99163 17.7512H10.2596C10.6083 17.7512 10.8935 17.4659 10.8935 17.1172V15.8493C10.8935 15.5006 10.6083 15.2153 10.2596 15.2153H8.99163ZM13.4294 15.8493V17.1172C13.4294 17.4659 13.7147 17.7512 14.0634 17.7512H15.3313C15.68 17.7512 15.9653 17.4659 15.9653 17.1172V15.8493C15.9653 15.5006 15.68 15.2153 15.3313 15.2153H14.0634C13.7147 15.2153 13.4294 15.5006 13.4294 15.8493Z"/>
+                        </svg>
+                      </span>
+
+                      {{ macros.dateFormat(module.select_date_format, post)}}
+
+                    </span>
+
+                    {% endif %}
+
+                    {# Tags #}
+                    {% if module.tags %}
+                    {% if post.tag_list %}
+                    <span class="meta_tags">
+                      <span class="icon_svg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                          <path d="M0.187599 1.98565V7.29041C0.187599 7.89162 0.39979 8.45746 0.82417 8.88184L7.04842 15.1061C7.93255 15.9902 9.38252 15.9902 10.2666 15.1061L14.9702 10.4025C15.8543 9.51841 15.8543 8.06845 14.9702 7.18432L8.74595 0.960067C8.32157 0.535686 7.75572 0.323495 7.15452 0.323495H1.88512C0.930266 0.28813 0.187599 1.06616 0.187599 1.98565ZM4.14849 5.3807C3.51192 5.3807 3.0168 4.88559 3.0168 4.24902C3.0168 3.64781 3.51192 3.11734 4.14849 3.11734C4.74969 3.11734 5.28017 3.64781 5.28017 4.24902C5.28017 4.88559 4.74969 5.3807 4.14849 5.3807Z"/>
+                        </svg>
+                      </span>
+                      <span class="value_m">
+                        {% for tag in post.tag_list %}
+                        <a href="{{ blog_tag_url(module.select_blog, tag.slug) }}">
+                          {{tag.name}}</a>{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                      </span>
+                    </span>
+                    {% endif %}
+                    {% endif %}
+                  </div>
+
+
+                  {% if module.post_title %}
+                  {# Title #}
+                  {% if module.post_title %}
+                  <div class="related-title">
+                    <a href="{{post.absolute_url}}">
+                      {{ post.name}}
+                    </a>
+                  </div>
+                  {% endif %}
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            {% set i = i + 1 %}
+            {% endif %}
+            {% endfor %}
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div> 
+
+  {{ macros.sectionSpacing(name, module.style) }}

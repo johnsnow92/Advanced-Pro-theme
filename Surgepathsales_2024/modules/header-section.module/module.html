@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<header class="header-section">
+  <div class="container">
+    <div class="header-inner">
+      <div class="left-content">
+        <div class="logo">
+          {% if module.logo_image.src %}
+          {% set sizeAttrs = 'width="{{ module.logo_image.width|escape_attr }}" height="{{ module.logo_image.height|escape_attr }}"' %}
+          {% if module.logo_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ module.logo_image.width|escape_attr }}" height="{{ module.logo_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif module.logo_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ module.logo_image.max_width|escape_attr }}" height="{{ module.logo_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = module.logo_image.loading != 'disabled' ? 'loading="{{ module.logo_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ module.logo_image.src|escape_url }}" alt="{{ module.logo_image.alt|escape_attr }}">
+          {% endif %}
+        </div>
+      </div>
+      <div class="right-content">
+        <div class="main-menu">
+          <ul>
+            {% for item in module.list_items %}
+            <li>
+              {% set href = item.list_item_link.url.href %}
+              {% if item.list_item_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a
+                 {% if item.list_item_link.url.type is equalto "CALL_TO_ACTION"  %}
+                 href="{{ href }}"
+                 {% else %}
+                 href="{{ href|escape_url }}"
+                 {% endif %}
+                 {% if item.list_item_link.open_in_new_tab %}
+                 target="_blank"
+                 {% endif %}
+                 {% if item.list_item_link.rel %}
+                 rel="{{ item.list_item_link.rel|escape_attr }}"
+                 {% endif %}
+                 >
+                {{ item.list_item }}
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="btn">
+          {% for item in module.cta_button %}
+          {% set href = item.cta_link.url.href %}
+          {% if item.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a class="{{ item.button_type }}"
+             {% if item.cta_link.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" 
+             {% else %}
+             href="{{ href|escape_url }}"
+             {% endif %}
+             {% if item.cta_link.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if item.cta_link.rel %}
+             rel="{{ item.cta_link.rel|escape_attr }}"
+             {% endif %}
+             >
+            {{ item.cta_text }}
+          </a>
+          {% endfor %}
+        </div>
+
+        <div class="menu-btn" id="toggleBtn">
+          <div class="btn-line"></div>
+          <div class="btn-line"></div>
+          <div class="btn-line"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="responsive-navbar" id="mainHeading">
+      <ul class="menu-nav">
+        {% for item in module.responsive_navbar %}
+        <li class="nav-item current">
+          {% set href = item.responsive_nav_link.url.href %}
+          {% if item.responsive_nav_link.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a class="nav-link"
+             {% if item.responsive_nav_link.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" 
+             {% else %}
+             href="{{ href|escape_url }}"
+             {% endif %}
+             {% if item.responsive_nav_link.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if item.responsive_nav_link.rel %}
+             rel="{{ item.responsive_nav_link.rel|escape_attr }}"
+             {% endif %}  >
+            {{ item.responsive_navbar_link }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</header>

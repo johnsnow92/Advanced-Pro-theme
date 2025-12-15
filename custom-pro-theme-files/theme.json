@@ -1,0 +1,12 @@
+{
+  "label": "Custom Pro Theme",
+  "preview_path": "./templates/home-1.html",
+  "screenshot_path": "./images/theme-preview.png",
+  "enable_domain_stylesheets": false,
+  "version": "1.0.0",
+  "author": {
+    "name": "Custom Development",
+    "email": "dev@customtheme.com",
+    "url": "https://customtheme.com"
+  }
+}

@@ -1,0 +1,22 @@
+.page-center,
+.content-wrapper ,
+.dnd-section > .row-fluid {
+  max-width: 100%;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+
+.content-wrapper,.page-center {
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.dnd-section > .row-fluid {
+  margin: 0 auto;
+}
+
+.dnd-section .dnd-column {
+  padding: 0 10px;
+}
+

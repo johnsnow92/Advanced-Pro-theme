@@ -1,0 +1,442 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Blog Post - Advanced Pro Theme
+  screenshotPath: ../images/templates/blog-post-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+
+  {% if page_meta.meta_description %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+  {% endif %}
+
+  {% if content.featured_image %}
+    <meta property="og:image" content="{{ content.featured_image }}">
+  {% endif %}
+
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}">
+  {% endif %}
+
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% global_partial path="../partials/header.hubl.html" %}
+
+    <main id="main-content" role="main">
+
+      <article class="blog-post">
+
+        <!-- Post Header -->
+        <header class="post-header">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-10" style="margin: 0 auto;">
+
+                <!-- Breadcrumb -->
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                  <a href="{{ blog_all_posts_url(group.id) }}">Blog</a>
+                  {% if content.topic_list %}
+                    <span>/</span>
+                    <a href="{{ blog_all_posts_url(group.id) }}?topic={{ content.topic_list[0].slug }}">
+                      {{ content.topic_list[0].name }}
+                    </a>
+                  {% endif %}
+                </nav>
+
+                <h1 class="post-title">{{ content.name }}</h1>
+
+                <div class="post-meta">
+                  {% if content.blog_post_author %}
+                    <div class="post-author">
+                      {% if content.blog_post_author.avatar %}
+                        <img src="{{ content.blog_post_author.avatar }}"
+                             alt="{{ content.blog_post_author.display_name }}"
+                             class="author-avatar">
+                      {% endif %}
+                      <div class="author-info">
+                        <span class="author-name">{{ content.blog_post_author.display_name }}</span>
+                        <time datetime="{{ content.publish_date }}">
+                          {{ content.publish_date_localized }}
+                        </time>
+                      </div>
+                    </div>
+                  {% endif %}
+
+                  <div class="post-actions">
+                    <span class="read-time">5 min read</span>
+                    {% if content.topic_list %}
+                      <a href="{{ blog_all_posts_url(group.id) }}?topic={{ content.topic_list[0].slug }}"
+                         class="post-category">
+                        {{ content.topic_list[0].name }}
+                      </a>
+                    {% endif %}
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Image -->
+          {% if content.featured_image %}
+            <div class="post-featured-image">
+              <div class="container">
+                <div class="row">
+                  <div class="col-12 col-lg-10" style="margin: 0 auto;">
+                    <img src="{{ content.featured_image }}"
+                         alt="{{ content.featured_image_alt_text or content.name }}"
+                         loading="eager">
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        </header>
+
+        <!-- Post Content -->
+        <div class="post-content-wrapper">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-8" style="margin: 0 auto;">
+
+                <div class="post-content">
+                  {{ content.post_body }}
+                </div>
+
+                <!-- Tags -->
+                {% if content.tag_list %}
+                  <div class="post-tags">
+                    <span class="tags-label">Tags:</span>
+                    {% for tag in content.tag_list %}
+                      <a href="{{ blog_tag_url(group.id, tag.slug) }}" class="tag">
+                        {{ tag.name }}
+                      </a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+
+                <!-- Social Sharing -->
+                <div class="post-social-sharing">
+                  <h4>Share this post</h4>
+                  <div class="social-share-buttons">
+                    <a href="https://twitter.com/intent/tweet?url={{ content.absolute_url|urlencode }}&text={{ content.name|urlencode }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="share-btn share-twitter"
+                       aria-label="Share on Twitter">
+                      Twitter
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url|urlencode }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="share-btn share-facebook"
+                       aria-label="Share on Facebook">
+                      Facebook
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ content.absolute_url|urlencode }}"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="share-btn share-linkedin"
+                       aria-label="Share on LinkedIn">
+                      LinkedIn
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Author Bio -->
+                {% if content.blog_post_author %}
+                  <div class="author-bio">
+                    {% if content.blog_post_author.avatar %}
+                      <img src="{{ content.blog_post_author.avatar }}"
+                           alt="{{ content.blog_post_author.display_name }}"
+                           class="author-bio-avatar">
+                    {% endif %}
+                    <div class="author-bio-content">
+                      <h4>{{ content.blog_post_author.display_name }}</h4>
+                      {% if content.blog_post_author.bio %}
+                        <p>{{ content.blog_post_author.bio }}</p>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Related Posts -->
+        <section class="related-posts">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h2 class="section-title">Related Posts</h2>
+              </div>
+            </div>
+
+            <div class="row">
+              {% module "related_posts_module"
+                path="@hubspot/rich_text",
+                label="Related Posts Widget",
+                html="<p>Add related post cards manually or use a custom module</p>"
+              %}
+            </div>
+          </div>
+        </section>
+
+        <!-- Comments -->
+        <section class="post-comments">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-8" style="margin: 0 auto;">
+                {% module "blog_comments"
+                  path="@hubspot/blog_comments",
+                  label="Blog Comments"
+                %}
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </article>
+
+    </main>
+
+    {% global_partial path="../partials/footer.hubl.html" %}
+  </div>
+
+  {{ standard_footer_includes }}
+
+  <style>
+  .post-header {
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+  }
+  .breadcrumb {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-lg);
+  }
+  .breadcrumb a {
+    color: var(--color-gray-600);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    color: var(--color-primary);
+  }
+  .post-title {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-xl);
+  }
+  .post-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--color-gray-200);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+  .post-author {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+  .author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+  .author-name {
+    display: block;
+    font-weight: 600;
+    color: var(--color-gray-900);
+  }
+  .author-info time {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+  }
+  .post-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+  }
+  .read-time {
+    color: var(--color-gray-600);
+    font-size: var(--font-size-sm);
+  }
+  .post-category {
+    background: var(--color-primary);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .post-featured-image {
+    margin: var(--spacing-2xl) 0;
+  }
+  .post-featured-image img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+  }
+  .post-content-wrapper {
+    padding: var(--spacing-3xl) 0;
+  }
+  .post-content {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-gray-700);
+  }
+  .post-content h2, .post-content h3, .post-content h4 {
+    margin-top: var(--spacing-2xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-gray-900);
+  }
+  .post-content p {
+    margin-bottom: var(--spacing-lg);
+  }
+  .post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin: var(--spacing-xl) 0;
+  }
+  .post-content a {
+    color: var(--color-primary);
+    text-decoration: underline;
+  }
+  .post-tags {
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-2xl);
+    border-top: 1px solid var(--color-gray-200);
+  }
+  .tags-label {
+    font-weight: 600;
+    margin-right: var(--spacing-sm);
+  }
+  .tag {
+    display: inline-block;
+    background: var(--color-gray-100);
+    color: var(--color-gray-700);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    margin: var(--spacing-xs);
+  }
+  .tag:hover {
+    background: var(--color-gray-200);
+  }
+  .post-social-sharing {
+    margin-top: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+  }
+  .social-share-buttons {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+  }
+  .share-btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity var(--transition-fast) ease;
+  }
+  .share-btn:hover {
+    opacity: 0.9;
+  }
+  .share-twitter { background: #1DA1F2; }
+  .share-facebook { background: #4267B2; }
+  .share-linkedin { background: #0077B5; }
+  .author-bio {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-3xl);
+    padding: var(--spacing-2xl);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+  }
+  .author-bio-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .author-bio h4 {
+    margin-bottom: var(--spacing-sm);
+  }
+  .related-posts {
+    padding: var(--spacing-3xl) 0;
+    background: var(--color-gray-50);
+  }
+  .section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+  .related-post-card {
+    background: white;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal) ease;
+    height: 100%;
+  }
+  .related-post-card:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
+  }
+  .related-post-image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+  .related-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .related-post-content {
+    padding: var(--spacing-lg);
+  }
+  .related-post-content time {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-sm);
+  }
+  .related-post-content h3 {
+    font-size: var(--font-size-lg);
+    margin: 0;
+  }
+  .related-post-content a {
+    color: var(--color-gray-900);
+    text-decoration: none;
+  }
+  .related-post-content a:hover {
+    color: var(--color-primary);
+  }
+  .post-comments {
+    padding: var(--spacing-3xl) 0;
+  }
+  </style>
+</body>
+</html>

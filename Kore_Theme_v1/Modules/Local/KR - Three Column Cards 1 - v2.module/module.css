@@ -1,0 +1,165 @@
+.footer.footer--site-page{
+  background-color: #e6e6eb!important;
+}
+.kore-navigation-ppa-agency-footer {
+  font-size: 16px; 
+  color: #555;
+  padding: 30px 0 20px;
+
+}
+
+.kore-navigation-ppa-agency-footer .page-width {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-navigation-ppa-agency-footer .flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.kore-navigation-ppa-agency-footer .col {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-navigation-ppa-agency-footer .col:first-child p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.kore-navigation-ppa-agency-footer .col:last-child {
+  text-align: right;
+}
+
+.kore-navigation-ppa-agency-footer .separator {
+  border-top: 1px solid rgba(3, 3, 56, 0.3);
+  margin-bottom: 20px;
+}
+
+.kore-navigation-ppa-agency-footer .simple-nav {
+  line-height: 2; 
+}
+
+.kore-navigation-ppa-agency-footer .back-to-top {
+  text-align: center; 
+  margin-top: 0;
+}
+
+.kore-navigation-ppa-agency-footer .hs_cos_wrapper_type_logo a img {
+  width: 134px !important;
+}
+
+.kore-navigation-ppa-agency-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.kore-navigation-ppa-agency-footer a {
+  color: #555;
+  text-decoration: underline;
+}
+
+.kore-navigation-ppa-agency-footer a:hover {
+  text-decoration: underline; 
+}
+
+.kore-navigation-ppa-agency-footer .simple-menu ul {
+  list-style: none;
+  display: block;
+  text-align: right;
+  padding-left: 80px;
+  max-width: 520px;
+  margin-right: 0;
+  margin-left: auto;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.kore-navigation-ppa-agency-footer .simple-menu li {
+  display: inline-block !important;
+  float: none !important;
+  width: auto !important;
+  margin-bottom: 5px!important;
+}
+
+.kore-navigation-ppa-agency-footer .simple-menu li:not(:last-child) {
+  margin-right: 10px;
+  padding-right: 12px;
+  border-right: 1px solid #030338;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+.kore-navigation-ppa-agency-footer .simple-menu li:first-child{
+  display: block!important;
+  border: 0;
+  margin-right: 0;
+  padding-right: 0;
+  margin-bottom: 15px!important;
+}
+.kore-navigation-ppa-agency-footer .simple-menu li:first-child > a{
+  text-decoration: underline;
+}
+.kore-navigation-ppa-agency-footer .simple-menu li:last-child{
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.kore-navigation-ppa-agency-footer .footer-up {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-right: auto;
+  margin-bottom: 5px;
+  margin-left: auto;
+  border-radius: 30px;
+  background-color: #FF3D6B;
+  background-image: url(https://info.juicetactics.com/hubfs/Kore%20Theme/arrow-up.svg);
+  background-position: 50% 44%;
+  background-size: 14px;
+  background-repeat: no-repeat;
+}
+
+.footer .hs-menu-wrapper li a{
+  font-size: 14px;
+  color: #030338;
+}
+.footer .hs-menu-wrapper li a:hover{
+  color: #FF3D6B!important;
+}
+
+.footer .col *{
+  color: #030338;
+}
+
+
+@media(max-width:991px) {
+  .kore-navigation-ppa-agency-footer .simple-menu li:first-child{
+    padding-bottom: 0;
+  }
+}
+@media(max-width:767px) {
+
+  .kore-navigation-ppa-agency-footer .col {
+    flex: 0 0 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .kore-navigation-ppa-agency-footer .col:last-child {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .kore-navigation-ppa-agency-footer .simple-menu ul{
+    text-align: center;
+    padding-left: 0;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+}

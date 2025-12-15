@@ -1,0 +1,73 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<div class="kore-navigation-deepsky-marketing-footer">
+  <div class="page-width">
+    <div class="flex">
+      
+      {% if module.blurb_heading or module.blurb_text %}
+      <div class="col">
+        {% if module.blurb_heading %}
+        <h4>
+          {{ module.blurb_heading }}
+        </h4>
+        {% endif %}
+        {% if module.blurb_text %}
+        {{ module.blurb_text }}
+        {% endif %}
+      </div>
+      {% endif %}
+      
+      {% if module.simple_menu_1_heading or module.simple_menu_1 %}
+      <div class="col">
+        {% if module.simple_menu_1_heading %}
+        <h4>
+          {{ module.simple_menu_1_heading }}
+        </h4>
+        {% endif %}
+        {% if module.simple_menu_1 %}
+        {% simple_menu menu_tree="{{ module.simple_menu_1 }}" orientation='vertical' %}
+        {% endif %}
+      </div>
+      {% endif %}
+      
+      {% if module.simple_menu_1_heading or module.simple_menu_1 %}
+      <div class="col">
+        {% if module.simple_menu_2_heading %}
+        <h4>
+          {{ module.simple_menu_2_heading }}
+        </h4>
+        {% endif %}
+        {% if module.simple_menu_2 %}
+        {% simple_menu menu_tree="{{ module.simple_menu_2 }}" orientation='vertical' %}
+        {% endif %}
+      </div>
+      {% endif %}
+      
+      {% if module.social_heading or item.icon.name or module.simple_menu_3 %}
+      <div class="col">
+        {% if module.simple_menu_3 %}
+        <div class="horizontal-simple-menu">
+          {% simple_menu menu_tree="{{ module.simple_menu_3 }}" orientation='horizontal' %}
+        </div>
+        {% endif %}
+        
+        {% if module.social_heading %}
+        <h4>
+          {{ module.social_heading }}
+        </h4>
+        {% endif %}
+
+        <div class="social-icon">
+          {% for item in module.social_icon %}
+          <a href="	{{ item.url.href }}" class="social-link linkedin w-inline-block" target="_blank">
+            {% icon name="{{ item.icon.name }}" style="{{ item.icon.type }}" unicode="{{ item.icon.unicode }}"
+	%}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      
+    </div>
+  </div>
+</div>

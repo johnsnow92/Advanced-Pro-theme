@@ -1,0 +1,301 @@
+[ {
+  "id" : "2c3cb9ef-5129-910a-011f-bd18442d9e77",
+  "name" : "logo_image",
+  "label" : "Logo Image",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/surgepth-logo1-2.jfif",
+    "alt" : "surgepth-logo1-2",
+    "width" : 500,
+    "height" : 500,
+    "max_width" : 500,
+    "max_height" : 500
+  }
+}, {
+  "id" : "b96f2e5a-b5b1-31d0-0dc3-bcb9b94dc0b4",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Our focus is on building a permanent sales team that is exclusively dedicated to your product lines - this is a guarantee of their involvement and engagement with your brand and its long term success.</p>"
+}, {
+  "id" : "42379aa1-1835-6db8-d980-79e8d47c8a27",
+  "name" : "social_media_title",
+  "label" : "Social Media Title",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "FOLLOW US :-"
+}, {
+  "id" : "12aa12a8-3978-ccf3-c1e6-2579bdb84ef4",
+  "name" : "social_media",
+  "label" : "Social Media",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "05e745aa-01fc-491f-f0cc-5ce5adc53e3d",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "9e0460a3-8fe2-b3a1-302b-79960a3fdcc8",
+    "name" : "social_media_link",
+    "label" : "Social Media Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "05e745aa-01fc-491f-f0cc-5ce5adc53e3d",
+    "name" : "social_media_image",
+    "label" : "Social Media Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Facebook.png",
+      "alt" : "Facebook",
+      "loading" : "lazy",
+      "width" : 32,
+      "height" : 32,
+      "max_width" : 32,
+      "max_height" : 32
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "77c89bd8-2d88-b32c-444e-cfa77ed0aa6b",
+  "name" : "footer_main_links_group",
+  "label" : "Footer Main Links Group",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "a1c6c1bc-051c-7134-07bb-a031fd09584c",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "a1c6c1bc-051c-7134-07bb-a031fd09584c",
+    "name" : "links_title",
+    "label" : "Links Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "c9d7970e-fd4d-006b-81ce-75e6eeae9c05",
+    "name" : "link_items",
+    "label" : "Link Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "0eae37da-d9b2-b06a-8210-25cffafb0d31",
+      "default" : null
+    },
+    "children" : [ {
+      "id" : "928e594a-f01e-a115-35fd-5e59cf4270cf",
+      "name" : "footer_list_item_link",
+      "label" : "Footer List Item Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "display_width" : null,
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "0eae37da-d9b2-b06a-8210-25cffafb0d31",
+      "name" : "footer_list_item_text",
+      "label" : "Footer List Item Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "070e6750-2bf5-8903-b26f-d665a4a60a06",
+  "name" : "footer_right_title",
+  "label" : "Footer Right Title",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Our Newsletter"
+}, {
+  "id" : "db7b0db3-ec3d-1b61-6f18-c47c26f94b6d",
+  "name" : "footer_right_content",
+  "label" : "Footer Right Content",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Signup for our latest news &amp; articles. We won’t give you spam mails.</p>"
+}, {
+  "id" : "a377d3ee-1a6e-7663-cd43-4545efab9466",
+  "name" : "form_field",
+  "label" : "Form",
+  "required" : false,
+  "locked" : true,
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "45d55b0b-8bda-4519-8f97-07e2e32b7c74",
+    "response_type" : "inline",
+    "message" : "Thank you for your message! You'll hear from us soon.",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+}, {
+  "id" : "9bdec10a-8680-2501-a9fb-e1e22120ed68",
+  "name" : "contact_details",
+  "label" : "Contact Details",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "d6cfac8e-5e5c-7783-30eb-526ad6228988",
+    "name" : "contact_icon",
+    "label" : "Contact Icon",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "df19203a-5b6c-3c2d-d1df-9769e3aaee24",
+    "name" : "contact_text",
+    "label" : "Contact Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "da803221-5099-3d0d-9b3d-0c3f39cad290",
+    "name" : "contact_link",
+    "label" : "Contact Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "ad9465d1-822c-cc17-36f6-952f24afbcbf",
+  "name" : "cpyright_text",
+  "label" : "Cpyright Text",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : " Copyright @ Surgepath Insights"
+}, {
+  "id" : "bd8731c8-57cb-4f9e-2a42-ab7cf2c8cc99",
+  "name" : "design_by_text",
+  "label" : "Design By Text",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Design By"
+}, {
+  "id" : "7d0029c0-9082-6c99-356d-39dcb7fab2ba",
+  "name" : "link_text",
+  "label" : "Link Text",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : " Krishang Technolab"
+} ]

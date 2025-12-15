@@ -1,0 +1,175 @@
+.office-referral-home-banner {
+  position: relative;
+  overflow-y: hidden;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  color: #fff;
+}
+
+.office-referral-home-banner .office-referral-home-banner-absolute {
+  width: 100%;
+  height: 120vh;
+  background-color: transparent;
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+  background-repeat: repeat, no-repeat;
+}
+
+.office-referral-home-banner .home-banner-slide-wrap {
+  position: ;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 100%;
+}
+
+.office-referral-home-banner .content-wrap {
+  position: absolute;
+  top: 40%; 
+  left: 50%;
+  -webkit-transform: translate(-50%, -40%);
+    -ms-transform: translate(-50%, -40%);
+    transform: translate(-50%, -40%);
+  width: 100%;
+  padding-top: 0;
+}
+
+
+.office-referral-home-banner .header-flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.office-referral-home-banner .header-flex .header-col {
+  flex: 1;
+  padding: 0 40px;
+}
+
+.office-referral-home-banner .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.office-referral-home-banner .tagline * {
+  color: #fff;
+}
+
+.office-referral-home-banner .heading * {
+  color: #fff;
+}
+
+.office-referral-home-banner .sub_heading * {
+  color: #fff;
+}
+
+.office-referral-home-banner .search-bar-wrapper {
+  position: relative;
+  max-width: 620px;
+  min-height: 75px;
+  margin-top: 40px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.office-referral-home-banner .w-form {
+  margin: 0 0 15px;
+}
+
+.office-referral-home-banner .w-input, 
+.office-referral-home-banner .w-select {
+  display: block;
+  width: 100%;
+  height: 38px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  vertical-align: middle;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+
+.office-referral-home-banner .search-input {
+  width: 100%;
+  min-height: 75px;
+  padding: 15px 160px 15px 20px;
+  border-radius: 4px;
+  color: #84898c;
+  font-size: 18px;
+}
+
+.office-referral-home-banner input[type="search"] {
+  -webkit-appearance: none;
+  font-family: "Helvetica Neue",Arial,sans-serif;
+}
+
+.office-referral-home-banner .w-button {
+  display: inline-block;
+  padding: 9px 15px;
+  background-color: #3898EC;
+  color: white;
+  border: 0;
+  line-height: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0;
+}
+
+.office-referral-home-banner .search-btn {
+  position: absolute;
+  left: auto;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  padding: 8px 25px;
+  border-radius: 4px;
+  background-color: #0f4c81;
+  font-size: 18px;
+  line-height: 26px;
+}
+
+.office-referral-home-banner .search-btn:hover {
+  transform: none !important;
+  background-color: #0f4c81 !important;
+  opacity: 0.9 !important;
+}
+
+.office-referral-home-banner input.w-button {
+  -webkit-appearance: button;
+}
+
+@media(max-width:1139px) {
+
+  .office-referral-home-banner .content-wrap {
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+}
+
+@media(max-width:767px) {
+  
+  .office-referral-home-banner .header-flex {
+    text-align: center;
+  }
+  
+}
+
+
+/******** GOOGLE MAP INTEGRATION **********/
+.address-block {
+  display: none;
+}
+

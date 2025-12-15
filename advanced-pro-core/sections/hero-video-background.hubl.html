@@ -1,0 +1,32 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Hero - Video Background
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: hero-video-background.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  vertical_alignment="MIDDLE",
+  max_width=1920,
+  background_color={
+    "color": "#000000",
+    "opacity": 100
+  }
+%}
+  {% dnd_module path="@hubspot/rich_text" %}
+    {% module_attribute "html" %}
+      <div style="position: relative; min-height: 600px; display: flex; align-items: center; justify-content: center; text-align: center; color: white; z-index: 2;">
+        <div style="max-width: 800px; padding: 3rem 2rem;">
+          <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3);">Hero with Video Background</h1>
+          <p style="font-size: 1.5rem; margin-bottom: 2rem; opacity: 0.95; text-shadow: 0 1px 5px rgba(0,0,0,0.3);">Captivating video background hero section</p>
+          <a href="#" style="display: inline-block; padding: 1rem 3rem; background: #007bff; color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.125rem;">Get Started</a>
+        </div>
+      </div>
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+{% end_dnd_section %}
+
+<style>
+/* Add data-video-bg attribute to section for video background support */
+</style>

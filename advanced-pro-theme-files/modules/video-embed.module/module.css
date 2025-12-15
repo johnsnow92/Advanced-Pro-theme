@@ -1,0 +1,144 @@
+/* Video Embed Module Styles */
+
+.video-embed-module {
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.video-section-title {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+}
+
+/* Responsive Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Aspect Ratio Classes */
+.video-container.aspect-ratio-16-9 {
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+}
+
+.video-container.aspect-ratio-4-3 {
+  padding-bottom: 75%; /* 4:3 Aspect Ratio */
+}
+
+.video-container.aspect-ratio-1-1 {
+  padding-bottom: 100%; /* 1:1 Aspect Ratio */
+}
+
+.video-container.aspect-ratio-21-9 {
+  padding-bottom: 42.857%; /* 21:9 Aspect Ratio */
+}
+
+/* Video Iframe Styling */
+.video-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Custom Video Element Styling */
+.video-custom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder for Invalid URLs */
+.video-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5f5f5;
+  color: #666;
+  text-align: center;
+  padding: 2rem;
+}
+
+.video-placeholder p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .video-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .video-embed-module {
+    margin: 1.5rem 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .video-section-title {
+    font-size: 1.25rem;
+  }
+
+  .video-embed-module {
+    margin: 1rem 0;
+  }
+
+  .video-container {
+    border-radius: 4px;
+  }
+}
+
+/* Focus and Accessibility */
+.video-iframe:focus,
+.video-custom:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+/* Loading State */
+.video-container::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: video-loading 1s linear infinite;
+  z-index: -1;
+}
+
+@keyframes video-loading {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Hide loading spinner once video loads */
+.video-iframe,
+.video-custom {
+  background-color: #000;
+}

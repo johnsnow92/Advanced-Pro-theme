@@ -1,0 +1,62 @@
+<div class="blog-grid-cards blog-grid-cards--columns-{{ module.columns }}">
+  {% if module.section_title %}
+  <div class="blog-grid-cards__header">
+    <h2 class="blog-grid-cards__title">{{ module.section_title }}</h2>
+  </div>
+  {% endif %}
+
+  <div class="blog-grid-cards__grid">
+    {% set recent_posts = blog_recent_posts('default', module.number_of_posts) %}
+
+    {% for post in recent_posts %}
+    <article class="blog-card">
+      <a href="{{ post.absolute_url }}" class="blog-card__link">
+        {% if module.show_featured_image and post.featured_image %}
+        <div class="blog-card__image-wrapper">
+          <img
+            src="{{ post.featured_image }}"
+            alt="{{ post.featured_image_alt_text or post.name }}"
+            class="blog-card__image"
+            loading="lazy"
+          />
+          <div class="blog-card__overlay"></div>
+        </div>
+        {% endif %}
+
+        <div class="blog-card__content">
+          <h3 class="blog-card__title">{{ post.name }}</h3>
+
+          {% if module.show_excerpt and post.post_summary %}
+          <div class="blog-card__excerpt">
+            {{ post.post_summary|truncate(150, true, '...') }}
+          </div>
+          {% endif %}
+
+          {% if module.show_date or module.show_author %}
+          <div class="blog-card__meta">
+            {% if module.show_author and post.blog_post_author %}
+            <span class="blog-card__author">
+              <svg class="blog-card__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8 8C9.65685 8 11 6.65685 11 5C11 3.34315 9.65685 2 8 2C6.34315 2 5 3.34315 5 5C5 6.65685 6.34315 8 8 8Z" fill="currentColor"/>
+                <path d="M8 9.5C5.51472 9.5 3.5 11.5147 3.5 14H12.5C12.5 11.5147 10.4853 9.5 8 9.5Z" fill="currentColor"/>
+              </svg>
+              {{ post.blog_post_author.display_name }}
+            </span>
+            {% endif %}
+
+            {% if module.show_date %}
+            <span class="blog-card__date">
+              <svg class="blog-card__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 2V3.5M12 2V3.5M2.5 6H13.5M3.5 3H12.5C13.0523 3 13.5 3.44772 13.5 4V13C13.5 13.5523 13.0523 14 12.5 14H3.5C2.94772 14 2.5 13.5523 2.5 13V4C2.5 3.44772 2.94772 3 3.5 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+              {{ post.publish_date_localized|datetimeformat('%B %e, %Y') }}
+            </span>
+            {% endif %}
+          </div>
+          {% endif %}
+        </div>
+      </a>
+    </article>
+    {% endfor %}
+  </div>
+</div>

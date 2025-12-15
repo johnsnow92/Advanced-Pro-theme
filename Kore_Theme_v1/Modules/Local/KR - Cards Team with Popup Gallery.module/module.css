@@ -1,0 +1,52 @@
+.kore-cards-team-popup-gallery {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-cards-team-popup-gallery .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.kore-cards-team-popup-gallery .flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 -20px;
+}
+
+.kore-cards-team-popup-gallery .flex .gallery {
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  padding: 20px 20px;
+}
+
+.kore-cards-team-popup-gallery .team-thumb-image {
+  position: relative;
+  height: 300px;
+  margin-bottom: 10px;
+  border: 10px solid #282828;
+  background-color: #282828;
+  background-position: 50% 15%;
+  background-size: cover;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+
+@media (max-width: 900px) {
+  
+  .kore-cards-team-popup-gallery .flex .gallery {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .mfp-arrow {
+    -webkit-transform: none;
+    transform: none;
+  }
+
+}

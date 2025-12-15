@@ -1,0 +1,98 @@
+{% require_css %}
+<style type="text/css">
+  {% scope_css %}
+  .tab-panel-section{
+    background-color: {{ module.settings.background_color.color }};
+  }
+  .tab-panel-section{
+    padding: {{ module.settings.padding_desktop.top }}px 20px {{ module.settings.padding_desktop.bottom }}px;
+  }
+
+
+  @media screen and (max-width: 991px){
+    .tab-panel-section{
+      padding: {{ module.settings.padding_tablet.top }}px 20px {{ module.settings.padding_tablet.bottom }}px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .tab-panel-section{
+      padding: {{ module.settings.padding_mobile_.top }}px 20px {{ module.settings.padding_mobile_.bottom }}px;
+    }
+  }
+
+  {% end_scope_css %} 
+</style>
+{% end_require_css %}
+
+<div class="tab-panel-section">
+  <div class="maxContainer">
+    <div class="tab-heading-content">
+      {{ module.content }}
+    </div>
+    <div class="tab-panel-wrap">
+      <div class="tab-heading">
+        {% for item in module.tab_items %}
+        <div class="tab-item {% if loop.index == 1 %}active{% endif %}" data-tab="{{ item.tab|lower|replace(' ', '-') }}">{{ item.tab }}</div>
+        {% endfor %}
+      </div>
+      <div class="tab-body">
+        {% for item in module.tab_items %}
+        <div class="tab-{{ item.tab|lower|replace(' ', '-') }} tab-body-wrap">
+          <div class="tab-panel-flex"> 
+            <div class="tab-accordion-lists">
+              {% for item2 in item.accordion %}
+              <div class="tab-acc-item" data-acc="media-acc-{{ loop.index }}">
+                <div class="tab-acc-heading">
+                  <div class="acc-icon">
+                    <img src="{{ item2.icon.src }}" alt="{{ item2.icon.alt }}">
+                  </div>
+                  <span>{{ item2.title }}</span>
+                </div> 
+                <div class="acc-body">
+                  {{ item2.content }}
+                  <div class="acc-media-mobile">
+                    {% if item2.media_type == 'image' %}
+                    <div class="media-acc-{{ loop.index }} media-img media-acc">
+                      <div class="img-item" style="background-image: url('{{ item2.image.src }}');"></div>
+                    </div>
+                    {% endif %}
+                    {% if item2.media_type == 'video' %}
+                    <div class="media-acc-{{ loop.index }} media-video media-acc">
+                      <div class="media-video-wrap" style="min-height: 430px;">
+                        <video src="{{ item2.video_file }}" autoplay="" loop="" poster="{{ item2.poster_image.src }}" muted="" playsinline=""></video>
+                      </div>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="acc-collapse">
+                  <img src="https://yembo.ai/hubfs/add.png" alt="Plus" class="icon-coll plus">
+                  <img src="https://yembo.ai/hubfs/minus.png" alt="Minus" class="icon-coll minus">
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            <div class="tab-media-col">
+              {% for item2 in item.accordion %}
+              {% if item2.media_type == 'image' %}
+              <div class="media-acc-{{ loop.index }} media-img media-acc" style="{% if loop.index == 1 %}display:block;{% endif %}">
+                <div class="img-item" style="background-image: url('{{ item2.image.src }}');"></div>
+              </div>
+              {% endif %}
+              {% if item2.media_type == 'video' %}
+              <div class="media-acc-{{ loop.index }} media-video media-acc" style="{% if loop.index == 1 %}display:block;{% endif %}">
+                <div class="media-video-wrap" style="min-height: 430px;">
+                  <video src="{{ item2.video_file }}" autoplay="" loop="" poster="{{ item2.poster_image.src }}" muted="" playsinline=""></video>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</div>

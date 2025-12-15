@@ -1,0 +1,219 @@
+/* ================================= */
+.hs-content-id-180752449564 .about-banner .column_2 img {
+  height: 485px;
+  width: 450px;
+  margin: auto;
+}
+.hs-content-id-180752449564 .about-img {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.hs-content-id-180752449564 .our-mission-content.rig-head h4 {
+  display: none; 
+}
+.hs-content-id-180752449564 .our-mission-images .full-image img {
+  border: none;
+  border-radius: 0;
+}
+.hs-content-id-180752449564 .our-mission:before, .hs-content-id-180752449564 .our-mission:after{
+  content: none;
+}
+/* ========================= */
+
+
+
+
+
+.Hero_Section.about-banner {
+  overflow: hidden;
+}
+
+.Hero_Section .about-sub-heading h4{
+  font-size: 20px;
+  color: #FF7F16;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+h1{
+  color: #000;
+}
+.column_1 h1 span{
+  color: #00234D;
+}
+
+.column_2{
+  width: 53%;
+}
+
+.column_1{
+  padding-top: 91px;
+  padding-right: 40px;
+  width: 50%;
+}
+.column_1 .btn-section {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+}
+.about-banner.full_width .row .column_2{
+  display: none;
+  position: relative;
+}
+.about-banner.full_width .row .column_1{
+  width: 100%;
+  text-align: center;
+}
+.about-banner.full_width .row .content p{
+  width: 100%;
+  text-align: center;
+}
+
+.about-banner.full_width h1{
+  color: #00234C;
+} 
+
+.about-banner.full_width .row .about-sub-heading h4{
+  justify-content: center;
+}
+
+.about-banner .column_2 img {
+  height: 776px;
+} 
+.column_2{
+  position: relative;
+}
+.row{
+  display: flex;
+}
+
+.content span{
+  font-size: 16px !important;
+  font-weight: 500;
+  line-height: 26px;
+  list-style: circle;
+  margin-bottom: 10px;
+}
+
+
+.about-testimonial-heading p{
+  text-align: justify;
+}
+
+/*  */
+
+.about-banner .blob img {
+  left: 85px;
+  position: absolute;
+  top: 152px;
+  z-index: -1;
+}
+
+.about-sub-heading h4:after {
+  border: 1px solid #fb8a2e;
+  content: "";
+  width: 53px;
+  rotate: 0deg;
+  margin: 15px;
+}
+.arrow-image img{
+  bottom: -447px;
+  left: 47%;
+  position: absolute;
+}
+
+.Hero_Section .arrow-image img{
+  bottom: -50px;
+  left: 47%;
+  position: absolute;
+}
+
+@media(max-width: 1540px){
+  .about-img img{
+    height: 683px;
+
+  }
+
+  .about-banner .about-img .blob img {
+    z-index: -1;
+  }
+
+}
+
+
+
+@media(max-width:1200px){
+  .Hero_Section.about-banner {
+    padding: 60px 0 83px 0;
+  }
+  .column_1,.column_2{
+    width: 100%;
+    margin: 0  auto; 
+  }
+
+  h1,.content{
+    text-align: center;
+  }
+
+  .row{
+    flex-wrap: wrap;
+  }
+
+  .column_1{
+    width: 100%;
+    padding-right: 0;
+    padding-top: 40px;
+  }
+
+  .column_1 h1, .content, .Hero_Section p{
+    text-align: center;
+  }
+  .Hero_Section p {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  .column_1 .btn-section {
+    justify-content: center;
+  }
+  .column_2 {
+    display: none;
+  }
+  .about-banner{
+    background-image: linear-gradient(180deg, rgb(125 138 219 / 45%), rgb(135 163 187 / 45%)), url(https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/modern-equipped-computer-lab%201.png);
+    background-size: cover;
+    padding-bottom: 30px;
+  }
+
+  .Hero_Section .about-sub-heading h4{
+    justify-content: center;
+  }
+
+  .about-banner
+  .column_2 img {
+    height: 705px;
+    position: absolute;
+    right: -126px;
+    top: 21px;
+  }
+
+  .Hero_Section .arrow-image img{
+    display: none;
+  }
+
+}
+
+@media(max-width: 560px){
+  .column_1 .btn-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .Hero_Section.about-banner{
+    padding: 17px 0 49px;
+  }
+}

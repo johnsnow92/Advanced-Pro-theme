@@ -1,0 +1,22 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 166426713761,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../../../Kore_Theme_v1/Coded Files/CSS/kore-slick.css",
+    "name" : "kore-slick.css"
+  }, {
+    "autoload" : true,
+    "path" : "../../../../Kore_Theme_v1/Coded Files/CSS/kore-slick-theme.css",
+    "name" : "kore-slick-theme.css"
+  } ],
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../../../Kore_Theme_v1/Coded Files/JS/kore-slick.js",
+    "name" : "kore-slick.js"
+  } ],
+  "label" : "KR - Testimonial Slides - Two Column",
+  "is_available_for_new_content" : true
+}

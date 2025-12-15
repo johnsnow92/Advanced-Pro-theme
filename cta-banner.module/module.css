@@ -1,0 +1,150 @@
+/* CTA Banner Module Styles */
+
+.cta-banner {
+  position: relative;
+  width: 100%;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+.cta-banner__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.cta-banner__container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cta-banner__content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-banner__heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+}
+
+.cta-banner__subheading {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin: 0 0 30px 0;
+  opacity: 0.95;
+}
+
+.cta-banner__buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cta-banner__button {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.cta-banner__button--primary {
+  background-color: #ffffff;
+  color: #0066CC;
+}
+
+.cta-banner__button--primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cta-banner__button--secondary {
+  background-color: transparent;
+  border-color: currentColor;
+  color: inherit;
+}
+
+.cta-banner__button--secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .cta-banner {
+    padding: 60px 20px;
+  }
+
+  .cta-banner__heading {
+    font-size: 2rem;
+  }
+
+  .cta-banner__subheading {
+    font-size: 1.125rem;
+  }
+
+  .cta-banner__buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cta-banner__button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-banner {
+    padding: 40px 16px;
+  }
+
+  .cta-banner__heading {
+    font-size: 1.75rem;
+  }
+
+  .cta-banner__subheading {
+    font-size: 1rem;
+  }
+
+  .cta-banner__button {
+    padding: 12px 24px;
+    font-size: 0.9375rem;
+  }
+}
+
+/* Style Variant Specific Styles */
+.cta-banner--solid {
+  /* Solid color styles are applied inline */
+}
+
+.cta-banner--gradient {
+  /* Gradient styles are applied inline */
+}
+
+.cta-banner--image {
+  background-repeat: no-repeat;
+  min-height: 400px;
+}
+
+@media (max-width: 768px) {
+  .cta-banner--image {
+    min-height: 300px;
+  }
+}

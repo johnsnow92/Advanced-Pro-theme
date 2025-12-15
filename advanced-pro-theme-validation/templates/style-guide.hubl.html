@@ -1,0 +1,146 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Style Guide - Advanced Pro Theme
+  screenshotPath: ../images/templates/style-guide-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}<meta name="description" content="{{ page_meta.meta_description }}">{% endif %}
+  {% if brand_settings.favicon is defined and brand_settings.favicon.src %}<link rel="shortcut icon" href="{{ brand_settings.favicon.src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% include '../partials/header.hubl.html' %}
+    <main id="main-content" role="main">
+      <section class="section section-hero section-hero-page">
+        <div class="container">
+          <div class="row align-center">
+            <div class="col-12 col-lg-10 text-center">
+              <h1>Brand Style Guide</h1>
+              <p class="lead">Our design system, components, and brand guidelines</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-3">
+              <nav class="style-guide-nav">
+                <h4>Navigation</h4>
+                <ul>
+                  <li><a href="#colors">Colors</a></li>
+                  <li><a href="#typography">Typography</a></li>
+                  <li><a href="#buttons">Buttons</a></li>
+                  <li><a href="#forms">Forms</a></li>
+                  <li><a href="#components">Components</a></li>
+                  <li><a href="#icons">Icons</a></li>
+                  <li><a href="#spacing">Spacing</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col-12 col-lg-9">
+              <div id="colors" class="style-section">
+                <h2>Color Palette</h2>
+                <div class="color-grid">
+                  <div class="color-swatch" style="background: var(--color-primary);"><span>Primary</span></div>
+                  <div class="color-swatch" style="background: var(--color-secondary);"><span>Secondary</span></div>
+                  <div class="color-swatch" style="background: var(--color-gray-900);"><span>Gray 900</span></div>
+                  <div class="color-swatch" style="background: var(--color-gray-700);"><span>Gray 700</span></div>
+                  <div class="color-swatch" style="background: var(--color-gray-500);"><span>Gray 500</span></div>
+                  <div class="color-swatch" style="background: var(--color-gray-300);"><span>Gray 300</span></div>
+                  <div class="color-swatch" style="background: var(--color-gray-100);"><span>Gray 100</span></div>
+                  <div class="color-swatch" style="background: var(--color-gray-50);"><span>Gray 50</span></div>
+                </div>
+              </div>
+              <div id="typography" class="style-section">
+                <h2>Typography</h2>
+                <h1>Heading 1</h1>
+                <h2>Heading 2</h2>
+                <h3>Heading 3</h3>
+                <h4>Heading 4</h4>
+                <p>Body text: The quick brown fox jumps over the lazy dog. This is regular paragraph text.</p>
+                <p class="lead">Lead text: Larger, more prominent text for introductions and emphasis.</p>
+                <p><small>Small text: Secondary or less important information.</small></p>
+              </div>
+              <div id="buttons" class="style-section">
+                <h2>Buttons</h2>
+                <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; margin-bottom: var(--spacing-lg);">
+                  <button class="btn btn-primary">Primary Button</button>
+                  <button class="btn btn-secondary">Secondary Button</button>
+                  <button class="btn btn-outline">Outline Button</button>
+                </div>
+                <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap; margin-bottom: var(--spacing-lg);">
+                  <button class="btn btn-primary btn-lg">Large Button</button>
+                  <button class="btn btn-primary">Regular Button</button>
+                  <button class="btn btn-primary btn-sm">Small Button</button>
+                </div>
+              </div>
+              <div id="forms" class="style-section">
+                <h2>Form Elements</h2>
+                <div style="max-width: 500px;">
+                  <div style="margin-bottom: var(--spacing-md);">
+                    <label>Text Input</label>
+                    <input type="text" class="form-control" placeholder="Enter text">
+                  </div>
+                  <div style="margin-bottom: var(--spacing-md);">
+                    <label>Email Input</label>
+                    <input type="email" class="form-control" placeholder="email@example.com">
+                  </div>
+                  <div style="margin-bottom: var(--spacing-md);">
+                    <label>Select</label>
+                    <select class="form-control">
+                      <option>Option 1</option>
+                      <option>Option 2</option>
+                    </select>
+                  </div>
+                  <div style="margin-bottom: var(--spacing-md);">
+                    <label>Textarea</label>
+                    <textarea class="form-control" rows="4" placeholder="Enter message"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div id="components" class="style-section">
+                <h2>Components</h2>
+                <h3>Cards</h3>
+                <div class="row">
+                  <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card">
+                      <div class="card-body">
+                        <h4>Card Title</h4>
+                        <p>Card content goes here with some descriptive text.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% include '../partials/footer.hubl.html' %}
+  </div>
+  {{ standard_footer_includes }}
+  <style>
+  .style-guide-nav { padding: var(--spacing-xl); background: var(--color-gray-50); border-radius: var(--radius-lg); position: sticky; top: calc(var(--spacing-2xl) + 70px); }
+  .style-guide-nav ul { list-style: none; padding: 0; margin: var(--spacing-md) 0 0; }
+  .style-guide-nav li { margin-bottom: var(--spacing-sm); }
+  .style-guide-nav a { color: var(--color-gray-700); text-decoration: none; }
+  .style-guide-nav a:hover { color: var(--color-primary); }
+  .style-section { margin-bottom: var(--spacing-4xl); }
+  .color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: var(--spacing-md); margin: var(--spacing-lg) 0; }
+  .color-swatch { height: 150px; border-radius: var(--radius-md); display: flex; align-items: flex-end; padding: var(--spacing-md); box-shadow: var(--shadow-sm); }
+  .color-swatch span { color: white; font-weight: 600; text-shadow: 0 1px 2px rgba(0,0,0,0.5); }
+  </style>
+</body>
+</html>

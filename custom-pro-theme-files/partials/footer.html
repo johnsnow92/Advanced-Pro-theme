@@ -1,0 +1,185 @@
+<!--
+  templateType: global_partial
+  label: Page Footer
+-->
+
+<footer class="site-footer">
+  {% dnd_area "footer_content"
+    label="Footer Content",
+    class="footer-dnd-area"
+  %}
+    {% dnd_section
+      vertical_alignment="TOP",
+      background_color={ color: "{{ theme.footer.footer_bg_color.color }}", opacity: {{ theme.footer.footer_bg_color.opacity }} }
+    %}
+      {% dnd_column
+        offset=0,
+        width=3
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="@hubspot/rich_text"
+          %}
+            {% module_attribute "html" %}
+              <div class="footer-column">
+                <h4>About Us</h4>
+                <p>We provide exceptional products and services to help businesses grow and succeed.</p>
+              </div>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+
+      {% dnd_column
+        offset=3,
+        width=3
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="@hubspot/menu"
+          %}
+            {% module_attribute "menu_tree" %}
+              [
+                {
+                  "label": "Services",
+                  "url": "/services",
+                  "isPublished": true
+                },
+                {
+                  "label": "About",
+                  "url": "/about",
+                  "isPublished": true
+                },
+                {
+                  "label": "Blog",
+                  "url": "/blog",
+                  "isPublished": true
+                },
+                {
+                  "label": "Contact",
+                  "url": "/contact",
+                  "isPublished": true
+                }
+              ]
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+
+      {% dnd_column
+        offset=6,
+        width=3
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="@hubspot/rich_text"
+          %}
+            {% module_attribute "html" %}
+              <div class="footer-column">
+                <h4>Contact Info</h4>
+                <p>
+                  Email: info@example.com<br>
+                  Phone: (555) 123-4567<br>
+                  Address: 123 Main St, City, State 12345
+                </p>
+              </div>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+
+      {% dnd_column
+        offset=9,
+        width=3
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="@hubspot/social_sharing"
+          %}
+            {% module_attribute "pinterest_share" is_json=true %}false{% end_module_attribute %}
+            {% module_attribute "reddit_share" is_json=true %}false{% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {% dnd_section
+      vertical_alignment="MIDDLE",
+      background_color={ color: "#1a1a1a", opacity: 100 }
+    %}
+      {% dnd_column
+        offset=0,
+        width=12
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="@hubspot/rich_text"
+          %}
+            {% module_attribute "html" %}
+              <div class="footer-bottom">
+                <p>&copy; {{ year }} {{ site_settings.company_name }}. All rights reserved.</p>
+                <p class="footer-credits">
+                  <a href="/privacy-policy">Privacy Policy</a> |
+                  <a href="/terms-of-service">Terms of Service</a>
+                </p>
+              </div>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  {% end_dnd_area %}
+</footer>
+
+{{ standard_footer_includes }}
+{{ require_js(get_asset_url("../js/main.js"), "footer") }}
+
+</body>
+</html>
+
+{% require_css %}
+<style>
+  .site-footer {
+    background-color: {{ theme.footer.footer_bg_color.color }};
+    color: {{ theme.footer.footer_text_color.color }};
+    min-height: {{ theme.footer.footer_height }}px;
+    padding: 60px 0 0;
+  }
+
+  .footer-column h4 {
+    color: {{ theme.footer.footer_text_color.color }};
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-column p,
+  .footer-column a {
+    color: rgba({{ theme.footer.footer_text_color.color|convert_rgb }}, 0.8);
+    line-height: 1.8;
+  }
+
+  .footer-column a:hover {
+    color: {{ theme.footer.footer_text_color.color }};
+  }
+
+  .footer-bottom {
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-bottom p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+  }
+
+  .footer-credits a {
+    color: inherit;
+    margin: 0 10px;
+  }
+
+  .footer-credits a:hover {
+    color: {{ theme.colors.secondary_color.color }};
+  }
+</style>
+{% end_require_css %}

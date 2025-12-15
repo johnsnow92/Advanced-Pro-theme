@@ -1,0 +1,173 @@
+{% import "../../macros/_macros.html" as macros %} 
+<div class="cm-map-wrapper map-gp {{name}} dnd_padd {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {% if module.show_animation %} wow {{ module.animation_type }}{% endif %} {% if module.advanced_customization.css_class_selector %} {{ module.advanced_customization.css_class_selector }} {% endif %} {{ module.select_map_type }}_map_ty {{ module.select_location_type }}_loca_ty {% if module.coordinate.include_infobox_content %}infobox_Add{% endif %} {% if module.include_marker_icon %}marker_add{% endif %} {% if module.map_settings.full_width %}_map_full_width{% endif %} {% if module.module_settings.make_grayscale_map %}map_grayscale{% endif %} "
+     {% if module.advanced_customization.css_id_selector %} id="{{ module.advanced_customization.css_id_selector }}" {% endif %} >
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+  <div class="cm_map_header" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" {% endif %}>
+    <div class="page-center {{ module.style.container.select_size }}">
+      {{ macros.topContent(module.top_content) }}
+    </div>
+  </div>
+  <div class="page-center cm_map_gray {{ module.style.container.select_size }}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="100" {% endif %}>
+    {% if module.select_map_type == "address" %}
+    <div id="{{ name }}" class="google-map ct_contact_map">
+      <iframe width="{% if module.map_settings.full_width == true %}100%{% else %}{{ module.map_settings.width }}{% endif %}" height="{{ module.map_settings.height }}" style="max-width: 100%;" src="https://maps.google.com/maps?width={% if module.map_settings.full_width == "true" %}100%{% else %}{{ module.map_settings.width }}{% endif %}&height={{ module.map_settings.height }}&hl=en&q={{ module.address|replace(' ', '%20') }}&ie=UTF8&t=default&z={{ module.zoom }}&iwloc=B&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+    </div>
+    {% elif module.select_map_type == "embed_url" %}
+    {% if module.embed_url %}
+    <div id="embed_{{ name }}" class="embed_map">
+      {{ module.embed_url }}
+    </div>
+    {% endif %}
+    {% elif module.select_map_type == "coordinate" %}
+    {% require_js %}
+    <script type='text/javascript' src='https://maps.googleapis.com/maps/api/js?key={{ module.google_map_api_key }}&#038;ver=3.0.24#038;callback=initMap{{name}}'></script>
+    {% end_require_js %}
+    {% if module.select_location_type == "single" %}
+
+    <div class="map-wrapper block">
+      <div id="map-aux-{{ name }}" style="margin-left: auto;margin-right: auto; height: {{ module.map_settings.height }}px; width: {% if module.map_settings.full_width == true %}100%{% else %}{{ module.map_settings.width }}px{% endif %};"></div>
+    </div>
+    {% require_js %}
+    <script>
+      function initMap{{name}}() {
+        var map2 = new google.maps.Map(document.getElementById('map-aux-{{ name }}'), {
+                                                               zoom: {{ module.zoom }},
+                                                               mapTypeId: 'terrain',
+                                                               disableDefaultUI: true,
+                                                               center: {lat: {{ module.coordinate.latitude }}, lng:{{ module.coordinate.longitude }}}
+                                                               });
+
+                                       const icon = {
+                                       url: '{{ module.marker_icon.src }}', // url
+                                       scaledSize: new google.maps.Size(50, 50), // scaled size
+            origin: new google.maps.Point(0,0), // origin
+              anchor: new google.maps.Point(0, 0) // anchor
+      };
+      var marker2 = new google.maps.Marker({
+        position: {lat: {{ module.coordinate.latitude }}, lng:{{ module.coordinate.longitude }}},
+        mapTypeId: 'terrain',
+        disableDefaultUI: true,
+        map: map2,
+        {% if module.include_marker_icon %}
+        icon: icon,
+        {% endif %}
+      });
+      var geocoder2 = new google.maps.Geocoder;
+
+      {% if module.coordinate.include_infobox_content and module.coordinate.info_box_content %}
+      var infowindow2 = new google.maps.InfoWindow({
+        content: '<span>{{ module.coordinate.info_box_content }}</span>'
+      });
+
+      infowindow2.open(map2,marker2);
+      google.maps.event.addListener(marker2, 'click', function() {
+        infowindow2.open(map2,marker2);
+      });
+      {% endif %}
+      }
+      initMap{{name}}();
+    </script>
+    {% end_require_js %}
+
+    {% elif module.select_location_type == "multiple" %}
+
+    <div class="map-wrapper">
+      <div id="map-aux-{{ name }}" style="margin-left: auto;margin-right: auto; height: {{ module.map_settings.height }}px; width: {% if module.map_settings.full_width == true %}100%{% else %}{{ module.map_settings.width }}px{% endif %};"></div>
+    </div>
+
+    {% require_js %}
+
+    <script>
+      var count = 0;
+      var locations = [];
+      function initMap{{name}}() {
+        {% for item in module.coordinates %}
+        //Resize Function
+        google.maps.event.addDomListener(window, "resize", initMap{{name}});
+        var address = '{{ item.info_box_content|regex_replace("\n", "") }}';
+        var location = [{{ item.latitude }}, {{ item.longitude }}, address, count ];
+        locations.push(location);
+        count++
+        var mapDiv = document.getElementById('map-aux-{{ name }}');
+                                             var map = new google.maps.Map(mapDiv, {
+                                             center: new google.maps.LatLng({{ module.map_center_position.latitude }}, {{ module.map_center_position.longitude }}),
+            zoom: {{ module.zoom }}
+      });
+      var infowindow = new google.maps.InfoWindow({});
+      var marker, i;
+      for (i = 0; i < locations.length; i++) {
+        const icon = {
+          url: '{{ module.marker_icon.src }}', // url
+          scaledSize: new google.maps.Size(50, 50), // scaled size
+          origin: new google.maps.Point(0,0), // origin
+          anchor: new google.maps.Point(0, 0) // anchor
+        };
+        marker = new google.maps.Marker({
+          position: new google.maps.LatLng(locations[i][0], locations[i][1]),
+          map: map,
+          {% if module.include_marker_icon %}
+          icon: icon,
+          {% endif %}
+          scaledSize: new google.maps.Size(46, 43)
+        });
+
+
+        {% if item.info_box_content %}
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+          return function () {
+            infowindow.setContent(
+              locations[i][2]
+            );
+            infowindow.open(map, marker);
+          }
+        })(marker, i));
+        {% endif %}
+      }
+      {% endfor %}
+      //Resize Function
+      google.maps.event.addDomListener(window, "resize", initMap{{name}});
+      }
+      initMap{{name}}()
+    </script>
+
+    {% end_require_js %}
+
+    {% endif %}
+
+    {% endif %}
+  </div>
+  
+  
+      {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+</div>
+{% require_css %}
+<style>
+  {% if module.select_map_type == 'embed_url' %}
+  {% if module.map_settings.full_width == true %}
+  .cm-map-wrapper.{{name}} .embed_map iframe {
+    width:100%;
+  }
+  {% elif  module.map_settings.full_width == false %}
+  .cm-map-wrapper.{{name}} .embed_map iframe {
+    width:{{ module.map_settings.width }}px;
+  }
+  {% else %}
+  {% endif %}
+  {% endif %}
+  .cm-map-wrapper.{{name}} .embed_map iframe {
+    height:{{ module.map_settings.height }}px;
+  }
+  {% if module.module_settings.make_grayscale_map %}
+  .{{name}} .cm_map_gray{
+    -webkit-filter: brightness( 100% ) contrast( 100% ) saturate( 8% ) blur( 0px ) hue-rotate( 175deg );
+    filter: brightness( 100% ) contrast( 100% ) saturate( 8% ) blur( 0px ) hue-rotate( 175deg );
+  }
+  {% endif %}
+</style>
+{% end_require_css %}
+
+
+
+

@@ -1,0 +1,102 @@
+{% require_css %}
+<style type="text/css">
+  {% scope_css %}
+  .banner-col2-wrapper{
+    {{ module.settings.background_gradient_css }}
+  }
+  .banner-col2-wrapper{
+    padding: {{ module.settings.padding_desktop.top }}px 20px {{ module.settings.padding_desktop.bottom }}px;
+  }
+  {% if module.remove_black_line_on_video %}
+  .banner-media video{
+    width: 101%;
+    margin-left: -1px;
+    margin-right: -1px;
+  }
+  {% endif %}
+  {% if module.align_vertical %}
+  .banner-flex-col{
+    align-items: center;
+  }
+  .banner-media .video-wrap{
+    top: 0;
+  }
+  {% endif %}
+  .banner-media .video-wrap{
+    min-height: {{ module.video_height }}px;
+  }
+
+  @media screen and (max-width: 991px){
+    .banner-col2-wrapper{
+      padding: {{ module.settings.padding_tablet.top }}px 20px {{ module.settings.padding_tablet.bottom }}px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .banner-col2-wrapper{
+      padding: {{ module.settings.padding_mobile_.top }}px 20px {{ module.settings.padding_mobile_.bottom }}px;
+    }
+  }
+
+  {% end_scope_css %} 
+</style>
+{% end_require_css %}
+
+<div class="banner-col2-wrapper">
+  <div class="maxContainer">
+    <div class="banner-flex-col">
+      <div class="banner-content">
+        {{ module.content }}
+        <div class="form-wrap">
+          {% form
+            form_to_use="{{ module.form.form_id }}"
+            response_response_type="{{ module.form.response_type }}"
+            response_message="{{ module.form.message }}"
+            response_redirect_id="{{ module.form.redirect_id }}"
+            response_redirect_url="{{module.form.redirect_url}}"
+            gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+          %}
+        </div>
+        {% if module.add_bottom_icons %}
+        <div class="banner-bottom-icons">
+          {% for item in module.bottom_icons %}
+          <div>
+            {% if item.icon.src %}
+            {% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}"' %}
+            {% if item.icon.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.icon.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.icon.max_width }}" height="{{ item.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
+            <img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+            <h4>{{ item.text }}</h4>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      <div class="banner-media">
+        {% if module.media_type == "video" %}
+        <div class="video-wrap">
+          <video src="{{ module.video_file }}" autoplay="" loop="" poster="{{ module.poster_image.src }}" muted="" playsinline=""></video>
+        </div>
+        {% endif %}
+        {% if module.media_type == "image" %}
+        <div class="img-wrap" style="background-image: url('{{ module.image.src }}');"></div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  {% if module.banner_overlay_image1.src %}
+  {% set sizeAttrs = 'width="{{ module.banner_overlay_image1.width }}" height="{{ module.banner_overlay_image1.height }}"' %}
+  {% if module.banner_overlay_image1.size_type == 'auto' %}
+  {% set sizeAttrs = 'width="{{ module.banner_overlay_image1.width }}" height="{{ module.banner_overlay_image1.height }}" style="max-width: 100%; height: auto;"' %}
+  {% elif module.banner_overlay_image1.size_type == 'auto_custom_max' %}
+  {% set sizeAttrs = 'width="{{ module.banner_overlay_image1.max_width }}" height="{{ module.banner_overlay_image1.max_height }}" style="max-width: 100%; height: auto;"' %}
+  {% endif %}
+  {% set loadingAttr = module.banner_overlay_image1.loading != 'disabled' ? 'loading="{{ module.banner_overlay_image1.loading }}"' : '' %}
+  <img src="{{ module.banner_overlay_image1.src }}" alt="{{ module.banner_overlay_image1.alt }}" {{ loadingAttr }} {{ sizeAttrs }} class="banner-img-overlay">
+  {% endif %}  
+
+</div>

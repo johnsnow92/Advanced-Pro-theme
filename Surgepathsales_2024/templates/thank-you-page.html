@@ -1,0 +1,111 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Thank you page
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main id="main-content" class="body-container-wrapper about_page_V2">
+    
+  {% dnd_area 'dnd_main_area1', label='Main Section' , class="main-dnd-area" %}
+  
+    {% dnd_section
+      padding={
+        "default" : {
+          "bottom" : "0px",
+          "top" : "0px"
+        }
+      },
+      full_width=true
+    %}
+      {% dnd_column
+        offset=0,
+        width=12
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="/Kore_Theme_v1/Modules/Local/KR - Hero Single Column 2 Social Share",
+            offset=0,
+            width=12,
+            section_settings={
+              "section_use_existing_portal_style" : false
+            },
+            social_share={
+              "background_color" : {
+                "color" : "#f5a528",
+                "opacity" : 100
+              },
+              "border_color" : {
+                "color" : "#f5a528",
+                "opacity" : 100
+              }
+            }
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+    {% dnd_section
+      padding={
+        "default" : {
+          "bottom" : "0px",
+          "top" : "0px"
+        }
+      },
+      full_width=true
+    %}
+      {% dnd_column
+        offset=0,
+        width=12
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="/Kore_Theme_v1/Modules/Local/KR - Hero Two Column 1",
+            offset=0,
+            width=12,
+            heading={
+              "font_weight" : "",
+              "text" : "A strong headline"
+            },
+            sub_heading="",
+            tag_line="",
+            testimonial_show_hide=true
+          %}
+            {% module_attribute "content" %}
+              <p class="p-18"><strong>Add an explanation</strong><span>&nbsp;</span>- Make visitors understand exactly what the topic is about, why you addressing the topic and how you're going to do it. Keep it short and sweet.</p>
+            {% end_module_attribute %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+    {% dnd_section
+      padding={
+        "default" : {
+          "bottom" : "0px",
+          "top" : "0px"
+        }
+      },
+      full_width=true
+    %}
+      {% dnd_column
+        offset=0,
+        width=12
+      %}
+        {% dnd_row %}
+          {% dnd_module
+            path="/Kore_Theme_v1/Modules/Local/KR - Logo Strip",
+            offset=0,
+            width=12
+          %}
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  
+  {% end_dnd_area %}
+</main>
+{% endblock body %}
+

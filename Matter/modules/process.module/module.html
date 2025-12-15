@@ -1,0 +1,213 @@
+{% import "../../macros/_macros.html" as macros %}  
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="cm_hiw_wrp {{name}} dnd_padd {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} row_{{ module.module_settings.number_row }}  {% if  module.module_settings.stack_steps_in_mobile %}stack_mobile {% endif %}">
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+    {{ macros.topContent(module.top_content, module.module_settings) }}
+  </div>
+  {% for row in module.tab_group|batch(module.module_settings.number_row, '') %}
+  {% set firstIndex = loop.first %}
+  <div class="cm_tab_wrp nav_bar">
+    <div class="cm_hiw_lin">
+    </div>
+    <div class="page-center {{ module.style.container.select_size }}">
+      <div class="cm_hiw_tab cm_nv cm_nv{{name}}">
+        <div class="flex-container">
+          <ul class="cm_hiw_wrp_tabs_ul" id="tabs">
+            {% for item in row %}
+            {% if item %}
+            {% if item.title or item.select_icon %}
+            <li data-tab="item_{{loop.index}} " data-id="item_{{loop.index}}{{name}}"  class="tablinks tablinks{{name}} {% if firstIndex and loop.first %} active{% endif %}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 150 + 200}}" {% endif %} >
+              {% if item.select_icon == 'image' %}
+              <div class="tab_icn_img">
+                <img src="{{ item.icon_image.src}}" alt="{{item.icon_image.alt}}"/>
+              </div>
+              {% else %}
+              <div class="tab_icn {{item.select_icon_color}}"{% if item.select_icon_color=='custom'%}style="fill:{{macros.color(item.icon_color)}}"{% endif %}>
+
+                {% icon
+		name="{{ item.icon_field.name }}"
+		style="{{ item.icon_field.type }}"
+		unicode="{{ item.icon_field.unicode }}"
+		icon_set="{{ item.icon_field.icon_set }}"
+	%}
+              </div>
+              {% endif %}
+              <{{ module.style.card.select_tab_title_tag }}>
+              <div href="javascript:void(0)"> {{ item.title }}</div>
+            </{{ module.style.card.select_tab_title_tag }}>
+
+            </li>
+            {% endif %}
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="cm_tab_wrp">
+    <div class="page-center {{ module.style.container.select_size }}">
+      <div class="cm_hiw_tab">
+        <div class="flex-container">
+          {% for item in module.tab_group %}
+          {% if item %}
+          <div id="item_{{loop.index}}{{name}}" class="flex-item flex-item{{name}} {{ item.select_image_aligment }}_al {% if loop.first %} active{% endif %}">
+            <div class="tab_item">
+              <div class="flex_row {% if not item.image_field.src or not item.content %}full{% endif %}">
+                {% if item.title %}
+                <div class="tab_item__title" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.image_animation_type }}"  {% endif %}>
+                  {% if item.select_icon == 'image' %}
+                  <div class="tab_icn_img">
+                    <img src="{{ item.icon_image.src}}" alt="{{item.icon_image.alt}}"/>
+                  </div>
+                  {% else %}
+                  <div class="tab_icn {{item.select_icon_color}}"{% if item.select_icon_color=='custom'%}style="fill:{{macros.color(item.icon_color)}}"{% endif %}>
+
+                    {% icon
+		name="{{ item.icon_field.name }}"
+		style="{{ item.icon_field.type }}"
+		unicode="{{ item.icon_field.unicode }}"
+		icon_set="{{ item.icon_field.icon_set }}"
+	%}
+                  </div>
+                  {% endif %}
+
+                  <{{ module.style.card.select_tab_title_tag }}>
+                  {{item.title}}
+                  </{{ module.style.card.select_tab_title_tag }}>
+                </div>
+                  {% endif %}
+                  {% if item.image_field.src %}
+                  <div class="tab_item_col img_coll col6" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.image_animation_type }}"  {% endif %}>
+                    <div class="tab_image_wrp">
+                      <img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}"/>
+                    </div>
+                  </div>
+                  {% endif %}
+                  {% if item.content %}
+                  <div class="tab_item_col content_col col6" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.content_animation_type }}" {% endif %}>
+                    <div class="tab_content">
+                      {{ item.content }}
+
+                      {% if item.button_group %}
+                      {{ macros.buttonWithPopupGroup(item.button_group, false,'parent_index'~loop.index) }}
+                      {% endif %}
+                    </div>
+                  </div>
+                  {% endif %}
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          {% if module.button_group %}
+          <div class="bototm_btn" {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+            {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+
+      {% for item in module.tab_group %}
+      {{ macros.buttonWithPopupGroup(item.button_group, true ,'parent_index'~loop.index) }}
+      {% endfor %}
+
+      {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+    </div>
+    {% require_css %}
+    <style>
+      {% if  module.module_settings.stack_steps_in_mobile %}
+      @media(max-width:767px){
+        .{{name}} .cm_tab_wrp.nav_bar { 
+          display: none;
+        }
+        .{{name}} .tab_icn_img {
+          width: 35px;
+          height: 35px;
+          margin: 0;
+          margin-right: 10px;
+        }
+        .{{name}} .flex-item {
+          display: block;
+        }
+        .{{name}} .tab_item__title {
+          display: block;
+        }
+        .{{name}} .tab_item__title {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1.5rem;
+          display: none;
+        }
+
+        .{{name}} .tab_icn {
+          width: 35px;
+          height: 35px;
+          margin-right: 10px;
+        }
+
+        .{{name}} .tab_item__title h3 {
+          margin: 0;
+        }
+      }
+      {% endif %}
+      {% if not module.module_settings.stack_steps_in_mobile %}
+      .{{name}} .tab_item__title {
+        display: none;
+      }
+      {% endif %}
+      .{{name}} .cm_hiw_lin{
+        border-bottom-color:{{macros.color(module.module_settings.divider_color)}};
+      }
+    </style>
+    {% end_require_css%}
+
+
+    {% require_js %}
+    <script>
+      var processWrap = document.querySelectorAll('.{{name}}');
+                                                  Array.prototype.slice.call(processWrap).forEach(function(ele, index) {
+        ele.addEventListener('click', function(e) {
+          var tabLinks = ele.querySelectorAll(".tablinks{{name}}");
+                                              var tabContent = ele.querySelectorAll(".flex-item{{name}}");
+
+                                              tabLinks.forEach(function(el) {
+            el.addEventListener("click", openTabs);
+          });
+
+          function openTabs(el) {
+            var btnTarget = el.currentTarget;
+            var tabId = btnTarget.dataset.id;
+            var tabId = btnTarget.getAttribute('data-id');
+
+            tabContent.forEach(function(el) {
+              el.classList.remove("active");
+            });
+
+            tabLinks.forEach(function(el) {
+              el.classList.remove("active");
+            });
+
+            document.querySelector("#" + tabId).classList.add("active");
+
+            btnTarget.classList.add("active");
+          }
+        });
+      });
+
+    </script>
+    {% end_require_js %}
+
+
+
+

@@ -1,0 +1,120 @@
+{% import "../../macros/_macros.html" as macros %}
+{% set slider_settings = module.module_settings.slider_options %}
+
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="testimonials_sliderv2 dnd_padd {{name}} img_al_{{ module.module_settings.select_image_alignment }} styleChanges {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }}  per_view{{ slider_settings.slides_per_view }} {% if slider_settings.autoplay %}autoplay_true{% endif %} {% if slider_settings.dots %}dots_true{% endif %} {% if slider_settings.arrows %}arrows_trw{% endif %} {% if slider_settings.loop %}loop_true{% endif %}">
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+    {{ macros.topContent(module.top_content, module.module_settings) }}
+    <div class="bottom_row glide">
+      <div class="glide__track " data-glide-el="track"> 
+        <div class="testmn_row glide__slides flex_row" >
+          {% for item in module.testimonials_group %}
+          <div class="testmn_itemv2  {% if not item.image.src %}noImage{% endif %} it{{loop.index}}">
+            <div class="testmn_inner_outer">
+              <div class="flex_row">
+
+                <div class="left_col col6 cm_trns {% if module.module_settings.enable_animation %}{{ module.module_settings.content_animation_type }}{% endif %}">
+                  <div class="left_inner">
+                    {% if item.auth_name %}
+                    <{{ module.style.card_styles.select_name_tag }} class="name">
+                      {{ item.auth_name }}
+                      </{{ module.style.card_styles.select_name_tag }}>
+                      {% endif %}
+                      {% if item.designation %}
+                      <p class="rolee">
+                    {{ item.designation }}
+                    </p> 
+                  {% endif %}
+
+                  {% if item.rating and item.add_rating == "true" %}
+                  <div class="rating">
+
+                    {% set count = item.rating%}
+                    <span class="star_fill {% if count == 1 or count == 2 or count == 3 or count == 4 or count == 5 %}fill{% endif %} "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#F5CD3E" style="&#10;"/></svg></span>
+                    <span class="star_fill {% if count == 2 or count == 3 or count == 4 or count == 5 %}fill{% endif %}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#F5CD3E" style="&#10;"/></svg></span>
+                    <span class="star_fill {% if count == 3 or count == 4 or count == 5 %}fill{% endif %} "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#F5CD3E" style="&#10;"/></svg></span>
+                    <span class="star_fill {% if count == 4 or count == 5 %}fill{% endif %} "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#F5CD3E" style="&#10;"/></svg></span>
+                    <span class="star_fill {% if count == 5 %}fill{% endif %} "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#F5CD3E" style="&#10;"/></svg></span>
+
+                  </div>
+                  {% endif %}
+                  {% if item.content %}
+                  <div class="text_box">
+                    {{ item.content }}
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+
+              {% if item.image.src %}
+              <div class="right_col col6 cm_trns {% if module.module_settings.enable_animation %}{{ module.module_settings.image_animation_type }}{% endif %}">
+                <div class="img_bg" style="background-image: url({{ item.image.src }})">
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {{ macros.sliderControls(module.module_settings.slider_options , module.testimonials_group , module.module_settings.enable_animation) }}
+
+  </div>
+
+  {% if module.button_group %}
+  <div class="pdlr10 slider_btn_footer" {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+    {{ macros.buttonWithPopupGroup(module.button_group, false, 'bottom_sec') }}
+  </div>
+  {% endif %}
+
+</div>
+
+{{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+{{ macros.buttonWithPopupGroup(module.button_group, true, 'bottom_sec') }}
+</div>
+
+{% require_css %}
+<style>
+  .{{name}} .rating .fill svg path {
+    fill:  {{ macros.color(module.style.card_styles.rating_color) }};
+  }
+
+  .{{name}} .rating svg path {
+    fill: transparent;
+    stroke:  {{ macros.color(module.style.card_styles.rating_color) }};
+  }
+</style>
+{% end_require_css %}
+
+
+{# slider options #}
+
+{% set gtename = name|replace("-","_")%}
+{% require_js %}
+<script>
+  var config_{{gtename}} = {
+    {% if module.module_settings.slider_options.loop %}
+    type:'carousel',
+    {% endif %}
+    {% if not module.module_settings.slider_options.loop %}
+    rewind: false,
+    {% endif %}
+    perView:1,
+    perTouch:1,
+    gap:0,
+    {% if module.module_settings.slider_options.autoplay %}
+    autoplay: {{ module.module_settings.slider_options.autoplay_speed * 1000 }}
+    {% endif %}
+  }
+
+    var glide = new Glide(".{{name}}.testimonials_sliderv2 .glide",config_{{gtename}})
+    glide.mount()
+
+
+</script>
+{% end_require_js %}

@@ -1,0 +1,9 @@
+{
+  "type": "theme",
+  "uid": "custom-pro-theme",
+  "label": "Custom Pro Theme",
+  "config": {
+    "themePath": "./",
+    "secretNames": []
+  }
+}

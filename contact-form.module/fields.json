@@ -1,0 +1,115 @@
+[ {
+  "id" : "form_title",
+  "name" : "form_title",
+  "label" : "Form Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Get in Touch"
+}, {
+  "id" : "form_subtitle",
+  "name" : "form_subtitle",
+  "label" : "Form Subtitle",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Fill out the form below and we'll get back to you shortly."
+}, {
+  "id" : "form_selector",
+  "name" : "form_selector",
+  "label" : "Select Form",
+  "help_text" : "Choose the HubSpot form to embed in this module",
+  "required" : true,
+  "locked" : false,
+  "embed_versions" : [ "v2", "v4" ],
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : null,
+    "redirect_url" : null,
+    "redirect_id" : null,
+    "gotowebinar_webinar_key" : null,
+    "form_type" : null,
+    "follow_up_type_simple" : null,
+    "webinar_id" : null,
+    "webinar_source" : null,
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form."
+  }
+}, {
+  "id" : "show_labels",
+  "name" : "show_labels",
+  "label" : "Show Field Labels",
+  "help_text" : "Display labels above form fields",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "column_layout",
+  "name" : "column_layout",
+  "label" : "Column Layout",
+  "help_text" : "Choose between single or two-column layout for form fields",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "1", "Single Column" ], [ "2", "Two Columns" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "1"
+}, {
+  "id" : "thank_you_message",
+  "name" : "thank_you_message",
+  "label" : "Thank You Message",
+  "help_text" : "Custom message displayed after form submission",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h3>Thank you for your submission!</h3><p>We'll be in touch soon.</p>"
+}, {
+  "id" : "background_color",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#ffffff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "text_color",
+  "name" : "text_color",
+  "label" : "Text Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#333333",
+    "opacity" : 100
+  }
+}, {
+  "id" : "button_color",
+  "name" : "button_color",
+  "label" : "Submit Button Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#ff7a59",
+    "opacity" : 100
+  }
+} ]

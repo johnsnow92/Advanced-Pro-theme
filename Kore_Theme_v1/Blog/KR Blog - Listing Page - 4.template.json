@@ -1,0 +1,157 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 6,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  }, {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kr-blog-listing-page-4.css"
+  } ],
+  "attachedJs" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/JS/kore-blog-listing-4.js"
+  }, {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/JS/kore-match-height.js"
+  } ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "blog-page {% if simple_list_page %}all-listing{% endif %} ",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : {
+          "css_class" : "",
+          "cells" : [ ],
+          "css_style" : "",
+          "root" : false,
+          "row" : false,
+          "starting_html" : "",
+          "cell" : false,
+          "css_id" : "",
+          "css_id_str" : "",
+          "ending_html" : ""
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_157348264692040",
+        "label" : "Listing Top Section",
+        "type" : "custom_widget",
+        "params" : {
+          "css_style" : "",
+          "template_to_edit" : "listing",
+          "css_id" : "",
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "@hubspot/blog_content",
+          "per_widget_wrapper_html" : "",
+          "blog_listing_source" : "<div class=\"listing-featured-section\">\n  <div class=\"max1080\">\n    <div class=\"featured-section-wrapper\">\n      <div class=\"top-section clearfix\">\n        <h1>The Commitment Matter Blog</h1>\n        <div class=\"listing-search-sec\">\n          <form action=\"/{{ site_settings.content_search_results_page_path }}\" class=\"clearfix\">\n            <input class=\"search\" type=\"search\" name=\"term\" placeholder=\"Search Articles...\">\n            <input class=\"search_btn\" type=\"submit\" value=\" \">\n          </form>\n        </div>\n      </div>\n      \n      {% set rec_posts = blog_recent_posts('{{ group.id }}', 1) %}\n      {% for rec_post in rec_posts %}\n      <div class=\"top-featured-post clearfix\">\n        <div class=\"col-float top-post mheight\" style=\"background-image: url('{{ rec_post.post_list_summary_featured_image }}');\">\n          <div class=\"post-date\">\n            <div class=\"month\"></div>{{ rec_post.publish_date|datetimeformat('%B') }} \n            <div class=\"day\">{{ rec_post.publish_date|datetimeformat('%e') }}</div>\n            <div class=\"year\">{{ rec_post.publish_date|datetimeformat('%Y') }}</div>\n          </div>\n        </div>\n        <div class=\"col-float top-post-body mheight\">\n          {% if rec_post.topic_list %}\n          <div id=\"topic-items\">\n            {% for topic in rec_post.topic_list %}\n            <a class=\"topic-item\" href=\"{{ blog_tag_url(group.id, topic.slug) }}\">{{ topic.name }}</a>\n            {% endfor %}\n          </div>\n          {% endif %}\n          <h2>{{ rec_post.name }}</h2>\n          <div class=\"preview-text\">{{ rec_post.post_list_content|safe|striptags  }}</div>\n          <a class=\"more-link\" href=\"{{ rec_post.absolute_url }}\">Read More</a>\n        </div>\n      </div>\n      {% endfor %}\n      \n    </div>\n  </div>\n</div>",
+          "wrapping_html" : "",
+          "blog_post_source" : "",
+          "widget_name" : "Blog Content",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1573215363911151",
+        "label" : "Main Listing",
+        "type" : "custom_widget",
+        "params" : {
+          "css_style" : "",
+          "template_to_edit" : "listing",
+          "css_id" : "",
+          "css_class" : "main-listing-sec",
+          "schema_version" : 2,
+          "path" : "@hubspot/blog_content",
+          "per_widget_wrapper_html" : "",
+          "blog_listing_source" : "<div class=\"body-listing-section\">\n  <div class=\"all-topics\">\n    <div class=\"max1080\">\n      {% set tag_lists = blog_tags('{{ group.id }}', 250) %}\n      <div class=\"tag_lists\">\n        <a class=\"all-posts-link\" href=\"{{ blog_all_posts_url(group.id) }}\">All</a>\n        {% for item in tag_lists %}\n        <a href=\"{{ blog_tag_url(group.id, item.slug) }}\">{{ item }}</a>\n        {% endfor %}\n      </div>\n    </div>\n  </div>\n  <div class=\"post-listing-wrapper\">\n    <div class=\"max1080\">\n      <div class=\"post-listing clearfix\">\n        {% for content in contents %}\n        <div class=\"post-item\">\n          <div class=\"post-inner\">  \n            <div class=\"inner\">\n              {% if not simple_list_page %}\n              <div class=\"post-featured-img\" style=\"background-image: url('{{ content.post_list_summary_featured_image }}');\">\n                <div class=\"post-date\">\n                  <div class=\"month\">{{ content.publish_date|datetimeformat('%B') }}</div>\n                  <div class=\"day\">{{ content.publish_date|datetimeformat('%e') }}</div>\n                  <div class=\"year\">{{ content.publish_date|datetimeformat('%Y') }}</div>\n                </div>\n                <a href=\"{{ content.absolute_url }}\" class=\"a-link\"></a>\n              </div>\n              <div class=\"post-body\">                \n                {% if content.topic_list %}\n                <div id=\"topic-items\">\n                  {% for topic in content.topic_list %}\n                  <a class=\"topic-item\" href=\"{{ blog_tag_url(group.id, topic.slug) }}\">{{ topic.name }}</a>\n                  {% endfor %}\n                </div>\n                {% endif %}\n                <h3><a href=\"{{ content.absolute_url }}\">{{ content.name }}</a></h3>\n                <div class=\"preview-text\">{{ content.post_list_content|safe|striptags  }}</div>\n              </div>                \n              {% else %}\n\n              <!-- All Listing -->          \n              <div class=\"post-featured-img\" style=\"background-image: url('{{ content.post_list_summary_featured_image }}');\">\n                <div class=\"post-date\">\n                  <div class=\"month\">{{ content.publish_date|datetimeformat('%B') }}</div>\n                  <div class=\"day\">{{ content.publish_date|datetimeformat('%e') }}</div>\n                  <div class=\"year\">{{ content.publish_date|datetimeformat('%Y') }}</div>\n                </div>\n                <a href=\"{{ content.absolute_url }}\" class=\"a-link\"></a>\n              </div>\n              <div class=\"post-body\">                \n                {% if content.topic_list %}\n                <div id=\"topic-items\">\n                  {% for topic in content.topic_list %}\n                  <a class=\"topic-item\" href=\"{{ blog_tag_url(group.id, topic.slug) }}\">{{ topic.name }}</a>\n                  {% endfor %}\n                </div>\n                {% endif %}\n                <h3><a href=\"{{ content.absolute_url }}\">{{ content.name }}</a></h3>\n                <div class=\"preview-text\">{{ content.post_list_content|safe|striptags  }}</div>\n              </div> \n              {% endif %}\n            </div>\n          </div>                     \n        </div>\n\n        {% if loop.index == 3 %}\n        {% module \"module_form_subscribe\" path=\"/August_2019/Custom Modules/Blog - Subscribe Form\", label=\"Blog - Subscribe Form\", no_wrapper=True %}\n        {% endif %}\n        {% if loop.index == 6 %}\n        {% module \"module_cta_section\" path=\"/August_2019/Custom Modules/Blog - Listing CTA Section\", label=\"Blog - Listing CTA Section\", no_wrapper=True %}\n        {% endif %}\n\n        {% endfor %}\n      </div>\n\n      <!-- Pagination -->\n      <div class=\"pagination-section\">\n        <div class=\"btn-sec btn-loadmore\">More recent articles</div> <a class=\"btn-sec view-all\" href=\"{{ blog_all_posts_url(group.id) }}\">View all articles</a>\n      </div>\n    </div>\n  </div>\n</div>\n\n\n",
+          "wrapping_html" : "",
+          "blog_post_source" : "",
+          "widget_name" : "Blog Content",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "main-listing-sec",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : {
+          "css_class" : "",
+          "cells" : [ ],
+          "css_style" : "",
+          "root" : false,
+          "row" : false,
+          "starting_html" : "",
+          "cell" : false,
+          "css_id" : "",
+          "css_id_str" : "",
+          "ending_html" : ""
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

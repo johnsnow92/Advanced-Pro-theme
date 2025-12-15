@@ -1,0 +1,330 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 4,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161768163853137",
+        "label" : "Flexible column",
+        "type" : "widget_container",
+        "params" : {
+          "css_class" : "",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_161768166840339",
+          "label" : "KR - Hero Two Column 1",
+          "type" : "custom_widget",
+          "params" : {
+            "testimonial" : {
+              "title" : "Snowy Savannah",
+              "sub_title" : "CEO of Awesomeness"
+            },
+            "section_settings" : {
+              "section_background_type" : "4"
+            },
+            "heading" : {
+              "text" : "Book a 45 Minute Discovery Session",
+              "font_size" : 50,
+              "type" : "h1"
+            },
+            "css_style" : "",
+            "tag_line" : "",
+            "css_id" : "",
+            "content" : "<p><strong>In the 45 minutes, we will:<br></strong></p>\n<ul role=\"list\">\n<li>Start with identifying your problems and getting to know your business / organisation.</li>\n<li>Review your resourcing to make sure you have the right skills and breadth to succeed.</li>\n<li>Assess your goals and timeframes - are they realistic?</li>\n<li>Review your current technology stack - good, bad, legacy?</li>\n<li>Discuss industry specific trends and strategy.</li>\n</ul>",
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Hero Two Column 1",
+            "per_widget_wrapper_html" : "",
+            "testimonial_show_hide" : true,
+            "header_show_hide" : true,
+            "wrapping_html" : "",
+            "widget_name" : "KR - Hero Two Column 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_161768168954743",
+          "label" : "KR - Logo Strip",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Logo Strip",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Logo Strip",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_161768167951841",
+          "label" : "KR - Content Two Column 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Content Two Column 1",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "column" : [ {
+              "button" : {
+                "cta" : "c48b6ac5-5f8a-41c6-9d02-bd62fda93d19",
+                "cta_background_color" : {
+                  "opacity" : 100
+                },
+                "cta_background_color_hover" : {
+                  "opacity" : 100
+                },
+                "text" : "BUTTON TEXT",
+                "type" : "simple",
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "column_inner" : false,
+              "column_inner_item" : [ {
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+                "font_weight" : "font-weight-400",
+                "title" : "Heading",
+                "type" : "h3"
+              }, {
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+                "font_weight" : "font-weight-400",
+                "title" : "Heading",
+                "type" : "h3"
+              }, {
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+                "font_weight" : "font-weight-400",
+                "title" : "Heading",
+                "type" : "h3"
+              }, {
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+                "font_weight" : "font-weight-400",
+                "title" : "Heading",
+                "type" : "h3"
+              } ],
+              "description" : "<p><strong>Use this area to go into detail about your offer. Get to the point fast and keep it impactful!<br></strong><span><br></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Conros elementum tristiqectetur adipiscing elit.</p>\n<ul>\n<li><strong>List the benefits of your offer.</strong></li>\n<li><strong>Or list the PAINS your offer solves for the visitor.</strong></li>\n<li><strong>Keep it impactful</strong></li>\n</ul>",
+              "element" : "image",
+              "heading" : {
+                "font_color" : {
+                  "opacity" : 100
+                },
+                "font_size" : 32,
+                "font_weight" : "font-weight-700",
+                "text" : "Add a Value Proposition or The Benefits of Your Offer",
+                "type" : "h2"
+              },
+              "image" : {
+                "image" : {
+                  "alt" : "pexels-photo-326505",
+                  "height" : 1063,
+                  "max_height" : 1063,
+                  "max_width" : 1920,
+                  "size_type" : "auto",
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/pexels-photo-326505.jpeg",
+                  "width" : 1920
+                },
+                "type" : "background",
+                "is_rounded_circle" : true
+              },
+              "tag_line" : "MORE INFO",
+              "type" : "left-image",
+              "video" : "<div class=\"hs-responsive-embed-wrapper hs-responsive-embed\" style=\"width: 100%; height: auto; position: relative; overflow: hidden; padding: 0; max-width: 560px; max-height: 315px; min-width: 256px; margin: 0px auto; display: block;\">\n<div class=\"hs-responsive-embed-inner-wrapper\" style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0;\"><iframe class=\"hs-responsive-embed-iframe\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\" xml=\"lang\" src=\"//www.youtube.com/embed/-nWbTB_4E9w\" width=\"560\" height=\"315\" data-service=\"youtube\" allowfullscreen=\"1\"></iframe></div>\n</div>"
+            } ],
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Content Two Column 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_161768171237847",
+          "label" : "KR - Rich Text 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_style" : "",
+            "css_id" : "",
+            "content" : "<div class=\"hs-embed-wrapper\" data-service=\"youtube\" data-responsive=\"true\" style=\"position: relative; overflow: hidden; width: 100%; height: auto; padding: 0; max-width: 200px; max-height: 113px; min-width: 256px; display: block; margin: auto;\"><div class=\"hs-embed-content-wrapper\"><div style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.5%; margin: 0px;\"><iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/DMmd2kzN1-Y?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\" style=\"position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;\"></iframe></div></div></div>",
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text 1",
+            "per_widget_wrapper_html" : "",
+            "sub_heading" : "<p><span>All customers love guarantees, regardless of what it is or how it’s presented. It can help people feel reassured while on your landing page.</span></p>",
+            "tagline" : "ABOUT US",
+            "wrapping_html" : "",
+            "widget_name" : "KR - Rich Text 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_161768172326049",
+          "label" : "KR - CTA 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - CTA 1",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - CTA 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617683170303684",
+          "label" : "KR Nav - Footer LP 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR Nav - Footer LP 1",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR Nav - Footer LP 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        } ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

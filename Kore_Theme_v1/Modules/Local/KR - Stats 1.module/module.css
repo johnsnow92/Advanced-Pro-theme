@@ -1,0 +1,34 @@
+.kore-lp-stats {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-lp-stats .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-lp-stats .page-width.text-center {
+  text-align: center;
+}
+
+.kore-lp-stats .icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.kore-lp-stats .icon svg {
+  width: 25px;
+}
+
+.kore-lp-stats .list-inline-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.kore-module .list-inline {
+  max-width: 750px;
+  margin: 00 auto;
+}

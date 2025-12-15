@@ -1,0 +1,33 @@
+<div class="image-text-module image-position-{{ module.image_position }}">
+  <div class="image-text-container">
+    {% if module.image.src %}
+    <div class="image-text-image">
+      <img src="{{ module.image.src }}"
+           alt="{{ module.image.alt }}"
+           loading="lazy">
+    </div>
+    {% endif %}
+
+    <div class="image-text-content">
+      {% if module.heading %}
+      <h2 class="image-text-heading">{{ module.heading }}</h2>
+      {% endif %}
+
+      {% if module.body_text %}
+      <div class="image-text-body">
+        {{ module.body_text }}
+      </div>
+      {% endif %}
+
+      {% if module.button_text and module.button_link.href %}
+      <div class="image-text-button-wrapper">
+        <a href="{{ module.button_link.href }}"
+           class="image-text-button"
+           {% if module.button_link.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}>
+          {{ module.button_text }}
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

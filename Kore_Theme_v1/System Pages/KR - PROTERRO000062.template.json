@@ -1,0 +1,126 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 11,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1617778355876457",
+        "label" : "KR - Rich Text 1",
+        "type" : "custom_widget",
+        "params" : {
+          "section_settings" : {
+            "section_text_alignment" : "text-left",
+            "section_background_type" : "1",
+            "section_background_image" : {
+              "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/error-bg-1.png",
+              "alt" : "error-bg-1",
+              "width" : 1490,
+              "height" : 1136
+            },
+            "section_background_image_overlay" : {
+              "color" : "#272727",
+              "opacity" : 0
+            },
+            "section_padding_desktop" : {
+              "top" : 120,
+              "bottom" : 120
+            },
+            "section_padding_tablet" : {
+              "top" : 100,
+              "bottom" : 100
+            },
+            "section_padding_mobile" : {
+              "top" : 80,
+              "bottom" : 80
+            }
+          },
+          "heading" : {
+            "text" : "Page not found",
+            "type" : "h1",
+            "font_size" : 40,
+            "font_weight" : ""
+          },
+          "css_style" : "",
+          "css_id" : "",
+          "content" : "<p>We’re sorry, the page you’re looking for can’t be found. It may have been moved or deleted, or the web address may be incorrect.You can try:</p>\n<ul role=\"list\">\n<li>Typing the address again</li>\n<li>Searching our<span>&nbsp;</span>Insights<span>&nbsp;</span>page</li>\n<li>Returning to the<span>&nbsp;</span><a href=\"#test\" rel=\"noopener\">Home<span>&nbsp;</span></a>page</li>\n</ul>\n<p>If you are still unable to find the page you were looking for, please<span>&nbsp;</span><a href=\"https://turtons.webflow.io/error-404#\">contact<span>&nbsp;</span></a>us.</p>",
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text 1",
+          "per_widget_wrapper_html" : "",
+          "tagline" : "",
+          "wrapping_html" : "",
+          "widget_name" : "KR - Rich Text 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

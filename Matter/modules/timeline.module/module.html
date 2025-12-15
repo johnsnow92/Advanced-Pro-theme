@@ -1,0 +1,126 @@
+
+{% import "../../macros/_macros.html" as macros %}
+<div class="cm_tmw {{name}} dnd_padd {{ module.module_settings.number_of_columns }}_row {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }}" {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+  <div class="page-center {{ module.style.container.select_size }}">
+    <div class="cm_tmw_inner">
+      <div class="cm_tmw_head">
+        {{ macros.topContent(module.top_content, module.module_settings) }}
+      </div>
+      <div class="cm_tmw_out">
+        {% if module.feature_items|length > 0 %}
+        <div class="cm_tmw_line {{ module.module_settings.select_divider_color }}">
+        </div>
+        {% endif %} 
+        <div class="cm_tmw__index flex_row {{ module.module_settings.icon_position }} {{ module.module_settings.content_alignment }} {{ module.style.card_group.icon_size }}_icon">
+          {% for item in module.feature_items %}
+          <div class="cm_tmw_item ic_ty_{{ item.select_icon_type }} {{ module.module_settings.number_of_columns }} num{{loop.index}}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 100}}" {% endif %}>
+            <div class="cm_tmw_col {{ module.style.card_group.select_background_theme }} {% if module.module_settings.select_divider_color=='bg_primary' %} primary {% endif %}{% if module.module_settings.select_divider_color=='bg_secondary' %} secondary {% endif %}">
+              <div class="cm_tmw_bullet {% if item.icon_color != "custom" %}{{ item.icon_color }}{% endif %}" >
+                <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="13.5" cy="13.5" r="13"/>
+                  <circle cx="13.5" cy="13.5" r="7.5" class="hs_circle {{ module.module_settings.select_divider_color }}" /> </svg>
+              </div> 
+              {% if item.select_icon_type %}
+              {% if item.select_icon_type == "image" %}
+              {% if item.image_field.src %}
+              <div class="img-wrap">
+                {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+                <img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} >
+              </div>
+              {% endif %}
+
+              {% elif item.select_icon_type == "icon" %}
+              {% if item.icon_field.name %}
+              <div class="icon-wrap {% if item.icon_color != "custom" %}{{ item.icon_color }}{% endif %}">
+                {% icon
+		name="{{ item.icon_field.name }}"
+		style="{{ item.icon_field.type }}"
+		unicode="{{ item.icon_field.unicode }}"
+		icon_set="{{ item.icon_field.icon_set }}"
+	%}
+              </div>
+              {% endif %}
+              {% endif %}
+              {% endif %}
+              <div class="cm_tmw_content hs_small_btn {% if not item.select_icon_type %}fullcontent{% endif %}">
+                {{ item.description }}
+                <div class="btn-wrap">
+                  {{ macros.buttonWithPopupGroup(item.button_group,false ,'parent_index'~loop.index) }}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% if module.button_group %}
+      <div class="btn-wrap btm_btn" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+        {{ macros.buttonWithPopupGroup(module.button_group, false, 'bottom_sec') }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+  {% for item in module.feature_items %}
+  {{ macros.buttonWithPopupGroup(item.button_group,true ,'parent_index'~loop.index) }}
+  {% endfor %}
+
+  {{ macros.buttonWithPopupGroup(module.button_group, true, 'bottom_sec') }}
+</div>
+
+
+
+{% require_css %}
+<style>
+  {% if module.module_settings.select_divider_color == 'custom'%}
+  .cm_tmw.{{name}} .cm_tmw_line{
+    background-color:{{ macros.color(module.module_settings.color) }};
+  }
+  .cm_tmw.{{name}}  .cm_tmw_bullet svg{
+    color:{{ macros.color(module.module_settings.color) }};
+  }
+  .cm_tmw.{{name}}  circle.hs_circle.custom {
+    fill:{{ macros.color(module.module_settings.color) }};
+  }
+  {% endif %}
+  .cm_tmw.{{name}}  .cm_tmw_col {
+    {{ module.style.card_group.spacing.css }}
+  }
+  {% for item in module.feature_items %}
+  {% if item.icon_color == "custom" %}
+  .cm_tmw.{{name}} .cm_tmw_item  .num{{loop.index}}  circle.hs_circle,
+  .cm_tmw.{{name}} .cm_tmw_item .num{{loop.index}} .icon-wrap  svg{
+    fill: rgba({{ item.color_field.color|convert_rgb }},{{ item.color_field.opacity/100 }})
+  }
+  {% endif %}
+  {% endfor %}
+
+  {% if  module.style.card_group.select_background_theme =='custom'  %}
+  .cm_tmw.{{name}} .cm_tmw_col{
+    background-color:{{ macros.color(module.style.card_group.background_color) }};
+  }
+  {% endif %}
+  {% if  module.style.card_group.select_color_theme =='custom'  %}
+  .cm_tmw.{{name}} .cm_tmw_content *:not(a[class]):not(input){
+    color:{{ macros.color(module.style.card_group.text_color) }};
+  }
+  {% endif %} 
+
+  {% for item in module.feature_items %}
+  {% if item.icon_color  == "custom"%}
+  .cm_tmw.{{name}} .cm_tmw_item.num{{loop.index}}  .icon-wrap svg path,
+  .cm_tmw.{{name}} .cm_tmw_item.num{{loop.index}}  .icon-wrap svg{
+    fill: {{macros.color(item.color_field)}}
+  }
+  {% endif %} 
+  {% endfor %}
+
+</style>
+{% end_require_css %}
+
+
+

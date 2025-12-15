@@ -1,0 +1,90 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<section class="case-study case-insight">
+  <div class="container">
+    <h2>
+      {{ module.main_heading }}
+    </h2>
+
+    <div class="main-blog">
+
+      {% for item in module.post_group %}
+      <div class="blog-1">
+        <div class="blog-img">
+         	{% if item.post_image.src %}
+		{% set sizeAttrs = 'width="{{ item.post_image.width|escape_attr }}" height="{{ item.post_image.height|escape_attr }}"' %}
+		{% if item.post_image.size_type == 'auto' %}
+			{% set sizeAttrs = 'width="{{ item.post_image.width|escape_attr }}" height="{{ item.post_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+		{% elif item.post_image.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ item.post_image.max_width|escape_attr }}" height="{{ item.post_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+		{% endif %}
+		 {% set loadingAttr = item.post_image.loading != 'disabled' ? 'loading="{{ item.post_image.loading|escape_attr }}"' : '' %}
+		<img src="{{ item.post_image.src|escape_url }}" alt="{{ item.post_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+	{% endif %}        
+        </div>
+        <div class="blog-content">
+          <div class="b-name">
+            <div class="b-img">
+           	{% if item.author_image.src %}
+		{% set sizeAttrs = 'width="{{ item.author_image.width|escape_attr }}" height="{{ item.author_image.height|escape_attr }}"' %}
+		{% if item.author_image.size_type == 'auto' %}
+			{% set sizeAttrs = 'width="{{ item.author_image.width|escape_attr }}" height="{{ item.author_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+		{% elif item.author_image.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ item.author_image.max_width|escape_attr }}" height="{{ item.author_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+		{% endif %}
+		 {% set loadingAttr = item.author_image.loading != 'disabled' ? 'loading="{{ item.author_image.loading|escape_attr }}"' : '' %}
+		<img src="{{ item.author_image.src|escape_url }}" alt="{{ item.author_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+	{% endif %}
+
+              <div class="blog-head">
+                <h5>
+                  <a href="">
+                   {{ item.author_name }}
+                  </a>
+                </h5>
+                <div class="date"> {{ item.post_date }} </div>
+              </div>
+            </div>
+         	{% if item.dot_image.src %}
+		{% set sizeAttrs = 'width="{{ item.dot_image.width|escape_attr }}" height="{{ item.dot_image.height|escape_attr }}"' %}
+		{% if item.dot_image.size_type == 'auto' %}
+			{% set sizeAttrs = 'width="{{ item.dot_image.width|escape_attr }}" height="{{ item.dot_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+		{% elif item.dot_image.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ item.dot_image.max_width|escape_attr }}" height="{{ item.dot_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+		{% endif %}
+		 {% set loadingAttr = item.dot_image.loading != 'disabled' ? 'loading="{{ item.dot_image.loading|escape_attr }}"' : '' %}
+		<img src="{{ item.dot_image.src|escape_url }}" alt="{{ item.dot_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+	{% endif %}
+          </div>
+
+          <div class="a-heading">
+            <a href="" class="truncate">
+              {{ item.post_heading }}
+            </a>
+          </div>
+
+         {{ item.post_detail }}     
+
+          <div class="blog-icon">
+            <div class="left-icon">
+              <div>
+                <i class="fa-regular fa-eye"></i>{{ item.txt }}
+              </div>
+
+              <div>
+                <i class="fa-regular fa-comment"></i>{{ item.text }}
+              </div>
+
+            </div>
+            <div class="right-icon"><i class="fa-regular fa-heart"></i></div>
+          </div>
+          
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,19 @@
+<div class="accordion-menu">
+  {% for item in module.menu_items %}
+  <div class="accordion-menu__item">
+    <button class="accordion-menu__trigger" aria-expanded="false">
+      {{ item.title }}
+      <span class="accordion-menu__icon">▼</span>
+    </button>
+    {% if item.submenu %}
+    <div class="accordion-menu__content">
+      <ul class="accordion-menu__submenu">
+        {% for subitem in item.submenu %}
+        <li><a href="{{ subitem.url }}">{{ subitem.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>

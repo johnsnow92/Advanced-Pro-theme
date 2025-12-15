@@ -1,0 +1,15 @@
+<div class="custom-equipment">
+  <div class="cm-left">
+    <a href="{{ module.image_field.src }}" class="lightbox_image">
+      <span class="image_wrap">
+        <span class="et_overlay"></span>
+        <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" >
+      </span>
+    </a>
+  </div>
+  <div class="cm-right {% if module.include_top_border %}top-border{% endif %}">
+    <h2>{{ module.heading }}</h2>
+  </div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>

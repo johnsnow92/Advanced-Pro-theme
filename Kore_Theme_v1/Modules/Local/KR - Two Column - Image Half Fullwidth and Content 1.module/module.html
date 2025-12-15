@@ -1,0 +1,188 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+{% require_css %}
+<style type="text/css">
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+
+  .{{ name }} .tagline {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .sub-heading,
+  .{{ name }} .sub-heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .content,
+  .{{ name }} .content * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .content a {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .content a:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+
+  .{{ name }} #cta .kore-button,
+  .{{ name }} .kore-button,
+  .{{ name }} .simple a {
+    background-color: {{ module.button.button_background_color.color }} !important;
+    {% if module.button.button_background_color.color %}
+    background-image: none !important;
+    border: 1px solid {{ module.button.button_background_color.color }} !important;
+    {% endif %}
+    color: {{ module.button.button_text_color.color }} !important;
+  }
+
+  .{{ name }} #cta .kore-button:hover,
+  .{{ name }} .kore-button:hover,
+  .{{ name }} .simple a:hover {
+    background-color: {{ module.button.button_color_hover.color }} !important;
+    {% if module.button.button_color_hover.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ module.button.button_text_color_hover.color }} !important;
+  }
+
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+
+  .{{ name }} .heading span{
+    color: {{ module.heading.highlighted_text_color.color }};
+  }
+  .{{ name }} .tagline{
+    color: {{ module.tagline_color.color }};
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+{% end_require_css %}
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} btm-col2-img-content-1 clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-widthx {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktopx section-padding-tabletx section-padding-mobilex{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+
+      <div class="col2-img-content-flex">
+        <div class="col2-img-wrap" style="background-image: url('{{ module.image.src }}');"></div>
+        <div class="col2-content-wrap">
+          <div class="col2-content-mw">
+
+            <div class="c2c-copy">
+              {% if module.heading.text %}
+              {% if module.heading.type == "h1" %} 
+              <div class="heading mb-25">
+                <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                  {{ module.heading.text }}
+                </h1>
+              </div>
+              {% elif module.heading.type == "h2" %}
+              <div class="heading mb-25">
+                <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                  {{ module.heading.text }}
+                </h2>
+              </div>
+              {% elif module.heading.type == "h3" %}
+              <div class="heading mb-25">
+                <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                  {{ module.heading.text }}
+                </h3>
+              </div>
+              {% elif module.heading.type == "h4" %}
+              <div class="heading mb-25">
+                <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                  {{ module.heading.text }}
+                </h4>
+              </div>
+              {% elif module.heading.type == "h5" %}
+              <div class="heading mb-25">
+                <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                  {{ module.heading.text }}
+                </h5>
+              </div>
+              {% elif module.heading.type == "h6" %}
+              <div class="heading mb-25">
+                <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                  {{ module.heading.text }}
+                </h6>
+              </div>
+              {% endif %}
+              {% endif %}
+
+              {% if module.content %}
+              <div class="content parent font-size-16" id="cta">
+                {{ module.content }}
+              </div>
+              {% endif %}
+            </div>
+
+            <div class="c2c-lists">
+              {% for item in module.items %}
+              <div class="c2c-item">
+                <div class="c2c-item-desc">
+                  {{ item.content }}
+                </div>
+                <div class="c2c-num">
+                  {{ loop.index }}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+            
+            <div class="c2c-social-links">
+              {% for item in module.social_links %}
+              <a href="{{ item.url.href }}"><img src="{{ item.image.src }}" alt="{{ item.image.alt }}" loading="lazy"></a>
+              {% endfor %}
+            </div>
+            
+          </div>
+        <img src="https://22325314.fs1.hubspotusercontent-na1.net/hubfs/22325314/img-curve-arrow-down-1.png" alt="Curve Arrow" class="img-curve-arrow">
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% endif %}

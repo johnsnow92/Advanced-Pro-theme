@@ -1,0 +1,148 @@
+<!--
+templateType: blog_listing
+isAvailableForNewContent: true
+label: Blog Listing
+screenshotPath: ../images/template-previews/blog-index-page.jpg
+-->
+{% extends './layouts/base.html' %}
+
+{% block template_stylesheets %}
+<link type="text/css" rel="stylesheet" href="{{ get_asset_url('../css/templates/_blog.css') }}">
+{% endblock template_stylesheets %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper blog-index-layout">
+  <div class="body-container body-container--blog-index without-sidebar">
+
+    {# Blog Header #}
+    {% dnd_area 'dnd_area__header'
+			label='Header Section' 
+      class="top-dnd-area"
+		%}
+    <!-- Banner Start -->
+    {% dnd_section
+  full_width=true
+%}
+    {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+    {% dnd_module
+        path="../modules/banner",
+        offset=0,
+        width=12,
+        background_options={
+          "background_image" : {
+            "alt" : group.public_title,
+            "src" : get_asset_url('../images/blog-listing.jpg')
+          },
+          "overlay_color" : {
+            "color" : "#026780",
+            "opacity" : 50
+          },
+          "select_background_type" : "image"
+        },
+           include_breadcrumb=true
+      %}
+    {% module_attribute "banner_content" %}
+    <h1>{{group.public_title}}</h1>
+    <p>{{ group.description }}</p>
+    {% end_module_attribute %}
+    {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {% end_dnd_area %}
+    {# End Blog Header #}
+
+    {# Blog listing section #}
+    {% dnd_area 'dnd_area_blog'
+						label='Main Content'
+                class="main-dnd-area"
+					%}
+
+    {% dnd_section
+            padding={
+            "default":{
+              "bottom":"0"
+            }
+            }
+          %}
+    {% dnd_column
+                          padding={
+            "default":{
+              "left":"0",
+              "right":"0"
+            }
+            }
+              %}
+    {% dnd_row %}
+    {% dnd_module path='../modules/blog-listings' %}
+    {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {% end_dnd_area %}
+    {# End blog listing section #}
+
+    {# Blog Subscription #}
+    {% dnd_area 'dnd_area_subscription'
+					label='Bottom Content'
+              class="bottom-dnd-area"
+				%}
+
+    {# Blog Feed #}
+
+    {% dnd_section
+  full_width=true
+%}
+    {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+    {% dnd_module
+        path="../modules/blog-feed",
+        offset=0,
+        width=12,
+        button_group=[ ],
+        feed_group={
+          "number_of_posts" : 3,
+          "select_blog" : group.id,
+          "select_feed_type" : "popular_posts"
+        },
+        feed_settings={
+          "read_more" : false,
+          "select_blog_theme" : "theme2",
+          "select_icon_color_theme": "custom",
+          "tags" : false
+        },
+        style={
+          "card" : {
+            "select_title_type" : "h4"
+          }
+        },
+        top_content={
+          "button_group" : [ ],
+          "title" : "Popular Posts"
+        }
+      %}
+    {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% end_dnd_section %}
+
+    {# Blog Feed End #}
+
+    {% include_dnd_partial path="../sections/bottom-pane-section.html" %} 
+
+    {% end_dnd_area %}
+    {# End Blog Subscription #}
+
+  </div>
+</main>
+{% endblock body %}

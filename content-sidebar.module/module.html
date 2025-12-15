@@ -1,0 +1,90 @@
+{% set sidebar_class = "sidebar-" ~ module.sidebar_position %}
+
+<div class="content-sidebar-wrapper {{ sidebar_class }}">
+  <div class="content-sidebar-container">
+
+    {% if module.sidebar_position == "left" %}
+      {# Sidebar on left #}
+      <aside class="sidebar sidebar-left">
+        {% for item in module.sidebar_items %}
+          <div class="sidebar-item sidebar-item-{{ item.item_type }}">
+            {% if item.item_title %}
+              <h3 class="sidebar-item-title">{{ item.item_title }}</h3>
+            {% endif %}
+
+            {% if item.item_type == "text" %}
+              <div class="sidebar-item-content">
+                {{ item.item_text_content }}
+              </div>
+
+            {% elif item.item_type == "image" %}
+              {% if item.item_image.src %}
+                <div class="sidebar-item-image">
+                  <img src="{{ item.item_image.src }}"
+                       alt="{{ item.item_image.alt }}"
+                       loading="lazy">
+                </div>
+              {% endif %}
+
+            {% elif item.item_type == "cta" %}
+              <div class="sidebar-item-cta">
+                <a href="{{ item.cta_url.url }}"
+                   class="cta-button"
+                   {% if item.cta_url.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+                   {% if item.cta_url.no_follow %}rel="nofollow"{% endif %}>
+                  {{ item.cta_text }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </aside>
+
+      <main class="main-content">
+        {{ module.main_content }}
+      </main>
+
+    {% else %}
+      {# Sidebar on right (default) #}
+      <main class="main-content">
+        {{ module.main_content }}
+      </main>
+
+      <aside class="sidebar sidebar-right">
+        {% for item in module.sidebar_items %}
+          <div class="sidebar-item sidebar-item-{{ item.item_type }}">
+            {% if item.item_title %}
+              <h3 class="sidebar-item-title">{{ item.item_title }}</h3>
+            {% endif %}
+
+            {% if item.item_type == "text" %}
+              <div class="sidebar-item-content">
+                {{ item.item_text_content }}
+              </div>
+
+            {% elif item.item_type == "image" %}
+              {% if item.item_image.src %}
+                <div class="sidebar-item-image">
+                  <img src="{{ item.item_image.src }}"
+                       alt="{{ item.item_image.alt }}"
+                       loading="lazy">
+                </div>
+              {% endif %}
+
+            {% elif item.item_type == "cta" %}
+              <div class="sidebar-item-cta">
+                <a href="{{ item.cta_url.url }}"
+                   class="cta-button"
+                   {% if item.cta_url.open_in_new_tab %}target="_blank" rel="noopener noreferrer"{% endif %}
+                   {% if item.cta_url.no_follow %}rel="nofollow"{% endif %}>
+                  {{ item.cta_text }}
+                </a>
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </aside>
+    {% endif %}
+
+  </div>
+</div>

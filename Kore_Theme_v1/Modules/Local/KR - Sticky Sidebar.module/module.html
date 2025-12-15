@@ -1,0 +1,50 @@
+{% if module.section_show_hide %}
+<!-- HTML to show when checked -->
+<div class="kr-sticky-sidebar"
+     style="background-color:{{ module.background_color.color }};"
+     >
+  <style>
+    .kr-sticky-sidebar h2, .kr-sticky-sidebar h3,
+    .kr-sticky-sidebar h4, .kr-sticky-sidebar h5,
+    .kr-sticky-sidebar p {
+      color:{{ module.content_color.color }};
+    }
+  </style>
+  {% if module.image_field.src %}
+  {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+  {% if module.image_field.size_type == 'auto' %}
+  {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+  {% elif module.image_field.size_type == 'auto_custom_max' %}
+  {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.image_field.max_width }}px; max-height: {{ module.image_field.max_height }}px"' %}
+  {% endif %}
+  <img src="{{ module.image_field.src }}" class="kr-sts-img"
+       alt="{{ module.image_field.alt }}" {{ sizeAttrs }}>
+  {% endif %}
+  <div class="kr-sts-content">
+    {{ module.richtext_field }}
+    <div class="kr-sts-button">
+      {% set href = module.button.link_field.url.href %}
+      {% if module.button.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+      {% endif %}
+      <a href="{{ href }}"
+         {% if module.button.link_field.open_in_new_tab %}target="_blank"{% endif %}
+         {% if module.button.link_field.no_follow %}rel="nofollow"{% endif %}
+         >
+        {{ module.button.button_text }}
+      </a>
+      <style>
+        .kr-sts-button a{
+          color:{{ module.button.font_color.color }};
+          background:{{ module.button.color_field.color }};
+        }
+        .kr-sts-button a:hover{
+          background:{{ module.button.font_color.color }};
+          color:{{ module.button.color_field.color }};
+          border:1px solid {{ module.button.color_field.color }};
+        }
+      </style>
+    </div>
+  </div>
+</div>
+{% endif %}

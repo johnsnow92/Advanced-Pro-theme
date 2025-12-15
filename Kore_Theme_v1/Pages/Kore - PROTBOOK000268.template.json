@@ -1,0 +1,409 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 4,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161768163853137",
+        "label" : "Flexible column",
+        "type" : "widget_container",
+        "params" : {
+          "css_class" : "",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_16176848874861664",
+          "label" : "KR - Hero Two Column 1",
+          "type" : "custom_widget",
+          "params" : {
+            "testimonial" : {
+              "content_color" : {
+                "opacity" : 100
+              },
+              "sub_title" : "CEO of Awesomeness",
+              "title" : "Snowy Savannah"
+            },
+            "form_settings" : {
+              "type" : "meeting"
+            },
+            "section_settings" : {
+              "section_background_color" : {
+                "color" : "#ffff",
+                "opacity" : 100
+              },
+              "section_background_type" : "3"
+            },
+            "content_link_color" : {
+              "opacity" : 100
+            },
+            "css_style" : "",
+            "content_color" : {
+              "opacity" : 100
+            },
+            "css_id" : "",
+            "social_share" : {
+              "background_color" : {
+                "color" : "#242a39",
+                "opacity" : 100
+              },
+              "border_color" : {
+                "color" : "#242a39",
+                "opacity" : 100
+              },
+              "email" : {
+                "name" : ""
+              },
+              "fb" : {
+                "name" : ""
+              },
+              "icon_color" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "linkedin" : {
+                "name" : ""
+              },
+              "pinterest" : {
+                "name" : ""
+              },
+              "tw" : {
+                "name" : ""
+              }
+            },
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Hero Two Column 1",
+            "per_widget_wrapper_html" : "",
+            "testimonial_show_hide" : true,
+            "header_show_hide" : true,
+            "wrapping_html" : "",
+            "widget_name" : "KR - Hero Two Column 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_16176855604242340",
+          "label" : "KR - Content Two Column 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Content Two Column 1",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "content_color" : {
+              "opacity" : 100
+            },
+            "column" : [ {
+              "type" : "left-image",
+              "tag_line" : "MORE INFO",
+              "heading" : {
+                "text" : "Add a Value Proposition or The Benefits of Your Offer",
+                "type" : "h2",
+                "font_size" : 32,
+                "font_weight" : "font-weight-700",
+                "font_color" : {
+                  "opacity" : 100
+                }
+              },
+              "description" : "<p><strong>Use this area to go into detail about your offer. Get to the point fast and keep it impactful!<br></strong><span><br></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Conros elementum tristiqectetur adipiscing elit.</p>\n<ul>\n<li><strong>List the benefits of your offer.</strong></li>\n<li><strong>Or list the PAINS your offer solves for the visitor.</strong></li>\n<li><strong>Keep it impactful</strong></li>\n</ul>",
+              "column_inner" : false,
+              "column_inner_item" : [ {
+                "title" : "Heading",
+                "type" : "h3",
+                "font_weight" : "font-weight-400",
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+              }, {
+                "title" : "Heading",
+                "type" : "h3",
+                "font_weight" : "font-weight-400",
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+              }, {
+                "title" : "Heading",
+                "type" : "h3",
+                "font_weight" : "font-weight-400",
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+              }, {
+                "title" : "Heading",
+                "type" : "h3",
+                "font_weight" : "font-weight-400",
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+              } ],
+              "button" : {
+                "type" : "simple",
+                "text" : "BUTTON TEXT",
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                },
+                "cta" : "c48b6ac5-5f8a-41c6-9d02-bd62fda93d19",
+                "cta_background_color" : {
+                  "opacity" : 100
+                },
+                "cta_background_color_hover" : {
+                  "opacity" : 100
+                }
+              },
+              "element" : "image",
+              "image" : {
+                "type" : "background",
+                "image" : {
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/pexels-photo-326505.jpeg",
+                  "alt" : "pexels-photo-326505",
+                  "size_type" : "auto",
+                  "width" : 1920,
+                  "height" : 1063,
+                  "max_width" : 1920,
+                  "max_height" : 1063
+                }
+              },
+              "video" : "<div class=\"hs-responsive-embed-wrapper hs-responsive-embed\" style=\"width: 100%; height: auto; position: relative; overflow: hidden; padding: 0; max-width: 560px; max-height: 315px; min-width: 256px; margin: 0px auto; display: block;\">\n<div class=\"hs-responsive-embed-inner-wrapper\" style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0;\"><iframe class=\"hs-responsive-embed-iframe\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\" xml=\"lang\" src=\"//www.youtube.com/embed/-nWbTB_4E9w\" width=\"560\" height=\"315\" data-service=\"youtube\" allowfullscreen=\"1\"></iframe></div>\n</div>"
+            } ],
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Content Two Column 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_16176855944152360",
+          "label" : "KR - Content Two Column 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Content Two Column 1",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "content_color" : {
+              "opacity" : 100
+            },
+            "column" : [ {
+              "type" : "right-image",
+              "tag_line" : "MORE INFO",
+              "heading" : {
+                "text" : "Add a Value Proposition or The Benefits of Your Offer",
+                "type" : "h2",
+                "font_size" : 32,
+                "font_weight" : "font-weight-700",
+                "font_color" : {
+                  "opacity" : 100
+                }
+              },
+              "description" : "<p><strong>Use this area to go into detail about your offer. Get to the point fast and keep it impactful!<br></strong><span><br></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Conros elementum tristiqectetur adipiscing elit.</p>\n<ul>\n<li><strong>List the benefits of your offer.</strong></li>\n<li><strong>Or list the PAINS your offer solves for the visitor.</strong></li>\n<li><strong>Keep it impactful</strong></li>\n</ul>",
+              "column_inner" : false,
+              "column_inner_item" : [ {
+                "title" : "Heading",
+                "type" : "h3",
+                "font_weight" : "font-weight-400",
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+              }, {
+                "title" : "Heading",
+                "type" : "h3",
+                "font_weight" : "font-weight-400",
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+              }, {
+                "title" : "Heading",
+                "type" : "h3",
+                "font_weight" : "font-weight-400",
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+              }, {
+                "title" : "Heading",
+                "type" : "h3",
+                "font_weight" : "font-weight-400",
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+              } ],
+              "button" : {
+                "type" : "simple",
+                "text" : "BUTTON TEXT",
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                },
+                "cta" : "c48b6ac5-5f8a-41c6-9d02-bd62fda93d19",
+                "cta_background_color" : {
+                  "opacity" : 100
+                },
+                "cta_background_color_hover" : {
+                  "opacity" : 100
+                }
+              },
+              "element" : "image",
+              "image" : {
+                "type" : "background",
+                "image" : {
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/pexels-photo-326505.jpeg",
+                  "alt" : "pexels-photo-326505",
+                  "size_type" : "auto",
+                  "width" : 1920,
+                  "height" : 1063,
+                  "max_width" : 1920,
+                  "max_height" : 1063
+                }
+              },
+              "video" : "<div class=\"hs-responsive-embed-wrapper hs-responsive-embed\" style=\"width: 100%; height: auto; position: relative; overflow: hidden; padding: 0; max-width: 560px; max-height: 315px; min-width: 256px; margin: 0px auto; display: block;\">\n<div class=\"hs-responsive-embed-inner-wrapper\" style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0;\"><iframe class=\"hs-responsive-embed-iframe\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\" xml=\"lang\" src=\"//www.youtube.com/embed/-nWbTB_4E9w\" width=\"560\" height=\"315\" data-service=\"youtube\" allowfullscreen=\"1\"></iframe></div>\n</div>"
+            } ],
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Content Two Column 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_16176855717492342",
+          "label" : "KR - Logo Strip",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Logo Strip",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Logo Strip",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_16176856770022368",
+          "label" : "KR Nav - Footer LP 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR Nav - Footer LP 1",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR Nav - Footer LP 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        } ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

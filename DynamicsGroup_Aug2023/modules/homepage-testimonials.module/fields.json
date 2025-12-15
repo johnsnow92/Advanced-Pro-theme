@@ -1,0 +1,78 @@
+[ {
+  "id" : "82088864-d1eb-42ca-7d98-f8b23cb90ef1",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/mechanic-67.png",
+    "alt" : "Testimonials",
+    "loading" : "lazy",
+    "width" : 1000,
+    "height" : 1453,
+    "max_width" : 1000,
+    "max_height" : 1453
+  }
+}, {
+  "id" : "7e7a12b1-9f35-eb9f-f2a6-33dc812b4b1e",
+  "name" : "parallax_image",
+  "label" : "Parallax Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/IMG_5810.png",
+    "alt" : "Testimonials",
+    "loading" : "lazy",
+    "width" : 1920,
+    "height" : 1280,
+    "max_width" : 1920,
+    "max_height" : 1280
+  }
+}, {
+  "id" : "f7cdf831-6ce8-e438-0fdb-88ce5cee6a55",
+  "name" : "quote_image",
+  "label" : "Quote Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/quote-2.png",
+    "alt" : "Quote",
+    "loading" : "lazy",
+    "width" : 300,
+    "height" : 241,
+    "max_width" : 300,
+    "max_height" : 241
+  }
+}, {
+  "id" : "2a92e4a3-a027-e960-6c82-85166ec3ace9",
+  "name" : "testimonial_content",
+  "label" : "Testimonial Content",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "type" : "richtext",
+  "display_width" : null
+} ]

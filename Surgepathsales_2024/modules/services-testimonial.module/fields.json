@@ -1,0 +1,114 @@
+[ {
+  "id" : "4afd0992-69ab-4f25-eafb-93798726a4ac",
+  "name" : "our_history",
+  "label" : "our history",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "TESTIMONIAL"
+}, {
+  "id" : "76674337-a0a4-ef3c-c523-a24def5a40be",
+  "name" : "about_testimonial_heading",
+  "label" : "About Testimonial Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "What Clients Say"
+}, {
+  "id" : "5c1861b3-835e-4435-2700-8ee4632672cd",
+  "name" : "card_group",
+  "label" : "Card group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "a695c183-36f1-a824-e952-3e6b74e23610",
+    "name" : "blog_testimonial_img",
+    "label" : "Blog Testimonial img",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/avatar.png",
+      "alt" : "avatar",
+      "width" : 420,
+      "height" : 420,
+      "max_width" : 420,
+      "max_height" : 420
+    }
+  }, {
+    "id" : "932a95ba-81d2-0ec8-254e-1736c9da3279",
+    "name" : "testimonial_para",
+    "label" : "Testimonial para",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</span></p>"
+  }, {
+    "id" : "124ddcd6-922b-30b7-05e0-fea3addf21bc",
+    "name" : "testimonial_card_footer_text",
+    "label" : "Testimonial card footer text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Nat Raydonalds"
+  }, {
+    "id" : "4be02ee8-9d58-ff1f-27fa-e81d0329aa51",
+    "name" : "card_footer_text",
+    "label" : "Card footer Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Chief  Accountant"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "4a98ea2e-e780-a626-e076-a9beeaf12fbc",
+  "name" : "about_heading_para",
+  "label" : "About Heading Para",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<span>Our focus is on building a&nbsp;permanent sales team&nbsp;that is exclusively dedicated to your product lines - this is a guarantee of their involvement and engagement with your brand and its long term success.Our focus is on building a&nbsp;permanent sales team&nbsp;that is exclusively dedicated to your product lines - this is a guarantee of their involvement and engagement with your brand and its long term success.</span>"
+}, {
+  "id" : "65e4afc4-fd8f-e72b-871b-96b9ee7b8d1a",
+  "name" : "videoplayer_field",
+  "label" : "Video",
+  "required" : false,
+  "locked" : false,
+  "resizable" : false,
+  "show_preview" : true,
+  "show_advanced_options" : false,
+  "type" : "videoplayer",
+  "display_width" : null,
+  "default" : {
+    "player_id" : 179896599351,
+    "height" : 720,
+    "width" : 1280,
+    "player_type" : "hsvideo2"
+  }
+} ]

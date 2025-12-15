@@ -1,0 +1,174 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+
+  {% for item in module.card %}
+  .{{ name }} .card-read-more:hover {
+    background-color: {{ item.url_background_color_hover.color }} !important;
+    color: {{ item.url_text_color_hover.color }} !important;
+  }
+  {% endfor %}
+  
+  {% for item in module.events %}
+  
+  .{{ name }} .row-fluid-w.event-wrapper.loop-{{ loop.index }}:hover {
+    background-color: {{ item.background_color_hover.color }} !important;
+    color: {{ item.text_color_hover.color }} !important;
+  }
+
+  {% endfor %}
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-cards-events clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+       
+      <div class="flex">
+        <div class="col">
+          
+          {% if module.heading.text %}
+          {% if module.heading.type == "h1" %} 
+          <div class="heading mb-15 text-center">
+            <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+              {{ module.heading.text }}
+            </h1>
+          </div>
+          {% elif module.heading.type == "h2" %}
+          <div class="heading mb-15 text-center">
+            <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+              {{ module.heading.text }}
+            </h2>
+          </div>
+          {% elif module.heading.type == "h3" %}
+          <div class="heading mb-15 text-center">
+            <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+              {{ module.heading.text }}
+            </h3>
+          </div>
+          {% elif module.heading.type == "h4" %}
+          <div class="heading mb-15 text-center">
+            <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+              {{ module.heading.text }}
+            </h4>
+          </div>
+          {% elif module.heading.type == "h5" %}
+          <div class="heading mb-15 text-center">
+            <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+              {{ module.heading.text }}
+            </h5>
+          </div>
+          {% elif module.heading.type == "h6" %}
+          <div class="heading mb-15 text-center">
+            <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+              {{ module.heading.text }}
+            </h6>
+          </div>
+          {% endif %}
+          {% endif %}
+
+          <div class="card-flex">
+            {% for item in module.card %}
+            <div class="card-col">
+              <div class="card-list-item">
+                <div class="card-list-image-wrapper mb-10" style="background-color: {{ item.image_overlay.color }};">
+                  <a href="#" class="card-list-image" style="background-image: url({{ item.image.src }});"></a>
+                </div>
+              
+                {% if item.title %}
+                <div class="title font-size-18 font-weight-700" style="color: {{ item.title_color.color }};">
+                  {{ item.title }}
+                </div>
+                {% endif %}
+                
+                {% if item.description %}
+                <div class="description mb-15">
+                  {{ item.description }}
+                </div>
+                {% endif %}
+           
+                {% if item.url_text %}
+                <a href="#" class="card-read-more" style="border-color: {{ item.url_border_color.color }}; background-color: {{ item.url_background_color.color }}; color: {{ item.url_text_color.color }};">
+                  {{ item.url_text }}
+                </a>
+                {% endif %}
+                
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+        <div class="col">
+          <div class="event-wrap">
+            
+            {% if module.event_title  %}
+            <div class="font-size-24 font-weight-700 line-height-12 px-20 mb-15 text-center">
+              {{ module.event_title }}
+            </div>
+            {% endif %}
+            
+            {% for item in module.events %}
+            <a href="{{ item.url.href }}" class="row-fluid-w event-wrapper w-inline-block loop-{{ loop.index }}" style="background-color: {{ item.background_color.color }}; color: {{ item.text_color.color }};">
+              <div class="event-date">{{ item.month }} 
+                <span class="p44">{{ item.date }}</span>
+              </div>
+              
+              {% if item.description %}
+              <div>
+                {{ item.description }}
+              </div>
+              {% endif %}
+              
+            </a>
+            {% endfor %}
+
+          </div>
+          
+        </div>
+      </div>
+      
+    </div> 
+   
+  </div>
+</div>
+
+{% endif %}

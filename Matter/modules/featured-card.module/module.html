@@ -1,0 +1,129 @@
+{% import "../../macros/_macros.html" as macros %}  
+
+{% set settings = module.module_settings%}
+
+<div class="featured-card hs_small_btn {{name}} {{ module.advanced_customization.css_class_selector }} {{ module.select_icon_type }}_type {% if settings.include_overlay_link %}{% endif %} {% if settings.include_box_shadow %}{% endif %} {{ settings.select_icon_size }}_ic_sz {{ settings.icon_alignment }}_ic_al"
+     {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  <div class="card-inner" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+    <div class="page-center {{ module.style.container.select_size }}">
+      <div class="inner-col {% if module.style.background_group.select_background_type == "bgcolor" %}{% if module.style.background_group.select_background_theme != "custom" %}{{ module.style.background_group.select_background_theme }}{% endif %}{% endif %}">
+        {% if module.module_settings.include_overlay_link %}
+        {% set href = module.link_field.url.href %}
+        {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a href="{{ href }}" class="feat_overlay"
+           {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
+           {% if module.link_field.rel %}rel="{{ module.link_field.rel }}"{% endif %}
+           >
+        </a>
+        {% endif %}
+        <div class="flex_row {{ module.module_settings.icon_alignment }} {{ module.module_settings.select_icon_size }}">
+          <div class="content-column col8 {% if not module.select_icon_type %}fullcontent{% endif %}">
+            {{ module.feature }}
+            {% if not module.module_settings.include_overlay_link %}
+              {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+            {% endif %}
+          </div>
+
+          {% if module.select_icon_type == "image" and module.image_field.src %}
+          <div class="icon-column col4">
+            {% if module.image_field.src %}
+            <div class="img-wrap">
+              {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+              <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }}>
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+
+          {% if module.select_icon_type == "icon" and module.icon_field.name %}
+          <div class="icon-column col4">
+            <div class="icon-wrap {% if module.select_icon_color_theme != "custom" %}{{ module.select_icon_color_theme }}{% endif %}">
+              {% icon
+            name="{{ module.icon_field.name }}"
+            style="{{ module.icon_field.type }}"
+            unicode="{{ module.icon_field.unicode }}"
+            icon_set="{{ module.icon_field.icon_set }}"
+          %}
+            </div>
+          </div>
+          {% endif %}
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+  {% if not module.module_settings.include_overlay_link %}
+  {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+  {% endif %}
+</div>
+{{ macros.sectionBackgroundStyle(name, module.style) }}
+{{ macros.customContainer(name, module.style) }}
+{% require_css %}
+<style>
+  {% if module.style.background_group.select_background_theme == "custom" %}
+  .featured-card.{{name}} .inner-col{
+    background-color: rgba({{ module.style.background_group.background_color.color|convert_rgb }},{{ module.style.background_group.background_color.opacity/100 }});
+  }
+  {% endif %}
+
+  {% if module.select_icon_type == "icon" %}
+  {% if module.select_icon_color_theme == "custom" %}
+  .featured-card.{{name}} .icon-wrap{
+    fill: rgba({{ module.color_field.color|convert_rgb }},{{ module.color_field.opacity/100 }});
+  }
+  {% endif %}
+  {% endif %}
+
+  {% if module.style.background_group.select_background_type == "bgimage" %}
+  .featured-card.{{name}} .inner-col{
+    {{ module.style.background_group.background_image.css }};
+  }
+  .featured-card.{{name}} .inner-col::before {
+    background-color: {{ macros.color(module.style.background_group.overlay_color) }};
+  }  
+  {% endif %}
+
+  {% if module.style.background_group.select_background_type == "gradient" %}  
+  {% if module.style.background_group.select_gradient_type == "theme_grdt" %}
+  {% if module.style.background_group.direction == "to right" %}
+  .featured-card.{{name}} .inner-col{
+    background: linear-gradient(90deg, rgba({{ theme.global_colors.ac_primary_color.color|convert_rgb }}, {{ module.style.background_group.primary_color_opacity / 100 }}) 0%, rgba({{ theme.global_colors.ac_secondary_color.color|convert_rgb }}, {{ module.style.background_group.secondary_color_opacity / 100 }}) 100%);
+  }
+  {% else %}
+  .featured-card.{{name}} .inner-col{
+    background: linear-gradient({{ module.style.background_group.direction }}, {{ macros.color(theme.global_colors.ac_primary_color) }}, {{ macros.color(theme.global_colors.ac_secondary_color) }});
+  }
+
+  {% endif %}
+  {% endif %}
+
+  {% if module.style.background_group.select_gradient_type == "cstm_grdt" %}
+  .featured-card.{{name}} .inner-col{
+    background: {{ module.style.background_group.gradient_field.css }};
+  }
+  {% endif %}
+  {% endif %}
+
+
+  .featured-card.{{name}} .inner-col{
+    {{ module.style.spacing.spacing.css }};
+  }
+
+  {% if module.style.spacing.change_mobile_spacing %}
+  @media (max-width: 767px){
+    .featured-card.{{name}} .inner-col{
+      {{ module.style.spacing.mobile_spacing.css }};
+    }
+  }
+  {% endif %}
+  {% if module.module_settings.include_box_shadow %}
+  .{{name}} .inner-col{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: inset 27.5px -27.5px 27.5px rgba(91, 131, 141, 0.08), inset -27.5px 27.5px 27.5px rgba(255, 255, 255, 0.08);
+  }
+  {% endif %}
+</style>
+{% end_require_css %}

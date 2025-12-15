@@ -1,0 +1,60 @@
+.advantage-section{
+  padding: 55px 0 70px;
+  display: block;
+}
+.advantage-section  h2{
+  color: #00234c;
+}
+.advantage-section .advantage-collection{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 35px;
+}
+.advantage-section .advantage-collection .ad-card {
+  display: flex;
+  flex-direction: column;
+  width: 24%;
+  padding: 20px;
+  border-radius: 8px;
+  background: #E2EFFF;
+  gap: 20px;
+  min-height: 480px;
+  height: 100%;
+}
+.advantage-section .advantage-collection .ad-card .ad-img{
+  text-align: center;
+}
+.advantage-section .advantage-collection .ad-card .ad-img>img{
+  vertical-align: bottom;
+  max-width: 100px !important;
+}
+.advantage-section .advantage-collection .ad-card .ad-contant h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #FF7F16;
+}
+.advantage-section .advantage-collection .ad-card .ad-para>p{
+  margin-bottom: 15px;
+}
+
+@media(max-width: 1500px){
+  .advantage-section .advantage-collection{flex-wrap: wrap; gap: 30px;}
+  .advantage-section .advantage-collection .ad-card{width: 31.5%; min-height: 435px;}  
+}
+
+@media(max-width: 1200px){
+  .about-sub-heading h4{justify-content: center;}
+}
+
+@media(max-width: 1090px){
+    .advantage-section .advantage-collection .ad-card {
+        width: 46%;
+    }
+}
+
+@media(max-width: 700px){
+  .advantage-section .advantage-collection .ad-card{width: 98%; min-height: 325px;}
+   .advantage-section .advantage-collection{ padding-top: 20px;  }
+}

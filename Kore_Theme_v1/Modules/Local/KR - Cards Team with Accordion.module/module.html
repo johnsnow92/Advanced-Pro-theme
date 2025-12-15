@@ -1,0 +1,428 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+{# https://getbootstrap.com/docs/3.4/javascript/#collapse #}
+{# https://getbootstrap.com/docs/3.4/javascript/#tabs #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-cards-team-accordion clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+
+      <div class="lg">
+        <div class="flex-thumbnail">
+
+          {% for item in module.card|batch(5) %}
+
+          {% set loopCollapse = loop.index %}
+
+          {% for column in item %}
+
+          {% if column.thumbnail_image.src %}
+          <a href="#" class="show-form" data-target="t{{ loop.index }}{{ loopCollapse }}">
+            <div class="team-item-wrapper">
+              <div class="team-item-overlay">
+                {% if column.thumbnail_title %}
+                <div class="thumbnail-title font-size-26 font-weight-700 line-height-12">
+                  {{ column.thumbnail_title }}
+                </div>
+                {% endif %}
+                {% if column.thumbnail_sub_title %}
+                <div class="thumbnail-sub-title font-size-14">
+                  {{ column.thumbnail_sub_title }}
+                </div>
+                {% endif %}
+              </div>
+
+              {% if column.thumbnail_image.src %}
+              <img src="{{ column.thumbnail_image.src }}" alt="{{ column.thumbnail_image.alt }}">
+              {% endif %}
+
+            </div>
+          </a>
+          {% endif %}
+          {% endfor %}
+
+
+
+          {% for column in item %}
+          <div class="collapse" data-target='t{{ loop.index }}{{ loopCollapse }}'>
+
+            {% if column.nav_title %}
+            <div class="title font-size-26 line-height-12 font-weight-700 text-left mb-25">
+              {{ column.nav_title }}
+            </div>
+            {% endif %}
+
+            <ul class="nav nav-tabs">
+
+              {% set loopTabs = loop.index %}
+
+              {% for item2 in column.nav_tabs %}
+              {% if item2.tab_nav %}
+              <li class="{% if loop.first %}active{% endif %}">
+                <a class="font-size-18 font-weight-700" data-toggle="tab" href="#tab{{ loop.index }}t{{ loopTabs }}">
+                  {{ item2.tab_nav }}
+                </a>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+
+            <div class="tab-content">
+
+              {% for item2 in column.nav_tabs %}
+              <div id="tab{{ loop.index }}t{{ loopTabs }}" class="tab-pane fade {% if loop.first %}in active{% endif %}">
+
+                <div class="tab-content-flex">
+                  {% if item2.tab_image.src %}
+                  <div class="tab-content-col">
+                    <div class="team-image-large image-1" style="background-image: url({{ item2.tab_image.src }});"></div>
+                  </div>
+                  {% endif %}
+
+                  {% if item2.tab_content %}
+                  <div class="tab-content-col text-left">
+                    {{ item2.tab_content }}
+                  </div>
+                  {% endif %}
+                </div>
+
+              </div>
+              {% endfor %}
+
+            </div>
+
+          </div>
+          {% endfor %}
+
+
+          {% endfor %}
+
+        </div>
+      </div>
+      
+      <div class="md">
+        <div class="flex-thumbnail">
+
+          {% for item in module.card|batch(3) %}
+
+          {% set loopCollapse = loop.index %}
+
+          {% for column in item %}
+
+          {% if column.thumbnail_image.src %}
+          <a href="#" class="show-form" data-target="t{{ loop.index }}{{ loopCollapse }}">
+            <div class="team-item-wrapper">
+              <div class="team-item-overlay">
+                {% if column.thumbnail_title %}
+                <div class="thumbnail-title font-size-26 font-weight-700 line-height-12">
+                  {{ column.thumbnail_title }}
+                </div>
+                {% endif %}
+                {% if column.thumbnail_sub_title %}
+                <div class="thumbnail-sub-title font-size-14">
+                  {{ column.thumbnail_sub_title }}
+                </div>
+                {% endif %}
+              </div>
+
+              {% if column.thumbnail_image.src %}
+              <img src="{{ column.thumbnail_image.src }}" alt="{{ column.thumbnail_image.alt }}">
+              {% endif %}
+
+            </div>
+          </a>
+          {% endif %}
+          {% endfor %}
+
+
+
+          {% for column in item %}
+          <div class="collapse" data-target='t{{ loop.index }}{{ loopCollapse }}'>
+
+            {% if column.nav_title %}
+            <div class="title font-size-26 line-height-12 font-weight-700 text-left mb-25">
+              {{ column.nav_title }}
+            </div>
+            {% endif %}
+
+            <ul class="nav nav-tabs">
+
+              {% set loopTabs = loop.index %}
+
+              {% for item2 in column.nav_tabs %}
+              {% if item2.tab_nav %}
+              <li class="{% if loop.first %}active{% endif %}">
+                <a class="font-size-18 font-weight-700" data-toggle="tab" href="#tab{{ loop.index }}t{{ loopTabs }}">
+                  {{ item2.tab_nav }}
+                </a>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+
+            <div class="tab-content">
+
+              {% for item2 in column.nav_tabs %}
+              <div id="tab{{ loop.index }}t{{ loopTabs }}" class="tab-pane fade {% if loop.first %}in active{% endif %}">
+
+                <div class="tab-content-flex">
+                  {% if item2.tab_image.src %}
+                  <div class="tab-content-col">
+                    <div class="team-image-large image-1" style="background-image: url({{ item2.tab_image.src }});"></div>
+                  </div>
+                  {% endif %}
+
+                  {% if item2.tab_content %}
+                  <div class="tab-content-col text-left">
+                    {{ item2.tab_content }}
+                  </div>
+                  {% endif %}
+                </div>
+
+              </div>
+              {% endfor %}
+
+            </div>
+
+          </div>
+          {% endfor %}
+
+
+          {% endfor %}
+
+        </div>
+      </div>
+      
+      <div class="sm">
+        <div class="flex-thumbnail">
+
+          {% for item in module.card|batch(2) %}
+
+          {% set loopCollapse = loop.index %}
+
+          {% for column in item %}
+
+          {% if column.thumbnail_image.src %}
+          <a href="#" class="show-form" data-target="t{{ loop.index }}{{ loopCollapse }}">
+            <div class="team-item-wrapper">
+              <div class="team-item-overlay">
+                {% if column.thumbnail_title %}
+                <div class="thumbnail-title font-size-26 font-weight-700 line-height-12">
+                  {{ column.thumbnail_title }}
+                </div>
+                {% endif %}
+                {% if column.thumbnail_sub_title %}
+                <div class="thumbnail-sub-title font-size-14">
+                  {{ column.thumbnail_sub_title }}
+                </div>
+                {% endif %}
+              </div>
+
+              {% if column.thumbnail_image.src %}
+              <img src="{{ column.thumbnail_image.src }}" alt="{{ column.thumbnail_image.alt }}">
+              {% endif %}
+
+            </div>
+          </a>
+          {% endif %}
+          {% endfor %}
+
+
+
+          {% for column in item %}
+          <div class="collapse" data-target='t{{ loop.index }}{{ loopCollapse }}'>
+
+            {% if column.nav_title %}
+            <div class="title font-size-26 line-height-12 font-weight-700 text-left mb-25">
+              {{ column.nav_title }}
+            </div>
+            {% endif %}
+
+            <ul class="nav nav-tabs">
+
+              {% set loopTabs = loop.index %}
+
+              {% for item2 in column.nav_tabs %}
+              {% if item2.tab_nav %}
+              <li class="{% if loop.first %}active{% endif %}">
+                <a class="font-size-18 font-weight-700" data-toggle="tab" href="#tab{{ loop.index }}t{{ loopTabs }}">
+                  {{ item2.tab_nav }}
+                </a>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+
+            <div class="tab-content">
+
+              {% for item2 in column.nav_tabs %}
+              <div id="tab{{ loop.index }}t{{ loopTabs }}" class="tab-pane fade {% if loop.first %}in active{% endif %}">
+
+                <div class="tab-content-flex">
+                  {% if item2.tab_image.src %}
+                  <div class="tab-content-col">
+                    <div class="team-image-large image-1" style="background-image: url({{ item2.tab_image.src }});"></div>
+                  </div>
+                  {% endif %}
+
+                  {% if item2.tab_content %}
+                  <div class="tab-content-col text-left">
+                    {{ item2.tab_content }}
+                  </div>
+                  {% endif %}
+                </div>
+
+              </div>
+              {% endfor %}
+
+            </div>
+
+          </div>
+          {% endfor %}
+
+
+          {% endfor %}
+
+        </div>
+      </div>
+      
+      <div class="xs">
+        <div class="flex-thumbnail">
+
+          {% for item in module.card|batch(1) %}
+
+          {% set loopCollapse = loop.index %}
+
+          {% for column in item %}
+
+          {% if column.thumbnail_image.src %}
+          <a href="#" class="show-form" data-target="t{{ loop.index }}{{ loopCollapse }}">
+            <div class="team-item-wrapper">
+              <div class="team-item-overlay">
+                {% if column.thumbnail_title %}
+                <div class="thumbnail-title font-size-26 font-weight-700 line-height-12">
+                  {{ column.thumbnail_title }}
+                </div>
+                {% endif %}
+                {% if column.thumbnail_sub_title %}
+                <div class="thumbnail-sub-title font-size-14">
+                  {{ column.thumbnail_sub_title }}
+                </div>
+                {% endif %}
+              </div>
+
+              {% if column.thumbnail_image.src %}
+              <img src="{{ column.thumbnail_image.src }}" alt="{{ column.thumbnail_image.alt }}">
+              {% endif %}
+
+            </div>
+          </a>
+          {% endif %}
+          {% endfor %}
+
+
+
+          {% for column in item %}
+          <div class="collapse" data-target='t{{ loop.index }}{{ loopCollapse }}'>
+
+            {% if column.nav_title %}
+            <div class="title font-size-26 line-height-12 font-weight-700 text-left mb-25">
+              {{ column.nav_title }}
+            </div>
+            {% endif %}
+
+            <ul class="nav nav-tabs">
+
+              {% set loopTabs = loop.index %}
+
+              {% for item2 in column.nav_tabs %}
+              {% if item2.tab_nav %}
+              <li class="{% if loop.first %}active{% endif %}">
+                <a class="font-size-18 font-weight-700" data-toggle="tab" href="#tab{{ loop.index }}t{{ loopTabs }}">
+                  {{ item2.tab_nav }}
+                </a>
+              </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+
+            <div class="tab-content">
+
+              {% for item2 in column.nav_tabs %}
+              <div id="tab{{ loop.index }}t{{ loopTabs }}" class="tab-pane fade {% if loop.first %}in active{% endif %}">
+
+                <div class="tab-content-flex">
+                  {% if item2.tab_image.src %}
+                  <div class="tab-content-col">
+                    <div class="team-image-large image-1" style="background-image: url({{ item2.tab_image.src }});"></div>
+                  </div>
+                  {% endif %}
+
+                  {% if item2.tab_content %}
+                  <div class="tab-content-col text-left">
+                    {{ item2.tab_content }}
+                  </div>
+                  {% endif %}
+                </div>
+
+              </div>
+              {% endfor %}
+
+            </div>
+
+          </div>
+          {% endfor %}
+
+
+          {% endfor %}
+
+        </div>
+      </div>
+      
+    </div> 
+
+  </div>
+</div>
+
+{% endif %}

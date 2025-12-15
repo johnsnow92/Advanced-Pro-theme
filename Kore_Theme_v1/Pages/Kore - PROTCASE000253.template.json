@@ -1,0 +1,431 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 4,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1617106720694484",
+        "label" : "Flexible column",
+        "type" : "widget_container",
+        "params" : {
+          "css_class" : "",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_161769494129629",
+          "label" : "KR - Hero Single Column 1",
+          "type" : "custom_widget",
+          "params" : {
+            "heading" : {
+              "font_size" : 45,
+              "font_weight" : "",
+              "text" : "Our customers are heroes.",
+              "type" : "h1"
+            },
+            "section_settings" : {
+              "section_background_type" : "4",
+              "section_text_alignment" : "text-center"
+            },
+            "css_style" : "",
+            "css_id" : "",
+            "content" : "",
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Hero Single Column 1",
+            "per_widget_wrapper_html" : "",
+            "sub_heading" : "<p><span>Lorem ipsum dolor sit amet, ad ignota delectus delicata quo, deserunt suavitate omittantur et duo. Duo an mentitum imperdiet, ne copiosae perfecto qui. Ullum melius an usu, pro harum consulatu an, quot explicari eu eam.</span></p>",
+            "tagline" : "",
+            "wrapping_html" : "",
+            "widget_name" : "KR - Hero Single Column 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617696151747333",
+          "label" : "KR - Video Wide",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Video Wide",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Video Wide",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617696104848325",
+          "label" : "KR - Slider Images",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Slider Images",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Slider Images",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617695089841191",
+          "label" : "KR - Cards 1",
+          "type" : "custom_widget",
+          "params" : {
+            "cards" : [ {
+              "align" : "text-left",
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_radius" : true,
+              "button" : {
+                "text" : ""
+              },
+              "symbol" : {
+                "background_image" : {
+                  "src" : ""
+                },
+                "icon" : {
+                  "name" : ""
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "alt" : "download",
+                  "height" : 512,
+                  "max_height" : 512,
+                  "max_width" : 512,
+                  "size_type" : "auto",
+                  "src" : "https://cdn2.hubspot.net/hubfs/2661297/HubSnacks%20Standalone%20Module/Images/download.svg",
+                  "width" : 512
+                },
+                "is_circle" : true,
+                "type" : "icon",
+                "width" : 35
+              },
+              "testimonial" : {
+                "description" : "CEO of Awesomeness",
+                "image" : { },
+                "title" : "Snowy Savannah"
+              },
+              "text" : "<p><span>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </span><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.\"</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "title" : "",
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_text_color" : {
+                "opacity" : 100
+              }
+            }, {
+              "align" : "text-left",
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_radius" : true,
+              "button" : {
+                "text" : ""
+              },
+              "symbol" : {
+                "background_image" : {
+                  "src" : ""
+                },
+                "icon" : {
+                  "name" : ""
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "alt" : "download",
+                  "height" : 512,
+                  "max_height" : 512,
+                  "max_width" : 512,
+                  "size_type" : "auto",
+                  "src" : "https://cdn2.hubspot.net/hubfs/2661297/HubSnacks%20Standalone%20Module/Images/download.svg",
+                  "width" : 512
+                },
+                "is_circle" : true,
+                "type" : "icon",
+                "width" : 35
+              },
+              "testimonial" : {
+                "description" : "CEO of Awesomeness",
+                "image" : { },
+                "title" : "Snowy Savannah"
+              },
+              "text" : "<p><span>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </span><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.\"</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "title" : "",
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_text_color" : {
+                "opacity" : 100
+              }
+            }, {
+              "align" : "text-left",
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_radius" : true,
+              "button" : {
+                "text" : ""
+              },
+              "symbol" : {
+                "background_image" : {
+                  "src" : ""
+                },
+                "icon" : {
+                  "name" : ""
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "alt" : "download",
+                  "height" : 512,
+                  "max_height" : 512,
+                  "max_width" : 512,
+                  "size_type" : "auto",
+                  "src" : "https://cdn2.hubspot.net/hubfs/2661297/HubSnacks%20Standalone%20Module/Images/download.svg",
+                  "width" : 512
+                },
+                "is_circle" : true,
+                "type" : "icon",
+                "width" : 35
+              },
+              "testimonial" : {
+                "description" : "CEO of Awesomeness",
+                "image" : { },
+                "title" : "Snowy Savannah"
+              },
+              "text" : "<p><span>\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. </span><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.\"</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "title" : "",
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_text_color" : {
+                "opacity" : 100
+              }
+            } ],
+            "heading" : {
+              "text" : ""
+            },
+            "section_settings" : {
+              "section_background_color" : {
+                "color" : "#FFF",
+                "opacity" : 100
+              },
+              "section_padding_desktop" : {
+                "bottom" : 60,
+                "top" : 60
+              },
+              "section_padding_mobile" : {
+                "bottom" : 50,
+                "top" : 50
+              },
+              "section_padding_tablet" : {
+                "bottom" : 50,
+                "top" : 50
+              }
+            },
+            "css_style" : "",
+            "footer_text" : "",
+            "tag_line" : "",
+            "css_id" : "",
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Cards 1",
+            "per_widget_wrapper_html" : "",
+            "sub_heading" : "",
+            "wrapping_html" : "",
+            "widget_name" : "KR - Cards 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617696114987327",
+          "label" : "KR - HubDB - Filter and List",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - HubDB - Filter and List",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - HubDB - Filter and List",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        } ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

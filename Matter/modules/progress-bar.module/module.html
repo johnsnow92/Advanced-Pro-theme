@@ -1,0 +1,205 @@
+{% import "../../macros/_macros.html" as macros %}
+
+<div class="progress_bar_section {{name}} dnd_padd {{ module.module_settings.number_of_columns }}_row {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} divider_{{ module.module_settings.select_divider_color }}"
+     {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+
+    {% if module.top_content %}
+    <div class="top_sec_wrap">
+      {{ macros.topContent(module.top_content, module.module_settings) }}
+    </div> {% endif %}
+
+    <div class="progress_main_container">
+      <div class="items_lists flex_row">
+        {% for item in module.progress_bar_items %}
+        <div class="prog_item col12" {% if module.module_settings.enable_animation %}data-aos-delay="{{loop.index * 1 + 10}}" data-aos="{{ module.module_settings.animation_type }}"  
+             {% endif %}>
+          <div class="item_text">
+            {% if item.title %} <h4 class="title">{{ item.title }}</h4>   {% endif %}
+            {% if item.content %}
+            <div class="ut_richtext">
+              {{item.content}}
+            </div>
+            {% endif %}
+          </div>
+          <div class="item_inner {{module.style.card_group.select_background_theme}} {{module.style.card_group.select_color_theme}}">
+            <div class="prog_slider {{module.style.card_group.select_bar_background_theme}}" data-progress="{{item.number}}"  style="max-width:{{ item.number }}">
+              <div class="spacing"> 
+
+                <span class="number {{module.style.card_group.select_background_theme}}"><span>{{ item.number }}%</span></span>
+              </div>              
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if module.button_group %}
+    <div class="btn-wrap btm_btn" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+      {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+    </div>
+    {% endif %}
+
+  </div>
+
+  {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+  {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+</div>
+
+
+{% require_css %}
+<style>
+
+  {% if module.style.card_group.spacing %}
+  .{{name}} .prog_item .item_inner{
+    {{ module.style.card_group.spacing.css }}
+  }
+  {% endif %}
+
+  .{{name}} .prog_item .item_inner{
+    {% if module.style.card_group.select_background_theme  == "custom"%}
+    background-color: {{macros.color(module.style.card_group.background_color)}};
+    {% endif %}
+    border-radius: {{ module.style.card_group.corner_radius }}px;
+  }
+
+  {% if module.style.card_group.select_background_theme  == "bg_primary"%}
+  .{{name}} .prog_item .item_inner{
+    background-color: rgba({{theme.global_colors.ac_primary_color.color|convert_rgb}},{{module.style.card_group.background_opacity/100}});
+  }
+  {% endif %}
+
+  {% if module.style.card_group.select_background_theme  == "bg_secondary"%}
+  .{{name}} .prog_item .item_inner{
+    background-color: rgba({{theme.global_colors.ac_secondary_color.color|convert_rgb}},{{module.style.card_group.background_opacity/100}});
+  }
+  {% endif %}
+
+
+  .{{name}} .prog_slider span.number{
+    {% if module.style.card_group.select_background_theme  == "custom"%}
+    background-color: {{macros.color(module.style.card_group.background_color)}};
+    {% endif %}
+  }
+
+  .{{name}} .prog_slider{
+    {% if module.style.card_group.select_bar_background_theme == "custom"%}
+    background-color: {{macros.color(module.style.card_group.bar_background_color)}};
+    color: {{macros.color(module.style.card_group.bar_background_color)}};
+    {% endif %}
+    border-radius: {{ module.style.card_group.corner_radius }}px;
+  }
+
+  .{{name}} .prog_slider *:not(a[class]):not(input):not(.popup_modal *){
+    {% if module.style.card_group.select_bar_background_theme == "bg_primary"%}
+    color: {{theme.global_colors.ac_primary_color.color}} ;
+    {% endif %}
+
+    {% if module.style.card_group.select_bar_background_theme == "bg_secondary"%}
+    color: {{theme.global_colors.ac_secondary_color.color}} ;
+    {% endif %}
+  }
+
+  .{{name}} .prog_item .item_inner{
+    border-color: {{macros.color(module.style.card_group.bar_background_color)}};
+  }
+
+
+
+  {% if module.style.card_group.select_color_theme  == "custom"%}
+  .{{name}} .prog_item .item_inner *{
+    color: {{macros.color(module.style.card_group.text_color)}}
+  }
+  {% endif %}
+
+  .{{name}} .spacing{
+    min-height:{{ module.style.card_group.bar_height }}px;
+  }
+  .{{name}} .prog_slider span.number{
+    height:calc({{ module.style.card_group.bar_height }}px - 4px);
+    width:calc({{ module.style.card_group.bar_height }}px - 4px);
+    border-radius: {{ module.style.card_group.corner_radius }}px;
+  }
+
+
+</style>
+{% end_require_css %}
+
+
+
+
+{% require_js %}
+<script>
+
+
+
+
+  var progressWrap = document.querySelectorAll(".progress_bar_section.{{name}}");
+
+
+                                               if(progressWrap){
+
+    progressWrap.forEach(function(ele,index){
+      var progressWrapInner = ele.querySelector(".{{name}} .progress_main_container");
+                                                var isIntersected = false;
+                                                function runProgressBar(){
+        var bars = ele.querySelectorAll('.{{name}} .prog_item .prog_slider');
+                                        setTimeout(function(){
+          bars.forEach(function(bar,index){
+            var getWidth = parseFloat(bar.dataset.progress);
+            for(var i = 0; i < getWidth; i++) {
+              setTimeout(function(){
+                bar.style.width = i + '%';
+              }, index * 80)
+            }
+          });
+        }, 500);
+      }
+
+
+      function checkOnScroll(cb){
+        if(progressWrapInner){
+          runProgressBar();
+          cb();
+        }
+      }
+
+
+      var checkprogresSectionWrapOffset = ele.getBoundingClientRect().top;
+      var checkprogresSectionWrapHeight = ele.getBoundingClientRect().height;  
+
+      var checkprogresSectionOffset = progressWrapInner.getBoundingClientRect().top;
+      var checkprogresSectionHeight = progressWrapInner.getBoundingClientRect().height;
+
+      window.addEventListener("scroll",function() {
+        var checkprogresSectionOffset = progressWrapInner.getBoundingClientRect().top;
+        var checkprogresSectionHeight = progressWrapInner.getBoundingClientRect().height;
+        var clientHeight = document.documentElement.clientHeight;
+        var changeOffset = (checkprogresSectionWrapHeight / 2) - 100;
+        if ((checkprogresSectionOffset - clientHeight) <= changeOffset) {
+          if (!isIntersected) {
+            ele.classList.add('visible');
+            if(ele.classList.contains('visible')){
+              checkOnScroll(function(){
+                isIntersected = true;  
+                console.log(isIntersected);
+              });
+            }
+            else{
+              isIntersected = false;
+
+            }
+          }
+        }
+      }, {
+        passive: true,
+      });
+    })
+  }
+</script>
+{% end_require_js%}

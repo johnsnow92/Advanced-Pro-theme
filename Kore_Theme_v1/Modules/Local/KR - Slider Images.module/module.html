@@ -1,0 +1,84 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+{# Required jQuery version 1.11.x, if changing HS jQuery version causing issue to existing pages then, add the jQuery CDN here to make it work #}
+
+{# Please update fontawesome code in CSS tab depends on the existing version to make the icon work #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .slick-prev:before, 
+  .{{ name }}  .slick-next:before {
+    color: {{ module.arrow_color.color }};
+  }
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="kore-module kore-slider-images clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+      
+      <div class="max-width-900 mr-auto ml-auto">
+        <div class="customer-image">
+          {% for item in module.item %}
+          <div class="ci-item">
+            {% if item.url.href %}<a href="{{ item.url.href }}" target="_blank">{% endif %}
+            {% if item.image.src %}
+            {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+            {% if item.image.size_type == 'auto' %}
+            {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+            {% elif item.image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ item.image.max_width }}px; max-height: {{ item.image.max_height }}px"' %}
+            {% endif %}
+            <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ sizeAttrs }}>
+            {% endif %}
+            {% if item.url.href %}</a>{% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      
+       
+    </div> 
+   
+  </div>
+</div>
+
+{% endif %}

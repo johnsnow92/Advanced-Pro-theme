@@ -1,0 +1,80 @@
+{% if module.section_settings.section_show_hide %}
+<div class="pricing-section"
+     style="background:{{ module.section_settings.background_color.color }}"
+     >
+  <div class="maxContainer">
+    <div class="heading-text">
+      <h2>{{ module.main_heading_text }}</h2>
+    </div>
+    <div class="matrix-wrapper clearfix">
+      {% for item in module.pricing_plan %}
+      <div class="matrix-column {% if item.featured_column %}featured-col{% endif %} {{ item.custom_class }}">
+        <div class="matrix-column-wrapper">
+          <div class="matrix-title">
+            {% if item.image.src %}
+            <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ sizeAttrs }}>
+            {% endif %}
+            <h4>{{ item.heading_text }}</h4>
+          </div>
+          <div class="matrix-price-info starter">
+            {% if item.monthly_annual_sec %}
+            <div class="price-calc">
+              <a href="#" class="monthly"><span></span>Monthly</a>
+              <a href="#" class="annual"><span></span>Annual</a>
+              {% if item.icon_discount.src %}
+              <img src="{{ item.icon_discount.src }}" alt="{{ item.icon_discount.alt }}" {{ sizeAttrs }}>
+              {% endif %}
+              <div class="discount-value" style="display:none;">{{ item.discount_value }}</div>
+              <div class="original-monthly-price" style="display:none;">{{ item.price }}</div>
+            </div>
+            {% endif %}
+            <div class="m-price"><span class="sign">$</span><span class="price-val">{{ item.price }}</span></div>
+            <p class="ptext">{{ item.p_text }}</p>
+            <div class="pricing-cta">
+              {% cta guid="{{ item.cta }}" %}
+            </div>                
+          </div>
+          <div class="matrix-items-wrapper">
+            <div class="matrix-features">
+              {% for item2 in item.featured_items %}
+              <p class="exclude_{{ item2.exclude_item }}">{{ item2.featured_item }}</p>
+              {% endfor %}
+            </div>
+            <div class="matrix-more-features">
+              {% for item2 in item.more_featured_items %}
+              <p class="exclude_{{ item2.exclude_item }}">{{ item2.featured_item }}</p>
+              {% endfor %}
+              {% set href = item.button_link.url.href %}  
+              {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a href="{{ href }}" class="btn-price"
+                 {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                 {% if item.button_link.no_follow %}rel="nofollow"{% endif %}
+                 >
+                {{ item.button_text }}
+              </a> 
+            </div>
+          </div>
+           <div class="col-view-more">View more</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="view-more-sec">
+      <div class="view-more">View more</div>
+    </div>
+  </div>
+</div>
+{% endif %}
+<style>
+.pricing-section .btn-price{
+    background-color:{{ module.section_settings.button_background_color.color }};
+    color:{{ module.section_settings.button_font_color.color }};
+}
+.pricing-section .btn-price:hover{
+    background-color:{{ module.section_settings.button_font_color.color }};
+    color:{{ module.section_settings.button_background_color.color }};
+    border: 1px solid {{ module.section_settings.button_font_color.color }};
+}
+</style>

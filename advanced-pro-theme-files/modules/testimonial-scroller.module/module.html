@@ -1,0 +1,76 @@
+{% set testimonials = module.testimonials %}
+{% set auto_scroll = module.auto_scroll %}
+{% set scroll_interval = module.scroll_interval %}
+{% set show_navigation = module.show_navigation %}
+{% set heading = module.heading %}
+
+<div class="testimonial-scroller-wrapper">
+  {% if heading %}
+  <h2 class="testimonial-heading">{{ heading }}</h2>
+  {% endif %}
+
+  <div class="testimonial-scroller"
+       data-auto-scroll="{{ auto_scroll }}"
+       data-scroll-interval="{{ scroll_interval * 1000 }}">
+
+    {% if show_navigation %}
+    <button class="testimonial-nav testimonial-nav-prev" aria-label="Previous testimonial">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    {% endif %}
+
+    <div class="testimonial-container">
+      <div class="testimonial-track">
+        {% for testimonial in testimonials %}
+        <div class="testimonial-card">
+          <div class="testimonial-content">
+            <div class="quote-icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 22C12 18.6863 14.6863 16 18 16C21.3137 16 24 18.6863 24 22C24 25.3137 21.3137 28 18 28C17.6565 28 17.3197 27.9719 16.9917 27.9176C16.3723 29.9144 15.0446 31.6205 13.2493 32.7056C12.5605 33.1243 11.6807 32.8917 11.262 32.2028C10.8433 31.514 11.0759 30.6342 11.7647 30.2155C13.0793 29.4329 14 28.0595 14 26.5V25.2676C12.7763 24.6196 12 23.3992 12 22Z" fill="currentColor"/>
+                <path d="M28 22C28 18.6863 30.6863 16 34 16C37.3137 16 40 18.6863 40 22C40 25.3137 37.3137 28 34 28C33.6565 28 33.3197 27.9719 32.9917 27.9176C32.3723 29.9144 31.0446 31.6205 29.2493 32.7056C28.5605 33.1243 27.6807 32.8917 27.262 32.2028C26.8433 31.514 27.0759 30.6342 27.7647 30.2155C29.0793 29.4329 30 28.0595 30 26.5V25.2676C28.7763 24.6196 28 23.3992 28 22Z" fill="currentColor"/>
+              </svg>
+            </div>
+
+            <p class="testimonial-quote">{{ testimonial.quote }}</p>
+
+            <div class="testimonial-author">
+              {% if testimonial.photo.src %}
+              <div class="author-photo">
+                <img src="{{ testimonial.photo.src }}"
+                     alt="{{ testimonial.photo.alt }}"
+                     width="{{ testimonial.photo.width }}"
+                     height="{{ testimonial.photo.height }}"
+                     loading="lazy">
+              </div>
+              {% endif %}
+
+              <div class="author-info">
+                <div class="author-name">{{ testimonial.name }}</div>
+                {% if testimonial.title or testimonial.company %}
+                <div class="author-details">
+                  {% if testimonial.title %}{{ testimonial.title }}{% endif %}
+                  {% if testimonial.title and testimonial.company %} at {% endif %}
+                  {% if testimonial.company %}{{ testimonial.company }}{% endif %}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% if show_navigation %}
+    <button class="testimonial-nav testimonial-nav-next" aria-label="Next testimonial">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    {% endif %}
+  </div>
+
+  <div class="testimonial-dots"></div>
+</div>

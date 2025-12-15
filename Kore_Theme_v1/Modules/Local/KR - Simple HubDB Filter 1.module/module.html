@@ -1,0 +1,33 @@
+<div class="release-notes-section">
+  <div class="maxContainer">
+
+    {% set table_id = module.hubdbtable %}
+    {% set col_items = hubdb_table_column(table_id, 'tags').options %}
+    <div class="rn-filter-nav">
+      <a href="javascript:void(0);" class="show-all active" data-tag="show-all">All</a>
+      {% for col in col_items %}
+      <a href="javascript:void(0);" data-tag="{{ col.name|lower|replace(' ', '-')|replace('&', '-') }}">{{ col.name }}</a>
+      {% endfor %}
+    </div>
+    <div class="rn-list-items">
+      {% set query = 'orderBy=-date' %}
+      {% set items = hubdb_table_rows(table_id, query) %}
+      {% for row in items %}
+      <div class="rn-item {% for tag in row.tags %}tag-{{ tag.name|lower|replace(' ', '-')|replace('&', '-') }} {% endfor %}">
+        <div class="date-tags">
+          <span class="date"> {{ row.date|datetimeformat(' %B %e, %Y ') }}  |  </span>
+          {% for tag in row.tags %}
+          <span class="tag">{{ tag.name }}{% if not loop.last %}  |  {% endif %}</span>
+          {% endfor %}
+        </div>
+        {% if row.title %}<h3>{{ row.title }}</h3>{% endif %}
+        {% if row.description %}
+        <div class="rn-desc">
+          {{ row.description }}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

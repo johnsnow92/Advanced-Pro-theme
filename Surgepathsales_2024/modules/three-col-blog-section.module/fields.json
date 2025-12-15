@@ -1,0 +1,52 @@
+[ {
+  "id" : "6b374033-6dfc-1090-f380-5b621073bb97",
+  "name" : "main_heading",
+  "label" : "Main heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "OUR BLOG"
+}, {
+  "id" : "473c0609-3587-61a0-08ce-4382729f2d4e",
+  "name" : "dot_image",
+  "label" : "Dot Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Group%201691-1.png",
+    "alt" : "Group 1691-1",
+    "loading" : "lazy",
+    "width" : 6,
+    "height" : 21,
+    "max_width" : 6,
+    "max_height" : 21
+  }
+}, {
+  "id" : "9e9ac242-502e-7e0d-8aa4-c51a8a1f91e7",
+  "name" : "link_text",
+  "label" : "Link Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Read More"
+}, {
+  "id" : "24b09646-f617-32ab-ef68-f9a2737c282b",
+  "name" : "read_more_btn_text",
+  "label" : "Read More Btn Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Read more"
+} ]

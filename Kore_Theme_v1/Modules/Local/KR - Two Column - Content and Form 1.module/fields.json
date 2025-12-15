@@ -1,0 +1,291 @@
+[ {
+  "id" : "3b161d92-6599-67a1-834b-964de1155d7f",
+  "name" : "styles",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a146f00f-16bb-2fa9-72cd-bbfc287abf5e",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "2a70c13d-a413-7aec-bf7f-487072c4ff87",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "0738151f-5834-2dd7-7f8e-c4e30b51683c",
+        "name" : "padding_top",
+        "label" : "Padding Top",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 80
+      }, {
+        "id" : "cfbe611b-31a8-9482-7aa8-1c126f59cb43",
+        "name" : "padding_bottom",
+        "label" : "Padding Bottom",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 80
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "padding_top" : 80,
+        "padding_bottom" : 80
+      }
+    }, {
+      "id" : "6a017a18-ec31-772d-a00b-fa97a6c1e71f",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "bea5fb23-b2b6-96fa-fd57-2e11ee752a49",
+        "name" : "padding_top",
+        "label" : "Padding Top",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 80
+      }, {
+        "id" : "78f8ed71-4d2d-99a4-ca8f-3dde8be9a7f3",
+        "name" : "padding_bottom",
+        "label" : "Padding Bottom",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 80
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "padding_top" : 80,
+        "padding_bottom" : 80
+      }
+    }, {
+      "id" : "ddccc39e-1a85-f4f8-84ff-440cd7141218",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "ee2e30c7-96e4-4181-6736-544d16a09c50",
+        "name" : "padding_top",
+        "label" : "Padding Top",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 50
+      }, {
+        "id" : "fcb7b48c-4ddb-80b0-8ad7-a0a0b3e18b94",
+        "name" : "padding_bottom",
+        "label" : "Padding Bottom",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 50
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "padding_top" : 50,
+        "padding_bottom" : 50
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding_top" : 80,
+        "padding_bottom" : 80
+      },
+      "tablet" : {
+        "padding_top" : 80,
+        "padding_bottom" : 80
+      },
+      "mobile" : {
+        "padding_top" : 50,
+        "padding_bottom" : 50
+      }
+    }
+  }, {
+    "id" : "5f747335-8c1e-074e-fa85-6b3e6f669710",
+    "name" : "background_type",
+    "label" : "Background Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg-color", "Background Color" ], [ "bg-img", "Background Image" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bg-color"
+  }, {
+    "id" : "ed542ab3-d909-f613-5e37-d374ae1be523",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "styles.background_type",
+      "controlling_value_regex" : "bg-color",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F6F6F6",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "f7d80902-d2e7-a6eb-f6e3-a666b4429901",
+    "name" : "backgroundimage_field",
+    "label" : "Background image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "styles.background_type",
+      "controlling_value_regex" : "bg-img",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "backgroundimage",
+    "display_width" : null,
+    "default" : {
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover",
+      "src" : "https://24212926.fs1.hubspotusercontent-na1.net/hubfs/24212926/MA-1201x800.jpg"
+    }
+  }, {
+    "id" : "d8af51d6-066e-8415-4b66-b5701f216a47",
+    "name" : "background_overlay",
+    "label" : "Background Overlay",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "styles.background_type",
+      "controlling_value_regex" : "bg-img",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#000000",
+      "opacity" : 30
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "spacing" : {
+      "desktop" : {
+        "padding_top" : 80,
+        "padding_bottom" : 80
+      },
+      "tablet" : {
+        "padding_top" : 80,
+        "padding_bottom" : 80
+      },
+      "mobile" : {
+        "padding_top" : 50,
+        "padding_bottom" : 50
+      }
+    },
+    "background_type" : "bg-color",
+    "background_color" : {
+      "color" : "#F6F6F6",
+      "opacity" : 100
+    },
+    "backgroundimage_field" : {
+      "background_position" : "MIDDLE_CENTER",
+      "background_size" : "cover",
+      "src" : "https://24212926.fs1.hubspotusercontent-na1.net/hubfs/24212926/MA-1201x800.jpg"
+    },
+    "background_overlay" : {
+      "color" : "#000000",
+      "opacity" : 30
+    }
+  }
+}, {
+  "id" : "f723ff41-330b-8995-5c65-b22010dc26c0",
+  "name" : "richtext_field",
+  "label" : "Rich text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h2>Lorem ipsum dolor sit amet</h2>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<ul>\n<li>Excepteur sint occaecat</li>\n<li>Cupidatat non proident</li>\n<li>Sunt in culpa qui officia deserunt</li>\n<li>Mollit anim id est laborum</li>\n</ul>\n<p>Excepteur sint occaecat mcupidatat non proident officia deseru. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"
+}, {
+  "id" : "fe5d61c3-ed31-6e93-a215-60df3493784a",
+  "name" : "form_content",
+  "label" : "Form Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h3>Form title goes here</h3>\n<p>Lorem ipsum dolor sit amet consectetur . . .</p>"
+}, {
+  "id" : "0b5ee6e7-f5ce-de26-4ab6-8262033e2411",
+  "name" : "form",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "05dcd25c-596b-4c86-bf8f-c63011584c1b",
+    "response_type" : "inline",
+    "message" : "Thank you for submitting the form. ",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+} ]

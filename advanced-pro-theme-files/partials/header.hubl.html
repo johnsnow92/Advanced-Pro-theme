@@ -1,0 +1,352 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+<!--
+  Advanced Pro Theme - Global Header
+  Responsive navigation with mobile menu support
+-->
+
+<header class="site-header" role="banner">
+  <div class="header-wrapper">
+    <div class="container">
+      <div class="header-inner">
+
+        <!-- Logo -->
+        <div class="header-logo">
+          <a href="/" aria-label="Home">
+            {% if site_settings.company_logo.src %}
+              <img src="{{ site_settings.company_logo.src }}"
+                   alt="{{ site_settings.company_logo.alt or site_settings.company_name }}"
+                   class="logo-img"
+                   loading="eager">
+            {% else %}
+              <span class="logo-text">{{ site_settings.company_name }}</span>
+            {% endif %}
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="header-nav desktop-nav" role="navigation" aria-label="Main navigation">
+          {% menu "main_menu"
+            id="main-nav",
+            overrideable=True,
+            root_type='site_root'
+          %}
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+
+          <!-- Search Toggle (Optional) -->
+          <button class="search-toggle"
+                  aria-label="Toggle search"
+                  aria-expanded="false">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
+            </svg>
+          </button>
+
+          <!-- CTA Button -->
+          {% if content.header_cta_enabled %}
+            <a href="{{ content.header_cta_url }}"
+               class="btn btn-primary header-cta">
+              {{ content.header_cta_text or "Get Started" }}
+            </a>
+          {% endif %}
+
+          <!-- Mobile Menu Toggle -->
+          <button class="mobile-menu-toggle"
+                  aria-label="Toggle menu"
+                  aria-expanded="false"
+                  aria-controls="mobile-menu">
+            <span class="hamburger">
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+              <span class="hamburger-line"></span>
+            </span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <div class="mobile-menu-inner">
+      {% menu "main_menu"
+        id="mobile-nav",
+        overrideable=True,
+        root_type='site_root'
+      %}
+
+      <!-- Mobile CTA -->
+      {% if content.header_cta_enabled %}
+        <div class="mobile-menu-cta">
+          <a href="{{ content.header_cta_url }}"
+             class="btn btn-primary btn-block">
+            {{ content.header_cta_text or "Get Started" }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Search Overlay (Optional) -->
+  <div class="search-overlay" aria-hidden="true">
+    <div class="search-overlay-inner">
+      <div class="container">
+        <form action="/search" method="get" role="search">
+          <input type="search"
+                 name="q"
+                 class="search-input"
+                 placeholder="Search..."
+                 aria-label="Search">
+          <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+        <button class="search-close" aria-label="Close search">&times;</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<style>
+/* Header Styles */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
+}
+
+.site-header.is-scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.site-header.is-hidden {
+  transform: translateY(-100%);
+}
+
+.header-wrapper {
+  padding: var(--spacing-md) 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-lg);
+}
+
+/* Logo */
+.header-logo a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.logo-img {
+  max-height: 40px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  flex: 1;
+  display: none;
+}
+
+.desktop-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: var(--spacing-lg);
+}
+
+.desktop-nav a {
+  color: var(--color-gray-700);
+  text-decoration: none;
+  font-weight: 500;
+  padding: var(--spacing-xs) 0;
+  transition: color var(--transition-fast) ease;
+}
+
+.desktop-nav a:hover {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.search-toggle {
+  background: none;
+  border: none;
+  color: var(--color-gray-700);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  display: none;
+}
+
+.search-toggle:hover {
+  color: var(--color-primary);
+}
+
+.header-cta {
+  display: none;
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  display: block;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hamburger-line {
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-gray-700);
+  transition: all var(--transition-fast) ease;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-background);
+  z-index: calc(var(--z-sticky) - 1);
+  transform: translateY(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal) ease;
+  overflow-y: auto;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-inner {
+  padding: var(--spacing-lg);
+}
+
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-menu li {
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.mobile-menu a {
+  display: block;
+  padding: var(--spacing-md) 0;
+  color: var(--color-gray-700);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: var(--font-size-lg);
+}
+
+.mobile-menu-cta {
+  margin-top: var(--spacing-lg);
+}
+
+/* Search Overlay */
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-normal) ease;
+}
+
+.search-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 600px;
+  padding: var(--spacing-lg);
+  font-size: var(--font-size-2xl);
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-close {
+  position: absolute;
+  top: var(--spacing-lg);
+  right: var(--spacing-lg);
+  background: none;
+  border: none;
+  color: white;
+  font-size: var(--font-size-4xl);
+  cursor: pointer;
+}
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: block;
+  }
+
+  .search-toggle {
+    display: block;
+  }
+
+  .header-cta {
+    display: inline-block;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+</style>

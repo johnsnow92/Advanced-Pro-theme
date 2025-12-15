@@ -1,0 +1,163 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 6,
+  "attachedStylesheets" : [ ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "blog kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1597298087628184",
+        "label" : "KR - Blog Post 2 Banner",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Blog Post 2 Banner",
+          "per_widget_wrapper_html" : "",
+          "section_settings" : {
+            "section_background_color" : {
+              "color" : "#2994cb",
+              "opacity" : 30
+            },
+            "section_padding" : "custom",
+            "section_padding_desktop" : {
+              "bottom" : 50,
+              "top" : 150
+            },
+            "section_padding_tablet" : {
+              "bottom" : 50,
+              "top" : 150
+            }
+          },
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Blog Post 2 Banner",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1573652029503110",
+        "label" : "Blog Content",
+        "type" : "custom_widget",
+        "params" : {
+          "css_style" : "",
+          "template_to_edit" : "listing",
+          "css_id" : "",
+          "css_class" : "kore-module",
+          "schema_version" : 2,
+          "path" : "@hubspot/blog_content",
+          "per_widget_wrapper_html" : "",
+          "blog_listing_source" : "",
+          "wrapping_html" : "",
+          "blog_post_source" : "<style>\n\n  .flex-cta-sidebar {\n    background-size: cover !important;\n    background-repeat: no-repeat !important;\n    background-position: center !important;\n    padding: 50px 0;\n  }\n  \n  \n  .flex-cta-sidebar .flex {\n    display: flex;\n    flex-flow: row;\n    flex-wrap: wrap;\n  }\n  \n  .flex-cta-sidebar .flex .col {\n    flex: 1;\n  }\n\n \n  .flex-cta-sidebar .flex .col.sticky {\n    padding-right: 0;\n  }\n      \n  \n  .flex-cta-sidebar .flex .col .content-half {\n    max-width: calc(1120px / 2);\n    margin-left: auto;\n    padding: 0 20px;\n  }\n\n  .flex-cta-sidebar .flex .col .hubsnacks-sidebar-subscribe-cta-wrap {\n    max-width: 300px;\n  }\n  \n  .flex-cta-sidebar .flex .col.sticky .content-half {\n    padding: 0;\n    position: -webkit-sticky;\n    position: sticky;\n    top: 85px;\n    right: 0px;\n    z-index: 99;\n    display: block;\n    overflow: hidden;\n    max-width: 280px;\n    min-height: 260px;\n    margin-right: 0;\n   \n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n    -webkit-flex-direction: row;\n    -ms-flex-direction: row;\n    flex-direction: row;\n    -webkit-box-pack: center;\n    -webkit-justify-content: center;\n    -ms-flex-pack: center;\n    justify-content: center;\n    -webkit-box-align: center;\n    -webkit-align-items: center;\n    -ms-flex-align: center;\n    align-items: center;\n    border-top: 1px solid rgba(0, 0, 0, 0.1);\n    border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n    border-left: 1px solid rgba(0, 0, 0, 0.1);\n    background-color: #fff;\n    background-image: none;\n    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.1);\n    -webkit-transition: all 200ms ease;\n    transition: all 200ms ease;\n  }\n  .flex-cta-sidebar .flex .col.sticky .content-half .simple a{\n    width: 100%;\n    background-color: \n  }\n  .hs-blog-post {\n    overflow-x: hidden;\n  }\n  \n  .hs-blog-post .bsft-blog-post-banner {\n    margin-top: 10px;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .post-body {\n    min-width: 700px;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .post-body {\n    line-height: 1.5;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .post-body p {\n    margin-top: 0;\n    margin-bottom: 1rem;\n    line-height: 1.5;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .post-body h1,\n  .hs-blog-post .flex-cta-sidebar .post-body h2,\n  .hs-blog-post .flex-cta-sidebar .post-body h3,\n  .hs-blog-post .flex-cta-sidebar .post-body h4,\n  .hs-blog-post .flex-cta-sidebar .post-body h5,\n  .hs-blog-post .flex-cta-sidebar .post-body h6 {\n    line-height: 1.2;\n    margin-top: 0;\n    margin-bottom: 0.5rem;\n    font-weight: 400;\n  }\n  \n/*   .hs-blog-post .flex-cta-sidebar .post-body h2 {\n    font-size: 32px;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .post-body h3 {\n    font-size: 24px;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .post-body h4 {\n    font-size: 18px;\n  }\n\n  .hs-blog-post .flex-cta-sidebar .post-body h5 {\n    font-size: 14px;\n  }\n\n  .hs-blog-post .flex-cta-sidebar .post-body h6 {\n    font-size: 12px;\n  } */\n  .hs-blog-post .w-richtext-figure-type-video{\n    padding-bottom: 0!important;\n  }\n  .hs-blog-post .flex-cta-sidebar #custom-cta .cta_button {\n    box-sizing: border-box !important;\n    -webkit-font-smoothing: antialiased !important;\n    cursor: pointer !important;\n    -moz-user-select: none !important;\n    -webkit-user-select: none !important;\n    -o-user-select: none !important;\n    user-select: none !important;\n    display: inline-block !important;\n    font-weight: normal !important;\n    text-align: center !important;\n    text-decoration: none !important;\n    -o-transition: all .4s ease !important;\n    background: #de1a24 !important;\n    border-radius: 0 !important;\n    border-width: 0px !important;\n    color: rgb(255,255,255) !important;\n    font-family: 'Poppins','HelveticaLight','HelveticaNeueCyr',Helvetica,Arial,sans-serif !important;\n    height: auto !important;\n    padding: 16px 20px !important;\n    text-shadow: none !important;\n    width: auto !important;\n    font-size: 15px !important; \n    line-height: 1.5em !important;\n    -webkit-transition: all 200ms ease !important;\n    transition: all 200ms ease !important;\n    text-transform: uppercase !important;\n    box-shadow: none !important;\n    letter-spacing: 1px !important;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar #custom-cta .cta_button:hover {\n    -webkit-transform: translate(0px, -3px);\n    -ms-transform: translate(0px, -3px);\n    transform: translate(0px, -3px);\n  }\n\n  .hs-blog-post .flex-cta-sidebar .post-body .list-inline {\n    padding-left: 0;\n    list-style: none;\n    margin-top: 30px;\n  }\n\n  .hs-blog-post .flex-cta-sidebar .post-body .list-inline-item {\n    display: inline-block;\n  }\n\n  .hs-blog-post .flex-cta-sidebar .post-body .list-inline-item:not(:last-child) {\n    margin-right: 0.5rem;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .post-body .hs-responsive-embed-wrapper  {\n    max-width: 100% !important;\n    max-height: 100% !important;\n    margin-bottom: 20px !important;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .blog-post-social-share {\n    text-align: center;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .blog-post-social-share .list-inline-item:not(:last-child) {\n    margin-right: 0;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .social-link-large {\n    width: 40px;\n    height: 40px;\n    margin-right: 0;\n    margin-left: 0;\n    border-radius: 0;\n    background-color: transparent;\n    background-position: 50% 50%;\n    background-size: 125px;\n    -webkit-transition: all 200ms ease;\n    transition: all 200ms ease;\n    max-width: 100%;\n    display: inline-block;\n    border: 1px solid #ffffff;\n  }\n\n  .hs-blog-post .flex-cta-sidebar .social-link-large:hover {\n    -webkit-transform: scale(1.05);\n    -ms-transform: scale(1.05);\n    transform: scale(1.05);\n  }\n\n  .hs-blog-post .flex-cta-sidebar .social-link-large.facebook {\n    margin-left: 0px;\n    background-image: url(https://cdn2.hubspot.net/hubfs/6442339/HubSnacks%20Standalone%20Module/Images/fb.svg);\n    background-size: 20px;\n    background-repeat: no-repeat;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .social-link-large.twitter {\n    background-image: url(https://cdn2.hubspot.net/hubfs/6442339/HubSnacks%20Standalone%20Module/Images/tw.png);\n    background-size: 20px;\n    background-repeat: no-repeat;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .social-link-large.linkedin {\n    background-image: url(https://cdn2.hubspot.net/hubfs/6442339/HubSnacks%20Standalone%20Module/Images/in.svg);\n    background-size: 20px;\n    background-repeat: no-repeat;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .social-link-large.mail {\n    background-image: url(https://cdn2.hubspot.net/hubfs/6442339/HubSnacks%20Standalone%20Module/Images/email.svg);\n    background-size: 25px;\n    background-repeat: no-repeat;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .comments-wrapper .hs-input {\n    border-radius: 0; \n    padding: 8px 12px;\n    height: auto;\n  }\n  \n  /* One Line Inputs */\n  .hs-blog-post input[type=\"text\"],\n  .hs-blog-post input[type=\"password\"], \n  .hs-blog-post input[type=\"datetime\"], \n  .hs-blog-post input[type=\"datetime-local\"], \n  .hs-blog-post input[type=\"date\"], \n  .hs-blog-post input[type=\"month\"], \n  .hs-blog-post input[type=\"time\"], \n  .hs-blog-post input[type=\"week\"], \n  .hs-blog-post input[type=\"number\"], \n  .hs-blog-post input[type=\"email\"], \n  .hs-blog-post input[type=\"url\"], \n  .hs-blog-post input[type=\"search\"], \n  .hs-blog-post input[type=\"tel\"], \n  .hs-blog-post input[type=\"color\"],\n  .hs-blog-post input[type=\"file\"],\n  .hs-blog-post textarea,\n  .hs-blog-post select {\n    width: 100%;\n  }\n  \n  .hs-blog-post .comment-reply-to {\n    padding-left: 25px;\n  }\n  \n  .hs-blog-post button.comment-reply-to {\n    color: #de1a24;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .comments-wrapper input[type=\"submit\"] {\n    background: #de1a24 !important;\n    padding: 12px 18px !important;\n    color: #fff !important;\n    border-color: transparent !important;\n    border-radius: 0;\n    font-weight: 400;\n    font-size: 15px;\n    text-transform: uppercase;\n    cursor: pointer;\n    margin-top: 20px;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .comments-wrapper .hs_error_rollup {\n    display: none;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .about-author-sec {\n    text-align: center;\n    position: relative;\n    margin-top: 80px;\n    margin-bottom: 40px;\n    padding: 60px 30px 30px;\n    border-radius: 3px;\n    background-color: #fff;\n    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.15);\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .about-author-sec h3 a {\n    color: #333;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar .about-author-sec .image {\n    position: absolute;\n    border-style: solid;\n    border-width: 4px;\n    border-color: #de1a24;\n    border-radius: 200px;\n    background-position: 50% 50%;\n    background-size: cover;\n    background-color: #fff;\n    top: -50px;\n    width: 100px;\n    height: 100px;\n    left: 50%;\n    transform: translate(-50%, 0);\n  }\n  \n  .hs-blog-post .flex-cta-sidebar #hubspot-topic_data a {\n    display: inline-block;\n    margin-top: 5px;\n    margin-right: 5px;\n    margin-bottom: 5px;\n    padding: 5px 10px;\n    border: 1px solid #535861;\n    border-radius: 0;\n    -webkit-transform: translate(0px, 0px);\n    -ms-transform: translate(0px, 0px);\n    transform: translate(0px, 0px);\n    -webkit-transition: all 200ms ease;\n    transition: all 200ms ease;\n    color: #535861;\n    font-size: 13px;\n    font-weight: 600;\n    text-decoration: none;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar #hubspot-topic_data a:hover {\n    opacity: .8;\n  }\n  \n  .hs-blog-post .flex-cta-sidebar #hubspot-topic_data .topic-label {\n    display: inline-block;\n    margin-right: 10px;\n  }\n   \n  @media(max-width:1139px) {\n    \n    .flex-cta-sidebar .flex .col {\n      flex: 0 0 100%;\n    }\n    \n    .flex-cta-sidebar .flex .col .content-half {\n      max-width: 100%;\n    }\n    \n    .hs-blog-post .flex-cta-sidebar .post-body {\n      min-width: 100%;\n    }\n    \n    .flex-cta-sidebar .flex .col.sticky .content-half {\n      display: none;\n    }\n    \n  } \n  \n  @media(max-width:767px) {\n    \n    .hubsnacks-two-column-cta-v1 .page-width {\n      padding: 0;\n    }\n\n/*     .hs-blog-post .flex-cta-sidebar .post-body h2 {\n      font-size: 24px;\n    } */\n\n/*     .hs-blog-post .flex-cta-sidebar .post-body h3 {\n      font-size: 20px;\n    } */\n\n/*     .hs-blog-post .flex-cta-sidebar .post-body h4 {\n      font-size: 16px;\n    } */\n    \n  } \n\n  ul.list-inline.blog-post-social-share {\n    position: sticky;\n    top: 85px;\n    display: block;\n    width: 60px;\n    margin-top: 20px;\n    /* margin-left: -100%; */\n    padding-top: 10px;\n    padding-right: 10px;\n    padding-left: 10px;\n    border-top-right-radius: 5px;\n    border-bottom-right-radius: 5px;\n    background-color: #2994cb;\n    float: left;\n  }\n  ul.list-inline.blog-post-social-share li{\n    display :block;\n  }\n  @media(max-width:1199px) {\n    ul.list-inline.blog-post-social-share{\n      display: none;\n    }\n  }\n</style>\n\n<div class=\"flex-cta-sidebar\">\n  <ul class=\"list-inline blog-post-social-share\">\n    <li class=\"list-inline-item\">\n      <a class=\"social-link-large facebook\" href=\"https://www.facebook.com/share.php?u={{ request.full_url|urlencode }}\" target=\"_blank\">\n\n      </a>\n    </li>\n    <li class=\"list-inline-item\">\n      <a class=\"social-link-large twitter\" href=\"https://twitter.com/intent/tweet?original_referer={{ request.full_url|urlencode }}\" target=\"_blank\">\n\n      </a>\n    </li>\n    <li class=\"list-inline-item\">\n      <a class=\"social-link-large linkedin\" href=\"https://www.linkedin.com/shareArticle?mini=true&amp;url={{ request.full_url|urlencode }}\" target=\"_blank\">\n\n      </a>\n    </li>\n    <li class=\"list-inline-item\">\n      <a class=\"social-link-large mail\" href=\"mailto:?subject={{ module.social.email_subject }} site&amp;body=Check out this site {{ request.full_url }}\" target=\"_blank\">\n\n      </a>\n    </li>\n  </ul>\n  <div class=\"page-width\">\n\n    <div class=\"flex\">\n      <div class=\"col\">\n\n        <div class=\"content-half\">\n\n          <div class=\"section post-body\" id=\"custom-cta\">\n            {{ content.post_body }}\n\n            {% module \"module_1597298752690117\" path=\"/Kore_Theme_v1/Modules/Local/KR - Blog Post Body CTA\", label=\"KR - Blog Post Body CTA\" %}\n\n\n\n            {#<div class=\"comments-wrapper\">\n              {% blog_comments \"blog_comments\" overrideable=False, label='Blog Comments' %}\n            </div>\n\n            <div class=\"custom_listing_comments\" style=\"margin-top: 20px;\">\n              {% set comments_number =  content.comment_list|length %}\n              {% set comments_label = \"Comment\" if comments_number == 1 else \"Comments\" %}\n              {{ comments_number }} {{ comments_label }} <a href=\"{{content.absolute_url}}#comments-listing\">Click here to read/write comments</a>\n            </div>#}\n\n            <!-- Optional: Blog Author Bio Box -->\n            {#<div class=\"about-author-sec\">\n              <div class=\"image\" style=\"background-image: url({{ content.blog_post_author.avatar }});\"></div>\n              <div class=\"col\">\n                <h3><a class=\"author-link\" href=\"{{ blog_author_url(group.id, content.blog_post_author.slug) }}\">{{ content.blog_post_author.display_name }}</a></h3>\n                <p>{{ content.blog_post_author.bio }}</p>\n                <a href=\"{{ blog_author_url(group.id, content.blog_post_author.slug) }}\">View All Articles</a>\n              </div>\n            </div>#}\n            \n            {% if content.topic_list %}\n            <p id=\"hubspot-topic_data\" ><span class=\"topic-label\">Tags:</span>\n              {% for topic in content.topic_list %}\n              <a class=\"topic-link\" href=\"{{ blog_tag_url(group.id, topic.slug) }}\">{{ topic.name }}</a>{% if not loop.last %}{% endif %}\n              {% endfor %}\n            </p>\n            {% endif %}\n\n          </div>\n\n        </div>\n        \n      </div>\n      <div class=\"col sticky\">\n        \n        <div class=\"content-half\">\n          {% module \"module_1597628987651445\" path=\"/Kore_Theme_v1/Modules/Local/KR - Sidebar Sticky CTA\", label=\"KR - Sidebar Sticky CTA\" %}\n        </div>\n        \n      </div>\n    </div>\n    \n  </div>\n</div>",
+          "widget_name" : "Blog Content",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "kore-module",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_15973002440611367",
+        "label" : "KR - Blog Post 2 CTA and Topic List",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Blog Post 2 CTA and Topic List",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Blog Post 2 CTA and Topic List",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

@@ -1,0 +1,153 @@
+[ {
+  "id" : "22361823-2c55-1ad6-3806-dff68cbb1231",
+  "name" : "selling_points_heading",
+  "label" : "Selling Points Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "unique selling points"
+}, {
+  "id" : "b5b8c965-f5e8-19e4-5835-eb428e6783b7",
+  "name" : "polygon",
+  "label" : "Polygon",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Polygon%201-2.png",
+    "alt" : "Polygon ",
+    "width" : 339,
+    "height" : 404,
+    "max_width" : 339,
+    "max_height" : 404,
+    "size_type" : "auto"
+  }
+}, {
+  "id" : "85da75c4-728c-1b77-7f61-5832d0ea07c6",
+  "name" : "selling_points_image_group",
+  "label" : "Selling Points Image Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 6,
+    "max" : 6,
+    "sorting_label_field" : null,
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "11b03e3c-ac2a-a22f-e897-fdda664ce4f8",
+    "name" : "selling_points_text",
+    "label" : "Selling  Points Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "INCREASE NEW BUISNESS"
+  }, {
+    "id" : "01c4b9e0-d848-a9f7-908a-7062abc97a64",
+    "name" : "selling_points_image",
+    "label" : "Selling Points Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/increase_new_business-1.png",
+      "alt" : "increase_new_business-1",
+      "loading" : "lazy",
+      "width" : 131,
+      "height" : 131,
+      "max_width" : 131,
+      "max_height" : 131
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "selling_points_text" : "INCREASE NEW BUISNESS",
+    "selling_points_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/increase_new_business-1.png",
+      "alt" : "increase_new_business-1",
+      "loading" : "lazy",
+      "width" : 131,
+      "height" : 131,
+      "max_width" : 131,
+      "max_height" : 131
+    }
+  }, {
+    "selling_points_text" : "INCREASE NEW BUISNESS",
+    "selling_points_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/increase_new_business-1.png",
+      "alt" : "increase_new_business-1",
+      "loading" : "lazy",
+      "width" : 131,
+      "height" : 131,
+      "max_width" : 131,
+      "max_height" : 131
+    }
+  }, {
+    "selling_points_text" : "INCREASE NEW BUISNESS",
+    "selling_points_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/increase_new_business-1.png",
+      "alt" : "increase_new_business-1",
+      "loading" : "lazy",
+      "width" : 131,
+      "height" : 131,
+      "max_width" : 131,
+      "max_height" : 131
+    }
+  }, {
+    "selling_points_text" : "INCREASE NEW BUISNESS",
+    "selling_points_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/increase_new_business-1.png",
+      "alt" : "increase_new_business-1",
+      "loading" : "lazy",
+      "width" : 131,
+      "height" : 131,
+      "max_width" : 131,
+      "max_height" : 131
+    }
+  }, {
+    "selling_points_text" : "INCREASE NEW BUISNESS",
+    "selling_points_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/increase_new_business-1.png",
+      "alt" : "increase_new_business-1",
+      "loading" : "lazy",
+      "width" : 131,
+      "height" : 131,
+      "max_width" : 131,
+      "max_height" : 131
+    }
+  }, {
+    "selling_points_text" : "INCREASE NEW BUISNESS",
+    "selling_points_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/increase_new_business-1.png",
+      "alt" : "increase_new_business-1",
+      "loading" : "lazy",
+      "width" : 131,
+      "height" : 131,
+      "max_width" : 131,
+      "max_height" : 131
+    }
+  } ]
+} ]

@@ -1,0 +1,29 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Hero - Centered
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: hero-centered.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  vertical_alignment="MIDDLE",
+  max_width=1200,
+  padding={"top": 120, "bottom": 120},
+  background_color={"color": "#f8f9fa", "opacity": 100}
+%}
+  {% dnd_column width=12 %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+          <h1 style="font-size: 4rem; font-weight: 700; margin-bottom: 1.5rem;">Centered Hero Section</h1>
+          <p style="font-size: 1.5rem; color: #666; margin-bottom: 2.5rem; line-height: 1.75;">Clean, focused hero perfect for landing pages and conversions.</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="#" style="display: inline-block; padding: 1rem 2.5rem; background: #007bff; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">Primary Action</a>
+            <a href="#" style="display: inline-block; padding: 1rem 2.5rem; background: transparent; color: #007bff; text-decoration: none; border-radius: 8px; font-weight: 600; border: 2px solid #007bff;">Secondary Action</a>
+          </div>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

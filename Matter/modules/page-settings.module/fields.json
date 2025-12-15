@@ -1,0 +1,29 @@
+[ {
+  "id" : "e34ac88b-254d-a53e-5361-cb777bfc7912",
+  "name" : "select_header",
+  "label" : "Select Header",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "site_header", "Site Header" ], [ "lp_header", "No Navigation Header" ] ],
+  "multiple" : false,
+  "reordering_enabled" : false,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "site_header"
+}, {
+  "id" : "2ef09645-f79f-7be9-fb4b-70e40bc39273",
+  "name" : "select_footer",
+  "label" : "Select Footer",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "site_footer", "Site Footer" ], [ "lp_footer", "No Navigation Footer" ] ],
+  "multiple" : false,
+  "reordering_enabled" : false,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "site_footer"
+} ]

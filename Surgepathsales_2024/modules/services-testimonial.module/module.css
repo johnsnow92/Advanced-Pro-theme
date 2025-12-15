@@ -1,0 +1,106 @@
+.about-testimonial .container {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.services-testimonial{padding: 40px 0 65px;}
+
+.services-testimonial .about-testimonial-heading h4,h2{
+  margin: 0 !important;
+  text-transform: none;
+}
+
+.services-testimonial .about-testimonial-heading h4{
+  font-size: 20px;
+  color: #FF7F16;
+  font-weight: 600;
+}
+
+.services-testimonial .about-testimonial-heading h2{
+  padding-bottom: 10px;
+  font-size: 48px;
+  color: #00234C;
+  font-weight: 700;
+}
+
+.services-testimonial .slide-img img{
+  height: 100px;
+  width: 100px;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.services-testimonial .slide p{
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.services-testimonial .slide-footer p{
+  font-size: 20px;
+  color: #00234C;
+  font-weight: 600;
+  margin: 0;
+}
+
+.services-testimonial .slide-footer span{
+  font-size: 17px;
+  color: #8f8a8a;
+  font-weight: 600;
+}
+
+.services-testimonial .tabs-row .slider{
+  display: flex;
+  padding: 40px 0 65px;
+}
+
+.services-testimonial .tabs-row{
+  padding: 0; 
+}
+.services-testimonial .slide {
+  background: #E2EFFF;
+  height: 476px;
+  padding: 25px 20px;
+}
+.services-testimonial .sec-video{
+  height: 100% !important;
+  margin: 0 auto;
+  width: 100% !important;
+  vertical-align: bottom;
+  max-width: 767px ;
+}
+
+@media(max-width: 1200px)
+{
+  .services-testimonial .slide {height: 545px;}
+
+}
+@media(max-width: 991px){
+  .services-testimonial .swiper-slide {
+    height: 520px;
+  }
+
+  .services-testimonial{padding: 0 0 30px 0!important;}
+}
+@media (max-width: 768px) {
+  .services-testimonial .swiper-slide {
+    height: 400px;
+  }
+}
+@media(max-width: 750px){
+  .services-testimonial .tabs-row .slider{padding: 0 0 50px;} 
+  .services-testimonial .about-testimonial .container{padding: 20px;}
+  .services-testimonial .about-testimonial-heading h2{padding-bottom: 0;}
+  .services-testimonial .swiper-slide{width: 514px;}
+}
+@media (max-width: 564px) {
+  .services-testimonial .swiper-slide {
+    height: 480px !important;
+    padding: 16px;
+  }
+}
+@media (max-width: 380px) {
+  .services-testimonial .swiper-slide {
+    height: 510px !important;
+    padding: 14px;
+  }
+}

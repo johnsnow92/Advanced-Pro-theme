@@ -1,0 +1,400 @@
+[ {
+  "id" : "d033d2c5-dd0d-095a-c10a-b54be97cbeeb",
+  "name" : "content",
+  "label" : "Heading content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h2>Integrations &amp; Partnerships heading goes here</h2>"
+}, {
+  "id" : "b910685e-6c0a-804a-62dc-c1af23a99254",
+  "name" : "items",
+  "label" : "Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "1b5e7f1b-9497-1d42-2593-054aaf6f621c",
+    "default" : 9
+  },
+  "children" : [ {
+    "id" : "2df45c8e-f8e8-12d5-055d-d5bf3152c5c3",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://yembo.ai/hubfs/card-image-12.png",
+      "alt" : "card-image-12",
+      "width" : 497,
+      "height" : 329,
+      "max_width" : 497,
+      "max_height" : 329
+    }
+  }, {
+    "id" : "1b5e7f1b-9497-1d42-2593-054aaf6f621c",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "UniGroup® + Yembo:Drive, Collaborate and Deliver"
+  }, {
+    "id" : "6b19ebd2-1803-14f6-1cb2-cb2a57351cb3",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>UniGroup® has partnered with Yembo to give our network a simplified and cost-effective option for surveys (self, virtual and in-home).</p>"
+  }, {
+    "id" : "48a6e5b7-f3d5-117c-5647-621169c3e5ce",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "a54553af-968f-43c8-78eb-6f7232a418c0",
+    "name" : "link_text",
+    "label" : "Link text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Learn More"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "image" : {
+      "src" : "https://yembo.ai/hubfs/card-image-12.png",
+      "alt" : "card-image-12",
+      "width" : 497,
+      "height" : 329,
+      "max_width" : 497,
+      "max_height" : 329
+    },
+    "title" : "UniGroup® + Yembo:Drive, Collaborate and Deliver",
+    "content" : "<p>UniGroup® has partnered with Yembo to give our network a simplified and cost-effective option for surveys (self, virtual and in-home).</p>",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "link_text" : "Learn More"
+  }, {
+    "image" : {
+      "src" : "https://yembo.ai/hubfs/card-image-12.png",
+      "alt" : "card-image-12",
+      "width" : 497,
+      "height" : 329,
+      "max_width" : 497,
+      "max_height" : 329
+    },
+    "title" : "UniGroup® + Yembo:Drive, Collaborate and Deliver",
+    "content" : "<p>UniGroup® has partnered with Yembo to give our network a simplified and cost-effective option for surveys (self, virtual and in-home).</p>",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "link_text" : "Learn More"
+  }, {
+    "image" : {
+      "src" : "https://yembo.ai/hubfs/card-image-12.png",
+      "alt" : "card-image-12",
+      "width" : 497,
+      "height" : 329,
+      "max_width" : 497,
+      "max_height" : 329
+    },
+    "title" : "UniGroup® + Yembo:Drive, Collaborate and Deliver",
+    "content" : "<p>UniGroup® has partnered with Yembo to give our network a simplified and cost-effective option for surveys (self, virtual and in-home).</p>",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "link_text" : "Learn More"
+  }, {
+    "image" : {
+      "src" : "https://yembo.ai/hubfs/card-image-12.png",
+      "alt" : "card-image-12",
+      "width" : 497,
+      "height" : 329,
+      "max_width" : 497,
+      "max_height" : 329
+    },
+    "title" : "UniGroup® + Yembo:Drive, Collaborate and Deliver",
+    "content" : "<p>UniGroup® has partnered with Yembo to give our network a simplified and cost-effective option for surveys (self, virtual and in-home).</p>",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "link_text" : "Learn More"
+  }, {
+    "image" : {
+      "src" : "https://yembo.ai/hubfs/card-image-12.png",
+      "alt" : "card-image-12",
+      "width" : 497,
+      "height" : 329,
+      "max_width" : 497,
+      "max_height" : 329
+    },
+    "title" : "UniGroup® + Yembo:Drive, Collaborate and Deliver",
+    "content" : "<p>UniGroup® has partnered with Yembo to give our network a simplified and cost-effective option for surveys (self, virtual and in-home).</p>",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "link_text" : "Learn More"
+  }, {
+    "image" : {
+      "src" : "https://yembo.ai/hubfs/card-image-12.png",
+      "alt" : "card-image-12",
+      "width" : 497,
+      "height" : 329,
+      "max_width" : 497,
+      "max_height" : 329
+    },
+    "title" : "UniGroup® + Yembo:Drive, Collaborate and Deliver",
+    "content" : "<p>UniGroup® has partnered with Yembo to give our network a simplified and cost-effective option for surveys (self, virtual and in-home).</p>",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "link_text" : "Learn More"
+  }, {
+    "image" : {
+      "src" : "https://yembo.ai/hubfs/card-image-12.png",
+      "alt" : "card-image-12",
+      "width" : 497,
+      "height" : 329,
+      "max_width" : 497,
+      "max_height" : 329
+    },
+    "title" : "UniGroup® + Yembo:Drive, Collaborate and Deliver",
+    "content" : "<p>UniGroup® has partnered with Yembo to give our network a simplified and cost-effective option for surveys (self, virtual and in-home).</p>",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "link_text" : "Learn More"
+  }, {
+    "image" : {
+      "src" : "https://yembo.ai/hubfs/card-image-12.png",
+      "alt" : "card-image-12",
+      "width" : 497,
+      "height" : 329,
+      "max_width" : 497,
+      "max_height" : 329
+    },
+    "title" : "UniGroup® + Yembo:Drive, Collaborate and Deliver",
+    "content" : "<p>UniGroup® has partnered with Yembo to give our network a simplified and cost-effective option for surveys (self, virtual and in-home).</p>",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "link_text" : "Learn More"
+  }, {
+    "image" : {
+      "src" : "https://yembo.ai/hubfs/card-image-12.png",
+      "alt" : "card-image-12",
+      "width" : 497,
+      "height" : 329,
+      "max_width" : 497,
+      "max_height" : 329
+    },
+    "title" : "UniGroup® + Yembo:Drive, Collaborate and Deliver",
+    "content" : "<p>UniGroup® has partnered with Yembo to give our network a simplified and cost-effective option for surveys (self, virtual and in-home).</p>",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "link_text" : "Learn More"
+  } ]
+}, {
+  "id" : "fbc2c285-e0e1-54d0-7aaa-f5ff7c1f79e3",
+  "name" : "settings",
+  "label" : "Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "903a8747-ad4e-a4e3-72bc-f8dc8788ac89",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "68c607d9-535a-8237-9d99-42d51833b9df",
+    "name" : "padding_desktop",
+    "label" : "Padding (Desktop)",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "c7a2858d-3959-fb67-991c-413540a0b3d2",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 80
+    }, {
+      "id" : "682b2f2d-c2ed-ea41-389c-742746812232",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 80
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 80,
+      "bottom" : 80
+    }
+  }, {
+    "id" : "d2d3888c-2428-cbda-a555-aa9853d9282f",
+    "name" : "padding_tablet",
+    "label" : "Padding (Tablet)",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "a8486a4b-c2de-b0e9-d865-11aa32fa7652",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    }, {
+      "id" : "87611ff8-abd7-e1d2-6384-20acd7e303b0",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 60,
+      "bottom" : 60
+    }
+  }, {
+    "id" : "d2b3b0cc-100f-89ac-b0bf-150bd4da11c9",
+    "name" : "padding_mobile_",
+    "label" : "Padding (Mobile)",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "a8ea373f-2e0c-0dd8-ff1f-019c23fcdca2",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    }, {
+      "id" : "bd588654-987a-a82a-fc12-c56296d2458c",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 50,
+      "bottom" : 50
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "padding_desktop" : {
+      "top" : 80,
+      "bottom" : 80
+    },
+    "padding_tablet" : {
+      "top" : 60,
+      "bottom" : 60
+    },
+    "padding_mobile_" : {
+      "top" : 50,
+      "bottom" : 50
+    }
+  }
+} ]

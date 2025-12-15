@@ -1,0 +1,238 @@
+/* Content Sidebar Module Styles */
+
+.content-sidebar-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.content-sidebar-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Desktop Layout - Two Columns */
+@media (min-width: 768px) {
+  .sidebar-right .content-sidebar-container {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .sidebar-left .content-sidebar-container {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+/* Main Content Area */
+.main-content {
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.main-content h1:first-child,
+.main-content h2:first-child,
+.main-content h3:first-child {
+  margin-top: 0;
+}
+
+.main-content p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.main-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebar-item {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #007bff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sidebar-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.sidebar-item-content {
+  line-height: 1.6;
+  color: #555;
+}
+
+.sidebar-item-content p {
+  margin-bottom: 0.75rem;
+}
+
+.sidebar-item-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Image Item Styles */
+.sidebar-item-image {
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sidebar-item-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-item-image img:hover {
+  transform: scale(1.05);
+}
+
+/* CTA Item Styles */
+.sidebar-item-cta {
+  margin-top: 0.5rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #007bff;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  background: #0056b3;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+/* Type-specific styling */
+.sidebar-item-text {
+  border-left-color: #28a745;
+}
+
+.sidebar-item-image {
+  border-left-color: #ffc107;
+  background: #ffffff;
+}
+
+.sidebar-item-cta {
+  border-left-color: #dc3545;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 767px) {
+  .content-sidebar-wrapper {
+    padding: 1rem 0.5rem;
+  }
+
+  .content-sidebar-container {
+    gap: 1.5rem;
+  }
+
+  /* Stack sidebar below main content on mobile for right sidebar */
+  .sidebar-right .main-content {
+    order: 1;
+  }
+
+  .sidebar-right .sidebar {
+    order: 2;
+  }
+
+  /* Stack sidebar above main content on mobile for left sidebar */
+  .sidebar-left .sidebar {
+    order: 1;
+  }
+
+  .sidebar-left .main-content {
+    order: 2;
+  }
+
+  .main-content,
+  .sidebar-item {
+    padding: 1rem;
+  }
+
+  .sidebar-item-title {
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Tablet Adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .content-sidebar-wrapper {
+    max-width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .sidebar-right .content-sidebar-container,
+  .sidebar-left .content-sidebar-container {
+    gap: 1.5rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .content-sidebar-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-item {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .cta-button {
+    background: transparent;
+    color: #007bff;
+    border: 1px solid #007bff;
+  }
+}

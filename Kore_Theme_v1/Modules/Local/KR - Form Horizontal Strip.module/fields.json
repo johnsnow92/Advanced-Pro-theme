@@ -1,0 +1,123 @@
+[ {
+  "id" : "e74ee001-d281-23d0-456a-f282e58696bc",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "Book a FREE 40-minute consult!"
+}, {
+  "id" : "ca07a203-9dfb-60db-62f3-3bb1aa96918b",
+  "name" : "form_field",
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form.",
+    "form_type" : "HUBSPOT"
+  }
+}, {
+  "id" : "565047db-58d7-243f-d314-ae8b77f8f25b",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "259f6b84-dddd-3939-61e6-5c97bb935641",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "ca7ccc3f-499a-5f75-1a13-0689a0b82291",
+    "name" : "strip_background_color",
+    "label" : "Strip background color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#3574E3",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "62699b2b-36e6-a843-d57c-619af0b7b6ec",
+    "name" : "strip_font_color",
+    "label" : "Strip font color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "481adcc1-e8fd-ae2e-821a-e1fe548d9046",
+    "name" : "switch_on_font_awesome",
+    "label" : "Switch on Font Awesome",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "a8d7e14d-2f83-e31a-ecc1-5511186aafee",
+    "name" : "button_background_color",
+    "label" : "Button background color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ef5a28",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "0fa3c926-ce75-b94d-980e-2b6c6b31b176",
+    "name" : "button_font_color",
+    "label" : "Button font color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_show_hide" : true,
+    "strip_background_color" : {
+      "color" : "#3574E3",
+      "opacity" : 100
+    },
+    "strip_font_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "switch_on_font_awesome" : true,
+    "button_background_color" : {
+      "color" : "#ef5a28",
+      "opacity" : 100
+    },
+    "button_font_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }
+} ]

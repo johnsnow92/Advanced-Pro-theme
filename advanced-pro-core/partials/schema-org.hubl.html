@@ -1,0 +1,95 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{# Schema.org JSON-LD Structured Data Helper #}
+
+{% set company_name = site_settings.company_name|default("Your Company") %}
+{% set company_logo_obj = site_settings.company_logo|default({}) %}
+{% set company_logo_src = company_logo_obj.src|default("") %}
+{% set social_link_facebook = site_settings.social_link_facebook|default("") %}
+{% set social_link_twitter = site_settings.social_link_twitter|default("") %}
+{% set social_link_linkedin = site_settings.social_link_linkedin|default("") %}
+{% set social_link_instagram = site_settings.social_link_instagram|default("") %}
+{% set social_links = [] %}
+{% if social_link_facebook %}{% set social_links = social_links + [social_link_facebook] %}{% endif %}
+{% if social_link_twitter %}{% set social_links = social_links + [social_link_twitter] %}{% endif %}
+{% if social_link_linkedin %}{% set social_links = social_links + [social_link_linkedin] %}{% endif %}
+{% if social_link_instagram %}{% set social_links = social_links + [social_link_instagram] %}{% endif %}
+
+{# Organization Schema #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": {{ company_name|tojson }},
+  "url": {{ request.domain|tojson }},
+  "logo": {{ company_logo_src|tojson }},
+  "sameAs": {{ social_links|tojson }}
+}
+</script>
+
+{# Website Schema #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ company_name|tojson }},
+  "url": {{ request.domain|tojson }},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {{ (request.domain ~ '/search?q={search_term_string}')|tojson }},
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
+{% if content.post_body|default(False) %}
+{# Blog Post Schema #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ content.name|default("")|tojson }},
+  "image": {{ content.featured_image|default("")|tojson }},
+  "author": {
+    "@type": "Person",
+    "name": {{ content.blog_post_author.display_name|default("")|tojson }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": {{ company_name|tojson }},
+    "logo": {
+      "@type": "ImageObject",
+      "url": {{ company_logo_src|tojson }}
+    }
+  },
+  "datePublished": {{ content.publish_date|default("")|tojson }},
+  "dateModified": {{ content.updated|default("")|tojson }}
+}
+</script>
+{% endif %}
+
+{# Breadcrumb Schema #}
+{% if content.absolute_url %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ request.domain }}"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ content.name }}",
+      "item": "{{ content.absolute_url }}"
+    }
+  ]
+}
+</script>
+{% endif %}

@@ -1,0 +1,215 @@
+.cm-home-banner {
+  background-image: linear-gradient(-67deg,#eaeaf1 18%,#ffffff 18%);
+  padding-bottom: 100px;
+  background-color: #eaeaf1;
+}
+.cm-home-banner .cm-wrapper {
+  width: 90%;
+  max-width: 1800px;
+  margin-left: auto;
+}
+
+.cm-home-banner  .cm-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cm-home-banner .cm-left {
+  width: 38.2%;
+  margin-right: 3%;
+  padding-right: 50px;
+}
+
+.cm-home-banner .cm-left .top-spacer {
+  height: 80px;
+  margin-bottom: 60px;
+  margin-left: -20vw;
+  transform: skewX(-22deg) skewY(0deg);
+  position: relative;
+}
+
+.cm-home-banner .cm-left .top-spacer:before {
+  border-top-color: #0251b8;
+  border-top-width: 80px;
+  content: "";
+  width: 100%;
+  height: 1px;
+  border-top-style: solid;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.cm-home-banner .cm-left h1 {
+  font-family: 'Khand',Helvetica,Arial,Lucida,sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  font-size: 5vw;
+  text-align: right;
+  word-break: normal;
+  margin-left: -276px;
+  transform: skewX(-6deg) skewY(0deg);
+}
+
+.cm-home-banner .cm-left .cm-divider {
+  margin-bottom: 23px;
+  height: 10px;
+  max-width: 100px;
+  transform: skewX(-20deg) skewY(0deg);
+  position: relative;
+}
+
+.cm-home-banner .cm-left .cm-divider:before {
+  border-top-color: #f71635;
+  border-top-style: double;
+  border-top-width: 10px;
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+}
+
+.cm-home-banner .cm-left .cm-text {
+  text-align: right;
+  font-weight: 600;
+  line-height: 2em;
+  font-family: 'Crimson Text',Georgia,"Times New Roman",serif;
+  font-size: 24px;
+  margin-bottom: 23px;
+}
+
+.cm-home-banner .cm-left .cm-text p:last-child {
+  margin-bottom: 0;
+}
+
+.cm-home-banner .cm-left .btn-wrapper a {
+  border: 2px solid;
+  position: relative;
+  transition: all 300ms ease 0ms;
+  display: inline-block;
+  padding-top: 15px;
+  padding-right: 40px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  color: #ffffff;
+  border-width: 0;
+  border-radius: 0px;
+  letter-spacing: 3px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: #f71635;
+}
+
+.cm-home-banner .cm-left .btn-wrapper a:after {
+  content: 'E';
+  position: absolute;
+  transition: all 300ms ease 0ms;
+  line-height: inherit;
+  font-size: inherit!important;
+  opacity: 1;
+  margin-left: 0.3em;
+  left: auto;
+  font-family: ETmodules!important;
+  font-weight: 400!important;
+}
+
+.cm-home-banner .cm-left .btn-wrapper {
+  text-align: right;  transform: skewX(-22deg) skewY(0deg);
+}
+
+.cm-home-banner  .cm-right {
+  width: 58.8%;
+  position: relative;
+  z-index: 9;
+}
+
+.cm-home-banner .cm-right .parallax-section {
+  margin-bottom: 2.551%;
+  position: relative;
+}
+
+.cm-home-banner .cm-right .et_parallax_bg_wrap {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.cm-home-banner .cm-right  .et_parallax_bg {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; 
+  display: block;
+}
+
+.cm-home-banner .cm-right .et_pb_image_wrap {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+}
+
+.cm-home-banner .cm-right .et_pb_image_wrap img {
+  width: 100%;
+}
+.cm-home-banner .cm-left .btn-wrapper a:hover {
+  background-color: #d10026;
+}
+.cm-home-banner .cm-right .et_pb_image_wrap1 {
+  margin-top: -70%!important;
+  width: 60%;
+  text-align: right;
+  margin-left: auto;
+}
+
+.cm-home-banner .cm-right .et_pb_image_wrap1 img {
+  position: relative;
+}
+
+@media (max-width:767px) {
+  .cm-home-banner .cm-left {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .cm-home-banner .cm-left .top-spacer {
+    margin-bottom: 30px;
+  }
+  .cm-home-banner .cm-left .cm-divider {
+    margin-bottom: 30px;
+  }
+  .cm-home-banner .cm-left .cm-text {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  .cm-home-banner .cm-right {
+    width: 100%;
+  }
+  .cm-home-banner .cm-left .cm-divider:before {
+    left: auto;
+    right: 0;
+  }
+  .cm-home-banner .cm-left .cm-divider {
+    margin-left: auto;
+  }
+}
+
+@media (max-width:479px) {
+  .cm-home-banner .cm-left h1 {
+    font-size: 30px;
+    word-break: normal;
+  }
+}

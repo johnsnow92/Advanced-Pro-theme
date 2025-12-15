@@ -1,0 +1,240 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 4,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1617106720694484",
+        "label" : "Flexible column",
+        "type" : "widget_container",
+        "params" : {
+          "css_class" : "",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617696823424540",
+          "label" : "KR - Hero Single Column 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Hero Single Column 1",
+            "per_widget_wrapper_html" : "",
+            "section_settings" : {
+              "section_text_alignment" : "text-left",
+              "section_background_type" : "4"
+            },
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Hero Single Column 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617696843836542",
+          "label" : "KR - Rich Text with Sidebar",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text with Sidebar",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Rich Text with Sidebar",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        } ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1617696922319567",
+        "label" : "Module group",
+        "type" : "cell",
+        "params" : {
+          "css_class" : "",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "<div class=\"kore-module\">\n  <div class=\"pl-50 pl-phone-0\">{{ html }}</div>\n</div>",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ {
+          "0" : {
+            "x" : 0,
+            "w" : 8,
+            "name" : "module_1617696973191610",
+            "label" : "KR - Rich Text 1",
+            "type" : "custom_widget",
+            "params" : {
+              "css_class" : "",
+              "schema_version" : 2,
+              "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text 1",
+              "per_widget_wrapper_html" : "",
+              "section_settings" : {
+                "section_text_alignment" : "text-left",
+                "section_padding_desktop" : {
+                  "top" : 60,
+                  "bottom" : 60
+                },
+                "section_padding_tablet" : {
+                  "top" : 50,
+                  "bottom" : 50
+                },
+                "section_padding_mobile" : {
+                  "top" : 50,
+                  "bottom" : 50
+                }
+              },
+              "css_style" : "",
+              "wrapping_html" : "",
+              "css_id" : "",
+              "widget_name" : "KR - Rich Text 1",
+              "css_id_str" : "",
+              "overrideable" : true
+            },
+            "rows" : [ ],
+            "rowMetaData" : [ ],
+            "cells" : [ ],
+            "cssId" : "",
+            "cssClass" : "",
+            "cssStyle" : "",
+            "styles" : null,
+            "widgets" : [ ]
+          },
+          "8" : {
+            "x" : 8,
+            "w" : 4,
+            "name" : "module_1617696902514548",
+            "label" : "KR - Sidebar Sticky CTA",
+            "type" : "custom_widget",
+            "params" : {
+              "css_class" : "kr-sticky",
+              "schema_version" : 2,
+              "path" : "/Kore_Theme_v1/Modules/Local/KR - Sidebar Sticky CTA",
+              "per_widget_wrapper_html" : "",
+              "css_style" : "",
+              "wrapping_html" : "",
+              "css_id" : "",
+              "widget_name" : "KR - Sidebar Sticky CTA",
+              "css_id_str" : "",
+              "overrideable" : true
+            },
+            "rows" : [ ],
+            "rowMetaData" : [ ],
+            "cells" : [ ],
+            "cssId" : "",
+            "cssClass" : "kr-sticky",
+            "cssStyle" : "",
+            "styles" : null,
+            "widgets" : [ ]
+          }
+        } ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

@@ -1,0 +1,35 @@
+.kore-blog-banner-1 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-blog-banner-1 .blog-post-hero {
+  position: relative;
+  max-width: 1170px;
+  min-height: 605px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.kore-blog-banner-1 .blog-post-hero-image {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  width: 100%;
+  height: 100%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media(max-width:767px) {
+
+  .kore-blog-banner-1 .blog-post-hero {
+    max-width: 100%;
+    min-height: 300px;
+  }
+
+}

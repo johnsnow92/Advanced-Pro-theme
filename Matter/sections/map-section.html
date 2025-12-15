@@ -1,0 +1,64 @@
+<!--
+templateType: section
+label: Map Section
+isAvailableForNewContent: false
+-->
+
+{% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/google-map",
+        offset=0,
+        width=12,
+        style={
+          "background_color" : {
+            "select_background_theme" : ""
+          },
+          "container" : {
+            "select_size" : "full_width"
+          },
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "left" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "right" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "top" : {
+                  "units" : "px",
+                  "value" : 0
+                }
+              }
+            }
+          }
+        },
+        map_settings={
+          "height" : 500
+        }
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

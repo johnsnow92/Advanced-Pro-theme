@@ -1,0 +1,132 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .resource-box h3 a,
+  .{{ name }} .resources-filter ul li a {
+    color: {{ module.link_color.color }};
+  }
+  
+  .{{ name }} .resource-box h3 a:hover,
+  .{{ name }} .resources-filter ul li a:hover {
+    color: {{ module.link_color_hover.color }} !important;
+  }
+  
+  .{{ name }} .more-wrapper .more-btn {
+    border: 1px solid {{ module.view_all_color.color }};
+    color: {{ module.view_all_color.color }};
+  }
+  
+  .{{ name }} .more-wrapper .more-btn:hover {
+    background-color: {{ module.view_all_color.color }};
+    color: #fff !important;
+  }
+  
+  .{{ name }} .more-wrapper .view-all {
+    background-color: {{ module.view_all_color.color }};
+    color: #fff;
+  }
+  
+  .{{ name }} .more-wrapper .view-all:hover {
+    background-color: {{ module.view_all_color_hover.color }};
+    color: #fff !important;
+  }
+
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-newsletter clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+
+      <div class="flex">
+        <div class="col sidebar">
+          <div class="resources-filter by-category">
+            <h4>Newsletters by month</h4> 
+            <ul>
+
+              {% set list = [] %}
+              {% for item in module.resource|sort(False, False, 'date')|reverse %}
+
+              {% set list = list + item.date|datetimeformat('%B %Y') %}
+
+              {% if loop.last %}
+              {% for post in list|unique %}
+              <li><a href="#" id="{{ post|replace(' ', '_')|lower }}">{{ post }}</a></li>
+              {% endfor %}
+              {% endif %}
+
+              {% endfor %}
+
+            </ul>
+          </div>
+
+        </div>
+        <div class="col">
+          <div class="resources">
+            <div class="resources-header">
+              <h4 class="font-size-16">Latest Newsletters</h4>
+            </div>
+            <div class="resources-list">
+              {% for item in module.resource|reverse %}
+              <div class="resource-box {{ item.date|datetimeformat('%B %Y')|replace(' ', '_')|lower }} {{ item.type }}">
+                <div class="resource-image">
+                  {% if item.image.src %}
+                  <img src="{{ item.image.src }}" alt="{{ item.image.alt }}">
+                  {% endif %}  
+                </div>
+                <h3><a href="{{ item.link }}">{{ item.title }}</a></h3>
+              </div>            
+              {% endfor %}
+            </div>
+            <div class="more-wrapper text-center">
+              <a href="#" class="more-btn more">More from this month</a>
+              <a href="#" class="view-all">View All Newsletters</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div> 
+   
+  </div>
+</div>
+
+{% endif %}

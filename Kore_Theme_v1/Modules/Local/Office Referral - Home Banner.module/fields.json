@@ -1,0 +1,451 @@
+[ {
+  "id" : "89f62d73-bcd6-10dd-76a8-10f9d661ea57",
+  "name" : "header_show_hide",
+  "label" : "Header Show/Hide",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "4780c8ee-d6b2-b311-8708-677e2b9eaa23",
+  "name" : "header",
+  "label" : "Header",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "89f62d73-bcd6-10dd-76a8-10f9d661ea57",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "true",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "children" : [ {
+    "id" : "cd2df318-e603-0985-0525-9f3260de181a",
+    "name" : "logo",
+    "label" : "Logo",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://f.hubspotusercontent30.net/hubfs/7967936/Logo%20Horizontal%20White%20980x188.png",
+      "alt" : "Logo Horizontal White 980x188",
+      "width" : 980,
+      "height" : 188,
+      "max_width" : 250,
+      "max_height" : 48
+    }
+  }, {
+    "id" : "01c84028-498c-8dc3-f462-9e5aad88f6f0",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.officereferral.com/",
+      "content_id" : null
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "logo" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://f.hubspotusercontent30.net/hubfs/7967936/Logo%20Horizontal%20White%20980x188.png",
+      "alt" : "Logo Horizontal White 980x188",
+      "width" : 980,
+      "height" : 188,
+      "max_width" : 250,
+      "max_height" : 48
+    },
+    "url" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.officereferral.com/",
+      "content_id" : null
+    }
+  }
+}, {
+  "id" : "9c58b8d8-9ada-7067-6166-eec1370ad2c2",
+  "name" : "tagline",
+  "label" : "Tagline",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c6281fa6-5043-febd-1a38-942afeb5e419",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "WE MAKE FINDING AN OFFICE EASY"
+  }, {
+    "id" : "6594bf4a-44ed-1730-caa8-3c6855873abd",
+    "name" : "font_size",
+    "label" : "Font Size",
+    "help_text" : "Pixel Unit",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "c6281fa6-5043-febd-1a38-942afeb5e419",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "text",
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 14
+  }, {
+    "id" : "2c8b22fd-b4b2-6610-7551-41a9ec5af419",
+    "name" : "font_weight",
+    "label" : "Font Weight",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "c6281fa6-5043-febd-1a38-942afeb5e419",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "font-weight-100", "Thin" ], [ "font-weight-300", "Light" ], [ "font-weight-400", "Regular" ], [ "font-weight-500", "Medium" ], [ "font-weight-600", "Semi Bold" ], [ "font-weight-700", "Bold" ], [ "font-weight-800", "Extra Bold" ], [ "font-weight-900", "Black" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "font-weight-400"
+  }, {
+    "id" : "9fc91137-5775-bb69-8c4e-c476632f19a7",
+    "name" : "font_color",
+    "label" : "Font Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "c6281fa6-5043-febd-1a38-942afeb5e419",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "WE MAKE FINDING AN OFFICE EASY",
+    "font_size" : 14,
+    "font_weight" : "font-weight-400",
+    "font_color" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "91d14622-89c1-7962-b79e-af59a367885b",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "878420c4-df07-28df-f30c-4d12132c05a9",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "WE MAKE FINDING AN OFFICE EASY"
+  }, {
+    "id" : "1bc15a5a-be86-7cab-256f-5eb062adcd37",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "878420c4-df07-28df-f30c-4d12132c05a9",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "h1"
+  }, {
+    "id" : "9b29aca0-de6a-c679-e0b1-a1c884721978",
+    "name" : "font_size",
+    "label" : "Font Size",
+    "help_text" : "Pixel Unit",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "878420c4-df07-28df-f30c-4d12132c05a9",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "text",
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 58
+  }, {
+    "id" : "8c715107-e413-d428-6f4e-4020ab3620f0",
+    "name" : "font_weight",
+    "label" : "Font Weight",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "878420c4-df07-28df-f30c-4d12132c05a9",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "font-weight-100", "Thin" ], [ "font-weight-300", "Light" ], [ "font-weight-400", "Regular" ], [ "font-weight-500", "Medium" ], [ "font-weight-600", "Semi Bold" ], [ "font-weight-700", "Bold" ], [ "font-weight-800", "Extra Bold" ], [ "font-weight-900", "Black" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "font-weight-700"
+  }, {
+    "id" : "e1abbce7-aae4-c18a-f091-c26940bcd87a",
+    "name" : "font_color",
+    "label" : "Font Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "878420c4-df07-28df-f30c-4d12132c05a9",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "WE MAKE FINDING AN OFFICE EASY",
+    "type" : "h1",
+    "font_size" : 58,
+    "font_weight" : "font-weight-700",
+    "font_color" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "bacb0ea3-4eae-3a58-2f55-3a8eb7cf79e1",
+  "name" : "subheading",
+  "label" : "Sub Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "bc55bebd-cd1b-bf75-b0f6-e017c6dd105e",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "d00b2817-8f57-0376-ba7b-944e34e594e2",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "bc55bebd-cd1b-bf75-b0f6-e017c6dd105e",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "h2"
+  }, {
+    "id" : "1c6c5d27-b604-8da3-6e52-d9a98aa80eac",
+    "name" : "font_size",
+    "label" : "Font Size",
+    "help_text" : "Pixel Unit",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "bc55bebd-cd1b-bf75-b0f6-e017c6dd105e",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "text",
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 36
+  }, {
+    "id" : "ff9aa905-f02d-ba8c-5084-191a0715e008",
+    "name" : "font_weight",
+    "label" : "Font Weight",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "bc55bebd-cd1b-bf75-b0f6-e017c6dd105e",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "font-weight-100", "Thin" ], [ "font-weight-300", "Light" ], [ "font-weight-400", "Regular" ], [ "font-weight-500", "Medium" ], [ "font-weight-600", "Semi Bold" ], [ "font-weight-700", "Bold" ], [ "font-weight-800", "Extra Bold" ], [ "font-weight-900", "Black" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "font-weight-700"
+  }, {
+    "id" : "c1c59820-8221-7c3c-999c-d923a9a01d8c",
+    "name" : "font_color",
+    "label" : "Font Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "bc55bebd-cd1b-bf75-b0f6-e017c6dd105e",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "",
+    "type" : "h2",
+    "font_size" : 36,
+    "font_weight" : "font-weight-700",
+    "font_color" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "f282aa08-5222-bb80-408b-07426f4596ff",
+  "name" : "slide_background_image",
+  "label" : "Slide Background Image",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : [ {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent30.net/hubfs/7967936/Images/5f1ec35fe9c7ecb9e0593370_architectural-design-architecture-ceiling-chairs-380768.jpg",
+    "alt" : "5f1ec35fe9c7ecb9e0593370_architectural-design-architecture-ceiling-chairs-380768",
+    "width" : 1920,
+    "height" : 1077,
+    "max_width" : 1920,
+    "max_height" : 1077
+  }, {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent30.net/hubfs/7967936/Images/5f1ec35fe9c7ecb9e0593370_architectural-design-architecture-ceiling-chairs-380768.jpg",
+    "alt" : "5f1ec35fe9c7ecb9e0593370_architectural-design-architecture-ceiling-chairs-380768",
+    "width" : 1920,
+    "height" : 1077,
+    "max_width" : 1920,
+    "max_height" : 1077
+  }, {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent30.net/hubfs/7967936/Images/5f1ec35fe9c7ecb9e0593370_architectural-design-architecture-ceiling-chairs-380768.jpg",
+    "alt" : "5f1ec35fe9c7ecb9e0593370_architectural-design-architecture-ceiling-chairs-380768",
+    "width" : 1920,
+    "height" : 1077,
+    "max_width" : 1920,
+    "max_height" : 1077
+  } ]
+} ]

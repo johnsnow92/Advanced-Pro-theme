@@ -1,0 +1,171 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+{% require_css %}
+<style type="text/css">
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+
+  .{{ name }} .tagline {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .sub-heading,
+  .{{ name }} .sub-heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .content,
+  .{{ name }} .content * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .content a {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .content a:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+
+  .{{ name }} #cta .kore-button,
+  .{{ name }} .kore-button,
+  .{{ name }} .simple a {
+    background-color: {{ module.button.button_background_color.color }} !important;
+    {% if module.button.button_background_color.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ module.button.button_text_color.color }} !important;
+  }
+
+  .{{ name }} #cta .kore-button:hover,
+  .{{ name }} .kore-button:hover,
+  .{{ name }} .simple a:hover {
+    background-color: {{ module.button.button_color_hover.color }} !important;
+    {% if module.button.button_color_hover.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ module.button.button_text_color_hover.color }} !important;
+  }
+
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+{% end_require_css %}
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} popup-video-1 clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+
+      <div class="max-width-850 mr-auto ml-auto">
+
+        {% if module.heading.text %}
+        {% if module.heading.type == "h1" %} 
+        <div class="heading mb-15">
+          <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h1>
+        </div>
+        {% elif module.heading.type == "h2" %}
+        <div class="heading mb-15">
+          <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h2>
+        </div>
+        {% elif module.heading.type == "h3" %}
+        <div class="heading mb-15">
+          <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h3>
+        </div>
+        {% elif module.heading.type == "h4" %}
+        <div class="heading mb-15">
+          <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h4>
+        </div>
+        {% elif module.heading.type == "h5" %}
+        <div class="heading mb-15">
+          <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h5>
+        </div>
+        {% elif module.heading.type == "h6" %}
+        <div class="heading mb-15">
+          <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h6>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        {% if module.content %}
+        <div class="content parent font-size-16" id="cta">
+          {{ module.content }}
+        </div>
+        {% endif %}
+
+      </div>
+
+      <div class="popup-video" style="background-image: url('{{ module.popup_video.background_image.src }}');">
+        <div class="video-content">
+          <a href="javascript:;" class="btn-play">Play {% icon icon_set="fontawesome-5.14.0" name="Play" style="SOLID" height="14" purpose="decorative" title="Play icon" no_wrapper=True %}</a>
+          <p>{{ module.popup_video.text }}</p>
+        </div>
+
+        <div class="popup-video-wrap">
+          <div class="popup-inner">            
+            <video controls id="video">
+              <source src="{{ module.popup_video.video }}" type="video/mp4">
+            </video>
+          </div>
+          <div class="close"><span></span><span></span></div>
+        </div>
+        <div class="video-popup-overlay"></div>
+        <div class="sec-overlay" style="background-color: rgba(0,0,0,{{ module.popup_video.overlay_opacity }});"></div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% endif %}

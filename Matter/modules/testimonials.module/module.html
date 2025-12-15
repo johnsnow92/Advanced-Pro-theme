@@ -1,0 +1,225 @@
+{% import "../../macros/_macros.html" as macros %}
+
+{% set slider_settings = module.module_settings.slider_options %}
+
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="testimonials_slider {{name}} dnd_padd  {% if module.module_settings.enable_slider %}sliderEnabled{% else%} {{ module.module_settings.select_number_of_columns }}_row{% endif %} styleChanges {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} {% if module.module_settings.enable_slider %} per_view{{ slider_settings.slides_per_view }} {% if slider_settings.autoplay %}autoplay_true{% endif %} {% if slider_settings.dots %}dots_true{% endif %} {% if slider_settings.arrows %}arrows_trw{% endif %} {% if slider_settings.loop %}loop_true{% endif %}{% endif %}">
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+    {{ macros.topContent(module.top_content, module.module_settings) }}
+    <div class="bottom_row {% if module.module_settings.enable_slider %}glide{% endif %}">
+      {% if module.module_settings.enable_slider %}<div class="glide__track " data-glide-el="track"> {% endif %}
+      <div class="testmn_row {% if module.module_settings.enable_slider %} glide__slides{% else %}rowGap15{% endif %} flex_row  {% if module.module_settings.enable_masonry and not module.module_settings.enable_slider %}masonryadded{% endif %}" >
+        {% for item in module.testimonials_group %}
+        <div class="testmn_item {% if module.module_settings.enable_slider %}col4{% else%} {{ module.module_settings.select_number_of_columns }}{% endif %} pdlr10 it{{loop.index}} {% if module.module_settings.include_grayscale_on_image %}hoverGrey{% endif %}" >
+          <div class="testmn_inner {{ module.style.card_styles.select_background_theme }} {{ module.style.card_styles.select_content_alignment }}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 150 + 200}}" {% endif %}>
+            <div class="card_box custom">
+              {% if item.image.src %}
+              <div class="icon_box">
+                <div class="icon_inner">
+                  <span class="icon_img icon_sp">
+                    {% if item.include_link_on_image %}
+                    {% set href = item.link.url.href %}
+                    {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                    {% endif %}
+                    {% if  href %}
+                    <a href="{{ href }}" class="bg_el" {% if item.link.open_in_new_tab %}target="_blank"{% endif %} {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}></a>
+                    {% endif %}
+                    {% endif %}
+                    {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+                    <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" width="{{item.image.width}}" height="{{item.image.height}}" {{ sizeAttrs }}/>
+                  </span>
+                </div>
+              </div>
+              {% endif %}
+
+              {% if item.quote  %}
+              <div class="card_quote">
+                <p>
+                  {{ item.quote }}
+                </p>
+              </div>
+              {% endif %}
+
+
+              {% if item.add_rating %}
+              {% if item.rating and add_rating = true %}
+              <div class="rating">
+                {% set count = item.rating%}
+                <span class="star_fill {% if count == 1 or count == 2 or count == 3 or count == 4 or count == 5 %}fill{% endif %} "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#F5CD3E" style="&#10;"/></svg></span>
+                <span class="star_fill {% if count == 2 or count == 3 or count == 4 or count == 5 %}fill{% endif %}"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#F5CD3E" style="&#10;"/></svg></span>
+                <span class="star_fill {% if count == 3 or count == 4 or count == 5 %}fill{% endif %} "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#F5CD3E" style="&#10;"/></svg></span>
+                <span class="star_fill {% if count == 4 or count == 5 %}fill{% endif %} "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#F5CD3E" style="&#10;"/></svg></span>
+                <span class="star_fill {% if count == 5 %}fill{% endif %} "><svg xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none"><path d="M10 0L12.2451 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#F5CD3E" style="&#10;"/></svg></span>
+              </div>
+              {% endif %}
+              {% endif %}
+
+              {% if item.auth_name or item.designation %}
+              <div class="card_content {% if not module.style.card_styles.add_seprator %}fullauth{% endif %}">
+                {% if item.auth_name  %}
+                <h4>{{item.auth_name}}</h4>
+                {% endif %}
+                {% if item.auth_name and item.designation %}
+                {% if module.style.card_styles.add_seprator %}
+                <span class="seperator"></span>
+                {% endif %}
+                {% endif %} 
+                {% if item.designation %}<span>{{item.designation}}</span> {% endif %}
+              </div>
+              {% endif %}
+            </div>
+
+            {% if item.button_group %}
+            {{ macros.buttonWithPopupGroup(item.button_group, false ,'parent_index'~loop.index) }}
+                     {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% if module.module_settings.enable_slider %}</div> {% endif %}
+
+
+      {% if module.module_settings.enable_slider %}
+      {{ macros.sliderControls(module.module_settings.slider_options , module.testimonials_group, module.module_settings.enable_animation) }}
+      {% endif %}
+    </div>
+
+    {% if module.button_group %}
+    <div class="pdlr10 slider_btn_footer"  {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+      {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+    </div>
+    {% endif %}
+  </div>
+
+  {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+  {% if module.button_group %}
+  {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+  {% endif %}
+  {% for item in module.testimonials_group %}
+  {{ macros.buttonWithPopupGroup(item.button_group, true ,'parent_index'~loop.index) }}
+  {% endfor %}
+</div>
+
+
+{% require_css %}
+<style>
+
+  {% if module.style.card_styles.select_background_theme  == "custom"%}
+  .testimonials_slider.{{name}} .testmn_inner{
+    background-color: {{ macros.color(module.style.card_styles.background_color) }}
+  }
+  {% endif %}
+
+  {% if module.style.card_styles.select_color_theme  == "custom"%}
+  .testimonials_slider.{{name}}  .testmn_inner *:not(a[class]){
+    color: {{ macros.color(module.style.card_styles.color) }}
+  }
+  {% endif %}
+
+  .{{name}} .rating .fill svg path {
+    fill:  {{ macros.color(module.style.card_styles.rating_color) }};
+  }
+
+  .{{name}} .rating svg path {
+    fill: transparent;
+    stroke:  {{ macros.color(module.style.card_styles.rating_color) }};
+  }
+
+
+
+  {% if module.style.card_styles.spacing.spacing %}
+  .testimonials_slider.{{name}} .testmn_inner {
+    {{ module.style.card_styles.spacing.spacing.css }}
+  }
+  {% endif %}
+
+
+  {% if module.style.card_styles.spacing.change_mobile_spacing %}
+  @media(max-width:767px){
+    .testimonials_slider.{{name}} .testmn_inner {
+      {{ module.style.card_styles.spacing.mobile_spacing.css }}
+    }
+  }
+  {% endif %}
+
+
+
+</style>
+{% end_require_css%}
+
+
+{% require_js %}
+<script>
+
+  {# slider options #}
+  {% if module.module_settings.enable_slider %}
+
+  {% if module.module_settings.slider_options.slides_per_view > 3%}
+  {% set tabslides = 3 %}
+  {% else %}
+  {% set tabslides = module.module_settings.slider_options.slides_per_view %}
+  {% endif %}
+
+  {% if module.module_settings.slider_options.slides_per_view > 2%}
+  {% set slides768 = 2 %}
+  {% else %}
+  {% set slides768 = module.module_settings.slider_options.slides_per_view %}
+  {% endif %}
+
+  {% set gtename = name|replace("-","_")%}
+
+  var config{{gtename}} = {
+    {% if module.module_settings.slider_options.loop %}
+    type:'carousel',
+    {% endif %}
+    {% if not module.module_settings.slider_options.loop%}
+    rewind: false,
+    {% endif %}
+    {% if  module.module_settings.slider_options.slides_per_view %}
+    perView:{{ module.module_settings.slider_options.slides_per_view }},
+    {% endif %}
+    perTouch: 1,
+    gap:0,
+    {% if module.module_settings.slider_options.autoplay %}
+    autoplay: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
+    {% endif %}
+    breakpoints: {
+    992: {
+    perView: {{tabslides}}
+  },
+      768: {
+        perView: {{slides768}}
+      },
+        600: {
+          perView: 1
+        }
+      }
+  }
+  var glide = new Glide(".{{name}}.testimonials_slider .glide",config{{gtename}})
+  glide.mount()
+
+  {% endif %}
+
+
+  {% if module.module_settings.enable_masonry and not module.module_settings.enable_slider %}
+  var iso = new Isotope( '.testimonials_slider.{{name}} .testmn_row', {
+                        itemSelector: '.testmn_item ',
+                        //                         layoutMode: 'fitRows'
+                        });
+  document.addEventListener('DOMContentLoaded', function () {
+    var iso = new Isotope( '.testimonials_slider.{{name}} .testmn_row', {
+                          itemSelector: '.testmn_item ',
+                          //                           layoutMode: 'fitRows'
+                          });
+  })
+  {% endif %}
+
+
+</script>
+{% end_require_js %}
+

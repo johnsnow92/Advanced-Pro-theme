@@ -1,0 +1,581 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 4,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1619150310476235",
+        "label" : "KR Nav - Header LP 1",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR Nav - Header LP 1",
+          "per_widget_wrapper_html" : "",
+          "section_settings" : {
+            "full_width" : true,
+            "overlap_nav" : true,
+            "section_background_type" : ""
+          },
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR Nav - Header LP 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161914834271032",
+        "label" : "KR - Hero Single Column 1",
+        "type" : "custom_widget",
+        "params" : {
+          "heading" : {
+            "font_weight" : "",
+            "text" : "<strong>Elvis DAM</strong> for Content & Creative Teams"
+          },
+          "section_settings" : {
+            "section_background_image" : {
+              "alt" : "5b5abb2aa08d6b28cccb0ff0_pexels-photo-1068523",
+              "height" : 1255,
+              "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Imported%20images/5b5abb2aa08d6b28cccb0ff0_pexels-photo-1068523.jpeg",
+              "width" : 1920
+            },
+            "section_background_image_overlay" : {
+              "color" : "#15232c",
+              "opacity" : 75
+            },
+            "section_padding" : "custom",
+            "section_padding_desktop" : {
+              "bottom" : 100,
+              "top" : 150
+            },
+            "section_padding_mobile" : {
+              "bottom" : 50,
+              "top" : 130
+            },
+            "section_padding_tablet" : {
+              "bottom" : 100,
+              "top" : 150
+            }
+          },
+          "css_style" : "",
+          "css_id" : "",
+          "content" : "",
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Hero Single Column 1",
+          "per_widget_wrapper_html" : "",
+          "sub_heading" : "<p>Content Production &amp; Collaboration in the Cloud</p>",
+          "tagline" : "",
+          "wrapping_html" : "",
+          "widget_name" : "KR - Hero Single Column 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161914837345934",
+        "label" : "KR - Content Two Column 1",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Content Two Column 1",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "column" : [ {
+            "button" : {
+              "cta" : "c48b6ac5-5f8a-41c6-9d02-bd62fda93d19",
+              "cta_background_color" : {
+                "opacity" : 100
+              },
+              "cta_background_color_hover" : {
+                "opacity" : 100
+              },
+              "text" : "BUTTON TEXT",
+              "type" : "",
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "column_inner" : false,
+            "column_inner_item" : [ {
+              "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+              "font_weight" : "font-weight-400",
+              "title" : "Heading",
+              "type" : "h3"
+            }, {
+              "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+              "font_weight" : "font-weight-400",
+              "title" : "Heading",
+              "type" : "h3"
+            }, {
+              "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+              "font_weight" : "font-weight-400",
+              "title" : "Heading",
+              "type" : "h3"
+            }, {
+              "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+              "font_weight" : "font-weight-400",
+              "title" : "Heading",
+              "type" : "h3"
+            } ],
+            "description" : "<p style=\"margin-bottom: 0;\">&nbsp;</p>\n<p>It's ideally suited to teams who produce content for marketing and communications, retail and manufacturing, publishing and education applications.</p>\n<p>Elvis DAM’s easy to use HTML5 interface is optimised to make management of assets easy for the contributors, whilst also providing a branded portal for search, conversion and download of approved content for consumers. In fact, there is even an mobile app to allow team members ‘on the go’ to collaborate and approve content too.</p>\n<p>Elvis DAM is also a great platform for those who want to store and search a lot of archived content of any file type and also provides a Brand Portal for sharing of approved content with trusted suppliers or business users.</p>",
+            "element" : "image",
+            "heading" : {
+              "font_color" : {
+                "opacity" : 100
+              },
+              "font_size" : 32,
+              "font_weight" : "",
+              "text" : "Who is it for?",
+              "type" : "h2"
+            },
+            "image" : {
+              "image" : {
+                "alt" : "5b28c462f63aa86629b63d21_analyzing-brainstorming-business-1080853",
+                "height" : 1400,
+                "max_height" : 1400,
+                "max_width" : 1400,
+                "size_type" : "auto",
+                "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Imported%20images/5b28c462f63aa86629b63d21_analyzing-brainstorming-business-1080853.jpg",
+                "width" : 1400
+              },
+              "is_rounded_circle" : true,
+              "type" : "background"
+            },
+            "tag_line" : "",
+            "type" : "left-image",
+            "video" : "<div class=\"hs-responsive-embed-wrapper hs-responsive-embed\" style=\"width: 100%; height: auto; position: relative; overflow: hidden; padding: 0; max-width: 560px; max-height: 315px; min-width: 256px; margin: 0px auto; display: block;\">\n<div class=\"hs-responsive-embed-inner-wrapper\" style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0;\"><iframe class=\"hs-responsive-embed-iframe\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\" xml=\"lang\" src=\"//www.youtube.com/embed/-nWbTB_4E9w\" width=\"560\" height=\"315\" data-service=\"youtube\" allowfullscreen=\"1\"></iframe></div>\n</div>"
+          } ],
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Content Two Column 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1619156506631264",
+        "label" : "KR - Content Two Column 1",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Content Two Column 1",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "column" : [ {
+            "button" : {
+              "cta" : "c48b6ac5-5f8a-41c6-9d02-bd62fda93d19",
+              "cta_background_color" : {
+                "opacity" : 100
+              },
+              "cta_background_color_hover" : {
+                "opacity" : 100
+              },
+              "text" : "BUTTON TEXT",
+              "type" : "",
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "column_inner" : false,
+            "column_inner_item" : [ {
+              "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+              "font_weight" : "font-weight-400",
+              "title" : "Heading",
+              "type" : "h3"
+            }, {
+              "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+              "font_weight" : "font-weight-400",
+              "title" : "Heading",
+              "type" : "h3"
+            }, {
+              "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+              "font_weight" : "font-weight-400",
+              "title" : "Heading",
+              "type" : "h3"
+            }, {
+              "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+              "font_weight" : "font-weight-400",
+              "title" : "Heading",
+              "type" : "h3"
+            } ],
+            "description" : "<p style=\"margin-bottom: 0;\">&nbsp;</p>\n<p>No need for expensive infrastructure or IT procurement processes. The scalable architecture of Elvis DAM and native support for Amazon Web Services allows you to start with a single Workgroup server, then add increased capacity, performance and redundancy as needed.</p>\n<p>Reporting and analytics provide insight into asset usage and multi tiered storage, including Amazon S3 storage buckets, allows for long term and low cost management of the asset lifecycle.</p>\n<p>And because it is your own private cloud in the Sydney AWS zone you can be compliant with data and privacy laws and safe knowing you data is stored in Australia.</p>",
+            "element" : "image",
+            "heading" : {
+              "font_color" : {
+                "opacity" : 100
+              },
+              "font_size" : 32,
+              "font_weight" : "",
+              "text" : "In your Cloud",
+              "type" : "h2"
+            },
+            "image" : {
+              "image" : {
+                "alt" : "5b4361b279709711e721980b_pexels-photo-326505",
+                "height" : 1063,
+                "max_height" : 1063,
+                "max_width" : 1920,
+                "size_type" : "auto",
+                "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Imported%20images/5b4361b279709711e721980b_pexels-photo-326505.jpeg",
+                "width" : 1920
+              },
+              "is_rounded_circle" : true,
+              "type" : "background"
+            },
+            "tag_line" : "",
+            "type" : "right-image",
+            "video" : "<div class=\"hs-responsive-embed-wrapper hs-responsive-embed\" style=\"width: 100%; height: auto; position: relative; overflow: hidden; padding: 0; max-width: 560px; max-height: 315px; min-width: 256px; margin: 0px auto; display: block;\">\n<div class=\"hs-responsive-embed-inner-wrapper\" style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0;\"><iframe class=\"hs-responsive-embed-iframe\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\" xml=\"lang\" src=\"//www.youtube.com/embed/-nWbTB_4E9w\" width=\"560\" height=\"315\" data-service=\"youtube\" allowfullscreen=\"1\"></iframe></div>\n</div>"
+          } ],
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Content Two Column 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161914840467536",
+        "label" : "KR - Rich Text 1",
+        "type" : "custom_widget",
+        "params" : {
+          "heading" : {
+            "font_weight" : "",
+            "text" : "How much does it cost?"
+          },
+          "section_settings" : {
+            "section_background_color" : {
+              "color" : "#45555f",
+              "opacity" : 100
+            }
+          },
+          "css_style" : "",
+          "content_color" : {
+            "color" : "#fff",
+            "opacity" : 100
+          },
+          "css_id" : "",
+          "content" : "<p style=\"text-align: left;\">We have devised a bundled solution that incorporates the best of our expertise in content technology and managed services in one easy monthly payment. This bundle provides a complete solution for a team of 10 concurrent content contributors.</p>",
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text 1",
+          "per_widget_wrapper_html" : "",
+          "sub_heading" : "<p style=\"text-align: center;\">At Creative Folks, one of our the motto’s we use is to make the complex, simple.</p>",
+          "tagline" : "",
+          "wrapping_html" : "",
+          "widget_name" : "KR - Rich Text 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1619159012447618",
+        "label" : "KR - Table 1 Variation",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Table 1 Variation",
+          "per_widget_wrapper_html" : "",
+          "pricing_plan" : [ {
+            "bottom_text" : "$1,865",
+            "featured_column" : false,
+            "featured_items" : [ {
+              "exclude_item" : "no",
+              "featured_item" : "1x Elvis DAM Workgroup Server"
+            }, {
+              "exclude_item" : "no",
+              "featured_item" : "2 x Administrators / Production Managers<br>ALL functionality and administration / approval management"
+            }, {
+              "exclude_item" : "no",
+              "featured_item" : "8 x Content Contributors<br>Create, search and collaborate<br>InDesign Plugin<br>Creative Connector"
+            }, {
+              "exclude_item" : "no",
+              "featured_item" : "5 x Content Consumers<br>Search, convert and download assets"
+            } ],
+            "heading_text" : "Software",
+            "image" : {
+              "alt" : "5b587958929c5a65face49b4_logo-elvis-landscape-blacktxt-rgb-1_orig-p-1080",
+              "height" : 462,
+              "max_height" : 462,
+              "max_width" : 1080,
+              "size_type" : "auto",
+              "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Imported%20images/5b587958929c5a65face49b4_logo-elvis-landscape-blacktxt-rgb-1_orig-p-1080.jpeg",
+              "width" : 1080
+            },
+            "monthly_annual_sec" : true
+          }, {
+            "bottom_text" : "$415",
+            "featured_column" : false,
+            "featured_items" : [ {
+              "exclude_item" : "no",
+              "featured_item" : "<strong>Hosted Private Cloud in Amazon Web Services</strong>"
+            }, {
+              "exclude_item" : "no",
+              "featured_item" : "1TB of storage # additional storage available1TB = $100 per month"
+            } ],
+            "heading_text" : "Infrastructure",
+            "image" : {
+              "alt" : "unknown-1593331110932",
+              "height" : 377,
+              "max_height" : 377,
+              "max_width" : 1034,
+              "size_type" : "auto",
+              "src" : "https://info.juicetactics.com/hubfs/Rich%20Text%20Pasting/unknown-1593331110932.png",
+              "width" : 1034
+            },
+            "monthly_annual_sec" : true
+          }, {
+            "bottom_text" : "$1,865",
+            "featured_column" : false,
+            "featured_items" : [ {
+              "exclude_item" : "no",
+              "featured_item" : "<strong>Onboarding - Fixed fee</strong> $4,990"
+            }, {
+              "exclude_item" : "no",
+              "featured_item" : "<strong>Managed Services</strong><br>Server monitoring and maintenance<br>Helpdesk support<br>Upgrades every quarter"
+            }, {
+              "exclude_item" : "no",
+              "featured_item" : "Add on’s and Integrations<br>Autotagging<br>Salesforce<br>Request Approval Workflow<br>Catalogue production<br>Social and Web CMS"
+            } ],
+            "heading_text" : "Services",
+            "image" : {
+              "alt" : "5b587bd01371d76805c88c2f_suit",
+              "height" : 400,
+              "max_height" : 400,
+              "max_width" : 400,
+              "size_type" : "auto",
+              "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Imported%20images/5b587bd01371d76805c88c2f_suit.svg",
+              "width" : 400
+            },
+            "monthly_annual_sec" : true
+          } ],
+          "section_settings" : {
+            "background_color" : {
+              "color" : "#45555f",
+              "opacity" : 100
+            }
+          },
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Table 1 Variation",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161914843481938",
+        "label" : "KR - Two Column Masonry",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Two Column Masonry",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Two Column Masonry",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161914846522740",
+        "label" : "KR - Logo Strip",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Logo Strip",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Logo Strip",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_161914849757942",
+        "label" : "KR - CTA 1",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - CTA 1",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - CTA 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

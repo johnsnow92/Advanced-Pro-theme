@@ -1,0 +1,125 @@
+.featured-card .feat_overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0;
+  bottom: 0;
+  z-index: 5;
+}
+
+.featured-card .flex_row.top_icon .col8,
+.featured-card .flex_row.top_icon .col4{
+  width: 100%;
+}
+.featured-card .btn_row {
+  justify-content: unset;
+  margin-top: 30px;
+}
+.featured-card .page-center:not(.full_width) {
+  padding: 0 10px;
+}
+.featured-card .inner-col {
+  backdrop-filter: blur(39.05px);
+  padding: 48px 25px;
+  border-radius: 12px;
+}
+
+.featured-card .inner-col::before {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  content: '';
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.featured-card .inner-col .fullcontent {
+  width: 100%;
+}
+
+.featured-card .card-inner {
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.featured-card .inner-col .icon-wrap {
+  display: inline-block;
+}
+
+.featured-card .inner-col .icon-column {
+  text-align: center;
+}
+
+.featured-card .inner-col .img-wrap img {
+  width:100%;
+  height:auto;
+}
+
+.featured-card .inner-col .flex_row.left_icon {
+  flex-direction: row-reverse;
+}
+.featured-card .inner-col .large_icon .icon-column .img-wrap {
+  max-width: 180px;
+  width:100%;
+}
+
+.featured-card .inner-col .med_icon .icon-column .img-wrap {
+  max-width: 150px;
+  width:100%;
+  margin: 0 auto;
+}
+
+.featured-card .inner-col .small_icon .icon-column .img-wrap {
+  max-width:  130px;
+  width:100%;
+}
+
+.featured-card .inner-col .icon-wrap svg {
+  height: 150px;
+  width: 100%;
+  line-height: 0;
+  display: block;
+}
+
+.featured-card .inner-col .large_icon .icon-wrap svg{
+  height: 180px;
+}
+
+.featured-card  .inner-col .small_icon .icon-wrap svg{
+  height: 130px;
+}
+
+.featured-card .flex_row {
+  position: relative;
+}
+
+@media (min-width: 768px){
+  .featured-card .flex_row.top_icon {
+    flex-direction: column-reverse;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 767px){
+  .featured-card .inner-col .icon-wrap {
+    text-align: center;
+    display: block;
+  }
+  .featured-card .inner-col .icon-column .img-wrap {
+    margin: 0 auto;
+  }
+  .featured-card .inner-col .flex_row {
+    gap: 30px;
+  }
+  .featured-card .inner-col .icon-column {
+    text-align: left;
+  }
+  .featured-card .inner-col .icon-column {
+    order: -1;
+  }
+}

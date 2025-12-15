@@ -1,0 +1,83 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Job Detail - Advanced Pro Theme
+  screenshotPath: ../images/templates/job-detail-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}<meta name="description" content="{{ page_meta.meta_description }}">{% endif %}
+  {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% global_partial path="../partials/header.hubl.html" %}
+    <main id="main-content" role="main">
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12"><a href="/careers" class="back-link">← Back to All Jobs</a></div>
+          </div>
+          <div class="row" style="margin-top: var(--spacing-xl);">
+            <div class="col-12 col-lg-8">
+              <div class="job-header">
+                <h1>{{ page_meta.name }}</h1>
+                <div class="job-meta">
+                  <span class="job-dept">{% module "job_department" path="@hubspot/text", label="Department", html="Engineering" %}</span>
+                  <span class="job-location">{% module "job_location" path="@hubspot/text", label="Location", html="Remote" %}</span>
+                  <span class="job-type">{% module "job_type" path="@hubspot/text", label="Job Type", html="Full-time" %}</span>
+                </div>
+              </div>
+              <div class="job-content">
+                <h2>About the Role</h2>
+                {% module "job_description" path="@hubspot/rich_text", label="Job Description" %}
+                <h2>Responsibilities</h2>
+                {% module "job_responsibilities" path="@hubspot/rich_text", label="Responsibilities" %}
+                <h2>Qualifications</h2>
+                {% module "job_qualifications" path="@hubspot/rich_text", label="Qualifications" %}
+                <h2>Benefits</h2>
+                {% module "job_benefits" path="@hubspot/rich_text", label="Benefits" %}
+              </div>
+            </div>
+            <div class="col-12 col-lg-4">
+              <div class="job-apply-card">
+                <h3>Apply for this Position</h3>
+                <p>Join our team and make an impact</p>
+                {% module "job_application_form" path="@hubspot/form", label="Application Form" %}
+              </div>
+              <div class="job-share-card">
+                <h4>Share this Job</h4>
+                <div class="share-buttons">
+                  <a href="#" class="btn btn-outline btn-sm">LinkedIn</a>
+                  <a href="#" class="btn btn-outline btn-sm">Twitter</a>
+                  <a href="#" class="btn btn-outline btn-sm">Facebook</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% global_partial path="../partials/footer.hubl.html" %}
+  </div>
+  {{ standard_footer_includes }}
+  <style>
+  .back-link { display: inline-block; color: var(--color-primary); text-decoration: none; font-weight: 600; }
+  .job-header { margin-bottom: var(--spacing-2xl); }
+  .job-meta { display: flex; gap: var(--spacing-md); flex-wrap: wrap; margin-top: var(--spacing-md); }
+  .job-meta span { display: inline-block; padding: var(--spacing-xs) var(--spacing-md); background: var(--color-gray-100); border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: 600; }
+  .job-content h2 { margin-top: var(--spacing-2xl); margin-bottom: var(--spacing-lg); }
+  .job-apply-card, .job-share-card { padding: var(--spacing-xl); background: var(--color-gray-50); border-radius: var(--radius-lg); margin-bottom: var(--spacing-lg); }
+  .job-apply-card { position: sticky; top: calc(var(--spacing-2xl) + 70px); }
+  .share-buttons { display: flex; flex-direction: column; gap: var(--spacing-sm); margin-top: var(--spacing-md); }
+  </style>
+</body>
+</html>

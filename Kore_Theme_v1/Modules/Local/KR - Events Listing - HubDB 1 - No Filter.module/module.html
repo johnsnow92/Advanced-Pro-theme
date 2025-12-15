@@ -1,0 +1,267 @@
+{% require_css %}
+<style type="text/css">
+
+</style>
+{% end_require_css %}
+
+{################################
+########### PAGINATION ##############}
+
+{% macro pagination(listQuery) %}
+
+{% set pathLink = request.path %}
+{% set batch_num = 6 %}
+
+{% if not request.query_dict.page_num %}
+{% set page_num = 1 %}
+{% set offset_num = 0 %}
+
+{% elif request.query_dict.page_num %}
+{% set page_num = request.query_dict.page_num %}
+{% set offset_num = page_num|add(-1) * batch_num %}
+{% endif %}
+{% set table_id = module.hubdb_table %}
+{% set nav = hubdb_table_rows(table_id, listQuery) %}
+{% if nav|length|divisible(batch_num) %}
+{% set total_pages = nav|length|divide(batch_num) %}
+{% else %}
+{% set total_pages = nav|length|divide(batch_num) + 1 %}
+{% endif %}
+{% set more_pages = total_pages - page_num %}
+
+
+<div class="paginate-bar-section" style="position:relative;" data="{{nav|length ~ listQuery}}">
+  <nav> 
+    {% if page_num > 1 %}
+    <a class="previous-posts-link a-paginate arrow-btn" href="{{ pathLink }}?page_num={{ page_num|add(-1) }}" title="Older Posts">
+      {% icon icon_set="fontawesome-5.14.0" name="angle-left" style="SOLID" height="14" purpose="decorative" title="Angle Left" no_wrapper=True %}
+    </a>
+    {% endif %}
+    {% if more_pages == 0 %}
+    {% if page_num|add(-4) >= 1 %}
+    <a href="{{ pathLink }}?page_num={{ page_num|add(-4) }}"
+       class="a-paginate page"
+       >
+      {{ page_num|add(-4) }}
+    </a>  
+    {% endif %}
+    {% endif %}
+    {% if more_pages <= 1 %}
+    {% if page_num|add(-3) >= 1 %}
+    <a href="{{ pathLink }}?page_num={{ page_num|add(-3) }}"
+       class="a-paginate page"
+       >
+      {{ page_num|add(-3) }}
+    </a>
+    {% endif %}
+    {% endif %}
+    {% if page_num|add(-2) >= 1 %}
+    <a href="{{ pathLink }}?page_num={{ page_num|add(-2) }}"
+       class="a-paginate page"
+       >
+      {{ page_num|add(-2) }}
+    </a>
+    {% endif %}
+    {% if page_num|add(-1) >= 1 %}
+    <a href="{{ pathLink }}?page_num={{ page_num|add(-1) }}"
+       class="a-paginate page"
+       >
+      {{ page_num|add(-1) }}
+    </a>
+    {% endif %}
+    <a class="active a-paginate page" href="{{ pathLink }}?page_num={{ page_num }}" >
+      {{ page_num }}
+    </a>
+    {% if page_num|add(1) <= total_pages %}
+    <a href="{{ pathLink }}?page_num={{ page_num|add(1) }}"
+       class="a-paginate page"
+       >
+      {{ page_num|add(1) }}
+    </a>
+    {% endif %}
+    {% if page_num|add(2) <= total_pages %}
+    <a href="{{ pathLink }}?page_num={{ page_num|add(2) }}"
+       class="a-paginate page"
+       >{{ page_num|add(2) }}</a>
+    {% endif %}
+    {% if page_num <= 2 %}
+    {% if page_num|add(3) <= total_pages %}
+    <a href="{{ pathLink }}?page_num={{ page_num|add(3) }}"
+       class="a-paginate page"
+       >{{ page_num|add(3) }}</a>
+    {% endif %}
+    {% endif %}
+    {% if page_num == 1 %}
+    {% if page_num|add(4) <= total_pages %}
+    <a href="{{ pathLink }}?page_num={{ page_num|add(4) }}"
+       class="a-paginate page"
+       >{{ page_num|add(4) }}</a>
+    {% endif %}
+    {% endif %}
+    {% if total_pages > page_num %}
+    <a class="next-posts-link a-paginate arrow-btn" href="{{ pathLink }}?page_num={{ page_num|add(1) }}" title="Next">{% icon icon_set="fontawesome-5.14.0" name="angle-right" style="SOLID" height="14" purpose="decorative" title="Angle Right" no_wrapper=True %}</a>    
+    {% endif %}
+  </nav>
+</div>
+{% endmacro %}
+
+{################################
+########### LISTING ##############}
+
+{% macro listing() %}
+
+<div class="card">
+  <div class="card-inner">
+    <div class="card-img" style="background-image: url('{{ row.featured_image.url }}');">
+      <div class="card-date">
+        <span class="date">{{ row.date|datetimeformat(' %e ') }}</span>
+        <span class="month">{{ row.date|datetimeformat(' %b ') }}</span>
+      </div>      
+    </div>
+    <div class="card-body">
+      <div class="card-day-time">
+        {{ row.day_time }}
+      </div>
+      <div class="title">{{ row.title }}</div>
+      {% if row.description %}
+      <div class="card-desc">
+        {{ row.description|truncatehtml(130, '...' , false)|striptags }}
+      </div>
+      {% endif %}
+      <a href="{{ row.url }}" class="link-more">Learn more {% icon icon_set="fontawesome-5.14.0" name="arrow-right" style="SOLID" height="14" purpose="decorative" title="Arrow Right" no_wrapper=True %}</a>
+    </div>
+    <a href="{{ row.url }}" class="a-link"></a>
+  </div>
+</div>
+
+{% endmacro %}
+
+{################################
+####### lISTING HTML ###########}
+
+{% macro listing_html() %}
+{% set param = '' %}
+{% set t = request.query_dict.filter1  %}
+{% set e = request.query_dict.filter2 %}
+{% set b = request.query_dict.filter3 %}
+
+{# Single select DON'T use __contains #}
+{# Mutli-select use variable__contains #}
+{% if module.hubdb_columns.filter_1.column_type == "multi-select" %}
+{% set t_var = 'filter1__contains='~t  %}
+{% else %} {% set t_var = 'filter1='~t  %} {% endif %}
+
+{% if module.hubdb_columns.filter_2.column_type == "multi-select" %}
+{% set e_var = 'filter2__contains='~e %}
+{% else %} {% set e_var = 'filter2='~e  %} {% endif %}
+
+{% if module.hubdb_columns.filter_3.column_type == "multi-select" %}
+{% set b_var = 'filter3__contains='~b %}
+{% else %} {% set b_var = 'filter3='~b  %} {% endif %}
+
+{# check if t:snacks_type has value other than show-all and elem has value show-all #}
+{% if t and t != "show-all" and e == "show-all" and b == "show-all" %} 
+{% set param = t_var %} 
+{% endif %}
+
+{% if e and e != "show-all" and t == "show-all" and b == "show-all" %} 
+{% set param = e_var %} 
+{% endif %}
+
+{% if b and b != "show-all" and t == "show-all" and e == "show-all" %} 
+{% set param = b_var %} 
+{% endif %}
+
+{% if t and e and b %} 
+{% if t != "show-all" and e != "show-all" and b != "show-all" %} 
+{% set param = t_var~'&'~e_var~'&'~b_var %} 
+{% endif %}
+{% if t != "show-all" and e != "show-all" and b == "show-all" %} 
+{% set param = t_var~'&'~e_var %} 
+{% endif %}
+{% if b != "show-all" and e != "show-all" and t == "show-all" %} 
+{% set param = b_var~'&'~e_var %} 
+{% endif %}
+{% if b != "show-all" and t != "show-all" and e == "show-all" %} 
+{% set param = b_var~'&'~t_var %} 
+{% endif %}
+{% endif %}
+
+{# if any data name found with several words please concatenate with plus sign #}
+<!-- Product Listing -->
+{% set table_id = module.hubdb_table %}
+{% set query = param|replace(" ","+") %}   
+
+{# Search #}
+{% if request.query_dict.search and request.query_dict.search != "" %}
+{% set nd_var = "name__icontains="~request.query_dict.search|urlencode %}
+{% set query = query~'&'~nd_var %}
+{% endif %}   
+
+{% set batch_num = 6 %}
+{% if not request.query_dict.page_num %}
+{% set page_num = 1 %}
+{% set offset_num = 0 %}
+{% elif request.query_dict.page_num %}
+{% set page_num = request.query_dict.page_num %}
+{% set offset_num = page_num|add(-1) * batch_num %}
+{% endif %}
+{% set items = hubdb_table_rows( table_id, 'orderBy=-date'~'&limit='~batch_num~'&offset='~offset_num~'&date__gt='~local_dt|unixtimestamp ) %}
+{% if items == [] %}
+<div class="process-wrap">
+  <p>{{ module.result_message }}</p>
+</div>
+{% else %}
+<div class="listing-wrap">
+  {% for row in items %}
+  {{listing()}}
+  {% endfor %}
+</div>
+<div data="{{query}}">
+  {{ pagination(query) }}
+</div>
+{% endif %}
+{% endmacro %}
+{################################
+########### HTML ##############}
+
+<div class="event-listing">
+  <div class="maxContainer">
+    <div class="featured-card">
+      
+      {% set table_id = module.hubdbrow_field.table_id %}
+      {% set col_name = module.hubdbrow_field.columns.title %}
+      {% set query = 'title='~col_name %}
+      {% set items = hubdb_table_rows(table_id, query) %}
+      
+      {% for row in items %}
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-img" style="background-image: url('{{ row.featured_image.url }}');">
+            <div class="card-date">
+              <span class="date">{{ row.date|datetimeformat(' %e ') }}</span>
+              <span class="month">{{ row.date|datetimeformat(' %b ') }}</span>
+            </div>      
+          </div>
+          <div class="card-body">
+            <div class="card-day-time">
+              {{ row.day_time }}
+            </div>
+            <div class="title">{{ row.title }}</div>
+            {% if row.description %}
+            <div class="card-desc">
+              {{ row.description|truncatehtml(130, '...' , false)|striptags }}
+            </div>
+            {% endif %}
+            <a href="{{ row.url }}" class="link-more">Learn more {% icon icon_set="fontawesome-5.14.0" name="arrow-right" style="SOLID" height="14" purpose="decorative" title="Arrow Right" no_wrapper=True %}</a>
+          </div>
+              <a href="{{ row.url }}" class="a-link"></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>    
+    <div class="listing">
+      {{ listing_html() }}      
+    </div>
+  </div>
+</div>

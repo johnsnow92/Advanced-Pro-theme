@@ -1,0 +1,96 @@
+.why_choose_us{padding: 40px 0;margin-bottom: 20px;}
+
+.why_choose_us h2{
+  color: #ff7f16;
+  font-weight: 700;
+  padding-bottom: 15px;
+}
+
+.why_choose_us .about-sub-heading h4{
+  font-size: 20px;
+  color: #FF7F16;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.why_choose_us .about-sub-heading h4:after {
+  border: 1px solid #fb8a2e;
+  content: "";
+  width: 53px;
+  rotate: 0deg;
+  margin: 15px;
+}
+
+.why_choose_us_row{
+  display: flex;
+  gap: 40px;
+}
+
+.why_choose_us_card{
+  background: #e2efff;
+  padding: 25px 18px;
+  margin: 0 auto;
+  border-radius: 8px;
+  height: 320px;
+}
+
+.why_choose_us .why_choose_us_col .why_choose_us_card .card-heading{
+  font-size: 25px;
+  color: #00234c;
+  font-weight: 700;
+}
+
+.why_choose_us .why_choose_us_col .why_choose_us_card .card-para p span{
+  color: #cdc2c2;
+  font-size: 16px !important;
+}
+
+.read-more-slide{
+  display: none;
+}
+.read-more-slide ul {
+  padding-left: 40px;
+  text-align: left;
+}
+.moreless-button{
+  color: #FF7F16;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 500;
+  position: relative;
+  z-index: 3;
+}
+.moreless-button:hover,
+.moreless-button:focus{
+  border: none;
+  background: none;
+  color: #FF7F16;
+}
+.moreless-button:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media(max-width: 1290px){
+  .why_choose_us_card{height: 390px;}
+}
+
+@media(max-width: 990px){
+  .why_choose_us_card{height: 420px;}
+}
+
+@media(max-width: 900px){
+  .why_choose_us_row{flex-wrap: wrap; justify-content: center;}
+  .why_choose_us .about-sub-heading h4{ justify-content: center;}
+  .why_choose_us h2{text-align: center;}
+  .why_choose_us_card{height: 200px;}
+}
+
+@media(max-width: 685px){
+  .why_choose_us_card{height: 299px;}
+}

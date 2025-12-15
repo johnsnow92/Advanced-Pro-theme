@@ -1,0 +1,337 @@
+{% import "../../macros/_macros.html" as macros %}  
+{% set style_2 = module.module_settings.select_filter_style =="type_2" %}
+{% set btn_bg = module.module_settings.filter_theme_group.select_tag_background_theme %}
+{% set btn_active_bg = module.module_settings.filter_theme_group.select_active_tag_background_theme %} 
+{% set btn_color = module.module_settings.filter_theme_group.select_tag_color_theme %}
+{% set btn_active_color = module.module_settings.filter_theme_group.select_active_tag_color_theme %}
+{% set setings = module.module_settings %}
+
+
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="{{name}} {{ module.module_settings.select_content_alignment }} hs_fillter_wrp dnd_padd {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} {% if module.card_group.include_all_text %}all_text_add{% endif %} {{ setings.select_filter_style }}_filter_style count_{{ setings.column_count }}">
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  {% set uniqueId = name|lower|replace(' ','')|replace('_','')|replace('-','') %}
+
+  <div class="page-center {{ module.module_settings.select_filter_style }} {{ module.module_settings.column_count }}_row {{ module.style.container.select_size }}">
+    {{ macros.topContent(module.top_content, module.module_settings) }}
+    {% if module.module_settings.select_filter_style =="type_2" %}
+    <div class="filter_label" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="100" {% endif %}>
+      <{{ module.card_group.select_filter_label_tag }}>
+      {{ module.card_group.filter_label }}
+      </{{ module.card_group.select_filter_label_tag }}>
+    </div>
+      {% endif %}
+      {% if module.module_settings.select_filter_style == "type_1" or module.module_settings.select_filter_style == "type_2" %}
+      <div class="hs_fil_cat_wrp">
+        <div class="hs_fil_cat button-group filters-button-group filters-button-group-{{name}}"{% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}"  {% endif %} >
+          {% if module.card_group.include_all_text %}
+          <div class="hs_fil_cat_item button_flt h4 is-checked {% if style_2 %} {{btn_active_bg}}_active {{btn_active_color}}_active {{btn_bg}} {{btn_color}}_def {% endif %}" data-filter="*">
+            {{ module.card_group.all_text }}
+          </div>
+          {% endif %}
+          {% for item in module.card_group.cards|unique('category')|sort(false, false, 'category') %}  
+
+          <div class="hs_fil_cat_item button_flt h4 {% if style_2 %} {{btn_active_bg}}_active {{btn_active_color}}_active {{btn_bg}} {{btn_color}}_def {% endif %}"  data-filter=".{{item.category|lower|replace(' ','')|regex_replace("[^a-zA-Z0-9 ]", "") }}{{uniqueId}}"> 
+            {{item.category}}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+      {% if  module.module_settings.select_filter_style =="type_3" %}
+      <div class="hs_fil_t3_cat_wrp">
+        <div class="hs_fil_t3_cat button-group filters-button-group filters-button-group-{{name}}"{% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="100" {% endif %} >
+          <div class="filter_t3_label" >
+            <{{ module.card_group.select_filter_label_tag }}> {{ module.card_group.filter_label }}
+            </{{ module.card_group.select_filter_label_tag }}>
+          </div>
+            {% if module.card_group.include_all_text %}
+            <p class="hs_fil_cat_item button_flt is-checked" data-filter="*">
+              {{ module.card_group.all_text }}
+            </p>
+            {% endif %}
+            {% for item in module.card_group.cards|unique('category')|sort(false, false, 'category') %}
+            <p class="hs_fil_cat_item button_flt"  data-filter=".{{item.category|lower|replace(' ','')|regex_replace("[^a-zA-Z0-9 ]", "") }}{{uniqueId}}"> 
+              <span class="hs_fil_com"></span>{{item.category}}
+            </p>
+            {% endfor %}
+            </div>
+          </div>
+          {% endif %}
+
+          <div class="hs_fil grid grid_{{name}} flex_row ">
+            {% for item in module.card_group.cards %}
+            {% if item %}
+            {% if module.module_settings.select_filter_style =="type_1" %}
+            <div class="hs_fil_item element-item hs_small_btn {% if not item.image_field.src %} without_image{% endif %} {{item.category|lower|replace(' ','')|regex_replace("[^a-zA-Z0-9 ]", "") }}{{uniqueId}} {{ module.module_settings.column_count }} element-item-{{name|lower|replace(' ','')|replace('_','')}}">
+
+              <div class="hs_fil_item_inner" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 80 + 200}}" {% endif %}>
+                <div class="hs_fil_overlay {{ module.module_settings.select_overlay_color }}"> </div>
+
+                {% if item.image_field.src %}
+                <div class="hs_fil_image">
+                  <img src="{{item.image_field.src }}" alt="{{item.image_field.alt }}">
+                </div>
+                {% endif %}
+                <div class="hs_fil_content">
+                  {% if item.title %}
+                  <div class="hs_fil_title">
+                    <{{ module.style.card.select_title_tag }}>
+                    {{ item.title }}
+                    </{{ module.style.card.select_title_tag }}>
+                  </div>
+                    {% endif %}
+                    {% if item.content %}
+                    <div class="hs_fil_para">
+                      {{ item.content }}
+                    </div>
+                    {% endif %}
+                    {{ macros.buttonWithPopupGroup(item.button_group, false, 'index'~loop.index ) }}
+                    </div>
+                  </div>
+                </div>
+                {% elif module.module_settings.select_filter_style =="type_2" %}
+                {% set href = item.link_field.url.href %}
+                {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% endif %}
+                <div class="hs_fil_t2_item element-item hs_small_btn {{item.category|lower|replace(' ','')|regex_replace("[^a-zA-Z0-9 ]", "") }}{{uniqueId}} {{ module.module_settings.column_count }} element-item-{{name|lower|replace(' ','')|replace('_','')}}">
+                  <div class="hs_fil_t2_item_inner {% if not item.image_field.src %} no_image {% endif %}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 80 + 200}}" {% endif %}>
+                    {% if item.image_field.src %}
+                    <div class="hs_fil_t2_image">
+                      <a href="{{ href }}"
+                         {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                         {% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+                         >
+                        <img src="{{item.image_field.src }}" alt="{{item.image_field.alt }}">
+                        {% if item.category %}
+                        <div class="item_cat">
+                          <h6 style="color:{{ macros.color(module.style.card.tag_color) }}">
+                            {{ item.category}}
+                          </h6>
+                        </div>
+                        {% endif %}
+                      </a>
+                    </div>
+                    {% endif %}
+                    <div class="hs_fil_t2_content">
+                      {% if not item.image_field.src %} 
+                      <div class="item_cat_in">
+                        <h6>
+                          {{ item.category}}
+                        </h6>
+                      </div>
+                      {% endif %}
+                      {% if item.title %}
+                      <div class="hs_fil_t2_title">
+                        <a href="{{ href }}"
+                           {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                           {% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+                           >
+                          <{{ module.style.card.select_title_tag }}>
+                          {{ item.title }}
+                          </{{ module.style.card.select_title_tag }}>
+                        </a>
+                          </div>
+                          {% endif %}
+                          {% if item.content %}
+                          <div class="hs_fil_t2_text">
+                            {{ item.content }}
+                          </div>
+                          {% endif %}
+                          <div class="hs_fil_t2_read">
+                            <a href="{{ href }}"
+                               {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                               {% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+                               >
+                              <{{ module.style.card.select_title_tag }}>
+                              {{item.read_more_text}}
+                              <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.707 6.70897C14.0977 6.31832 14.0977 5.68391 13.707 5.29326L8.70674 0.292985C8.31609 -0.0976617 7.68168 -0.0976617 7.29103 0.292985C6.90038 0.683632 6.90038 1.31804 7.29103 1.70869L10.5881 5.00262H1.00006C0.4469 5.00262 0 5.44952 0 6.00268C0 6.55583 0.4469 7.00273 1.00006 7.00273H10.585L7.29416 10.2967C6.90351 10.6873 6.90351 11.3217 7.29416 11.7124C7.6848 12.103 8.31921 12.103 8.70986 11.7124L13.7101 6.71209L13.707 6.70897Z" />
+                              </svg>
+                              </{{ module.style.card.select_title_tag }}>
+
+                            </a>
+                          </div>        
+                          {{ macros.buttonWithPopupGroup(item.button_group, false, 'index'~loop.index ) }}
+                          </div>
+                      </div>
+                    </div>
+                    {% else %}
+                    <div  class="hs_fil_t3_item element-item hs_small_btn {{item.category|lower|replace(' ','')|regex_replace("[^a-zA-Z0-9 ]", "") }}{{uniqueId}} {{ module.module_settings.column_count }} element-item-{{name|lower|replace(' ','')|replace('_','')}}">
+                      <div class="hs_fil_t3_item_inner" {% if module.module_settings.enable_animation %} data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{ loop.index * 80 + 300}}" {% endif %}>
+                        <div class="hs_fil_t3_image">
+                          {#                           <div class="hs_fil_overlay {{ module.module_settings.select_overlay_color }}"> </div>#}
+
+                          <a href="{{ href }}"
+                             {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                             {% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+                             >
+                          </a>
+
+                          {% if item.image_field.src %}
+                          <img src="{{item.image_field.src }}" alt="{{item.image_field.alt }}">
+                          {% endif %}
+                        </div>
+
+                        <div class="hs_fil_t3_content">
+                          {% if item.category %}
+                          <div class="hs_fil_t3_catg">
+                            <p>
+                              <span class="hs_fil_t3_sp">   
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                                  <path d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"/>
+                                </svg>
+                              </span>
+                              {{ item.category }}
+                            </p>
+                          </div>
+                          {% endif %}
+
+                          {% if item.title %}
+                          <div class="hs_fil_t3_title">
+                            <a href="{{ href }}"
+                               {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                               {% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+                               >
+                              <{{ module.style.card.select_title_tag }}>
+                              {{ item.title }}
+                              </{{ module.style.card.select_title_tag }}>
+                            </a>
+                              </div>
+                              {% endif %}
+                              {% if item.content %}
+                              <div class="hs_fil_para">
+                                {{ item.content }}
+                              </div>
+                              {% endif %}
+
+                              {% if item.button_group %}
+                              {{ macros.buttonWithPopupGroup(item.button_group, false, 'index'~loop.index) }}
+                              {% endif %}
+                              </div>
+                          </div>
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
+                      </div>
+                      {% if module.button_group %}
+                      <div  class="pdlr10" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+                        {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+
+                      </div>
+                      {% endif %}
+
+                    </div>
+
+                    {% for item in module.card_group.cards %}
+                    {{ macros.buttonWithPopupGroup(item.button_group, true, 'index'~loop.index) }}
+                    {% endfor %}
+
+
+                    {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+
+                    {% if module.button_group %}
+                    {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+                    {% endif %}
+                  </div>
+
+
+
+                  {% require_css %}
+                  {% if btn_color =='custom' %}
+                  <style>
+                    .hs_fillter_wrp.{{name}} .type_2  .hs_fil_cat_item {
+                      color:{{ macros.color(module.module_settings.filter_theme_group.color_field)}};
+                    }
+                  </style>
+                  {% endif %}
+                  {% if btn_active_color =='custom' %}
+                  <style>
+                    .hs_fillter_wrp.{{name}} .type_2 .hs_fil_cat_item.is-checked {
+                      color:{{ macros.color(module.module_settings.filter_theme_group.active_color)}};
+                      border-color:{{ macros.color(module.module_settings.filter_theme_group.active_color)}};
+                    }
+                  </style>
+                  {% endif %}
+                  {% if  btn_bg =='custom' %}
+                  <style>
+                    .hs_fillter_wrp.{{name}} .type_2  .hs_fil_cat_item {
+                      background-color:{{ macros.color(module.module_settings.filter_theme_group.background_color)}};
+                      border-color:{{ macros.color(module.module_settings.filter_theme_group.background_color)}};
+                    }
+                  </style>
+                  {% endif %}
+                  {% if  btn_active_bg =='custom' %}
+                  <style>
+                    .hs_fillter_wrp.{{name}} .type_2 .hs_fil_cat_item.is-checked {
+                      background-color:{{ macros.color(module.module_settings.filter_theme_group.active_background_color)}};
+                      color:{{ macros.color(module.module_settings.filter_theme_group.active_color)}};
+                      border-color:{{ macros.color(module.module_settings.filter_theme_group.active_background_color)}};
+                    }
+                  </style>
+                  {% endif %}
+                  {% if module.module_settings.select_card_color =='custom' %}
+                  <style>
+                    .{{name}}   .hs_fil_content *:not(a[class]) {
+                      color:{{ macros.color(module.module_settings.color)}};
+                    }
+                  </style>
+                  {% endif %}
+                  {% if module.module_settings.select_overlay_color =='custom' %}
+                  <style>
+                    .{{name}} .hs_fil_overlay{
+                      background-color:{{ macros.color(module.module_settings.overlay_color)}};
+                    }
+                  </style>
+                  {% endif %}
+                  {% end_require_css %}
+
+                  {% require_js %}
+                  <script>
+                    // init Isotope
+                    var iso_{{name|lower|replace(' ','')|replace('_','')|replace('-','')}} = new Isotope('.grid_{{name}}', {
+                                                                                                         itemSelector: '.element-item-{{name|lower|replace(' ','')|replace('_','')}}'
+                                                                                                         });
+                    window.addEventListener('load', function () {
+                      var iso_{{name|lower|replace(' ','')|replace('_','')|replace('-','')}}  = new Isotope( ' .grid_{{name}}', {
+                                                                                                            itemSelector: '.element-item-{{name|lower|replace(' ','')|replace('_','')}}'
+                                                                                                            });                        
+                    });
+
+                    // bind filter button click
+                    var filtersElem = document.querySelector('.filters-button-group-{{name}}');
+                                                             filtersElem.addEventListener( 'click', function( event ) {
+                      // only work with buttons
+                      if ( !matchesSelector( event.target, '.button_flt' ) ) {
+                        return;
+                      }
+                      var filterValue = event.target.getAttribute('data-filter');
+                      iso_{{name|lower|replace(' ','')|replace('_','')|replace('-','')}}.arrange({ filter: filterValue });
+                      console.log(filterValue);
+                    });
+
+                    // change is-checked class on buttons
+                    var buttonGroups = document.querySelectorAll('.filters-button-group-{{name}}');
+                                                                 for ( var i=0, len = buttonGroups.length; i < len; i++ ) {
+                      var buttonGroup = buttonGroups[i];
+                      radioButtonGroup( buttonGroup );
+                    }
+                    function radioButtonGroup( buttonGroup ) {
+                      buttonGroup.addEventListener( 'click', function( event ) {
+                        // only work with buttons
+                        if ( !matchesSelector( event.target, '.button_flt' ) ) {
+                          return;
+                        }
+                        buttonGroup.querySelector('.is-checked')?.classList.remove('is-checked');
+                        event.target.classList.add('is-checked');
+                      });
+                    }
+                  </script>
+                  {% end_require_js%}
+
+

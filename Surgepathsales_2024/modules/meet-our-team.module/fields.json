@@ -1,0 +1,193 @@
+[ {
+  "id" : "a2f76e0f-ebf5-37ec-8742-89aba05cd05d",
+  "name" : "meet_our_team_heading",
+  "label" : "Meet Our  Team Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "MEET OUR TEAM"
+}, {
+  "id" : "b10b2740-e703-e2a4-0a48-63a5f6b09ee0",
+  "name" : "team_member_card_groups",
+  "label" : "Team Member Card groups",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 8,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 8
+  },
+  "children" : [ {
+    "id" : "669ecaa6-ae69-e70d-c03f-c89fe19e19b7",
+    "name" : "team_member_image",
+    "label" : "Team Member Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/team-member-1.png",
+      "alt" : "team-member-1",
+      "loading" : "lazy",
+      "width" : 170,
+      "height" : 170,
+      "max_width" : 170,
+      "max_height" : 170
+    }
+  }, {
+    "id" : "62cd2ef3-c560-6c16-7d26-9e2d38a6140a",
+    "name" : "team_meamber_name",
+    "label" : "Team Meamber Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Juliet Bowman"
+  }, {
+    "id" : "ebd321f4-d568-ced0-dd0c-4410c52ca305",
+    "name" : "team_member_designation",
+    "label" : "Team Member Designation",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "CO-FOUNDER $ CEO"
+  }, {
+    "id" : "ac002ff0-2150-5bd3-83f2-7d5aa26940a9",
+    "name" : "team_member_link",
+    "label" : "Team Member Link",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "julietbowman.com"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "team_member_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/team-member-1.png",
+      "alt" : "team-member-1",
+      "loading" : "lazy",
+      "width" : 170,
+      "height" : 170,
+      "max_width" : 170,
+      "max_height" : 170
+    },
+    "team_meamber_name" : "Juliet Bowman",
+    "team_member_designation" : "CO-FOUNDER $ CEO",
+    "team_member_link" : "julietbowman.com"
+  }, {
+    "team_member_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/team-member-1.png",
+      "alt" : "team-member-1",
+      "loading" : "lazy",
+      "width" : 170,
+      "height" : 170,
+      "max_width" : 170,
+      "max_height" : 170
+    },
+    "team_meamber_name" : "Juliet Bowman",
+    "team_member_designation" : "CO-FOUNDER $ CEO",
+    "team_member_link" : "julietbowman.com"
+  }, {
+    "team_member_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/team-member-1.png",
+      "alt" : "team-member-1",
+      "loading" : "lazy",
+      "width" : 170,
+      "height" : 170,
+      "max_width" : 170,
+      "max_height" : 170
+    },
+    "team_meamber_name" : "Juliet Bowman",
+    "team_member_designation" : "CO-FOUNDER $ CEO",
+    "team_member_link" : "julietbowman.com"
+  }, {
+    "team_member_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/team-member-1.png",
+      "alt" : "team-member-1",
+      "loading" : "lazy",
+      "width" : 170,
+      "height" : 170,
+      "max_width" : 170,
+      "max_height" : 170
+    },
+    "team_meamber_name" : "Juliet Bowman",
+    "team_member_designation" : "CO-FOUNDER $ CEO",
+    "team_member_link" : "julietbowman.com"
+  }, {
+    "team_member_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/team-member-1.png",
+      "alt" : "team-member-1",
+      "loading" : "lazy",
+      "width" : 170,
+      "height" : 170,
+      "max_width" : 170,
+      "max_height" : 170
+    },
+    "team_meamber_name" : "Juliet Bowman",
+    "team_member_designation" : "CO-FOUNDER $ CEO",
+    "team_member_link" : "julietbowman.com"
+  }, {
+    "team_member_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/team-member-1.png",
+      "alt" : "team-member-1",
+      "loading" : "lazy",
+      "width" : 170,
+      "height" : 170,
+      "max_width" : 170,
+      "max_height" : 170
+    },
+    "team_meamber_name" : "Juliet Bowman",
+    "team_member_designation" : "CO-FOUNDER $ CEO",
+    "team_member_link" : "julietbowman.com"
+  }, {
+    "team_member_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/team-member-1.png",
+      "alt" : "team-member-1",
+      "loading" : "lazy",
+      "width" : 170,
+      "height" : 170,
+      "max_width" : 170,
+      "max_height" : 170
+    },
+    "team_meamber_name" : "Juliet Bowman",
+    "team_member_designation" : "CO-FOUNDER $ CEO",
+    "team_member_link" : "julietbowman.com"
+  }, {
+    "team_member_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/team-member-1.png",
+      "alt" : "team-member-1",
+      "loading" : "lazy",
+      "width" : 170,
+      "height" : 170,
+      "max_width" : 170,
+      "max_height" : 170
+    },
+    "team_meamber_name" : "Juliet Bowman",
+    "team_member_designation" : "CO-FOUNDER $ CEO",
+    "team_member_link" : "julietbowman.com"
+  } ]
+} ]

@@ -1,0 +1,134 @@
+[ {
+  "id" : "94eb8e0a-5706-590d-411c-cf6d831de613",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "show_loading" : false,
+  "type" : "logo",
+  "display_width" : null,
+  "default" : {
+    "override_inherited_src" : true,
+    "src" : "https://info.juicetactics.com/hubfs/HubSnacks%20Webflow%20-%20Melvin%20Cruz/hubsnacks-logo.svg",
+    "alt" : "hubsnacks-logo",
+    "width" : 400,
+    "height" : 400
+  }
+}, {
+  "id" : "74007a34-fa7b-41ce-498f-eea48c7150f9",
+  "name" : "blurb_text",
+  "label" : "Blurb Text",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>123 N Eskenita Rd, Hill View, CA 12345&nbsp;<br><a href=\"mailto:email@gmail.com\" target=\"_blank\" rel=\"noopener\">email@gmail.com</a></p>"
+}, {
+  "id" : "7713fbf8-f87d-4e2b-c837-7cc9d627c819",
+  "name" : "simple_menu_3",
+  "label" : "Simple menu 3",
+  "required" : false,
+  "locked" : true,
+  "type" : "simplemenu",
+  "display_width" : null,
+  "default" : [ {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "CAREERS",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "PRIVACY POLICY",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  } ]
+}, {
+  "id" : "704570f0-baf8-7e1f-fb8c-1e0b4dbbb572",
+  "name" : "social_icon",
+  "label" : "Social Icon",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "966f7f30-807d-b056-7892-cd2fa54d4d55",
+    "default" : 2
+  },
+  "children" : [ {
+    "id" : "966f7f30-807d-b056-7892-cd2fa54d4d55",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "twitter",
+      "unicode" : "f099",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "b79c7013-e4f9-1606-0889-394c1955c326",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "icon" : {
+      "name" : "twitter",
+      "unicode" : "f099",
+      "type" : "REGULAR"
+    },
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "icon" : {
+      "name" : "twitter",
+      "unicode" : "f099",
+      "type" : "REGULAR"
+    },
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ]
+} ]

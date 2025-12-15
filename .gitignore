@@ -1,0 +1,30 @@
+# Documentation files - exclude from theme repository
+migrate-all-design-manager.ps1
+MIGRATION-FAILURE-DIAGNOSIS.md
+PROGRAMMATIC-MIGRATION-OPTIONS.md
+QUICK-FIX-GUIDE.md
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Windows
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.AppleDouble
+.LSOverride

@@ -1,0 +1,189 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Case Study - Advanced Pro Theme
+  screenshotPath: ../images/templates/case-study-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+  {% endif %}
+  {% if brand_settings.favicon is defined and brand_settings.favicon.src %}
+    <link rel="shortcut icon" href="{{ brand_settings.favicon.src }}">
+  {% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% include '../partials/header.hubl.html' %}
+    <main id="main-content" role="main">
+
+      <!-- Case Study Hero -->
+      <section class="section case-study-hero" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; padding: var(--spacing-4xl) 0;">
+        <div class="container">
+          <div class="row align-center">
+            <div class="col-12 col-lg-8 text-center">
+              {% module "cs_client_logo" path="@hubspot/linked_image", label="Client Logo" %}
+              <h1 style="color: white; margin-top: var(--spacing-lg);">{{ page_meta.name }}</h1>
+              <p class="lead" style="color: rgba(255,255,255,0.9);">{% module "cs_subtitle" path="@hubspot/text", label="Case Study Subtitle", html="How we helped our client achieve exceptional results" %}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Overview -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+              <div class="case-study-meta">
+                <div class="meta-item">
+                  <h4>Client</h4>
+                  <p>{% module "cs_client" path="@hubspot/text", label="Client Name", html="Company Name" %}</p>
+                </div>
+                <div class="meta-item">
+                  <h4>Industry</h4>
+                  <p>{% module "cs_industry" path="@hubspot/text", label="Industry", html="Technology" %}</p>
+                </div>
+                <div class="meta-item">
+                  <h4>Services</h4>
+                  <p>{% module "cs_services" path="@hubspot/text", label="Services", html="Web Development, Marketing" %}</p>
+                </div>
+                <div class="meta-item">
+                  <h4>Duration</h4>
+                  <p>{% module "cs_duration" path="@hubspot/text", label="Project Duration", html="6 months" %}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Challenge -->
+      <section class="section" style="background-color: var(--color-gray-50);">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+              <h2>The Challenge</h2>
+              {% module "cs_challenge" path="@hubspot/rich_text", label="Challenge Description", html="<p>Describe the client's challenges and pain points that needed to be addressed.</p>" %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Solution -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+              <h2>Our Solution</h2>
+              {% module "cs_solution" path="@hubspot/rich_text", label="Solution Description", html="<p>Explain the approach and solutions implemented to address the challenges.</p>" %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results/Stats -->
+      <section class="section" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2 style="color: white;">Results That Matter</h2>
+            </div>
+          </div>
+          <div class="row text-center">
+            <div class="col-12 col-md-3">
+              <div class="stat-result">
+                <div class="stat-number">250%</div>
+                <div class="stat-label">Increase in Traffic</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="stat-result">
+                <div class="stat-number">180%</div>
+                <div class="stat-label">More Conversions</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="stat-result">
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Client Satisfaction</div>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="stat-result">
+                <div class="stat-number">$2M</div>
+                <div class="stat-label">Revenue Generated</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Project Images/Gallery -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="text-center mb-5">Project Showcase</h2>
+              {% module "cs_gallery" path="@hubspot/rich_text", label="Project Gallery", html="<p>Add project images and screenshots here</p>" %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonial -->
+      <section class="section" style="background-color: var(--color-gray-50);">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+              <div class="case-study-testimonial">
+                <div class="testimonial-quote">"</div>
+                {% module "cs_testimonial" path="@hubspot/rich_text", label="Client Testimonial", html="<p>The results exceeded our expectations. Their team was professional, responsive, and delivered exceptional quality.</p>" %}
+                <div class="testimonial-author">
+                  <strong>John Doe</strong><br>
+                  CEO, Company Name
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8 text-center" style="margin: 0 auto;">
+              <h2>Ready to Achieve Similar Results?</h2>
+              <p class="lead">Let's discuss how we can help your business grow</p>
+              <a href="/contact" class="btn btn-primary btn-lg">Start Your Project</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    {% include '../partials/footer.hubl.html' %}
+  </div>
+  {{ standard_footer_includes }}
+  <style>
+  .case-study-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-xl); padding: var(--spacing-2xl); background: var(--color-gray-50); border-radius: var(--radius-lg); margin-bottom: var(--spacing-2xl); }
+  .meta-item h4 { color: var(--color-primary); margin-bottom: var(--spacing-xs); font-size: var(--font-size-sm); text-transform: uppercase; }
+  .stat-result { padding: var(--spacing-xl); }
+  .stat-result .stat-number { font-size: 3rem; font-weight: 700; color: white; margin-bottom: var(--spacing-sm); }
+  .stat-result .stat-label { font-size: var(--font-size-lg); color: rgba(255,255,255,0.9); }
+  .case-study-testimonial { text-align: center; padding: var(--spacing-2xl); position: relative; }
+  .testimonial-quote { font-size: 6rem; line-height: 1; color: var(--color-primary); opacity: 0.2; position: absolute; top: 0; left: 50%; transform: translateX(-50%); }
+  .testimonial-author { margin-top: var(--spacing-xl); color: var(--color-gray-600); }
+  </style>
+</body>
+</html>

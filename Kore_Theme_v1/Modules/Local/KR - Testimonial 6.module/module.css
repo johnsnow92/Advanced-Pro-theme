@@ -1,0 +1,107 @@
+.kr-testimonial-6 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  position: relative;
+}
+
+.kr-testimonial-6 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kr-testimonial-6 .page-width.text-center {
+  text-align: center; 
+}
+#slider-list-wrap .slide-wrap{
+  display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    padding: 15px;
+  align-items: center;
+}
+#slider-list-wrap .slide-img{
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    width: 40%;
+}
+#slider-list-wrap .slide-content-wrap{
+  width: 60%;
+    padding: 30px 20px 30px 60px;
+    text-align: left;
+}
+#slider-list-wrap .slide-content-wrap .slide-icon {
+  margin-bottom: 10px;
+}
+#slider-list-wrap .slide-content-wrap .slide-icon img{
+  width: 50px!important;
+}
+#slider-list-wrap .slide-content-wrap .slide-copy{
+  margin-bottom: 15px;
+}
+#slider-list-wrap .slide-profile{
+  display: flex;
+  align-items: center;
+}
+#slider-list-wrap .slide-profile .profile-img{
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70px;
+    width: 70px;
+    border-radius: 100%;
+    margin-right: 15px;
+}
+#slider-list-wrap .profile-info span{
+  font-size: 15px;
+}
+#slider-list-wrap .profile-info span.name{
+  display: block;
+  font-weight: 700;
+}
+#slider-list-wrap ul.slick-dots{
+  margin: 0;
+  bottom: 0;
+  position: relative;
+  padding-top: 12px;
+}
+#slider-list-wrap ul.slick-dots li{
+  margin: 0 1px;
+}
+#slider-list-wrap ul.slick-dots li button:before{
+  display: none;
+}
+#slider-list-wrap ul.slick-dots li.slick-active button{
+  background-color: #5B5B5D;
+}
+#slider-list-wrap ul.slick-dots li button{
+  height: 13px;
+  width: 13px;
+  background-color: rgba(0,0,0,0.15);
+  border-radius: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 767px){
+  #slider-list-wrap .slide-wrap{
+    display: block;
+    padding: 10px;
+  }
+  #slider-list-wrap .slide-img{
+    width: 100%;
+    height: auto;
+  }
+  #slider-list-wrap .slide-content-wrap{
+    padding: 12px;
+    width: 100%;
+  }
+  #slider-list-wrap .slide-content-wrap .slide-icon img{
+    width: 40px!important;
+  }
+  #slider-list-wrap .profile-info span{
+    font-size: 14px;
+  }
+}

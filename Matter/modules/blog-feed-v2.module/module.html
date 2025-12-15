@@ -1,0 +1,298 @@
+
+
+{% import "../../macros/_macros.html" as macros %}  
+
+{% set settings = module.feed_settings %}
+
+
+
+<div class="blog-feedV2  {{name}} dnd_padd {{ module.advanced_customization.css_class_selector }} {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} feed_{{ module.feed_group.select_feed_type }} blog_{{ module.feed_group.select_blog }} {% if settings.featured_image %}img_addd{% endif %}{% if settings.title %}title_Add{% endif %}{% if settings.author %}author_add{% endif %}{% if settings.date %}date_Add{% endif %}{% if settings.reading_minutes %}readMin{% endif %}" 
+     {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %} >
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+{% if module.top_content %}
+    <div class="blogfeed-top-wrp">
+      {{ macros.topContent(module.top_content, module.module_settings) }}
+    </div>
+    {% endif %}
+
+    <div class="feed-outer-wrp flex_row rowGap15  {% if module.module_settings.enable_masonry %}masonadded{% endif %} {% if not module.feed_settings.featured_image %}noFeatImg{% endif %}">
+
+      {% set max_posts = module.feed_group.number_of_posts %}
+      {% set rec_posts = [] %}
+
+      {% if  module.feed_group.select_feed_type != "posts_by_title" %}
+
+      {% if  module.feed_group.select_feed_type == "recent_posts" %}
+      {% set rec_posts = rec_posts + blog_recent_posts(module.feed_group.select_blog , max_posts + 1) %}
+      {% endif %}
+
+      {% if  module.feed_group.select_feed_type == "popular_posts" %}
+      {% set rec_posts = blog_popular_posts(module.feed_group.select_blog, max_posts + 1) %}
+      {% endif %}
+
+      {% if  module.feed_group.select_feed_type == "posts_by_tag" %}
+      {% set rec_posts = blog_recent_tag_posts(module.feed_group.select_blog,module.feed_group.select_tag, max_posts + 1) %}
+      {% endif %}
+
+
+
+
+      {% set i = 0 %}
+      {% for post in rec_posts %}
+      {% if content.absolute_url != post.absolute_url and i < max_posts %} 
+
+
+      <div class="recent-post-item2 {% if loop.index <= 2  %} largeCard col6 {% else %} col4 smallCard {% endif %} {% if module.feed_settings.featured_image == "false" or not post.post_list_summary_featured_image%}noImage{% endif %}" {% if module.module_settings.enable_animation %} data-aos-delay="{{loop.index * 100 + 200}}" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+        <div class="item_inner" {% if module.feed_settings.featured_image and post.post_list_summary_featured_image %}style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});"{% endif %}>
+          <div class="overlay_bg bg_el {{ module.style.card.select_background_theme }}">         
+          </div>
+          <div class="post_card bg_el"  >
+            <div class="post_card_inner"  >
+              <a href="{{ post.absolute_url }}" class="bg_el overlay_link"></a>
+              {# Title #}
+              {% if module.feed_settings.title %}
+              <div class="title_wrap">
+                {% if post.name %}
+                <{{ module.style.card.select_title_tag }} class="recent-post-title">
+                  {{ post.name}}
+                  </{{ module.style.card.select_title_tag }}>
+                  {% endif %}
+                  </div>
+                {% endif %}
+
+                {# Author #}
+                <div class="post_meta_wrap">
+                  {% if module.feed_settings.author %}
+                  <div class="author_wrap">
+                    {% if post.blog_post_author.avatar %}
+                    <div class="author_img">
+                      <a href="{{ blog_author_url(module.feed_group.select_blog, post.blog_post_author.slug) }}">
+                        <img alt="{{ post.blog_post_author.display_name }}" src="{{ post.blog_post_author.avatar }}" width="45" height="45"  title="{{ post.blog_post_author.display_name }}">
+                      </a>
+                    </div>
+                    {% endif %}
+                    {% if post.blog_post_author.display_name  or post.blog_post_author.bio %}
+                    <div class="author_info">
+                      {% if post.blog_post_author.display_name %}
+                      <p class="author_name">
+                        <a href="{{ blog_author_url(module.feed_group.select_blog, post.blog_post_author.slug) }}">
+                          {{ post.blog_post_author.display_name }}
+                        </a>
+                      </p>
+                      {% endif %}
+                      {% if post.blog_post_author.bio %}
+                      <p class="author_bio">
+                        <small>{{ post.blog_post_author.bio|truncatehtml(25, "..", false)|striptags|safe }}</small>
+                      </p>
+                      {% endif %}
+                    </div>
+                    {% endif %}
+                  </div>
+                  {% endif %}
+
+
+                  {# Reading Minutes #}
+                  <div class="meta_wrap">
+                    {% if module.feed_settings.reading_minutes %}
+                    <span class="blog-author">
+                      <span class="icon_img">
+                        <svg style="fill: currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Clock1_layer"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></g></svg>
+                      </span>
+                      <span class="value_m">
+                        {% set initialPostWords = post.post_body|striptags|wordcount %}
+                        {% set calculatedPostWords = (initialPostWords/100) * 100 %}
+                        {% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
+                        {% set number = finishedPostWords|round %}
+                        {% if number < 1 %}
+                        {% else %}
+                        {{ finishedPostWords|round }} {{ module.feed_settings.reading_minutes_suffix }}
+                        {% endif %}
+                      </span>
+                    </span>
+                    {% endif %}
+
+                    {# Date #}
+                    {% if module.feed_settings.date %}
+                    <span class="item-date">
+                      <span class="icon_img">
+                        <svg style="fill: currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="Alternate Calendar1_layer"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></g></svg>
+                      </span>
+
+                      {{ macros.dateFormat(module.feed_settings.select_date_format, post)}}
+
+                    </span>
+                    {% endif %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% set i = i + 1 %}          
+        {% endif %}
+
+        {% endfor %}
+        {% endif %}
+
+
+        {# post by title#}
+        {% if  module.feed_group.select_feed_type == "posts_by_title" %}
+        {% for item in module.feed_group.field_group %}
+        {% set post = content_by_id(item.select_post) %}
+
+
+
+        <div class="recent-post-item2 {% if loop.index <= 2  %} largeCard col6 {% else %} col4 smallCard {% endif %} {% if module.feed_settings.featured_image == "false" or not post.post_list_summary_featured_image%}noImage{% endif %}" {% if module.module_settings.enable_animation %} data-aos-delay="{{loop.index * 100 + 200}}" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+          <div class="item_inner" {% if module.feed_settings.featured_image and post.post_list_summary_featured_image %}style="background-image: url({{ resize_image_url( post.post_list_summary_featured_image,767 ) }});"{% endif %}>
+            <div class="overlay_bg bg_el {{ module.style.card.select_background_theme }}">         
+            </div>
+            <div class="post_card bg_el"  >
+              <div class="post_card_inner"  >
+                <a href="{{ post.absolute_url }}" class="bg_el overlay_link"></a>
+                {# Title #}
+                {% if module.feed_settings.title %}
+                <div class="title_wrap">
+                  {% if post.name %}
+                  <{{ module.style.card.select_title_tag }} class="recent-post-title">
+                    {{ post.name}}
+                    </{{ module.style.card.select_title_tag }}>
+                    {% endif %}
+                    </div>
+                  {% endif %}
+
+                  {# Author #}
+                  <div class="post_meta_wrap">
+                    {% if module.feed_settings.author %}
+                    <div class="author_wrap">
+                      {% if post.blog_post_author.avatar %}
+                      <div class="author_img">
+                        <a href="{{ blog_author_url(post.content_group_id, post.blog_post_author.slug) }}">
+                          <img alt="{{ post.blog_post_author.display_name }}" src="{{ post.blog_post_author.avatar }}" width="45" height="45">
+                        </a>
+                      </div>
+                      {% endif %}
+                      {% if post.blog_post_author.display_name  or post.blog_post_author.bio %}
+                      <div class="author_info">
+                        {% if post.blog_post_author.display_name %}
+                        <p class="author_name">
+                          <a href="{{ blog_author_url(post.content_group_id, post.blog_post_author.slug) }}">
+                            {{ post.blog_post_author.display_name }}
+                          </a>
+                        </p>
+                        {% endif %}
+                        {% if post.blog_post_author.bio %}
+                        <p class="author_bio">
+                          <small>{{ post.blog_post_author.bio|truncatehtml(25, "..", false)|striptags|safe }}</small>
+                        </p>
+                        {% endif %}
+                      </div>
+                      {% endif %}
+                    </div>
+                    {% endif %}
+
+
+                    {# Reading Minutes #}
+                    <div class="meta_wrap">
+                      {% if module.feed_settings.reading_minutes %}
+                      <span class="blog-author">
+                        <span class="icon_img">
+                          <svg style="fill: currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-hidden="true"><g id="Clock1_layer"><path d="M256,8C119,8,8,119,8,256S119,504,256,504,504,393,504,256,393,8,256,8Zm92.49,313h0l-20,25a16,16,0,0,1-22.49,2.5h0l-67-49.72a40,40,0,0,1-15-31.23V112a16,16,0,0,1,16-16h32a16,16,0,0,1,16,16V256l58,42.5A16,16,0,0,1,348.49,321Z"></path></g></svg>
+                        </span>
+                        <span class="value_m">
+                          {% set initialPostWords = post.post_body|striptags|wordcount %}
+                          {% set calculatedPostWords = (initialPostWords/100) * 100 %}
+                          {% set finishedPostWords = calculatedPostWords|divide(300)|round(2) %}
+                          {% set number = finishedPostWords|round %}
+                          {% if number < 1 %}
+                          {% else %}
+                          {{ finishedPostWords|round }} minute read
+                          {% endif %}
+                        </span>
+                      </span>
+                      {% endif %}
+
+                      {# Date #}
+                      {% if module.feed_settings.date %}
+                      <span class="item-date">
+                        <span class="icon_img">
+                          <svg style="fill: currentColor;" version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true"><g id="Alternate Calendar1_layer"><path d="M0 464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V192H0v272zm320-196c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM192 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12h-40c-6.6 0-12-5.4-12-12v-40zM64 268c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zm0 128c0-6.6 5.4-12 12-12h40c6.6 0 12 5.4 12 12v40c0 6.6-5.4 12-12 12H76c-6.6 0-12-5.4-12-12v-40zM400 64h-48V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H160V16c0-8.8-7.2-16-16-16h-32c-8.8 0-16 7.2-16 16v48H48C21.5 64 0 85.5 0 112v48h448v-48c0-26.5-21.5-48-48-48z"></path></g></svg>
+                        </span>
+                        {{ macros.dateFormat(module.feed_settings.select_date_format, post)}}
+                      </span>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+        {% if module.button_group %}
+        <div class="bototm_btn pdlr10" {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+          {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+        </div>
+        {% endif %}
+      </div>
+
+      {% if module.button_group %}
+      {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+      {% endif %}
+
+      {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+    </div>
+
+    {% require_css %}
+    <style>
+
+      {% if module.style.card.select_background_theme == "custom" %}
+      .{{name}} .overlay_bg{
+        background-color : {{ macros.color( module.style.card.background_color) }}
+      }
+      {% endif %}
+
+      {% if module.style.card.select_color_theme == "custom" %}
+      .{{name}} .post_card_inner * {
+        color : {{ macros.color(module.style.card.color) }} !important;
+      }
+      {% endif %}
+
+    </style>
+    {% end_require_css%}
+
+
+    {% if module.module_settings.enable_masonry %}
+    {% require_js %}
+    <script>
+      var iso = new Isotope( '.blog-feedV2.{{name}} .feed-outer-wrp', {
+                            itemSelector: '.recent-post-item2',
+                            layoutMode: 'fitRows'
+                            });
+      document.addEventListener('DOMContentLoaded', function () {
+        var iso = new Isotope( '.blog-feedV2.{{name}} .feed-outer-wrp', {
+                              itemSelector: '.recent-post-item2',
+                              layoutMode: 'fitRows'
+                              });
+      })
+      
+      document.addEventListener('DOMContentLoaded', function () {
+    var $grid = $('.{{name}} .gallery-container');
+    $grid.imagesLoaded().progress(function() {
+      var iso = new Isotope( '.{{name}} .gallery-container', {
+        itemSelector: '.{{name}} .gallery-container .column',
+        // layoutMode: 'fitRows'
+      });
+    });
+  });
+    </script>
+    {% end_require_js %}
+    {% endif %}
+
+
+
+

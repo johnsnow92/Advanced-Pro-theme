@@ -1,0 +1,697 @@
+[ {
+  "id" : "30d3c7c0-893f-80e1-34b2-57dbee7adef3",
+  "name" : "tagline",
+  "label" : "Tag Line",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Our Impact"
+}, {
+  "id" : "4e845533-c040-f7f1-8c4a-53857bfc2ad1",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "We Help Drivers"
+  }, {
+    "id" : "3f7dbd9d-b933-afa4-3236-de1e6c98749d",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "h2"
+  }, {
+    "id" : "94c60699-141a-6a27-065b-1098f4d00ac7",
+    "name" : "font_size",
+    "label" : "Font Size",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "text",
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 60
+  }, {
+    "id" : "f165ad00-29b1-c18e-1932-a11c783406d7",
+    "name" : "font_weight",
+    "label" : "Font Weight",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "font-weight-100", "Thin" ], [ "font-weight-300", "Light" ], [ "font-weight-400", "Regular" ], [ "font-weight-500", "Medium" ], [ "font-weight-600", "Semi Bold" ], [ "font-weight-700", "Bold" ], [ "font-weight-800", "Extra Bold" ], [ "font-weight-900", "Black" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "font-weight-700"
+  }, {
+    "id" : "6fdcd2c0-3f94-8d4e-deee-c015896110f4",
+    "name" : "font_color",
+    "label" : "Font Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "We Help Drivers",
+    "type" : "h2",
+    "font_size" : 60,
+    "font_weight" : "font-weight-700",
+    "font_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "76074975-f35b-be74-1bd7-411638cc50c4",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>IDG Legal is dedicated to fighting for the rights of rideshare drivers. Our network of preferred attorneys is powerful. We will provide you with a vetted, expert BCF attorney from our preferred network who understands the rideshare business.</p>"
+}, {
+  "id" : "d95fb173-9eaf-ffa0-8ad3-6657e9443a67",
+  "name" : "content_color",
+  "label" : "Content Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#fff",
+    "opacity" : 100
+  }
+}, {
+  "id" : "778dd49a-cccb-b961-8dfe-1dad7f784ab1",
+  "name" : "content_link_color",
+  "label" : "Content Link Color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "76074975-f35b-be74-1bd7-411638cc50c4",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "baf41429-3312-db24-5b53-1692cc3debb1",
+  "name" : "content_link_color_hover",
+  "label" : "Content Link Color Hover",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "76074975-f35b-be74-1bd7-411638cc50c4",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "e1661e79-b244-eb7c-4fd6-523a1085c4c6",
+  "name" : "items",
+  "label" : "Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 3,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "952ec4b0-0062-4144-7451-31483f563fbc",
+    "name" : "text_number",
+    "label" : "Number 1",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "11"
+  }, {
+    "id" : "e09adbd3-4094-c962-f868-e17c3e2b9186",
+    "name" : "text_number_2",
+    "label" : "Number 2",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "551"
+  }, {
+    "id" : "2a44bc4b-3ed7-6728-a4e3-4ae4f0227bba",
+    "name" : "add_mm",
+    "label" : "Add MM",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "9b61f8cb-d81b-3cd6-3828-660080d67720",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Total Number of Drivers Helped By IDG Legal Staff"
+  }, {
+    "id" : "bb323ef2-2d32-15a3-3d30-e6da60d44ec9",
+    "name" : "image_option",
+    "label" : "Image Option",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "1", "Image" ], [ "2", "SVG Code" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "2"
+  }, {
+    "id" : "611d2f76-cf1b-e1eb-abd8-8ecf8e719324",
+    "name" : "svg_code",
+    "label" : "SVG Code",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "bb323ef2-2d32-15a3-3d30-e6da60d44ec9",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"55\" height=\"55\" viewBox=\"0 0 32 32\">        <path d=\"M16.021 30.719c-0.188 0-0.367-0.080-0.495-0.219l-13.336-14.751c-0.027-0.031-0.051-0.061-0.072-0.096-1.368-1.583-2.119-3.592-2.119-5.673 0-4.797 3.901-8.699 8.696-8.699 2.969 0 5.715 1.531 7.304 3.985 1.585-2.455 4.335-3.985 7.303-3.985 4.796 0 8.697 3.903 8.697 8.699 0 2.085-0.753 4.097-2.125 5.68-0.023 0.031-0.041 0.060-0.069 0.087l-13.292 14.751c-0.123 0.141-0.303 0.221-0.492 0.221v0zM3.256 14.943l12.764 14.115 12.727-14.12c0.019-0.027 0.036-0.053 0.057-0.077 1.201-1.353 1.863-3.084 1.863-4.88 0-4.061-3.305-7.365-7.364-7.365-2.869 0-5.499 1.693-6.695 4.313-0.216 0.473-0.996 0.473-1.212 0-1.197-2.62-3.825-4.313-6.696-4.313-4.060 0-7.363 3.305-7.363 7.365 0 1.795 0.661 3.527 1.861 4.879 0.020 0.028 0.040 0.056 0.057 0.084z\"></path>        </svg>"
+  }, {
+    "id" : "bfa7e034-14c3-ec78-258f-58f725a95181",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "bb323ef2-2d32-15a3-3d30-e6da60d44ec9",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "text_number" : "11",
+    "text_number_2" : "551",
+    "add_mm" : false,
+    "text" : "Total Number of Drivers Helped By IDG Legal Staff",
+    "image_option" : "2",
+    "svg_code" : "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"55\" height=\"55\" viewBox=\"0 0 32 32\">        <path d=\"M16.021 30.719c-0.188 0-0.367-0.080-0.495-0.219l-13.336-14.751c-0.027-0.031-0.051-0.061-0.072-0.096-1.368-1.583-2.119-3.592-2.119-5.673 0-4.797 3.901-8.699 8.696-8.699 2.969 0 5.715 1.531 7.304 3.985 1.585-2.455 4.335-3.985 7.303-3.985 4.796 0 8.697 3.903 8.697 8.699 0 2.085-0.753 4.097-2.125 5.68-0.023 0.031-0.041 0.060-0.069 0.087l-13.292 14.751c-0.123 0.141-0.303 0.221-0.492 0.221v0zM3.256 14.943l12.764 14.115 12.727-14.12c0.019-0.027 0.036-0.053 0.057-0.077 1.201-1.353 1.863-3.084 1.863-4.88 0-4.061-3.305-7.365-7.364-7.365-2.869 0-5.499 1.693-6.695 4.313-0.216 0.473-0.996 0.473-1.212 0-1.197-2.62-3.825-4.313-6.696-4.313-4.060 0-7.363 3.305-7.363 7.365 0 1.795 0.661 3.527 1.861 4.879 0.020 0.028 0.040 0.056 0.057 0.084z\"></path>        </svg>",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "text_number" : "11",
+    "text_number_2" : "551",
+    "add_mm" : false,
+    "text" : "Total Number of Drivers Helped By IDG Legal Staff",
+    "image_option" : "2",
+    "svg_code" : "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"55\" height=\"55\" viewBox=\"0 0 32 32\">        <path d=\"M16.021 30.719c-0.188 0-0.367-0.080-0.495-0.219l-13.336-14.751c-0.027-0.031-0.051-0.061-0.072-0.096-1.368-1.583-2.119-3.592-2.119-5.673 0-4.797 3.901-8.699 8.696-8.699 2.969 0 5.715 1.531 7.304 3.985 1.585-2.455 4.335-3.985 7.303-3.985 4.796 0 8.697 3.903 8.697 8.699 0 2.085-0.753 4.097-2.125 5.68-0.023 0.031-0.041 0.060-0.069 0.087l-13.292 14.751c-0.123 0.141-0.303 0.221-0.492 0.221v0zM3.256 14.943l12.764 14.115 12.727-14.12c0.019-0.027 0.036-0.053 0.057-0.077 1.201-1.353 1.863-3.084 1.863-4.88 0-4.061-3.305-7.365-7.364-7.365-2.869 0-5.499 1.693-6.695 4.313-0.216 0.473-0.996 0.473-1.212 0-1.197-2.62-3.825-4.313-6.696-4.313-4.060 0-7.363 3.305-7.363 7.365 0 1.795 0.661 3.527 1.861 4.879 0.020 0.028 0.040 0.056 0.057 0.084z\"></path>        </svg>",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "text_number" : "11",
+    "text_number_2" : "551",
+    "add_mm" : false,
+    "text" : "Total Number of Drivers Helped By IDG Legal Staff",
+    "image_option" : "2",
+    "svg_code" : "<svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"55\" height=\"55\" viewBox=\"0 0 32 32\">        <path d=\"M16.021 30.719c-0.188 0-0.367-0.080-0.495-0.219l-13.336-14.751c-0.027-0.031-0.051-0.061-0.072-0.096-1.368-1.583-2.119-3.592-2.119-5.673 0-4.797 3.901-8.699 8.696-8.699 2.969 0 5.715 1.531 7.304 3.985 1.585-2.455 4.335-3.985 7.303-3.985 4.796 0 8.697 3.903 8.697 8.699 0 2.085-0.753 4.097-2.125 5.68-0.023 0.031-0.041 0.060-0.069 0.087l-13.292 14.751c-0.123 0.141-0.303 0.221-0.492 0.221v0zM3.256 14.943l12.764 14.115 12.727-14.12c0.019-0.027 0.036-0.053 0.057-0.077 1.201-1.353 1.863-3.084 1.863-4.88 0-4.061-3.305-7.365-7.364-7.365-2.869 0-5.499 1.693-6.695 4.313-0.216 0.473-0.996 0.473-1.212 0-1.197-2.62-3.825-4.313-6.696-4.313-4.060 0-7.363 3.305-7.363 7.365 0 1.795 0.661 3.527 1.861 4.879 0.020 0.028 0.040 0.056 0.057 0.084z\"></path>        </svg>",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ]
+}, {
+  "id" : "ee1e14b7-878b-5cab-7011-101a46363ab4",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "93448879-955b-2e09-f8e3-8f7a91698487",
+    "name" : "section_text_alignment",
+    "label" : "Section Text Alignment",
+    "help_text" : "The horizontal alignment of the text.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-left", "Left" ], [ "text-center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-left"
+  }, {
+    "id" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+    "name" : "section_background_type",
+    "label" : "Section Background Type",
+    "help_text" : "Choose the kind of background that displays on the section.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "1", "Image" ], [ "2", "Color" ], [ "3", "Default Color" ], [ "4", "Default Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "2"
+  }, {
+    "id" : "68d4dfad-7a62-af61-6246-8df16b3b34dc",
+    "name" : "section_background_image",
+    "label" : "Section Background Image",
+    "help_text" : "Specify an image to use as the background of the section.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    }
+  }, {
+    "id" : "a0ffcf0e-2357-9fd9-13ce-6170160f44c6",
+    "name" : "section_background_image_overlay",
+    "label" : "Section Background Image Overlay",
+    "help_text" : "Add a layer of color on top of the background image. You can also specify the opacity (e.g. 85%)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#272727",
+      "opacity" : 85
+    }
+  }, {
+    "id" : "182f6412-ec15-59c2-5efa-57608ac42370",
+    "name" : "section_background_color",
+    "label" : "Section Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+    "name" : "section_padding",
+    "label" : "Section Padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "custom", "Custom" ], [ "py-0", "Padding Top & Bottom - 0" ], [ "py-5", "Padding Top & Bottom - 5px" ], [ "py-10", "Padding Top & Bottom - 10px" ], [ "py-15", "Padding Top & Bottom - 15px" ], [ "py-20", "Padding Top & Bottom - 20px" ], [ "py-25", "Padding Top & Bottom - 25px" ], [ "py-30", "Padding Top & Bottom - 30px" ], [ "py-35", "Padding Top & Bottom - 35px" ], [ "py-40", "Padding Top & Bottom - 40px" ], [ "py-45", "Padding Top & Bottom - 45px" ], [ "py-50", "Padding Top & Bottom - 50px" ], [ "py-55", "Padding Top & Bottom - 55px" ], [ "py-60", "Padding Top & Bottom - 60px" ], [ "py-65", "Padding Top & Bottom - 65px" ], [ "py-70", "Padding Top & Bottom - 70px" ], [ "py-75", "Padding Top & Bottom - 75px" ], [ "py-80", "Padding Top & Bottom - 80px" ], [ "py-85", "Padding Top & Bottom - 85px" ], [ "py-90", "Padding Top & Bottom - 90px" ], [ "py-95", "Padding Top & Bottom - 95px" ], [ "py-100", "Padding Top & Bottom - 100px" ], [ "py-120", "Padding Top & Bottom - 120px" ], [ "py-150", "Padding Top & Bottom - 150px" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "custom"
+  }, {
+    "id" : "0b3d38f7-baa1-1c9b-40e2-c7c214a3260b",
+    "name" : "section_padding_desktop",
+    "label" : "Section Padding Desktop",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "95e41b90-9549-9e40-0adf-5461297f2276",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    }, {
+      "id" : "43ff9bc4-59cf-ca82-c684-675e8c4ae6fe",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 40,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "b1ffa917-3258-b89f-6ecc-901a79833a17",
+    "name" : "section_padding_tablet",
+    "label" : "Section Padding Tablet",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "fccc8999-bf4b-d6a4-facd-edda112c75b4",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    }, {
+      "id" : "1d9fd413-fde3-918e-b5a9-340769bca61e",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 40,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "178bf22b-d104-7eea-1c5b-70fb4655249a",
+    "name" : "section_padding_mobile",
+    "label" : "Section Padding Mobile",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "44a00dc9-10b3-0728-205b-2fb516857a42",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    }, {
+      "id" : "213e5ea8-36bb-a1a9-db56-9d8bfe455db2",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 40,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "96c75b2e-592c-4982-2f7c-5413f63c5def",
+    "name" : "section_id",
+    "label" : "Section ID",
+    "help_text" : "Enter a unique ID. This will be used to jump directly on this section.\n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "ee8ee9b8-cbf2-3314-a4e6-47e7f94c845f",
+    "name" : "section_class",
+    "label" : "Section Class",
+    "help_text" : "Add a few extra CSS class on this section so you can customize even further. \n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "190b3884-6ee7-f9bd-50b8-194570111d17",
+    "name" : "section_use_existing_portal_style",
+    "label" : "Section Use Existing Portal Style",
+    "help_text" : "Enable this option to use existing portal styling.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "4de3cddd-abe4-711a-e427-637386591162",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "help_text" : "Disable this option to hide this section on the page.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "215cac8f-576a-6b7d-23fc-dc7b2bde7a9e",
+    "name" : "filler",
+    "label" : "Filler",
+    "required" : false,
+    "locked" : false,
+    "children" : [ ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_text_alignment" : "text-left",
+    "section_background_type" : "2",
+    "section_background_image" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    },
+    "section_background_image_overlay" : {
+      "color" : "#272727",
+      "opacity" : 85
+    },
+    "section_background_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "section_padding" : "custom",
+    "section_padding_desktop" : {
+      "top" : 40,
+      "bottom" : 40
+    },
+    "section_padding_tablet" : {
+      "top" : 40,
+      "bottom" : 40
+    },
+    "section_padding_mobile" : {
+      "top" : 40,
+      "bottom" : 40
+    },
+    "section_id" : "",
+    "section_class" : "",
+    "section_use_existing_portal_style" : false,
+    "section_show_hide" : true,
+    "filler" : { }
+  }
+} ]

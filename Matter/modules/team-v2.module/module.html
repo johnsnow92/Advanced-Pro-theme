@@ -1,0 +1,450 @@
+{% import "../../macros/_macros.html" as macros %}  
+{% set icon_color =  module.style.card.select_icon_color_theme %}
+{% set icon_bg =  module.style.card.select_icon_background_theme %}
+{% set columns =  module.module_settings.columns %}
+{% set slider =   module.module_settings.enable_slider  %}
+{% set slider_settings = module.module_settings.slider_options %}
+{% set cardBg = module.style.card %}
+
+<div class="cm_tm_wrp {% if not slider %} col{{ columns }}_row {% endif %} {{name}} {{ module.style.background_color.select_background_theme }} dnd_padd {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} {% if slider %} per_view{{ slider_settings.slides_per_view }} {% if slider_settings.autoplay %}autoplay_true{% endif %} {% if slider_settings.dots %}dots_true{% endif %} {% if slider_settings.arrows %}arrows_trw{% endif %} {% if slider_settings.loop %}loop_true{% endif %}{% endif %}" 
+     {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}"> 
+    {{ macros.topContent(module.top_content, module.module_settings) }}
+    <div class="cm_tm {{select_color_theme}} {% if module.module_settings.enable_slider %} glide {% endif %}  {{ module.style.card.select_content_alignment }}">
+      <div class="cm_tm_row   {% if not module.module_settings.enable_slider %} flex_row {% endif %} {% if module.module_settings.enable_slider %}glide__track{% endif %} " {% if module.module_settings.enable_slider %} data-glide-el="track" {% endif %}>
+        {% if module.module_settings.enable_slider %}
+        <div class="glide__slides">
+          {% endif %}
+          {% for item in module.team_group %}
+          {% if item %}
+          {% set href = item2.link_field.url.href %}
+          {% if item2.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <div data-index="{{loop.index}}" class="cm_tm_card  {% if not item.member_image.src %}noImage {% endif %}{% if not item.member_bio %} no_bio {% endif %} {% if not slider %} col{{ columns }} {% endif %} {% if module.module_settings.enable_slider %} glide__slide {% endif %}" >
+            <div class="cm_tm_card_inner" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 150 + 200}}" {% endif %}>
+
+              {% if item.member_image.src %}
+              <div class="cm_mbr_image" {% if item.member_image.src %} style="background-image:url({{item.member_image.src}})"{% endif %}>
+                {% if item.enable_link %}     
+                <a href="{{ href }}" class="cm_tm_lnk"
+                   {% if item2.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                   {% if item2.link_field.rel %}rel="{{ item2.link_field.rel }}"{% endif %}
+                   >
+                </a>
+                {% endif %}
+              </div>
+                        {% endif %}
+
+              <!--               <div class="cm_mbr_overlay">
+                <svg width="1600" height="1600" viewBox="0 0 265 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 45.7636V225.199C0 227.851 1.79086 230 4 230H261C263.209 230 265 227.851 265 225.199V45.5216L135 0L0 45.7636Z" fill="url(#paint0_linear_{{name}}{{loop.index}})"/>
+                  <defs>
+                    <linearGradient id="paint0_linear_{{name}}{{loop.index}}" x1="132.5" y1="0" x2="132.5" y2="230" gradientUnits="userSpaceOnUse">
+                      <stop style="stop-color:rgb({{ module.style.card.gradient_group.start_color.color|convert_rgb }});stop-opacity:{{ module.style.card.gradient_group.start_color.opacity/100 }}" />
+                      <stop offset="1" style="stop-color:rgb({{ module.style.card.gradient_group.end_color.color|convert_rgb }});stop-opacity:{{ module.style.card.gradient_group.end_color.opacity/100 }}"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div> -->
+
+              <div class="cm_mbr_cont  {% if macros.color(item.color)|length > 0 %} cm_color {% endif %}" style="color:{{ macros.color(item.color) }};">
+                <div class="cm_mbr_overlay {% if cardBg.select_background_type == "bgcolor" %}{{ module.style.card.select_background_theme }}{% endif %}">
+                </div>
+
+
+                {% if item.member_name %}
+                {% if item.enable_link %}     
+                <a href="{{ href }}"
+                   {% if item2.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                   {% if item2.link_field.rel %}rel="{{ item2.link_field.rel }}"{% endif %}
+                   >
+                  {% endif %}
+                  <{{ module.style.card.select_name_tag }}>
+                  {{item.member_name}}
+                  </{{ module.style.card.select_name_tag }}>
+                  {% endif %}
+                  {% if item.enable_link %}
+                </a>
+                  {% endif %}
+                  {% if item.member_designation %}
+                  <p>
+                    {{item.member_designation}}
+                  </p>
+                  {% endif %}
+
+                  <!--                    -->
+                  
+                  {% if item.social_group %}
+                  {% if item.social_group|length <=4 %}
+                  <div class="cm_mbr_icons {{ icon_color }}">
+                    {% for item2 in item.social_group %}
+                    {% set href = item2.link_field.url.href %}
+                    {% if item2.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                    {% endif %}
+                    <a class="{{icon_bg}} {{icon_color}}" href="{{ href }}"
+                       {% if item2.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                       {% if item2.link_field.rel %}rel="{{ item2.link_field.rel }}"{% endif %}
+                       >
+                      {% icon
+			name="{{ item2.icon_field.name }}"
+			style="{{ item2.icon_field.type }}"
+			unicode="{{ item2.icon_field.unicode }}"
+			icon_set="{{ item2.icon_field.icon_set }}"
+		%}
+                    </a>
+                    {% endfor %}
+                  </div>
+                  {% else %}
+                  <div class="cm_mbr_icons hs_icon {{ icon_color }}">
+                    {% for item2 in item.social_group %}
+                    {% if loop.last %}
+                    <span class="cm_nbr_sing"> 
+                      {% set href = item2.link_field.url.href %}
+                      {% if item2.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                      {% set href = "mailto:" + href %}
+                      {% endif %}
+                      <a class="{{icon_bg}} {{icon_color}}" href="{{ href }}"
+                         {% if item2.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                         {% if item2.link_field.rel %}rel="{{ item2.link_field.rel }}"{% endif %}
+                         >
+                        {% icon
+			name="{{ item2.icon_field.name }}"
+			style="{{ item2.icon_field.type }}"
+			unicode="{{ item2.icon_field.unicode }}"
+			icon_set="{{ item2.icon_field.icon_set }}"
+		%}
+                      </a>
+                    </span>
+                    {% else %}
+                    <span class="cm_nbr_mul">
+                      {% set href = item2.link_field.url.href %}
+                      {% if item2.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                      {% set href = "mailto:" + href %}
+                      {% endif %}
+                      <a class="{{icon_bg}} {{icon_color}}" href="{{ href }}"
+                         {% if item2.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                         {% if item2.link_field.rel %}rel="{{ item2.link_field.rel }}"{% endif %}
+                         >
+                        {% icon
+			name="{{ item2.icon_field.name }}"
+			style="{{ item2.icon_field.type }}"
+			unicode="{{ item2.icon_field.unicode }}"
+			icon_set="{{ item2.icon_field.icon_set }}"
+		%}
+                      </a>
+                    </span>
+                    {% endif %}
+
+                    {% endfor %}
+                  </div>
+                  {% endif %} 
+                    {% endif %} 
+                  <!--                    -->
+
+
+                  {% if item.member_bio %}
+                  <div class="cm_mbr_text">
+
+                    {% if item.member_bio|striptags|wordcount >= 15 %}
+                    <span class="cm_mbr_text_innner">
+                      {{item.member_bio|striptags|safe|truncatehtml(92, '…' , false) }}
+                    </span>
+                    <span class="cm_mbr_btn team_trigger" data-id="teamModal_wrap{{name}}__{{loop.index}}">{{item.read_more_text }}</span>
+                    {% else %}
+                    <span class="cm_mbr_text_innner">
+                      {{item.member_bio|striptags|safe|truncatehtml(92, '…' , false) }}
+                    </span>
+                    {% endif %}
+                  </div>
+                  {% endif %}
+                  </div>
+                  </div>
+              </div>
+              {% endif %}
+              {% endfor %}
+              {% if module.module_settings.enable_slider %}
+            </div>
+            {% endif %}
+            {% if module.module_settings.enable_slider %}
+            {% if  module.module_settings.slider_options.arrows  %}
+            <div class="glide__arrows" data-glide-el="controls" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="100" {% endif %}>
+              <div class="glide__arrow glide__arrow--left" data-glide-dir="&lt;">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M40 20C40 8.95312 31.0469 0 20 0C8.95312 0 0 8.95312 0 20C0 31.0469 8.95312 40 20 40C31.0469 40 40 31.0469 40 20ZM16.7969 9.92188C17.5312 9.1875 18.7188 9.1875 19.4453 9.92188C20.1719 10.6562 20.1797 11.8437 19.4453 12.5703L13.8984 18.1172L30.625 18.125C31.6641 18.125 32.5 18.9609 32.5 20C32.5 21.0391 31.6641 21.875 30.625 21.875H13.8984L19.4453 27.4219C20.1797 28.1562 20.1797 29.3438 19.4453 30.0703C18.7109 30.7969 17.5234 30.8047 16.7969 30.0703L8.04688 21.3281C7.3125 20.5938 7.3125 19.4062 8.04688 18.6797L16.7969 9.92188Z" fill="#B9BBBD"/>
+                </svg></div>
+              <div class="glide__arrow glide__arrow--right" data-glide-dir="&gt;">
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M0 20C0 8.95312 8.95312 0 20 0C31.0469 0 40 8.95312 40 20C40 31.0469 31.0469 40 20 40C8.95312 40 0 31.0469 0 20ZM23.2031 9.92188C22.4688 9.1875 21.2812 9.1875 20.5547 9.92188C19.8281 10.6562 19.8203 11.8437 20.5547 12.5703L26.1016 18.1172L9.375 18.125C8.33594 18.125 7.5 18.9609 7.5 20C7.5 21.0391 8.33594 21.875 9.375 21.875H26.1016L20.5547 27.4219C19.8203 28.1562 19.8203 29.3438 20.5547 30.0703C21.2891 30.7969 22.4766 30.8047 23.2031 30.0703L31.9531 21.3281C32.6875 20.5938 32.6875 19.4062 31.9531 18.6797L23.2031 9.92188Z" fill="#026780"/>
+                </svg>
+              </div>
+            </div>
+            {% endif %}
+            {% endif %}
+            {% if module.module_settings.enable_slider %}
+            {% if module.module_settings.slider_options.dots %}
+            <div class="glide__bullets square_bullets" data-glide-el="controls[nav]" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+              {% for item in module.team_group %}
+              <div class="glide__bullet" data-glide-dir="={{loop.index - 1}}"></div>
+              {% endfor %}
+            </div>
+            {% endif %}
+            {% endif %}
+          </div>
+        </div>
+
+
+        {% if module.button_group %}
+        <div class="" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+          {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+        </div>
+        {% endif %}
+
+      </div>
+
+
+
+      {% for item in module.team_group %}
+      {% if item.member_bio %}
+      <div class="team_popup-modal {% if not item.member_image.src %}noImage{% endif %}" id="teamModal_wrap{{name}}__{{loop.index}}">
+        <div class="modal__container">
+          <div class="modal__box">
+            <div class="inner_row">
+              {% if item.member_image.src %}
+              <div class="mem_imng">
+                <div class="imgn_box" style="background-image: url({{item.member_image.src}})">
+                  <img src="{{item.member_image.src}}" alt="{{item.member_image.alt}}">
+                </div>
+              </div>
+              {% endif %}
+
+              <div class="mem_bio_wrap">
+                <div class="bio_inner">
+                  {% if item.member_designation  %}<h6 class="desig">{{ item.member_designation }}</h6>{% endif %}
+                  {% if item.member_name  %}<h2 class="name">{{ item.member_name }}</h2>{% endif %}
+                  <div class="social-icons{% if icon_bg =='custom' and module.style.card.icon_background_color.color and module.style.card.icon_background_color.opacity <= 0 %} transparent_bg_icon{% endif %}">
+                    {% for item2 in item.social_group %}
+                    {% set href = item2.link_field.url.href %}
+                    {% if item2.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                    {% endif %}
+                    <a href="{{ href }}" class="{{icon_bg}} {{icon_color}}"
+                       {% if item2.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                       {% if item2.link_field.rel %}rel="{{ item2.link_field.rel }}"{% endif %}
+                       >
+                      {% icon
+			name="{{ item2.icon_field.name }}"
+			style="{{ item2.icon_field.type }}"
+			unicode="{{ item2.icon_field.unicode }}"
+			icon_set="{{ item2.icon_field.icon_set }}"
+		%}
+                    </a>
+                    {% endfor %}
+                  </div>
+                  {% if item.member_bio  %} 
+                  <div class="bio_text">
+                    {{item.member_bio}} 
+                  </div>{% endif %}
+
+                  {% if item.enable_link %} 
+                  <div class="cm_mod_buton">
+                    {% set href = item.link_field.url.href %}
+                    {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                    {% set href = "mailto:" + href %}
+                    {% endif %}
+                    <a href="{{ href }}" class="{{item.button_color_theme}}"
+                       {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                       {% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+                       >
+                      {{ item.read_more_text }}
+                    </a>
+                  </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="closeIcon">
+          <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px"><path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"/></svg>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+
+      {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+
+      {% if module.button_group %}
+      {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+      {% endif %}
+    </div>
+
+
+
+
+    {% require_css %}
+    <style>
+
+
+      {% if cardBg.select_background_type == "bgcolor" %}
+      {% if cardBg.select_background_theme == "custom" %}
+      .{{name}} .cm_mbr_overlay{
+        background-color: {{ macros.color(cardBg.background_color) }};
+      }
+      {% endif %}
+      {% endif %}
+
+      {% if cardBg.select_background_type == "gradient" %}
+      {% if cardBg.select_gradient_theme == "theme_grdt" %}
+      .{{name}} .cm_mbr_overlay{
+        background: linear-gradient({{ cardBg.direction }}, rgba({{ theme.global_colors.ac_primary_color.color|convert_rgb }}, {{ cardBg.primary_color_opacity / 100 }}), rgba({{ theme.global_colors.ac_secondary_color.color|convert_rgb }}, {{ cardBg.secondary_color_opacity / 100 }}));
+      }
+      {% endif %}
+
+      {% if cardBg.select_gradient_theme == "cstm_grdt" %}
+      .{{name}} .cm_mbr_overlay{
+        background-image: {{ cardBg.gradient_color.css }};
+      }
+      {% endif %}
+      {% endif %}
+
+      /*  */
+
+
+      {% if module.style.card.select_content_theme =='custom' %}
+      .cm_tm_wrp.{{name}} .cm_mbr_cont *:not(a) {
+        color:{{ macros.color(module.style.card.color_field) }};
+      }
+      {% endif %}
+      {% if icon_bg =='custom' %}
+      .cm_tm_wrp.{{name}} .social-icons a,
+      .cm_tm_wrp.{{name}} .cm_mbr_icons a{
+        background-color:{{macros.color(module.style.card.icon_background_color) }}
+      }
+      {% endif %}
+      {% if icon_color =='custom' %}
+      .closeIcon.{{name}} svg path,
+      .cm_tm_wrp.{{name}} .social-icons a *,
+      .cm_tm_wrp.{{name}} .cm_mbr_icons a *{
+        fill:{{macros.color(module.style.card.icon_color) }}
+      }
+      {% else %}
+      .cm_tm_wrp.{{name}} .cm_mbr_icons a *{
+        fill:inherit;
+      }
+      {% endif %}
+
+    </style>
+
+    {% end_require_css %}
+
+
+
+
+    {# slider options #}
+
+    {% if module.module_settings.enable_slider %}
+    {# breakpoint #}
+    {% if module.module_settings.slider_options.slides_per_view > 3%}
+    {% set tabslides = 3 %}
+    {% else %}
+    {% set tabslides = module.module_settings.slider_options.slides_per_view %}
+    {% endif %}
+
+    {% if module.module_settings.slider_options.slides_per_view > 2%}
+    {% set slides768 = 2 %}
+    {% else %}
+    {% set slides768 = module.module_settings.slider_options.slides_per_view %}
+    {% endif %}
+
+    {% set gtename = name|replace("-","_")%}
+    {% require_js %}
+    <script>
+      var config_{{gtename}} = {
+        {% if module.module_settings.slider_options.loop %}
+        type:'carousel',
+        {% endif %}
+        {% if not module.module_settings.slider_options.loop %}
+        rewind: false,
+        {% endif %}
+        {% if  module.module_settings.slider_options.slides_per_view %}
+        perView:{{ module.module_settings.slider_options.slides_per_view }},
+        {% endif %}
+        perTouch: 1,
+        gap: 20,
+        {% if module.module_settings.slider_options.autoplay %}
+        autoplay: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
+        {% endif %}
+        breakpoints: {
+
+        1230: {
+        perView: {{tabslides}}
+      },
+          768: {
+            perView: {{slides768}}
+          },
+            600: {
+              perView: 1
+            }
+          }
+      }
+      var glide = new Glide(".{{name}} .glide",config_{{gtename}})
+      glide.mount()
+
+    </script>
+
+
+    {% end_require_js %}
+
+    {% endif %}
+
+
+    {% require_js %}
+    <script>
+      document.addEventListener('DOMContentLoaded',function(){
+        var teamTriggerV2 = document.querySelectorAll('.cm_tm_wrp .team_trigger');
+        Array.prototype.slice.call(teamTriggerV2).forEach(function(ele, index) {
+          ele.addEventListener('click', function(e) {
+            var getId = ele.getAttribute('data-id');
+            var modalId = document.getElementById(getId);
+            console.log(getId);
+            document.querySelector('body').classList.add('teamModal_open');
+            modalId.classList.add('show');
+            setTimeout(function(){
+              modalId.classList.add('active_show');
+            })
+          });
+        });
+
+
+        var teamModalWrapV2 = document.querySelectorAll('.cm_tm_wrp .team_popup-modal');
+        Array.prototype.slice.call(teamModalWrapV2).forEach(function(ele, index) {
+          ele.addEventListener('click', function(e) {
+
+            document.querySelector('body').classList.remove('teamModal_open');
+            ele.classList.remove('active_show');
+            setTimeout(function(){
+              ele.classList.remove('show');
+            });
+          });
+        });
+
+        var teamModalBoxV2 = document.querySelectorAll('.cm_tm_wrp .modal__box');
+        Array.prototype.slice.call(teamModalBoxV2).forEach(function(ele, index) {
+          ele.addEventListener('click', function(e) {
+            e.stopPropagation();
+          });
+        });
+
+      })  
+
+
+
+    </script>
+
+    {% end_require_js %}

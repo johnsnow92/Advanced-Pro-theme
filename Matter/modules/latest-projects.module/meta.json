@@ -1,0 +1,18 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 129534574769,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/plugins/isotop.js",
+    "name" : "isotop.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../js/plugins/parallax.js",
+    "name" : "parallax.js"
+  } ],
+  "label" : "Latest Projects",
+  "icon" : "fontawesome-5.14.0:Clipboard:SOLID",
+  "is_available_for_new_content" : true
+}

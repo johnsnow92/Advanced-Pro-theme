@@ -1,0 +1,50 @@
+<!--
+templateType: global_partial
+label: Header no navigation
+-->
+
+<div class="header-wrapper custom-no-navigation">
+ {% dnd_area 'header_dnd_area_top' class='header_dnd_sec header_top_sec', label='Top Section' %}{% end_dnd_area %}
+  {% module "header_section" path="../../modules/header-section", label="Header Section" 
+        alert_section={
+          "alert_message_text" : "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour believable."
+        },
+        top_section={
+          "address_section" : {
+            "text_field" : "4140 Parker Ave, St. Louis, MO 63116"
+          },
+          "contact_section" : {
+            "text_field" : "(207) 555-0119"
+          },
+          "social_icons" : {
+            "include_social_share" : false
+          }
+        },
+        top_section_copy={
+          "button_section" : {
+            "include_button" : false
+          },
+          "language" : {
+            "include_language_swicher" : false
+          },
+          "logo_section" : {
+            "logo_field" : {
+              "alt" : "Matter",
+              "height" : 25,
+              "override_inherited_src" : true,
+              "src" : get_asset_url('../../images/Matter Logo.png'),
+              "suppress_company_name" : true,
+              "width" : 132
+            }
+          },
+          "menu_section" : {
+            "include_menu" : false
+          },
+          "site_search_input" : {
+            "include_search" : false
+          }
+        }
+      %}
+    {% dnd_area 'header_dnd_area_bottom' class='header_dnd_sec header_top_sec', label='Bottom Section' %}{% end_dnd_area %}
+
+</div>

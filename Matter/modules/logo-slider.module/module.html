@@ -1,0 +1,183 @@
+{% import "../../macros/_macros.html" as macros %}
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="logo_slider {% if not module.module_settings.enable_slider %} no-slider {% endif %} {{name}} dnd_padd styleChanges  {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} {% if module.module_settings.slider_options.arrows == true or module.module_settings.slider_options.dots == true %}dotsArrowsAdded{% else %}noDotsArrowsAdded{% endif %} {% if module.style.background.select_background_type == 'bgimage' and module.style.background.enable_parallax %}{% else %} widhout_paralllax_image{% endif %}">
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }} pdlr0"> 
+    {{ macros.topContent(module.top_content, module.module_settings) }}
+    <div class="bottom_row glide ">
+      <div class="glide__track " data-glide-el="track"> 
+        <div class="logos_row glide__slides flex_row" > 
+          {% for item in module.slides_group %}
+          <div class="logo_item col2 it{{loop.index}} {% if module.module_settings.include_grayscale_on_image %}hoverGrey{% endif %} {% if item.include_link %} linkAdd{% endif %}" >
+            <div class="logo_inner {{ module.style.card.background_theme }}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 150 + 200}}" {% endif %}>
+              {% if item.image.src %}
+              {% if item.include_link %} 
+              {% set href = item.link.url.href %}
+              {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a href="{{ href }}"
+                 {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+                 {% if item.link.rel %}rel="{{ item.link.rel }}"{% endif %}>
+                {% endif %}
+
+                {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+                {% if item.image.size_type == 'auto' %}
+                {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+                {% elif item.image.size_type == 'auto_custom_max' %}
+                {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                {% endif %}
+                {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+                <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" title="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }} >
+                {% if item.include_link %}  </a>  {% endif %}
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+
+      {{ macros.sliderControls(module.module_settings.slider_options , module.slides_group, module.module_settings.enable_animation) }}
+
+    </div>
+
+    {% if module.button_group %}
+    <div class=" slider_btn_footer"   {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+      {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+    </div>
+    {% endif %}
+
+  </div>
+
+  {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+
+  {% if module.button_group %}
+  {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+  {% endif %}
+
+
+</div>
+
+
+{% require_css %}
+<style>
+
+  {% if module.module_settings.change_inner_container_width %}
+  @media(min-width:768px){
+    .{{name}}.styleChanges .bottom_row{
+      max-width: {{ module.module_settings.inner_container_width }}%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  {% endif %}
+
+
+</style>
+{% end_require_css %}
+
+
+{# slider options #}
+
+{% if module.module_settings.slider_options.slides_per_view > 5%}
+{% set tabslides = 5 %}
+{% else %}
+{% set tabslides = module.module_settings.slider_options.slides_per_view %}
+{% endif %}
+
+{% if module.module_settings.slider_options.slides_per_view > 3%}
+{% set slides768 = 3 %}
+{% else %}
+{% set slides768 = module.module_settings.slider_options.slides_per_view %}
+{% endif %}
+
+
+
+
+
+{% set gtename = name|replace("-","_")%}
+{% if module.module_settings.enable_slider %}
+{% require_js %}
+<script>
+  var config_{{gtename}} = {
+    {% if module.module_settings.slider_options.loop %}
+    type:'carousel',
+    {% endif %}
+    {% if not module.module_settings.slider_options.loop %}
+    rewind: false,
+    {% endif %}
+    {% if  module.module_settings.slider_options.slides_per_view %}
+    perView:{{ module.module_settings.slider_options.slides_per_view }},
+    {% endif %}
+    perTouch:  1,
+    gap:0,
+    {% if module.module_settings.slider_options.autoplay %}
+    autoplay: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
+    {% endif %}
+
+    breakpoints: {
+    992: {
+    perView: {{tabslides}}
+  },
+      600: {
+        perView: {{slides768}}
+      },
+        480: {
+          perView: 2
+        }
+      }
+  }
+  var glide = new Glide(".{{name}} .glide",config_{{gtename}})
+  glide.mount()
+
+
+</script>
+{% end_require_js %}
+{% endif %}
+
+{% if module.style.card.add_spacing %}
+{% require_css %}
+<style>
+  .logo_slider.{{name}} .logo_inner {
+    border-radius:{{ module.style.card.border_radius }}px;
+    {% if module.style.card.add_boxshadow %}
+    box-shadow: 0 15px 20px rgba(23,164,230,.1);
+    {% endif %}
+    {% if module.style.card.background_theme =='custom' %}
+    background-color: {{ macros.color(module.style.card.background_color)}}
+      {% endif %}
+  } 
+  @media(min-width:768px){
+    .logo_slider.{{name}} .logo_item {
+      padding-top:{{ module.style.card.spacing.margin.top.value}}px;
+      padding-bottom:{{ module.style.card.spacing.margin.bottom.value }}px;
+    }
+    .logo_slider.{{name}} .logo_inner {
+      padding-top:{{ module.style.card.spacing.padding.top.value}}px;
+      padding-bottom:{{ module.style.card.spacing.padding.bottom.value }}px;
+      padding-left:{{ module.style.card.spacing.padding.left.value }}px;
+      padding-right:{{ module.style.card.spacing.padding.right.value }}px;
+    }
+  }
+  {% if module.style.card.change_spacing_in_mobile %}
+  @media(max-width:767px){
+    .logo_slider.{{name}} .logo_item {
+      padding-top:{{ module.style.card.mobile_spacing.margin.top.value}}px;
+      padding-bottom:{{ module.style.card.mobile_spacing.margin.bottom.value }}px;
+    }
+    .logo_slider.{{name}} .logo_inner {
+      padding-top:{{ module.style.card.mobile_spacing.padding.top.value}}px;
+      padding-bottom:{{ module.style.card.mobile_spacing.padding.bottom.value }}px;
+      padding-left:{{ module.style.card.mobile_spacing.padding.left.value }}px;
+      padding-right:{{ module.style.card.mobile_spacing.padding.right.value }}px;
+    }
+  }
+  {% endif %}
+</style>
+{% end_require_css %}
+{% endif %}
+

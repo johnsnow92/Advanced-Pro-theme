@@ -1,0 +1,608 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 4,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1617106720694484",
+        "label" : "Flexible column",
+        "type" : "widget_container",
+        "params" : {
+          "css_class" : "",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617113697714326",
+          "label" : "KR - Hero Two Column 3",
+          "type" : "custom_widget",
+          "params" : {
+            "side_image" : {
+              "alt" : "BoldCast About Us Page Banner",
+              "height" : 692,
+              "max_height" : 692,
+              "max_width" : 798,
+              "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/BoldCast%20About%20Us%20Page%20Banner.png",
+              "width" : 798
+            },
+            "heading" : {
+              "font_size" : 38,
+              "font_weight" : "",
+              "text" : "About Us"
+            },
+            "section_settings" : {
+              "section_background_image" : {
+                "alt" : "footer_bg_image",
+                "height" : 1280,
+                "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/footer_bg_image.jpg",
+                "width" : 1920
+              },
+              "section_background_image_overlay" : {
+                "color" : "#F1475A",
+                "opacity" : 100
+              },
+              "section_background_type" : "1"
+            },
+            "content_link_color" : {
+              "color" : "#fff",
+              "opacity" : 100
+            },
+            "css_style" : "",
+            "content_color" : {
+              "color" : "#fff",
+              "opacity" : 100
+            },
+            "tag_line" : "",
+            "css_id" : "",
+            "content" : "<p class=\"p-18\"><span>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit sse cillum dolore eu fugiat nulla pariatur. &nbsp;cupidatat non proident, unt in culpa qui fficia deserunt mollit anim id est laborum.</span><br><br><span>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehen.</span><br><br><span>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ostrud exercitation ullamco laboris .</span></p>",
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Hero Two Column 3",
+            "per_widget_wrapper_html" : "",
+            "content_link_color_hover" : {
+              "color" : "#fff",
+              "opacity" : 100
+            },
+            "sub_heading" : "",
+            "wrapping_html" : "",
+            "widget_name" : "KR - Hero Two Column 3",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617113717461328",
+          "label" : "KR - Content with Popup Video",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "button" : [ {
+              "text" : "GOOGLE PLAY",
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              },
+              "button_background_color" : {
+                "opacity" : 100
+              },
+              "button_background_color_hover" : {
+                "opacity" : 100
+              },
+              "button_text_color" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "button_text_color_hover" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "icon" : {
+                "name" : "google-play",
+                "unicode" : "f3ab",
+                "type" : "REGULAR"
+              }
+            }, {
+              "text" : "GOOGLE PLAY",
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              },
+              "button_background_color" : {
+                "opacity" : 100
+              },
+              "button_background_color_hover" : {
+                "opacity" : 100
+              },
+              "button_text_color" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "button_text_color_hover" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "icon" : {
+                "name" : "google-play",
+                "unicode" : "f3ab",
+                "type" : "REGULAR"
+              }
+            } ],
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Content with Popup Video",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Content with Popup Video",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617113724536330",
+          "label" : "KR - Cards 1",
+          "type" : "custom_widget",
+          "params" : {
+            "cards" : [ {
+              "symbol" : {
+                "type" : "image",
+                "icon" : {
+                  "name" : "check-circle",
+                  "unicode" : "f058",
+                  "type" : "REGULAR"
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/team-1.png",
+                  "alt" : "team-1",
+                  "size_type" : "auto",
+                  "width" : 264,
+                  "height" : 264,
+                  "max_width" : 264,
+                  "max_height" : 264
+                },
+                "background_image" : {
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+                  "alt" : "adult-business-businessman",
+                  "width" : 3000,
+                  "height" : 2000,
+                  "max_width" : 3000,
+                  "max_height" : 2000
+                },
+                "width" : 264,
+                "is_circle" : true
+              },
+              "title" : "Jhon Doe",
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_text_color" : {
+                "opacity" : 100
+              },
+              "text" : "<p><span>CEO</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "testimonial" : {
+                "image" : { },
+                "title" : "",
+                "description" : ""
+              },
+              "align" : "text-center",
+              "border_radius" : false,
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              }
+            }, {
+              "symbol" : {
+                "type" : "image",
+                "icon" : {
+                  "name" : "check-circle",
+                  "unicode" : "f058",
+                  "type" : "REGULAR"
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/team-2.png",
+                  "alt" : "team-2",
+                  "size_type" : "auto",
+                  "width" : 264,
+                  "height" : 264,
+                  "max_width" : 264,
+                  "max_height" : 264
+                },
+                "background_image" : {
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+                  "alt" : "adult-business-businessman",
+                  "width" : 3000,
+                  "height" : 2000,
+                  "max_width" : 3000,
+                  "max_height" : 2000
+                },
+                "width" : 264,
+                "is_circle" : true
+              },
+              "title" : "Jhon Doe",
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_text_color" : {
+                "opacity" : 100
+              },
+              "text" : "<p><span>Technical Manager</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "testimonial" : {
+                "image" : { },
+                "title" : "",
+                "description" : ""
+              },
+              "align" : "text-center",
+              "border_radius" : false,
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              }
+            }, {
+              "symbol" : {
+                "type" : "image",
+                "icon" : {
+                  "name" : "check-circle",
+                  "unicode" : "f058",
+                  "type" : "REGULAR"
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/team-3.png",
+                  "alt" : "team-3",
+                  "size_type" : "auto",
+                  "width" : 264,
+                  "height" : 264,
+                  "max_width" : 264,
+                  "max_height" : 264
+                },
+                "background_image" : {
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+                  "alt" : "adult-business-businessman",
+                  "width" : 3000,
+                  "height" : 2000,
+                  "max_width" : 3000,
+                  "max_height" : 2000
+                },
+                "width" : 264,
+                "is_circle" : true
+              },
+              "title" : "Jhon Doe",
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_text_color" : {
+                "opacity" : 100
+              },
+              "text" : "<p><span>Art Director</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "testimonial" : {
+                "image" : { },
+                "title" : "",
+                "description" : ""
+              },
+              "align" : "text-center",
+              "border_radius" : false,
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              }
+            } ],
+            "heading" : {
+              "text" : "Meet to Our Team",
+              "font_size" : 24,
+              "font_weight" : ""
+            },
+            "section_settings" : {
+              "section_background_color" : {
+                "color" : "#FFF",
+                "opacity" : 100
+              },
+              "section_padding_desktop" : {
+                "top" : 60,
+                "bottom" : 60
+              },
+              "section_padding_tablet" : {
+                "top" : 50,
+                "bottom" : 50
+              },
+              "section_padding_mobile" : {
+                "top" : 50,
+                "bottom" : 50
+              }
+            },
+            "css_style" : "",
+            "footer_text" : "",
+            "tag_line" : "",
+            "css_id" : "",
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Cards 1",
+            "per_widget_wrapper_html" : "",
+            "sub_heading" : "",
+            "wrapping_html" : "",
+            "widget_name" : "KR - Cards 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617113733322332",
+          "label" : "KR - Logo Strip",
+          "type" : "custom_widget",
+          "params" : {
+            "heading" : {
+              "text" : "Our Partners",
+              "font_size" : 24,
+              "font_weight" : ""
+            },
+            "section_settings" : {
+              "section_background_color" : {
+                "color" : "#f6f6f6",
+                "opacity" : 100
+              }
+            },
+            "css_style" : "",
+            "css_id" : "",
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Logo Strip",
+            "per_widget_wrapper_html" : "",
+            "logo" : [ {
+              "image" : {
+                "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/google.png",
+                "alt" : "google",
+                "width" : 189,
+                "height" : 62,
+                "max_width" : 189,
+                "max_height" : 62
+              },
+              "image_url" : {
+                "type" : "EXTERNAL",
+                "href" : ""
+              },
+              "boolean_field" : false
+            }, {
+              "image" : {
+                "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/google.png",
+                "alt" : "google",
+                "width" : 189,
+                "height" : 62,
+                "max_width" : 189,
+                "max_height" : 62
+              },
+              "image_url" : {
+                "type" : "EXTERNAL",
+                "href" : ""
+              },
+              "boolean_field" : false
+            }, {
+              "image" : {
+                "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/google.png",
+                "alt" : "google",
+                "width" : 189,
+                "height" : 62,
+                "max_width" : 189,
+                "max_height" : 62
+              },
+              "image_url" : {
+                "type" : "EXTERNAL",
+                "href" : ""
+              },
+              "boolean_field" : false
+            }, {
+              "image" : {
+                "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/google.png",
+                "alt" : "google",
+                "width" : 189,
+                "height" : 62,
+                "max_width" : 189,
+                "max_height" : 62
+              },
+              "image_url" : {
+                "type" : "EXTERNAL",
+                "href" : ""
+              },
+              "boolean_field" : false
+            }, {
+              "image" : {
+                "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/google.png",
+                "alt" : "google",
+                "width" : 189,
+                "height" : 62,
+                "max_width" : 189,
+                "max_height" : 62
+              },
+              "image_url" : {
+                "type" : "EXTERNAL",
+                "href" : ""
+              },
+              "boolean_field" : false
+            }, {
+              "image" : {
+                "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/google.png",
+                "alt" : "google",
+                "width" : 189,
+                "height" : 62,
+                "max_width" : 189,
+                "max_height" : 62
+              },
+              "image_url" : {
+                "type" : "EXTERNAL",
+                "href" : ""
+              },
+              "boolean_field" : false
+            }, {
+              "image" : {
+                "src" : "https://f.hubspotusercontent40.net/hubfs/2661297/Kore%20Theme/google.png",
+                "alt" : "google",
+                "width" : 189,
+                "height" : 62,
+                "max_width" : 189,
+                "max_height" : 62
+              },
+              "image_url" : {
+                "type" : "EXTERNAL",
+                "href" : ""
+              },
+              "boolean_field" : false
+            } ],
+            "wrapping_html" : "",
+            "widget_name" : "KR - Logo Strip",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        } ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

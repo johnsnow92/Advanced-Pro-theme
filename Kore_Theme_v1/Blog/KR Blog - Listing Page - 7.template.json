@@ -1,0 +1,148 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 6,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-blog-listing-7.css"
+  }, {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "<script type=\"text/javascript\">\n  (function() {\n    window.onload = function() {\n      $('.filter-nav ul li').on('click', function() {    \n        var x = $(this).attr('id');\n        $('.filter-nav ul li').removeClass('active');\n        $(this).addClass('active');\n\n        $('.filter-box').hide();\n        $('.filter-box.' + x).fadeIn();\n      });\n      \n      $('.more-blog-btn').on('click', function() {\n        $('.snm-blog-section .blog-item').show();\n        $('.more-blog-btn').hide();\n        \n        $(\".same-height\").matchHeight({\n          byRow: false,\n          property: 'height'  \n        });\n      });\n      \n      $(\".same-height\").matchHeight({\n        byRow: false,\n        property: 'height'  \n      });\n    }\n    \n  })();\n</script>\n",
+  "customFooter" : "<script>\n(function ($) {\n\t$(document).ready(function () {\n\t\t$(document.body).on('click', '.widget-tab-title', function () {\n\t\t\tvar el = $(this);\n\t\t\tvar section = $(el).parent().find('section');\n\t\t\tif (!$(section).hasClass('active')) {\n\t\t\t\t$('.footer-widgets .widget-wrap').each(function () {\n\t\t\t\t\t$(this).find('section').removeClass('active');\n\t\t\t\t});\n\t\t\t\t$(section).addClass('active');\n\t\t\t} else {\n\t\t\t\t$(section).removeClass('active');\n\t\t\t}\n\t\t})\n\t});\n\n\tfunction mobile_footer() {\n\t\tconst container = $('.footer-widgets');\n\t\tif ($(window).width() <= 768) {\n\t\t\tif (!$(container).hasClass('reforged')) {\n\t\t\t\t$(container).addClass('reforged');\n\t\t\t\t$(container).find('.widget-wrap').each(function () {\n\t\t\t\t\tlet title = $(this).find('.widget-title').text();\n\t\t\t\t\t$(this).prepend('<div class=\"widget-tab-title\">' + title + '</div>');\n\t\t\t\t})\n\t\t\t}\n\t\t} else {\n\t\t\tif ($(container).hasClass('reforged')) {\n\t\t\t\t$(container).removeClass('reforged');\n\t\t\t\t$(container).find('.widget-wrap').each(function () {\n\t\t\t\t\t$(this).find('.widget-tab-title').remove();\n\t\t\t\t})\n\t\t\t}\n\t\t}\n\t}  \n}(jQuery));\n</script>",
+  "bodyClass" : "blog blog-v3",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : {
+          "css_class" : "",
+          "cells" : [ ],
+          "css_style" : "",
+          "root" : false,
+          "row" : false,
+          "starting_html" : "",
+          "cell" : false,
+          "css_id" : "",
+          "css_id_str" : "",
+          "ending_html" : ""
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_159075804421344",
+        "label" : "Kore - Banner",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Hero Single Column 1",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "Kore - Banner",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1571130312533221",
+        "label" : "Blog Content",
+        "type" : "custom_widget",
+        "params" : {
+          "css_style" : "",
+          "template_to_edit" : "post",
+          "css_id" : "",
+          "css_class" : "kore-template",
+          "schema_version" : 2,
+          "path" : "@hubspot/blog_content",
+          "per_widget_wrapper_html" : "",
+          "blog_listing_source" : "<div class=\"snm-blog-section\">\n  <div class=\"page-center\">\n    <div class=\"row-fluid\">\n      <div class=\"span8 same-height\">\n\n        {% if is_listing_view %}\n        {% if topic %} \n        <div class=\"about-author-module cat-page\">\n          <h1>Category: {{ topic|replace(\"-\",\" \")|title }}</h1>\n        </div>\n        {% elif blog_author %}\n        {% if blog_author.avatar %}  \n        <div class=\"about-author-module\">\n          <h1>Articles by {{ blog_author.display_name }}</h1>\n          <div class=\"about-author-page-img\" alt=\"{{ blog_author.display_name }}\" style=\"background-image:url({{blog_author.avatar }});\"></div>\n          <p class=\"about-author-desc\">{{ blog_author.bio }}</p>\n        </div>\n        {% endif %}\n        {% else %}\n        {% endif %}\n        {% endif %} \n\n        <div class=\"flex-wrap\">\n\n          {% set cont = blog_recent_posts(group.id, 999) %}  \n          {% for content in cont %}\n          {% if loop.index == 2 %}\n          <div class=\"blog-item blog-cta\">\n            <h2>Your offer title will be here</h2>\n            <p>Phasellus ut accumsan nisl. Sed porttitor tincidunt ligula, at porttitor lacus consequat eu. Maecenas quis leo ac neque rutrum blandit at faucibus justo. Mauris convallis sollicitudin dolor bibendum facilisis.</p>\n            <!-- HubSpot CTA Button code -->\n            <!-- end HubSpot CTA Button code -->\n          </div>\n          {% endif %}\n\n          <div class=\"blog-item\" onclick=\"location.href='{{ content.absolute_url }}'\" style=\"{% if loop.index > 5 && not simple_list_page %}display: none;{% endif %}\">\n            <div class=\"blog-feat-image__wrapper\">\n              <div class=\"blog-feat-image\" style=\"background-image: url('{{ content.post_list_summary_featured_image }}');\"></div>\n            </div>\n            <div class=\"blog-topics\">\n              {% if content.topic_list %}                \n              {% for topic in content.topic_list %}\n              <a class=\"topic-link\" href=\"{{ blog_tag_url(group.id, topic.slug) }}\">{{ topic.name }}</a>\n              {% endfor %}\n              {% endif %}              \n            </div>\n\n            <div class=\"blog-content\">\n              <div class=\"blog-date\">{{ content.publish_date_localized }}</div>\n              <div class=\"blog-title\">\n                <h3>{{ content.name }}</h3>\n              </div>\n              <div class=\"blog-summary\">{{ content.post_list_content|striptags|truncatehtml(150,'...') }}</div>\n              <div class=\"blog-author\">\n                <div class=\"author-name\">Author: <span>{{ content.blog_post_author.display_name }}</span></div>\n                <div class=\"read-more\">\n                  <img src=\"https://cdn2.hubspot.net/hubfs/2529404/right-arrow.svg\">\n                </div>\n              </div>\n            </div>\n          </div>\n          {% endfor %}\n\n        </div>\n\n        {% if not simple_list_page %}\n        <div class=\"row-fluid mobile-pag\" style=\"display: none;\">\n          <div class=\"more-blog__wrapper\">\n            <a href=\"#\" onclick=\"return false;\" class=\"more-blog-btn\">More recent articles</a>\n            <a href=\"{{ group.absolute_url }}/all\" class=\"view-all-btn\">View all articles</a>\n          </div>\n        </div>\n        {% endif %}\n\n      </div>\n      <div class=\"span4 same-height\">\n        <div class=\"blogsidebar\">\n\n          <div class=\"subscribe-form__wrapper\">\n            <h3>Subscribe Here</h3>\n            <div class=\"subscribe-form\">\n              {# REPLACE THIS WITH CUSTOMER FORM HUBID #}\n              {#\n              {% blog_subscribe \"blog_subscribe\" select_blog='{{ group.id }}', title='Subscribe for free to receive all the latest news', response_message='Thanks for subscribing!', label='Blog Email Subscription', overrideable=False %}\n              #}\n            </div>\n          </div>\n\n          <div class=\"blog-filters\">\n            <div class=\"filter-nav\">\n              <ul>\n                <li class=\"active\" id=\"recent\">Recent</li>\n                <li id=\"popular\">Popular</li>\n                <li id=\"topics\">Topics</li>\n              </ul>\n            </div>\n            <div class=\"filter-box recent\">\n              {% set rec_posts = blog_recent_posts(group.id, 5) %}  \n              {% for rec_post in rec_posts %}\n              <div class=\"blog-small-item\" onclick=\"location.href='{{ rec_post.absolute_url }}'\">\n                <div class=\"flexwrap\">\n                  <div class=\"col-6\">\n                    <div class=\"feat-img\">\n                      <img src=\"{{ rec_post.post_list_summary_featured_image }}\">\n                    </div>\n                  </div>\n                  <div class=\"col-6\">\n                    <div class=\"title\"><span>{{ rec_post.name|striptags|truncatehtml(60,'...') }}</span></div>\n                  </div>\n                </div>                \n              </div>\n              {% endfor %}\n            </div>\n            <div class=\"filter-box popular\">\n              {% set pop_posts = blog_popular_posts(group.id, 5) %}\n              {% for pop_post in pop_posts %}\n              <div class=\"blog-small-item\" onclick=\"location.href='{{ pop_post.absolute_url }}'\">\n                <div class=\"flexwrap\">\n                  <div class=\"col-6\">\n                    <div class=\"feat-img\">\n                      <img src=\"{{ pop_post.post_list_summary_featured_image }}\">\n                    </div>\n                  </div>\n                  <div class=\"col-6\">\n                    <div class=\"title\"><span>{{ pop_post.name|striptags|truncatehtml(60,'...') }}</span></div>\n                  </div>\n                </div>                \n              </div>\n              {% endfor %}  \n            </div>\n            <div class=\"filter-box topics\">\n              {% set my_tags = blog_tags(group.id, 250) %}  \n              <h3>List By Topic</h3>\n              <ul>\n                {% for tag in my_tags %}\n                <li><a href=\"{{ blog_tag_url(group.id, tag.slug) }}\">{{ tag.name }} ({{ blog_recent_tag_posts('default', tag.slug, 999 ) | length }})</a></li>\n                {% endfor %}\n              </ul>\n            </div>\n          </div>\n        </div>\n      </div>  \n    </div>\n\n    {% if not simple_list_page %}\n    <div class=\"row-fluid desktop-pag\">\n      <div class=\"more-blog__wrapper\">\n        <a href=\"#\" onclick=\"return false;\" class=\"more-blog-btn\">More recent articles</a>\n        <a href=\"{{ group.absolute_url }}/all\" class=\"view-all-btn\">View all articles</a>\n      </div>\n    </div>\n    {% endif %}\n\n  </div>\n</div>",
+          "wrapping_html" : "",
+          "blog_post_source" : "",
+          "widget_name" : "Blog Content",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "kore-template",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : {
+          "css_class" : "",
+          "cells" : [ ],
+          "css_style" : "",
+          "root" : false,
+          "row" : false,
+          "starting_html" : "",
+          "cell" : false,
+          "css_id" : "",
+          "css_id_str" : "",
+          "ending_html" : ""
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

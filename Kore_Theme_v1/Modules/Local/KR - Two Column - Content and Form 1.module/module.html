@@ -1,0 +1,71 @@
+<section class="content-form-wrap">
+  <div class="maxContainer">
+    <div class="col-flex-wrap">
+      <div class="col-content">
+        {{ module.richtext_field }}
+      </div>
+      <div class="col-form">
+        <div class="col-form-wrap">
+
+          <div class="form-content">
+            {{ module.form_content }}
+          </div>
+          <div class="form-wrap" id="form-wrap">
+            {% form
+            form_to_use="{{ module.form.form_id }}"
+            response_response_type="{{ module.form.response_type }}"
+            response_message="{{ module.form.message }}"
+            response_redirect_id="{{ module.form.redirect_id }}"
+            response_redirect_url="{{module.form.redirect_url}}"
+            gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+          %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% require_css %}
+<style type="text/css">
+  {% scope_css %}
+  .content-form-wrap{
+    padding: {{ module.styles.spacing.desktop.padding_top }}px 20px {{ module.styles.spacing.desktop.padding_bottom }}px;
+    {% if module.styles.background_type == 'bg-color' %}
+    background-color: {{ module.styles.background_color.color }};
+    {% endif %}
+    {% if module.styles.background_type == 'bg-img' %}
+    position: relative;
+    background-image: url('{{ module.styles.backgroundimage_field.src }}');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    {% endif %}
+  }
+  {% if module.styles.background_type == 'bg-img' %}
+  .content-form-wrap:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  {% endif %}
+  @media screen and (max-width: 991px){
+    .content-form-wrap{
+      padding: {{ module.styles.spacing.tablet.padding_top }}px 20px {{ module.styles.spacing.tablet.padding_bottom }}px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .content-form-wrap{
+      padding: {{ module.styles.spacing.mobile.padding_top }}px 20px {{ module.styles.spacing.mobile.padding_bottom }}px;
+    }
+    .content-form-wrap--content h1{
+      font-size: 44px;
+    }
+  }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}

@@ -1,0 +1,306 @@
+[ {
+  "id" : "52c96635-05e2-7f26-95b9-d0cd75429467",
+  "name" : "main_heading_text",
+  "label" : "Main Heading text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "What do you get?"
+}, {
+  "id" : "91a3c082-314b-34a9-e07b-e7462d58fe61",
+  "name" : "footer_text",
+  "label" : "Footer text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "BUNDLE PRICE $40,30 + GET PER MONTH"
+}, {
+  "id" : "d3804a2f-aadf-ae9a-d36a-d765a4d0e95b",
+  "name" : "pricing_plan",
+  "label" : "Pricing Plan",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "2caa8945-d4b6-9586-fb3c-b81a0bda921b",
+    "name" : "featured_column",
+    "label" : "Make this Featured Column:",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "1046b0e2-6d5c-426a-a85d-46f6e4a6b3a7",
+    "name" : "monthly_annual_sec",
+    "label" : "Show/Hide: Monthly and Annual Section",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "2c814b62-6e5a-022e-b424-66227fd2f758",
+    "name" : "heading_text",
+    "label" : "Heading Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "ENTERPRISE"
+  }, {
+    "id" : "54104da5-d6ff-c5d8-5227-df2b5e2d8afc",
+    "name" : "featured_items",
+    "label" : "Featured Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "8a145080-772a-7541-c640-56f91c12065b",
+      "name" : "featured_item",
+      "label" : "Item",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "12.000 annual interactions"
+    }, {
+      "id" : "369ec00b-bf90-2705-51a3-04fd5b6690b6",
+      "name" : "exclude_item",
+      "label" : "Exclude: Yes or No",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "yes", "Yes" ], [ "no", "No" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "no"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ]
+  }, {
+    "id" : "5e09ac3c-af74-8f6d-e5e4-6c79ef4b17bf",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Rich%20Text%20Pasting/unknown-1593331110932.png",
+      "alt" : "unknown-1593331110932",
+      "width" : 1034,
+      "height" : 377,
+      "max_width" : 1034,
+      "max_height" : 377
+    }
+  }, {
+    "id" : "422d2697-1c1d-ccce-b563-6d118e1e830f",
+    "name" : "bottom_text",
+    "label" : "Bottom Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "View more"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "featured_column" : false,
+    "monthly_annual_sec" : true,
+    "heading_text" : "ENTERPRISE",
+    "featured_items" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ],
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Rich%20Text%20Pasting/unknown-1593331110932.png",
+      "alt" : "unknown-1593331110932",
+      "width" : 1034,
+      "height" : 377,
+      "max_width" : 1034,
+      "max_height" : 377
+    },
+    "bottom_text" : "View more"
+  }, {
+    "featured_column" : false,
+    "monthly_annual_sec" : true,
+    "heading_text" : "ENTERPRISE",
+    "featured_items" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ],
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Rich%20Text%20Pasting/unknown-1593331110932.png",
+      "alt" : "unknown-1593331110932",
+      "width" : 1034,
+      "height" : 377,
+      "max_width" : 1034,
+      "max_height" : 377
+    },
+    "bottom_text" : "View more"
+  }, {
+    "featured_column" : false,
+    "monthly_annual_sec" : true,
+    "heading_text" : "ENTERPRISE",
+    "featured_items" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ],
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Rich%20Text%20Pasting/unknown-1593331110932.png",
+      "alt" : "unknown-1593331110932",
+      "width" : 1034,
+      "height" : 377,
+      "max_width" : 1034,
+      "max_height" : 377
+    },
+    "bottom_text" : "View more"
+  } ]
+}, {
+  "id" : "43526f39-6e44-a0be-dcab-ce357da98302",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c5d75dc1-a5cb-0ee2-7364-cf5a8223ec02",
+    "name" : "custom_class",
+    "label" : "Custom Class",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "52619542-c635-2b15-1088-722bda6b4563",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#134F5C",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "36fe2dd4-677b-f960-c851-1bb6bac4e4ca",
+    "name" : "font_color",
+    "label" : "Font Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#f4f4f4",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "63504692-77ed-8a6f-9864-a41371180fa9",
+    "name" : "pricing_plan_heading_background_color",
+    "label" : "Pricing Plan Heading Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#2a8c8b",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "74823fc7-4b40-1ef7-482d-380ad10f19b1",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_color" : {
+      "color" : "#134F5C",
+      "opacity" : 100
+    },
+    "font_color" : {
+      "color" : "#f4f4f4",
+      "opacity" : 100
+    },
+    "pricing_plan_heading_background_color" : {
+      "color" : "#2a8c8b",
+      "opacity" : 100
+    },
+    "section_show_hide" : true
+  }
+} ]

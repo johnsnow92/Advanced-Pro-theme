@@ -1,0 +1,115 @@
+/* Video overlay and content */
+.kore-video-background-hero .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.kore-video-background-hero .video-hero--content {
+  position: relative;
+}
+
+.kore-video-background-hero .video-hero--content .tagline {
+  opacity: 0.6;
+  letter-spacing: 2px;
+}
+
+/* CSS from jQuery Background Video plugin */
+/**
+ * Set default positioning as a fallback for if the plugin fails
+ */
+.kore-video-background-hero .jquery-background-video-wrapper {
+  position: relative;
+  overflow: hidden;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.kore-video-background-hero .jquery-background-video {
+  position: absolute;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  -o-object-fit: contain;
+  object-fit: contain;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+/**
+ * Fade in videos
+ * Note the .js class - so non js users still
+ * see the video
+ */
+.js .jquery-background-video {
+  opacity: 0;
+  -webkit-transition: opacity 300ms linear;
+  transition: opacity 300ms linear;
+}
+
+.js .jquery-background-video.is-visible {
+  opacity: 1;
+}
+
+/**
+ * Pause/play button
+ */
+.kore-video-background-hero .jquery-background-video-pauseplay {
+  display: none;
+}
+
+.kore-video-background-hero.play-pause .jquery-background-video-pauseplay {
+  display: block;
+}
+
+.kore-video-background-hero .jquery-background-video-pauseplay {
+  position: absolute;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  width: 20px;
+  height: 20px;
+  top: 15px;
+  right: 15px;
+  padding: 0;
+  cursor: pointer;
+  outline: none !important;
+}
+
+.kore-video-background-hero .jquery-background-video-pauseplay span {
+  display: none;
+}
+
+.kore-video-background-hero .jquery-background-video-pauseplay:after,
+.kore-video-background-hero .jquery-background-video-pauseplay:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.kore-video-background-hero .jquery-background-video-pauseplay.play:before {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #FFF;
+}
+
+.kore-video-background-hero .jquery-background-video-pauseplay.pause:before,
+.kore-video-background-hero .jquery-background-video-pauseplay.pause:after {
+  border-top: 10px solid #FFF;
+  border-bottom: 10px solid #FFF;
+  border-left: 5px solid #FFF;
+}
+
+.kore-video-background-hero .jquery-background-video-pauseplay.pause:after {
+  left: 10px;
+}

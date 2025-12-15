@@ -1,0 +1,373 @@
+<!--
+templateType: blog_listing
+isAvailableForNewContent: true
+-->
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>{{ content.html_title }}</title>
+		<meta name="description" content="{{ content.meta_description }}">
+    <link rel="stylesheet" href="{{ get_asset_url('/Kore_Theme_v1/Coded Files/CSS/kore-blog-listing-7.css') }}">
+    <link rel="stylesheet" href="{{ get_asset_url('/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css') }}">
+		{{ standard_header_includes }}
+	</head>
+	<body>
+
+		
+		<!-- Start: Blog Listing Template -->
+
+		<main id="main-content" class="body-container-wrapper">
+
+			{% module "module_16384468788764" path="/Kore_Theme_v1/Modules/Local/KR - Rich Text 1.module", label="KR - Rich Text 1"
+    tagline="",
+    heading={
+		  'text':'The Fooditude Blog',
+			'type':'h1',
+			'font_size':70,
+      'font_weight': 'font-weight-700',
+			'font_color':{
+			'color':'#FFD100'
+		  }
+		},
+    content="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    content_color={
+      'color': '#fff'
+    },
+    section_settings={
+		  'section_background_type':'2',
+			'section_background_color':{
+			  'color':'#F57224'
+			  },
+			'section_padding_desktop':{
+				'top':150,
+				'bottom':150
+		  },
+			'section_padding_tablet':{
+				'top':150,
+				'bottom':150
+			},
+			'section_padding_mobile':{
+				'top':80,
+				'bottom':80
+			}					
+		}
+  %}
+
+			{% module "blog_card_cta" path="/Fooditude UK/modules/blog-card-cta", label="blog-card-cta", export_to_template_context=True %}
+
+			<div class="kore-template">
+
+				<div class="snm-blog-section">
+					<div class="page-center">
+						<div class="row-fluid">
+							<div class="span8 same-height">
+
+								{% if is_listing_view %}
+								{% if topic %} 
+								<div class="about-author-module cat-page">
+									<h3>Category: <strong>{{ topic|replace("-"," ")|title }}</strong></h3>
+								</div>
+								{% elif blog_author %}
+								{% if blog_author.avatar %}  
+								<div class="about-author-module">
+									<div class="about-author-page-img" alt="{{ blog_author.display_name }}" style="background-image:url({{blog_author.avatar }});"></div>
+									<h3>{{ blog_author.display_name }}</h3>
+									<p class="about-author-desc">{{ blog_author.bio }}</p>
+								</div>
+								{% endif %}
+								{% else %}
+								{% endif %}
+								{% endif %} 
+
+								<div class="flex-wrap">
+
+									{# set cont = blog_recent_posts(group.id, 999) #}  
+									{% for content in contents %}
+									{% if loop.index == 2 %}
+									{% if widget_data.blog_card_cta.show_hide_module %}
+									<div class="blog-item blog-cta">
+										{{ widget_data.blog_card_cta.content }}
+										{% if widget_data.blog_card_cta.button.text %}
+										<a href="{{ widget_data.blog_card_cta.button.url.href }}" class="blog_btn">{{ widget_data.blog_card_cta.button.text }}</a>
+										{% endif %}
+									</div>
+									{% endif %}
+									{% endif %}
+
+									<div class="blog-item" onclick="location.href='{{ content.absolute_url }}'" style="{% if loop.index > 5 && not simple_list_page %}display: none;{% endif %}">
+										<div class="blog-feat-image__wrapper">
+											<div class="blog-feat-image" style="background-image: url('{{ content.post_list_summary_featured_image }}');"></div>
+										</div>
+										<div class="blog-topics">
+											{% if content.topic_list %}                
+											{% for topic in content.topic_list %}
+											<a class="topic-link" href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name }}</a>
+											{% endfor %}
+											{% endif %}              
+										</div>
+
+										<div class="blog-content">
+											<div class="blog-date">{{ content.publish_date|datetimeformat('%d/%m/%Y') }}</div>
+											<div class="blog-title">
+												<h3>{{ content.name }}</h3>
+											</div>
+											<div class="blog-summary">{{ content.post_list_content|striptags|truncatehtml(150,'...') }}</div>
+											<div class="blog-author">
+												<div class="author-name">Author: <span>{{ content.blog_post_author.display_name }}</span></div>
+												<div class="read-more">
+													<img src="https://f.hubspotusercontent-eu1.net/hubfs/25163996/right-arrow-blue-1.png">
+												</div>
+											</div>
+										</div>
+									</div>
+									{% endfor %}
+
+								</div>
+
+								{% if not simple_list_page %}
+
+								<div class="blog-pagination mobile-pagination">
+									{% set page_size =  (contents.total_count / contents.total_page_count) | round(0,'ceil') %}
+									{% set start_index =  ((current_page_num - 1)*page_size) + 1 %}
+									{% set end_index =  start_index - 1 + (contents | length) %}
+									{% set page_list = [-2, -1, 0, 1, 2] %}
+									{% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+									{% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+									{% elif current_page_num == 2 %}{% set offset = 1 %}
+									{% elif current_page_num == 1 %}{% set offset = 2 %}
+									{% else %}{% set offset = 0 %}{% endif %}
+									{% if last_page_num %}
+									<!-- <a class="prev-link" href="{{ blog_page_link(1) }}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a> -->
+									<a class="prev-link" href="{{ blog_page_link(last_page_num) }}"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+									{% endif %}
+									{% if contents.total_page_count > 5 %}
+									{% if current_page_num >= 4 %}
+									<a href="{{ blog_page_link(1) }}">1</a>
+									<a class="elipses" href="{% if current_page_num <= 5 %}{{ blog_page_link(1) }}{% else %}{{ blog_page_link(current_page_num - 5) }}{% endif %}">...</a>
+									{% endif %}
+									{% endif %}
+									{% for page in page_list %}
+									{% set this_page = current_page_num + page + offset %}
+									{% if this_page > 0 and this_page <= contents.total_page_count %}
+									<a {% if this_page == current_page_num %}class="active"{% endif %} href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+									{% endif %}
+									{% endfor %}
+									{% if contents.total_page_count > 5 %}
+									{% if contents.total_page_count - current_page_num > 2 %}
+									<a class="elipses" href="{% if contents.total_page_count - current_page_num <= 5 %}{{ contents.total_page_count }}{% else %}{{ blog_page_link(current_page_num + 5) }}{% endif %}">...</a>
+									<a href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a>
+									{% endif %}
+									{% endif %}   
+									{% if next_page_num %}
+									<a class="next-link" href="{{ blog_page_link(current_page_num + 1) }}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+									<!-- <a class="next-link" href="{{ blog_page_link(contents.total_page_count) }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>-->
+									{% endif %}
+								</div>
+
+								{% endif %}
+
+							</div>
+							<div class="span4 same-height">
+								<div class="blogsidebar">
+
+									<div class="subscribe-form__wrapper">
+										<h3>Subscribe Here</h3>
+										<div class="subscribe-form">
+											{# REPLACE THIS WITH CUSTOMER FORM HUBID #}
+											{% form "my_form" form_to_use='1b7ed15b-9fd9-4cb4-a5f7-ae6ad44578dd', title='' %}
+										</div>
+									</div>
+
+									<div class="blog-filters">
+										<div class="filter-nav">
+											<ul>
+												<li class="active" id="recent">Recent</li>
+												<li id="popular">Popular</li>
+												<li id="topics">Topics</li>
+											</ul>
+										</div>
+										<div class="filter-box recent">
+											{% set rec_posts = blog_recent_posts(group.id, 5) %}  
+											{% for rec_post in rec_posts %}
+											<div class="blog-small-item" onclick="location.href='{{ rec_post.absolute_url }}'">
+												<div class="flexwrap">
+													{% if rec_post.post_list_summary_featured_image %}
+													<div class="col6">
+														<div class="feat-img">
+															<img src="{{ rec_post.post_list_summary_featured_image }}">
+														</div>
+													</div>
+													{% endif %}
+													<div class="{% if not rec_post.post_list_summary_featured_image %}col-12{% else %}col-6{% endif %}">
+														<div class="title"><span>{{ rec_post.name|striptags|truncatehtml(60,'...') }}</span></div>
+													</div>
+												</div>                
+											</div>
+											{% endfor %}
+										</div>
+										<div class="filter-box popular">
+											{% set pop_posts = blog_popular_posts(group.id, 5) %}
+											{% for pop_post in pop_posts %}
+											<div class="blog-small-item" onclick="location.href='{{ pop_post.absolute_url }}'">
+												<div class="flexwrap">
+													{% if pop_post.post_list_summary_featured_image %}
+													<div class="col6">
+														<div class="feat-img">
+															<img src="{{ pop_post.post_list_summary_featured_image }}">
+														</div>
+													</div>
+													{% endif %}
+													<div class="{% if not pop_post.post_list_summary_featured_image %}col-12{% else %}col-6{% endif %}">
+														<div class="title"><span>{{ pop_post.name|striptags|truncatehtml(60,'...') }}</span></div>
+													</div>
+												</div>                
+											</div>
+											{% endfor %}  
+										</div>
+										<div class="filter-box topics">
+											{% set my_tags = blog_tags(group.id, 250) %}  
+											<h3>List By Topic</h3>
+											<ul>
+												{% for tag in my_tags %}
+												<li><a href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }} ({{ blog_recent_tag_posts('default', tag.slug, 999 ) | length }})</a></li>
+												{% endfor %}
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>  
+						</div>
+
+						{% if not simple_list_page %}
+
+						<div class="blog-pagination desktop-pagination">
+							{% set page_size =  (contents.total_count / contents.total_page_count) | round(0,'ceil') %}
+							{% set start_index =  ((current_page_num - 1)*page_size) + 1 %}
+							{% set end_index =  start_index - 1 + (contents | length) %}
+							{% set page_list = [-2, -1, 0, 1, 2] %}
+							{% if contents.total_page_count - current_page_num == 1 %}{% set offset = -1 %}
+							{% elif contents.total_page_count - current_page_num == 0 %}{% set offset = -2 %}
+							{% elif current_page_num == 2 %}{% set offset = 1 %}
+							{% elif current_page_num == 1 %}{% set offset = 2 %}
+							{% else %}{% set offset = 0 %}{% endif %}
+							{% if last_page_num %}
+							<!-- <a class="prev-link" href="{{ blog_page_link(1) }}"><i class="fa fa-angle-double-left" aria-hidden="true"></i></a> -->
+							<a class="prev-link" href="{{ blog_page_link(last_page_num) }}"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+							{% endif %}
+							{% if contents.total_page_count > 5 %}
+							{% if current_page_num >= 4 %}
+							<a href="{{ blog_page_link(1) }}">1</a>
+							<a class="elipses" href="{% if current_page_num <= 5 %}{{ blog_page_link(1) }}{% else %}{{ blog_page_link(current_page_num - 5) }}{% endif %}">...</a>
+							{% endif %}
+							{% endif %}
+							{% for page in page_list %}
+							{% set this_page = current_page_num + page + offset %}
+							{% if this_page > 0 and this_page <= contents.total_page_count %}
+							<a {% if this_page == current_page_num %}class="active"{% endif %} href="{{ blog_page_link(this_page) }}">{{ this_page }}</a>
+							{% endif %}
+							{% endfor %}
+							{% if contents.total_page_count > 5 %}
+							{% if contents.total_page_count - current_page_num > 2 %}
+							<a class="elipses" href="{% if contents.total_page_count - current_page_num <= 5 %}{{ contents.total_page_count }}{% else %}{{ blog_page_link(current_page_num + 5) }}{% endif %}">...</a>
+							<a href="{{ blog_page_link(contents.total_page_count) }}">{{ contents.total_page_count }}</a>
+							{% endif %}
+							{% endif %}   
+							{% if next_page_num %}
+							<a class="next-link" href="{{ blog_page_link(current_page_num + 1) }}"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+							<!-- <a class="next-link" href="{{ blog_page_link(contents.total_page_count) }}"><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>-->
+							{% endif %}
+						</div>
+
+						{% endif %}
+
+					</div>
+				</div>
+
+			</div>
+
+		</main>
+		{% endblock body %}
+
+		{% require_js position="footer" %}
+
+		<script type="text/javascript">
+			(function() {
+				window.onload = function() {
+					$('.filter-nav ul li').on('click', function() {    
+						var x = $(this).attr('id');
+						$('.filter-nav ul li').removeClass('active');
+						$(this).addClass('active');
+
+						$('.filter-box').hide();
+						$('.filter-box.' + x).fadeIn();
+					});
+
+					$('.more-blog-btn').on('click', function() {
+						$('.snm-blog-section .blog-item').show();
+						$('.more-blog-btn').hide();
+
+						$(".same-height").matchHeight({
+							byRow: false,
+							property: 'height'  
+						});
+					});
+
+					$(".same-height").matchHeight({
+						byRow: false,
+						property: 'height'  
+					});
+				}
+
+			})();
+
+			(function ($) {
+				$(document).ready(function () {
+					$(document.body).on('click', '.widget-tab-title', function () {
+						var el = $(this);
+						var section = $(el).parent().find('section');
+						if (!$(section).hasClass('active')) {
+							$('.footer-widgets .widget-wrap').each(function () {
+								$(this).find('section').removeClass('active');
+							});
+							$(section).addClass('active');
+						} else {
+							$(section).removeClass('active');
+						}
+					})
+				});
+
+				function mobile_footer() {
+					const container = $('.footer-widgets');
+					if ($(window).width() <= 768) {
+						if (!$(container).hasClass('reforged')) {
+							$(container).addClass('reforged');
+							$(container).find('.widget-wrap').each(function () {
+								let title = $(this).find('.widget-title').text();
+								$(this).prepend('<div class="widget-tab-title">' + title + '</div>');
+							})
+						}
+					} else {
+						if ($(container).hasClass('reforged')) {
+							$(container).removeClass('reforged');
+							$(container).find('.widget-wrap').each(function () {
+								$(this).find('.widget-tab-title').remove();
+							})
+						}
+					}
+				}  
+			}(jQuery));
+
+			$('body').addClass('blog blog-v3');
+
+		</script>
+
+		{% end_require_js %}
+
+		<!-- End: Blog Listing Template -->
+
+
+		{{ standard_footer_includes }}
+
+	</body>
+</html>

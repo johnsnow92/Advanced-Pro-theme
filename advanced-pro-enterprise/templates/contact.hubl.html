@@ -1,0 +1,216 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Contact Us - Advanced Pro Theme
+  screenshotPath: ../images/templates/contact-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+
+  {% if page_meta.meta_description %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+  {% endif %}
+
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}">
+  {% endif %}
+
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% global_partial path="../partials/header.hubl.html" %}
+
+    <main id="main-content" role="main">
+
+      <!-- Page Hero -->
+      <section class="section section-hero section-hero-page">
+        <div class="container">
+          <div class="row align-center">
+            <div class="col-12 col-lg-10 text-center">
+              {% module "contact_hero"
+                path="@hubspot/rich_text",
+                label="Contact Hero",
+                html="<h1>Contact Us</h1><p class='lead'>We'd love to hear from you. Get in touch and let's discuss how we can help.</p>"
+              %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form & Info -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+
+            <!-- Contact Information -->
+            <div class="col-12 col-lg-4 mb-5">
+              <div class="contact-info-card">
+                <h3>Get In Touch</h3>
+                <p>Have a question or want to work together? Fill out the form and we'll get back to you as soon as possible.</p>
+
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">📧</div>
+                  <div>
+                    <h4>Email</h4>
+                    <a href="mailto:info@example.com">info@example.com</a>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">📞</div>
+                  <div>
+                    <h4>Phone</h4>
+                    <a href="tel:+1234567890">+1 (234) 567-890</a>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <div class="contact-info-icon">📍</div>
+                  <div>
+                    <h4>Address</h4>
+                    <p>123 Business Street<br>Suite 100<br>City, State 12345</p>
+                  </div>
+                </div>
+
+                <div class="contact-social">
+                  <h4>Follow Us</h4>
+                  <div class="social-links">
+                    <a href="#" aria-label="Twitter">Twitter</a>
+                    <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                    <a href="#" aria-label="Facebook">Facebook</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-12 col-lg-8">
+              <div class="contact-form-wrapper">
+                {% module "contact_form"
+                  path="@hubspot/form",
+                  label="Contact Form",
+                  form={
+                    "form_id": "",
+                    "response_type": "inline",
+                    "message": "Thanks for contacting us! We'll be in touch soon."
+                  }
+                %}
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Map Section (Optional) -->
+      <section class="section section-map" style="background-color: var(--color-gray-50); padding: 0;">
+        {% module "contact_map"
+          path="@hubspot/rich_text",
+          label="Map Embed",
+          html="<div style='min-height: 400px; background: var(--color-gray-200); display: flex; align-items: center; justify-content: center;'><p>Add your Google Maps embed or custom map here</p></div>"
+        %}
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+              <h2 class="text-center mb-5">Frequently Asked Questions</h2>
+
+              <div class="faq-item">
+                <h4>What is your typical response time?</h4>
+                <p>We typically respond to all inquiries within 24 business hours.</p>
+              </div>
+
+              <div class="faq-item">
+                <h4>Do you offer free consultations?</h4>
+                <p>Yes, we offer a free 30-minute consultation to discuss your project needs.</p>
+              </div>
+
+              <div class="faq-item">
+                <h4>What industries do you work with?</h4>
+                <p>We work with businesses across all industries, from startups to enterprises.</p>
+              </div>
+
+              <div class="faq-item">
+                <h4>Can you work with remote teams?</h4>
+                <p>Absolutely! We're experienced in working with remote and distributed teams worldwide.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    {% global_partial path="../partials/footer.hubl.html" %}
+  </div>
+
+  {{ standard_footer_includes }}
+
+  <style>
+  .contact-info-card {
+    padding: var(--spacing-xl);
+    background: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    height: 100%;
+  }
+  .contact-info-item {
+    display: flex;
+    gap: var(--spacing-md);
+    margin: var(--spacing-xl) 0;
+  }
+  .contact-info-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+  }
+  .contact-info-item h4 {
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-gray-900);
+  }
+  .contact-info-item a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .contact-social {
+    margin-top: var(--spacing-2xl);
+  }
+  .social-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+  }
+  .social-links a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .contact-form-wrapper {
+    padding: var(--spacing-xl);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+  }
+  .faq-item {
+    padding: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+  .faq-item h4 {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-900);
+  }
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+  </style>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home - Advanced Pro Theme
+  screenshotPath: ../images/templates/home-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+
+  {% if page_meta.meta_description %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+  {% endif %}
+
+  <!-- Favicon -->
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}">
+  {% endif %}
+
+  <!-- Theme CSS -->
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+
+  <!-- Theme JS -->
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+
+  <!-- Standard Header Includes -->
+  {{ standard_header_includes }}
+</head>
+
+<body class="{{ builtin_body_classes }}">
+
+  <div class="body-wrapper">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Header -->
+    {% global_partial path="../partials/header.hubl.html" %}
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+
+      <!-- Hero Section -->
+      <section class="section section-hero">
+        <div class="container">
+          <div class="row align-center">
+            <div class="col-12 col-lg-8 text-center">
+              <h1 class="fade-in-up">Welcome to Advanced Pro Theme</h1>
+              <p class="lead fade-in-up">A professional, feature-rich HubSpot CMS theme built from scratch with 50+ modules and 34+ templates.</p>
+              <div class="hero-actions fade-in-up">
+                <a href="#features" class="btn btn-primary btn-lg">Explore Features</a>
+                <a href="/contact" class="btn btn-outline btn-lg">Contact Us</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="section" style="background-color: var(--color-gray-50);">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2>Theme Foundation Complete</h2>
+              <p class="lead">Core infrastructure ready for module and template development</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <!-- Feature 1 -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="card">
+                <div class="card-body text-center">
+                  <div style="font-size: 48px; margin-bottom: 1rem;">🎨</div>
+                  <h4>Professional Design</h4>
+                  <p>Clean, modern design system with comprehensive styling options</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="card">
+                <div class="card-body text-center">
+                  <div style="font-size: 48px; margin-bottom: 1rem;">📱</div>
+                  <h4>Fully Responsive</h4>
+                  <p>Mobile-first approach with 12-column responsive grid system</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="card">
+                <div class="card-body text-center">
+                  <div style="font-size: 48px; margin-bottom: 1rem;">⚡</div>
+                  <h4>Performance Optimized</h4>
+                  <p>Lazy loading, optimized CSS/JS, and fast load times</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="card">
+                <div class="card-body text-center">
+                  <div style="font-size: 48px; margin-bottom: 1rem;">♿</div>
+                  <h4>Accessible</h4>
+                  <p>WCAG 2.1 AA compliant with proper ARIA labels and keyboard navigation</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Status Section -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+              <div class="card">
+                <div class="card-header">
+                  <h3>✅ Foundation Complete</h3>
+                </div>
+                <div class="card-body">
+                  <h4>What's Included:</h4>
+                  <ul style="line-height: 2;">
+                    <li><strong>Project Structure:</strong> Platform version 2025.2 configured</li>
+                    <li><strong>Theme Configuration:</strong> Complete with color, typography, spacing, and layout settings</li>
+                    <li><strong>CSS Framework:</strong> 12-column responsive grid, utility classes, component styles</li>
+                    <li><strong>JavaScript:</strong> Mobile menu, smooth scroll, lazy loading, animations, and more</li>
+                    <li><strong>Global Header:</strong> Responsive navigation with mobile menu support</li>
+                    <li><strong>Global Footer:</strong> 4-column layout with social media and newsletter</li>
+                  </ul>
+
+                  <h4 class="mt-4">Next Steps:</h4>
+                  <ul style="line-height: 2;">
+                    <li>✅ Validate this foundation build</li>
+                    <li>🔄 Build 10 Tier 1 essential modules</li>
+                    <li>🔄 Create 4 core page templates</li>
+                    <li>🔄 Build remaining 40+ modules</li>
+                    <li>🔄 Create remaining 30+ templates</li>
+                    <li>🔄 Final testing and deployment</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="section" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; text-align: center;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+              <h2 style="color: white;">Ready to Build Amazing Websites?</h2>
+              <p class="lead" style="color: rgba(255,255,255,0.9);">This professional theme is being built specifically for your needs with 100% original code.</p>
+              <a href="/contact" class="btn btn-lg" style="background: white; color: var(--color-primary);">Get Started</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Global Footer -->
+    {% global_partial path="../partials/footer.hubl.html" %}
+
+  </div>
+
+  <!-- Standard Footer Includes -->
+  {{ standard_footer_includes }}
+
+</body>
+</html>

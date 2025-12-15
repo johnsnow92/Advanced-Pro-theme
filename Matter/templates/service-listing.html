@@ -1,0 +1,548 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Service Listing
+screenshotPath: ../images/template-previews/service-listing-page.jpg
+
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main id="main-content" class="body-container-wrapper service-listing-page">
+
+  <div class="banner-section">
+    {% dnd_area 'header_area', label='Header Section' ,class="top-dnd-area"  %}
+    {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+    {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+    {% dnd_module
+        path="../modules/banner",
+        offset=0,
+        width=12,
+        background_options={
+          "background_image" : {
+            "alt" : "Union",
+            "height" : 976,
+            "max_height" : 976,
+            "max_width" : 2160,
+            "src" : get_asset_url('../images/service-listing1-banner.jpg'),
+            "width" : 2160
+          },
+          "background_image_position" : "center center",
+          "enable_parallax" : true,
+          "overlay_color" : {
+            "color" : "#026780",
+            "opacity" : 50
+          },
+          "select_background_type" : "image"
+        },
+        breadcrumb_menu=,
+        include_breadcrumb=true,
+        module_settings={
+          "animation_type" : "fade-up",
+          "enable_animation" : true
+        },
+        style={ }
+      %}
+    {% module_attribute "banner_content" %}
+    <h1>Services</h1>
+    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+    {% end_module_attribute %}
+    {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+
+
+  {% dnd_area 'main_area', class="service_list_main_sec main-dnd-area" ,label='Main Section' %}
+
+  {% dnd_section
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/card-gallery",
+        offset=0,
+        width=12,
+        items_group=[ {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "After-Sale Consultation",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 40,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/megaphone.svg'),
+            "width" : 40
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 100,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "custom",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "custom",
+            "select_overlay_background_color" : "bg_primary"
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+           "title" : "After-Sale Consultation"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Pre-Purchase Consultation",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 40,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/video.svg'),
+            "width" : 40
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 100,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "custom",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "custom",
+            "select_overlay_background_color" : "bg_primary"
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Pre-Purchase Consultation"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Your Purchase is Refundable",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 40,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/shield.svg'),
+            "width" : 40
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 100,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "custom",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "custom",
+            "select_overlay_background_color" : "bg_primary"
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Your Purchase is Refundable"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Free Live-Chat Support",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 40,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/megaphone.svg'),
+            "width" : 40
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 100,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "custom",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "custom",
+            "select_overlay_background_color" : "bg_primary"
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Free Live-Chat Support"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Website Optimization",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 40,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/video.svg'),
+            "width" : 40
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 100,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "custom",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "custom",
+            "select_overlay_background_color" : "bg_primary"
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Website Optimization"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Customization Service",
+            "height" : 40,
+            "loading" : "lazy",
+            "max_height" : 40,
+            "max_width" : 40,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/shield.svg'),
+            "width" : 40
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 100,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "custom",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "custom",
+            "select_overlay_background_color" : "bg_primary"
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Customization Service"
+        } ],
+        module_settings={
+          "animation_type" : "fade-up",
+          "enable_animation" : true,
+          "enable_masonry" : false,
+          "enable_slider" : false,
+          "select_columns_count_in_row" : "col4"
+        },
+        style={
+          "card" : {
+            "include_hover_effect" : true
+          },
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "left" : { },
+                "right" : { },
+                "top" : { }
+              }
+            }
+          }
+        },
+        top_content={
+          "content" : "",
+          "title" : ""
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% include_dnd_partial path="../sections/features-section.html" %} 
+  {% end_dnd_area %}
+
+
+  {% dnd_area 'bottom_area_hs',class="service_list_bottom_sec bottom-dnd-area" , label='Bottom Section' %}
+  {% include_dnd_partial path="../sections/bottom-pane-section.html" %} 
+  {% end_dnd_area %}
+
+</main>
+{% endblock body %}
+
+
+

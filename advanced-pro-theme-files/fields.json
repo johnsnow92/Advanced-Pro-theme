@@ -1,0 +1,176 @@
+[
+  {
+    "type": "group",
+    "name": "colors",
+    "label": "Colors",
+    "expanded": true,
+    "children": [
+      {
+        "type": "color",
+        "name": "primary_color",
+        "label": "Primary Color",
+        "default": {
+          "color": "#0066CC",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "secondary_color",
+        "label": "Secondary Color",
+        "default": {
+          "color": "#FF6B35",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "accent_color",
+        "label": "Accent Color",
+        "default": {
+          "color": "#00D4AA",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "text_color",
+        "label": "Text Color",
+        "default": {
+          "color": "#2D3748",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "background_color",
+        "label": "Background Color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "typography",
+    "label": "Typography",
+    "expanded": false,
+    "children": [
+      {
+        "type": "font",
+        "name": "heading_font",
+        "label": "Heading Font",
+        "load_external_fonts": true,
+        "default": {
+          "size": 36,
+          "font": "Inter",
+          "font_set": "GOOGLE",
+          "size_unit": "px",
+          "color": "#2D3748",
+          "styles": {
+            "font-weight": "700",
+            "font-style": "normal",
+            "text-decoration": "none"
+          }
+        }
+      },
+      {
+        "type": "font",
+        "name": "body_font",
+        "label": "Body Font",
+        "load_external_fonts": true,
+        "default": {
+          "size": 16,
+          "font": "Inter",
+          "font_set": "GOOGLE",
+          "size_unit": "px",
+          "color": "#4A5568",
+          "styles": {
+            "font-weight": "400",
+            "font-style": "normal",
+            "text-decoration": "none"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "spacing",
+    "label": "Spacing",
+    "expanded": false,
+    "children": [
+      {
+        "type": "number",
+        "name": "base_spacing",
+        "label": "Base Spacing Unit (px)",
+        "default": 8,
+        "min": 4,
+        "max": 16,
+        "step": 2
+      },
+      {
+        "type": "number",
+        "name": "section_padding",
+        "label": "Section Padding (px)",
+        "default": 80,
+        "min": 40,
+        "max": 160,
+        "step": 10
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "buttons",
+    "label": "Button Styles",
+    "expanded": false,
+    "children": [
+      {
+        "type": "number",
+        "name": "button_border_radius",
+        "label": "Button Border Radius (px)",
+        "default": 4,
+        "min": 0,
+        "max": 50,
+        "step": 1
+      },
+      {
+        "type": "choice",
+        "name": "button_style",
+        "label": "Default Button Style",
+        "choices": [
+          ["solid", "Solid"],
+          ["outline", "Outline"],
+          ["ghost", "Ghost"]
+        ],
+        "default": "solid"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "layout",
+    "label": "Layout",
+    "expanded": false,
+    "children": [
+      {
+        "type": "number",
+        "name": "max_content_width",
+        "label": "Max Content Width (px)",
+        "default": 1200,
+        "min": 960,
+        "max": 1920,
+        "step": 40
+      },
+      {
+        "type": "boolean",
+        "name": "enable_boxed_layout",
+        "label": "Enable Boxed Layout",
+        "default": false
+      }
+    ]
+  }
+]

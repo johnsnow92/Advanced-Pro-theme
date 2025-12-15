@@ -1,0 +1,25 @@
+[ {
+  "id" : "47ad68bf-6623-5ed7-c70b-11b10d9ad3b7",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "show_loading" : false,
+  "type" : "logo",
+  "display_width" : null,
+  "default" : {
+    "override_inherited_src" : true,
+    "src" : "https://info.juicetactics.com/hubfs/HubSnacks%20Webflow%20-%20Melvin%20Cruz/hubsnacks-logo.svg",
+    "alt" : "hubsnacks-logo",
+    "width" : 400,
+    "height" : 400
+  }
+}, {
+  "id" : "70e7c3ad-a3d5-fbc8-869a-ef86d26e5c03",
+  "name" : "menu",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu",
+  "display_width" : null
+} ]

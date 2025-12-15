@@ -1,0 +1,128 @@
+.sidebar-popup-wrap{
+  max-width: 471px;
+  margin: 0 0 0 auto;
+  text-align: center;
+  height: 100%;
+}
+.mfp-content {
+  height: 100%;
+}
+.mfp-bg {
+  background: #0b0b0b;
+  opacity: 0.3;
+  overflow: hidden;
+  z-index: 1042;
+}
+#popup-wrap{
+  height: 100%;
+  padding: 100px 30px 45px;
+}
+#popup-wrap .popup-img-heart {
+  padding-bottom: 20px;
+}
+#popup-wrap .popup-img {
+  margin-bottom: 0;
+  padding-top: 30px;
+}
+#popup-wrap .popup-img-heart{
+
+}
+#popup-wrap .popup-content h2{
+  color: #1A1A1A;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 0;
+
+}
+#popup-wrap .popup-content p{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #757575;
+}
+#popup-wrap .popup-form form{
+  max-width: 405px;
+  margin: 25px auto 0;
+  position: relative;
+  text-align: left;
+}
+#popup-wrap .popup-form form .hs-form-field > label{
+  display: none;
+}
+#popup-wrap .popup-form form .hs-form-field input{
+  border: 1px solid #61aff4;
+  height: 52px;
+  border-right: 0;
+  width: 70%;
+  padding: 12px;
+  font-size: 14px;
+}
+#popup-wrap .popup-form form .hs-form-field input:focus{
+  outline: none;
+}
+#popup-wrap .popup-form form .hs_submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#popup-wrap .popup-form form .hs_submit input{
+  background-color: #61aff4;
+  color: #fff;
+  font-weight: bold;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  padding: 18px 23px!important;
+  font-size: 15px;
+  height: 52px;
+  border: 0;
+  cursor: pointer;
+}
+#popup-wrap .popup-form form .hs-form-field input::-webkit-input-placeholder{
+  color: #a1a1a1;
+}
+#popup-wrap .popup-form form .hs-form-field input::-moz-placeholder{
+  color: #a1a1a1;
+}
+#popup-wrap .popup-form form .hs-form-field input:-ms-input-placeholder{
+  color: #a1a1a1;
+}
+#popup-wrap .popup-form form .hs-form-field input:-moz-placeholder{
+  color: #a1a1a1;
+}
+#popup-wrap .popup-form h3.form-title{
+  display: none;
+}
+#popup-wrap .popup-form form ul.hs-error-msgs{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#popup-wrap .popup-form form ul.hs-error-msgs li label{
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}
+#popup-wrap .submitted-message{
+  border-top: 2px solid #61aff4;
+  padding-top: 15px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 767px){
+  #popup-wrap .popup-form form .hs-form-field input{
+    width: 100%;
+    border-right: 1px solid #61aff4;
+    margin-bottom: 12px;
+  }	
+  #popup-wrap .popup-form form .hs_submit{
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+  #popup-wrap .popup-form form .hs_submit input{
+    border-radius: 2px;
+    width: 100%;
+    font-size: 16px;
+  }
+}

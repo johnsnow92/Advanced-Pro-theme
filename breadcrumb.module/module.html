@@ -1,0 +1,48 @@
+{% if content.absolute_url %}
+<nav class="breadcrumb-module" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list" itemscope itemtype="https://schema.org/BreadcrumbList">
+
+    <!-- Home Link -->
+    <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="/" itemprop="item">
+        <span itemprop="name">{{ module.home_text || "Home" }}</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+
+    {% if content.blog_post_author %}
+      <!-- Blog Link -->
+      <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="{{ blog_all_posts_url(group.id) }}" itemprop="item">
+          <span itemprop="name">{{ module.blog_text || "Blog" }}</span>
+        </a>
+        <meta itemprop="position" content="2" />
+      </li>
+
+      {% if content.topic_list %}
+        <!-- Category Link -->
+        <li class="breadcrumb-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="{{ blog_topic_url(group.id, content.topic_list[0].slug) }}" itemprop="item">
+            <span itemprop="name">{{ content.topic_list[0].name }}</span>
+          </a>
+          <meta itemprop="position" content="3" />
+        </li>
+      {% endif %}
+
+      <!-- Current Post -->
+      <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">{{ content.name }}</span>
+        <meta itemprop="position" content="{% if content.topic_list %}4{% else %}3{% endif %}" />
+      </li>
+
+    {% else %}
+      <!-- Current Page -->
+      <li class="breadcrumb-item active" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span itemprop="name">{{ content.name }}</span>
+        <meta itemprop="position" content="2" />
+      </li>
+    {% endif %}
+
+  </ol>
+</nav>
+{% endif %}

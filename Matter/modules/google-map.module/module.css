@@ -1,0 +1,22 @@
+.map-gp{
+  overflow:hidden;
+}
+.map-gp .embed_map iframe {
+  width: 100%;
+}
+
+.map-gp .map{
+  border:0;
+  display:block;
+  vertical-align:middle;
+  width:100%;  
+}
+
+.map-gp iframe {
+  display: block;
+  margin:0 auto;
+}
+
+.map-gp .gm-style button {
+  border-radius: 0px;
+}

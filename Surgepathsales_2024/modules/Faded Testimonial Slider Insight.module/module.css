@@ -1,0 +1,156 @@
+.faded-testimonial {
+  padding: 65px 0;
+}
+
+.faded-testimonial .arrows{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  top: 292px;
+}
+
+.faded-testimonial .swiper-pagination-bullet-active{background: #fff;border: 2px solid #00234c;}
+.faded-testimonial .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+  background:#00234c
+}
+
+.faded-testimonial span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 25px;
+  height: 10px;
+  border-radius: 8px;
+  opacity: 1;
+  background: #00234c !important;
+}
+.faded-testimonial span.swiper-pagination-bullet {
+  background: transparent !important;
+  border: 1px solid #00234c;
+  width: 10px;
+  height: 10px;
+  opacity: 0.6;
+}
+.faded-testimonial .arrows .swiper-button-prev::after{
+  content: '←';
+  font-size: 50px;
+  color: #00234c;
+  top: -70px;
+  position: relative;
+}
+
+.faded-testimonial .arrows .swiper-button-next::after{
+  content: '→';
+  font-size: 50px;
+  color: #00234c;
+  top: -70px;
+  position: relative;
+}
+
+.faded-testimonial h2 {
+  color: #ff7f16;
+  font-size: 48px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.faded-testimonial .content{
+  background: #00234c;
+  left: -34px;
+  padding: 20px 30px;
+  position: relative;
+  top: 46px;
+  width: 600px;
+}
+
+.faded-testimonial .slide1{display: flex;justify-content: center;align-items:center;}
+
+.faded-testimonial .slide1 .image img {
+  border-top-left-radius: 188px;
+  border-top-right-radius: 188px;
+  vertical-align: bottom;
+  max-width: 400px;
+  max-height: 440px !important;
+  height: 100%;
+  width: 100%;
+}
+.faded-testimonial .content span{
+  font-size: 18px; 
+  color: #fff; 
+  font-weight: 400;
+  margin-top: 15px;
+}
+
+.faded-testimonial .content .line{
+  background-color: #fff;
+  display: block;
+  height: 1px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.faded-testimonial .content p{
+  font-size:  20px;
+  color: #fff;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.faded-testimonial .swiper-horizontal>.swiper-pagination-bullets, .faded-testimonial .swiper-pagination-bullets.swiper-pagination-horizontal, .faded-testimonial .swiper-pagination-custom, .faded-testimonial .swiper-pagination-fraction {
+  bottom: 0 !important;
+  top: 20px !important;
+  left: 0 !important;
+  width: 100% !important;
+  position: relative !important;
+}
+
+@media(max-width: 1180px){
+  .faded-testimonial .content {
+    background: #00234c;
+    left: -64px;
+    padding: 20px 30px;
+    position: relative;
+    top: 33px;
+    width: 527px;
+  }
+}
+
+@media(max-width: 991px){
+  .faded-testimonial .slide1{flex-direction: column;}
+  .faded-testimonial .content{width: 100%;top:0;left: 0;}
+  .faded-testimonial .content span{font-size:16px;}
+  .faded-testimonial .content p{font-size: 18px;}
+}
+@media(max-width:592px){
+  .faded-testimonial .swiper-horizontal>.swiper-pagination-bullets, .faded-testimonial .swiper-pagination-bullets.swiper-pagination-horizontal, .faded-testimonial .swiper-pagination-custom, .faded-testimonial .swiper-pagination-fraction {
+    top: 8px !important;
+  }
+  .faded-testimonial .arrows .swiper-button-prev:after,.faded-testimonial .arrows .swiper-button-next:after{font-size: 35px !important;}
+  .faded-testimonial .content{padding: 12px 16px;}
+
+  .faded-testimonial {
+    padding: 50px 0;
+  }
+  .faded-testimonial h2 {
+    margin: 0;
+  }
+}
+
+@media (max-width: 564px) {
+  .faded-testimonial .swiper-horizontal>.swiper-pagination-bullets, .faded-testimonial .swiper-pagination-bullets.swiper-pagination-horizontal, .faded-testimonial .swiper-pagination-custom, .faded-testimonial .swiper-pagination-fraction {
+    top: -24px !important;
+  }
+  .faded-testimonial {
+    padding: 50px 0 0;
+  }
+}
+@media (max-width: 409px) {
+  .faded-testimonial .swiper-horizontal>.swiper-pagination-bullets, .faded-testimonial .swiper-pagination-bullets.swiper-pagination-horizontal, .faded-testimonial .swiper-pagination-custom, .faded-testimonial .swiper-pagination-fraction {
+    top: 0 !important;
+  }
+  .faded-testimonial {
+    padding: 50px 0 20px;
+  }
+}

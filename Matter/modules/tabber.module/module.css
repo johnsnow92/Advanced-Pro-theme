@@ -1,0 +1,234 @@
+
+.tabber .flex_row.full_width_force .media_wrapper {
+  width: 100%;
+}
+.tabber .tab-title-item {
+  cursor: pointer;
+  padding: 18px 25px;
+  box-shadow: 0px 2px 10px rgba(22, 22, 22, 0.1);
+  border-radius: 4px;
+}
+.tabber .btn_row {
+  margin-bottom: 10px;
+}
+.tabber .vid_icn svg {
+  width: 100%;
+  height: 100%;
+}
+
+.tabber .vid_icn {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.tabber .media-col .tab-content .video_trigger .overlay,
+.tabber .vid_icn {
+  z-index: 10;
+}
+.tabber .tab-title-item .cont p:last-child {
+  margin: 0;
+}
+
+.tabber .media-col .tab-content {
+  display: none;
+}
+
+.tabber .media-col .tab-content.active {
+  display: block;
+}
+
+.tabber .tab-title-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.tabber .media-col .tab-content .rich_cont {
+  margin: 15px 0;
+}
+
+.tabber .media-col .tab-content .rich_cont > *:last-child {
+  margin-bottom: 0;
+}
+
+.tabber .content-col.col6 {
+  margin: 10px 0;
+}
+
+.tabber .tab-title-item .tab-title {
+  margin-bottom: 15px;
+}
+
+.tabber .tab-title-item a.tab-trigger {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.tabber .tab-title-item {
+  position: relative;
+}
+
+/* == full tabber == */
+
+.tabber .flex_row.full_column {
+  flex-direction: column-reverse;
+}
+
+.tabber .flex_row.full_column .tab-title {
+  margin: 0;
+}
+
+.tabber .flex_row.full_column .content-col .tab-title-item {
+  display: inline-block;
+}
+
+.tabber .media-col .tab-content video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tabber .media-col .tab-content .video-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.tabber .media-col .tab-content .video-wrap .inner_spacer {
+  overflow: hidden;
+  position: relative;
+}
+
+.tabber .media-col .tab-content .poster_image {
+  background-position: 50%;
+  background-size: cover;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: .2s linear;
+  width: 100%;
+  z-index: 9;
+}
+
+.tabber .media-col .tab-content .video_trigger {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transition: .2s linear;
+  width: 100%;
+  border-radius: 6px;
+}
+
+.tabber .media-col .tab-content .video-wrap .activeVideo .video_trigger {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.tabber .media-col .tab-content .video-wrap .activeVideo .poster_image {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.tabber .media-col .tab-content iframe {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.tabber .media-col .form-wrap {
+  margin: 10px 0;
+}
+.tabber .media-col .tab-content .cont-btn .btn_row {
+  justify-content: unset;
+}
+
+
+/*  */
+
+.tabber .media-col .tab-content.active {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabber .media-col .tab-content .img-wrap {
+  width: 100%;  
+  text-align: center;
+}
+
+.tabber .media-col .tab-content .img-wrap img{
+  border-radius: 6px;
+}
+
+.tabber .media-col .tab-content .rich_cont {
+  width: 100%;
+}
+
+.tabber .media-col .tab-content .cont-btn {
+  width: 100%;
+}
+
+.tabber .media-col .tab-content .form-wrap {
+  width: 100%;
+}
+
+.tabber .media-col .tab-content .video-wrap {
+  width: 100%;
+}
+
+.tabber .two_column .media-col .tab-content .media_wrapper {
+  width: 100%;
+}
+
+.tabber .full_column .flex_row {
+  width: 100%;
+}
+
+.tabber .full_column .media-col {
+  padding: 20px 0 0;
+}
+
+/*  */
+
+.tabber .media-col .tab-content .cont-btn:not(:last-child) .btn_row {
+  margin-bottom: 20px;
+}
+
+.tabber .media-col .tab-content .form-wrap:not(:first-child) {
+  margin-bottom: 20px;
+}
+.tabber .tab-title-item {
+  transition: all 400ms ease-in-out !important;
+}
+.tabber .btm-btn > .btn_row {
+  margin-top: 50px;
+}
+
+
+
+@media (min-width: 768px){
+  .tabber .flex_row.two_column.right_media {
+    flex-direction: row-reverse;
+  }
+}
+
+@media (max-width: 767px){
+  .tabber .flex_row.two_column {
+    flex-direction: column-reverse;
+  }
+}
+
+
+
+

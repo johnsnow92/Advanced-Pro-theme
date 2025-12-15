@@ -1,0 +1,413 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .tagline {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .description {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .description a {
+    color: {{ module.content_link_color.color }};
+  }
+  
+  .{{ name }} .description a:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+  
+  .{{ name }} .content a {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .content a:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+
+  {% for item in module.column %}
+  
+  .{{ name }} .simple a, 
+  .{{ name }} #cta .cta_button {
+    background-color: {{ item.button.cta_background_color.color }} !important;
+    {% if item.button.cta_background_color.color %}
+    background-image: none !important;
+    {% endif %}
+  }
+  
+  .{{ name }} .simple a:hover, 
+  .{{ name }} #cta .cta_button:hover {
+    background-color: {{ item.button.cta_background_color_hover.color }} !important;
+    {% if item.button.cta_background_color_hover.color %}
+    background-image: none !important;
+    {% endif %}
+  }
+  
+  {% endfor %}
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-lp-two-column-content clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+    
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+      
+      {% for item in module.column %}
+
+      {% if item.type == "right-image" %}
+      <div class="flex">
+        <div class="col">
+
+          {% if item.tag_line %}
+          <div class="tagline font-size-14 mb-20">
+            {{ item.tag_line }}
+          </div>
+          {% endif %} 
+
+          {% if item.heading.text %}
+          {% if item.heading.type == "h1" %}
+          <div class="heading mb-10">
+            <h1 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h1>
+          </div>
+          {% elif item.heading.type == "h2" %}
+          <div class="heading mb-10">
+            <h2 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h2>
+          </div>
+          {% elif item.heading.type == "h3" %}
+          <div class="heading mb-10">
+            <h3 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h3>
+          </div>
+          {% elif item.heading.type == "h4" %}
+          <div class="heading mb-10">
+            <h4 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h4>
+          </div>
+          {% elif item.heading.type == "h5" %}
+          <div class="heading mb-10">
+            <h5 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h5>
+          </div>
+          {% elif item.heading.type == "h6" %}
+          <div class="heading mb-10">
+            <h6 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h6>
+          </div>
+          {% endif %} 
+          {% endif %}
+
+          {% if item.description %}
+          <div id="cta" class="description {% if item.column_inner == "false" %}mb-30{% endif %}">
+            {{ item.description }}
+          </div>
+          {% endif %}
+         
+          {% if item.column_inner %}
+          <div class="column-inner-flex py-10">
+            {% for item2 in item.column_inner_item %}
+            <div class="col">
+
+              {% if item2.type == "h1" %}
+              <div class="title mb-10">
+                <h1 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h1>
+              </div>
+              {% elif item2.type == "h2" %}
+              <div class="title mb-10">
+                <h2 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h2>
+              </div>
+              {% elif item2.type == "h3" %}
+              <div class="title mb-10">
+                <h3 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h3>
+              </div>
+              {% elif item2.type == "h4" %}
+              <div class="title mb-10">
+                <h4 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h4>
+              </div>
+              {% elif item2.type == "h5" %}
+              <div class="title mb-10">
+                <h5 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h5>
+              </div>
+              {% elif item2.type == "h6" %}
+              <div class="title mb-10">
+                <h6 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h6>
+              </div>
+              {% endif %}
+
+              {% if item2.content %}
+              <div class="content font-size-14">
+                {{ item2.content }}
+              </div>
+              {% endif %}
+
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+         
+          {% if item.button.type == "simple" %}
+          {% if item.button.text %}
+          <div class="simple">
+            <a href="{{ item.button.url.href }}">
+              {{ item.button.text }}
+            </a>
+          </div>
+          {% endif %}
+          {% elif item.button.type == "cta" %}
+          {% if item.button.cta %}
+          <div id="cta">
+            {% cta guid="{{ item.button.cta }}" %}
+          </div>
+          {% endif %}
+          {% endif %}
+
+        </div>
+
+        {% if item.element == "image" %}
+          {% if item.image.type == "background" %}
+          <div class="col image {% if item.image.is_rounded_circle %}rounded-circle{% endif %}">
+
+            <div style="background-image: url({{ item.image.image.src }});"></div>
+
+          </div>
+          {% elif item.image.type == "image" %}
+          <div class="col image not-bg">
+
+            <div>
+              {% if item.image.image.src %}
+              <img src="{{ item.image.image.src }}" alt="{{ item.image.image.alt }}">
+              {% endif %}
+            </div>
+
+          </div>
+          {% endif %}
+        {% elif item.element == "video" %}
+          <div class="col video">
+            {{ item.video }}
+          </div>
+        {% endif %}
+
+      </div>
+      {% elif item.type == "left-image" %}
+      <div class="flex">
+        {% if item.element == "image" %}
+        {% if item.image.type == "background" %}
+        <div class="col image {% if item.image.is_rounded_circle %}rounded-circle{% endif %}">
+
+          <div style="background-image: url({{ item.image.image.src }});"></div>
+
+        </div>
+        {% elif item.image.type == "image" %}
+        <div class="col image not-bg">
+
+          <div>
+            {% if item.image.image.src %}
+            <img src="{{ item.image.image.src }}" alt="{{ item.image.image.alt }}">
+            {% endif %}
+          </div>
+
+        </div>
+        {% endif %}
+        {% elif item.element == "video" %}
+        <div class="col video">
+          {{ item.video }}
+        </div>
+        {% endif %}
+        <div class="col">
+
+          {% if item.tag_line %}
+          <div class="tagline font-size-14 mb-20">
+            {{ item.tag_line }}
+          </div>
+          {% endif %} 
+
+          {% if item.heading.text %}
+          {% if item.heading.type == "h1" %}
+          <div class="heading mb-10">
+            <h1 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h1>
+          </div>
+          {% elif item.heading.type == "h2" %}
+          <div class="heading mb-10">
+            <h2 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h2>
+          </div>
+          {% elif item.heading.type == "h3" %}
+          <div class="heading mb-10">
+            <h3 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h3>
+          </div>
+          {% elif item.heading.type == "h4" %}
+          <div class="heading mb-10">
+            <h4 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h4>
+          </div>
+          {% elif item.heading.type == "h5" %}
+          <div class="heading mb-10">
+            <h5 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h5>
+          </div>
+          {% elif item.heading.type == "h6" %}
+          <div class="heading mb-10">
+            <h6 class="font-size-{{ item.heading.font_size }} line-height-12 {{ item.heading.font_weight }}" style="color: {{ item.heading.font_color.color }};">
+              {{ item.heading.text }}
+            </h6>
+          </div>
+          {% endif %} 
+          {% endif %}
+
+          {% if item.description %}
+          <div id="cta" class="description {% if item.column_inner == "false" %}mb-30{% endif %}">
+            {{ item.description }}
+          </div>
+          {% endif %}
+          
+           {% if item.column_inner %}
+          <div class="column-inner-flex py-10">
+            {% for item2 in item.column_inner_item %}
+            <div class="col">
+
+              {% if item2.type == "h1" %}
+              <div class="title mb-10">
+                <h1 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h1>
+              </div>
+              {% elif item2.type == "h2" %}
+              <div class="title mb-10">
+                <h2 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h2>
+              </div>
+              {% elif item2.type == "h3" %}
+              <div class="title mb-10">
+                <h3 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h3>
+              </div>
+              {% elif item2.type == "h4" %}
+              <div class="title mb-10">
+                <h4 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h4>
+              </div>
+              {% elif item2.type == "h5" %}
+              <div class="title mb-10">
+                <h5 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h5>
+              </div>
+              {% elif item2.type == "h6" %}
+              <div class="title mb-10">
+                <h6 class="font-size-18 line-height-12 {{ item2.font_weight }}">
+                  {{ item2.title }}
+                </h6>
+              </div>
+              {% endif %}
+
+              {% if item2.content %}
+              <div class="content font-size-14">
+                {{ item2.content }}
+              </div>
+              {% endif %}
+
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          {% if item.button.type == "simple" %}
+          {% if item.button.text %}
+          <div class="simple">
+            <a href="{{ item.button.url.href }}">
+              {{ item.button.text }}
+            </a>
+          </div>
+          {% endif %}
+          {% elif item.button.type == "cta" %}
+          {% if item.button.cta %}
+          <div id="cta">
+            {% cta guid="{{ item.button.cta }}" %}
+          </div>
+          {% endif %}
+          {% endif %}
+
+        </div>
+      </div>
+      {% endif %}
+
+      {% endfor %}
+
+    </div> 
+   
+  </div>
+</div>
+
+{% endif %}

@@ -1,0 +1,389 @@
+.maxContainer{
+  max-width: 1080px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+}
+.pricing-section h1{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 44px;
+  line-height: 1.2em;
+  font-weight: 500;
+  text-transform: initial;
+}
+.matrix-wrapper{
+  padding: 40px 0 0;
+}
+.matrix-column{
+  width: 33.3333333%;
+  padding: 10px;
+  float: left;
+  display: inline-block;
+  vertical-align: top;
+}
+.matrix-column-wrapper{
+  position: relative;
+  display: block;
+  overflow: hidden;
+  min-height: auto;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-left: 0px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+.matrix-title{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.matrix-title h4{
+  padding-left: 10px;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 24px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.matrix-price-info{
+  margin-bottom: 10px;
+  padding: 20px 20px 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.matrix-column.enterprise .matrix-price-info{
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+.matrix-column.enterprise .matrix-price-info h3{
+  margin: 0 0 7px 0;
+  font-size: 24px;
+  line-height: 1.2em;
+}
+.matrix-column.enterprise .matrix-price-info .pricing-cta{
+  padding-top: 25px;
+}
+.matrix-column.enterprise .matrix-price-info span.hs-cta-wrapper a.cta_button{
+  margin-top: 0!important;
+}
+.matrix-column .pricing-cta span.hs-cta-wrapper a.cta_button{
+  margin-bottom: 0!important;
+}
+.matrix-price-info .m-price span.price-val{
+  margin-bottom: 0px;
+  font-size: 50px;
+  line-height: 1.1em;
+  font-weight: 600;
+  display: none;
+}
+.annual-active .matrix-price-info .m-price span.price-val{
+  display: inline-block;
+}
+.monthly-active .matrix-price-info .m-price span.price-val{
+  display: inline-block;
+}
+.matrix-price-info .m-price span.sign{
+  font-size: 40px;
+  line-height: 1.1em;
+  font-weight: 600;
+}
+.matrix-price-info .m-price span.from-text{
+  font-size: 14px;
+  font-weight: 300;
+  position: relative;
+  top: -8px;
+  display: inline-block;
+  padding-right: 8px;
+}
+.matrix-price-info .ptext{
+  font-size: 14px;
+  line-height: 1.6em;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.matrix-price-info .m-price{
+  /*   padding-top: 11px; */
+}
+/* .matrix-column.enterprise .matrix-price-info{
+padding-top: 45px;
+} */
+.matrix-column .matrix-price-info a.price-btn{
+  padding: 8px 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  color: #fff;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  line-height: inherit;
+}
+.matrix-column .matrix-price-info a.price-btn:hover{
+  background-color: #fbe748;
+  color: #24252a;
+}
+.matrix-column.enterprise .matrix-price-info a.price-btn{
+  background-color: transparent;
+}
+.matrix-column.enterprise .matrix-price-info a.price-btn:hover{
+  border-color: #fbe748;
+  background-color: #fbe748;
+  color: #24252a;
+}
+.price-calc a{
+  position: relative;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 1.4em;
+  color: #3c4858;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+.price-calc a:hover{
+  color: #373943;
+}
+.price-calc a:focus,
+.price-calc a:active{
+}
+.price-calc a.annual{
+  margin-right: 3px;
+}
+.price-calc a span.active:before{
+  content: '';
+  background: #666666;
+  height: 5px;
+  width: 5px;
+  border-radius: 100px;
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin: 0 auto;
+}
+.price-calc a span{
+  background: #dedede;
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 13px;
+  width: 13px;
+  border-radius: 100%;
+  border: 1px solid #a7a7a7;
+  display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+.price-calc{
+  padding-bottom: 3px;
+}
+
+.matrix-items-wrapper{
+  padding: 0 20px;
+  position: relative;
+}
+.matrix-items-wrapper p{
+  padding: 9px 0 10px;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+.matrix-more-features{
+  display: none;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+.view-more{
+  display: inline-block;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: transparent;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: #24252a;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.view-more:hover{
+}
+.exclude_yes{
+  opacity: 0.3;
+}
+.col-view-more{
+  display: none;
+}
+.view-more span.less-text{
+  display: none;
+}
+.view-more.active span.more-text{
+  display: none;
+}
+.view-more.active span.less-text{
+  display: inline-block;
+}
+.pricing-cta span.hs-cta-wrapper a.signup-btn{
+  margin-top: 6px!important;
+}
+.matrix-column .pricing-cta{
+  padding-top: 4px;
+}
+.m-price{
+  position: relative;
+  padding-bottom: 4px;
+}
+.m-price .price-month{
+  display: none;
+}
+.m-price .per-month{
+  font-weight: 600;
+  position: relative;
+  left: -3px;
+}
+.matrix-price-info h3{
+  margin: 0;
+}
+
+.matrix-column:first-child .m-price .price-val{
+  display: inline-block;
+}
+.pricing-cta a{
+  background-color: #3b3838;
+  color: #fff;
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 15px;
+  -webkit-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.pricing-cta a:hover{
+  -webkit-transform: translate(0px, -2px);
+  -ms-transform: translate(0px, -2px);
+  transform: translate(0px, -2px);
+  text-decoration: none!important;
+  color: #fff!important;
+}
+
+@media screen and (max-width: 990px){
+  .matrix-column{
+    width: 45%;
+    float: none;
+  }
+  .matrix-column.enterprise .matrix-price-info{
+  }
+  .matrix-price-info{
+    padding: 20px 15px 23px;
+  }
+  .matrix-column.enterprise .matrix-price-info h3{
+    margin: 0 0 15px 0;
+    font-size: 20px;
+    line-height: 1.3em;
+  }
+  .matrix-column.enterprise .matrix-price-info {
+    padding-top: 33px;
+  }
+
+}
+@media screen and (max-width: 767px){
+  .pricing-section{
+    padding-bottom: 0!important;
+  }
+  .pricing-section h1{
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 38px;
+  }
+  .matrix-column {
+    width: 100%;
+    padding: 0;
+    float: none;
+    margin-bottom: 50px;
+  }
+  .matrix-column.enterprise .matrix-price-info{
+    padding-top: 30px;
+    padding-bottom: 25px;
+  }
+  .col-view-more{
+    display: inline-block;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: transparent;
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+    color: #24252a;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+  }  
+  .view-more-sec{
+    display: none;
+  }
+  .col-view-more .less-text{
+    display: none;
+  }
+  .col-view-more.active .less-text{
+    display: inline-block;
+  }
+  .col-view-more.active .more-text{
+    display: none;
+  }
+  .enterprise .matrix-price-info{
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+  .matrix-price-info .m-price {
+    padding-top: 0;
+  }
+  .matrix-price-info{
+    padding: 25px 15px 28px;
+  }
+  .matrix-column.enterprise .matrix-price-info .pricing-cta {
+    padding-top: 0;
+  }
+}

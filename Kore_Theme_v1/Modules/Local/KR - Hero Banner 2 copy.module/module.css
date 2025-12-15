@@ -1,0 +1,166 @@
+.kr-hero-banner-2 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  position: relative;
+}
+
+.kr-hero-banner-2 .page-width {
+  max-width: 1280px!important;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 100;
+}
+
+.kr-hero-banner-2 .page-width.text-center {
+  text-align: center; 
+}
+.kr-hero-banner-2 .hs-embed-wrapper {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.flex-col{
+  display: flex;
+  flex-wrap: wrap;
+}
+.col-60{
+  width: 60%;
+}
+.col-40{
+  width: 40%;
+}
+.kr-hero-banner-2 .section-overlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(5%, #454547), to(rgba(69, 69, 71, 0)));
+  background-image: linear-gradient(90deg, #454547 5%, rgba(69, 69, 71, 0));
+  z-index: 1;
+}
+.hub-col-content{
+  padding-right: 50px;
+}
+.hub-col-content .content{
+  max-width: 500px;
+}
+.hub-col-content .content p{
+  font-size: 18px;
+  line-height: 1.5;
+}
+.hub-btn.btn-bordered a{
+  border: 2px solid #f2cf50 !important;
+  background-color: transparent !important;
+  color: #fff!important;
+}
+.hub-btn.btn-bordered a:hover{
+  border: 2px solid #f2cf50 !important;
+  background-color: #f2cf50 !important;
+  color: #5b5b5d!important;
+}
+.kr-hero-banner-2 .tagline{
+  display: inline-block;
+  padding: 3px 12px 1px;
+  border-radius: 100px;
+  background-color: #5b5b5d;
+  box-shadow: 0 0 0 3px rgb(91 91 93 / 25%);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+}
+.hub-section-wrapper.col-form-content{
+  flex-direction: row-reverse;
+}
+.hub-section-wrapper.col-form-content .hub-col-content{
+  padding-left: 50px;
+}
+
+.kr-hero-banner-2 .form-wrap{
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 40%);
+}
+.form-wrap form .hs-form-field{
+  margin-bottom: 2px;
+  margin-bottom: 15px;
+}
+.form-wrap form .hs-form-field label{
+  margin-bottom: 2px;
+}
+.form-wrap form .hs-form-field .input{
+  margin: 0!important;
+}
+.form-wrap form .hs-form-field input,
+.form-wrap form .hs-form-field select,
+.form-wrap form .hs-form-field textarea{
+  background-color: #EFEFEF;
+  border: 0;
+  height: 44px;
+}
+.form-wrap form fieldset.form-columns-2 > div:first-child{
+  padding-right: 8px!important;
+}
+.form-wrap form fieldset.form-columns-2 > div:last-child{
+  padding-left: 8px!important;
+}
+.form-wrap form .legal-consent-container ul,
+.form-wrap form .legal-consent-container ul li{
+  margin-bottom: 0;
+}
+.form-wrap form .legal-consent-container ul li input{
+  margin-top: 3px;
+  height: auto;
+}
+.form-wrap form .legal-consent-container .hs-richtext,
+.form-wrap form .legal-consent-container .hs-richtext p{
+  margin: 0 0 15px;
+}
+.form-wrap form ul.hs-error-msgs,
+.form-wrap form ul.hs-error-msgs li{
+  margin: 0;
+}
+.form-wrap form ul.hs-error-msgs li label{
+  font-size: 12px;
+}
+.hub-section-wrapper.hub-single-col .hub-col-content{
+  padding-right: 0;
+}
+.hub-section-wrapper.hub-single-col .hub-col-content .content {
+  max-width: 600px;
+}
+
+@media screen and (max-width: 991px){
+  .kr-hero-banner-2 .form-wrap{
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 767px){
+  .flex-col{
+    display: block;
+  }
+  .col-60 {
+    width: 100%;
+  }
+  .hub-col-content {
+    padding-right: 0;
+    padding-bottom: 30px;
+  }
+  .col-40 {
+    width: 100%;
+  }
+  .form-wrap form fieldset.form-columns-2 > div:last-child {
+    padding-left: 0!important;
+  }
+  .form-wrap form fieldset.form-columns-2 > div:first-child {
+    padding-right: 0!important;
+  }
+  .kr-hero-banner-2 .tagline{
+    margin-bottom: 18px;
+  }
+}
+
+

@@ -1,0 +1,29 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: CTA - Full Width
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: cta-full-width.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  vertical_alignment="MIDDLE",
+  max_width=1920,
+  padding={"top": 100, "bottom": 100},
+  background_color={"color": "#007bff", "opacity": 100}
+%}
+  {% dnd_column width=12 %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div style="text-align: center; color: white; max-width: 900px; margin: 0 auto;">
+          <h2 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem;">Transform Your Business Today</h2>
+          <p style="font-size: 1.5rem; margin-bottom: 2.5rem; opacity: 0.95;">Full-width call-to-action for maximum visibility</p>
+          <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="#" style="display: inline-block; padding: 1.25rem 3rem; background: white; color: #007bff; text-decoration: none; border-radius: 8px; font-weight: 700;">Get Started</a>
+            <a href="#" style="display: inline-block; padding: 1.25rem 3rem; background: transparent; color: white; text-decoration: none; border-radius: 8px; font-weight: 700; border: 2px solid white;">Learn More</a>
+          </div>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

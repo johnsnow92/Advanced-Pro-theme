@@ -1,0 +1,51 @@
+{% import "../../macros/_macros.html" as macros %}  
+{% set brd =  module.module_settings.select_breadcrumbs_alignment %}
+<div   {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="{{name}} simple-banner brd_{{brd}} dnd_padd {% if module.background_options.enable_parallax %}parallax_enable{% endif %} vid_{{ module.background_options.select_video_type }} bg_{{ module.background_options.select_background_type }} th_{{ module.background_options.select_color_theme }} {{ module.advanced_customization.css_class_selector }}  {% if module.image.src %}imageAdded{% endif %} {% if module.include_breadcrumb and module.breadcrumb_menu %}breadmenuAdd{% endif %}">
+  {{ macros.backgroundOptions(name, module.background_options) }}
+  <div class="page-center {{ module.style.container.select_size }} {{ module.module_settings.select_content_alignment }} img_{{ module.module_settings.select_image_position }}">
+    <div class="flex_row">
+      <div class="banner-content-inner col{{ module.module_settings.select_content_column_width }}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" {% endif %}>
+        {% if module.banner_content %}
+        <div class="top_sec">
+          {{ module.banner_content }}
+        </div>
+        {% endif %}
+        {% if module.button_group %}
+        {{ macros.buttonWithPopupGroup(module.button_group, false) }}
+        {% endif %}
+      </div>
+      {% if module.image.src %}
+      <div class="img_wrap col{{ module.module_settings.select_image_column_width }}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" {% endif %}>
+        <div class="img_wrap_inner">
+          <img src="{{ module.image.src }}" alt="{{ module.image.alt }}">
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if module.breadcrumb_menu and module.include_breadcrumb %}
+  <div class="banner-breacrumb" >
+    <div class="banner-breacrumb-inner" >
+      <div class="page-center">
+        <div {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="250" {% endif %}>
+          {% menu "banner_breadcrumb", root_type="breadcrumb", label="Breadcrumb Menu", id="{{ module.breadcrumb_menu }}", max_levels=5 %} 
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if module.button_group %}
+  {{ macros.buttonWithPopupGroup(module.button_group, true) }}
+  {% endif %}
+
+</div>
+
+{{ macros.sectionSpacing(name, module.style) }}
+{{ macros.sectionBackgroundStyle(name, module.style) }}
+{{ macros.customContainer(name, module.style) }}
+
+
+

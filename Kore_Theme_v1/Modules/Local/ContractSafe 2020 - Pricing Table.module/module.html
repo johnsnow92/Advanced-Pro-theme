@@ -1,0 +1,199 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} contractsafe-pricing-table clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+      
+      <div class="max-width-1100 mr-auto ml-auto">
+        {% if module.heading.text %}
+        {% if module.heading.type == "h1" %} 
+        <div class="heading mb-15">
+          <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h1>
+          {% if module.heading_divider %}
+          <!-- HTML to show when checked -->
+          <div class="line-divider" style="background-color: {{ module.heading_divider_color.color }};"></div>
+          {% endif %}
+          
+        </div>
+        {% elif module.heading.type == "h2" %}
+        <div class="heading mb-15">
+          <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h2>
+          {% if module.heading_divider %}
+          <!-- HTML to show when checked -->
+          <div class="line-divider" style="background-color: {{ module.heading_divider_color.color }};"></div>
+          {% endif %}
+        </div>
+        {% elif module.heading.type == "h3" %}
+        <div class="heading mb-15">
+          <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h3>
+          {% if module.heading_divider %}
+          <!-- HTML to show when checked -->
+          <div class="line-divider" style="background-color: {{ module.heading_divider_color.color }};"></div>
+          {% endif %}
+        </div>
+        {% elif module.heading.type == "h4" %}
+        <div class="heading mb-15">
+          <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h4>
+          {% if module.heading_divider %}
+          <!-- HTML to show when checked -->
+          <div class="line-divider" style="background-color: {{ module.heading_divider_color.color }};"></div>
+          {% endif %}
+        </div>
+        {% elif module.heading.type == "h5" %}
+        <div class="heading mb-15">
+          <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h5>
+          {% if module.heading_divider %}
+          <!-- HTML to show when checked -->
+          <div class="line-divider" style="background-color: {{ module.heading_divider_color.color }};"></div>
+          {% endif %}
+        </div>
+        {% elif module.heading.type == "h6" %}
+        <div class="heading mb-15">
+          <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h6>
+          {% if module.heading_divider %}
+          <!-- HTML to show when checked -->
+          <div class="line-divider" style="background-color: {{ module.heading_divider_color.color }};"></div>
+          {% endif %}
+        </div>
+        {% endif %}
+        {% endif %}
+        
+        {% if module.sub_heading %}
+        <div class="sub-heading font-size-18" style="color: {{ module.sub_heading_color.color }};">
+          {{ module.sub_heading }}
+        </div>
+        {% endif %}
+      </div>
+      
+        <div class="slideToggle">
+          <label class="form-switch">
+            <span class="beforeinput text-success">
+              {{ module.slide_toggle.text_1 }}
+            </span>
+            <input type="checkbox" id="js-contcheckbox">
+            <i></i>
+            <span class="afterinput">
+              {{ module.slide_toggle.text_2 }}
+            </span>
+          </label>
+        </div>
+        <div class="pricingtablecontainer"> 
+
+          {% for item in module.pricing_table %}
+
+          <div class="pricingtable">
+            <ul class="{% if item.most_popular %}popular{% endif %}" data-mh="pricingtable-group">
+              {% if item.most_popular %}
+              <li class="pricing-tag">Most popular</li>
+              {% endif %}
+              {% if item.head %}
+              <li class="pricingtable__head">{{ item.head }}</li>
+              {% endif %}
+              {% if item.monthly_pricing %}
+              <li class="pricingtable__highlight js-montlypricing">{{ item.monthly_pricing }}</li>
+              {% endif %}
+              {% if item.yearly_pricing %}
+              <li class="pricingtable__highlight js-yearlypricing">{{ item.yearly_pricing }}</li>
+              {% endif %}
+              
+              {% if item.text %}
+              <li class="pricingtable-text">{{ item.text }}</li>
+              {% endif %}
+              
+              {% if item.button_text %}
+              <li class="pricingtable__btn pricingtable__btn-tablet">
+                <a class="{{ item.button_url.href }}">{{ item.button_text }}</a>
+              </li>
+              {% endif %}
+              
+              {% if item.feature_title %}
+              <li class="features-title">{{ item.feature_title }}</li>
+              {% endif %}
+              
+              <button class="btn btn-primary btn-features-in-tablet" type="button" data-toggle="collapse" data-target="#collapseExample-{{ loop.index }}" aria-expanded="false" aria-controls="collapseExample">
+                Show all features
+              </button>
+              
+              <div class="collapse" id="collapseExample-{{ loop.index }}">
+              {% for item2 in item.feature_items %}
+          
+                <li class="features-item">{{ item2 }}</li>
+            
+              
+              {% endfor %}
+                
+              </div>
+              {% if item.button_text %}
+              <li class="pricingtable__btn pricingtable__btn-desktop">
+                <a class="{{ item.button_url.href }}">{{ item.button_text }}</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+
+          {% endfor %}
+         
+        </div>
+   
+    </div> 
+   
+  </div>
+  
+</div>
+
+
+{% endif %}

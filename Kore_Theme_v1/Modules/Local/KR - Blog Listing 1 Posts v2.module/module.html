@@ -1,0 +1,135 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kr-blog-listing-1-posts clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+
+      {% if module.heading %}
+      <div class="mb-20">
+        <h3>{{ module.heading }}</h3>
+      </div>
+      {% endif %}
+
+      <div class="posts-wrapper" data-tag="{{ module.topic_name }}">
+        {% set topic_posts = blog_recent_tag_posts(group.id, module.topic_name, 200) %}
+        
+        {% if topic_posts|length <= 3  %}
+        {% set post_count = 0 %}
+        {% else %}
+        {% set post_count = 1 %}
+        {% endif %}
+        
+        {% for post in topic_posts %}   
+        
+        <div class="span4" data-test="{{ loop.length }}">
+          <div class="post-item__img">
+            <a href="{{ post.absolute_url }}">
+              <img src="{{ post.featured_image }}" alt="{{ post.name }}">
+            </a>
+          </div>
+          <div class="post-item__tags">
+            {% for topic in post.topic_list %}
+            {% if topic.name != "Featured" %}
+            <a href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name }}</a>
+            {% endif %}
+            {% endfor %}
+          </div>
+          <div class="post-item__content">
+            <a href="{{ post.absolute_url }}">
+              <h4>{{ post.name }}</h4>
+              <h5><span>{{ post.publish_date|datetimeformat('%B %d, %Y') }}</span></h5>
+              <p>{{ post.post_body | striptags | safe | truncate(160, False, '...') }}</p>              
+            </a>
+          </div>
+        </div>
+        {% endfor %}      
+      </div>
+      {% if post_count == 1 %}
+      <div class="more-posts__link">
+        <span data-next-row="2">More Posts</span>
+      </div>
+      {% endif %}
+
+    </div> 
+
+  </div>
+</div>
+
+{% require_js position="footer" %}
+<script>
+
+  $(function(){
+    
+    var post_ctr = 0;
+    var items = $(".{{ name }} .posts-wrapper > .span4");
+    for (var i = 0; i < items.length; i += 3) {    
+      post_ctr++;
+      items.slice(i, i + 3).wrapAll('<div class="row-fluid item-wrap item-wrap-'+post_ctr+'" data-item="'+post_ctr+'"></div>');
+    }
+    
+    // More Posts Event
+    var ctr = 1;
+    $(".{{ name }} .more-posts__link span").on('click', function(){
+      ctr++;
+      var row_length = $(this).parent().prev().find('.item-wrap').length;
+      console.log('row length: '+row_length);
+      if ( ctr <= row_length ){
+        
+        $(this).parent().prev().find('.item-wrap-'+ctr).fadeIn();
+        
+        if ( ctr === row_length ){
+          $('.{{ name }} .more-posts__link').hide();
+        }
+      }
+    });
+
+  });
+
+</script>
+{% end_require_js %}
+
+
+
+{% endif %}

@@ -1,0 +1,37 @@
+.kore-404-hero-v4 p {
+    font-size:24px;
+}
+.kore-404-hero-v4 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-404-hero-v4 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-404-hero-v4 .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-404-hero-v4 .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+.kore-404-hero-v4 .buttons-404 {
+  margin-top:20px;
+}
+.kore-404-hero-v4 .buttons-404 a{
+  text-align:center;
+  padding: 15px 30px;
+  margin: 10px;
+  text-decoration: none;
+  display: inline-block;
+}
+.kore-404-hero-v4 .buttons-404 a:hover {
+  opacity:.8;
+  text-decoration: none;
+}

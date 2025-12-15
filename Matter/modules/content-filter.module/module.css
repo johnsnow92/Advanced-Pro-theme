@@ -1,0 +1,300 @@
+.hs_fillter_wrp .type_2 .hs_fil_t2_read h4 svg {
+  margin-left: 13px;
+}
+.hs_fillter_wrp .item_cat_in h6 {
+  margin-bottom: 8px;
+}
+.hs_fillter_wrp  .no_image .hs_fil_t2_image {
+  min-height: auto;
+}
+.hs_fillter_wrp .type_3 .hs_fil_t3_image a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.hs_fillter_wrp .type_3 .hs_fil_t3_image {
+  position: relative;
+}
+
+.hs_fillter_wrp .type_3 .hs_fil_t3_item:hover .hs_fil_overlay {
+  visibility: visible;
+  opacity: 1;
+
+}
+.hs_fillter_wrp .type_3 .hs_fil_t3_cat_wrp {
+  padding-bottom: 17px;
+}
+.hs_fillter_wrp .type_3 .hs_fil_cat_item {
+  transform: none !important;
+}
+.hs_fillter_wrp .item_cat {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 5.5px 5px;
+  line-height: 1;
+  min-width: 109px;
+  text-align: center;
+  backdrop-filter: blur(4.33333px);
+}
+.hs_fillter_wrp .item_cat h6 {
+  margin: 0;
+  line-height: 1;
+}
+.hs_fillter_wrp .type_2 .hs_fil_t2_read h4 {
+  margin-bottom: 5px;
+}
+
+.hs_fillter_wrp .type_2 .hs_fil_t2_title h4 {
+  margin-bottom: 10px;
+}
+.hs_fillter_wrp .type_2 .hs_fil_cat_item {
+  transform: none !important;
+}
+.hs_fillter_wrp .type_3 .hs_fil_t3_catg p {
+  margin-bottom: 10px;
+}
+
+.hs_fillter_wrp .type_3 .hs_fil_t3_image {
+  margin-bottom: 17px;
+}
+.hs_fillter_wrp span.hs_fil_t3_sp svg {
+  width: 20px;
+  fill: currentColor;
+}
+
+.hs_fillter_wrp .hs_fil_t3_image {
+  margin-bottom: 30px;
+}
+.hs_fillter_wrp .hs_fil_t3_item {
+  margin-bottom: 50px;
+}
+.hs_fillter_wrp .hs_fil_t3_image img {
+  border-radius: 3px;
+  width: 100%;
+}
+.hs_fillter_wrp .type_3 span.hs_fil_com {
+  vertical-align: text-bottom;
+  font-weight: bold;
+  font-size: 16px;
+  margin-right: 10px;
+  position: absolute;
+  left: -11px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background-color: #212429;
+}
+
+.hs_fillter_wrp .type_3 .hs_fil_cat_item {
+  position: relative;
+}
+
+.hs_fillter_wrp .type_2 .filter_label {
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.hs_fillter_wrp .type_3 .hs_fil_t3_cat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 32px;
+}
+
+.hs_fillter_wrp .type_3 .top_sec.noButton {
+  margin-bottom: 30px;
+}
+.hs_fillter_wrp .type_2 .top_sec {
+  margin-bottom: 30px;
+}
+
+.hs_fillter_wrp .type_2 .hs_fil_cat {
+  column-gap: 10px;
+  margin-bottom: 52px;
+  row-gap: 10px;
+}
+.hs_fillter_wrp .grid {
+  width: 100%;
+  margin: auto;
+}
+.hs_fillter_wrp .top_sec {
+  margin-bottom: 40px;
+}
+.hs_fillter_wrp .hs_fil_cat_wrp {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.hs_fillter_wrp .hs_fil_cat {
+  column-gap: 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 43px;
+  text-align: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hs_fillter_wrp .type_2 .hs_fil_cat_item {
+  border-style: solid;
+  line-height: normal;
+}
+.hs_fillter_wrp  .hs_fil_cat_item {
+  cursor: pointer;
+  display: inline-block;
+}
+.hs_fillter_wrp .hs_fil_content {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .4s ease-in-out;
+  position: relative;
+  z-index: 2;
+}
+.hs_fillter_wrp .hs_fil_item_inner {
+  min-height: 252px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: inherit;
+  padding: 15px;
+}
+.hs_fillter_wrp .hs_fil_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .4s ease-in-out;
+}
+.hs_fillter_wrp .hs_fil_item_inner:hover .hs_fil_overlay,
+.hs_fillter_wrp .hs_fil_item.without_image .hs_fil_item_inner .hs_fil_overlay {
+  visibility: visible;
+  opacity: 1;
+}
+.hs_fillter_wrp .hs_fil_item.without_image .hs_fil_content {
+  opacity: 1;
+  visibility: visible;
+}
+.hs_fillter_wrp .hs_fil_image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.hs_fillter_wrp .hs_fil_image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.hs_fillter_wrp .hs_fil_item_inner:hover .hs_fil_content {
+  visibility: visible;
+  opacity: 1;
+}
+.hs_fillter_wrp .hs_fil_item {
+  margin-bottom: 20px;
+}
+
+.hs_fillter_wrp .hs_fil_t2_item_inner {
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 70, 127, 0.1);
+  border-radius: 2px 2px 0px 0px;
+}
+
+.hs_fillter_wrp .hs_fil_t2_image {
+  width: 100%;
+  height: 100%;
+  min-height: 245px;
+  position: relative;
+}
+.hs_fillter_wrp .hs_fil_t2_item {
+  margin-bottom: 50px;
+}
+.hs_fillter_wrp .hs_fil_t2_image img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hs_fillter_wrp .hs_fil_t2_content {
+  padding: 13px;
+}
+
+.hs_fillter_wrp .hs_fil_t2_title h6 {
+  margin-bottom: 10px;
+}
+.hs_fillter_wrp .hs_fil_t2_read a h6 {
+  color: inherit;
+}
+
+.hs_fillter_wrp .hs_fil_t2_read a h6 svg {
+  margin-left: 10px;
+}
+
+.hs_fillter_wrp .hs_fil_t2_text *:last-child {
+  margin-bottom: 30px;
+}
+.hs_fillter_wrp .hs_fil_cat_item.is-checked {
+  transform: scale(1.05);
+}
+.hs_fillter_wrp .type_3 .hs_fil_t3_cat_wrp {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.hs_fillter_wrp .hs_fil_cat_item {
+  transition: all .3s ease-in;
+}
+
+.hs_fillter_wrp .hs_fil_content h4 {
+  margin-bottom: 15px;
+}
+
+@media(max-width:767px){
+  .hs_fillter_wrp .hs_fil_content {
+    visibility: visible;
+    opacity: 1;
+  }
+  .hs_fillter_wrp .filter_t3_label {
+    width: 100%;
+    text-align: center;
+  }
+  .hs_fillter_wrp .hs_fil_overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+  .hs_fillter_wrp .type_3 .hs_fil_t3_cat {
+    column-gap: 20px;
+    align-items: center;
+  }
+  .hs_fillter_wrp .type_3 .hs_fil_cat_item {
+    margin-bottom: 1rem;
+  }
+  .hs_fillter_wrp .type_2 .hs_fil_t3_item,
+  .hs_fillter_wrp .type_3 .hs_fil_t3_item {
+    margin-bottom: 20px;
+  }
+  .hs_fillter_wrp .type_2 .filter_label {
+    text-align: center;
+  }
+
+}

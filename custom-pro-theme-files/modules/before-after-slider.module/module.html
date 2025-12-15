@@ -1,0 +1,22 @@
+<div class="before-after-slider" data-module-id="{{ name }}">
+  <div class="before-after-container">
+    <div class="before-image-container">
+      <img src="{{ module.before_image.src }}" alt="{{ module.before_image.alt }}" class="before-image">
+      {% if module.show_labels %}
+      <div class="image-label before-label">{{ module.before_label }}</div>
+      {% endif %}
+    </div>
+    <div class="after-image-container">
+      <img src="{{ module.after_image.src }}" alt="{{ module.after_image.alt }}" class="after-image">
+      {% if module.show_labels %}
+      <div class="image-label after-label">{{ module.after_label }}</div>
+      {% endif %}
+    </div>
+    <div class="slider-handle">
+      <div class="slider-button">
+        <span class="arrow-left">◄</span>
+        <span class="arrow-right">►</span>
+      </div>
+    </div>
+  </div>
+</div>

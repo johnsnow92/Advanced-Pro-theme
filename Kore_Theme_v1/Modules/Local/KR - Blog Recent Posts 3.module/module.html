@@ -1,0 +1,119 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .header .title h2 {
+    color: {{ module.header.title_color.color }};
+  }
+  
+  .{{ name }} .header .col a {
+    color: {{ module.header.more_link.text_color.color }};
+  }
+  
+  .{{ name }} .header .col a:hover {
+    color: {{ module.header.more_link.text_color_hover.color }} !important;
+  }
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-blog-recent-posts-1 clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+
+      <div class="header">
+        <div class="col font-size-16">
+          {% if module.header.title %}
+          <div class="title">
+            <h2 class="mt-0 font-size-16">
+              {{ module.header.title }}
+            </h2>
+          </div>
+          {% endif %}
+        </div>
+        <div class="col font-size-16">
+          <a href="{{ module.header.more_link.url.href }}">
+            {{ module.header.more_link.text }}
+          </a>
+        </div>
+      </div>
+
+      <div class="post {{ module.section_settings.section_text_alignment }}">
+        {% set rec_posts = blog_recent_posts(module.blog, 3) %}
+        {% for rec_post in rec_posts %}
+
+        <div class="post-item">
+          <div class="post-featured-image" onclick="window.location='{{ rec_post.absolute_url }}';">
+            <div class="image" style="background-image: url({{ rec_post.post_list_summary_featured_image }});">
+            </div>
+          </div>
+
+          {% if rec_post.topic_list %}
+          <div class="post-topic">
+            {% for topic in rec_post.topic_list %}
+            <a class="topic-link font-size-12" href="{{ blog_tag_url(group.id, topic.slug) }}">{{ topic.name }}</a>{% if not loop.last %}{% endif %}
+            {% endfor %}
+          </div>
+          {% endif %}
+          {% if rec_post.name %}
+          <div class="post-title" onclick="window.location='{{ rec_post.absolute_url }}';">
+            <h3 style="color: {{ module.blog_text_color.color }};">
+              {{ rec_post.name }}
+            </h3>
+          </div>
+          {% endif %}
+          {% if rec_post.post_body %}
+          <div class="post-body" onclick="window.location='{{ rec_post.absolute_url }}';" style="color: {{ module.blog_text_color.color }};">
+            {{ rec_post.post_body|safe|striptags|truncatehtml(200, '...' , false) }}
+          </div>
+          {% endif %}
+
+        </div>
+
+        {% endfor %}
+
+      </div>
+       
+    </div> 
+   
+  </div>
+</div>
+
+{% endif %}

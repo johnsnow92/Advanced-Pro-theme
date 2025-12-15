@@ -1,0 +1,147 @@
+.slider_logo{
+  padding: 40px 0;
+  margin: 0 auto;
+}
+.half-slide{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.half-width{
+  background: #00234C !important;
+  overflow: hidden;
+}
+.slider_logo.half-width .side-heading h2 {
+  text-wrap: nowrap;
+}
+.slider_logo.half-width .logos-slider.slider.slick-initialized.slick-slider {
+  margin-right: 0 !important;
+  left: 60px !important;
+}
+/* .side-heading{
+width: 30%;
+} */
+.slider_logo.half-width .logos-slider {
+  width: 90%;
+}
+.side-heading h2{
+  color: #fff;  
+  font-size: 36px;
+  margin: 0 !important;
+}
+
+section.slider_logo.full-width .side-heading{
+  display: none;
+}
+
+.logos-slider{
+  width: 67%;
+}
+section.slider_logo.full-width .logos-slider{
+  width: 100%;
+}
+
+section.slider_logo.half-width .slider-h2{
+  display: none;
+}
+
+section.slider_logo.full-width .side-heading{
+  display: none;
+}
+
+.slider-h2{
+  color: #650505;
+  margin-bottom: 80px;
+  font-size: 36px;
+  line-height: 46px;
+}
+
+.slider{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.slick-slider img{
+  height: 100%;
+  width: 150px;
+  margin: 0 auto;
+}
+/* ==================== */
+
+@media(max-width:1440px){
+  .slider_logo.full-width .side-heading{
+    font-size: 30px;
+    line-height: 38px;
+    margin-bottom: 60px;
+  }
+  .slider_logo.half-width .side-heading{
+    margin-bottom: 0;
+  }
+  .slider_logo.half-width .side-heading h2 {
+    color: #fff;
+    font-size: 30px;
+    margin: 0 !important;
+  }
+}
+
+@media(max-width:1200px){
+  .slider_logo {
+    padding: 70px 0;
+  }
+
+  .slider_logo.full-width .slick-slide img{
+    width: 200px;
+  }
+
+  .slider_logo.half-width .container {
+    padding-left: 25px !important;
+  }
+
+  .slider_logo.half-width .half-slide{
+    flex-direction: column;
+  }
+
+  .slider_logo.half-width .logos-slider.slider.slick-initialized.slick-slider{
+    left: 0 !important;
+  }
+
+}
+@media(max-width: 991px){
+  .slider_logo.full-width .slick-slide img{
+    width: 150px;
+  }
+  .slider_logo {
+    padding: 55px 0;
+  }
+  .slider-h2 {
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .slider-h2 {
+    font-size: 24px;
+    line-height: 34px;
+    margin-bottom: 35px;
+  }
+  .slider_logo.full-width .slick-slide img{
+    width: 130px;
+  }
+
+  .slider_logo.half-width .side-heading h2 {
+    font-size: 21px;
+  }
+}
+@media (max-width: 420px) {
+  .slider_logo {
+    padding: 40px 0;
+  }
+  .slider-h2 {
+    font-size: 20px;
+    line-height: 30px;
+    margin-bottom: 30px;
+  }
+} 

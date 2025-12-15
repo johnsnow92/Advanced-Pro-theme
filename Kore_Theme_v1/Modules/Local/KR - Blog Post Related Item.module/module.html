@@ -1,0 +1,110 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} hupla-blog-post-related-item clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+      
+      
+      <div>
+        
+      
+      {% if module.heading %}
+      <div class="blog-list-section-heading" style="background-color: {{ module.heading_background_color.color }};">
+        <h2 class="listing-h2-2">{{ module.heading }}</h2>
+      </div>
+      {% endif %}
+      
+      {% macro blog_post_formatter(blog_post, index, count) %}
+      <div class="related-blog-item">
+
+        {% if blog_post.featured_image %}
+        <div class="blog-list-image-wrapper">
+          <a href="#" class="blog-list-image _01 w-inline-block" style="background-image: url({{ blog_post.featured_image }});"></a>
+        </div>
+        {% endif %}
+
+        <div class="list_post_body">
+          <div class="related-blog-tags">
+            {% if blog_post.tagList|length > 0 %}
+            <div class="related-blog-tags">
+              {% for item in blog_post.tagList %}
+              <a href="{{ blog_tag_url(group.id, item.slug) }}">
+                {{ item.name }}
+              </a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+
+          {% if blog_post.name %}
+          <a class="related-blog-title" href="{{blog_post.url}}">
+            <span>
+              {{ blog_post.name }}
+            </span>
+          </a>
+          {% endif %}
+
+          {% if blog_post.post_summary %}
+            <div class="related-blog-post-summary">
+              {{ blog_post.post_summary|truncatehtml(150, '...' , false) }}
+            </div>
+          {% endif %}
+        </div>
+
+      </div>
+      {% endmacro %}
+
+      {% set tagNames = content.tag_names %}
+      {% related_blog_posts blog_ids="{{ group.id }}", limit="3", tags="{{ tagNames|join(',') }}", post_formatter="blog_post_formatter" %}
+
+      </div>
+
+
+    </div> 
+   
+  </div>
+</div>
+
+{% endif %}

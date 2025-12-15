@@ -1,0 +1,41 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Testimonials - Grid
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: testimonials-grid.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  max_width=1200,
+  padding={"top": 80, "bottom": 80},
+  background_color={"color": "#f8f9fa", "opacity": 100}
+%}
+  {% dnd_module path="@hubspot/rich_text" width=12, offset=0 %}
+    {% module_attribute "html" %}
+      <div style="text-align: center;">
+        <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 3rem;">What Our Customers Say</h2>
+        <div style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+          {% set testimonials = [
+            {"quote": "Outstanding service and results!", "name": "Customer Name", "title": "Company Name"},
+            {"quote": "The theme is incredibly flexible and easy to customize.", "name": "Marketing Lead", "title": "Tech Startup"},
+            {"quote": "We launched faster and with a stronger brand presence.", "name": "Head of Growth", "title": "Global SaaS"}
+          ] %}
+          {% for testimonial in testimonials %}
+            <div style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); height: 100%;">
+              <div style="color: #ffc107; font-size: 1.25rem; margin-bottom: 1rem;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p style="font-style: italic; color: #495057; margin-bottom: 1.5rem; line-height: 1.6;">"{{ testimonial.quote }}"</p>
+              <div style="display: flex; align-items: center; gap: 1rem;">
+                <div style="width: 50px; height: 50px; background: #dee2e6; border-radius: 50%;"></div>
+                <div style="text-align: left;">
+                  <div style="font-weight: 600;">{{ testimonial.name }}</div>
+                  <div style="font-size: 0.875rem; color: #666;">{{ testimonial.title }}</div>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

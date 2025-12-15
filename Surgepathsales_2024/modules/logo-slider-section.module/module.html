@@ -1,0 +1,36 @@
+
+<section class="slider_logo {{ module.full_width_or_half_width }}" style="background-color: {{ module.background_color.color }}; opacity:calc({{ module.background_color.opacity }}/100);">
+  <div class="container">  
+    <h2 class="slider-h2 center">
+      {{ module.text_field }}
+    </h2>
+
+    <div class="half-slide">
+
+      <div class="side-heading">
+        <h2>
+          {{ module.side_heading }}
+        </h2>
+      </div>
+
+      <div class="logos-slider slider">
+
+        {% for item in module.logo_slider_group %}
+        <div class="slide" >
+          {% if item.slider_image.src %}
+          {% set sizeAttrs = 'width="{{ item.slider_image.width|escape_attr }}" height="{{ item.slider_image.height|escape_attr }}"' %}
+          {% if item.slider_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.slider_image.width|escape_attr }}" height="{{ item.slider_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.slider_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.slider_image.max_width|escape_attr }}" height="{{ item.slider_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = item.slider_image.loading != 'disabled' ? 'loading="{{ item.slider_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.slider_image.src|escape_url }}" alt="{{ item.slider_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div> 
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</section>

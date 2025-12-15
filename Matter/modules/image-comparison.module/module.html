@@ -1,0 +1,95 @@
+{% import "../../macros/_macros.html" as macros %}  
+<div class="cm_comp_wrp  {{name}} dnd_padd {{ module.advanced_customization.css_class_selector }} {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} {{ module.images_group.select_divider_icon }}_dividr_icon" 
+     {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}> 
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+
+  <div class="top_content_wp">
+    <div class="page-center {{ module.style.container.select_size }}">
+      {{ macros.topContent(module.top_content, module.module_settings) }}
+    </div>
+  </div>
+  <div class="cm_comp_inner" {% if module.module_settings.enable_animation %} data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+    <div class="page-center {{ module.style.container.select_size }}">
+      <div class="cm_comp_content">
+        <div class="before-after-container">
+          <figure>
+            <div class="cm_cmp_icon {{ module.images_group.select_icon_background_theme }} {{ module.images_group.select_icon_theme }}" id="before_icn_{{name}}">
+              {% if module.images_group.select_divider_icon == "icon" %}
+              {% icon
+                  name="{{ module.images_group.icon_field.name }}"
+                  style="{{ module.images_group.icon_field.type }}"
+                  unicode="{{ module.images_group.icon_field.unicode }}"
+                  icon_set="{{ module.images_group.icon_field.icon_set }}"
+                %}
+              {% endif %}
+              {% if module.images_group.select_divider_icon == "image" %}
+              {% if module.images_group.image_field.src %}
+              {% set loadingAttr = module.images_group.image_field.loading != 'disabled' ? 'loading="{{ module.images_group.image_field.loading }}"' : '' %}
+              <img src="{{ module.images_group.image_field.src }}" alt="{{ module.images_group.image_field.alt }}" {{ loadingAttr }} />
+              {% endif %}
+              {% endif %}
+            </div>
+            <div id="before_after_{{name}}" class="before_after before {{ module.images_group.select_icon_background_theme }} {{ module.images_group.select_icon_theme }}">
+              <div class="before_after_image_box">
+              </div>
+            </div>
+          </figure>
+          <input class="before_after_slider" type="range" min="0" max="100" value="50" id="before_after_slider_{{name}}" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if module.button_group %}
+  <div class="cm_ic_btn" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+    <div class="page-center {{ module.style.container.select_size }}">
+      {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+    </div>
+  </div>
+  {% endif %}
+
+  {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+  {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+</div>
+
+{% require_js %}
+<script>
+  function beforeAfter() {
+    document.getElementById("before_after_{{name}}").style.width = document.getElementById("before_after_slider_{{name}}").value + "%";
+                            document.getElementById("before_icn_{{name}}").style.left = document.getElementById("before_after_slider_{{name}}").value + "%";
+                            }
+
+  document.querySelector('.{{name}}.cm_comp_wrp .before_after_slider').addEventListener('input',beforeAfter);
+                         document.querySelector('.{{name}}.cm_comp_wrp .before_after_slider').addEventListener('onchange',beforeAfter);
+</script>
+{% end_require_js %}
+{% require_css %}
+<style>
+  {% if  module.images_group.select_icon_background_theme =='custom' %}
+  .{{name}}.cm_comp_wrp .cm_cmp_icon{
+    background-color:{{ macros.color(module.images_group.icon_background) }};
+  }
+  .{{name}}.cm_comp_wrp .before_after{
+    border-right-color:{{ macros.color(module.images_group.icon_background) }};
+  }
+  {% endif %}
+
+  {% if  module.images_group.select_icon_theme =='custom' %}
+  .{{name}}.cm_comp_wrp .cm_cmp_icon svg {
+    fill:{{ macros.color(module.images_group.icon_color) }};
+  }
+  {% endif %}
+
+  .{{name}}.cm_comp_wrp  .before-after-container figure {
+    background-image:url({{ module.images_group.after_image.src }});
+  }
+
+  .{{name}}.cm_comp_wrp  .before_after_image_box {
+    background-image:url({{ module.images_group.before_image.src }});
+  }
+
+
+</style>
+{% end_require_css %}

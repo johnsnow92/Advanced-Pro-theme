@@ -1,0 +1,202 @@
+.two-col-blog{padding: 70px 0 80px 0;}
+.two-col-blog-row {display: flex;justify-content: center;align-items: center; gap: 80px;}
+.two-col-blog-col1,.two-col-blog-col2{width: 50%;}
+.two-col-blog-col1{text-align: center;}
+.two-col-blog-col1 img{ max-width: 100%;height: 600px;width: 700px;}
+.two-col-blog-col2 .two-col-blog-heading span{    
+  align-items: center;
+  color: gray;
+  display: flex;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  padding-bottom: 9px;
+}
+.two-col-blog-col2 .two-col-blog-heading h3{font-size: 28px;color: #000;font-weight: 600;}
+.two-col-blog-col2 .two-col-blog-content p{font-size: 17px;color: #000;}
+
+
+.main-form {
+  background: white;
+  padding: 30px;
+  border-radius: 30px;
+}
+#form {
+  position: fixed; 
+  display: none; 
+  left: 52%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  width: 25%;
+}
+.background-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(159 156 156 / 78%); 
+  display: none; 
+}
+#btnCloseForm {
+  align-items: center;
+  background: #FF7F16;
+  border-radius: 50%;
+  display: flex;
+  float: right;
+  font-size: 16px;
+  height: 32px;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  right: -16px;
+  top: -18px;
+  width: 32px;
+  margin-bottom: 12px;
+  border: none;
+}
+#btnCloseForm>p{
+  color: #fff;
+  padding: 0;
+  margin: 0;
+}
+.main-form .form-title {
+  display: none;
+}
+.main-form form label>span{
+  display: none;
+}
+.main-form form input[type=email], .main-form form input[type=tel], .main-form form input[type=text]{
+  display: inline-block;
+  font-size: 14px;
+  padding: .5rem;
+  width: 100%;
+  margin: 0 0 12px;
+}
+.main-form  .actions {
+  text-align: center;
+  margin-top: 20px;
+}
+.main-form  form .hs-button, .main-form form input[type=submit] {
+  background-color: #00234C;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 8px 25px;
+  text-decoration: none;
+  text-transform: none;
+}
+.main-form .input .hs-input::placeholder{
+  color: #000 !important;
+  font-size: 14px; 
+  position: relative;
+  font-weight: 500;
+  top: 0;
+  left: 0;
+}
+.main-form .submitted-message {
+  border: none !important;
+  padding: 35px 15px;
+  background-color: #00234C !important;
+  border-radius: 0px;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+}
+.main-form input:focus,
+.main-form button:focus{
+  border: 1px solid #000;
+  outline: none;
+}
+.main-form .hs-accordion {
+  position: relative;
+  z-index: -1;
+}
+.main-form form .inputs-list>li {
+  display: block;
+  margin: -8px 0 15px;
+}
+.main-form form .inputs-list>li .hs-error-msg{
+  font-size: 14px;
+  margin: 0;
+}
+
+/* =========================== */
+@media(max-width: 1440px){
+  #form {
+    width: 28%;
+  }
+}
+
+@media(max-width: 1200px){
+  #form {
+    width: 30.5%;
+  }
+}
+
+@media(max-width: 1050px){
+  .two-col-blog-row{flex-wrap: wrap; gap: 0;}
+  .two-col-blog-col1,.two-col-blog-col2{width: 100%;flex-direction: column;text-align: center;}
+  .two-col-blog-heading span{justify-content: center;}
+  .two-col-blog-col2 .primary-btn{margin: 0 auto;}
+  .two-col-blog-col1{margin-bottom: 50px;}
+  .two-col-blog-col1 img{max-width: 100%;width: 100% !important;height: 500px;}
+  #form {
+    width: 34.5%;
+  }
+}
+@media(max-width: 840px){
+  #form {
+    width: 43.5%;
+    padding: 22px;
+  }
+  #btnCloseForm {
+    top: -10px;
+    width: 24px;
+    height: 24px;
+    left: 8px;
+    font-size: 13px;
+  }
+  .main-form form input[type=email], .main-form form input[type=tel], .main-form form input[type=text] {
+    font-size: 12px;
+    margin: 0 0 8px;
+    padding: .3rem;
+  }
+  .main-form .input .hs-input::placeholder{
+    font-size: 12px; 
+  }
+  .main-form .actions {
+    margin-top: 10px;
+  }
+}
+@media (max-width: 600px) {
+  #form {
+    padding: 20px;
+    width: 47.5%;
+  }
+  #btnCloseForm {
+    left: 5px;
+    top: -4px;
+  }
+  .main-form form .hs-button, .main-form form input[type=submit] {
+    font-size: 14px;
+    padding: 6px 20px;
+  }
+}
+@media (max-width: 490px) {
+  #form {
+    padding: 18px;
+    width: 55.5%;
+  }
+}
+@media (max-width: 380px) {
+  #form {
+    padding: 16px;
+    width: 58.5%;
+  }
+}

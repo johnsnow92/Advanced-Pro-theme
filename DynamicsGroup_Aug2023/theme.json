@@ -1,0 +1,24 @@
+{
+  "label" : "DynamicsGroup Aug2023 Theme",
+  "preview_path" : "./templates/home-page.html",
+  "screenshot_path" : "./images/template-previews/home-page.jpg",
+  "enable_domain_stylesheets" : false,
+  "is_available_for_new_content" : true,
+  "extends" : "Matter",
+  "responsive_breakpoints" : [ {
+    "mediaQuery" : "@media (max-width: 767px)",
+    "messages" : { },
+    "name" : "mobile",
+    "previewWidth" : {
+      "units" : "px",
+      "value" : 477
+    }
+  } ],
+  "version" : "1.0",
+  "author" : {
+    "name" : "",
+    "email" : ""
+  },
+  "license" : "./license.txt",
+  "hide_all_default_modules" : false
+}

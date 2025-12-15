@@ -1,0 +1,56 @@
+{% if module.section_settings.section_show_hide %}
+<div class="{{name}} kr-table-1"
+     style="background:{{ module.section_settings.background_color.color }}"
+     >
+  <div class="maxContainer">
+    <div class="heading-text">
+      <h2>{{ module.main_heading_text }}</h2>
+    </div>
+    <div class="matrix-wrapper clearfix">
+      {% for item in module.pricing_plan %}
+      <div class="matrix-column {% if item.featured_column %}featured-col{% endif %} {{ item.custom_class }}">
+        <div class="matrix-column-wrapper">
+          <div class="matrix-title">
+            <h4>{{ item.heading_text }}</h4>
+          </div>
+          <div class="matrix-icon">
+            {% if item.image.src %}
+            <img src="{{ item.image.src }}" 
+                 alt="{{ item.image.alt }}" {{ sizeAttrs }} width="150px">
+            {% endif %}
+          </div>
+          <div class="matrix-items-wrapper">
+            <div class="matrix-features">
+              {% for item2 in item.featured_items %}
+              <p class="exclude_{{ item2.exclude_item }}">{{ item2.featured_item }}</p>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="col-view-more">{{ item.bottom_text }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <h4 class="price-footer-text">{{ module.footer_text }}</h4>
+  </div>
+  {% endif %}
+  <style>
+    .{{name}}.kr-table-1 .btn-price{
+      background-color:{{ module.section_settings.button_background_color.color }};
+      color:{{ module.section_settings.button_font_color.color }};
+    }
+    .{{name}}.kr-table-1 .btn-price:hover{
+      background-color:{{ module.section_settings.button_font_color.color }};
+      color:{{ module.section_settings.button_background_color.color }};
+      border: 1px solid {{ module.section_settings.button_font_color.color }};
+    }
+    .{{name}}.kr-table-1 h2,
+    .{{name}}.kr-table-1 h4,
+    .{{name}}.kr-table-1 .view-more,
+    .{{name}}.kr-table-1 .price-footer-text{
+      color:{{ module.section_settings.font_color.color }};
+    }
+    .{{name}}.kr-table-1 .matrix-title {
+      background-color: {{ module.section_settings.pricing_plan_heading_background_color.color }};
+    }
+  </style>

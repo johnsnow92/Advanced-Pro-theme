@@ -1,0 +1,183 @@
+[ {
+  "id" : "07f60cc4-02f5-f0cd-df5b-5117a97f3ffa",
+  "name" : "center_heading_or_side_heading",
+  "label" : "Center Heading or Side Heading",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "cen-head", "Center Heading" ], [ "rig-head", "Right Heading" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "rig-head"
+}, {
+  "id" : "87d79372-b8ac-25f7-aff8-f4d6cc680053",
+  "name" : "left_image",
+  "label" : "Left Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/our-mission-img-1.png",
+    "alt" : "our-mission-img-1",
+    "loading" : "lazy",
+    "width" : 364,
+    "height" : 433,
+    "max_width" : 364,
+    "max_height" : 433
+  }
+}, {
+  "id" : "bedfa632-abc7-ffdd-a6bf-e23c800f930d",
+  "name" : "our_mission_content_h2",
+  "label" : "our-mission-content-h2",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "OUR MISSION"
+}, {
+  "id" : "26cce40b-216b-a5ec-7bf6-270d8a276117",
+  "name" : "our_mission_content_text",
+  "label" : "our-mission-content-text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p><span>SurgePath Sales is the leading video messaging and asynchronous communications platform for go-to-market teams. Millions of sales professionals and more than 250,000 go-to-market teams use Vidyard’s AI-powered video messaging, video hosting, and digital sales rooms to connect with more prospects and generate more revenue.</span></p>\n<p><span>SurgePath Sales is the leading video messaging and asynchronous communications platform for go-to-market teams. Millions of sales professionals and more than 250,000 go-to-market teams.</span></p>"
+}, {
+  "id" : "5481f07e-e857-cd88-9001-c3fd7970a94e",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "a04a8970-ac7a-c853-3294-6d8d3145aac0",
+    "name" : "button_type",
+    "label" : "Button Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "primary-btn", "Primary" ], [ "secondary-btn", "Secondary" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "primary-btn"
+  }, {
+    "id" : "7bfea355-333b-3475-f18d-8e559ee27d86",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "9b1092e1-2554-d407-a708-e7fcece001c4",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "d4b4e46d-c006-4426-e99a-8db18246c6a0",
+  "name" : "right_image_1",
+  "label" : "Right Image 1",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/our-mission-img-2-3.png",
+    "alt" : "our-mission-img-2-3",
+    "loading" : "lazy",
+    "width" : 200,
+    "height" : 235,
+    "max_width" : 200,
+    "max_height" : 235
+  }
+}, {
+  "id" : "7737bd26-ecbe-f4a5-a1ac-60b3e9d974ba",
+  "name" : "content_heading",
+  "label" : "Content Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "A clear, attention-grabbing title that reflects the core achievement or outcome."
+}, {
+  "id" : "dad13f08-7211-7e17-e716-ca76a636355e",
+  "name" : "vision_h4",
+  "label" : "Vision H4",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "What We Stand For"
+}, {
+  "id" : "84f2acdc-aee9-eb3b-5e4b-2b4f55f3033d",
+  "name" : "read_more_button",
+  "label" : "Read More Button",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Read More"
+}, {
+  "id" : "262217fe-1508-76cd-a2b1-634a2690b97c",
+  "name" : "content",
+  "label" : "content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h4><span style=\"font-size: 11px; color: #000000;\">Increased Revenue</span></h4>\n<p><span style=\"font-size: 12px;\">With Surgepath Sales, you can expect to see a noticeable uptick in your bottom line. By providing your sales team with real-time insights, predictive analytics, and automated processes, we help you convert more leads into paying customers—faster.</span></p>\n<h4><span style=\"font-size: 11px; color: #000000;\">Expanded Market Share</span></h4>\n<p><span style=\"font-size: 12px;\">Gaining a competitive edge in your industry is crucial to long-term success, and our platform gives you the insights and strategies needed to capture a larger share of the market.&nbsp;</span></p>\n<h4><span style=\"font-size: 11px; color: #000000;\">Improved Sales Team Performance</span></h4>\n<p><span style=\"font-size: 12px;\">Empower your sales team to perform at their best. With Surgepath Sales, your team will have access to the tools and data they need to work smarter—not harder.&nbsp;</span></p>"
+} ]

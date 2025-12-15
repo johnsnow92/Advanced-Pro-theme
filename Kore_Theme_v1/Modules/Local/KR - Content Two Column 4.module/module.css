@@ -1,0 +1,96 @@
+.kr-col2-content-4 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kr-col2-content-4 .page-width {
+  max-width: 1440px!important;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kr-col2-content-4 .page-width.text-center {
+  text-align: center; 
+}
+.kr-col2-content-4 .col2-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+.kr-col2-content-4 .col2-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.kr-col2-content-4 .col2-wrapper.col-40-60 .col2-content{
+  width: 40%;
+}
+.kr-col2-content-4 .col2-wrapper.col-40-60 .col2-img{
+  width: 60%;
+  padding-left: 40px;
+}
+.kr-col2-content-4 .col2-wrapper.col-50-50 .col2-content{
+  width: 50%;
+  padding-right: 40px;
+}
+.kr-col2-content-4 .col2-wrapper.col-50-50 .col2-img{
+  width: 50%;
+  padding-left: 20px;
+}
+.kr-col2-content-4 .col2-wrapper.col-img-content{
+  flex-direction: row-reverse;
+}
+.kr-col2-content-4 .col2-wrapper.col-img-content.col-40-60 .col2-img{
+  padding-right: 40px;
+  padding-left: 0;
+}
+.kr-col2-content-4 .col2-wrapper.col-img-content.col-50-50 .col2-content{
+  padding-left: 40px;
+  padding-right: 0;
+}
+.kr-col2-content-4 .col2-wrapper.col-img-content.col-50-50 .col2-img{
+  padding-right: 20px;
+  padding-left: 0;
+}
+.kr-col2-content-4 .col2-wrapper .col2-content .content ol,
+.kr-col2-content-4 .col2-wrapper .col2-content .content ul{
+  padding-left: 0; 
+}
+.kr-col2-content-4 .col2-wrapper .col2-content .content li{
+  padding-bottom: 18px;
+}  
+
+@media screen and (max-width: 767px){
+  .kr-col2-content-4 .col2-wrapper{
+    flex-direction: column-reverse;
+  }
+  .kr-col2-content-4 .col2-wrapper.col-40-60 .col2-content {
+    width: 100%;
+  }
+  .kr-col2-content-4 .col2-wrapper.col-40-60 .col2-img {
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+  .kr-col2-content-4 .col2-wrapper.col-img-content.col-50-50 .col2-content{
+    width: 100%;
+    padding-left: 0;
+  }
+  .kr-col2-content-4 .col2-wrapper.col-img-content.col-50-50 .col2-img{
+    padding-right: 0;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .kr-col2-content-4 .col2-wrapper.col-img-content{
+    flex-direction: column-reverse!important;
+  }
+  .kr-col2-content-4 .col2-wrapper.col-50-50 .col2-img{
+    width: 100%;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+  .kr-col2-content-4 .col2-wrapper.col-50-50 .col2-content {
+    width: 100%;
+    padding-right: 0;
+  }
+}

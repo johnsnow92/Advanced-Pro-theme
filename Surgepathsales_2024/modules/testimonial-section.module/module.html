@@ -1,0 +1,72 @@
+<link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+
+<section class="testimonial-section">
+  <div class="container vector">
+    <div class="heading">
+      <h2 class="primary-h2">{{ module.title }}</h2>
+    </div>
+
+    <div class="main-content">
+      <div class="col left col_left slider--vertical">
+        {% for item in module.testimonial_tabs %}
+        <div class="d-flex tabbing" data-id="tab{{loop.index}}">
+          <div class="customer-image">
+            {% if item.customer_image.src %}
+            {% set sizeAttrs = 'width="{{ item.customer_image.width|escape_attr }}" height="{{ item.customer_image.height|escape_attr }}"' %}
+            {% if item.customer_image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.customer_image.width|escape_attr }}" height="{{ item.customer_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.customer_image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.customer_image.max_width|escape_attr }}" height="{{ item.customer_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.customer_image.loading != 'disabled' ? 'loading="{{ item.customer_image.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.customer_image.src|escape_url }}" alt="{{ item.customer_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+          <div class="customer-details">
+            <div class="customer-name">{{ item.customer_name }}</div>
+            <span class="customer-designation">
+              {{ item.customer_location }}
+            </span>
+            <span class="customer-designation">
+              {{ item.customer_designation }}
+            </span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="col right">
+        {% for item in module.testimonial_tabs %}
+        <div class="tab-content-main {% if loop.index == "1" %}active-tab{% endif %}" id="tab{{loop.index}}">
+          <div class="content-title">{{ item.content_title }}</div>
+          <div class="ratings">
+            {% if item.ratings.src %}
+            {% set sizeAttrs = 'width="{{ item.ratings.width|escape_attr }}" height="{{ item.ratings.height|escape_attr }}"' %}
+            {% if item.ratings.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.ratings.width|escape_attr }}" height="{{ item.ratings.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.ratings.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.ratings.max_width|escape_attr }}" height="{{ item.ratings.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.ratings.loading != 'disabled' ? 'loading="{{ item.ratings.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.ratings.src|escape_url }}" alt="{{ item.ratings.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+          <div class="content">
+            {{ item.content }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+
+    <!-- Add Scroll Bar -->
+    <div class="swiper-scrollbar"></div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+<script type="text/javascript" src="slick/slick.min.js"></script>

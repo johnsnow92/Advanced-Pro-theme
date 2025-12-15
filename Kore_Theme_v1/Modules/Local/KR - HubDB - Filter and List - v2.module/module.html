@@ -1,0 +1,229 @@
+<div class="webinar-listing">
+  <div class="maxContainer">    
+    <div class="filter-wrap">
+      <div class="filter-text">FILTER BY TOPIC:</div>
+      <div class="select-wrap" id="filter-topic">   
+        {% set tbl_col = hubdb_table_column(1036523, 'topic') %}
+        <select name="topic">      
+          <option selected value="all">Show All</option>
+          {% for item in tbl_col.options %}
+          <option value="{{ item.name }}">{{ item.name }}</option>
+          {% endfor %}
+        </select>
+        <img src="https://www.usbiotek.com/hubfs/dropdown-icon-blue-1.png" alt="Select Icon Dropdown">
+      </div>
+    </div>
+
+    <div class="main-listing-wrap">  
+      <div class="maxContainer">
+        <div id="listing-items">
+
+        </div>
+      </div>
+    </div>
+
+    <div class="load-more-btn">
+      <a href="#" id="load-more">View more</a>
+    </div>
+
+  </div>
+</div>
+
+{% require_css %}
+<style type="text/css">
+  {% scope_css %}
+  .webinar-listing{
+    padding: {{ module.styles.spacing.desktop.padding_top }}px 20px {{ module.styles.spacing.desktop.padding_bottom }}px;
+    position: relative;
+    {% if module.styles.background_type == 'bg-color' %}
+    background-color: {{ module.styles.background_color.color }};
+    {% endif %}
+    {% if module.styles.background_type == 'bg-img' %}
+    background-image: url('{{ module.styles.background_image.src }}');
+      background-size: cover;
+      background-position: center;
+      {% endif %}
+      }
+  {% if module.styles.background_type == 'bg-img' %}
+  .webinar-listing:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.4);
+  }
+  {% endif %}
+  .webinar-listing .maxContainer{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 991px){
+    .webinar-listing{
+      padding: {{ module.styles.spacing.tablet.padding_top }}px 20px {{ module.styles.spacing.tablet.padding_bottom }}px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .webinar-listing{
+      padding: {{ module.styles.spacing.mobile.padding_top }}px 20px {{ module.styles.spacing.mobile.padding_bottom }}px;
+    }
+  }
+  {% end_scope_css %}
+</style>
+{% end_require_css %}
+
+{% set tableID = '6956452' %}
+{% set dataItems = hubdb_table_rows(tableID, '&orderBy=-time') %}
+
+{% set postJSON = {
+      items: []
+    } -%}
+
+{% set stringVar = '{
+    bg_img: "%s",     
+    title: "%s", 
+    topic: "%s",
+    description: "%s",
+    url_path: "%s",
+    icon: "%s",
+    author: "%s",
+    date: "%s",
+    cep: "%s"
+    }' -%}
+
+{% for item in dataItems %}
+
+{% set temp = stringVar|format(
+      item.background_image.url,
+      item.name|escape|replace('&amp;', '&'),
+      item.topic.name|escapejs,
+      item.webinar_description|truncate(200, False, "...")|striptags|escape,
+      item.hs_path,
+      item.icon.url,
+      item.presenter|escape,
+      item.time|datetimeformat('%B %e, %Y'),
+      item.ce_presentation
+      ) -%} 
+{{ postJSON.update({items: postJSON.items + temp}) }}
+{% endfor %}    
+
+{% require_js position="footer" %}
+<script src="{{ get_asset_url('../js/handlebar.js') }}"></script>  
+{% raw %}
+<script id="post_hb_template" type="text/x-handlebars-template">
+  {{#each this}}
+  <div class="list-item">
+    <div class="inner">
+        <div class="item-img" style="background-image: url('{{ bg_img }}');">
+          {{#if cep}}<div class="item-topic topic-{{ cep }}">{{ cep }}</div>{{/if}}
+        </div>
+        <div class="item-body">
+            <h3>{{ title }}</h3>
+            <div class="description">{{ description }}</div>
+            <div class="date-time">Original Broadcast Date: <span>{{ date }}</span></div>
+        </div>
+        <div class="btn-wrap">
+          <a class="webinarLink" href="http://www.usbiotek.com/webinar/{{ url_path }}">Watch It Now</a>
+        </div>
+    </div>
+  </div>
+  {{ else }}
+  <div class="item-not-found">No items found.</div>
+  {{/each}}
+</script>
+{% endraw %}  
+
+<script>
+  let $listEl = $('#listing-items');
+  let $loadmoreEl = $('.load-more-btn #load-more');
+  let data_items = {{ postJSON.items }};
+  let filteredPosts = [];
+  let filterByTopic = '';
+  let filterTopicEl = $('#filter-topic select');
+  let $resetEl = $('.filter-reset .reset');
+  //let keyword = '';
+  let curPage = 1;
+  //let url = window.location.href;
+  //let urlSplit = url.split('category=');
+  //let urlCategory = urlSplit[urlSplit.length-1];
+  //urlCategory = decodeURI(urlCategory);
+  //console.log('value of url category: '+urlCategory);
+
+  let getPosts = function(){
+    if (filteredPosts){
+      let start = (curPage - 1) * 12,
+          end = curPage * 12,
+          postsToShow = filteredPosts.slice(start, end),
+          hbTemp = Handlebars.compile($('#post_hb_template').html()),
+          $posts = $(hbTemp(postsToShow));
+      console.log(filteredPosts);
+      $listEl.append($posts);
+      if (filteredPosts.length <= end) {
+        $loadmoreEl.hide();
+      } else {
+        $loadmoreEl.show();
+      }
+      //console.log('data items: '+filteredPosts);
+      //console.log('data items length: '+data_items.length);
+    }
+  }
+  let dataPosts = function(){
+    filteredPosts = data_items;
+  }    
+  let reset = function(){
+    $listEl.html('');
+    filterByTopic = '';
+    filterTopicEl.val('all');
+    //$('#search-keyword').val('');
+    //filterPosts();              
+  }
+  let init = function(){
+    filterTopicEl.on('change',function(e){
+      let topicFilter = this.value; 
+      filterByTopic = topicFilter; 
+      console.log('data_items BEFORE on change: '+filteredPosts);
+      
+      filteredPosts = data_items.filter((p) => p.topic === filterByTopic);
+      $listEl.html('');
+      $('#search-keyword').val('');
+      curPage=1;
+      getPosts();
+
+      if ( topicFilter == 'all' ){
+        reset();
+        dataPosts();
+        getPosts();
+        //$('#search-keyword').val('');
+        curPage=1;
+      }
+      console.log('data_items AFTER on change: '+filteredPosts);
+    });
+
+    $loadmoreEl.on('click',function(e){
+      e.preventDefault();
+      curPage++;
+      getPosts();
+    });
+
+    $resetEl.on('click',function(){
+      reset();
+      dataPosts();
+      getPosts();
+      curPage=1;
+      filterByTopic = '';
+      filterTopicEl.val('all');
+    });
+
+    dataPosts();    
+    getPosts();
+    
+  }
+
+  init();
+  console.log('test . . .');
+
+</script>
+{% end_require_js %}
+

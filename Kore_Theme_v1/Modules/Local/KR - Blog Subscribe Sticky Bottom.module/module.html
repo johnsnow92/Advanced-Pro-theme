@@ -1,0 +1,58 @@
+{# Use for Blog Template #}
+{# Please update fontawesome code below depends on the existing version to make the icon work #}
+{% if module.section_settings.section_show_hide %}
+  {% if module.section_settings.switch_on_font_awesome %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  {% else %}{% endif %}
+	<div class="fix_sign_up_section"
+     style="background-color:{{ module.section_settings.strip_background_color.color }}">
+    <div class="social_share">
+      <span>{{ module.heading }}</span>
+      <div class="social_icons clearfix">
+        <a href="#" target="_blank" class="icons facebook" >
+          <i class="fab fa-facebook-f"></i> <!-- Update FontAwesome if there is existing -->
+        </a>
+        <a href="#" target="_blank" class="icons twitter">
+          <i class="fab fa-twitter"></i> <!-- Update FontAwesome if there is existing -->
+        </a>
+        <a href="#" target="_blank" class="icons linkedin">
+        <i class="fab fa-linkedin-in"></i> <!-- Update FontAwesome if there is existing -->
+        </a>
+      </div>
+    </div>
+    <div class="signup_form clearfix"> <!-- {{ group.id }}-->
+      {% blog_subscribe "signup_blog_newsletter" select_blog='{{ group.id }}', title='{{ module.blog_subscription.title }}', response_message='{{ module.blog_subscription.reply_message }}', label='Blog Email Subscription', overrideable=False %}
+      {% set href = module.link_field.url.href %}
+  {% if module.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+  {% endif %}
+      <div class="form_bottom_text">{{ module.richtext_field }} <a  href="{{ href }}"
+    {% if module.link_field.open_in_new_tab %}target="_blank"{% endif %}
+    {% if module.link_field.no_follow %}rel="nofollow"{% endif %}>{{ module.link_text }}</a></div>
+    </div>
+  </div>    
+  <style>
+     .fix_sign_up_section .signup_form form div input[type="submit"] {
+      background-color:{{ module.section_settings.button_background_color.color }};
+      color: {{ module.section_settings.button_font_color.color }}
+    }
+    .fix_sign_up_section .signup_form form div input[type="submit"]:hover {
+      color:{{ module.section_settings.button_background_color.color }};
+      background-color: {{ module.section_settings.button_font_color.color }}
+    }
+    .fix_sign_up_section .form_bottom_text a,
+    .fix_sign_up_section .form_bottom_text,
+    .fix_sign_up_section .signup_form h3,
+    .fix_sign_up_section *{
+      color: {{ module.section_settings.strip_font_color.color }};
+    }
+    .fix_sign_up_section .social_icons .icons {
+      background-color:{{ module.section_settings.social_background_color.color }};
+      color:{{ module.section_settings.social_font_color.color }};
+    }
+    .fix_sign_up_section .social_icons .icons .fa,
+    .fix_sign_up_section .social_icons .icons .fab {
+      color:{{ module.section_settings.social_font_color.color }};
+    }
+  </style>
+{% endif %}

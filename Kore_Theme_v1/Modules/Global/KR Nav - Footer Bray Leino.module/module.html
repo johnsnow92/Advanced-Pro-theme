@@ -1,0 +1,27 @@
+<div class="kore-navigation-bray-leino-footer">
+  <div class="page-width">
+    <div class="flex">
+      <div class="col">
+        <div class="simple-nav">
+          {% simple_menu menu_tree="{{ module.simple_menu_1 }}" orientation='vertical' %}
+        </div>
+
+      </div>
+      <div class="col logo">
+        {% logo
+          override_inherited_src="{{ module.logo.override_inherited_src }}"
+          src="{{ module.logo.src }}"
+          alt="{{ module.logo.alt }}"
+          width="{{ module.logo.width }}"
+          height="{{ module.logo.height }}"
+          suppress_company_name="{{ module.logo.suppress_company_name }}"
+        %}
+      </div>
+      <div class="col">
+       <div class="copyright">
+         {% simple_menu menu_tree="{{ module.simple_menu_2 }}" %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

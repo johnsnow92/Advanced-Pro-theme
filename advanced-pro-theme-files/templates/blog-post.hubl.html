@@ -1,0 +1,432 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" dir="{{ html_dir }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ content.meta_description|striptags|truncate(60, false, '...') }} | {{ site_settings.company_name }}</title>
+
+    {# Meta Tags #}
+    {% if content.meta_description %}
+    <meta name="description" content="{{ content.meta_description }}">
+    {% endif %}
+
+    {# Open Graph Tags #}
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="{{ content.name }}">
+    {% if content.meta_description %}
+    <meta property="og:description" content="{{ content.meta_description }}">
+    {% endif %}
+    {% if content.featured_image %}
+    <meta property="og:image" content="{{ content.featured_image }}">
+    {% endif %}
+    <meta property="og:url" content="{{ content.absolute_url }}">
+
+    {# Twitter Card Tags #}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ content.name }}">
+    {% if content.meta_description %}
+    <meta name="twitter:description" content="{{ content.meta_description }}">
+    {% endif %}
+    {% if content.featured_image %}
+    <meta name="twitter:image" content="{{ content.featured_image }}">
+    {% endif %}
+
+    {# Article Metadata #}
+    <meta property="article:published_time" content="{{ content.publish_date }}">
+    {% if content.updated %}
+    <meta property="article:modified_time" content="{{ content.updated }}">
+    {% endif %}
+    {% if content.blog_author %}
+    <meta property="article:author" content="{{ content.blog_author.display_name }}">
+    {% endif %}
+    {% for tag in content.tag_list %}
+    <meta property="article:tag" content="{{ tag.name }}">
+    {% endfor %}
+
+    {# Canonical URL #}
+    <link rel="canonical" href="{{ content.absolute_url }}">
+
+    {# Standard HubSpot CSS #}
+    {{ standard_header_includes }}
+
+    {# Theme CSS #}
+    {{ require_css(get_asset_url("../../css/main.css")) }}
+    {{ require_css(get_asset_url("../../css/blog.css")) }}
+
+    {# Custom Fonts #}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    {# Additional Head Content #}
+    {% block head_content %}{% endblock %}
+</head>
+<body class="blog-post-template">
+
+    {# Header Partial #}
+    {% include "../../partials/header.html" %}
+
+    {# Blog Post Container #}
+    <main class="blog-post-main" role="main">
+
+        {# Blog Post Header #}
+        <article class="blog-post" itemscope itemtype="http://schema.org/BlogPosting">
+
+            {# Featured Image Section #}
+            {% if content.featured_image %}
+            <div class="blog-post-featured-image">
+                <img src="{{ content.featured_image }}"
+                     alt="{{ content.featured_image_alt_text or content.name }}"
+                     itemprop="image"
+                     class="img-fluid">
+            </div>
+            {% endif %}
+
+            {# Blog Post Header Info #}
+            <header class="blog-post-header">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-xl-8">
+
+                            {# Blog Post Category/Tags #}
+                            {% if content.topic_list %}
+                            <div class="blog-post-topics">
+                                {% for topic in content.topic_list %}
+                                <a href="{{ blog_tag_url(group.id, topic.slug) }}"
+                                   class="blog-topic-badge"
+                                   rel="tag">
+                                    {{ topic.name }}
+                                </a>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+
+                            {# Blog Post Title #}
+                            <h1 class="blog-post-title" itemprop="headline">
+                                {{ content.name }}
+                            </h1>
+
+                            {# Blog Post Meta Information #}
+                            <div class="blog-post-meta">
+                                {# Author Information #}
+                                {% if content.blog_author %}
+                                <div class="blog-post-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+                                    {% if content.blog_author.avatar %}
+                                    <img src="{{ content.blog_author.avatar }}"
+                                         alt="{{ content.blog_author.display_name }}"
+                                         class="author-avatar">
+                                    {% endif %}
+                                    <span class="author-name" itemprop="name">
+                                        {{ content.blog_author.display_name }}
+                                    </span>
+                                </div>
+                                {% endif %}
+
+                                {# Publish Date #}
+                                <time class="blog-post-date"
+                                      datetime="{{ content.publish_date_localized }}"
+                                      itemprop="datePublished">
+                                    {{ content.publish_date_localized|datetimeformat('%B %e, %Y') }}
+                                </time>
+
+                                {# Reading Time (if available) #}
+                                {% if content.post_body %}
+                                {% set word_count = content.post_body|wordcount %}
+                                {% set reading_time = (word_count / 200)|round(0, 'ceil')|int %}
+                                <span class="blog-post-read-time">
+                                    {{ reading_time }} min read
+                                </span>
+                                {% endif %}
+                            </div>
+
+                            {# Post Summary/Description #}
+                            {% if content.post_summary %}
+                            <div class="blog-post-summary" itemprop="description">
+                                {{ content.post_summary }}
+                            </div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            {# Blog Post Body #}
+            <div class="blog-post-content">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 col-xl-8">
+                            <div class="blog-post-body" itemprop="articleBody">
+                                {{ content.post_body }}
+                            </div>
+
+                            {# Tags Section #}
+                            {% if content.tag_list %}
+                            <div class="blog-post-tags">
+                                <h4>Tags:</h4>
+                                <ul class="tag-list">
+                                    {% for tag in content.tag_list %}
+                                    <li>
+                                        <a href="{{ blog_tag_url(group.id, tag.slug) }}"
+                                           rel="tag"
+                                           class="tag-link">
+                                            #{{ tag.name }}
+                                        </a>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            {% endif %}
+
+                            {# Social Sharing Buttons #}
+                            <div class="blog-post-share">
+                                <h4>Share this post:</h4>
+                                <div class="social-share-buttons">
+                                    <a href="https://twitter.com/intent/tweet?url={{ content.absolute_url|urlencode }}&text={{ content.name|urlencode }}"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       class="share-btn share-twitter"
+                                       aria-label="Share on Twitter">
+                                        Twitter
+                                    </a>
+                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ content.absolute_url|urlencode }}"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       class="share-btn share-facebook"
+                                       aria-label="Share on Facebook">
+                                        Facebook
+                                    </a>
+                                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ content.absolute_url|urlencode }}&title={{ content.name|urlencode }}"
+                                       target="_blank"
+                                       rel="noopener noreferrer"
+                                       class="share-btn share-linkedin"
+                                       aria-label="Share on LinkedIn">
+                                        LinkedIn
+                                    </a>
+                                    <a href="mailto:?subject={{ content.name|urlencode }}&body={{ content.absolute_url|urlencode }}"
+                                       class="share-btn share-email"
+                                       aria-label="Share via Email">
+                                        Email
+                                    </a>
+                                </div>
+                            </div>
+
+                            {# Author Bio Section #}
+                            {% if content.blog_author %}
+                            <div class="author-bio-section">
+                                <div class="author-bio-card">
+                                    {% if content.blog_author.avatar %}
+                                    <img src="{{ content.blog_author.avatar }}"
+                                         alt="{{ content.blog_author.display_name }}"
+                                         class="author-bio-avatar">
+                                    {% endif %}
+                                    <div class="author-bio-content">
+                                        <h4 class="author-bio-name">
+                                            About {{ content.blog_author.display_name }}
+                                        </h4>
+                                        {% if content.blog_author.bio %}
+                                        <p class="author-bio-text">
+                                            {{ content.blog_author.bio }}
+                                        </p>
+                                        {% endif %}
+                                        {% if content.blog_author.has_social_profiles %}
+                                        <div class="author-social-links">
+                                            {% if content.blog_author.twitter %}
+                                            <a href="{{ content.blog_author.twitter }}"
+                                               target="_blank"
+                                               rel="noopener noreferrer"
+                                               aria-label="Twitter">
+                                                Twitter
+                                            </a>
+                                            {% endif %}
+                                            {% if content.blog_author.linkedin %}
+                                            <a href="{{ content.blog_author.linkedin }}"
+                                               target="_blank"
+                                               rel="noopener noreferrer"
+                                               aria-label="LinkedIn">
+                                                LinkedIn
+                                            </a>
+                                            {% endif %}
+                                            {% if content.blog_author.facebook %}
+                                            <a href="{{ content.blog_author.facebook }}"
+                                               target="_blank"
+                                               rel="noopener noreferrer"
+                                               aria-label="Facebook">
+                                                Facebook
+                                            </a>
+                                            {% endif %}
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {# Schema.org Metadata #}
+            <meta itemprop="dateModified" content="{{ content.updated or content.publish_date }}">
+            <meta itemprop="mainEntityOfPage" content="{{ content.absolute_url }}">
+            <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+                <meta itemprop="name" content="{{ site_settings.company_name }}">
+                {% if site_settings.company_logo %}
+                <div itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+                    <meta itemprop="url" content="{{ site_settings.company_logo }}">
+                </div>
+                {% endif %}
+            </div>
+
+        </article>
+
+        {# Related Posts Section #}
+        <section class="related-posts-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="related-posts-title">Related Articles</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    {% set related_posts = blog_recent_posts('default', limit=3, exclude_content_ids=[content.id]) %}
+                    {% if related_posts %}
+                        {% for post in related_posts %}
+                        <div class="col-md-6 col-lg-4">
+                            <article class="related-post-card">
+                                {% if post.featured_image %}
+                                <a href="{{ post.absolute_url }}" class="related-post-image">
+                                    <img src="{{ post.featured_image }}"
+                                         alt="{{ post.featured_image_alt_text or post.name }}"
+                                         class="img-fluid">
+                                </a>
+                                {% endif %}
+                                <div class="related-post-content">
+                                    {% if post.topic_list %}
+                                    <span class="related-post-topic">
+                                        {{ post.topic_list[0].name }}
+                                    </span>
+                                    {% endif %}
+                                    <h3 class="related-post-title">
+                                        <a href="{{ post.absolute_url }}">
+                                            {{ post.name }}
+                                        </a>
+                                    </h3>
+                                    {% if post.post_summary %}
+                                    <p class="related-post-excerpt">
+                                        {{ post.post_summary|truncate(120, true, '...') }}
+                                    </p>
+                                    {% endif %}
+                                    <div class="related-post-meta">
+                                        <time datetime="{{ post.publish_date_localized }}">
+                                            {{ post.publish_date_localized|datetimeformat('%B %e, %Y') }}
+                                        </time>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        {% endfor %}
+                    {% else %}
+                        {# Fallback to topic-based related posts #}
+                        {% if content.topic_list %}
+                            {% set topic_posts = blog_recent_topic_posts('default', content.topic_list[0].slug, limit=3, exclude_content_ids=[content.id]) %}
+                            {% for post in topic_posts %}
+                            <div class="col-md-6 col-lg-4">
+                                <article class="related-post-card">
+                                    {% if post.featured_image %}
+                                    <a href="{{ post.absolute_url }}" class="related-post-image">
+                                        <img src="{{ post.featured_image }}"
+                                             alt="{{ post.featured_image_alt_text or post.name }}"
+                                             class="img-fluid">
+                                    </a>
+                                    {% endif %}
+                                    <div class="related-post-content">
+                                        <span class="related-post-topic">
+                                            {{ content.topic_list[0].name }}
+                                        </span>
+                                        <h3 class="related-post-title">
+                                            <a href="{{ post.absolute_url }}">
+                                                {{ post.name }}
+                                            </a>
+                                        </h3>
+                                        {% if post.post_summary %}
+                                        <p class="related-post-excerpt">
+                                            {{ post.post_summary|truncate(120, true, '...') }}
+                                        </p>
+                                        {% endif %}
+                                        <div class="related-post-meta">
+                                            <time datetime="{{ post.publish_date_localized }}">
+                                                {{ post.publish_date_localized|datetimeformat('%B %e, %Y') }}
+                                            </time>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endif %}
+                </div>
+
+                {# View All Posts Link #}
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <a href="{{ blog_all_posts_url(group.id) }}" class="btn btn-primary view-all-posts">
+                            View All Posts
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {# Comments Section (if enabled) #}
+        {% if content.comment_list %}
+        <section class="comments-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10 col-xl-8">
+                        <h3 class="comments-title">Comments</h3>
+                        {{ content.comment_list }}
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
+        {# Subscribe CTA Section #}
+        <section class="blog-subscribe-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h3>Subscribe to Our Blog</h3>
+                        <p>Get the latest posts delivered right to your inbox.</p>
+                        {% module "blog_subscribe_form"
+                            path="@hubspot/form",
+                            form_to_use="{{ blog_subscribe_form_id }}",
+                            label="Blog Subscribe Form"
+                        %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    {# Footer Partial #}
+    {% include "../../partials/footer.html" %}
+
+    {# Standard HubSpot JavaScript #}
+    {{ standard_footer_includes }}
+
+    {# Theme JavaScript #}
+    {{ require_js(get_asset_url("../../js/main.js")) }}
+    {{ require_js(get_asset_url("../../js/blog.js")) }}
+
+    {# Additional Footer Scripts #}
+    {% block footer_scripts %}{% endblock %}
+
+</body>
+</html>

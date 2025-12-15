@@ -1,0 +1,37 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{# Performance Optimization - Resource Hints #}
+
+<!-- DNS Prefetch for external resources -->
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+
+<!-- Preconnect to critical domains -->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Preload critical fonts -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style">
+
+<!-- Load fonts with font-display swap -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Preload critical CSS -->
+<link rel="preload" href="{{ get_asset_url('../styles/main.css') }}" as="style">
+
+<!-- Preload critical JavaScript -->
+<link rel="preload" href="{{ get_asset_url('../assets/main.js') }}" as="script">
+
+<!-- Async load GSAP for non-critical animations -->
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" as="script">
+
+<style>
+/* Critical CSS - Above the fold */
+body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#212529;background:#fff}
+.container{max-width:1140px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-weight:700;line-height:1.2;margin:0 0 1rem}
+h1{font-size:3rem}h2{font-size:2.25rem}h3{font-size:1.875rem}
+.btn{display:inline-block;padding:.75rem 1.5rem;background:#007bff;color:#fff;text-decoration:none;border-radius:.5rem;font-weight:600}
+</style>

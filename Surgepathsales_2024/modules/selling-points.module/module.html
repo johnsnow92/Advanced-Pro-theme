@@ -1,0 +1,50 @@
+<section class="selling-points bg-primary">
+  <div class="container">
+    <h2 class="secondary-h2 center">
+      {{ module.selling_points_heading }}
+    </h2>
+
+    <div class="polygon_image">
+      {% if module.polygon.src %}
+      {% set sizeAttrs = 'width="{{ module.polygon.width|escape_attr }}" height="{{ module.polygon.height|escape_attr }}"' %}
+      {% if module.polygon.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.polygon.width|escape_attr }}" height="{{ module.polygon.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.polygon.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.polygon.max_width|escape_attr }}" height="{{ module.polygon.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.polygon.loading != 'disabled' ? 'loading="{{ module.polygon.loading|escape_attr }}"' : '' %}
+      <img src="{{ module.polygon.src|escape_url }}" alt="{{ module.polygon.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+      {% endif %}
+    </div>
+
+    <div class="image-group-row">
+      {% for item in module.selling_points_image_group %}
+
+      <div class="image-group-col">
+
+        <div class="selling-points-image">
+
+
+          {% if item.selling_points_image.src %}
+          {% set sizeAttrs = 'width="{{ item.selling_points_image.width|escape_attr }}" height="{{ item.selling_points_image.height|escape_attr }}"' %}
+          {% if item.selling_points_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.selling_points_image.width|escape_attr }}" height="{{ item.selling_points_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.selling_points_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.selling_points_image.max_width|escape_attr }}" height="{{ item.selling_points_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = item.selling_points_image.loading != 'disabled' ? 'loading="{{ item.selling_points_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.selling_points_image.src|escape_url }}" alt="{{ item.selling_points_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+
+        </div>
+
+        <div class="service_col_content">
+          {% inline_text field="selling_points_text" value="{{ item.selling_points_text }}" %}
+        </div>
+
+
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

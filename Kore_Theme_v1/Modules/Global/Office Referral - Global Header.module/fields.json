@@ -1,0 +1,39 @@
+[ {
+  "id" : "32bdc9ce-00c0-c9e4-1022-0fd9dc5e1fa7",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "show_loading" : false,
+  "type" : "logo",
+  "display_width" : null,
+  "default" : {
+    "override_inherited_src" : true,
+    "src" : "https://f.hubspotusercontent30.net/hubfs/7967936/Logo%20Horizontal%20White%20980x188.png",
+    "alt" : "Logo Horizontal White 980x188",
+    "width" : 980,
+    "height" : 188
+  }
+}, {
+  "id" : "b895d7b9-e708-ef25-cf2c-7349d5eed6e4",
+  "name" : "menu",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu",
+  "display_width" : null
+}, {
+  "id" : "37972600-c8f8-f0cf-4724-4dfd5f8d8a3a",
+  "name" : "logo_link",
+  "label" : "Logo Link",
+  "required" : false,
+  "locked" : true,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+  "type" : "url",
+  "display_width" : null,
+  "default" : {
+    "type" : "EXTERNAL",
+    "href" : "https://www.officereferral.com/",
+    "content_id" : null
+  }
+} ]

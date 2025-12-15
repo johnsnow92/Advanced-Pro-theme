@@ -1,0 +1,45 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<div class="kore-navigation-commerce-iq-footer">
+  <div class="page-width">
+    <div class="flex">
+      <div class="col">
+        
+        <div class="logo">
+          {% logo
+          override_inherited_src="{{ module.logo.override_inherited_src }}"
+          src="{{ module.logo.src }}"
+          alt="{{ module.logo.alt }}"
+          width="{{ module.logo.width }}"
+          height="{{ module.logo.height }}"
+          suppress_company_name="{{ module.logo.suppress_company_name }}"
+        %}
+        </div>
+
+        {% if module.blurb_text %}
+        {{ module.blurb_text }}
+        {% endif %}
+        
+      </div>
+      <div class="col">
+         <div class="horizontal-simple-menu">
+          {% simple_menu menu_tree="{{ module.simple_menu_3 }}" orientation='horizontal' %}
+        </div>
+
+      </div>
+     
+      <div class="col">
+        
+        <div class="social-icon">
+          {% for item in module.social_icon %}
+          <a href="	{{ item.url.href }}" class="social-link w-inline-block" target="_blank">
+            {% icon name="{{ item.icon.name }}" style="{{ item.icon.type }}" unicode="{{ item.icon.unicode }}"
+	%}
+          </a>
+          {% endfor %}
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

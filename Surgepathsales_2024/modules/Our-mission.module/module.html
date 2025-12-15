@@ -1,0 +1,72 @@
+<section class="our-mission background {{ module.center_heading_or_side_heading }}">
+  <div class="container">
+    <h2 class="{{ module.center_heading_or_side_heading }}">
+      {{ module.our_mission_content_h2 }}
+    </h2>
+    <div class="row" id="mission-row">
+      <div class="our-mission-images">
+        <div class="our-mission-images-row {{ module.center_heading_or_side_heading }}">
+          <div class="full-image">
+            {% if module.left_image.src %}
+            {% set sizeAttrs = 'width="{{ module.left_image.width|escape_attr }}" height="{{ module.left_image.height|escape_attr }}"' %}
+            {% if module.left_image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.left_image.width|escape_attr }}" height="{{ module.left_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.left_image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.left_image.max_width|escape_attr }}" height="{{ module.left_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = module.left_image.loading != 'disabled' ? 'loading="{{ module.left_image.loading|escape_attr }}"' : '' %}
+            <img src="{{ module.left_image.src|escape_url }}" alt="{{ module.left_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+
+          <!--      1      -->
+          {#  <div class="half-image">
+            {% for item in module.right_image_1 %}
+            <div class="half-image-1">
+
+              {% if item.src %}
+              {% set sizeAttrs = 'width="{{ item.width|escape_attr }}" height="{{ item.height|escape_attr }}"' %}
+              {% if item.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.width|escape_attr }}" height="{{ item.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.max_width|escape_attr }}" height="{{ item.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.src|escape_url }}" alt="{{ item.alt|escape_attr }}">
+              {% endif %}
+
+            </div>
+            {% endfor %}
+          </div> #}
+
+        </div>
+      </div>
+
+      <div class="our-mission-content {{ module.center_heading_or_side_heading }}">
+        <div class="about-sub-heading">
+          <h4>
+            {{ module.mission_h4_text }}
+          </h4>
+        </div>
+        <h2>
+          {{ module.our_mission_content_h2 }}
+        </h2>
+        {#   <h4> {{ module.content_heading }}</h4> #}
+
+        <div class="content-text">
+          {{ module.our_mission_content_text }}
+        </div>
+        <div class="content read-more-slide">{{ module.content }}</div>
+
+
+        <button class="moreless-button">{{ module.read_more_button }}</button>
+
+      </div>
+    </div>
+    <!--  ============================================ -->
+
+
+    <!-- ============================= --> 
+
+  </div>
+</section>

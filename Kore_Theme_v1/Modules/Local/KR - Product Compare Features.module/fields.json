@@ -1,0 +1,745 @@
+[ {
+  "id" : "cd57a133-dd33-a024-cc13-7f488498fc52",
+  "name" : "heading",
+  "label" : "Section Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Choose the package that suits your business"
+}, {
+  "id" : "a1dfba65-8791-5089-3c54-99c6bbd8c676",
+  "name" : "column_heading",
+  "label" : "Column Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "41d494dd-5a34-c7cf-d363-747234cb906b",
+    "name" : "feature",
+    "label" : "Description Header Column",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Package"
+  }, {
+    "id" : "47660675-4a13-a021-0018-2a5da938b0ae",
+    "name" : "heading_1",
+    "label" : "Header Column",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : [ "Skurio SP (Current SKU)", "Skurio One", "Pro, Business or Enterprise" ]
+  }, {
+    "id" : "bdb372e8-bb15-7b59-3f15-7e7607bb7b22",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#10B1E8",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "f27fd35c-f066-26c5-44b9-7d8e24e5b82a",
+    "name" : "color",
+    "label" : "Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "feature" : "Package",
+    "heading_1" : [ "Skurio SP (Current SKU)", "Skurio One", "Pro, Business or Enterprise" ],
+    "background_color" : {
+      "color" : "#10B1E8",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "f99b886f-3cfa-ea93-af71-5ff3bade0cf4",
+  "name" : "rows",
+  "label" : "Rows",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "72aa19c5-01af-3460-8bf1-ff7ac254011a",
+    "default" : 13
+  },
+  "children" : [ {
+    "id" : "cc50e3d3-0908-2e69-6a53-1e690b446161",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#CCE4F6",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "baa3749c-fe1a-76b6-ee83-3c0beaee07a0",
+    "name" : "color",
+    "label" : "Content Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#555",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "9125a360-791f-4cf3-cd62-c7f4f9d2f2ac",
+    "name" : "feature_name_only",
+    "label" : "Feature Name Only",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "72aa19c5-01af-3460-8bf1-ff7ac254011a",
+    "name" : "feature_name",
+    "label" : "Feature Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Annual Subscription"
+  }, {
+    "id" : "b9217f05-1e96-d2d5-f9c5-066be165971d",
+    "name" : "feature_cloudsmith",
+    "label" : "Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "11c19df2-8aba-7765-a5b0-16a6183d54f2",
+      "default" : 3
+    },
+    "visibility" : {
+      "controlling_field" : "9125a360-791f-4cf3-cd62-c7f4f9d2f2ac",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "NOT_EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "785fb1ed-3848-b627-3d85-e3478c5f3630",
+      "name" : "content_type",
+      "label" : "Content type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "text", "Text" ], [ "feature_checkbox", "Feature Checkbox" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "text"
+    }, {
+      "id" : "11c19df2-8aba-7765-a5b0-16a6183d54f2",
+      "name" : "text_field",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "785fb1ed-3848-b627-3d85-e3478c5f3630",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "text",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "List: £495/$nnn"
+    }, {
+      "id" : "27453647-8789-9098-0a3c-7760a4207333",
+      "name" : "feature_include",
+      "label" : "Feature include",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "785fb1ed-3848-b627-3d85-e3478c5f3630",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "feature_checkbox",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "toggle",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : true
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "List: £495/$nnn"
+    }, {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "List: £495/$nnn"
+    }, {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "Variable on Request<br>Link from Landing Page"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "background_color" : {
+      "color" : "#CCE4F6",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "List: £495/$nnn"
+    }, {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "List: £495/$nnn"
+    }, {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "Variable on Request<br>Link from Landing Page"
+    } ],
+    "feature_name" : "Annual Subscription",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#E7F2FB",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "20%"
+    }, {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "30%"
+    }, {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "30%"
+    } ],
+    "feature_name" : "CFC Policyholder discount",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#CCE4F6",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "£395"
+    }, {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "£695"
+    }, {
+      "content_type" : "text",
+      "feature_include" : true,
+      "text_field" : "Variable"
+    } ],
+    "feature_name" : "CFC Policyholder Price",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#E7F2FB",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "£395"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "£695"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "Variable"
+    } ],
+    "feature_name" : "Corporate Email Domain(s)",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#CCE4F6",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "£395"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "£695"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "Variable"
+    } ],
+    "feature_name" : "Corporate URL Monitoring",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#E7F2FB",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "£395"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "£695"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "Variable"
+    } ],
+    "feature_name" : "IT Infrastructure (IP addresses, servers etc)",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#CCE4F6",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£395"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "£695"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "Variable"
+    } ],
+    "feature_name" : "Search Historical Breach Database",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#E7F2FB",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£395"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "£695"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "Variable"
+    } ],
+    "feature_name" : "Typosquatting Monitoring",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#CCE4F6",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£395"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£695"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "Variable"
+    } ],
+    "feature_name" : "Keywords - Brand Monitoring",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#E7F2FB",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£395"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£695"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "Variable"
+    } ],
+    "feature_name" : "Keywords - VIP Monitoring",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#CCE4F6",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£395"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£695"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "Variable"
+    } ],
+    "feature_name" : "Keywords - Business Critical info",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#E7F2FB",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£395"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£695"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "Variable"
+    } ],
+    "feature_name" : "Onboarding Support",
+    "feature_name_only" : false
+  }, {
+    "background_color" : {
+      "color" : "#CCE4F6",
+      "opacity" : 100
+    },
+    "color" : {
+      "color" : "#555",
+      "opacity" : 100
+    },
+    "feature_cloudsmith" : [ {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£395"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : false,
+      "text_field" : "£695"
+    }, {
+      "content_type" : "feature_checkbox",
+      "feature_include" : true,
+      "text_field" : "Variable"
+    } ],
+    "feature_name" : "Analytics Support",
+    "feature_name_only" : false
+  } ]
+}, {
+  "id" : "2646c317-c55c-1e6c-7993-6b2d47f875cb",
+  "name" : "icon_checked",
+  "label" : "Icon_checked",
+  "required" : false,
+  "locked" : false,
+  "icon_set" : "fontawesome-5.14.0",
+  "type" : "icon",
+  "display_width" : null,
+  "default" : {
+    "name" : "Check",
+    "unicode" : "f00c",
+    "type" : "SOLID"
+  }
+}, {
+  "id" : "193bce36-ab2a-9067-68ab-02f8265be146",
+  "name" : "icon_cross",
+  "label" : "Icon - Cross",
+  "required" : false,
+  "locked" : false,
+  "icon_set" : "fontawesome-5.14.0",
+  "type" : "icon",
+  "display_width" : null,
+  "default" : {
+    "name" : "Times",
+    "unicode" : "f00d",
+    "type" : "SOLID"
+  }
+}, {
+  "id" : "964016b3-2212-b3d8-149f-c090cff9a41c",
+  "name" : "section_padding",
+  "label" : "Section Padding",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "a3cdf8f9-e0bc-2fc6-9481-84a9987f36f3",
+    "name" : "desktop",
+    "label" : "Desktop",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "46f19568-f669-0895-bb68-088c16164b3c",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 150,
+      "step" : 5,
+      "suffix" : "",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 150
+    }, {
+      "id" : "5311d6ea-4f3b-8039-02e0-d04e7b463554",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 150,
+      "step" : 5,
+      "suffix" : "",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 80
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 150,
+      "bottom" : 80
+    }
+  }, {
+    "id" : "9e56f05e-b328-7476-831f-8d6dfdeaddb6",
+    "name" : "tablet",
+    "label" : "Tablet",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "126ad66e-c2d8-26ee-2548-8aea5e941e5b",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 150,
+      "step" : 5,
+      "suffix" : "",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 100
+    }, {
+      "id" : "3874f627-27da-c791-7497-99e7d2d967cf",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 150,
+      "step" : 5,
+      "suffix" : "",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 100,
+      "bottom" : 60
+    }
+  }, {
+    "id" : "25edb08a-5fcc-e424-6db6-04aabd734ce9",
+    "name" : "mobile",
+    "label" : "Mobile",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "f3b6ccb4-c812-687f-c46b-1fcbbff76bad",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 150,
+      "step" : 5,
+      "suffix" : "",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 100
+    }, {
+      "id" : "4588eaf2-0b6e-3b54-13f0-0ae1320c02a0",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 0,
+      "max" : 150,
+      "step" : 5,
+      "suffix" : "",
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 100,
+      "bottom" : 60
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "desktop" : {
+      "top" : 150,
+      "bottom" : 80
+    },
+    "tablet" : {
+      "top" : 100,
+      "bottom" : 60
+    },
+    "mobile" : {
+      "top" : 100,
+      "bottom" : 60
+    }
+  }
+}, {
+  "id" : "12b437e0-ae04-7368-a862-7b00bf210588",
+  "name" : "section_show_hide",
+  "label" : "Section Show/Hide",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+} ]

@@ -1,0 +1,80 @@
+[ {
+  "id" : "4c0f29eb-a368-05d4-04a3-c403e879494f",
+  "name" : "sub_heading",
+  "label" : "sub_heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Advantages"
+}, {
+  "id" : "1960588b-d0f5-9a50-08a5-6b24f2f9959b",
+  "name" : "main_heading",
+  "label" : "main_heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Benefits of SurgePathSales"
+}, {
+  "id" : "138f371f-f50c-3862-1572-e19bdd24161f",
+  "name" : "advantage_card_group",
+  "label" : "Advantage card group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "a2534c23-de26-8caa-3a6b-a1c9629c222d",
+    "name" : "card_image",
+    "label" : "Card Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/AI-Generated%20Media/Remix%20Images/IMAGE-117156-1727336047489-1.jpeg",
+      "alt" : "IMAGE-117156-1727336047489-1",
+      "loading" : "lazy",
+      "width" : 1792,
+      "height" : 1024,
+      "max_width" : 1792,
+      "max_height" : 1024
+    }
+  }, {
+    "id" : "b6db6104-eeb6-b815-324f-78c1f60f3c04",
+    "name" : "card_heading",
+    "label" : "Card Heading",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "SurgePath Sales"
+  }, {
+    "id" : "55ae97f9-d1c7-64d6-c261-6a8936a162d0",
+    "name" : "card_content",
+    "label" : "Card Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span>SurgePath Sales is the leading video messaging and asynchronous communications platform for go-to-market teams. Millions of sales professionals and more than 250,000 go-to-market teams use Vidyard’s AI-powered video messaging.</span></p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

@@ -1,0 +1,29 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Hero - Gradient Background
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: hero-gradient.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  vertical_alignment="MIDDLE",
+  max_width=1200,
+  padding={"top": 120, "bottom": 120}
+%}
+  {% dnd_column width=12 %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div style="text-align: center; color: white;">
+          <h1 style="font-size: 4.5rem; font-weight: 700; margin-bottom: 1.5rem;">Gradient Hero</h1>
+          <p style="font-size: 1.5rem; margin-bottom: 2.5rem; opacity: 0.95;">Modern gradient background for impact</p>
+          <a href="#" style="display: inline-block; padding: 1rem 3rem; background: white; color: #667eea; text-decoration: none; border-radius: 50px; font-weight: 700;">Start Now</a>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_column %}
+{% end_dnd_section %}
+
+<style>
+  .hero-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+</style>

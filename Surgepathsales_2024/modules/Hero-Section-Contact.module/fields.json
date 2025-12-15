@@ -1,0 +1,294 @@
+[ {
+  "id" : "205e73db-b61f-5d7d-c369-42c53a730fa5",
+  "name" : "main_heading",
+  "label" : "Main Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Find Us Here. Make Real Results Happen."
+}, {
+  "id" : "54df7e4f-cc1c-701d-4d7a-47e0886a9c6e",
+  "name" : "about_hero_section_h4",
+  "label" : "About Hero Section h4",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Contact Us"
+}, {
+  "id" : "b79d8d5c-8986-db81-a8b8-8168a0c75efc",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p><span>There are many variations of passages of lorem Ipsum available.</span></p>"
+}, {
+  "id" : "b443ce38-6126-5845-45dc-679764e498b9",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "fec8d933-1953-2c96-d8ed-c675e1524df8",
+    "name" : "button_type",
+    "label" : "Button Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "primary-btn", "Primary" ], [ "secondary-btn", "Secondary" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "primary-btn"
+  }, {
+    "id" : "f4660614-8a4c-f774-4592-5d6a3f839f50",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "c983c2c7-c470-3907-e4a4-f926d7bfd955",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "GET STARTED"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "d5c403fc-2fe5-de84-190f-c53be4d80f86",
+  "name" : "blob_background",
+  "label" : "Blob Background",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Blob.png",
+    "alt" : "Blob",
+    "loading" : "lazy",
+    "width" : 384,
+    "height" : 524,
+    "max_width" : 384,
+    "max_height" : 524
+  }
+}, {
+  "id" : "e54014a9-867f-ce34-aead-3296ac996c27",
+  "name" : "arrow_image",
+  "label" : "Arrow Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/arrow.png",
+    "alt" : "arrow",
+    "loading" : "lazy",
+    "width" : 61,
+    "height" : 126,
+    "max_width" : 61,
+    "max_height" : 126
+  }
+}, {
+  "id" : "dba30b7e-59b2-24f9-8ff0-9d71dc316558",
+  "name" : "contact_location_group",
+  "label" : "Contact Location group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 3,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "6334ca26-8a08-b900-3f57-ecf3f6b7916d",
+    "name" : "demo_image",
+    "label" : "Location Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Vector%20(1).png",
+      "alt" : "Vector (1)",
+      "loading" : "lazy",
+      "width" : 14,
+      "height" : 20,
+      "max_width" : 14,
+      "max_height" : 20
+    }
+  }, {
+    "id" : "ee758e61-5bf5-9b6e-bb3f-9f03b1980d84",
+    "name" : "location_text",
+    "label" : "Location Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : " Location"
+  }, {
+    "id" : "d0e7fccf-b669-f2cf-db86-bf214667a63c",
+    "name" : "location_span_text",
+    "label" : "Location Span Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "100 W Big Beaver Rd Suite 200, Troy, MI 48084."
+  }, {
+    "id" : "abe77491-4865-e6ae-4786-2b67f3837bb2",
+    "name" : "contact_link",
+    "label" : "Contact Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "demo_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Vector%20(1).png",
+      "alt" : "Vector (1)",
+      "loading" : "lazy",
+      "width" : 14,
+      "height" : 20,
+      "max_width" : 14,
+      "max_height" : 20
+    },
+    "location_text" : " Location",
+    "location_span_text" : "100 W Big Beaver Rd Suite 200, Troy, MI 48084.",
+    "contact_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "demo_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Vector%20(1).png",
+      "alt" : "Vector (1)",
+      "loading" : "lazy",
+      "width" : 14,
+      "height" : 20,
+      "max_width" : 14,
+      "max_height" : 20
+    },
+    "location_text" : " Location",
+    "location_span_text" : "100 W Big Beaver Rd Suite 200, Troy, MI 48084.",
+    "contact_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "demo_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Vector%20(1).png",
+      "alt" : "Vector (1)",
+      "loading" : "lazy",
+      "width" : 14,
+      "height" : 20,
+      "max_width" : 14,
+      "max_height" : 20
+    },
+    "location_text" : " Location",
+    "location_span_text" : "100 W Big Beaver Rd Suite 200, Troy, MI 48084.",
+    "contact_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+}, {
+  "id" : "f8cc0d7a-ef73-a32b-b8a7-c73bcf8fa0b3",
+  "name" : "contact_form",
+  "label" : "Contact Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "form_id" : "a2d4f434-90f9-4bae-a67f-d64475e06a6a",
+    "response_type" : "inline",
+    "message" : "",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+} ]

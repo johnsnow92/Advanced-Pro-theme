@@ -1,0 +1,115 @@
+.kore-lp-cta-2 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-lp-cta-2 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-lp-cta-2 .page-width.text-center {
+  text-align: center;
+}
+
+.kore-lp-cta-2 .flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  margin: 0 -20px;
+}
+
+.kore-lp-cta-2 .flex .col {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-lp-cta-2 .tagline,
+.kore-lp-cta-2 .tagline * {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.kore-lp-cta-2 #cta .kore-button,
+.kore-lp-cta-2 .kore-button,
+.kore-lp-cta-2 .simple a {
+  box-sizing: border-box !important;
+  -webkit-font-smoothing: antialiased !important;
+  cursor: pointer !important;
+  -moz-user-select: none !important;
+  -webkit-user-select: none !important;
+  -o-user-select: none !important;
+  user-select: none !important;
+  display: inline-block !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  -moz-transition: all .4s ease !important;
+  -webkit-transition: all .4s ease !important;
+  -o-transition: all .4s ease !important;
+  border-width: 0px !important;
+  color: rgb(255,255,255) !important;
+  height: auto !important;
+  transition: all .4s ease !important;
+  padding: 18px 40px !important;
+  text-shadow: none !important;
+  width: auto !important;
+  font-size: 20px !important;
+  line-height: 1.5em !important;
+  letter-spacing: 1px !important;
+}
+
+.kore-lp-cta-2 #cta .kore-button:hover,
+.kore-lp-cta-2 .kore-button:hover,
+.kore-lp-cta-2 .simple a:hover {
+  -webkit-transform: translate(0px, -3px) !important;
+  -ms-transform: translate(0px, -3px) !important;
+  transform: translate(0px, -3px) !important;
+  color: #fff !important;
+}
+
+@media(max-width:767px) {
+  
+  .kore-lp-cta-2 #cta .kore-button,
+  .kore-lp-cta-2 .kore-button,
+  .kore-lp-cta-2 .simple a {
+    padding: 15px 25px !important;
+    font-size: 18px !important;
+  }
+  
+  .kore-lp-cta-2 .flex .col {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+
+}
+
+@media(max-width:320px) {
+  
+  .kore-lp-cta-2 #cta .kore-button,
+  .kore-lp-cta-2 .kore-button,
+  .kore-lp-cta-2 .simple a {
+    font-size: 16px !important;
+  }
+
+}

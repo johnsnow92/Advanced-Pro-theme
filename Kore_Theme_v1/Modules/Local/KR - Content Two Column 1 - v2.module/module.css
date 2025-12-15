@@ -1,0 +1,181 @@
+.kore-lp-two-column-content-v2 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-lp-two-column-content-v2 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-lp-two-column-content-v2 .page-width.text-center {
+  text-align: center;
+}
+
+.kore-lp-two-column-content-v2 .flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  margin: 0 -20px;
+  padding: 20px 0;
+}
+
+.kore-lp-two-column-content-v2 .flex .col {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-lp-two-column-content-v2 .flex .col .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.kore-lp-two-column-content-v2 #cta .cta_button {
+  background-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.kore-lp-two-column-content-v2 .flex .col .simple a,
+.kore-lp-two-column-content-v2 .flex .col #cta .cta_button {
+  background-color: transparent!important;
+    color: #eb1414!important;
+    padding: 0!important;
+}
+
+.kore-lp-two-column-content-v2 .flex .col .simple a:hover,
+.kore-lp-two-column-content-v2 .flex .col #cta .cta_button:hover {}
+
+.kore-lp-two-column-content-v2 .flex .col.image > div {
+  background-size: cover;
+  background-position: 0px 50%;
+  min-height: 420px;
+  border-radius: 5px;
+}
+
+.kore-lp-two-column-content-v2 .flex .col.image.rounded-circle > div {
+  width: 430px;
+  min-height: 430px;
+  border-radius: 9999px;
+  margin: 0 auto;
+}
+
+.kore-lp-two-column-content-v2 .flex .col.image.not-bg > div {
+  min-height: auto;
+}
+
+.kore-lp-two-column-content-v2 .flex .col.video .hs-responsive-embed-wrapper {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.kore-lp-two-column-content-v2 .column-inner-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  margin: 0 -20px;
+}
+
+.kore-lp-two-column-content-v2 .column-inner-flex .col {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 10px 20px;
+}
+
+
+.kore-lp-two-column-content-v2 .flex{
+  max-width: 950px;
+    margin: 0 auto;
+  display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-content: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+  padding: 25px 0;
+}
+.kore-lp-two-column-content-v2 .flex > .col:first-child{
+  width: 45%;
+}
+.kore-lp-two-column-content-v2 .flex > .col:last-child{
+  width: 55%;
+}
+
+.kore-lp-two-column-content-v2 .bottom-button{
+  text-align: center;
+    padding-top: 40px;
+}
+
+@media(max-width:767px) {
+
+  .kore-lp-two-column-content-v2 .flex .col {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    order: 2;
+  }
+  
+  .kore-lp-two-column-content-v2 .flex .col.image,
+  .kore-lp-two-column-content-v2 .flex .col.video {
+    order: 1;
+    margin-bottom: 20px;
+  }
+  .kore-lp-two-column-content-v2 .flex .col{
+    padding: 0 5px;
+  }
+  .kore-lp-two-column-content-v2 .flex .col .simple a,
+  .kore-lp-two-column-content-v2 .flex .col #cta .cta_button{
+    font-size: 16px!important;
+    margin-top: 10px;
+  }
+  
+}

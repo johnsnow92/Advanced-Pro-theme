@@ -1,0 +1,228 @@
+[ {
+  "id" : "c950ff35-2fb0-4aba-679f-ffc04971ae80",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/mechanic-34.png",
+    "alt" : "mechanic-34",
+    "width" : 1920,
+    "height" : 1210,
+    "max_width" : 1920,
+    "max_height" : 1210
+  }
+}, {
+  "id" : "5e51a405-c2b7-2016-4185-3021c0f166ae",
+  "name" : "left_content",
+  "label" : "Left Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h4>Location and Hours</h4>\n<p>1642 E. 11 Mile Rd.<br>Madison Heights, MI 48071</p>\n<p><strong>Monday – Friday:</strong> 8&nbsp;am – 5&nbsp;pm</p>"
+}, {
+  "id" : "bf3e20c9-35ab-da41-7bba-80057baef811",
+  "name" : "middle_section",
+  "label" : "Middle Section",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "817a949c-5561-6877-4c63-63989ed40500",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/proto3.jpg",
+      "alt" : "proto3",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 400,
+      "max_width" : 600,
+      "max_height" : 400
+    }
+  }, {
+    "id" : "c99a9490-0c74-c602-c8cd-3d489c94046a",
+    "name" : "middle_content",
+    "label" : "Middle Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<h4>Schedule Meeting</h4>\n<p>We'd love to discuss your project. Click the button and we'll get back to you ASAP!</p>"
+  }, {
+    "id" : "6eaa9b36-8349-6a5a-7cd3-04146ded370d",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Book Online"
+  }, {
+    "id" : "7821a084-c530-d8f2-c05a-45cfd32a97f2",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://meetings.hubspot.com/j-tamm",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/proto3.jpg",
+      "alt" : "proto3",
+      "loading" : "lazy",
+      "width" : 600,
+      "height" : 400,
+      "max_width" : 600,
+      "max_height" : 400
+    },
+    "middle_content" : "<h4>Schedule Meeting</h4>\n<p>We'd love to discuss your project. Click the button and we'll get back to you ASAP!</p>",
+    "button_text" : "Book Online",
+    "button_link" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "https://meetings.hubspot.com/j-tamm",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+}, {
+  "id" : "000471aa-8d76-f1e0-2a1c-9d1dcf967bf9",
+  "name" : "right_section",
+  "label" : "Right Section",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "e6259f90-22be-abb3-e19b-1249790075fd",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/prototype.jpg",
+      "alt" : "prototype",
+      "loading" : "lazy",
+      "width" : 430,
+      "height" : 235,
+      "max_width" : 430,
+      "max_height" : 235
+    }
+  }, {
+    "id" : "f85f7ff6-c0f1-eaaa-b03a-4a8b844f650a",
+    "name" : "heading",
+    "label" : "Heading",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Contact Us"
+  }, {
+    "id" : "f8d82795-a41c-1033-b20c-240b55396e9c",
+    "name" : "right_content",
+    "label" : "Right Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<h4>Call us</h4>\n<h3>(248) 796-0583</h3>"
+  }, {
+    "id" : "9d931d06-01a8-a6ef-0f0f-8ce851eff97a",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Message Us"
+  }, {
+    "id" : "6d9f98bd-a048-c47f-04c5-1073868121d5",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/prototype.jpg",
+      "alt" : "prototype",
+      "loading" : "lazy",
+      "width" : 430,
+      "height" : 235,
+      "max_width" : 430,
+      "max_height" : 235
+    },
+    "heading" : "Contact Us",
+    "right_content" : "<h4>Call us</h4>\n<h3>(248) 796-0583</h3>",
+    "button_text" : "Message Us",
+    "button_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+} ]

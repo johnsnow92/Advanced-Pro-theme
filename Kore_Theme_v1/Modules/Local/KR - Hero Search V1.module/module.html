@@ -1,0 +1,180 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+{% macro searchModule() %}
+{# Need help setting up site search?
+   Start here: https://knowledge.hubspot.com/articles/kcs_article/cos-general/how-do-i-set-up-a-results-page-for-my-search-field-in-hubspot #}
+
+<div class="hs-search-field"> 
+    <div class="hs-search-field__bar"> 
+      <form action="/{{ site_settings.content_search_results_page_path }}">
+        {% if module.search_module.field_label %}
+          <label for="term">{{ module.search_module.field_label }}</label>
+        {% endif %}
+        <input type="text" class="hs-search-field__input" name="term" autocomplete="off" 
+               aria-label="{{ module.search_module.field_label || "Search" }}" 
+               placeholder="{{ module.search_module.placeholder }}">
+        
+        {% if module.search_module.content_types.website_pages %}
+          <input type="hidden" name="type" value="SITE_PAGE">
+        {% endif %}
+        {% if module.search_module.content_types.landing_pages %}
+          <input type="hidden" name="type" value="LANDING_PAGE">
+        {% endif %}
+        {% if module.search_module.content_types.blog_posts %}
+          <input type="hidden" name="type" value="BLOG_POST">
+          <input type="hidden" name="type" value="LISTING_PAGE">
+        {% endif %}
+        {% if module.search_module.content_types.knowledge_articles %}
+          <input type="hidden" name="type" value="KNOWLEDGE_ARTICLE">
+        {% endif %}
+
+        {% if module.search_module.include_search_button %}
+          <button aria-label="Search">{% icon name="search" style="solid" %}</button>
+        {% endif %}
+      </form>
+    </div>
+    <ul class="hs-search-field__suggestions"></ul>
+</div>
+{% endmacro %}
+
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .tagline {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .sub-heading,
+  .{{ name }} .sub-heading * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .content,
+  .{{ name }} .content * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+    
+  }
+</style>
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-404-search clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+      <div class="max-width-850 mr-auto ml-auto">
+        {% if module.heading.text %}
+        {% if module.heading.type == "h1" %} 
+        <div class="heading mb-15">
+          <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h1>
+        </div>
+        {% elif module.heading.type == "h2" %}
+        <div class="heading mb-15">
+          <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h2>
+        </div>
+        {% elif module.heading.type == "h3" %}
+        <div class="heading mb-15">
+          <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h3>
+        </div>
+        {% elif module.heading.type == "h4" %}
+        <div class="heading mb-15">
+          <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h4>
+        </div>
+        {% elif module.heading.type == "h5" %}
+        <div class="heading mb-15">
+          <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h5>
+        </div>
+        {% elif module.heading.type == "h6" %}
+        <div class="heading mb-15">
+          <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h6>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        {% if module.content %}
+        <div class="content parent font-size-20" id="cta">
+          {{ module.content }}
+          {{ searchModule() }}
+          <div class="buttons-404">
+            {% for item in module.buttons %}
+            {% set href = item.link_field.url.href %}
+            {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            <a href="{{ href }}" class="btn{{ loop.index }}"
+               {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+               {% if item.link_field.no_follow %}rel="nofollow"{% endif %}
+               >
+              {{item.text}}
+            </a>
+             <style>
+                .kore-404-search .buttons-404 a.btn{{loop.index}} {
+                  background-color: {{item.background_color.color}};
+                  color:{{item.text_color.color}};
+                  border: 2px solid {{item.border_color.color}};
+                }
+                .kore-404-search .buttons-404 a.btn{{loop.index}}:hover {
+                  color:{{item.background_color.color}} !important;
+                  background: {{item.text_color.color}} !important;
+                  border-color:{{item.background_color.color}} !important;
+                }
+              </style>
+            {% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}

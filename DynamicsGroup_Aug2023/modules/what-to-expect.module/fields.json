@@ -1,0 +1,101 @@
+[ {
+  "id" : "b26d7861-12d9-ea2e-6e02-14c3855902cc",
+  "name" : "parallax_image",
+  "label" : "Parallax Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/design21.png",
+    "alt" : "design21",
+    "loading" : "lazy",
+    "width" : 865,
+    "height" : 602,
+    "max_width" : 865,
+    "max_height" : 602
+  }
+}, {
+  "id" : "3eeec091-fa5a-53bd-b4ee-61f44d9137bb",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/mechanic-76.png",
+    "alt" : "Design",
+    "loading" : "lazy",
+    "width" : 1321,
+    "height" : 1920,
+    "max_width" : 1321,
+    "max_height" : 1920
+  }
+}, {
+  "id" : "2ee20047-752a-c780-74d1-f89081d5ff6e",
+  "name" : "section_heading",
+  "label" : "Section Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "What To Expect"
+}, {
+  "id" : "f614f461-da01-fe22-b7fb-fdd18cb559ae",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Our group of design experts specializes in rapidly bringing your products to market. Dynamics Group has access to the leading edge of software and hardware, and we can accelerate project timelines and provide build to print support or work with you to develop a design that fits your manufacturing specifications.</p>"
+}, {
+  "id" : "60f30008-4faa-25ca-f9b0-5b6158dda6f7",
+  "name" : "bottom_content",
+  "label" : "Bottom Content",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "dbf06fee-6157-5612-ac7b-b934c8cc02fc",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null
+  }, {
+    "id" : "4948cdb9-1a0a-70a8-b6ce-213abe99b55c",
+    "name" : "include_divider",
+    "label" : "Include Divider",
+    "required" : false,
+    "locked" : false,
+    "display" : "toggle",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "include_divider" : true
+  }
+} ]

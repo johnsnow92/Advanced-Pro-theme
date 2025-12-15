@@ -1,0 +1,9 @@
+.hupla-blog-post-body-social-share {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.hupla-blog-post-body-social-share .list-inline-item:not(:last-child) {
+  margin-right: 0;
+}

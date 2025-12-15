@@ -1,0 +1,55 @@
+[ {
+  "id" : "5ce1885d-1fee-240a-110f-35e16e78271d",
+  "name" : "heading_text",
+  "label" : "Heading text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Common Topics"
+}, {
+  "id" : "68134b48-609f-979c-59de-461aadf5ef97",
+  "name" : "tag",
+  "label" : "Tag",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 7
+  },
+  "tag_value" : "ALL",
+  "type" : "tag",
+  "display_width" : null,
+  "default" : [ {
+    "id" : 5398814839,
+    "name" : "Eureka Math",
+    "slug" : "eureka-math"
+  }, {
+    "id" : 5398814839,
+    "name" : "Eureka Math",
+    "slug" : "eureka-math"
+  }, {
+    "id" : 5398814839,
+    "name" : "Eureka Math",
+    "slug" : "eureka-math"
+  }, {
+    "id" : 5398814839,
+    "name" : "Eureka Math",
+    "slug" : "eureka-math"
+  }, {
+    "id" : 5398814839,
+    "name" : "Eureka Math",
+    "slug" : "eureka-math"
+  }, {
+    "id" : 5398814839,
+    "name" : "Eureka Math",
+    "slug" : "eureka-math"
+  }, {
+    "id" : 5398814839,
+    "name" : "Eureka Math",
+    "slug" : "eureka-math"
+  } ]
+} ]

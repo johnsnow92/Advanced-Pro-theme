@@ -1,0 +1,21 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 166426713690,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../../../Kore_Theme_v1/Coded Files/CSS/kore-master-style.css",
+    "name" : "kore-master-style.css"
+  }, {
+    "autoload" : true,
+    "path" : "../../../../Kore_Theme_v1/Coded Files/CSS/kore-lity.css",
+    "name" : "kore-lity.css"
+  } ],
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../../../Kore_Theme_v1/Coded Files/JS/kore-lity.js",
+    "name" : "kore-lity.js"
+  } ],
+  "is_available_for_new_content" : true
+}

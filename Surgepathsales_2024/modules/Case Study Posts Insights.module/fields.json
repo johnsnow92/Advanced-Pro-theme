@@ -1,0 +1,162 @@
+[ {
+  "id" : "6b374033-6dfc-1090-f380-5b621073bb97",
+  "name" : "main_heading",
+  "label" : "Main heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Case Studies"
+}, {
+  "id" : "c28d6c23-5621-359d-251d-6c4408118c28",
+  "name" : "post_group",
+  "label" : "Post group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "bdce7873-7db3-5045-01fa-4cd4948ecd74",
+    "name" : "post_image",
+    "label" : "Post Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Rectangle%20252-2.png",
+      "alt" : "Rectangle 252-2",
+      "loading" : "lazy",
+      "width" : 444,
+      "height" : 271,
+      "max_width" : 444,
+      "max_height" : 271
+    }
+  }, {
+    "id" : "df88904a-d728-f514-5eb8-c0887a9b8348",
+    "name" : "author_image",
+    "label" : "Author Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Ellipse%2043.svg",
+      "alt" : "Ellipse 43",
+      "loading" : "lazy",
+      "width" : 45,
+      "height" : 45,
+      "max_width" : 45,
+      "max_height" : 45
+    }
+  }, {
+    "id" : "bc737280-7fe6-1505-8d38-bbf9e16e15c7",
+    "name" : "author_name",
+    "label" : "Author Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Ahmad Spears"
+  }, {
+    "id" : "2e11c5df-697f-4ebf-fe20-1874b6634767",
+    "name" : "post_date",
+    "label" : "Post Date",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Jul 23, 2024"
+  }, {
+    "id" : "473c0609-3587-61a0-08ce-4382729f2d4e",
+    "name" : "dot_image",
+    "label" : "Dot Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Group%201691-1.png",
+      "alt" : "Group 1691-1",
+      "loading" : "lazy",
+      "width" : 6,
+      "height" : 21,
+      "max_width" : 6,
+      "max_height" : 21
+    }
+  }, {
+    "id" : "5ce968a0-7c34-bc6a-6d4c-b546f4946b41",
+    "name" : "post_heading",
+    "label" : "Post Heading",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "How to Build a High-Performing Sales Team: Key Strategies and Best Practices"
+  }, {
+    "id" : "32923247-95d2-55fb-c045-c6fcfcaf0e45",
+    "name" : "post_detail",
+    "label" : "Post Detail",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span>Cover strategies for recruitment, training, motivation, and performance management.</span></p>"
+  }, {
+    "id" : "24b09646-f617-32ab-ef68-f9a2737c282b",
+    "name" : "read_more_btn_text",
+    "label" : "Read More Btn Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Read more"
+  }, {
+    "id" : "59203129-a38e-0c76-73d5-e0c7a707188a",
+    "name" : "txt",
+    "label" : "43_txt",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "43"
+  }, {
+    "id" : "66687bdc-e3ed-20a0-991a-d01ae1fd16af",
+    "name" : "text",
+    "label" : "0-Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "0"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

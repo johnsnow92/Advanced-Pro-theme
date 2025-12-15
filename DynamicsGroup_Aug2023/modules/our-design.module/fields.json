@@ -1,0 +1,65 @@
+[ {
+  "id" : "19e90855-b4e9-3463-f849-7ba0b24e0aad",
+  "name" : "section_heading",
+  "label" : "Section Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Our Design Licenses &amp; Equipment"
+}, {
+  "id" : "f9d889d6-5d10-234d-7110-1e8a1342ce8e",
+  "name" : "content_item",
+  "label" : "Left Featured Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Autocad"
+}, {
+  "id" : "24bb1789-ca33-4c22-2b77-6dd2893de8ba",
+  "name" : "right_featured_item",
+  "label" : "Right Featured Item",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "a7720699-b872-9bb3-f303-e54227723cb1",
+  "name" : "bottom_features",
+  "label" : "Bottom Features",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "dab4d67a-b322-2776-0ed8-09a7b46bbb7b",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "type" : "cta",
+  "display_width" : null
+} ]

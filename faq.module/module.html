@@ -1,0 +1,34 @@
+{% if module.faq_items %}
+<div class="faq-module" data-allow-multiple="{{ module.allow_multiple_open }}">
+  {% if module.section_title %}
+  <h2 class="faq-section-title">{{ module.section_title }}</h2>
+  {% endif %}
+
+  <div class="faq-accordion">
+    {% for item in module.faq_items %}
+    <div class="faq-item {% if loop.first and module.expand_first_item %}faq-item--active{% endif %}" data-faq-item>
+      <button class="faq-question"
+              aria-expanded="{% if loop.first and module.expand_first_item %}true{% else %}false{% endif %}"
+              aria-controls="faq-answer-{{ loop.index }}"
+              data-faq-trigger>
+        <span class="faq-question-text">{{ item.question }}</span>
+        <span class="faq-icon" aria-hidden="true">
+          <svg class="faq-icon-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+
+      <div class="faq-answer-wrapper"
+           id="faq-answer-{{ loop.index }}"
+           aria-hidden="{% if loop.first and module.expand_first_item %}false{% else %}true{% endif %}"
+           data-faq-content>
+        <div class="faq-answer">
+          {{ item.answer }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

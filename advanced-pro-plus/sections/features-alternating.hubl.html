@@ -1,0 +1,48 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Features - Alternating Layout
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: features-alternating.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  max_width=1200,
+  padding={"top": 80, "bottom": 80}
+%}
+  {% dnd_row %}
+    {% dnd_column width=6 %}
+      {% dnd_module path="@hubspot/linked_image" %}
+        {% module_attribute "img" %}
+          {"src": "https://via.placeholder.com/600x400", "alt": "Feature 1"}
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+    {% dnd_column width=6, vertical_alignment="MIDDLE" %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Feature One</h2>
+          <p style="font-size: 1.125rem; color: #666; line-height: 1.75;">Detailed description of your amazing feature goes here.</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+  {% end_dnd_row %}
+
+  {% dnd_row padding={"top": 40} %}
+    {% dnd_column width=6, vertical_alignment="MIDDLE" %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem;">Feature Two</h2>
+          <p style="font-size: 1.125rem; color: #666; line-height: 1.75;">Another powerful feature that sets you apart.</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+    {% dnd_column width=6 %}
+      {% dnd_module path="@hubspot/linked_image" %}
+        {% module_attribute "img" %}
+          {"src": "https://via.placeholder.com/600x400", "alt": "Feature 2"}
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+  {% end_dnd_row %}
+{% end_dnd_section %}

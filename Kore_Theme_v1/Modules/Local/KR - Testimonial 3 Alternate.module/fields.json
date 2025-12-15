@@ -1,0 +1,725 @@
+[ {
+  "id" : "6801d3d2-1c73-aca8-841a-fa2386a5593f",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "e2524a20-f8e1-caee-b36c-8e669a8dd765",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "HEAR FROM OUR CUSTOMERS"
+  }, {
+    "id" : "5572c80b-9ae6-5ce0-05be-46f770999199",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "e2524a20-f8e1-caee-b36c-8e669a8dd765",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "h2"
+  }, {
+    "id" : "cdf5b6f9-a1e2-be6a-2339-34b6864a8359",
+    "name" : "font_size",
+    "label" : "Font Size",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "e2524a20-f8e1-caee-b36c-8e669a8dd765",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 16
+  }, {
+    "id" : "270d589e-c2a7-7c13-e945-cfedd2719ffd",
+    "name" : "font_weight",
+    "label" : "Font Weight",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "e2524a20-f8e1-caee-b36c-8e669a8dd765",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "font-weight-100", "Thin" ], [ "font-weight-300", "Light" ], [ "font-weight-400", "Regular" ], [ "font-weight-500", "Medium" ], [ "font-weight-600", "Semi Bold" ], [ "font-weight-700", "Bold" ], [ "font-weight-800", "Extra Bold" ], [ "font-weight-900", "Black" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "font-weight-700"
+  }, {
+    "id" : "71817e69-d6bc-8262-194b-e9e90073d6f2",
+    "name" : "font_color",
+    "label" : "Font Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "e2524a20-f8e1-caee-b36c-8e669a8dd765",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : null,
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "HEAR FROM OUR CUSTOMERS",
+    "type" : "h2",
+    "font_size" : 16,
+    "font_weight" : "font-weight-700",
+    "font_color" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "9bb552ed-cdf5-2eb3-eee3-e45d6b0f240c",
+  "name" : "testimonial",
+  "label" : "Testimonial",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 4
+  },
+  "children" : [ {
+    "id" : "34661850-76bf-2b79-c61b-b20ba4ce160d",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "left-quote", "Left Quote" ], [ "right-quote", "Right Quote" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "left-quote"
+  }, {
+    "id" : "3e924160-f259-70c0-a491-67817c8e3cea",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/testimonial-image.jpeg",
+      "alt" : "testimonial-image",
+      "width" : 1280,
+      "height" : 853,
+      "max_width" : 1280,
+      "max_height" : 853
+    }
+  }, {
+    "id" : "3151a68e-9e65-7a90-41cf-5516271420c6",
+    "name" : "content_text",
+    "label" : "Content Text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p style=\"font-size: 20px;\">“Jeffrey, I learned more marketing in one hour with you than I have in 20 years of doing business. Thanks for a great seminar!”</p>\n<p><span style=\"font-size: 16px;\">Alejandro R. Torres</span><br><span style=\"font-size: 14px;\">Potting Shed Publishing</span></p>"
+  }, {
+    "id" : "762bc0e0-83f1-796c-d9e2-13cf5c0a375a",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#E9F6F6",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "type" : "left-quote",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/testimonial-image.jpeg",
+      "alt" : "testimonial-image",
+      "width" : 1280,
+      "height" : 853,
+      "max_width" : 1280,
+      "max_height" : 853
+    },
+    "content_text" : "<p style=\"font-size: 20px;\">“Jeffrey, I learned more marketing in one hour with you than I have in 20 years of doing business. Thanks for a great seminar!”</p>\n<p><span style=\"font-size: 16px;\">Alejandro R. Torres</span><br><span style=\"font-size: 14px;\">Potting Shed Publishing</span></p>",
+    "background_color" : {
+      "color" : "#E9F6F6",
+      "opacity" : 100
+    }
+  }, {
+    "type" : "left-quote",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/testimonial-image.jpeg",
+      "alt" : "testimonial-image",
+      "width" : 1280,
+      "height" : 853,
+      "max_width" : 1280,
+      "max_height" : 853
+    },
+    "content_text" : "<p style=\"font-size: 20px;\">“Jeffrey, I learned more marketing in one hour with you than I have in 20 years of doing business. Thanks for a great seminar!”</p>\n<p><span style=\"font-size: 16px;\">Alejandro R. Torres</span><br><span style=\"font-size: 14px;\">Potting Shed Publishing</span></p>",
+    "background_color" : {
+      "color" : "#E9F6F6",
+      "opacity" : 100
+    }
+  }, {
+    "type" : "left-quote",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/testimonial-image.jpeg",
+      "alt" : "testimonial-image",
+      "width" : 1280,
+      "height" : 853,
+      "max_width" : 1280,
+      "max_height" : 853
+    },
+    "content_text" : "<p style=\"font-size: 20px;\">“Jeffrey, I learned more marketing in one hour with you than I have in 20 years of doing business. Thanks for a great seminar!”</p>\n<p><span style=\"font-size: 16px;\">Alejandro R. Torres</span><br><span style=\"font-size: 14px;\">Potting Shed Publishing</span></p>",
+    "background_color" : {
+      "color" : "#E9F6F6",
+      "opacity" : 100
+    }
+  }, {
+    "type" : "left-quote",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/testimonial-image.jpeg",
+      "alt" : "testimonial-image",
+      "width" : 1280,
+      "height" : 853,
+      "max_width" : 1280,
+      "max_height" : 853
+    },
+    "content_text" : "<p style=\"font-size: 20px;\">“Jeffrey, I learned more marketing in one hour with you than I have in 20 years of doing business. Thanks for a great seminar!”</p>\n<p><span style=\"font-size: 16px;\">Alejandro R. Torres</span><br><span style=\"font-size: 14px;\">Potting Shed Publishing</span></p>",
+    "background_color" : {
+      "color" : "#E9F6F6",
+      "opacity" : 100
+    }
+  } ]
+}, {
+  "id" : "e7a4b2bc-900d-6c34-2345-8c60cfa652a5",
+  "name" : "testimonial_text",
+  "label" : "Testimonial Text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p><strong>See 50+ more testimonials on our “What Clients Say “ page.</strong></p>"
+}, {
+  "id" : "e917e043-84b4-e017-8d71-13e63461688f",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "1d679014-cee9-193f-4fd4-aa35e53c92d4",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "SEE MORE TESTIMONIALS"
+  }, {
+    "id" : "406d45f7-757a-9a9f-9342-38d08635a591",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "c27a6081-cf3c-01d8-9740-c93c6dc6dcf7",
+    "name" : "button_background_color",
+    "label" : "Button Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#0682bb",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "851c63a5-205b-e2ff-e531-1f9a1fe202a0",
+    "name" : "button_background_color_hover",
+    "label" : "Button Background Color Hover",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#04618C",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "dfa283e7-cb1c-5d14-ce22-c3dc36049f47",
+    "name" : "button_text_color",
+    "label" : "Button Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "fb9e8498-74a6-dc77-c6a2-cd553a226a93",
+    "name" : "button_text_color_hover",
+    "label" : "Button Text Color Hover",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "SEE MORE TESTIMONIALS",
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "button_background_color" : {
+      "color" : "#0682bb",
+      "opacity" : 100
+    },
+    "button_background_color_hover" : {
+      "color" : "#04618C",
+      "opacity" : 100
+    },
+    "button_text_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "button_text_color_hover" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "ee1e14b7-878b-5cab-7011-101a46363ab4",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "93448879-955b-2e09-f8e3-8f7a91698487",
+    "name" : "section_text_alignment",
+    "label" : "Section Text Alignment",
+    "help_text" : "The horizontal alignment of the text.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-left", "Left" ], [ "text-center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-center"
+  }, {
+    "id" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+    "name" : "section_background_type",
+    "label" : "Section Background Type",
+    "help_text" : "Choose the kind of background that displays on the section.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "1", "Image" ], [ "2", "Color" ], [ "3", "Default Color" ], [ "4", "Default Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "2"
+  }, {
+    "id" : "68d4dfad-7a62-af61-6246-8df16b3b34dc",
+    "name" : "section_background_image",
+    "label" : "Section Background Image",
+    "help_text" : "Specify an image to use as the background of the section.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    }
+  }, {
+    "id" : "a0ffcf0e-2357-9fd9-13ce-6170160f44c6",
+    "name" : "section_background_image_overlay",
+    "label" : "Section Background Image Overlay",
+    "help_text" : "Add a layer of color on top of the background image. You can also specify the opacity (e.g. 85%)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#272727",
+      "opacity" : 85
+    }
+  }, {
+    "id" : "182f6412-ec15-59c2-5efa-57608ac42370",
+    "name" : "section_background_color",
+    "label" : "Section Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "1150bf06-946a-e483-a3a9-1763a8081a4b",
+    "name" : "section_padding",
+    "label" : "Section Padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "custom", "Custom" ], [ "py-0", "Padding Top & Bottom - 0" ], [ "py-5", "Padding Top & Bottom - 5px" ], [ "py-10", "Padding Top & Bottom - 10px" ], [ "py-15", "Padding Top & Bottom - 15px" ], [ "py-20", "Padding Top & Bottom - 20px" ], [ "py-25", "Padding Top & Bottom - 25px" ], [ "py-30", "Padding Top & Bottom - 30px" ], [ "py-35", "Padding Top & Bottom - 35px" ], [ "py-40", "Padding Top & Bottom - 40px" ], [ "py-45", "Padding Top & Bottom - 45px" ], [ "py-50", "Padding Top & Bottom - 50px" ], [ "py-55", "Padding Top & Bottom - 55px" ], [ "py-60", "Padding Top & Bottom - 60px" ], [ "py-65", "Padding Top & Bottom - 65px" ], [ "py-70", "Padding Top & Bottom - 70px" ], [ "py-75", "Padding Top & Bottom - 75px" ], [ "py-80", "Padding Top & Bottom - 80px" ], [ "py-85", "Padding Top & Bottom - 85px" ], [ "py-90", "Padding Top & Bottom - 90px" ], [ "py-95", "Padding Top & Bottom - 95px" ], [ "py-100", "Padding Top & Bottom - 100px" ], [ "py-120", "Padding Top & Bottom - 120px" ], [ "py-150", "Padding Top & Bottom - 150px" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "custom"
+  }, {
+    "id" : "d17a88f9-4a27-7a65-54ae-d15182d6d13b",
+    "name" : "section_padding_desktop",
+    "label" : "Section Padding Desktop",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "1150bf06-946a-e483-a3a9-1763a8081a4b",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "7e27a52c-dde2-10b2-ad63-d3c5aeae92e7",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    }, {
+      "id" : "4f492d53-897f-ab09-63ed-a6cf3e749db6",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 50,
+      "bottom" : 50
+    }
+  }, {
+    "id" : "d602b9d6-56a0-3d09-4d89-70b67276e2a1",
+    "name" : "section_padding_tablet",
+    "label" : "Section Padding Tablet",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "1150bf06-946a-e483-a3a9-1763a8081a4b",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "030d83cf-48da-69d6-1434-f800363d8432",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    }, {
+      "id" : "03b8be53-7985-fc12-423f-5334dd24d40c",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 50,
+      "bottom" : 50
+    }
+  }, {
+    "id" : "d570d810-c21e-5c6f-eb2c-f9e799e1045c",
+    "name" : "section_padding_mobile",
+    "label" : "Section Padding Mobile",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "1150bf06-946a-e483-a3a9-1763a8081a4b",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "118a58cf-1d3f-4b6c-8868-063c1b757522",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    }, {
+      "id" : "735edf46-706e-1743-8730-52de9766618b",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 50,
+      "bottom" : 50
+    }
+  }, {
+    "id" : "96c75b2e-592c-4982-2f7c-5413f63c5def",
+    "name" : "section_id",
+    "label" : "Section ID",
+    "help_text" : "Enter a unique ID. This will be used to jump directly on this section.\n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "ee8ee9b8-cbf2-3314-a4e6-47e7f94c845f",
+    "name" : "section_class",
+    "label" : "Section Class",
+    "help_text" : "Add a few extra CSS class on this section so you can customize even further. \n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "a285f189-6438-a1fd-ae79-b31e66884a2a",
+    "name" : "section_use_existing_portal_style",
+    "label" : "Section Use Existing Portal Style",
+    "help_text" : "Enable this option to use existing portal styling.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "4de3cddd-abe4-711a-e427-637386591162",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "help_text" : "Disable this option to hide this section on the page.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "215cac8f-576a-6b7d-23fc-dc7b2bde7a9e",
+    "name" : "filler",
+    "label" : "Filler",
+    "required" : false,
+    "locked" : false,
+    "children" : [ ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_text_alignment" : "text-center",
+    "section_background_type" : "2",
+    "section_background_image" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    },
+    "section_background_image_overlay" : {
+      "color" : "#272727",
+      "opacity" : 85
+    },
+    "section_background_color" : {
+      "color" : "#FFFFFF",
+      "opacity" : 100
+    },
+    "section_padding" : "custom",
+    "section_padding_desktop" : {
+      "top" : 50,
+      "bottom" : 50
+    },
+    "section_padding_tablet" : {
+      "top" : 50,
+      "bottom" : 50
+    },
+    "section_padding_mobile" : {
+      "top" : 50,
+      "bottom" : 50
+    },
+    "section_id" : "",
+    "section_class" : "",
+    "section_use_existing_portal_style" : false,
+    "section_show_hide" : true,
+    "filler" : { }
+  }
+} ]

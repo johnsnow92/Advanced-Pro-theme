@@ -1,0 +1,27 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 129534509931,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/plugins/glide.css",
+    "name" : "glide.css"
+  } ],
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/plugins/isotop.js",
+    "name" : "isotop.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../js/plugins/glide.js",
+    "name" : "glide.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../js/plugins/parallax.js",
+    "name" : "parallax.js"
+  } ],
+  "label" : "Features",
+  "icon" : "fontawesome-5.14.0:Check%20Square:SOLID",
+  "is_available_for_new_content" : true
+}

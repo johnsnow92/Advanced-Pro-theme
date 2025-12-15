@@ -1,0 +1,702 @@
+{# Remove module field #}
+{% if not module.module_settings.remove_module %}
+
+{% macro dateFormat(date_select, post, customm) %}
+
+{% if date_select == "custom" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat(customm) %}
+<span class="value_m">{{getdate}}</span>
+{% else %}
+
+{% if date_select == "type1" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat('%d %B, %Y') %}
+{% endif %}
+{% if date_select == "type2" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat('%d %b, %Y') %}
+{% endif %}
+{% if date_select == "type3" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat('%b %d, %Y') %}
+{% endif %}
+{% if date_select == "type4" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat('%d-%m-%Y') %}
+{% endif %}
+{% if date_select == "type6" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat('%m/%d/%Y') %}
+{% endif %}
+
+
+{% if date_select == "type7" or date_select == "type8" %}
+
+{% set ordinalSuffix = "th" %}
+{% if post.publish_date_local_time|datetimeformat('%d') == 1 || post.publish_date_local_time|datetimeformat('%d') == 21 || post.publish_date_local_time|datetimeformat('%d') == 31  %}
+{% set ordinalSuffix = "st" %}
+{% endif %}
+{% if post.publish_date_local_time|datetimeformat('%d') == 2 || post.publish_date_local_time|datetimeformat('%d') == 22  %}
+{% set ordinalSuffix = "nd" %}
+{% endif %}
+{% if post.publish_date_local_time|datetimeformat('%d') == 3 || post.publish_date_local_time|datetimeformat('%d') == 23  %}
+{% set ordinalSuffix = "rd" %}
+{% endif %}
+
+{% if date_select == "type7" %}
+<span class="value_m">{{ post.publish_date_local_time|datetimeformat('%B') }} {{ post.publish_date_local_time|datetimeformat('%-d') }}{{ordinalSuffix}} {{ post.publish_date_local_time|datetimeformat('%Y') }}</span>
+{% endif %}
+{% if date_select == "type8" %}
+<span class="value_m"> {{ post.publish_date_local_time|datetimeformat('%-d') }}{{ordinalSuffix}}  {{ post.publish_date_local_time|datetimeformat('%B %Y') }}</span>
+{% endif %}
+
+{% else %}
+<span class="value_m">{{getdate}}</span>
+{% endif %}
+
+{% endif %}
+
+
+{% endmacro %}
+
+
+
+
+<footer class="footer {{name}} {{ module.advanced_customization.css_class_selector }}" {% if  module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+
+  {% for item in module.add_section %}
+
+  {% set sec_sett = item.section_settings%}
+  {% set  bg_op = sec_sett.background_option %}
+
+
+  {% if item.section_settings.background_option.bg_color_choice == "pri_color" %}
+  {% set bgClass = "bg_primary" %}
+  {% endif %}
+
+  {% if item.section_settings.background_option.bg_color_choice == "sec_color" %}
+  {% set bgClass = "bg_secondary" %}
+  {% endif %}
+
+  <div class="footer-section {{item.advanced_customization.css_class_selector}} {{bgClass}} footer-section-{{loop.index}} {% if item.hide_at_desktop %} desktop_hide{% endif %}{% if item.hide_at_tab %} tab_hide{% endif %}{% if item.hide_at_mobile %} mobile_hide{% endif %} border_{{ sec_sett.border.thikness }} {{ bg_op.bg_color_choice }}_bg_choice {% if sec_sett.spacing.change_mobile_spacing %}sec_mob_spac	{% endif %}" 
+       {% if item.section_settings.background_option.bg_color_choice =="Cst_color" %}
+       style="background-color: rgba({{ item.section_settings.background_option.custom_color.color|convert_rgb }},{{ item.section_settings.background_option.custom_color.opacity/100 }});"
+       {% endif %}>
+    <div class="page-center">
+      <div class="flex_row {% if item.section_settings.font_color_options.overlay_color_choice == "pri_f_color" %}primary_font{% endif %} " 
+           style="{% if item.section_settings.font_color_options.overlay_color_choice =="Cst_f_color" %}color:rgba({{ item.section_settings.font_color_options.custom_color.color|convert_rgb }},{{ item.section_settings.font_color_options.custom_color.opacity/100 }}) !important;{% endif %}">
+        {% for item2 in item.add_columns %}
+        <div class="col-section {{item2.advanced_customization.css_class_selector}} num{{loop.index}}  {% if item2.hide_at_desktop %}desktop_hide{% endif %}{% if item2.hide_at_tab %} tab_hide{% endif %}{% if item2.hide_at_mobile %} mobile_hide{% endif %}">
+
+          {% for item3 in item2.add_row %}
+          <div class="footer-row {{item3.advanced_customization.css_class_selector}}  al_{{item3.select_content_alignment}} al_tab_{{item3.select_tab_horizontal_alignment}} al_mob_{{item3.select_content_mobile_alignment}} row{{loop.index}} type_{{ item3.row_type }} {% if item3.hide_at_desktop %} desktop_hide{% endif %}{% if item3.hide_at_tab %} tab_hide{% endif %} {% if item3.hide_at_mobile %} mobile_hide{% endif %}"> 
+
+            {# button #}
+            {% if item3.row_type == 'button' %}
+            <div class="footer-button btn_row">
+              {% for item4 in item3.field_group %}
+              <div class="ftr_btn_item">
+
+                {% if item4.button_type  == "std"%}
+                {% set href = item4.button_link.url.href %}
+                {% if item4.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% elif item4.button_link.url.type is equalto "CONTENT" %}
+                {% if item4.bookmark_id %}
+                {% set href = href + "#" + item4.bookmark_id %}
+                {% else %}
+                {% set href = item4.button_link.url.href %}
+                {% endif %}
+                {% endif %}
+                <a href="{{ href }}" class="standard {% if item4.button_theme %}{{item4.button_theme}}{% else %}hs-button{% endif %}"
+                   {% if item4.button_link.open_in_new_tab %}target="_blank"{% endif %}
+                   {% if item4.button_link.rel %}rel="{{ item4.button_link.rel }}"{% endif %}>
+                  {{ item4.button_text }}
+                </a>
+                {% endif %}
+
+                {% if item4.button_type  == "cta"%}
+                {% cta guid="{{ item4.cta_field }}" %}
+                {% endif %}
+
+                {# button popup #}
+                {% if item4.button_type  == "popup"%}
+                <a data-id="trigger_{{name}}_{{loop.index}}" class="popup {% if item4.button_theme %}{{item4.button_theme}}{% else %}hs-button{% endif %}" href="javascript:;">
+                  {{ item4.button_text }}
+                </a>
+                <div class="popup-wrapper popup-type-{{item4.popup_type}}" id="trigger_{{name}}_{{loop.index}}">
+                  <div class="custom-wrapper-popup">
+                    <div class="inner-popup-container">
+                      <div class="popup-inner-wrapper">
+                        <div class="close-icon popup-ftr">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1"><path d="M810.65984 170.65984q18.3296 0 30.49472 12.16512t12.16512 30.49472q0 18.00192-12.32896 30.33088l-268.67712 268.32896 268.67712 268.32896q12.32896 12.32896 12.32896 30.33088 0 18.3296-12.16512 30.49472t-30.49472 12.16512q-18.00192 0-30.33088-12.32896l-268.32896-268.67712-268.32896 268.67712q-12.32896 12.32896-30.33088 12.32896-18.3296 0-30.49472-12.16512t-12.16512-30.49472q0-18.00192 12.32896-30.33088l268.67712-268.32896-268.67712-268.32896q-12.32896-12.32896-12.32896-30.33088 0-18.3296 12.16512-30.49472t30.49472-12.16512q18.00192 0 30.33088 12.32896l268.32896 268.67712 268.32896-268.67712q12.32896-12.32896 30.33088-12.32896z"/></svg>
+                        </div>
+                        {# form #}
+                        {% if  item4.popup_type == 'pop_form' %}
+                        {% if item4.form_title %}<h3 class="form-title">{{ item4.form_title }}</h3>{% endif %}
+                        {% form
+                    form_to_use="{{ item4.form_field_1.form_id }}"
+                    response_response_type="{{ item4.form_field_1.response_type }}"
+                    response_message="{{ item4.form_field_1.message }}"
+                    response_redirect_id="{{ item4.form_field_1.redirect_id }}"
+                    response_redirect_url="{{item4.form_field_1.redirect_url}}"
+                    gotowebinar_webinar_key="{{ item4.form_field_1.gotowebinar_webinar_key }}"
+                  %}
+                        {% endif %}
+                        {# form ends #}
+
+                        {# content #}
+                        {% if item4.popup_type == 'content' %}
+                        {{ item4.content }}
+                        {% endif %}
+                        {# content  ends #}
+
+                        {# video #}
+                        {% if item4.popup_type == 'video' %}
+                        {% if item4.video_type == 'File' %}
+                        <video class="videoSrc videoTag" src="" data-src="{{ item4.video_src }}" autoplay controls loop>
+                        </video>
+                        {% endif %}
+
+                        {% if item4.video_type == 'External' %}
+                        <div class="cst-external-video">
+                          {% if item4.external_video_url is string_containing "youtube.com" %}
+                          <iframe  src=""  data-src="{{ item4.external_video_url|split('?')|first }}?autoplay=1&loop=1&mute=1&showinfo=0&controls=0&playlist={{ item4.external_video_url|split('?')|first|split('/')|last }}"  frameborder="0" allowFullScreen class="iframe_video videoSrc"></iframe>
+                          {% else %}
+                          <iframe  src=""  data-src="{{ item4.external_video_url|split('?')|first }}?autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0"  frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video videoSrc"></iframe>
+                          {% endif %}   
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                        {# video ends #}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+                {# button popup ends #}
+
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+            {# button ends #}
+
+            {# logo #}
+            {% if item3.row_type == 'logo' %}
+            <div class="footer-logo">
+              {% set href = item3.logo_setting.link_field_3.url.href %}
+              {% if item3.logo_setting.link_field_3.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              {% set loadingAttr = item3.logo_setting.logo_field.loading != 'disabled' ? '{{ item3.logo_setting.logo_field.loading }}' : '' %}
+              {% logo
+                  override_inherited_src="{{ item3.logo_setting.logo_field.override_inherited_src }}"
+                  src="{{ item3.logo_setting.logo_field.src }}"
+                  alt="{{ item3.logo_setting.logo_field.alt }}"
+                  width="{{ item3.logo_setting.logo_field.width }}"
+                  height="{{ item3.logo_setting.logo_field.height }}"
+                  loading="{{ loadingAttr }}"
+                  link="{{ href }}"
+                  open_in_new_tab="{% if item3.logo_setting.link_field_3.open_in_new_tab %}true{% else %}false{% endif %}"
+                  suppress_company_name="{{ item3.logo_setting.logo_field.suppress_company_name }}"
+                %}
+            </div>
+            {% endif %}
+            {# logo ends #}
+
+
+            {# form box #}
+            {% if item3.row_type == 'form_box' %}
+            {% if item3.form_field.form_id %}
+            <div class="footer-form {% if item3.form_field.form_id %}form_add{% endif %}">
+              {% form
+         form_to_use="{{ item3.form_field.form_id }}"
+         response_response_type="{{ item3.response_type }}"
+         response_message="{{ item3.form_field.message }}"
+         response_redirect_id="{{ item3.form_field.redirect_id }}"
+         response_redirect_url="{{item3.form_field.redirect_url}}"
+         gotowebinar_webinar_key="{{ item3.form_field.gotowebinar_webinar_key }}"
+      %}
+            </div>
+            {% endif %}
+            {% endif %}
+            {# form box ends #}
+
+            {# image #}
+            {% if item3.row_type == 'image' %}
+            <div class="footer-image {% if item3.image_setting.include_link %}linkadd{% endif %}">
+              {% if item3.image_setting.image_field.src %}
+
+              {% if item3.image_setting.include_link %}
+              {% set href = item3.image_setting.link_field_2.url.href %}
+              {% if item3.image_setting.link_field_2.url.type is equalto "EMAIL_ADDRESS" %}
+              {% set href = "mailto:" + href %}
+              {% endif %}
+              <a href="{{ href }}"
+                 {% if item3.image_setting.link_field_2.open_in_new_tab %}target="_blank"{% endif %}
+                 {% if item3.image_setting.link_field_2.rel %}rel="{{ item3.image_setting.link_field_2.rel }}"{% endif %}>
+                {% set loadingAttr = item3.image_setting.image_field.loading != 'disabled' ? 'loading="{{ item3.image_setting.image_field.loading }}"' : '' %}   {% endif %}
+                <img src="{{ item3.image_setting.image_field.src }}" alt="{{ item3.image_setting.image_field.alt }}" title="{{ item3.image_setting.image_field.alt }}" width="{{item3.image_setting.image_field.width}}" {{ loadingAttr }}>
+                {% if item3.image_setting.include_link %}  </a>  {% endif %}
+              {% endif %}
+            </div>
+            {% endif %}
+            {# image ends #}
+
+            {# simple menu #}
+            {% if item3.row_type == 'simple_menu' %}
+            <div class="footer-simple-menu">
+              {% simple_menu menu_tree="{{ item3.simplemenu_field }}" %}
+            </div>
+            {% endif %}
+            {# simple menu ends #}
+
+            {# advanced menu #}
+            {% if item3.row_type == 'advance_menu' %}
+            {% if item3.advance_menu %}
+            <div class="footer-menu">
+              {% menu id="{{ item3.advance_menu }}" %}
+            </div>
+            {% endif %}
+            {% endif %}
+            {# advanced menu ends #}
+
+            {# blog feed #}
+            {% if item3.row_type == 'blog_feed' %}
+            <div class="blog_feed-wrapper">
+              {% set posts = [] %}
+              {% if item3.blog_feed.post_type == 'recent' %}
+              {% set posts = blog_recent_posts(item3.blog_feed.select_blog, item3.blog_feed.post_count) %}
+              {% endif %}
+
+              {% if item3.blog_feed.post_type == 'posts_by_tag' %}
+              {% set posts = blog_recent_tag_posts(item3.blog_feed.select_blog, item3.blog_feed.choice_tag, item3.blog_feed.post_count) %}
+              {% endif %}
+
+              {% if item3.blog_feed.post_type == 'popular' %}
+              {% set posts = blog_popular_posts(item3.blog_feed.select_blog, item3.blog_feed.post_count ) %}
+              {% endif %}
+
+              {% for post in posts %}
+
+              <div class="blog_feed_item {% if item3.blog_feed.title %}title_add{% endif %} {% if item3.blog_feed.description %}descr_add{% endif %} {% if item3.blog_feed.author %}author_add{% endif %} {% if item3.blog_feed.date %}date_add{% endif %} {% if item3.blog_feed.readmore %}moretext_add{% endif %} {% if !item3.blog_feed.featured_image or not post.featured_image %}without_image{% endif %}">
+                {% if item3.blog_feed.featured_image %}
+                {% if post.featured_image %}<div class="blog_feed_featured_image" style="background-image:url('{{ post.featured_image }}')"></div>{% endif %}
+                {% endif %}
+
+                <div class="blog_feed_content">
+                  {% if item3.blog_feed.title %}
+                  <div class="blog_feed_item_title"><a href="{{ post.absolute_url }}">{{post.name}}</a></div>
+                  {% endif %}
+                  {% if item3.blog_feed.description %}
+                  <div class="blog_feed_item_content">{{ post.post_summary|truncatehtml(100)|striptags }}</div>
+                  {% endif %}
+
+                  {% if item3.blog_feed.author or item3.blog_feed.date or item3.blog_feed.readmore %}
+                  <div class="blog_feed_item_byline">
+                    {% if item3.blog_feed.author %}
+                    <span class="author">{{post.blog_post_author.display_name}}</span>
+                    {% endif %}
+
+                    {% if item3.blog_feed.date %}
+                    <span class="date">
+                      {#                       {{ post.publish_date_local_time.strftime('%d/%m/%Y') }} #}
+                      {{ dateFormat(item3.blog_feed.select_date_format, post, item3.blog_feed.custom_date  )}}
+                    </span>
+                    {% endif %}
+
+                    {% if item3.blog_feed.readmore %}
+                    <span class="readmore">
+                      <a href="{{ post.absolute_url }}">
+                        {{ item3.blog_feed.read_more_text }}
+                      </a>
+                    </span>
+                    {% endif %}
+                  </div>
+                  {% endif %}
+
+                </div>
+              </div>
+              {% endfor %}
+
+            </div>
+            {% endif %}
+            {# blog feed ends #}
+
+            {# contact #}
+            {% if item3.row_type == 'contact' %}
+            <div class="footer_contact_section">
+              {% for item4 in item3.add_contact %}
+
+              <div class="footer_contact_section_item">
+                <div class="left-section {% if item4.icon_type == 'icon' %} icon {% endif %}"  >
+                  {% set href = item4.link_field_1.url.href %}
+                  {% if item4.link_field_1.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                  {% endif %}
+                  {% if item4.include_link %}
+                  <a href="{{ href }}"
+                     {% if item4.link_field_1.open_in_new_tab %}target="_blank"{% endif %}
+                     {% if item4.link_field_1.rel %}rel="{{ item4.link_field_1.rel }}"{% endif %}
+                     >    {% endif %}
+                    {% if item4.icon_type == 'icon' %}
+                    {% icon
+                     name="{{ item4.icon_field_1.name }}"
+                     style="{{ item4.icon_field_1.type }}"
+                     unicode="{{ item4.icon_field_1.unicode }}"
+                     icon_set="{{ item4.icon_field_1.icon_set }}"
+                  %}
+                    {% elif item4.icon_type == 'image' %}
+                    {% if item4.image_field_2.src %}
+                    {% set loadingAttr = item4.image_field_2.loading != 'disabled' ? 'loading="{{ item4.image_field_2.loading }}"' : '' %}
+                    <img src="{{ item4.image_field_2.src }}" alt="{{ item4.image_field_2.alt }}" title="{{ item4.image_field_2.alt }}" width="{{item4.image_field_2.width}}" {{ loadingAttr }} >
+                    {% endif %}
+
+                    {% endif %}
+                    {% if item4.include_link %} </a>  {% endif %}
+                </div>
+                <div class="right-section {{item4.content_type}}-content">
+                  {% if item4.content_type == 'sl' %}
+
+                  {% if item4.include_link_on_text %}
+                  <a href="{{ href }}"
+                     {% if item4.link_field_1.open_in_new_tab %}target="_blank"{% endif %}
+                     {% if item4.link_field_1.rel %}rel="{{ item4.link_field_1.rel }}"{% endif %}
+                     >{% endif %}
+
+                    {{ item4.sl_content }}
+
+                    {% if item4.include_link_on_text %} </a>  {% endif %}
+
+                  {% elif item4.content_type == 'ml' %}
+                  {{ item4.ml_content }}
+                  {% endif %}
+                </div>
+              </div>
+
+              {% endfor %}
+            </div>
+            {% endif %}
+            {# contact ends #}
+
+            {# social icons #}
+            {% if item3.row_type == 'social_icons' %}
+            <div class="footer-social">
+              {% for item4 in item3.social_icon %}
+              <div class="footer-social-item">
+                {% set href = item4.link_field.url.href %}
+                {% if item4.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% endif %}
+                {% if href %}<a href="{{ href }}"
+                                {% if item4.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                                {% if item4.link_field.rel %}rel="{{ item4.link_field.rel }}"{% endif %}
+                                >{% endif %}
+                {% if item4.icon_type == 'icon' %}
+                {% icon
+                     name="{{ item4.icon_field.name }}"
+                     style="{{ item4.icon_field.type }}"
+                     unicode="{{ item4.icon_field.unicode }}"
+                     icon_set="{{ item4.icon_field.icon_set }}"
+                  %}
+                {% elif item4.icon_type == 'img' %}
+                {% if item4.image_field_1.src %}
+                {% set loadingAttr = item4.image_field_1.loading != 'disabled' ? 'loading="{{ item4.image_field_1.loading }}"' : '' %}
+                <img src="{{ item4.image_field_1.src }}" alt="{{ item4.image_field_1.alt }}" title="{{ item4.image_field_1.alt }}" width="{{ item4.image_field_1.width }}" {{ loadingAttr }} >
+                {% endif %}
+                {% endif %}
+                {% if href %}</a>{% endif %}
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+            {# social icons ends #}
+
+            {# single line text #}
+            {% if item3.row_type == 'single_line_text' %}
+            <div class="single-line-text">
+              {{ item3.single_line_text }}
+            </div>
+            {% endif %}
+            {# single line text ends #}
+
+            {# embed url #}
+            {% if item3.row_type == 'embed_url' %}
+            <div class="custom-embeded-content">
+              <iframe src="{{ item3.embed_url }}" width="100%" min-height="400" height="100%"></iframe>
+            </div>
+            {% endif %}
+            {# embed url ends #}
+
+            {# richtext #}
+            {% if item3.row_type == 'richtext' %}
+            <div class="footer-content">
+              {{ item3.content }}
+            </div>
+            {% endif %}
+            {# richtext ends #}
+
+            {# heading #}
+            {% if item3.row_type == 'heading' %}
+            <div class="footer-heading {% if item.section_settings.heading_color.select_heading_type == "th_color" %} primary_font {% endif %} " >
+              <{{ item3.header.select_headings }}>
+              {{ item3.header.heading_text }}
+              </{{ item3.header.select_headings }}>
+            </div>
+              {% endif %}
+              {# heading ends #}
+
+              </div>
+              {% endfor %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      {% if module.back_to_top.include_back_to_top %}
+      {% set backTop = module.back_to_top.color_options %}
+
+
+
+
+
+      <div class="back_to_top bg_{{ backTop.select_background_color }} bord_{{ backTop.select_border_color }} colr_{{ backTop.select_color }} {% if backTop.change_hover_styles %}bg__hvr_{{ backTop.select_hover_background_color }} bord_hvr_{{ backTop.select_hover_border_color }} colr_hvr_{{ backTop.select_hover_color }}{% endif %}">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>  </div>
+      {% endif %}
+      </footer>	
+
+
+
+
+
+
+    {% macro color(value) %}
+    {% if value.color %}
+    {% set colorhex = value.color|convert_rgb %}
+    {% if value.opacity != null %}
+    {% set coloropacity = value.opacity / 100 %}
+    {% else %}
+    {% set coloropacity = '1' %}
+    {% endif %}
+    rgba({{ colorhex }}, {{ coloropacity }})
+    {% endif %}
+    {% endmacro %}
+
+    {% require_css %}
+    <style>
+
+      {% for item in module.add_section %}
+      .footer.{{name}} .footer-section-{{loop.index}} {
+        padding-top:{{ item.section_settings.spacing.add_top_padding }}px;
+        padding-bottom:{{ item.section_settings.spacing.add_bottom_padding }}px;
+      }
+      .footer.{{name}} .footer-section-{{loop.index}}  .flex_row {
+        border-top: {{ item.section_settings.border.thikness }}px solid rgba({{ item.section_settings.border.color.color|convert_rgb }},{{ item.section_settings.border.color.opacity/100 }});
+      }
+
+
+      {% if item.section_settings.spacing.change_tab_spacing %}
+      @media(max-width:991px){
+        .footer.{{name}} .footer-section-{{loop.index}} {
+          padding-top: {{ item.section_settings.spacing.tab_top_spacing }}px;
+          padding-bottom:{{ item.section_settings.spacing.tab_bottom_spacing }}px;
+        }
+      }
+      {% endif %}
+
+      {% if item.section_settings.spacing.change_mobile_spacing %}
+      @media(max-width:767px){
+        .footer.{{name}} .footer-section-{{loop.index}} {
+          padding-top:{{ item.section_settings.spacing.add_mobile_top_padding }}px;
+          padding-bottom:{{ item.section_settings.spacing.add_mobile_bottom_padding }}px;
+        }
+      }
+      {% endif %}
+
+      {% endfor %}
+
+
+      {% for item in module.add_section %}
+      {% set secLoop = loop.index %}
+      {% for item2 in item.add_columns %}
+      {% set columnLoop = loop.index %}
+      {% for item3 in item2.add_row %}
+      {% set rowLoop = loop.index %}
+
+      .footer.{{name}} .footer-section-{{secLoop}} .col-section.num{{columnLoop}} .footer-row.row{{loop.index}}{
+        padding-top: {{ item3.row_spacing.add_top_padding }}px;
+        padding-bottom:{{ item3.row_spacing.add_bottom_padding }}px;
+      }
+
+
+      {% if item3.row_spacing.change_tab_spacing %}
+      @media(max-width:991px){
+        .footer.{{name}} .footer-section-{{secLoop}} .col-section.num{{columnLoop}} .footer-row.row{{loop.index}}{
+          padding-top: {{ item3.row_spacing.tab_top_spacing }}px;
+          padding-bottom:{{ item3.row_spacing.tab_bottom_spacing }}px;
+        }
+      }
+      {% endif %}
+
+      {% if item3.row_spacing.change_mobile_spacing %}
+      @media(max-width:767px){
+        .footer.{{name}} .footer-section-{{secLoop}} .col-section.num{{columnLoop}} .footer-row.row{{loop.index}}{
+          padding-top: {{ item3.row_spacing.mobile_top_spacing }}px;
+          padding-bottom:{{ item3.row_spacing.mobile_bottom_spacing }}px;
+        }
+      }
+      {% endif %}
+
+      {% if item3.row_type  == "divider" %}
+      .footer.{{name}} .footer-section-{{secLoop}} .col-section.num{{columnLoop}} .footer-row.row{{loop.index}}:before{
+        content: '';
+        display: block;
+        border-top: {{ item3.divider.thikness }}px {{ item3.divider.select_type }} rgba({{ item3.divider.color.color|convert_rgb }},{{ item3.divider.color.opacity/100 }});
+      }
+      {% endif %}
+
+      {% if item.section_settings.font_color_options.overlay_color_choice =="Cst_f_color" %}
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{loop.index}} .footer_contact_section *,
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{loop.index}} .footer-content *, 
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{loop.index}} .blog_feed-wrapper *,
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{loop.index}} .footer-simple-menu *,
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{loop.index}} .footer-menu *
+      {
+        color:rgba({{ item.section_settings.font_color_options.custom_color.color|convert_rgb }},{{ item.section_settings.font_color_options.custom_color.opacity/100 }});
+      }
+      {% endif %}
+
+      {% if item.section_settings.heading_color.select_heading_type == "cs_color" %}
+
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{rowLoop}} .ml-content h1,
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{rowLoop}} .ml-content h2,
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{rowLoop}} .ml-content h3,
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{rowLoop}} .ml-content h4,
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{rowLoop}} .ml-content h5,
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{rowLoop}} .ml-content h6,
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{rowLoop}} .ml-content h1,
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{rowLoop}} .footer-heading *{
+        color: rgba({{ item.section_settings.heading_color.custom_color.color|convert_rgb }},	{{ item.section_settings.heading_color.custom_color.opacity/100 }});
+      }
+
+
+
+
+      {% endif %}
+
+
+      .footer.{{name}} .footer-section-{{secLoop}} .num{{columnLoop}} .row{{rowLoop}} .footer-image img{
+        max-width: 	{{ item3.image_setting.image_width }}px;
+      }
+
+      {% endfor %}
+      {% endfor %}
+
+      .footer.{{name}} .footer-section-{{secLoop}} .flex_row.primary_font{
+        color: {{color(theme.footer.text_color)}};
+      }
+
+      {% endfor %}
+
+
+
+      {% if module.back_to_top.include_back_to_top %}
+
+
+      {% if module.back_to_top.color_options.change_hover_styles %}
+
+      .footer.{{name}} .back_to_top:not(:hover){
+        {% if module.back_to_top.color_options.select_background_color == "Cst_color" %}
+        background-color:{{color(module.back_to_top.color_options.custom_background_color)}};
+        {% endif %}
+        {% if module.back_to_top.color_options.select_border_color == "Cst_color" %}
+        border-color:{{color(module.back_to_top.color_options.custom_border_color)}};
+        {% endif %}
+        {% if module.back_to_top.color_options.select_color == "Cst_color" %}
+        color:{{color(module.back_to_top.color_options.custom_color)}};
+        {% endif %}
+      }
+
+      .footer.{{name}} .back_to_top:not(:hover) svg{
+        {% if module.back_to_top.color_options.select_color == "Cst_color" %}
+        color:{{color(module.back_to_top.color_options.custom_color)}};
+        fill:{{color(module.back_to_top.color_options.custom_color)}};
+        {% endif %}
+      }
+
+      {% else %}
+
+      .footer.{{name}} .back_to_top{
+        {% if module.back_to_top.color_options.select_background_color == "Cst_color" %}
+        background-color:{{color(module.back_to_top.color_options.custom_background_color)}};
+        {% endif %}
+        {% if module.back_to_top.color_options.select_border_color == "Cst_color" %}
+        border-color:{{color(module.back_to_top.color_options.custom_border_color)}};
+        {% endif %}
+        {% if module.back_to_top.color_options.select_color == "Cst_color" %}
+        color:{{color(module.back_to_top.color_options.custom_color)}};
+        {% endif %}
+      }
+
+      .footer.{{name}} .back_to_top svg{
+        {% if module.back_to_top.color_options.select_color == "Cst_color" %}
+        color:{{color(module.back_to_top.color_options.custom_color)}};
+        fill:{{color(module.back_to_top.color_options.custom_color)}};
+        {% endif %}
+      }
+
+      {% endif %}
+
+
+      {% if module.back_to_top.color_options.change_hover_styles %}
+      .footer.{{name}} .back_to_top:hover{
+        {% if module.back_to_top.color_options.select_hover_background_color == "Cst_color" %}
+        background-color:{{color(module.back_to_top.color_options.custom_hover_background_color)}};
+        {% endif %}
+        {% if module.back_to_top.color_options.select_hover_border_color == "Cst_color" %}
+        border-color:{{color(module.back_to_top.color_options.custom_hover_border_color)}};
+        {% endif %}
+        {% if module.back_to_top.color_options.select_hover_color == "Cst_color" %}
+        color:{{color(module.back_to_top.color_options.custom_hover_color)}};
+        {% endif %}
+      }
+
+      .footer.{{name}} .back_to_top:hover svg{
+        {% if module.back_to_top.color_options.select_hover_color == "Cst_color" %}
+        color:{{color(module.back_to_top.color_options.custom_hover_color)}};
+        fill:{{color(module.back_to_top.color_options.custom_hover_color)}};
+        {% endif %}
+      }
+
+      {% endif %}
+
+      {% endif %}
+
+
+      {% for item in module.add_section %}
+      {% set parentloop =  loop.index %}
+      {% for item2 in item.add_columns %}
+
+
+
+      @media(min-width:768px)  {
+        .footer.{{name}} .footer-section-{{parentloop}} .col-section.num{{loop.index}}{
+          width: {{item2.column_options.column_width}}%;
+        }
+      }
+
+      {% if item2.column_options.change_column_width_in_tab_view %}
+      @media (max-width:991px) and (min-width:768px)  {
+        .footer.{{name}} .footer-section-{{parentloop}} .col-section.num{{loop.index}}{
+          width: {{item2.column_options.tab_view_column_width}}%;
+        }
+      }
+      {% endif %}
+
+      @media(max-width:767px)  {
+        .footer.{{name}} .footer-section-{{parentloop}} .col-section.num{{loop.index}}{
+          width: {{item2.column_options.column_width_at_mobile_view}}%;
+        }
+      }
+      {% endfor %}
+      {% endfor %}
+    </style>
+    {% end_require_css %}
+    {% endif %}

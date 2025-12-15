@@ -1,0 +1,118 @@
+
+body {
+  line-height: 1.625;
+  word-break: break-word;
+}
+
+html[lang^="ja"] body,
+html[lang^="zh"] body,
+html[lang^="ko"] body {
+  line-break: strict;
+  word-break: break-all;
+}
+
+/* Paragraphs */
+
+p {
+  margin: 0 0 1.4rem;
+}
+
+/* Anchors */
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition: all 0.15s linear;
+  -moz-transition: all 0.15s linear;
+  -o-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+
+/* Headings */
+.hs_service .form-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1.4rem;
+}
+
+h1{
+  line-height:1.48208333;
+}
+h2{
+  line-height:1.48205882;
+}
+h3{
+  line-height:1.25;
+}
+h4{
+  line-height:1.48222222;
+  margin-bottom: 24px;
+}
+h5{
+  line-height:1.625;
+  margin-bottom:5px;
+}
+h6{
+  line-height:1.42857142857;
+}
+/* Lists */
+
+ul,
+ol {
+  margin: 0 0 1.4rem;
+}
+
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin: 0;
+}
+ul ,ol {
+  padding-top: 1.3rem;
+  padding-left: 1.5rem;
+}
+
+ul  li,
+ol li  {
+  margin-bottom: 1rem;
+}
+img{
+  max-width:100%;
+  height:auto;
+  vertical-align:middle;
+}
+
+ul.no-list {
+  list-style: none;
+}
+
+/* Code blocks */
+
+code {
+  vertical-align: bottom;
+}
+
+/* Blockquotes */
+
+blockquote {
+  border-left: 2px solid;
+  margin: 0 0 1.5rem;
+  padding-left: 15px;
+}
+
+/* Horizontal rules */
+
+hr {
+  background-color: #CCC;
+  border: none;
+  color: #CCC;
+  height: 1px;
+}
+.hs_cos_wrapper_type_module > hr:only-child {
+  background-color: transparent;
+}

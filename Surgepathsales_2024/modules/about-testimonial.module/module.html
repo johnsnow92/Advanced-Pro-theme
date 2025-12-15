@@ -1,0 +1,65 @@
+
+
+
+<section class="about-testimonial">
+  <div class="container">
+    <div class="about-testimonial-heading">
+      <h4>
+        {{ module.our_history }}
+      </h4>
+
+      <h2>
+        {{ module.about_testimonial_heading }}
+      </h2>
+
+      <p>
+      {{ module.about_heading_para }}
+      </p>
+    </div>
+
+
+    <!--  Tabbing    -->
+    <div class="tabs-row">
+      <div class="tabs-nav col">
+        <nav>
+          {% for item in module.tstimonial_nav_link %}
+          <a>
+            {% inline_text field="tstimonial_nav_link" value="{{ item }}" %}
+          </a>{% endfor %}
+
+        </nav>
+      </div>
+      <div class="tabs tabs-content col">
+        {% for item in module.field_group %}
+        <div class="content1">
+
+          {% if item.testimonial_image.src %}
+          {% set sizeAttrs = 'width="{{ item.testimonial_image.width|escape_attr }}" height="{{ item.testimonial_image.height|escape_attr }}"' %}
+          {% if item.testimonial_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.testimonial_image.width|escape_attr }}" height="{{ item.testimonial_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.testimonial_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.testimonial_image.max_width|escape_attr }}" height="{{ item.testimonial_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = item.testimonial_image.loading != 'disabled' ? 'loading="{{ item.testimonial_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.testimonial_image.src|escape_url }}" alt="{{ item.testimonial_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+
+          <h3>
+            {% inline_text field="tastimonial_content_heading" value="{{ item.tastimonial_content_heading }}" %}
+          </h3>
+
+          {% inline_rich_text field="testimonial_para" value="{{ item.testimonial_para }}" %}
+
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+    <!--end Tabbing -->
+
+  </div>
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+

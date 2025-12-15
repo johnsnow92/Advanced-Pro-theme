@@ -1,0 +1,142 @@
+<!--
+  templateType: error_page
+  isAvailableForNewContent: true
+  label: Error 404 - Advanced Pro Theme
+  screenshotPath: ../images/templates/404-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found | {{ site_settings.company_name }}</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}">
+  {% endif %}
+
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ standard_header_includes }}
+</head>
+
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    {% global_partial path="../partials/header.hubl.html" %}
+
+    <main id="main-content" role="main">
+      <section class="section error-page">
+        <div class="container">
+          <div class="row align-center">
+            <div class="col-12 col-lg-8 text-center">
+
+              <div class="error-code">404</div>
+              <h1>Page Not Found</h1>
+              <p class="lead">Sorry, we couldn't find the page you're looking for. The page may have been moved or deleted.</p>
+
+              <div class="error-actions">
+                <a href="/" class="btn btn-primary btn-lg">Go to Homepage</a>
+                <button onclick="history.back()" class="btn btn-outline btn-lg">Go Back</button>
+              </div>
+
+              <!-- Search Box -->
+              <div class="error-search">
+                <p>Or try searching for what you need:</p>
+                <form action="/search" method="get">
+                  <div class="search-box">
+                    <input type="search"
+                           name="q"
+                           class="form-control"
+                           placeholder="Search our site..."
+                           aria-label="Search">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Helpful Links -->
+              <div class="helpful-links">
+                <h3>Here are some helpful links instead:</h3>
+                <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about">About Us</a></li>
+                  <li><a href="/services">Services</a></li>
+                  <li><a href="/contact">Contact Us</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    {% global_partial path="../partials/footer.hubl.html" %}
+  </div>
+
+  {{ standard_footer_includes }}
+
+  <style>
+  .error-page {
+    padding: var(--spacing-4xl) 0;
+    min-height: 60vh;
+  }
+  .error-code {
+    font-size: 8rem;
+    font-weight: 900;
+    color: var(--color-primary);
+    opacity: 0.3;
+    line-height: 1;
+    margin-bottom: var(--spacing-lg);
+  }
+  .error-page h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-lg);
+  }
+  .error-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin: var(--spacing-2xl) 0;
+    flex-wrap: wrap;
+  }
+  .error-search {
+    margin: var(--spacing-3xl) 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .search-box {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+  }
+  .search-box .form-control {
+    flex: 1;
+  }
+  .helpful-links {
+    margin-top: var(--spacing-3xl);
+  }
+  .helpful-links h3 {
+    margin-bottom: var(--spacing-lg);
+  }
+  .helpful-links ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    justify-content: center;
+  }
+  .helpful-links a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .helpful-links a:hover {
+    text-decoration: underline;
+  }
+  </style>
+</body>
+</html>

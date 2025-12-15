@@ -1,0 +1,367 @@
+[ {
+  "id" : "84af78e9-d14b-c09a-19f9-7817a7c211c3",
+  "name" : "blurb_heading",
+  "label" : "Blurb Heading",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "CompanyName"
+}, {
+  "id" : "4d3c516b-ae6f-b150-7b44-d2abb2858881",
+  "name" : "blurb_text",
+  "label" : "Blurb Text",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p><span>123 Eskenita Hwy N #123 Highway CA 12345</span></p>"
+}, {
+  "id" : "192cc369-d7ae-ebfa-ae29-f725ff92280d",
+  "name" : "simple_menu_1_heading",
+  "label" : "Simple Menu 1 Heading",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Services"
+}, {
+  "id" : "477bd06b-f8ff-17f7-32f2-524cc1d70e98",
+  "name" : "simple_menu_1",
+  "label" : "Simple menu 1",
+  "required" : false,
+  "locked" : true,
+  "type" : "simplemenu",
+  "display_width" : null,
+  "default" : [ {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Build a Simple Marketing Plan",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Personal Selling",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Cold Calling",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Leadership",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Round Table",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  } ]
+}, {
+  "id" : "ac5296a9-2035-c1a5-ef5d-1967252dfddd",
+  "name" : "simple_menu_2_heading",
+  "label" : "Simple Menu 2 Heading",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "About"
+}, {
+  "id" : "21c180bf-a67f-8f07-4df4-5974b7b3deb3",
+  "name" : "simple_menu_2",
+  "label" : "Simple menu 2",
+  "required" : false,
+  "locked" : true,
+  "type" : "simplemenu",
+  "display_width" : null,
+  "default" : [ {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Plans and Pricing",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "What Clients Say",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Case Studies",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Event Calendar",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Meet Us",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  } ]
+}, {
+  "id" : "7713fbf8-f87d-4e2b-c837-7cc9d627c819",
+  "name" : "simple_menu_3",
+  "label" : "Simple menu 3",
+  "required" : false,
+  "locked" : true,
+  "type" : "simplemenu",
+  "display_width" : null,
+  "default" : [ {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Home",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Contact",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Blog",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Privacy Policy",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  } ]
+}, {
+  "id" : "ac970e9f-ed94-18d0-eba5-6c097a21a3bd",
+  "name" : "social_heading",
+  "label" : "Social Heading",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Follow us"
+}, {
+  "id" : "2a019e57-4a99-8ab3-8aca-92c25d4f1289",
+  "name" : "social_icon",
+  "label" : "Social Icon",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "fe75788e-802e-951f-05c0-4fba05ce7bf3",
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "fe75788e-802e-951f-05c0-4fba05ce7bf3",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "linkedin-in",
+      "unicode" : "f0e1",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "eb5194eb-c6b8-a721-93a1-09240983fbbc",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "icon" : {
+      "name" : "linkedin-in",
+      "unicode" : "f0e1",
+      "type" : "REGULAR"
+    },
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "icon" : {
+      "name" : "linkedin-in",
+      "unicode" : "f0e1",
+      "type" : "REGULAR"
+    },
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "icon" : {
+      "name" : "linkedin-in",
+      "unicode" : "f0e1",
+      "type" : "REGULAR"
+    },
+    "url_field" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ]
+} ]

@@ -1,0 +1,80 @@
+.accordion-menu-module {
+  max-width: {{ module.max_width || 800 }}px;
+  margin: 0 auto;
+}
+
+.accordion-item {
+  border: {{ module.border_width || 1 }}px solid {{ module.border_color.color || '#e0e0e0' }};
+  border-radius: {{ module.border_radius || 8 }}px;
+  margin-bottom: {{ module.item_spacing || 10 }}px;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: {{ module.padding_vertical || 16 }}px {{ module.padding_horizontal || 20 }}px;
+  background-color: {{ module.header_bg_color.color || '#f5f5f5' }};
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: {{ module.title_font_size || 16 }}px;
+  font-weight: {{ module.title_font_weight || 600 }};
+  color: {{ module.title_color.color || '#333333' }};
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+  background-color: {{ module.header_hover_bg_color.color || '#eeeeee' }};
+}
+
+.accordion-header[aria-expanded="true"] {
+  background-color: {{ module.header_active_bg_color.color || '#e8f4f8' }};
+}
+
+.accordion-icon {
+  font-size: {{ (module.title_font_size || 16) + 4 }}px;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.accordion-header[aria-expanded="true"] + .accordion-content {
+  max-height: 2000px;
+}
+
+.accordion-body {
+  padding: {{ module.content_padding_vertical || 20 }}px {{ module.content_padding_horizontal || 20 }}px;
+  background-color: {{ module.content_bg_color.color || '#ffffff' }};
+  font-size: {{ module.content_font_size || 14 }}px;
+  line-height: 1.6;
+  color: {{ module.content_color.color || '#666666' }};
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .accordion-header {
+    font-size: {{ (module.title_font_size || 16) - 2 }}px;
+    padding: {{ (module.padding_vertical || 16) - 4 }}px {{ (module.padding_horizontal || 20) - 5 }}px;
+  }
+  .accordion-body {
+    font-size: {{ (module.content_font_size || 14) - 1 }}px;
+    padding: {{ (module.content_padding_vertical || 20) - 5 }}px {{ (module.content_padding_horizontal || 20) - 5 }}px;
+  }
+}

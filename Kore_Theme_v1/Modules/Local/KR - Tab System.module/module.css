@@ -1,0 +1,503 @@
+.kore-tab-system {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-tab-system .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+} 
+
+.kore-tab-system .tab-content-flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.kore-tab-system .tab-content-flex .col {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.kore-tab-system .tab-content {
+  padding: 50px 30px;
+  background-color: #fff;
+}
+
+.kore-tab-system .tab-content .main-heading {
+  margin-bottom: 10px;
+}
+
+.kore-tab-system .tab-content .main-heading,
+.kore-tab-system .tab-content .main-heading * {
+  color: #333;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.kore-tab-system .tab-content .main-heading h2 {
+  margin-bottom: 0;
+}
+
+.kore-tab-system .tab-content .main-content {
+  padding-top: 0;
+  margin-bottom: 50px; 
+}
+
+.kore-tab-system .tab-content .main-content,
+.kore-tab-system .tab-content .main-content * {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.kore-tab-system .tab-content .card .card-title {
+  margin-bottom: 15px;
+}
+
+.kore-tab-system .tab-content .card .card-title,
+.kore-tab-system .tab-content .card .card-title * {
+  font-size: 24px;
+  line-height: 1.2;
+  color: #333;
+}
+
+.kore-tab-system .tab-content .card .card-content,
+.kore-tab-system .tab-content .card .card-content * {
+  line-height: 1.5;
+  font-size: 14px;
+  color: #333;
+}
+
+.kore-tab-system .tab-content .card .image-module {
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 350px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 25px;
+}
+
+.kore-tab-system .tab-content .card .image-module + .simple {
+  text-align: center;
+}
+
+.kore-tab-system .tab-content .card .simple,
+.kore-tab-system .tab-content .card #cta {
+  margin-top: 20px;
+}
+
+.kore-tab-system .tab-content .cta {
+  background-color: #f6f6f6;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  margin: 60px 0 0;
+  text-align: center;
+}
+
+.kore-tab-system .tab-content .cta .cta-heading {
+  margin-bottom: 15px;
+}
+
+.kore-tab-system .nav-tabs-justified > li > a, .kore-tab-system .nav-tabs.nav-justified > li > a {
+  background-image: none !important;
+  border: 0 !important;
+}
+
+.kore-tab-system .tab-content .cta .cta-heading,
+.kore-tab-system .tab-content .cta .cta-heading * {
+  font-size: 24px;
+  line-height: 1.2;
+  color: #333;
+  font-weight: bold;
+}
+
+.kore-tab-system .tab-content .cta .cta-content,
+.kore-tab-system .tab-content .cta .cta-content * {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.kore-tab-system .tab-content .cta #cta .kore-button span {
+  font-size: 14px !important;
+}
+
+.kore-tab-system .footer-heading {
+  margin-bottom: 50px;
+}
+
+.kore-tab-system .footer-heading.cta-space {
+  margin-top: 50px;
+}
+
+.kore-tab-system .footer-heading,
+.kore-tab-system .footer-heading * {
+  text-align: center;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #333;
+}
+
+.kore-tab-system .footer-column {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.kore-tab-system .footer-column .col {
+  flex: 1;
+  padding: 0 15px;
+}
+
+.kore-tab-system .footer-column#with-cta .kore-button {
+  display: inline-block !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  background-color: #0099cd !important;
+  background-image: none !important;
+  border: 1px solid transparent !important;
+  padding: 13px 20px !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+  border-radius: 4px !important;
+  letter-spacing: 1px !important;
+  -webkit-transition: all 200ms ease !important;
+  transition: all 200ms ease !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+.kore-tab-system .footer-column#with-cta .kore-button:hover {
+  background-color: #095aa6 !important;
+  color: #fff !important;
+}
+
+.kore-tab-system .footer-column#with-cta .kore-button span {
+  font-size: 14px !important;
+}
+
+.kore-tab-system .footer-column .footer-column-title {
+  margin-bottom: 15px;
+}
+
+.kore-tab-system .footer-column .footer-column-title,
+.kore-tab-system .footer-column .footer-column-title * {
+  font-size: 24px;
+  line-height: 1.2;
+  color: #333;
+}
+
+.kore-tab-system .footer-column .footer-column-content,
+.kore-tab-system .footer-column .footer-column-content * {
+  font-size: 14px;
+  line-height: 1.5; 
+  color: #333;
+}
+
+.kore-tab-system .fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.kore-tab-system .fade.in {
+  opacity: 1;
+}
+
+.kore-tab-system .collapse {
+  display: none;
+}
+
+.kore-tab-system .collapse.in {
+  display: block;
+}
+
+.kore-tab-system tr.collapse.in {
+  display: table-row;
+}
+
+.kore-tab-system tbody.collapse.in {
+  display: table-row-group;
+}
+
+.kore-tab-system .collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  -o-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+.kore-tab-system .nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.kore-tab-system .nav:before, 
+.kore-tab-system .nav:after {
+  display: table;
+  content: " ";
+}
+
+.kore-tab-system .nav:after {
+  clear: both;
+}
+
+.kore-tab-system .nav > li {
+  position: relative;
+  display: block;
+}
+
+.kore-tab-system .nav > li > a {
+  position: relative;
+  display: block;
+  padding: 15px 30px;
+}
+
+.kore-tab-system .nav > li > a:hover, 
+.kore-tab-system .nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+
+.kore-tab-system .nav > li.disabled > a {
+  color: #777777;
+}
+
+.kore-tab-system .nav > li.disabled > a:hover, 
+.kore-tab-system .nav > li.disabled > a:focus {
+  color: #777777;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+}
+
+.kore-tab-system .nav .open > a, 
+.kore-tab-system .nav .open > a:hover, 
+.kore-tab-system .nav .open > a:focus {
+  background-color: #eeeeee;
+  border-color: #337ab7;
+}
+
+.kore-tab-system .nav .nav-divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+
+.kore-tab-system .nav > li > a > img {
+  max-width: none;
+}
+
+.kore-tab-system .nav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+
+.kore-tab-system .nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+
+.kore-tab-system .nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857;
+  border: 0;
+  border-radius: 0;
+  background-color: #0099cd;
+  color: #fff;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.kore-tab-system .nav-tabs > li > a:hover {
+  border-color: transparent;
+  background-color: #095aa6;
+}
+
+.kore-tab-system .nav-tabs > li.active > a, 
+.kore-tab-system .nav-tabs > li.active > a:hover, 
+.kore-tab-system .nav-tabs > li.active > a:focus {
+  color: #fff;
+  cursor: default;
+  background-color: #095aa6;
+  border: 0;
+  border-bottom-color: transparent;
+}
+
+.kore-tab-system .nav-pills > li {
+  float: left;
+}
+
+.kore-tab-system .nav-pills > li > a {
+  border-radius: 4px;
+}
+
+.kore-tab-system .nav-pills > li + li {
+  margin-left: 2px;
+}
+
+.kore-tab-system .nav-pills > li.active > a, 
+.kore-tab-system .nav-pills > li.active > a:hover, 
+.kore-tab-system .nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+.kore-tab-system .nav-stacked > li {
+  float: none;
+}
+
+.kore-tab-system .nav-stacked > li + li {
+  margin-top: 2px;
+  margin-left: 0;
+}
+
+.kore-tab-system .nav-justified, 
+.kore-tab-system .nav-tabs.nav-justified {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.kore-tab-system .nav-justified > li, 
+.kore-tab-system .nav-tabs.nav-justified > li {
+  float: none;
+}
+
+.kore-tab-system .nav-tabs.nav-justified > li {
+  padding: 0 2px;
+}
+
+.kore-tab-system .nav-justified > li > a, 
+.kore-tab-system .nav-tabs.nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.kore-tab-system .nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+
+@media (max-width: 767px) {
+  
+  .kore-tab-system .tab-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .kore-tab-system .nav-justified > li, .kore-tab-system .nav-tabs.nav-justified > li {
+    flex: 0 0 100%;
+  }
+  
+  .kore-tab-system .tab-content-flex .col {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+  }
+  
+  .kore-tab-system .tab-content-flex .col:last-child {
+    margin-bottom: 0;
+  }
+  
+  .kore-tab-system .footer-column .col {
+    flex: 0 0 100%;
+  }
+  
+  .kore-tab-system .tab-content .cta {
+    margin-top: 40px;
+  }
+    
+}
+
+@media (min-width: 768px) {
+  
+  .kore-tab-system .nav-justified > li, 
+  .kore-tab-system .nav-tabs.nav-justified > li {
+    flex: 1;
+  }
+  
+  .kore-tab-system .nav-justified > li > a, 
+  .kore-tab-system .nav-tabs.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+  
+}
+
+.kore-tab-system .nav-tabs-justified, 
+.kore-tab-system .nav-tabs.nav-justified {
+  border-bottom: 0;
+}
+
+.kore-tab-system .nav-tabs-justified > li > a, 
+.kore-tab-system .nav-tabs.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 0;
+}
+
+.kore-tab-system .nav-tabs-justified > .active > a, 
+.kore-tab-system .nav-tabs.nav-justified > .active > a,
+.kore-tab-system .nav-tabs-justified > .active > a:hover,
+.kore-tab-system .nav-tabs.nav-justified > .active > a:hover,
+.kore-tab-system .nav-tabs-justified > .active > a:focus,
+.kore-tab-system .nav-tabs.nav-justified > .active > a:focus {
+  border: 0;
+}
+
+@media (min-width: 768px) {
+  
+  .kore-tab-system .nav-tabs-justified > li > a, 
+  .kore-tab-system .nav-tabs.nav-justified > li > a {
+    border-bottom: 0;
+    border-radius: 0;
+  }
+  
+  .kore-tab-system .nav-tabs-justified > .active > a, 
+  .kore-tab-system .nav-tabs.nav-justified > .active > a,
+  .kore-tab-system .nav-tabs-justified > .active > a:hover,
+  .kore-tab-system .nav-tabs.nav-justified > .active > a:hover,
+  .kore-tab-system .nav-tabs-justified > .active > a:focus,
+  .kore-tab-system .nav-tabs.nav-justified > .active > a:focus {
+    border-bottom-color: #fff;
+  }
+  
+}
+
+.kore-tab-system .tab-content > .tab-pane {
+  display: none;
+}
+
+.kore-tab-system .tab-content > .active {
+  display: block;
+}
+
+.kore-tab-system .nav-tabs .dropdown-menu {
+  margin-top: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

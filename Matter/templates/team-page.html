@@ -1,0 +1,736 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Team Page
+screenshotPath: ../images/template-previews/team-page.jpg
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+
+<main id="main-content" class="body-container-wrapper team_page">
+
+  {% dnd_area 'header_area', label='Header Section' , class="top-dnd-area" %}
+  {% dnd_section
+    padding={
+      "default" : {
+        "bottom" : "0px",
+        "left" : "0px",
+        "right" : "0px",
+        "top" : "0px"
+      }
+    },
+    full_width=true
+  %}
+  {% dnd_column
+      offset=0,
+      width=12
+    %}
+  {% dnd_row %}
+  {% dnd_module
+          path="../modules/banner",
+          offset=0,
+          width=12,
+          background_options={
+            "background_image" : {
+              "alt" : "Team Banner",
+              "height" : 976,
+              "max_height" : 976,
+              "max_width" : 2160,
+              "src" : get_asset_url('../images/team_banner.jpg'),
+              "width" : 2160
+            },
+            "overlay_color" : {
+              "color" : "#026780",
+              "opacity" : 50
+            },
+            "select_background_type" : "image"
+          },
+          breadcrumb_menu=,
+          include_breadcrumb=true,
+          module_settings={
+            "animation_type" : "fade-up"
+          },
+          style={
+            "container" : {
+              "select_size" : "theme_center"
+            }
+          }
+        %}
+  {% module_attribute "banner_content" %}
+  <h1>Our Team</h1>
+  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+
+
+  {% dnd_area 'main_area', label='Main Section' ,class="main-dnd-area" %}
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/two-column-content",
+        offset=0,
+        width=12,
+        left_column={
+          "button_group" : [ ],
+          "content" : "<h2>How Our Team Grows From 20 To 250?</h2><h5>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</h5><ul><li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li><li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li><li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li><li>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</li></ul>",
+          "include_features" : false
+        },
+        right_column={
+          "image_content" : {
+            "image_field" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "image_flow" : "vertical",
+            "image_items" : [ {
+              "image" : {
+                "alt" : "Our Team",
+                "height" : 2880,
+                "loading" : "lazy",
+                "max_height" : 2880,
+                "max_width" : 1920,
+                "size_type" : "auto",
+                "src" : get_asset_url('../images/our__team_2.jpg'),
+                "width" : 1920
+              },
+              "image_item" : {
+                "loading" : "lazy",
+                "size_type" : "auto",
+                "src" : ""
+              }
+            }, {
+              "image" : {
+                "alt" : "Our Team",
+                "height" : 248,
+                "loading" : "lazy",
+                "max_height" : 248,
+                "max_width" : 265,
+                "size_type" : "auto",
+                "src" : get_asset_url('../images/our__team_1.jpg'),
+                "width" : 265
+              }
+            } ],
+            "multiple_content_items" : [ {
+              "button_group" : [ {
+                "button_link" : {
+                  "no_follow" : false,
+                  "open_in_new_tab" : false,
+                  "url" : {
+                    "href" : "",
+                    "type" : "EXTERNAL"
+                  }
+                },
+                "button_text" : "Button Text",
+                "select_button_theme" : "hs-button",
+                "select_button_type" : "std"
+              } ],
+              "content" : "<h5>Lorem Ipsum is simply dummy text of the Printing.</h5><p>It is a long established fact that a reader will be distracted.</p>",
+              "content_type" : "cont_img",
+              "image" : {
+                "loading" : "lazy",
+                "size_type" : "auto",
+                "src" : ""
+              }
+            } ],
+            "number_of_image" : "double"
+          },
+          "select_media_type" : "image",
+          "video_content" : {
+            "include_popup" : false,
+            "poster_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "video_type" : "file"
+          }
+        },
+        module_settings={
+          "content_alignment" : "right"
+        },
+        style={
+            "background" : {
+            "select_background_theme" : "",
+            "select_background_type" : ""
+          },
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 0
+                },
+                "left" : { },
+                "right" : { },
+                "top" : { }
+              }
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% dnd_section
+padding={
+  "default" : {
+    "bottom" : "0px",
+    "left" : "0px",
+    "right" : "0px",
+    "top" : "0px"
+  }
+},
+full_width=true
+%}
+  {% dnd_column
+  offset=0,
+  width=12
+%}
+  {% dnd_row %}
+  {% dnd_module
+      path="../modules/team-v2",
+      offset=0,
+      width=12,
+      top_content={
+        "button_group" : [ ]
+      },
+      button_group=[ ],
+      team_group=[ {
+        "button_color_theme" : "hs-button",
+        "color" : {
+          "color" : "#FFF",
+          "opacity" : 100
+        },
+        "enable_link" : true,
+        "gradient_group" : {
+          "end_color" : {
+            "color" : "#026780",
+            "opacity" : 100
+          },
+          "start_color" : {
+            "color" : "#026780",
+            "opacity" : 70
+          }
+        },
+        "link_field_1" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "<p>It is a long established fact that a reader will be distracted by when looking at its layout.It is a long established fact that a reader will be distracted by when looking at its layout</p>",
+        "member_designation" : "UX Designer",
+        "member_image" : {
+          "alt" : "Jane Cooper",
+          "height" : 480,
+          "loading" : "lazy",
+          "max_height" : 480,
+          "max_width" : 265,
+          "size_type" : "auto",
+          "src" :  get_asset_url('../images/Jane Cooper.jpg'),
+          "width" : 265
+        },
+        "member_name" : "Jane Cooper",
+        "read_more_text" : "Read More",
+        "social_group" : [ {
+          "icon_field" : {
+            "name" : "LinkedIn In",
+            "type" : "REGULAR",
+            "unicode" : "f0e1"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ]
+      }, {
+        "button_color_theme" : "hs-button",
+        "color" : {
+          "color" : "#FFF",
+          "opacity" : 100
+        },
+        "enable_link" : true,
+        "gradient_group" : {
+          "end_color" : {
+            "color" : "#026780",
+            "opacity" : 100
+          },
+          "start_color" : {
+            "color" : "#026780",
+            "opacity" : 70
+          }
+        },
+        "link_field_1" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "<p>It is a long established fact that a reader will be distracted by when looking at its layout.It is a long established fact that a reader will be distracted by when looking at its layout</p>",
+        "member_designation" : "Backend Engineer",
+        "member_image" : {
+          "alt" : "Jenny Wilson",
+          "height" : 480,
+          "loading" : "lazy",
+          "max_height" : 480,
+          "max_width" : 265,
+          "size_type" : "auto",
+          "src" :  get_asset_url('../images/Jenny__Wilson.jpg'),
+          "width" : 265
+        },
+        "member_name" : "Jenny Wilson",
+        "read_more_text" : "Read More",
+        "social_group" : [ {
+          "icon_field" : {
+            "name" : "LinkedIn In",
+            "type" : "REGULAR",
+            "unicode" : "f0e1"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "icon_field" : {
+            "name" : "Twitter",
+            "type" : "REGULAR",
+            "unicode" : "f099"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "icon_field" : {
+            "name" : "Instagram",
+            "type" : "REGULAR",
+            "unicode" : "f16d"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        }, {
+          "icon_field" : {
+            "name" : "Facebook F",
+            "type" : "REGULAR",
+            "unicode" : "f39e"
+          },
+          "link_field" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          }
+        } ]
+      }, {
+        "button_color_theme" : "hs-button",
+        "color" : {
+          "color" : "#FFF",
+          "opacity" : 100
+        },
+        "enable_link" : true,
+        "gradient_group" : {
+          "end_color" : {
+            "color" : "#026780",
+            "opacity" : 100
+          },
+          "start_color" : {
+            "color" : "#026780",
+            "opacity" : 70
+          }
+        },
+        "link_field_1" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "",
+        "member_designation" : "Account Executive",
+        "member_image" : {
+          "alt":"Cameron Williamson",
+          "height" : 480,
+          "loading" : "lazy",
+          "max_height" : 480,
+          "max_width" : 265,
+          "size_type" : "auto",
+          "src" :  get_asset_url('../images/Cameron Williamson.jpg'),
+          "width" : 265
+        },
+        "member_name" : "Cameron Williamson",
+        "read_more_text" : "Read More",
+        "social_group" : [ ]
+      }, {
+        "button_color_theme" : "hs-button",
+        "color" : {
+          "color" : "#FFF",
+          "opacity" : 100
+        },
+        "enable_link" : true,
+        "gradient_group" : {
+          "end_color" : {
+            "color" : "#026780",
+            "opacity" : 100
+          },
+          "start_color" : {
+            "color" : "#026780",
+            "opacity" : 70
+          }
+        },
+        "link_field_1" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "",
+        "member_designation" : "Sales Development Lead",
+        "member_image" : {
+          "alt" : "Leslie Alexander",
+          "height" : 480,
+          "loading" : "lazy",
+          "max_height" : 480,
+          "max_width" : 265,
+          "size_type" : "auto",
+          "src" :  get_asset_url('../images/Leslie Alexander.jpg'),
+          "width" : 265
+        },
+        "member_name" : "Leslie Alexander",
+        "read_more_text" : "Read More",
+        "social_group" : [ ]
+      }, {
+        "button_color_theme" : "hs-button",
+        "color" : {
+          "color" : "#FFF",
+          "opacity" : 100
+        },
+        "enable_link" : true,
+        "gradient_group" : {
+          "end_color" : {
+            "color" : "#026780",
+            "opacity" : 100
+          },
+          "start_color" : {
+            "color" : "#026780",
+            "opacity" : 70
+          }
+        },
+        "link_field_1" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "",
+        "member_designation" : "Database administrator",
+        "member_image" : {
+          "alt" : "Arlene McCoy",
+          "height" : 480,
+          "loading" : "lazy",
+          "max_height" : 480,
+          "max_width" : 265,
+          "size_type" : "auto",
+          "src" :  get_asset_url('../images/Arlene__McCoy.jpg'),
+          "width" : 265
+        },
+        "member_name" : "Arlene McCoy",
+        "read_more_text" : "Read More",
+        "social_group" : [ ]
+      }, {
+        "button_color_theme" : "hs-button",
+        "color" : {
+          "color" : "#FFF",
+          "opacity" : 100
+        },
+        "enable_link" : true,
+        "gradient_group" : {
+          "end_color" : {
+            "color" : "#026780",
+            "opacity" : 100
+          },
+          "start_color" : {
+            "color" : "#026780",
+            "opacity" : 70
+          }
+        },
+        "link_field_1" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "",
+        "member_designation" : "Junior Designer",
+        "member_image" : {
+          "alt" : "Bessie Cooper",
+          "height" : 480,
+          "loading" : "lazy",
+          "max_height" : 480,
+          "max_width" : 265,
+          "size_type" : "auto",
+          "src" :  get_asset_url('../images/Bessie__Cooper.jpg'),
+          "width" : 265
+        },
+        "member_name" : "Bessie Cooper",
+        "read_more_text" : "Read More",
+        "social_group" : [ ]
+      }, {
+        "button_color_theme" : "hs-button",
+        "color" : {
+          "color" : "#FFF",
+          "opacity" : 100
+        },
+        "enable_link" : true,
+        "gradient_group" : {
+          "end_color" : {
+            "color" : "#026780",
+            "opacity" : 100
+          },
+          "start_color" : {
+            "color" : "#026780",
+            "opacity" : 70
+          }
+        },
+        "link_field_1" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "",
+        "member_designation" : "Pre-sales Manager",
+        "member_image" : {
+          "alt" : "Ralph Edwards",
+          "height" : 480,
+          "loading" : "lazy",
+          "max_height" : 480,
+          "max_width" : 265,
+          "size_type" : "auto",
+          "src" :  get_asset_url('../images/Ralph__Edwards.jpg'),
+          "width" : 265
+        },
+        "member_name" : "Ralph Edwards",
+        "read_more_text" : "Read More",
+        "social_group" : [ ]
+      }, {
+        "button_color_theme" : "hs-button",
+        "color" : {
+          "color" : "#FFF",
+          "opacity" : 100
+        },
+        "enable_link" : true,
+        "gradient_group" : {
+          "end_color" : {
+            "color" : "#026780",
+            "opacity" : 100
+          },
+          "start_color" : {
+            "color" : "#026780",
+            "opacity" : 70
+          }
+        },
+        "link_field_1" : {
+          "no_follow" : false,
+          "open_in_new_tab" : false,
+          "url" : {
+            "href" : "",
+            "type" : "EXTERNAL"
+          }
+        },
+        "member_bio" : "",
+        "member_designation" : "Technical Product Manager",
+        "member_image" : {
+          "alt" : "Jerome Bell",
+          "height" : 480,
+          "loading" : "lazy",
+          "max_height" : 480,
+          "max_width" : 265,
+          "size_type" : "auto",
+          "src" :  get_asset_url('../images/Jerome__Bell.jpg'),
+          "width" : 265
+        },
+        "member_name" : "Jerome Bell",
+        "read_more_text" : "Read More",
+        "social_group" : [ ]
+      } ],
+      style={
+            "card" : {
+            "icon_background_color" : {
+            "color" : "#FFF",
+            "opacity" : 100
+            },
+            "select_icon_background_theme" : "custom",
+            "select_icon_color_theme" : "bg_primary_svg"
+          },
+        "spacing" : {
+          "spacing" : {
+            "padding" : {
+              "bottom" : {
+                "units" : "px",
+                "value" : 0
+              },
+              "left" : { },
+              "right" : { },
+              "top" : { }
+            }
+          }
+        }
+      }
+    %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/two-column-content",
+        offset=0,
+        width=12,
+        left_column={
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+           "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<h5><span>Join Us</span></h5><h2><span>Join Our Creative Teams &amp; Explore Our Culture.</span></h2><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+          "features" : [ {
+            "content_type" : "num",
+            "image_field_1" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "suffix" : "+",
+            "title" : "Years Of Experiences",
+            "value" : "15"
+          } ],
+          "include_features" : false
+        },
+        right_column={
+          "image_content" : {
+            "cover_the_image" : false,
+            "image_field" : {
+              "alt" : "contact_bannerV2",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/our__team_3.jpg'),
+              "width" : 1920
+            }
+          }
+        },
+        module_settings={
+          "content_alignment" : "right"
+        },
+       style={
+            "background" : {
+            "select_background_theme" : "",
+            "select_background_type" : ""
+          },
+        "spacing" : {
+          "spacing" : {
+            "padding" : {
+              "left" : { },
+              "right" : { },
+              "top" : {
+                "units" : "px",
+                "value" : 71
+              },
+              "bottom" : {
+                "units" : "px",
+                "value" : 85
+              }
+            }
+          }
+        }
+      }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+  {% dnd_area 'bottom_area_hs', label='Bottom Section' ,class="bottom-dnd-area" %}
+  {% include_dnd_partial path="../sections/bottom-pane-section.html" %} 
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

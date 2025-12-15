@@ -1,0 +1,215 @@
+.cm-our-design {
+  padding: 53px 0;
+  background-color: #021827;
+}
+
+.cm-our-design .cm-top, .cm-our-design .cm-bottom {
+  padding: 26px 0;
+}
+
+.cm-our-design .cm-top .cm-title {
+  width: 58.8%;
+}
+
+.cm-our-design .cm-title h2 {
+  font-family: 'Khand',Helvetica,Arial,Lucida,sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 1.2em;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.cm-our-design .cm-title .cm-divider {
+  height: 10px;
+  max-width: 100px;
+  transform: skewX(-20deg) skewY(0deg);
+}
+
+.cm-our-design .cm-title .cm-divider:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  border-top-color: #f71635;
+  border-top-style: double;
+  border-top-width: 10px;
+}
+
+.cm-our-design .cm-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cm-our-design .cm-left, .cm-our-design .cm-right {
+  width: 48.5%;
+}
+
+.cm-our-design .cm-left {
+  margin-right: 3%;
+}
+
+.cm-our-design .cm-bottom ul {
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  list-style: none;
+}
+
+.cm-our-design .cm-bottom ul li {
+  margin-bottom: 16px;
+  position: relative;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 1.2em;
+  color: #fff;
+  font-family: 'Khand',Helvetica,Arial,Lucida,sans-serif;
+  padding-bottom: 11px;
+  padding-left: 47px;
+  font-style: italic;
+}
+
+.cm-our-design .cm-bottom ul li:before {
+  content: '^';
+  font-size: 20px;
+  color: #f71635;
+  font-family: 'ETmodules';
+  font-weight: 400;
+  position: absolute;
+  left: 0;
+  font-style: normal;
+}
+
+.cm-our-design .cm-bottom ul li:last-child {
+  margin-bottom: 0;
+}
+.cm-our-design  .right-bottom {
+  padding-top: 120px;
+  padding-right: 80px;
+  padding-bottom: 80px;
+  padding-left: 80px;
+  box-shadow: 6px 28px 40px 0px rgba(0,0,0,0.1);
+  transform: translateX(0px) translateY(180px);
+}
+
+.cm-our-design .right-bottom .inner-wrap {
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.cm-our-design .right-bottom ul {
+  list-style-type: disc;
+  padding: 0 0 23px 1em;
+  line-height: 26px;
+}
+
+.cm-our-design .right-bottom ul li {
+  padding: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: 'Crimson Text',Georgia,"Times New Roman",serif;
+  font-style: normal;
+  line-height: inherit;
+}
+
+.cm-our-design .right-bottom ul li:before {
+  display: none;
+}
+
+.cm-our-design .btn-wrapper {
+  text-align: center;
+}
+
+.cm-our-design .btn-wrapper a {
+  padding: 0.3em 1em;
+  border: 2px solid;
+  position: relative;
+  display: inline-block;
+  transition: background-color 300ms ease 0ms;
+  color: #f71635!important;
+  border-width: 10px;
+  border-color: rgba(0,0,0,0);
+  border-radius: 0px;
+  letter-spacing: 3px;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding-right: 2em;
+  padding-left: 0.7em;
+  background-color: #ffffff;
+}
+
+.cm-our-design .btn-wrapper a:after {
+  position: absolute;
+  transition: all .2s;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: inherit;
+  font-size: inherit;
+  opacity: 1;
+  margin-left: 0.3em;
+  left: auto;
+  font-family: ETmodules;
+  font-weight: 400;
+  content: 'E';
+}
+
+.cm-our-design .btn-wrapper a:hover {
+  background-image: initial;
+  background-color: rgba(255,255,255,0.9);
+}
+.cm-our-design .right-bottom {
+  position: relative;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+
+@media (max-width:767px) {
+  .cm-our-design .cm-title h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .cm-our-design .cm-top .cm-title {
+    width: 100%;
+  }
+  .cm-our-design .cm-title .cm-divider {
+    margin-bottom: 30px;
+  }
+  .cm-our-design .cm-bottom, .cm-our-design .cm-top {
+    padding: 30px 0;
+  }
+  .cm-our-design {
+    padding: 50px 0;
+  }
+  .cm-our-design .cm-left, .cm-our-design .cm-right {
+    width: 100%;
+  }
+  .cm-our-design .cm-left {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  .cm-our-design .cm-bottom {
+    max-width: 550px;
+    margin: 0 auto;
+  }
+  .cm-our-design .cm-bottom ul li:not(:last-child) {
+    margin-bottom: 30px;
+  }
+  .cm-our-design .right-bottom {
+    transform: translateX(0px) translateY(0px);
+    padding: 40px;
+    word-break: normal;
+  }
+  .cm-our-design .cm-bottom {
+    max-width: 100%;
+  }
+}

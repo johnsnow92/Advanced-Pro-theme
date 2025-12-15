@@ -1,0 +1,155 @@
+{% if module.section_settings.section_show_hide %}
+<!-- HTML to show when checked -->
+
+{% require_css %}
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+</style>
+{% end_require_css %}
+
+<div class="ea-systems-sticky-subscribe {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+   
+    <div class="flex">
+      <div class="col lists">
+
+        <ul class="list-inline">
+          <li class="list-inline-item">
+            <strong>
+              Share
+            </strong>
+          </li>
+          <li class="list-inline-item">
+            <a class="fb" href="https://www.facebook.com/share.php?u={{ module.social.fb_url.href|urlencode }}">
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="tw" href="https://twitter.com/intent/tweet?original_referer={{ module.social.tw_url.href|urlencode }}">
+
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="in" href="https://www.linkedin.com/shareArticle?mini=true&amp;url={{ module.social.linkedin.url.href|urlencode }}">
+
+            </a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="col form-container">
+
+        <div class="form-flex">
+
+          <div class="col">
+            {% if module.heading %}
+            <h3>
+              {{ module.heading }}
+            </h3>
+            {% endif %}
+            
+            {% if module.content %}
+            <div class="newsletter-text"> 
+              {{ module.content }}
+            </div>
+            {% endif %}
+            
+          </div>
+          <div class="col">
+            <div class="clearfix"></div>
+            <div class="form">
+              {% form
+                form_to_use="{{ module.form.form_id }}"
+                response_response_type="{{ module.form.response_type }}"
+                response_message="{{ module.form.message }}"
+                response_redirect_id="{{ module.form.redirect_id }}"
+                response_redirect_url="{{module.form.redirect_url}}"
+                gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+              %}
+            </div>
+            <div class="clearfix"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>    
+  </div>
+</div>
+
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+<div class="office-referral-global-footer">
+  <div class="page-width">
+    <div class="logo">
+      {% if module.footer_settings.image_field.src %}
+        {% set sizeAttrs = 'width="{{ module.footer_settings.image_field.width }}" height="{{ module.footer_settings.image_field.height }}"' %}
+      
+        {% if module.footer_settings.image_field.size_type == 'auto' %}
+          {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+        {% elif module.footer_settings.image_field.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.footer_settings.image_field.max_width }}px; max-height: {{ module.footer_settings.image_field.max_height }}px"' %}
+        {% endif %}
+      
+        <a href="{{ module.footer_settings.image_url.href }}">
+          <img src="{{ module.footer_settings.image_field.src }}" alt="{{ module.footer_settings.image_field.alt }}" {{ sizeAttrs }}>
+        </a>
+        {% endif %}
+    </div>
+
+    {#
+    <div class="social">
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <a href="#" target="_blank">
+            <i class="fab fa-linkedin-in fa-lg"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" target="_blank">
+            <i class="fab fa-twitter fa-lg"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" target="_blank">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="#" target="_blank">
+            <i class="fab fa-facebook-f fa-lg"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+    #}
+    
+    <div class="space"></div>
+
+    <div class="flex">
+      <div class="col">        
+        <div class="copyright">
+          {% if module.footer_settings.copyright  %}
+            {{ module.footer_settings.copyright }}
+          {% endif %}
+        </div>
+      </div>
+      <div class="col image">    
+        <div class="horizontal-simple-menu">
+          {% simple_menu menu_tree="{{ module.footer_settings.simple_menu }}" orientation='horizontal' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endif %}

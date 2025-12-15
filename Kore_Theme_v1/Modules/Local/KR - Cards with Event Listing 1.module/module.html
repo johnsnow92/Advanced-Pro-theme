@@ -1,0 +1,139 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+{% require_css %}
+    <style type="text/css">
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+
+  .{{ name }} .tagline {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .sub-heading,
+  .{{ name }} .sub-heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .content,
+  .{{ name }} .content * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .content a {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .content a:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+
+  .{{ name }} #cta .kore-button,
+  .{{ name }} .kore-button,
+  .{{ name }} .simple a {
+    background-color: {{ module.button.button_background_color.color }} !important;
+    {% if module.button.button_background_color.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ module.button.button_text_color.color }} !important;
+  }
+
+  .{{ name }} #cta .kore-button:hover,
+  .{{ name }} .kore-button:hover,
+  .{{ name }} .simple a:hover {
+    background-color: {{ module.button.button_color_hover.color }} !important;
+    {% if module.button.button_color_hover.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ module.button.button_text_color_hover.color }} !important;
+  }
+
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+{% end_require_css %}
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-event-listing-cards clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+
+  <div class="card__listing__nav">
+    <div class="maxContainer">
+      <div class="card__nav__wrap">
+        <a href="#" id="show-all" class="active">Show All</a>
+        {% for item in module.card_listing_nav %}
+        <a href="#" id="{{ item.text|lower|replace(' ', '-') }}">{{ item.text }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="card__listing__events">
+    <div class="maxContainer">
+      <div class="card__items_wrap">
+
+        {% for item in module.card_events %}
+        <div class="card__item {{ item.tag|lower|replace(' ', '-') }} show-all active">
+          <div class="card_img_wrap">
+            <div class="card_img" style="background-image: url('{{ item.image.src }}');"></div>
+            <a href="{{ item.button.url.href }}"></a></div>
+          <div class="card__item_content">
+            <div class="card__item_inner">
+              <div class="card_tag">{{ item.tag }}</div>
+              <div class="card_date">{{ item.date }}</div>
+              <div class="card__content">
+                {{ item.content }}
+              </div>
+              {% if item.button.text %}
+              <div class="card__btn">
+                <a href="{{ item.button.url.href }}">{{ item.button.text }}</a>
+              </div>
+              {% endif %}
+            </div>
+            <a href="{{ item.button.url.href }}" class="card__link"></a>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endif %}

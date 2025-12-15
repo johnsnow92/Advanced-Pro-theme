@@ -1,0 +1,930 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Career Page
+screenshotPath: ../images/template-previews/career-page.jpg
+
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main id="main-content" class="body-container-wrapper career_page">
+
+  <div class="banner-section">
+    {% dnd_area 'header_area', label='Header Section' ,class="top-dnd-area" %}
+    {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+    {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+    {% dnd_module
+        path="../modules/banner",
+        offset=0,
+        width=12,
+        background_options={
+          "background_image" : {
+            "alt" : "Union",
+            "height" : 976,
+            "max_height" : 976,
+            "max_width" : 2160,
+            "src" : get_asset_url('../images/career-banner.jpg'),
+            "width" : 2160
+          },
+           "background_image_position" : "center center",
+          "enable_parallax" : true,
+          "overlay_color" : {
+            "color" : "#026780",
+            "opacity" : 50
+          },
+          "select_background_type" : "image"
+        },
+        breadcrumb_menu=,
+        include_breadcrumb=true,
+        module_settings={
+          "animation_type" : "fade-up",
+          "enable_animation" : true
+        },
+        style={ }
+      %}
+    {% module_attribute "banner_content" %}
+    <h1>Join Our Team</h1>
+    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+    {% end_module_attribute %}
+    {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+
+  {% dnd_area 'top_area', class="carrer_top_sec middle-dnd-area" ,label='Top Section' %}
+  {% dnd_section
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/tabber",
+        offset=0,
+        width=12,
+        button_group=[ ],
+        module_settings={
+          "first_item_open" : true
+       },
+        tabber_items=[ {
+          "button_group" : [ ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "form_title" : "Form Title",
+          "form_title_size" : "h3",
+          "include_form" : false,
+          "make_default_active" : true,
+          "media_group" : {
+            "external_video_url" : "https://www.youtube.com/embed/EngW7tLk6R8",
+            "icon_color" : {
+            "color" : "#FFF",
+            "opacity" : 100
+          },
+            "icon_field" : {
+            "name" : "play",
+            "type" : "SOLID",
+            "unicode" : "f04b"
+          },
+          "icon_image" : {
+            "alt" : "play",
+            "height" : 27,
+            "loading" : "lazy",
+            "max_height" : 27,
+            "max_width" : 27,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/video-play.svg'),
+            "width" : 27
+            },
+            "image_field" : {
+              "src" : ""
+            },
+            "overlay_color" : {
+              "color" : "#026780",
+              "opacity" : 30
+            },
+            "poster_image" : {
+              "alt" : "Our Mission",
+              "height" : 430,
+              "loading" : "lazy",
+              "max_height" : 430,
+              "max_width" : 550,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/tabber-image.jpg'),
+              "width" : 550
+            },
+            "select_media_type" : "video",
+            "select_video_type" : "external_video",
+            "video_size_options" : {
+              "full_width" : true,
+              "height" : 430,
+              "width" : 550
+            }
+          },
+          "select_form" : {
+            "message" : "Thanks for submitting the form.",
+            "response_type" : "inline"
+          },
+          "title" : "Our Mission"
+        }, {
+          "button_group" : [ ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "form_title" : "Form Title",
+          "form_title_size" : "h3",
+          "include_form" : false,
+          "make_default_active" : false,
+          "media_group" : {
+            "external_video_url" : "https://player.vimeo.com/video/842733575",
+            "icon_color" : {
+            "color" : "#FFF",
+            "opacity" : 100
+          },
+            "icon_field" : {
+            "name" : "play",
+            "type" : "SOLID",
+            "unicode" : "f04b"
+          },
+          "icon_image" : {
+            "alt" : "play",
+            "height" : 27,
+            "loading" : "lazy",
+            "max_height" : 27,
+            "max_width" : 27,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/video-play.svg'),
+            "width" : 27
+            },
+            "image_field" : {
+              "alt" : "Making an Impact",
+              "height" : 400,
+              "loading" : "lazy",
+              "max_height" : 430,
+              "max_width" : 550,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/Rectangle 39.jpg'),
+              "width" : 550
+            },
+            "poster_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "select_media_type" : "image",
+            "select_video_type" : "",
+            "video_size_options" : {
+              "full_width" : true,
+              "height" : 430,
+              "width" : 550
+            }
+          },
+          "select_form" : {
+            "message" : "Thanks for submitting the form.",
+            "response_type" : "inline"
+          },
+          "title" : "Making an Impact"
+        }, {
+          "button_group" : [ ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "form_title" : "Form Title",
+          "form_title_size" : "h3",
+          "include_form" : false,
+          "make_default_active" : false,
+          "media_group" : {
+            "external_video_url" : "https://www.youtube.com/embed/EngW7tLk6R8",
+            "icon_color" : {
+            "color" : "#FFF",
+            "opacity" : 100
+          },
+            "icon_field" : {
+            "name" : "play",
+            "type" : "SOLID",
+            "unicode" : "f04b"
+          },
+          "icon_image" : {
+            "alt" : "Play",
+            "height" : 27,
+            "loading" : "lazy",
+            "max_height" : 27,
+            "max_width" : 27,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/video-play.svg'),
+            "width" : 27
+            },
+            "image_field" : {
+              "loading" : "lazy",
+              "size_type" : "exact",
+              "src" : ""
+            },
+            "overlay_color" : {
+              "color" : "#026780",
+              "opacity" : 30
+            },
+            "poster_image" : {
+              "alt" : "Company Culture",
+              "height" : 430,
+              "loading" : "lazy",
+              "max_height" : 430,
+              "max_width" : 550,
+              "size_type" : "exact",
+              "src" : get_asset_url('../images/Rectangle 61.jpg'),
+              "width" : 550
+            },
+            "select_media_type" : "video",
+            "select_video_type" : "external_video",
+            "video_size_options" : {
+              "full_width" : true,
+              "height" : 430,
+              "width" : 550
+            }
+          },
+          "select_form" : {
+            "message" : "Thanks for submitting the form.",
+            "response_type" : "inline"
+          },
+          "title" : "Company Culture"
+        } ],
+        top_content={
+          "button_group" : [ ],
+          "content" : "",
+          "title" : ""
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% dnd_section
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/card-gallery",
+        offset=0,
+        width=12,
+        items_group=[ {
+          "button_group" : { },
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Career Growth",
+            "height" : 80,
+            "loading" : "lazy",
+            "max_height" : 80,
+            "max_width" : 80,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/growth.svg'),
+            "width" : 80
+          },
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Career Growth"
+        }, {
+          "button_group" : { },
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Flexible Hours",
+            "height" : 80,
+            "loading" : "lazy",
+            "max_height" : 80,
+            "max_width" : 80,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/hours.svg'),
+            "width" : 80
+          },
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Flexible Hours"
+        }, {
+          "button_group" : { },
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Amazing Work Culture",
+            "height" : 80,
+            "loading" : "lazy",
+            "max_height" : 80,
+            "max_width" : 80,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/work-culture.svg'),
+            "width" : 80
+          },
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Amazing Work Culture"
+        }, {
+          "button_group" : { },
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Medical Insurance",
+            "height" : 80,
+            "loading" : "lazy",
+            "max_height" : 80,
+            "max_width" : 80,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/insurance.svg'),
+            "width" : 80
+          },
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Medical Insurance"
+        }, {
+          "button_group" : { },
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Work From Anywhere",
+            "height" : 80,
+            "loading" : "lazy",
+            "max_height" : 80,
+            "max_width" : 80,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/work-from-anywhere.svg'),
+            "width" : 80
+          },
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Work From Anywhere"
+        }, {
+          "button_group" : { },
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Smart Salary",
+            "height" : 80,
+            "loading" : "lazy",
+            "max_height" : 80,
+            "max_width" : 80,
+            "size_type" : "auto",
+            "src" :  get_asset_url('../images/icon-images/slary.svg'),
+            "width" : 80
+          },
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "custom",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Smart Salary"
+        } ],
+        module_settings={
+          "enable_masonry" : false,
+          "enable_slider" : false,
+          "include_hover_effect" : true
+        },
+        style={
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : { },
+                "left" : { },
+                "right" : { },
+                "top" : {
+                  "units" : "px",
+                  "value" : 0
+                }
+              }
+            }
+          }
+        },
+        top_content={
+          "title" : "Our Perks & Benefits For You"
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% end_dnd_area %}
+
+  {% dnd_area 'main_area', class="carrer_main_sec main-dnd-area" ,label='Main Section' %}
+  {% include_dnd_partial path="../sections/testimonials-slider-section2.html" %} 
+
+  {% dnd_section
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/career-opportunities",
+        offset=0,
+        width=12,
+        button_group=[ ],
+        career_items=[ {
+          "add_more_information" : false,
+          "additional_content" : {
+            "form_field" : {
+              "message" : "Thanks for submitting the form.",
+              "response_type" : "inline"
+            },
+            "include_form" : false,
+            "read_more_text" : "Read More...",
+            "social_icons" : {
+              "icon_field_1" : {
+                "name" : "Facebook F",
+                "type" : "REGULAR",
+                "unicode" : "f39e"
+              }
+            }
+          },
+          "border_radius" : 50,
+          "color_field" : {
+            "color" : "#000000",
+            "opacity" : 100
+          },
+          "designation" : "UI/UX Designer",
+          "icon_field" : { },
+          "image_field" : {
+            "alt" : "UI/UX Designer",
+            "height" : 50,
+            "loading" : "lazy",
+            "max_height" : 50,
+            "max_width" : 50,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/career-opportunity-1.jpg'),
+            "width" : 50
+          },
+          "job_type" : "Full Time",
+          "location" : "Dallas, Texas",
+          "select_icon_color_theme" : "bg_primary_svg",
+          "select_icon_type" : "image"
+        }, {
+          "add_more_information" : false,
+          "additional_content" : {
+            "form_field" : {
+              "message" : "Thanks for submitting the form.",
+              "response_type" : "inline"
+            },
+            "include_form" : false,
+            "read_more_text" : "Read More...",
+            "social_icons" : {
+              "icon_field_1" : {
+                "name" : "Facebook F",
+                "type" : "REGULAR",
+                "unicode" : "f39e"
+              }
+            }
+          },
+          "border_radius" : 50,
+          "color_field" : {
+            "color" : "#000000",
+            "opacity" : 100
+          },
+          "designation" : "Android Developer",
+          "icon_field" : { },
+          "image_field" : {
+            "alt" : "Android Developer",
+            "height" : 50,
+            "loading" : "lazy",
+            "max_height" : 50,
+            "max_width" : 50,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/career-opportunity-2.jpg'),
+            "width" : 50
+          },
+          "job_type" : "Full Time",
+          "location" : "Dallas, Texas",
+          "select_icon_color_theme" : "bg_primary_svg",
+          "select_icon_type" : "image"
+        }, {
+          "add_more_information" : false,
+          "additional_content" : {
+            "form_field" : {
+              "message" : "Thanks for submitting the form.",
+              "response_type" : "inline"
+            },
+            "include_form" : false,
+            "read_more_text" : "Read More...",
+            "social_icons" : {
+              "icon_field_1" : {
+                "name" : "Facebook F",
+                "type" : "REGULAR",
+                "unicode" : "f39e"
+              }
+            }
+          },
+          "border_radius" : 50,
+          "color_field" : {
+            "color" : "#000000",
+            "opacity" : 100
+          },
+          "designation" : "Devops Engineer",
+          "icon_field" : { },
+          "image_field" : {
+            "alt" : "Devops Engineer",
+            "height" : 50,
+            "loading" : "lazy",
+            "max_height" : 50,
+            "max_width" : 50,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/career-opportunity-3.jpg'),
+            "width" : 50
+          },
+          "job_type" : "Full Time",
+          "location" : "Dallas, Texas",
+          "select_icon_color_theme" : "bg_primary_svg",
+          "select_icon_type" : "image"
+        }, {
+          "add_more_information" : false,
+          "additional_content" : {
+            "form_field" : {
+              "message" : "Thanks for submitting the form.",
+              "response_type" : "inline"
+            },
+            "include_form" : false,
+            "read_more_text" : "Read More...",
+            "social_icons" : {
+              "icon_field_1" : {
+                "name" : "Facebook F",
+                "type" : "REGULAR",
+                "unicode" : "f39e"
+              }
+            }
+          },
+          "border_radius" : 50,
+          "color_field" : {
+            "color" : "#000000",
+            "opacity" : 100
+          },
+          "designation" : "Python Developer",
+          "icon_field" : { },
+          "image_field" : {
+            "alt" : "Python Developer",
+            "height" : 50,
+            "loading" : "lazy",
+            "max_height" : 50,
+            "max_width" : 50,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/career-opportunity-4.jpg'),
+            "width" : 50
+          },
+          "job_type" : "Part Time",
+          "location" : "Dallas, Texas",
+          "select_icon_color_theme" : "bg_primary_svg",
+          "select_icon_type" : "image"
+        }, {
+          "add_more_information" : false,
+          "additional_content" : {
+            "form_field" : {
+              "message" : "Thanks for submitting the form.",
+              "response_type" : "inline"
+            },
+            "include_form" : false,
+            "read_more_text" : "Read More...",
+            "social_icons" : {
+              "icon_field_1" : {
+                "name" : "Facebook F",
+                "type" : "REGULAR",
+                "unicode" : "f39e"
+              }
+            }
+          },
+          "border_radius" : 50,
+          "color_field" : {
+            "color" : "#000000",
+            "opacity" : 100
+          },
+          "designation" : "Data Engineer with Python",
+          "icon_field" : { },
+          "image_field" : {
+            "alt" : "Data Engineer with Python",
+            "height" : 50,
+            "loading" : "lazy",
+            "max_height" : 50,
+            "max_width" : 50,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/career-opportunity-5.jpg'),
+            "width" : 50
+          },
+          "job_type" : "Intern",
+          "location" : "Dallas, Texas",
+          "select_icon_color_theme" : "bg_primary_svg",
+          "select_icon_type" : "image"
+        }, {
+          "add_more_information" : false,
+          "additional_content" : {
+            "form_field" : {
+              "message" : "Thanks for submitting the form.",
+              "response_type" : "inline"
+            },
+            "include_form" : false,
+            "read_more_text" : "Read More...",
+            "social_icons" : {
+              "icon_field_1" : {
+                "name" : "Facebook F",
+                "type" : "REGULAR",
+                "unicode" : "f39e"
+              }
+            }
+          },
+          "border_radius" : 50,
+          "color_field" : {
+            "color" : "#000000",
+            "opacity" : 100
+          },
+          "designation" : "Frontend developer - React",
+          "icon_field" : { },
+          "image_field" : {
+            "alt" : "Frontend developer - React",
+            "height" : 50,
+            "loading" : "lazy",
+            "max_height" : 50,
+            "max_width" : 50,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/career-opportunity-6.jpg'),
+            "width" : 50
+          },
+          "job_type" : "Full Time",
+          "location" : "Dallas, Texas",
+          "select_icon_color_theme" : "bg_primary_svg",
+          "select_icon_type" : "image"
+        } ],
+        module_settings={
+          "enable_masonry" : false,
+          "enable_slider" : false,
+          "slider_options" : {
+            "arrows" : true,
+            "autoplay" : true,
+            "autoplay_speed" : 3,
+            "dots" : true,
+            "loop" : true,
+            "slides_per_view" : 3,
+            "slides_to_scroll" : 1
+          }
+        },
+        top_content={
+          "button_group" : [ ]
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% end_dnd_area %}
+
+
+  {% dnd_area 'bottom_area_hs',class="carrer_bottom_sec bottom-dnd-area" , label='Bottom Section' %}
+  {% include_dnd_partial path="../sections/faq-section.html" %} 
+  {% include_dnd_partial path="../sections/bottom-pane-section.html" %} 
+  {% end_dnd_area %}
+
+</main>
+{% endblock body %}

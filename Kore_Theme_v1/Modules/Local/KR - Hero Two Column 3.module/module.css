@@ -1,0 +1,442 @@
+.kore-lp-two-column-hero-3 {
+  position: relative;
+  overflow-y: hidden;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-lp-two-column-hero-3 .page-width {
+  max-width: 100% !important;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-lp-two-column-hero-3 .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row;
+  flex-flow: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.kore-lp-two-column-hero-3 .col {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  position: relative;
+  z-index: 20;
+  width: 100%;
+}
+
+.kore-lp-two-column-hero-3 .col:last-child {
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+.kore-lp-two-column-hero-3 .content-half {
+    max-width: calc(1120px / 2);
+    margin-left: auto;
+    padding: 0 20px;
+}
+
+.kore-lp-two-column-hero-3 .tagline {
+  display: inline-block;
+  padding: 0;
+}
+
+.kore-lp-two-column-hero-3 .social-share svg {
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 35px;
+  padding: 8px;
+  fill: #fff;
+  overflow: visible;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.kore-lp-two-column-hero-3 .social-share svg:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.kore-lp-two-column-hero-3 .form-image {
+  min-height: 240px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-position: 0px 0px;
+  background-size: cover;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+.kore-lp-two-column-hero-3 .meeting-type .form-title,
+.kore-lp-two-column-hero-3 .meeting-type .form-title * {
+  letter-spacing: 1px;
+  text-align: right;
+}
+
+.kore-lp-two-column-hero-3 .meeting-type iframe {
+  min-width: 100% !important;
+}
+
+.kore-lp-two-column-hero-3 .form-type .form-title,
+.kore-lp-two-column-hero-3 .form-type .form-title * {
+  letter-spacing: 0;
+}
+
+.kore-lp-two-column-hero-3 .form-type .form-footer {
+  color: #333;
+}
+
+.kore-lp-two-column-hero-3 .form .hs-form-field {
+  margin-bottom: 1rem;
+}
+
+.kore-lp-two-column-hero-3 .form form > .hs-form-field {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.kore-lp-two-column-hero-3 .form .hs-form-field > label {
+  font-weight: 700;
+  margin-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.kore-lp-two-column-hero-3 .form .hs-form-field > label.hide {
+  display: none;
+}
+
+.kore-lp-two-column-hero-3 .form .hs-form-field > label > span:empty {
+  display: none;
+}
+
+.kore-lp-two-column-hero-3 .form .hs-form-field > label .hs-form-required {
+  display: none;
+}
+
+.kore-lp-two-column-hero-3 .form .input,
+.kore-lp-two-column-hero-3 .form .form-columns-2 .input,
+.kore-lp-two-column-hero-3 .form .form-columns-3 .input {
+  margin-right: 0 !important;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.kore-lp-two-column-hero-3 .form .legal-consent-container * {
+  font-size: 14px;
+}
+
+.kore-lp-two-column-hero-3 .form .legal-consent-container .input {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.kore-lp-two-column-hero-3 .form .legal-consent-container .hs-form-booleancheckbox-display {
+  margin-bottom: 0;
+}
+
+.kore-lp-two-column-hero-3 .form ::-webkit-input-placeholder {
+  color: rgba(44, 44, 44, 0.6);
+}
+
+.kore-lp-two-column-hero-3 .form :-moz-placeholder {
+  color: rgba(44, 44, 44, 0.6);
+}
+
+.kore-lp-two-column-hero-3 .form ::-moz-placeholder {
+  color: rgba(44, 44, 44, 0.6);
+}
+
+.kore-lp-two-column-hero-3 .form :-ms-input-placeholder {
+  color: rgba(44, 44, 44, 0.6);
+}
+
+.kore-lp-two-column-hero-3 .form .form-columns-1 .legal-consent-container,
+.kore-lp-two-column-hero-3 .form .form-columns-2 .legal-consent-container,
+.kore-lp-two-column-hero-3 .form .form-columns-3 .legal-consent-container {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.kore-lp-two-column-hero-3 .form fieldset.form-columns-1,
+.kore-lp-two-column-hero-3 .form fieldset.form-columns-2,
+.kore-lp-two-column-hero-3 .form fieldset.form-columns-3 {
+  margin-right: -5px;
+  margin-left: -5px;
+}
+
+.kore-lp-two-column-hero-3 .form .form-columns-1 .hs-input {
+  width: 100%;
+}
+
+.kore-lp-two-column-hero-3 .form input[type="radio"],
+.kore-lp-two-column-hero-3 .form input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+.kore-lp-two-column-hero-3 .form .form-columns-1 input[type="radio"],
+.kore-lp-two-column-hero-3 .form .form-columns-1 input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
+.kore-lp-two-column-hero-3 .form .form-columns-3 > div {
+  width: 33.333333% !important;
+}
+
+.kore-lp-two-column-hero-3 .form .inputs-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.kore-lp-two-column-hero-3 .form .hs-error-msgs {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  list-style: none;
+  color: #dc3545;
+  display: inline-block;
+}
+
+.kore-lp-two-column-hero-3 .form .hs-error-msgs .hs-error-msg {
+  margin-bottom: 0; 
+  padding: 0 5px;
+  font-size: 12px;
+}
+
+.kore-lp-two-column-hero-3 .form .hs_error_rollup {
+  display: none; 
+}
+
+.kore-lp-two-column-hero-3 input[type="text"],
+.kore-lp-two-column-hero-3 input[type="password"], 
+.kore-lp-two-column-hero-3 input[type="datetime"], 
+.kore-lp-two-column-hero-3 input[type="datetime-local"], 
+.kore-lp-two-column-hero-3 input[type="date"], 
+.kore-lp-two-column-hero-3 input[type="month"], 
+.kore-lp-two-column-hero-3 input[type="time"], 
+.kore-lp-two-column-hero-3 input[type="week"], 
+.kore-lp-two-column-hero-3 input[type="number"], 
+.kore-lp-two-column-hero-3 input[type="email"], 
+.kore-lp-two-column-hero-3 input[type="url"], 
+.kore-lp-two-column-hero-3 input[type="search"], 
+.kore-lp-two-column-hero-3 input[type="tel"], 
+.kore-lp-two-column-hero-3 input[type="color"],
+.kore-lp-two-column-hero-3 input[type="file"],
+.kore-lp-two-column-hero-3 textarea,
+.kore-lp-two-column-hero-3 select {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333333;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #cccccc;
+  border-radius: 0;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.kore-lp-two-column-hero-3 input[type="checkbox"] {
+  margin-top: 6px; 
+}
+
+.kore-lp-two-column-hero-3 textarea.hs-input {
+  height: auto;
+}
+
+.kore-lp-two-column-hero-3 .form .hs-submit {
+  margin-top: 10px;
+}
+
+.kore-lp-two-column-hero-3 .form .hs-submit .hs-button {}
+
+.kore-lp-two-column-hero-3 .form .hs-submit .hs-button:hover {}
+
+.kore-lp-two-column-hero-3 .form .meetings-iframe-container {
+  max-height: 605px;
+}
+
+.kore-lp-two-column-hero-3 .landing-page-image {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  min-height: 100%;
+  min-width: 40%;
+  margin-bottom: 20px;
+  background-position: 100% 50%;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: scroll;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.15);
+  opacity: 0.2;
+}
+
+.kore-lp-two-column-hero-3 .details-item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.kore-lp-two-column-hero-3 .date-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.kore-lp-two-column-hero-3 .date-icon svg {
+  fill: #333;
+}
+
+.kore-lp-two-column-hero-3 .location-icon {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.kore-lp-two-column-hero-3 .location-icon svg {
+  fill: #333;
+}
+
+.kore-lp-two-column-hero-3 .count-down-flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+  margin-top: 0px;
+  margin-bottom: 40px;
+}
+
+.kore-lp-two-column-hero-3 .count-down-flex .col-item {
+  flex: 1;
+  padding: 0 20px;
+  position: relative;
+}
+
+.kore-lp-two-column-hero-3 .count-down-flex .col-item:after {
+  display: block;
+  width: 1px;
+  background: #f6f6f6;
+  height: 40px;
+  position: absolute;
+  content: '';
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.kore-lp-two-column-hero-3 .count-down-flex .col-item:last-child:after {
+  content: none;
+}
+
+.count-down-item {
+ 
+}
+
+
+.numbering {
+
+}
+
+.count-down-text {
+ 
+}
+
+.count-down-item.left {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@media(max-width:1139px) {
+  
+  .kore-lp-two-column-hero-3 .col,
+  .kore-lp-two-column-hero-3 .col:last-child {
+    flex: 1;
+  }
+  
+  .kore-lp-two-column-hero-3 .form .form-columns-3 > div {
+    width: 100% !important;
+  }
+
+  .kore-lp-two-column-hero-3 .form .form-columns-2 .hs-input,
+  .kore-lp-two-column-hero-3 .form .form-columns-3 .hs-input {
+    width: 100% !important;
+  }
+
+}
+
+@media(max-width:767px) {
+  
+  .kore-lp-two-column-hero-3 .col,
+  .kore-lp-two-column-hero-3 .col:last-child {
+    flex: 0 0 100%;
+  }
+  
+  .kore-lp-two-column-hero-3 .col:last-child {
+    min-height: 300px;
+  }
+  
+  .kore-lp-two-column-hero-3 .content-half {
+    max-width: 100%;
+  }
+  
+  .kore-lp-two-column-hero-3 .form fieldset.form-columns-1, 
+  .kore-lp-two-column-hero-3 .form fieldset.form-columns-2, 
+  .kore-lp-two-column-hero-3 .form fieldset.form-columns-3 {
+    max-width: none;
+  }
+  
+  .kore-lp-two-column-hero-3 .landing-page-image {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    z-index: 10;
+    min-height: 85px;
+    border-radius: 0px;
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+  
+  .kore-lp-two-column-hero-3 .count-down-flex {
+    margin: 0 -10px;
+    margin-bottom: 30px;
+  }
+  
+  .kore-lp-two-column-hero-3 .count-down-flex .col-item {
+    padding: 0 10px;
+  }
+
+}

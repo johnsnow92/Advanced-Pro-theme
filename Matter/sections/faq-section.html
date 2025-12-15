@@ -1,0 +1,193 @@
+<!--
+templateType: "section"
+label: "Faq Section"
+isAvailableForNewContent: false
+-->
+{% dnd_section
+  vertical_alignment='MIDDLE',
+  padding={
+    "default" : {
+      "bottom" : "165px",
+      "top" : "65px"
+    },       
+    "mobile" : {
+      "bottom" : "40px",
+      "top" : "30px"
+    }
+  },
+  full_width=false
+%}
+{% dnd_column
+    offset=0,
+    width=7,
+    padding={
+      "default" : {
+        "right" : "8.33%"
+      },
+      "mobile" : {
+        "right" : "10px"
+      }
+    }
+  %}
+{% dnd_row %}
+{% dnd_module
+        path="@hubspot/rich_text",
+        offset=0,
+        width=12
+      %}
+{% module_attribute "html" %}
+<h2 data-aos="fade-up">Find Answer To Common Questions Here?</h2>
+<p data-aos="fade-up">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+{% end_module_attribute %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% dnd_column
+    offset=7,
+    width=5
+  %}
+{% dnd_row %}
+{% dnd_module
+      path="../modules/accordion",
+      offset=0,
+      width=12,
+      title_format="h4",
+      accordion_items=[ {
+        "button_group" : [ {
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : "Button Text",
+          "select_button_theme" : "hs-sec-btn",
+          "select_button_type" : "std"
+        } ],
+        "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+        "include_button" : false,
+        "include_form" : false,
+        "open_by_default" : false,
+        "select_form" : {
+          "message" : "Thanks for submitting the form.",
+          "response_type" : "inline"
+        },
+        "title" : "Q1. It is a long established fact?"
+      }, {
+        "button_group" : [ {
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : "Button Text",
+          "select_button_theme" : "hs-sec-btn",
+          "select_button_type" : "std"
+        } ],
+        "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+        "include_button" : false,
+        "include_form" : false,
+        "open_by_default" : false,
+        "select_form" : {
+          "message" : "Thanks for submitting the form.",
+          "response_type" : "inline"
+        },
+        "title" : "Q2. It is a long established fact?"
+      }, {
+        "button_group" : [ {
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : "Button Text",
+          "select_button_theme" : "hs-sec-btn",
+          "select_button_type" : "std"
+        } ],
+        "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+        "include_button" : false,
+        "include_form" : false,
+        "open_by_default" : false,
+        "select_form" : {
+          "message" : "Thanks for submitting the form.",
+          "response_type" : "inline"
+        },
+        "title" : "Q3. It is a long established fact?"
+      }, {
+        "button_group" : [ {
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : "Button Text",
+          "select_button_theme" : "hs-sec-btn",
+          "select_button_type" : "std"
+        } ],
+        "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+        "include_button" : false,
+        "include_form" : false,
+        "open_by_default" : false,
+        "select_form" : {
+          "message" : "Thanks for submitting the form.",
+          "response_type" : "inline"
+        },
+        "title" : "Q4. It is a long established fact?"
+      }, {
+        "button_group" : [ {
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : "Button Text",
+          "select_button_theme" : "hs-sec-btn",
+          "select_button_type" : "std"
+        } ],
+        "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>",
+        "include_button" : false,
+        "include_form" : false,
+        "open_by_default" : false,
+        "select_form" : {
+          "message" : "Thanks for submitting the form.",
+          "response_type" : "inline"
+        },
+        "title" : "Q5. It is a long established fact?"
+      } ],
+      style={
+        "spacing" : {
+          "spacing" : {
+            "padding" : {
+              "bottom" : {
+                "units" : "px",
+                "value" : 0
+              },
+              "left" : { },
+              "right" : { },
+              "top" : {
+                "units" : "px",
+                "value" : 0
+              }
+            }
+          }
+        }
+      }
+    %}
+{% end_dnd_module %}
+{% end_dnd_row %}
+{% end_dnd_column %}
+{% end_dnd_section %}

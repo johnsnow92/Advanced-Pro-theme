@@ -1,0 +1,59 @@
+{% require_css %}
+<style type="text/css">
+  {% scope_css %}
+  .three-col-cards{
+    background-color: {{ module.settings.background_color.color }};
+  }
+  .three-col-cards{
+    padding: {{ module.settings.padding_desktop.top }}px 20px {{ module.settings.padding_desktop.bottom }}px;
+  }
+
+
+  @media screen and (max-width: 991px){
+    .three-col-cards{
+      padding: {{ module.settings.padding_tablet.top }}px 20px {{ module.settings.padding_tablet.bottom }}px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .three-col-cards{
+      padding: {{ module.settings.padding_mobile_.top }}px 20px {{ module.settings.padding_mobile_.bottom }}px;
+    }
+  }
+
+  {% end_scope_css %} 
+</style>
+{% end_require_css %}
+
+<div class="three-col-cards-v2">
+  <div class="maxContainer">
+    {% if module.content %}
+    <div class="col3-v2-heading">
+      {{ module.content }}
+    </div>
+    {% endif %}
+    <div class="col3-cards-wrap-v2">
+      {% for item in module.cards %}
+      <div class="card-item">
+        <div class="card-inner">
+          <div class="card-img">
+            {% if item.image.src %}
+            {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+            {% if item.image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+            <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+          <div class="card-title">{{ item.title }}</div>
+          <div class="card-descr">{{ item.richtext_field|truncatehtml(110,'...', false) }}</div>
+          <a href="{{ item.url.href }}" class="card-btn">Learn More</a>
+          <a href="{{ item.url.href }}" class="card-link"></a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,236 @@
+.kore-cd-2-col-steps {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-cd-2-col-steps .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-cd-2-col-steps .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-cd-2-col-steps .card-wrap-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  margin: 0 -20px;
+}
+
+.kore-cd-2-col-steps .card-wrap-flex .col-flex {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-cd-2-col-steps .card-wrap-flex .col-flex:first-child {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+}
+
+.kore-cd-2-col-steps #cta .cta_button,
+.kore-cd-2-col-steps .simple a {
+  box-sizing: border-box !important;
+  -webkit-font-smoothing: antialiased !important;
+  cursor: pointer !important;
+  -moz-user-select: none !important;
+  -webkit-user-select: none !important;
+  -o-user-select: none !important;
+  user-select: none !important;
+  display: inline-block !important;
+  font-weight: normal !important;
+  text-align: center !important;
+  text-decoration: none !important;
+  -moz-transition: all .4s ease !important;
+  -webkit-transition: all .4s ease !important;
+  -o-transition: all .4s ease !important;
+  border-radius: 290486px !important;
+  border-width: 0px !important;
+  color: rgb(255,255,255) !important;
+  height: auto !important;
+  transition: all .4s ease !important;
+  padding: 14px 20px !important;
+  text-shadow: none !important;
+  width: auto !important;
+  font-size: 1rem !important;
+  line-height: 1.5em !important;
+  letter-spacing: 1px !important;
+}
+
+.kore-cd-2-col-steps #cta .cta_button:hover,
+.kore-cd-2-col-steps .simple a:hover {
+  -webkit-transform: translate(0px, -3px) !important;
+  -ms-transform: translate(0px, -3px) !important;
+  transform: translate(0px, -3px) !important;
+  color: #fff !important;
+}
+
+.kore-cd-2-col-steps .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.kore-cd-2-col-steps .flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-align-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  margin: 0 -12px;
+}
+
+.kore-cd-2-col-steps .card {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 10px 12px;
+  padding: 30px 20px;
+  overflow: hidden;
+}
+
+.kore-cd-2-col-steps .card.invisible {
+  padding: 0;
+  display: none;
+}
+
+.kore-cd-2-col-steps .card.border-radius {
+  position: relative;
+  padding: 30px 20px 30px;
+  border: 1px solid rgba(51, 51, 51, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.kore-cd-2-col-steps .card.no-border-radius {
+  padding: 0;
+}
+
+.kore-cd-2-col-steps .card.text-center {
+  text-align: center;
+}
+
+.kore-cd-2-col-steps .card.text-center .icon,
+.kore-cd-2-col-steps .card.text-center .image {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.kore-cd-2-col-steps .card .icon,
+.kore-cd-2-col-steps .card .image {
+  margin-bottom: 20px;
+}
+
+.kore-cd-2-col-steps .card .background-image {
+  margin: -30px -20px 30px;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 168px;
+}
+
+.kore-cd-2-col-steps .card .card-title {
+  margin-bottom: 15px; 
+}
+
+.kore-cd-2-col-steps .card .card-title.card-title-bg {
+  margin-right: -20px;
+  margin-left: -20px;
+  padding: 20px;
+}
+
+.kore-cd-2-col-steps .card .card-title.card-title-bg.card-title-bg-no-space {
+  margin-top: -30px;
+}
+
+.kore-cd-2-col-steps .card .card-text p:last-child {
+  margin-bottom: 0;
+}
+
+.kore-cd-2-col-steps .divider {
+  width: 100%;
+}
+
+.kore-cd-2-col-steps .footer-text strong {
+  color: #00aff0;
+  font-size: 24px;
+}
+
+@media(max-width:1139px) {
+  
+  .max-width-850, .container-fluid .row-fluid .max-width-850 {
+    max-width: 100%;
+  }
+  
+  .kore-cd-2-col-steps .card-wrap-flex .col-flex:first-child {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .kore-cd-2-col-steps .card-wrap-flex .col-flex {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  
+}
+
+@media(max-width:767px) {
+  
+  .kore-cd-2-col-steps .flex {
+    margin: 0;  
+  }
+  
+  .kore-cd-2-col-steps .card {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+  }
+  
+  .kore-cd-2-col-steps .card .background-image { 
+    height: 200px;
+  }
+  
+  .kore-cd-2-col-steps .footer-text strong {
+    color: #00aff0;
+    font-size: 20px;
+  }
+  
+}

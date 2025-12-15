@@ -1,0 +1,62 @@
+{% if module.styles.show_hide_module %}
+<div class="header-icon-wrapper header-hide">
+  <div class="header-icon-bar" id="header-icon-bar">
+    <div class="maxContainer">
+      <div class="icon-bar-wrap icon-bar-desktop">
+        {% for item in module.icons %}
+        <div class="icon-item">
+          <div class="item-img">
+            {% if item.image.src %}
+            {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+            {% if item.image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+            <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+          <span class="icon-text">{{ item.text }}</span>
+          <a href="{{ item.url.href }}" class="icon-link"></a>
+        </div>
+        {% endfor %}
+        <div class="header-icon-bar__btn-wrap">
+          {% if module.button.text %}
+          <a href="{{ module.button.url.href }}" class="btn-cta">{{ module.button.text }}</a>
+          {% endif %}
+          <a href="tel:{{ module.tel_number|replace(' ', '')|replace('+', '') }}" class="btn-tel"><i class="fas fa-phone-alt"></i> {{ module.tel_number }}</a>
+        </div>
+      </div>
+      
+      <div class="icon-bar-wrap icon-bar-mobile">
+        {% for item in module.icons %}
+        <div class="icon-item">
+          <div class="item-img">
+            {% if item.image.src %}
+            {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
+            {% if item.image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+            <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+          <span class="icon-text">{{ item.text }}</span>
+          <a href="{{ item.url.href }}" class="icon-link"></a>
+        </div>
+        {% endfor %}
+        <div class="header-icon-bar__btn-wrap">
+          {% if module.button.text %}
+          <a href="{{ module.button.url.href }}" class="btn-cta">{{ module.button.text }}</a>
+          {% endif %}
+          <a href="tel:{{ module.tel_number|replace(' ', '')|replace('+', '') }}" class="btn-tel"><i class="fas fa-phone-alt"></i> {{ module.tel_number }}</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+{% endif %}

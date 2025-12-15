@@ -1,0 +1,196 @@
+{% import "../../macros/_macros.html" as macros %} 
+{% set slider_settings = module.module_settings.slider_options %}
+
+<div class="cnt-wit-tp-img-wrp dnd_padd {{name}} {{ module.module_settings.number_of_column }}_row {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} {% if module.module_settings.enable_slider %} per_view{{ slider_settings.slides_per_view }} {% if slider_settings.autoplay %}autoplay_true{% endif %} {% if slider_settings.dots %}dots_true{% endif %} {% if slider_settings.arrows %}arrows_trw{% endif %} {% if slider_settings.loop %}loop_true{% endif %}{% endif %}"
+     {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+  <div class="page-center {{ module.style.container.select_size }}">
+
+    {{ macros.topContent(module.top_content, module.module_settings) }}
+
+
+    <div class="bottom_row glide ">
+      <div class="glide__track " data-glide-el="track"> 
+        <div class="flex-row flex_row {% if module.module_settings.enable_slider %}glide__slides {% endif %}">
+          {% for item in module.locations %}
+          <div class="cnt-col {{ module.style.card.item_content_alignment }}_aln {{ module.module_settings.number_of_column }} {% if item.include_link_on_image %}link_add	{% endif %}"  {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+            <div class="inner_spacing {% if module.style.card.select_background_theme %}{{ module.style.card.select_background_theme }}{% endif %} {{ module.style.card.select_color_theme }}">
+              {% if item.image_field.src %}
+              <div class="tp-img">
+                {% set href = item.image_link.url.href %}
+                {% if item.image_link.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% endif %}
+                {% if item.include_link_on_image and href %}
+                <a href="{{ href }}"
+                   {% if item.image_link.open_in_new_tab %}target="_blank"{% endif %}
+                   {% if item.image_link.rel %}rel="{{ item.image_link.rel }}"{% endif %}
+                   >
+                  {% endif %}
+
+                  {% set sizeAttrs = 'width="{{ item.image_field.width }}" height="{{ item.image_field.height }}"' %}
+                  {% if item.image_field.size_type == 'auto' %}
+                  {% set sizeAttrs = 'width="{{ item.image_field.width }}" style="max-width: 100%; height: auto;"' %}
+                  {% elif item.image_field.size_type == 'auto_custom_max' %}
+                  {% set sizeAttrs = 'width="{{ item.image_field.max_width }}" style="max-width: 100%; height: auto;"' %}
+                  {% endif %}
+                  {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+                  <img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+
+
+                  {% if item.include_link_on_image and href %}
+                </a>
+                {% endif %}
+              </div>
+              {% endif %}
+              {% if item.title or item.content or item.button_items %}
+              <div class="tp-img-cnt">
+                {% if item.title %}
+                <{{ module.style.card.select_title_tag }} class="col-title">
+                  {{ item.title }}
+                  </{{ module.style.card.select_title_tag }}>
+                  {% endif %}
+
+                  {% if item.content %}
+                  <div class="tp-img-cnt-inner">
+                {{ item.content }}
+              </div>
+              {% endif %}
+
+              {% if item.button_items %}
+              <div class="col-btn-grp {% if item.button_items|length == 0  %}noBtns{% endif%}">
+                {{ macros.buttonWithPopupGroup(item.button_items, false) }}
+              </div>
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %} 
+      </div>
+    </div>
+    {% if module.module_settings.enable_slider %}
+    {{ macros.sliderControls(module.module_settings.slider_options , module.locations, module.module_settings.enable_animation) }}
+    {% endif %}
+  </div>
+
+  {% if module.button_group %}
+  <div class="bototm_btn" {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+    {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+  </div>
+  {% endif %}
+
+</div>
+
+{{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+
+{% for item in module.locations %}
+{{ macros.buttonWithPopupGroup(item.button_items, true) }}
+{% endfor %}
+
+{% if module.button_group %}
+{{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+{% endif %}
+
+</div>
+
+
+{% require_css %}
+<style>
+
+  .{{name}}.cnt-wit-tp-img-wrp .cnt-col{
+    {% if module.style.card.item_content_alignment %}
+    text-align:{{ module.style.card.item_content_alignment }};
+    {% endif %}
+  }
+
+  .{{name}}.cnt-wit-tp-img-wrp .inner_spacing{
+    {% if module.style.card.spacing.spacing %}
+    {{ module.style.card.spacing.spacing.css }}
+    {% endif %}
+
+    {% if module.style.card.select_background_theme == "custom" %}
+    background-color: {{macros.color( module.style.card.background_color )}};
+    {% endif %}
+  }
+
+  {% if module.style.card.select_color_theme == "custom" %}
+  .{{name}}.cnt-wit-tp-img-wrp .inner_spacing *:not(a[class]):not(input) {
+    color : {{ macros.color(module.style.card.color) }};
+  }
+  {% endif %}
+
+  {% if module.style.card.spacing.change_mobile_spacing %}
+  @media(max-width:767px){
+    .{{name}}.cnt-wit-tp-img-wrp .inner_spacing{
+      {{ module.style.card.spacing.mobile_spacing.css }}
+    }
+
+  }
+  {% endif %}
+  
+  
+  {% if module.style.card.select_background_theme %}
+  .{{name}} .inner_spacing{
+    padding: 20px
+  } 
+  {% endif %}
+
+
+</style>
+{% end_require_css %}
+
+{% if module.module_settings.slider_options.slides_per_view > 5%}
+{% set tabslides = 5 %}
+{% else %}
+{% set tabslides = module.module_settings.slider_options.slides_per_view %}
+{% endif %}
+
+{% if module.module_settings.slider_options.slides_per_view > 3%}
+{% set slides768 = 3 %}
+{% else %}
+{% set slides768 = module.module_settings.slider_options.slides_per_view %}
+{% endif %}
+
+
+{% set gtename = name|replace("-","_")%}
+{% if module.module_settings.enable_slider %}
+{% require_js %}
+<script>
+  var config_{{gtename}} = {
+    {% if module.module_settings.slider_options.loop %}
+    type:'carousel',
+    {% endif %}
+    {% if not module.module_settings.slider_options.loop %}
+    rewind: false,
+    {% endif %}
+    {% if  module.module_settings.slider_options.slides_per_view %}
+    perView:{{ module.module_settings.slider_options.slides_per_view }},
+    {% endif %}
+    perTouch:  1,
+    gap:0,
+    {% if module.module_settings.slider_options.autoplay %}
+    autoplay: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
+    {% endif %}
+
+    breakpoints: {
+    992: {
+    perView: {{tabslides}}
+  },
+      600: {
+        perView: {{slides768}}
+      },
+        480: {
+          perView: 2
+        }
+      }
+  }
+  var glide = new Glide(".{{name}} .glide",config_{{gtename}})
+  glide.mount()
+
+
+</script>
+{% end_require_js %}
+{% endif %}

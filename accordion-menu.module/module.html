@@ -1,0 +1,19 @@
+<div class="accordion-menu-module">
+  {% for item in module.menu_items %}
+  <div class="accordion-item">
+    <button class="accordion-header"
+            aria-expanded="false"
+            aria-controls="accordion-content-{{ loop.index }}">
+      <span class="accordion-title">{{ item.title }}</span>
+      <span class="accordion-icon">+</span>
+    </button>
+    <div class="accordion-content"
+         id="accordion-content-{{ loop.index }}"
+         aria-hidden="true">
+      <div class="accordion-body">
+        {{ item.content }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>

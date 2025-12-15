@@ -1,0 +1,203 @@
+{% if module.styles.show_hide_module %}
+
+<!-- 
+- This module will auto populate sidebar nav items based on the H2 elements in the blog post body
+-->
+
+{% require_css %}
+<style type="text/css">
+
+  #blog_post_main .blog-post-body{
+    padding-top: 20px;
+    position: relative;
+  }
+  #blog_post_main .blog-post-body__breadcrumb{
+    margin: 0;
+  }
+  #blog_post_main .blog-post-body .container{
+    margin-right: 0!important;
+  }
+  #blog_post_main .blog-post-body .heading-nav-wrap .container{
+    margin: 0 auto!important;
+  }
+  #blog_post_main .heading-nav-wrap {
+    position: absolute;
+    top: 0;
+  }
+  #blog_post_main .heading-nav-wrap.sticky,
+  #blog_post_main .heading-bar.sticky{
+    position: fixed;    
+  }
+  .heading-nav{
+    background-color: #eaede1;
+    min-width: 300px;
+  }
+  .heading-nav .item-link{
+    display: block;
+    font-size: 16px;
+    padding: 10px 20px;
+    color: #263238;
+    -webkit-transition: all .2s ease;
+    -o-transition: all .2s ease;
+    transition: all .2s ease;
+    cursor: pointer;    
+  }
+  .heading-nav .item-link.active,
+  .heading-nav .item-link:hover{
+    background-color: #96b5ad;
+    color: #263238!important;
+  }
+  .heading-nav .item-link:not(:last-child){
+    border-bottom: 1px solid rgba(0,0,0,0.06);    
+  }
+  .heading-bar{
+    display: none;
+  }
+
+  @media screen and (max-width: 1410px){
+    .heading-nav{
+      min-width: 280px;
+    }
+    #blog_post_main .blog-post-body .container{
+      max-width: 1050px !important;
+    }
+  }
+  @media screen and (max-width: 1320px){
+    .heading-nav{
+      min-width: 250px;
+    }
+    #blog_post_main .blog-post-body .container{
+      max-width: 1020px !important;
+    }
+  }
+  @media screen and (max-width: 1250px){
+    .heading-bar{
+      display: block;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #96b5ad;
+      color: #000;
+      padding: 5px 8px 6px;
+    }
+    .heading-bar svg{
+      height: 18px;
+      width: 18px;
+    }
+    #blog_post_main .heading-nav-wrap{
+      display: none;
+    }
+  }
+  @media screen and (max-width: 991px){
+    #blog_post_main .blog-post-body{
+      padding-left: 80px;
+    }
+    .heading-bar{
+      left: 0;
+      top: 0;
+    }
+    #blog_post_main .heading-nav-wrap{
+      top: 34px;
+    left: 0;
+    }
+  }
+  @media screen and (max-width: 767px){
+    #blog_post_main .blog-post-body{
+      padding-left: 40px;
+    }
+  }
+
+</style>
+{% end_require_css %}
+
+<div class="heading-bar">{% icon icon_set="fontawesome-5.14.0" name="bars" style="SOLID" height="14" purpose="decorative" title="Bars" no_wrapper=True %}</div>
+<div class="heading-nav-wrap">
+  <div class="heading-nav"></div>    
+</div>
+
+
+{% require_js position="footer" %}
+<script>
+  $(function() {
+
+    // get the h2 text and append in the container div
+    $('.article-wrap h2').each(function(){
+      let $this = $(this);
+      let heading_text = $this.text();
+      let heading_text_val = heading_text.toLowerCase().replace(/ /g, '-').replace('&', '');
+      $this.addClass(heading_text_val);
+      $this.attr('data-text', heading_text_val);
+      $('.heading-nav').append('<div class="item-link '+heading_text_val+'" data-text="'+heading_text_val+'">'+ heading_text +'</div>')
+    });
+
+    // stick sidebar nav on scroll
+    $(window).scroll(function() {
+      let scrollTop = $(this).scrollTop();
+      let post_body = $('.blog-post-body').offset().top;
+
+      if ( scrollTop >= post_body ){
+        $('.heading-nav-wrap').addClass('sticky');
+        $('.heading-bar').addClass('sticky');
+      } 
+      else{
+        $('.heading-nav-wrap').removeClass('sticky');
+        $('.heading-bar').removeClass('sticky');
+      }
+    });
+
+    /***** smooth scroll to its corresponding section on click *****/ 
+    $('.heading-nav .item-link').on('click', function(e){
+      let $this = $(this);
+      let item_attr = $this.attr('data-text');
+      let r = $('.article-wrap h2.'+item_attr).offset().top-25;
+      $this.siblings().removeClass('active');
+
+      $(this).addClass('active');
+      $('html, body').animate({
+        scrollTop: r
+      }, 1000);
+
+      return false;  
+
+    });
+
+    /***** change the nav items active state on scroll *****/
+    $(window).on('scroll', function(){
+      let scrollTop = $(this).scrollTop();
+
+      console.log('scrollTop value: '+scrollTop);
+
+      let containerOffset = $('#blog_post_main .blog-post-body').offset().top;
+
+      $('.article-wrap h2').each(function(i){     
+        let $this = $(this);        
+
+        let itemOffset = $this.offset().top-80;
+
+        if( scrollTop >= containerOffset ){
+
+          if ( scrollTop >= itemOffset ){
+            let itemClass = $this.attr('data-text');
+            $('.heading-nav .item-link').removeClass('active');
+            $('.heading-nav .item-link.'+itemClass).addClass('active');
+          }
+
+        }        
+        else{
+          $('.heading-nav .item-link').removeClass('active');
+        }
+
+      });
+
+    });
+    
+    // on mobile
+    $('.heading-bar').on('click', function(){
+      $('.heading-nav-wrap').slideToggle();
+    });
+
+  });
+</script>
+{% end_require_js %}
+
+{% endif %}

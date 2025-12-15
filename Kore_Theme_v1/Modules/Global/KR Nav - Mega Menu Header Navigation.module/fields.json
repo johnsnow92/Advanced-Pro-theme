@@ -1,0 +1,132 @@
+[ {
+  "id" : "622d6246-9883-4865-3bc9-287d6d1236a8",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "show_loading" : false,
+  "type" : "logo",
+  "display_width" : null,
+  "default" : {
+    "override_inherited_src" : true,
+    "src" : "https://info.fieldagent.net/hubfs/Black%20Field%20Agent%20Logo%20150.svg",
+    "alt" : "Black Field Agent Logo 150",
+    "width" : 150,
+    "height" : 37
+  }
+}, {
+  "id" : "92bdee1b-9291-b311-c3f8-889081b7ccb5",
+  "name" : "menu",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu",
+  "display_width" : null,
+  "default" : 37902476893
+}, {
+  "id" : "06aaea3e-cc6b-8124-e54d-6084de7e205b",
+  "name" : "cta_1",
+  "label" : "CTA 1",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "3a7642e3-c59b-cbd0-d8e6-9536ae2d3a2e",
+    "name" : "cta_text",
+    "label" : "CTA Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Log In"
+  }, {
+    "id" : "731e0286-6bfd-a9b2-d203-2e0ba0cf540c",
+    "name" : "cta_link",
+    "label" : "CTA Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "cta_text" : "Log In",
+    "cta_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+}, {
+  "id" : "6ef7063a-211f-4da7-2544-13e79fc6bd3c",
+  "name" : "cta_2",
+  "label" : "CTA 2",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "ad61a1b9-80ef-a898-301c-ce0da8c46e33",
+    "name" : "cta_text",
+    "label" : "CTA Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Sign Up"
+  }, {
+    "id" : "4337e0b4-e353-6a5c-8f04-54c9c64a060a",
+    "name" : "cta_link",
+    "label" : "CTA Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "cta_text" : "Sign Up",
+    "cta_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+} ]

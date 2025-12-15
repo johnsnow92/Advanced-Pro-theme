@@ -1,0 +1,1067 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 4,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1617106720694484",
+        "label" : "Flexible column",
+        "type" : "widget_container",
+        "params" : {
+          "css_class" : "",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617107441619522",
+          "label" : "KR - Spacer",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Spacer",
+            "per_widget_wrapper_html" : "",
+            "section_settings" : {
+              "section_background_image" : {
+                "alt" : "BCR Basements About Us Page Banner",
+                "height" : 853,
+                "src" : "https://f.hubspotusercontent20.net/hubfs/14487128/Kore%20Theme/BCR%20Basements%20About%20Us%20Page%20Banner.jpg",
+                "width" : 1280
+              },
+              "section_background_image_overlay" : {
+                "color" : "#272727",
+                "opacity" : 0
+              },
+              "section_background_type" : "1",
+              "section_padding_desktop" : {
+                "bottom" : 210,
+                "top" : 210
+              },
+              "section_padding_mobile" : {
+                "bottom" : 210,
+                "top" : 210
+              },
+              "section_padding_tablet" : {
+                "bottom" : 210,
+                "top" : 210
+              }
+            },
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Spacer",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617107455270524",
+          "label" : "KR - Rich Text 1",
+          "type" : "custom_widget",
+          "params" : {
+            "heading" : {
+              "font_size" : 38,
+              "font_weight" : "",
+              "text" : "About Us"
+            },
+            "section_settings" : {
+              "section_padding_desktop" : {
+                "bottom" : 60,
+                "top" : 60
+              },
+              "section_padding_mobile" : {
+                "bottom" : 50,
+                "top" : 50
+              },
+              "section_padding_tablet" : {
+                "bottom" : 50,
+                "top" : 50
+              }
+            },
+            "css_style" : "",
+            "css_id" : "",
+            "content" : "<h3>Our Mission</h3>\n<p><strong>At Company Name, we strive to be the best. To build the best basements, at the best price, all while giving our clients (you) the best possible experience.<br>‍</strong><br>Everything we do before, during and after a project ensures high quality work, while keeping you in the loop, stress free, and satisfied every step of the way.</p>",
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text 1",
+            "per_widget_wrapper_html" : "",
+            "tagline" : "",
+            "wrapping_html" : "",
+            "widget_name" : "KR - Rich Text 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617107476663526",
+          "label" : "KR - Content Two Column 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Content Two Column 1",
+            "per_widget_wrapper_html" : "",
+            "section_settings" : {
+              "section_background_color" : {
+                "color" : "#F6F6F8",
+                "opacity" : 100
+              },
+              "section_padding_desktop" : {
+                "bottom" : 60,
+                "top" : 60
+              },
+              "section_padding_mobile" : {
+                "bottom" : 50,
+                "top" : 50
+              },
+              "section_padding_tablet" : {
+                "bottom" : 50,
+                "top" : 50
+              }
+            },
+            "css_style" : "",
+            "column" : [ {
+              "button" : {
+                "cta" : "c48b6ac5-5f8a-41c6-9d02-bd62fda93d19",
+                "cta_background_color" : {
+                  "opacity" : 100
+                },
+                "cta_background_color_hover" : {
+                  "opacity" : 100
+                },
+                "text" : "",
+                "type" : "simple",
+                "url" : {
+                  "href" : "",
+                  "type" : "EXTERNAL"
+                }
+              },
+              "column_inner" : false,
+              "column_inner_item" : [ {
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+                "font_weight" : "font-weight-400",
+                "title" : "Heading",
+                "type" : "h3"
+              }, {
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+                "font_weight" : "font-weight-400",
+                "title" : "Heading",
+                "type" : "h3"
+              }, {
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+                "font_weight" : "font-weight-400",
+                "title" : "Heading",
+                "type" : "h3"
+              }, {
+                "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>",
+                "font_weight" : "font-weight-400",
+                "title" : "Heading",
+                "type" : "h3"
+              } ],
+              "description" : "<div>\n<p>This is extremely important to us. We give you access to software which is specifically designed, and tailor made for your project.<br>‍<br>You can view your building schedule, selections, variations, warranty items.<br>‍<br>The communication portal stores all our communication, and ensures your messages are received and answered in writing.<br>‍<br>You will receive weekly updates and photos on your project on what is completed and what is happening next. You will never be left in the dark. You can even stay in touch with an app on your phone/tablet – allowing you to show off your new home to friends and family anytime!<br>‍<br>You can see access the online portal from anywhere, any time, 24/7.<br>‍<br>It’s not our word against yours, this is all set in stone.</p>\n</div>",
+              "element" : "video",
+              "heading" : {
+                "font_color" : {
+                  "opacity" : 100
+                },
+                "font_size" : 32,
+                "font_weight" : "",
+                "text" : "No mix ups, assumptions, or arguments.",
+                "type" : "h2"
+              },
+              "image" : {
+                "image" : {
+                  "alt" : "pexels-photo-326505",
+                  "height" : 1063,
+                  "max_height" : 1063,
+                  "max_width" : 1920,
+                  "size_type" : "auto",
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/pexels-photo-326505.jpeg",
+                  "width" : 1920
+                },
+                "type" : "background"
+              },
+              "tag_line" : "",
+              "type" : "right-image",
+              "video" : "<div class=\"hs-embed-wrapper\" data-service=\"vimeo\" data-responsive=\"true\" style=\"position: relative; overflow: hidden; width: 100%; height: auto; padding: 0; max-width: 640px; max-height: 360px; min-width: 256px; display: block; margin: auto;\"><div class=\"hs-embed-content-wrapper\"><div style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0px;\"><iframe src=\"https://player.vimeo.com/video/274019339?app_id=122963\" width=\"640\" height=\"360\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\" allowfullscreen=\"\" title=\"Our Client Portal\" style=\"position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;\"></iframe></div></div></div>"
+            } ],
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Content Two Column 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617108573637214",
+          "label" : "KR - Rich Text 1",
+          "type" : "custom_widget",
+          "params" : {
+            "heading" : {
+              "font_size" : 32,
+              "font_weight" : "",
+              "text" : "Our UNMATCHED Guarantee"
+            },
+            "section_settings" : {
+              "section_padding_desktop" : {
+                "bottom" : 0,
+                "top" : 60
+              },
+              "section_padding_mobile" : {
+                "bottom" : 0,
+                "top" : 50
+              },
+              "section_padding_tablet" : {
+                "bottom" : 0,
+                "top" : 50
+              }
+            },
+            "css_style" : "",
+            "css_id" : "",
+            "content" : "",
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text 1",
+            "per_widget_wrapper_html" : "",
+            "tagline" : "",
+            "wrapping_html" : "",
+            "widget_name" : "KR - Rich Text 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617107502272534",
+          "label" : "KR - Two Column Masonry",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Two Column Masonry",
+            "per_widget_wrapper_html" : "",
+            "section_settings" : {
+              "section_background_color" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "section_padding_desktop" : {
+                "bottom" : 60,
+                "top" : 30
+              },
+              "section_padding_mobile" : {
+                "bottom" : 50,
+                "top" : 30
+              },
+              "section_padding_tablet" : {
+                "bottom" : 50,
+                "top" : 30
+              }
+            },
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "card" : [ {
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_color" : {
+                "color" : "#D9D9D9",
+                "opacity" : 100
+              },
+              "description" : "<p><span>Either your basement is completed within the timeframe agreed in the contract, or we pay YOU for every extra day beyond the deadline.</span></p>",
+              "description_color" : {
+                "opacity" : 100
+              },
+              "link_color" : {
+                "opacity" : 100
+              },
+              "link_text" : "",
+              "link_url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              },
+              "title" : "Built On-Time <strong>Guarantee</strong>",
+              "title_color" : {
+                "opacity" : 100
+              },
+              "title_color_copy" : {
+                "color" : "#333",
+                "opacity" : 100
+              }
+            }, {
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_color" : {
+                "color" : "#D9D9D9",
+                "opacity" : 100
+              },
+              "description" : "<p><span>Our passion is reflected in our work. We only use the highest quality materials and expert tradespeople to ensure your project is superbly finished and will meet your high standards.</span></p>",
+              "description_color" : {
+                "opacity" : 100
+              },
+              "link_color" : {
+                "opacity" : 100
+              },
+              "link_text" : "",
+              "link_url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              },
+              "title" : "Quality <strong>Guarantee</strong>",
+              "title_color" : {
+                "opacity" : 100
+              },
+              "title_color_copy" : {
+                "color" : "#333",
+                "opacity" : 100
+              }
+            }, {
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_color" : {
+                "color" : "#D9D9D9",
+                "opacity" : 100
+              },
+              "description" : "<p><span>Our eye for detail ensures that we will not compromise on a superior quality finish. With our 300 point quality check during construction and prior to handover.</span></p>",
+              "description_color" : {
+                "opacity" : 100
+              },
+              "link_color" : {
+                "opacity" : 100
+              },
+              "link_text" : "",
+              "link_url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              },
+              "title" : "Defect-Free <strong>Guarantee</strong>",
+              "title_color" : {
+                "opacity" : 100
+              },
+              "title_color_copy" : {
+                "color" : "#333",
+                "opacity" : 100
+              }
+            }, {
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_color" : {
+                "color" : "#D9D9D9",
+                "opacity" : 100
+              },
+              "description" : "<p><span>Be confident your project is completed to the highest standard. We offer an exclusive 12-month minor defect maintenance period after completion of your project, along with a 60-months structural warranty.</span></p>",
+              "description_color" : {
+                "opacity" : 100
+              },
+              "link_color" : {
+                "opacity" : 100
+              },
+              "link_text" : "",
+              "link_url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              },
+              "title" : "Comprehensive <strong>Guarantee</strong>",
+              "title_color" : {
+                "opacity" : 100
+              },
+              "title_color_copy" : {
+                "color" : "#333",
+                "opacity" : 100
+              }
+            }, {
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_color" : {
+                "color" : "#D9D9D9",
+                "opacity" : 100
+              },
+              "description" : "<p><span>Know exactly how much your new home or renovation is going to cost. We will never charge you a single cent more for any work outlined in your proposal.</span></p>",
+              "description_color" : {
+                "opacity" : 100
+              },
+              "link_color" : {
+                "opacity" : 100
+              },
+              "link_text" : "",
+              "link_url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              },
+              "title" : "Fixed-Price <strong>Guarantee</strong>",
+              "title_color" : {
+                "opacity" : 100
+              },
+              "title_color_copy" : {
+                "color" : "#333",
+                "opacity" : 100
+              }
+            }, {
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_color" : {
+                "color" : "#D9D9D9",
+                "opacity" : 100
+              },
+              "description" : "<p><span>Ensuring you’re happy with the work we do is our biggest concern, and we have a 100% customer satisfaction rate. Our goal is to make your building process an interactive, stress-free process, and for you to continue to enjoy your new home well into the future.</span></p>",
+              "description_color" : {
+                "opacity" : 100
+              },
+              "link_color" : {
+                "opacity" : 100
+              },
+              "link_text" : "",
+              "link_url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              },
+              "title" : "Customer Satisfaction <strong>Guarantee</strong>",
+              "title_color" : {
+                "opacity" : 100
+              },
+              "title_color_copy" : {
+                "color" : "#333",
+                "opacity" : 100
+              }
+            }, {
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_color" : {
+                "color" : "#D9D9D9",
+                "opacity" : 100
+              },
+              "description" : "<p><span>The online portal keeps ALL our communication and agreements in one place. You have 24/7 access all your project details including budget, variation, and specifications.</span></p>",
+              "description_color" : {
+                "opacity" : 100
+              },
+              "link_color" : {
+                "opacity" : 100
+              },
+              "link_text" : "",
+              "link_url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              },
+              "title" : "Clear Communication <strong>Guarantee</strong>",
+              "title_color" : {
+                "opacity" : 100
+              },
+              "title_color_copy" : {
+                "color" : "#333",
+                "opacity" : 100
+              }
+            } ],
+            "widget_name" : "KR - Two Column Masonry",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617109501851576",
+          "label" : "KR - Cards 1",
+          "type" : "custom_widget",
+          "params" : {
+            "cards" : [ {
+              "align" : "text-left",
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_radius" : true,
+              "symbol" : {
+                "background_image" : {
+                  "alt" : "adult-business-businessman",
+                  "height" : 2000,
+                  "max_height" : 2000,
+                  "max_width" : 3000,
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+                  "width" : 3000
+                },
+                "icon" : {
+                  "name" : ""
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "alt" : "download",
+                  "height" : 512,
+                  "max_height" : 512,
+                  "max_width" : 512,
+                  "size_type" : "auto",
+                  "src" : "https://cdn2.hubspot.net/hubfs/2661297/HubSnacks%20Standalone%20Module/Images/download.svg",
+                  "width" : 512
+                },
+                "is_circle" : true,
+                "type" : "icon",
+                "width" : 35
+              },
+              "testimonial" : {
+                "description" : "",
+                "image" : { },
+                "title" : ""
+              },
+              "text" : "<p><span>Either your basement is completed within the timeframe agreed in the contract, or we pay YOU for every extra day beyond the deadline.</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "title" : "Built On-Time <strong>Guarantee</strong>",
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_text_color" : {
+                "opacity" : 100
+              }
+            }, {
+              "align" : "text-left",
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_radius" : true,
+              "symbol" : {
+                "background_image" : {
+                  "alt" : "adult-business-businessman",
+                  "height" : 2000,
+                  "max_height" : 2000,
+                  "max_width" : 3000,
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+                  "width" : 3000
+                },
+                "icon" : {
+                  "name" : ""
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "alt" : "download",
+                  "height" : 512,
+                  "max_height" : 512,
+                  "max_width" : 512,
+                  "size_type" : "auto",
+                  "src" : "https://cdn2.hubspot.net/hubfs/2661297/HubSnacks%20Standalone%20Module/Images/download.svg",
+                  "width" : 512
+                },
+                "is_circle" : true,
+                "type" : "icon",
+                "width" : 35
+              },
+              "testimonial" : {
+                "description" : "",
+                "image" : { },
+                "title" : ""
+              },
+              "text" : "<p><span>Know exactly how much your new home or renovation is going to cost. We will never charge you a single cent more for any work outlined in your proposal.</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "title" : "Fixed-Price <strong>Guarantee</strong>",
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_text_color" : {
+                "opacity" : 100
+              }
+            }, {
+              "align" : "text-left",
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_radius" : true,
+              "symbol" : {
+                "background_image" : {
+                  "alt" : "adult-business-businessman",
+                  "height" : 2000,
+                  "max_height" : 2000,
+                  "max_width" : 3000,
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+                  "width" : 3000
+                },
+                "icon" : {
+                  "name" : ""
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "alt" : "download",
+                  "height" : 512,
+                  "max_height" : 512,
+                  "max_width" : 512,
+                  "size_type" : "auto",
+                  "src" : "https://cdn2.hubspot.net/hubfs/2661297/HubSnacks%20Standalone%20Module/Images/download.svg",
+                  "width" : 512
+                },
+                "is_circle" : true,
+                "type" : "icon",
+                "width" : 35
+              },
+              "testimonial" : {
+                "description" : "",
+                "image" : { },
+                "title" : ""
+              },
+              "text" : "<p><span>Our passion is reflected in our work. We only use the highest quality materials and expert tradespeople to ensure your project is superbly finished and will meet your high standards.</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "title" : "Quality <strong>Guarantee</strong>",
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_text_color" : {
+                "opacity" : 100
+              }
+            }, {
+              "align" : "text-left",
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_radius" : true,
+              "symbol" : {
+                "background_image" : {
+                  "alt" : "adult-business-businessman",
+                  "height" : 2000,
+                  "max_height" : 2000,
+                  "max_width" : 3000,
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+                  "width" : 3000
+                },
+                "icon" : {
+                  "name" : ""
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "alt" : "download",
+                  "height" : 512,
+                  "max_height" : 512,
+                  "max_width" : 512,
+                  "size_type" : "auto",
+                  "src" : "https://cdn2.hubspot.net/hubfs/2661297/HubSnacks%20Standalone%20Module/Images/download.svg",
+                  "width" : 512
+                },
+                "is_circle" : true,
+                "type" : "icon",
+                "width" : 35
+              },
+              "testimonial" : {
+                "description" : "",
+                "image" : { },
+                "title" : ""
+              },
+              "text" : "<p><span>Ensuring you’re happy with the work we do is our biggest concern, and we have a 100% customer satisfaction rate. Our goal is to make your building process an interactive, stress-free process, and for you to continue to enjoy your new home well into the future.</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "title" : "Customer Satisfaction <strong>Guarantee</strong>",
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_text_color" : {
+                "opacity" : 100
+              }
+            }, {
+              "align" : "text-left",
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_radius" : true,
+              "symbol" : {
+                "background_image" : {
+                  "alt" : "adult-business-businessman",
+                  "height" : 2000,
+                  "max_height" : 2000,
+                  "max_width" : 3000,
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+                  "width" : 3000
+                },
+                "icon" : {
+                  "name" : ""
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "alt" : "download",
+                  "height" : 512,
+                  "max_height" : 512,
+                  "max_width" : 512,
+                  "size_type" : "auto",
+                  "src" : "https://cdn2.hubspot.net/hubfs/2661297/HubSnacks%20Standalone%20Module/Images/download.svg",
+                  "width" : 512
+                },
+                "is_circle" : true,
+                "type" : "icon",
+                "width" : 35
+              },
+              "testimonial" : {
+                "description" : "",
+                "image" : { },
+                "title" : ""
+              },
+              "text" : "<p><span>Our eye for detail ensures that we will not compromise on a superior quality finish. With our 300 point quality check during construction and prior to handover.</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "title" : "Defect-Free <strong>Guarantee</strong>",
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_text_color" : {
+                "opacity" : 100
+              }
+            }, {
+              "align" : "text-left",
+              "background_color" : {
+                "color" : "#ffffff",
+                "opacity" : 100
+              },
+              "border_radius" : true,
+              "symbol" : {
+                "background_image" : {
+                  "alt" : "adult-business-businessman",
+                  "height" : 2000,
+                  "max_height" : 2000,
+                  "max_width" : 3000,
+                  "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+                  "width" : 3000
+                },
+                "icon" : {
+                  "name" : ""
+                },
+                "icon_color" : {
+                  "opacity" : 100
+                },
+                "image" : {
+                  "alt" : "download",
+                  "height" : 512,
+                  "max_height" : 512,
+                  "max_width" : 512,
+                  "size_type" : "auto",
+                  "src" : "https://cdn2.hubspot.net/hubfs/2661297/HubSnacks%20Standalone%20Module/Images/download.svg",
+                  "width" : 512
+                },
+                "is_circle" : true,
+                "type" : "icon",
+                "width" : 35
+              },
+              "testimonial" : {
+                "description" : "",
+                "image" : { },
+                "title" : ""
+              },
+              "text" : "<p><span>The online portal keeps ALL our communication and agreements in one place. You have 24/7 access all your project details including budget, variation, and specifications.</span></p>",
+              "text_color" : {
+                "opacity" : 100
+              },
+              "text_link_color" : {
+                "opacity" : 100
+              },
+              "text_link_color_hover" : {
+                "opacity" : 100
+              },
+              "title" : "Clear Communication <strong>Guarantee</strong>",
+              "title_background_color" : {
+                "color" : "#00aff0",
+                "opacity" : 100
+              },
+              "title_background_enable" : false,
+              "title_background_space" : true,
+              "title_text_color" : {
+                "opacity" : 100
+              }
+            } ],
+            "heading" : {
+              "font_weight" : "",
+              "text" : "Our UNMATCHED Guarantee"
+            },
+            "section_settings" : {
+              "section_padding_desktop" : {
+                "bottom" : 60,
+                "top" : 60
+              },
+              "section_padding_mobile" : {
+                "bottom" : 50,
+                "top" : 50
+              },
+              "section_padding_tablet" : {
+                "bottom" : 50,
+                "top" : 50
+              }
+            },
+            "css_style" : "",
+            "footer_text" : "",
+            "tag_line" : "",
+            "css_id" : "",
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Cards 1",
+            "per_widget_wrapper_html" : "",
+            "cards_column_per_row" : 2,
+            "sub_heading" : "",
+            "wrapping_html" : "",
+            "widget_name" : "KR - Cards 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617107490577532",
+          "label" : "KR - CTA 1",
+          "type" : "custom_widget",
+          "params" : {
+            "heading" : {
+              "font_size" : 30,
+              "font_weight" : "",
+              "text" : "Contact Us Today To Get Your Free Demo"
+            },
+            "section_settings" : {
+              "section_background_image" : {
+                "alt" : "BCR Basements About Us Page Banner",
+                "height" : 853,
+                "src" : "https://f.hubspotusercontent20.net/hubfs/14487128/Kore%20Theme/BCR%20Basements%20About%20Us%20Page%20Banner.jpg",
+                "width" : 1280
+              },
+              "section_background_image_overlay" : {
+                "color" : "#000",
+                "opacity" : 70
+              },
+              "section_background_type" : "1"
+            },
+            "cta_wrap_settings" : {
+              "cta_wrap_background_color" : {
+                "opacity" : 100
+              },
+              "cta_wrap_link_color" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "cta_wrap_link_color_hover" : {
+                "color" : "#fff",
+                "opacity" : 100
+              },
+              "cta_wrap_text_color" : {
+                "color" : "#fff",
+                "opacity" : 100
+              }
+            },
+            "css_style" : "",
+            "cta_offer" : "",
+            "tag_line" : "WANT TO KNOW MORE",
+            "css_id" : "",
+            "content" : "<p class=\"ctasection-one-subp\"><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.</span></p>",
+            "button" : {
+              "text" : "GET YOUR FREE DEMO"
+            },
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - CTA 1",
+            "per_widget_wrapper_html" : "",
+            "wrapping_html" : "",
+            "widget_name" : "KR - CTA 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        } ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

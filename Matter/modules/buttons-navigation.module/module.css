@@ -1,0 +1,89 @@
+.navbar_module_wrapper.center_align .hrz .btn_row {
+  justify-content: center;
+}
+
+.navbar_module_wrapper.left_align  .hrz .btn_row {
+  justify-content: flex-start;
+}
+
+.navbar_module_wrapper.right_align .vrt .btn_row {
+  align-items: end;
+}
+.navbar_module_wrapper.center_align .vrt .btn_row {
+  align-items: center;
+}
+
+.navbar_module_wrapper.left_align  .vrt .btn_row {
+  align-items: flex-start;
+}
+
+.navbar_module_wrapper.right_align .hrz .btn_row {
+  justify-content: end;
+}
+.cm_nv_wrp .cm_nv_inner .btn_row {
+  margin: 0;
+  column-gap: 13px;
+}
+.cm_nv_wrp .btn_item .simple_link {
+  margin: 0 10px;
+}
+.cm_nv_wrp h4 {
+  margin: 0;
+  line-height: inherit;
+}
+.cm_nv_wrp.vrt .btn_row {
+  flex-direction: column;
+}
+
+.navbar_module_wrapper a.icon_add {
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar_module_wrapper a.icon_add .icon_box {
+  display: block;
+  width: 1.2em;
+  flex-shrink: 0;
+  font-size: 1.2em;
+}
+
+.navbar_module_wrapper a.icon_add .icon_box svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: currentColor;
+}
+
+.navbar_module_wrapper a.icon_add .icon_box img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.navbar_module_wrapper a.icon_add.icPos_after .icon_box {
+  order: 2;
+}
+
+.navbar_module_wrapper a.icon_add .icon_box svg path {
+  fill: currentColor;
+}
+
+@media(min-width:768px){
+  .cm_nv_wrp.sticky_active {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index:99;
+  }
+}
+
+@media(max-width:767px){
+  .cm_nv_wrp .cm_nv_inner {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .cm_nv_wrp {
+    top: 0 !important;
+  }
+}

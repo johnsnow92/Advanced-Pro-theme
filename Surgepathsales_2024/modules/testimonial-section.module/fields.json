@@ -1,0 +1,121 @@
+[ {
+  "id" : "861d30c8-1359-afd2-5a99-991ed3be73b5",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "TESTIMONIALS"
+}, {
+  "id" : "059eb51d-8119-46c9-a9bc-2a34e9e7aa34",
+  "name" : "testimonial_tabs",
+  "label" : "Testimonial Tabs",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "fa4bcf9b-2b87-fbd9-85a1-0970930d76d4",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "deeab41d-f255-1a39-8f92-acc6d4af04dc",
+    "name" : "content_title",
+    "label" : "Content Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "It was great exprience"
+  }, {
+    "id" : "af4134c9-f165-c84f-6779-3ecb16e968cc",
+    "name" : "ratings",
+    "label" : "Ratings",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/five-star.png",
+      "alt" : "five-star",
+      "loading" : "lazy",
+      "width" : 112,
+      "height" : 19,
+      "max_width" : 112,
+      "max_height" : 19
+    }
+  }, {
+    "id" : "a2c838d3-3c14-90b0-bfe3-aa47bf0df54c",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Our focus is on building a permanent sales team that is exclusively dedicated to your product lines - this is a guarantee of their involvement and engagement with your brand and its long term success.</p>\n<p>Our focus is on building a permanent sales team that is exclusively dedicated to your product lines - this is a guarantee of their involvement and engagement with your brand and its long term success.</p>\n<p>Our focus is on building a permanent sales team that is exclusively dedicated to your product lines - this is a guarantee of their involvement and engagement with your brand and its long term success.</p>"
+  }, {
+    "id" : "593bf8ac-e103-ac50-0d9c-a8e0abbca7d1",
+    "name" : "customer_image",
+    "label" : "Customer Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/customer-1.png",
+      "alt" : "customer-1",
+      "loading" : "lazy",
+      "width" : 2000,
+      "height" : 1334,
+      "max_width" : 2000,
+      "max_height" : 1334
+    }
+  }, {
+    "id" : "fa4bcf9b-2b87-fbd9-85a1-0970930d76d4",
+    "name" : "customer_name",
+    "label" : "Customer Name",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Jane Warren"
+  }, {
+    "id" : "b0e076d1-83ce-feb2-b5ec-4d2384dd26d8",
+    "name" : "customer_location",
+    "label" : "Customer Location",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : " Customer"
+  }, {
+    "id" : "a19444eb-024b-dc22-64a4-fa2c56ef5b93",
+    "name" : "customer_designation",
+    "label" : "Customer Designation",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "CEO"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+} ]

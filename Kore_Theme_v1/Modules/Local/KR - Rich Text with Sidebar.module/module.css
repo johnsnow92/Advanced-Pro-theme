@@ -1,0 +1,202 @@
+.kore-richtext-sidebar {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-richtext-sidebar .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-richtext-sidebar .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-richtext-sidebar .flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.kore-richtext-sidebar .flex .col {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-richtext-sidebar .flex.right-sidebar .col:last-child {
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  border-left: 1px solid #f6f6f6;
+}
+
+.kore-richtext-sidebar .flex.left-sidebar .col:first-child {
+  -ms-flex: 0 0 33.333333%;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  border-left: 1px solid #f6f6f6;
+}
+
+.kore-richtext-sidebar .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+/* Form */
+.kore-richtext-sidebar fieldset {
+  max-width: 100% !important;
+}
+
+.kore-richtext-sidebar .form .form-tagline {
+  opacity: 0.8;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.kore-richtext-sidebar .form-title,
+.kore-richtext-sidebar .form-title * {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.kore-richtext-sidebar .form-title {
+  margin-bottom: 10px; 
+}
+
+.kore-richtext-sidebar .form {
+  padding: 30px 20px;
+  border-radius: 0;
+  background-color: #f8f8f8;
+}
+
+.kore-richtext-sidebar .form .hs-form-field > label {
+  display: none;
+}
+
+.kore-richtext-sidebar .form .legal-consent-container {
+  font-size: 12px;
+}
+
+.kore-richtext-sidebar .form .hs-form-field {
+  margin-bottom: 1rem;
+}
+
+.kore-richtext-sidebar .form label {
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+.kore-richtext-sidebar .form .inputs-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.kore-richtext-sidebar .form .hs-error-msgs {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  list-style: none;
+  color: #dc3545;
+}
+
+.kore-richtext-sidebar .form .hs-error-msgs .hs-error-msg {
+  margin-bottom: 0; 
+}
+
+.kore-richtext-sidebar .form .hs_error_rollup {
+  display: none; 
+}
+
+.kore-richtext-sidebar input[type="text"],
+.kore-richtext-sidebar input[type="password"], 
+.kore-richtext-sidebar input[type="datetime"], 
+.kore-richtext-sidebar input[type="datetime-local"], 
+.kore-richtext-sidebar input[type="date"], 
+.kore-richtext-sidebar input[type="month"], 
+.kore-richtext-sidebar input[type="time"], 
+.kore-richtext-sidebar input[type="week"], 
+.kore-richtext-sidebar input[type="number"], 
+.kore-richtext-sidebar input[type="email"], 
+.kore-richtext-sidebar input[type="url"], 
+.kore-richtext-sidebar input[type="search"], 
+.kore-richtext-sidebar input[type="tel"], 
+.kore-richtext-sidebar input[type="color"],
+.kore-richtext-sidebar input[type="file"],
+.kore-richtext-sidebar textarea,
+.kore-richtext-sidebar select {
+  display: block;
+  width: 100% !important;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.kore-richtext-sidebar input[type="checkbox"],
+.kore-richtext-sidebar input[type="radio"] {
+  margin-top: 6px; 
+  margin-right: 5px;
+}
+
+.kore-richtext-sidebar textarea.hs-input {
+  height: auto;
+  width: 100% !important;
+}
+
+.kore-richtext-sidebar .hs-embed-wrapper {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+@media(max-width:767px) {
+
+  .kore-richtext-sidebar .form {
+    padding: 30px 20px;
+  }
+
+  .kore-richtext-sidebar .form-title,
+  .kore-richtext-sidebar .form-title * {
+    font-size: 20px;
+  }
+
+}
+
+@media(max-width:767px) {
+  
+  .kore-richtext-sidebar .flex .col {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .kore-richtext-sidebar .flex.right-sidebar .col:last-child {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+    border: 0;
+  }
+  
+  .kore-richtext-sidebar .flex.left-sidebar .col:first-child {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+    border: 0;
+  }
+  
+}

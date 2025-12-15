@@ -1,0 +1,61 @@
+.kr-sts-button a {
+  padding: 15px 20px;
+  font-size: 18px;
+  display: block;
+  text-align: center;
+  text-decoration:none;
+  border: 1px solid transparent;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.kr-sticky-sidebar h2, .kr-sticky-sidebar h3,
+.kr-sticky-sidebar h4, .kr-sticky-sidebar h5{
+  margin-top:0;
+}
+.kr-sticky-sidebar {
+  width: 300px;
+}
+.kr-sts-content {
+  padding: 20px;
+}
+.kr-sts-button {
+  margin:0 auto;
+  padding-top:20px;
+}
+
+.kr-sticky-sidebar {
+  position: fixed;
+  top: 20px;
+  z-index: 1000;
+  float: left;
+  right:0;
+  min-width: 160px;
+  overflow-y: auto;
+  padding: 0 0;
+  margin: 20px 0 0;
+  font-size: 14px;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: inherit;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.3);
+
+  background-color: #fff;
+
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  
+  box-shadow: 0 10px 16px 0 rgba(36,35,35,.10);
+}
+
+@media(max-width:1139px) {
+  
+  .kr-sticky-sidebar {
+    display: none;
+  }
+  
+}

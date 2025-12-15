@@ -1,0 +1,275 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+    position: relative;
+  }
+  {% endif %}
+  
+  .{{ name }} .tagline {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .sub-heading,
+  .{{ name }} .sub-heading * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .content,
+  .{{ name }} .content * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .content a {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .content a:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+  
+  .{{ name }} #cta .kore-button,
+  .{{ name }} .kore-button,
+  .{{ name }} .simple a {
+    background-color: {{ module.button.button_background_color.color }} !important;
+    {% if module.button.button_background_color.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ module.button.button_text_color.color }} !important;
+  }
+
+  .{{ name }} #cta .kore-button:hover,
+  .{{ name }} .kore-button:hover,
+  .{{ name }} .simple a:hover {
+    background-color: {{ module.button.button_color_hover.color }} !important;
+    {% if module.button.button_color_hover.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ module.button.button_text_color_hover.color }} !important;
+  }
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  .hub-num-col4 .hub-pricing-item{
+    width: 25%;    
+  }
+  .hub-num-col3 .hub-pricing-item{
+    width: 33.33%;    
+  }
+  .hub-num-col2 .hub-pricing-item{
+    width: 50%;    
+  }
+  .hub-pricing-item .title{
+    background-color: {{ module.title_background_color.color }};
+    color: {{ module.title_color.color }};
+  }
+  .item-tbl,
+  .hub-pricing-comparison-wrapper{
+    background-color: {{ module.list_items_background_color.color }};
+  }
+  .hub-pricing-comparison-section .bottom-text{
+    color: {{ module.heading.font_color.color }};
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+    
+  }
+</style>
+
+<div class="{% if module.floating_heading %}kore-richtext-floating-heading-lp{% endif %} {% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-lp-richtext-1 clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  
+  {% if module.floating_heading %}
+  <div class="kore-floating-heading-aboutus">
+    <span>{{ module.floating_text }}</span>
+  </div>
+  {% endif %}
+  
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+    
+    <div class="hub-pricing-comparison-section {% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+
+      <div class="content max-width-{{ module.section_settings.inner_container_width }} mr-auto ml-auto">
+
+        {% if module.heading.text %}
+        {% if module.heading.type == "h1" %} 
+        <div class="heading mb-25">
+          <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h1>
+        </div>
+        {% elif module.heading.type == "h2" %}
+        <div class="heading mb-25">
+          <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h2>
+        </div>
+        {% elif module.heading.type == "h3" %}
+        <div class="heading mb-25">
+          <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h3>
+        </div>
+        {% elif module.heading.type == "h4" %}
+        <div class="heading mb-25">
+          <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h4>
+        </div>
+        {% elif module.heading.type == "h5" %}
+        <div class="heading mb-25">
+          <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h5>
+        </div>
+        {% elif module.heading.type == "h6" %}
+        <div class="heading mb-25">
+          <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h6>
+        </div>
+        {% endif %}
+        {% endif %}
+        
+        <div class="row-fluid hub-pricing-comparison-wrapper hub-num-col{{ module.number_of_column_items }}">
+          {% for item in module.items %}
+          <div class="hub-pricing-item">
+            <div class="item-tbl title">
+              {{ item.title }}
+            </div>
+            <div class="item-tbl img-logo">
+              <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" width="120">
+            </div>
+            <div class="hub-featured-items">
+              {% for item2 in item.item_list %}
+              <div class="item-tbl featured-item">
+                {{ item2.content }}
+              </div>
+              {% endfor %}
+            </div>
+            <div class="item-tbl hub-item-price">
+              {{ item.price }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        
+        {% if module.bottom_text %}
+        <div class="bottom-text">
+          {{ module.bottom_text }}
+        </div>
+        {% endif %}
+        
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% endif %}
+
+{% require_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js" integrity="sha512-/bOVV1DV1AQXcypckRwsR9ThoCj7FqTV2/0Bm79bL3YSyLkVideFLE3MIZkq1u5t28ke1c0n31WYCOrO01dsUg==" crossorigin="anonymous"></script>
+
+<script>
+$(function() {
+  
+  // init matchHeight
+  $('.hub-featured-items').matchHeight();
+  
+  $( ".kore-lp-richtext-1 .parent table" ).wrap( "<div class='table-responsive'></div>" );
+  
+  $( ".kore-lp-richtext-1 .parent table" ).addClass( "table table-hover table-bordered" );
+  
+  $(".kore-lp-richtext-1 .parent [style]").each(function() { 
+
+    if ($(this).css('fontSize') == "72px") {
+      $(this).addClass('font-size-72');
+      $(this).removeAttr('style');
+    } else if ($(this).css('fontSize') == "60px") {
+      $(this).addClass('font-size-60');
+      $(this).removeAttr('style');
+    } else if ($(this).css('fontSize') == "48px") {
+      $(this).addClass('font-size-48');
+      $(this).removeAttr('style');
+    } else if ($(this).css('fontSize') == "36px") {
+      $(this).addClass('font-size-36');
+      $(this).removeAttr('style');
+    } else if ($(this).css('fontSize') == "30px") {
+      $(this).addClass('font-size-30');
+      $(this).removeAttr('style');
+    } else if ($(this).css('fontSize') == "24px") {
+      $(this).addClass('font-size-24');
+      $(this).removeAttr('style');
+    } else if ($(this).css('fontSize') == "20px") {
+      $(this).addClass('font-size-20');
+      $(this).removeAttr('style');
+    } else if ($(this).css('fontSize') == "18px") {
+      $(this).addClass('font-size-18');
+      $(this).removeAttr('style');
+    }
+
+  });
+  
+   setTimeout(function() {
+    if (location.hash) {
+      window.scrollTo(0, 0);
+      target = location.hash.split('#');
+      smoothScrollTo($('#'+target[1]));
+    }
+  }, 1);
+
+  $('.kore-lp-richtext-1 a[href*=#]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      smoothScrollTo($(this.hash));
+      return false;
+    }
+  });
+
+  function smoothScrollTo(target) {
+    target = target.length ? target : $('[name=' + location.hash.slice(1) +']');
+
+    if (target.length) {
+      $('html,body').animate({
+        scrollTop: target.offset().top
+      }, 800);
+    }
+  }
+
+});
+</script>
+{% end_require_js %}

@@ -1,0 +1,337 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 6,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js\" integrity=\"sha512-/bOVV1DV1AQXcypckRwsR9ThoCj7FqTV2/0Bm79bL3YSyLkVideFLE3MIZkq1u5t28ke1c0n31WYCOrO01dsUg==\" crossorigin=\"anonymous\"></script>\n<script>\n  $(document).ready(function() {\n\n    // Wrap span4 for each Blog Posts Section\n    $(\".kr-blog-listing-1-posts\").each(function() {\n      var items = $(this).find(\".posts-wrapper > .span4\");\n      for (var i = 0; i < items.length; i += 3) {    \n        items.slice(i, i + 3).wrapAll(\"<div class='row-fluid'></div>\");\n      }\n    });\n\n    // Count row to display\n    $(\".kr-blog-listing-1-posts\").each(function() {\n      var num_rows = parseInt($(this).find(\".posts-wrapper > .row-fluid\").length);\n      \n      $(this).attr(\"data-total-rows\", num_rows);\n\n      // Hide button if current section only have one row\n      if ( num_rows == 1 || num_rows <= 0 ) {\n        $(this).find(\".more-posts__link\").hide();\n      }\n      \n    });\n    \n    // More Posts Event\n    $(\".more-posts__link span\").each(function() {\n      var total_rows = parseInt($(this).parent().parent().parent().attr(\"data-total-rows\"));\n          \n      $(this).click(function() {\n        var next_row = parseInt( $(this).attr(\"data-next-row\") );\n\n        $(this).parent().parent().find(\".posts-wrapper .row-fluid:nth-of-type(\"+ next_row +\")\").addClass(\"show\");\n        \n        if ( total_rows > next_row ) {\n          $(this).attr( \"data-next-row\", (next_row += 1) );\n        } else {\n           $(this).parent().hide();\n        }\n      });\n    });\n\n  });\n  \n  $(window).load(function() {\n    $(\".posts-wrapper .row-fluid .post-item__tags\").matchHeight({\n      byRow: true,\n      property: 'height'  \n    });\n  });\n</script>\n",
+  "bodyClass" : "kore-template {% if topic %}listing-topic-page{% endif %} {% if blog_author %}author-page{% endif %}",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_15972258158037",
+        "label" : "KR - Blog Listing 1 Banner",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Blog Listing 1 Banner",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Blog Listing 1 Banner",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1617274854797310",
+        "label" : "Blog Content",
+        "type" : "custom_widget",
+        "params" : {
+          "css_style" : "",
+          "template_to_edit" : "listing",
+          "css_id" : "",
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "@hubspot/blog_content",
+          "per_widget_wrapper_html" : "",
+          "blog_listing_source" : "<style>\n  .listing-top-section{\n    padding-top: 60px;\n  }\n  .topics{\n    text-align: center;\n  }\n  .topics a{\n    display: inline-block;\n    margin: 0 5px 5px;\n    padding: 8px 14px;\n    -webkit-transition: all 200ms ease;\n    transition: all 200ms ease;\n  }\n  .listing-top-section .topics a:hover,\n  .listing-top-section .topics a.active{\n    text-decoration: none;\n    color: #fff!important;\n    background-color: #f86b11;\n    border-radius: 4px;\n  }\n  body.listing-topic-page .listing-topics,\n  body.author-page .listing-topics{\n    display: none;\n  }\n  .topic-listing-view{\n    padding-top: 40px;\n    padding-bottom: 60px;\n  }\n  .listing-search{\n    position: relative;\n    max-width: 905px;\n    margin: 0 auto;\n    margin-bottom: 28px;\n  }\n  .listing-search .hs-search-input{\n    border: 0;\n    background-color: #fff;\n    padding: 20px;\n    height: 55px;\n/*     box-shadow: 0 0px 4px rgb(0 0 0 / 20%); */\n    font-size: 15px;\n    border: 2px solid rgba(0,0,0,0.08);\n  }\n  .listing-search .hs-search-input:focus,\n  .listing-search .hs-search-btn:focus{\n    outline: none!important;\n  }\n  .listing-search .hs-search-input::-webkit-input-placeholder{\n    color: #f86b11;\n  }\n  .listing-search .hs-search-input::-moz-placeholder{\n    color: #f86b11;\n  }\n  .listing-search .hs-search-input:-ms-input-placeholder{\n    color: #f86b11;\n  }\n  .listing-search .hs-search-input:-moz-placeholder{\n    color: #f86b11;\n  }\n  .listing-search .hs-search-btn{\n    position: absolute;\n    top: 0;\n    right: 0;\n    width: 74px;\n    height: 55px;\n    border-radius: 0!important;\n    border: 0;\n    background: #f86b11;\n/*     color: #f86b11; */\n    color: #fff;\n    font-size: 25px;\n    cursor: pointer;\n  }\n  body.author-page .kr-blog-listing-1-posts .posts-wrapper .row-fluid,\n  body.listing-topic-page .kr-blog-listing-1-posts .posts-wrapper .row-fluid{\n    display: block!important;\n  }\n  .listing-author-section{\n    background-image: -o-linear-gradient(right,#f86b11 43%,#fbb040 100%);\n    background-image: -webkit-gradient( \nlinear\n ,right top, left top\n ,color-stop(43%, #f86b11),to(#fbb040));\n    background-image: -o-linear-gradient( \nright\n ,#f86b11 43%,#fbb040 100%);\n    background-image: linear-gradient( \n270deg\n ,#f86b11 43%,#fbb040 100%);\n    text-align: center;\n    padding: 50px 30px;\n    color: #fff;\n    margin-top: 30px;\n    margin-bottom: 15px;\n  }\n  .listing-autho-bio{\n    max-width: 650px;\n    margin: 0 auto;\n  }\n  .listing-autho-bio h3{\n    color: #fff;\n    font-size: 21px;\n    font-weight: bold;\n  }\n  .listing-autho-bio .author-profile{\n    width: 20%;\n    height: 100px;\n    background-position: 50% 50%;\n    background-size: cover;\n    margin-right: 0;\n    margin: 0 auto 12px;\n  }\n  @media screen and (max-width: 767px){\n    .listing-search .hs-search-btn{\n      font-size: 22px;\n    }\n  }\n  \n/*   body.author-page  */\n</style>\n\n\n<div class=\"listing-top-section kore-module test1\">\n  <div class=\"page-width\">\n    \n    <!--\n    <div class=\"listing-search\">\n      <form class=\"hs-search-wrap\" action=\"/{{ site_settings.content_search_results_page_path }}\">\n        <input class=\"hs-search-input\" type=\"search\" name=\"term\" placeholder=\"What are you looking for . . .\">\n        <button class=\"hs-search-btn\" type=\"submit\"><i class=\"fa fa-search\" aria-hidden=\"true\"></i></button> \n      </form>\n    </div>\n    -->\n    \n    <!--\n    <div class=\"topics\">\n      {% set topics = blog_tags(group.id, 250) %}\n      {% for topic in topics  %}\n      <a class=\"cat-item {% if topic.slug == request.path|replace('/tag/', '') %}active{% endif %}\" href=\"{{ blog_tag_url(group.id, topic.slug) }}\">{{ topic.name }}</a>\n      {% endfor %}\n    </div>\n    -->\n    \n    {% if blog_author %}\n    <div class=\"listing-author-section\">\n      <div class=\"listing-autho-bio\">\n        {% if blog_author.avatar %}<div class=\"author-profile\" style=\"background-image: url('{{ blog_author.avatar }}');\"></div>{% endif %}\n        {% if blog_author.display_name %}<h3>{{ blog_author.display_name }}</h3>{% endif %}\n        {% if blog_author.bio %}<p>{{ blog_author.bio }}</p>{% endif %}\n      </div>\n    </div>\n    {% endif %}\n    \n  </div>\n</div>\n\n{% if topic or blog_author %}\n<div class=\"topic-listing-view\">\n  <div class=\"kore-module kr-blog-listing-1-posts clear-module\">\n    <div class=\"page-width text-left\">\n      {% if topic %}\n      <div class=\"mb-20\"> \n        <h3>{{ topic|replace(\"-\",\" \")|title }}</h3>\n      </div>\n      {% endif %}\n\n      <div class=\"posts-wrapper\">\n        {% for content in contents %}        \n        <div class=\"span4\">\n          <div class=\"post-item__img\">\n            <a href=\"{{ content.absolute_url }}\">\n              <img src=\"{{ content.featured_image }}\" alt=\"{{ content.name }}\">\n            </a>\n          </div>\n          <div class=\"post-item__tags\">\n            {% for topic in content.topic_list %}\n            {% if topic.name != \"Featured\" %}\n            <a href=\"{{ blog_tag_url(group.id, topic.slug) }}\">{{ topic.name }}</a>\n            {% endif %}\n            {% endfor %}\n          </div>\n          <div class=\"post-item__content\">\n            <a href=\"{{ content.absolute_url }}\">\n              <h4>{{ content.name }}</h4>\n              <!-- \n<div class=\"author-date\">\n<div class=\"author\">\n{{ content.blog_post_author.display_name }}\n</div>\n<div class=\"date\">\n{{ content.publish_date|datetimeformat('%B %d, %Y') }}\n</div>\n</div>\n-->\n              <h5><span>{{ content.publish_date|datetimeformat('%B %d, %Y') }}</span></h5>\n              <p>{{ content.post_body | striptags | safe | truncate(160, False, '...') }}</p>              \n            </a>\n          </div>\n        </div>\n        {% endfor %}      \n      </div>\n\n    </div>\n  </div>\n</div>\n{% endif %}\n\n",
+          "wrapping_html" : "",
+          "blog_post_source" : "",
+          "widget_name" : "Blog Content",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1617274929821314",
+        "label" : "Module group",
+        "type" : "cell",
+        "params" : {
+          "css_class" : "listing-topics",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ {
+          "0" : {
+            "x" : 0,
+            "w" : 12,
+            "name" : "module_159723017053612",
+            "label" : "KR - Blog Listing 1 Posts",
+            "type" : "custom_widget",
+            "params" : {
+              "css_class" : "",
+              "schema_version" : 2,
+              "path" : "/Kore_Theme_v1/Modules/Local/KR - Blog Listing 1 Posts",
+              "per_widget_wrapper_html" : "",
+              "css_style" : "",
+              "wrapping_html" : "",
+              "css_id" : "",
+              "widget_name" : "KR - Blog Listing 1 Posts",
+              "css_id_str" : "",
+              "overrideable" : true
+            },
+            "rows" : [ ],
+            "rowMetaData" : [ ],
+            "cells" : [ ],
+            "cssId" : "",
+            "cssClass" : "",
+            "cssStyle" : "",
+            "styles" : null,
+            "widgets" : [ ]
+          }
+        }, {
+          "0" : {
+            "x" : 0,
+            "w" : 12,
+            "name" : "module_159723137246924",
+            "label" : "KR - Blog Listing 1 Posts",
+            "type" : "custom_widget",
+            "params" : {
+              "css_class" : "",
+              "schema_version" : 2,
+              "path" : "/Kore_Theme_v1/Modules/Local/KR - Blog Listing 1 Posts",
+              "per_widget_wrapper_html" : "",
+              "heading" : "Lifestyle",
+              "css_style" : "",
+              "wrapping_html" : "",
+              "css_id" : "",
+              "widget_name" : "KR - Blog Listing 1 Posts",
+              "css_id_str" : "",
+              "overrideable" : true
+            },
+            "rows" : [ ],
+            "rowMetaData" : [ ],
+            "cells" : [ ],
+            "cssId" : "",
+            "cssClass" : "",
+            "cssStyle" : "",
+            "styles" : null,
+            "widgets" : [ ]
+          }
+        }, {
+          "0" : {
+            "x" : 0,
+            "w" : 12,
+            "name" : "module_159723139632357",
+            "label" : "KR - Blog Listing 1 Posts",
+            "type" : "custom_widget",
+            "params" : {
+              "css_class" : "",
+              "schema_version" : 2,
+              "path" : "/Kore_Theme_v1/Modules/Local/KR - Blog Listing 1 Posts",
+              "per_widget_wrapper_html" : "",
+              "heading" : "Travel",
+              "css_style" : "",
+              "wrapping_html" : "",
+              "css_id" : "",
+              "widget_name" : "KR - Blog Listing 1 Posts",
+              "css_id_str" : "",
+              "overrideable" : true
+            },
+            "rows" : [ ],
+            "rowMetaData" : [ ],
+            "cells" : [ ],
+            "cssId" : "",
+            "cssClass" : "",
+            "cssStyle" : "",
+            "styles" : null,
+            "widgets" : [ ]
+          }
+        } ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "listing-topics",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1597232053174209",
+        "label" : "KR - Blog Post CTA 2",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Blog Post CTA 2",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Blog Post CTA 2",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_159723144871286",
+        "label" : "KR - CTA 1",
+        "type" : "custom_widget",
+        "params" : {
+          "heading" : {
+            "text" : "Insert your final persuasive Call-To-Action heading in here"
+          },
+          "css_style" : "",
+          "cta_form" : {
+            "form_id" : "",
+            "response_type" : "inline",
+            "message" : "Thanks for submitting the form.",
+            "form_type" : "HUBSPOT"
+          },
+          "css_id" : "",
+          "button" : {
+            "text" : ""
+          },
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - CTA 1",
+          "per_widget_wrapper_html" : "",
+          "wrapping_html" : "",
+          "widget_name" : "KR - CTA 1",
+          "css_id_str" : "",
+          "cta_form_show_hide" : true,
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_159722512010042",
+        "label" : "KR - Sticky Subscribe",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Sticky Subscribe",
+          "per_widget_wrapper_html" : "",
+          "form" : {
+            "form_id" : "",
+            "response_type" : "inline",
+            "message" : "Thanks for submitting the form.",
+            "form_type" : "HUBSPOT"
+          },
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Sticky Subscribe",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

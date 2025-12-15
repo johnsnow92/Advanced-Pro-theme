@@ -1,0 +1,57 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Features - Icon Grid
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: features-icon-grid.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  max_width=1200,
+  padding={"top": 80, "bottom": 80}
+%}
+  {% dnd_row %}
+    {% dnd_column width=12 %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <h2 style="text-align: center; font-size: 3rem; font-weight: 700; margin-bottom: 3rem;">Our Features</h2>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+  {% end_dnd_row %}
+  {% dnd_row %}
+    {% dnd_column width=4 %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <div style="text-align: center; padding: 2rem;">
+            <div style="font-size: 3rem; color: #007bff; margin-bottom: 1rem;">⚡</div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">Fast Performance</h3>
+            <p style="color: #666; line-height: 1.6;">Lightning-fast loading speeds</p>
+          </div>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+    {% dnd_column width=4 %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <div style="text-align: center; padding: 2rem;">
+            <div style="font-size: 3rem; color: #007bff; margin-bottom: 1rem;">🔒</div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">Secure</h3>
+            <p style="color: #666; line-height: 1.6;">Enterprise-grade security</p>
+          </div>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+    {% dnd_column width=4 %}
+      {% dnd_module path="@hubspot/rich_text" %}
+        {% module_attribute "html" %}
+          <div style="text-align: center; padding: 2rem;">
+            <div style="font-size: 3rem; color: #007bff; margin-bottom: 1rem;">📊</div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem;">Analytics</h3>
+            <p style="color: #666; line-height: 1.6;">Powerful insights dashboard</p>
+          </div>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+  {% end_dnd_row %}
+{% end_dnd_section %}

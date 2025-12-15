@@ -1,0 +1,666 @@
+<!--
+templateType: page
+isAvailableForNewContent: false
+-->
+
+{# start - added for testing purpose - will be removed #}
+{{ require_css("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap")}}
+{{ require_css(get_asset_url("../css/main.css")) }}
+{{ require_css(get_asset_url("../css/theme-overrides.css")) }} 
+{{ require_js(get_asset_url('./../js/plugins/aos.js')) }}
+{% require_js %}
+<script>
+  AOS.init({
+    once: true,
+    duration: 500,
+    startEvent: 'load'
+
+  });
+</script>
+{% end_require_js %}
+{{ require_js(get_asset_url('./../js/main.js')) }}
+{# end - added for testing purpose - will be removed #}
+
+
+{# RGBA color #}
+{% macro color(value) %}
+{% if value.color %}
+{% set colorhex = value.color|convert_rgb %}
+{% if value.opacity != null %}
+{% set coloropacity = value.opacity / 100 %}
+{% else %}
+{% set coloropacity = '1' %}
+{% endif %}
+rgba({{ colorhex }}, {{ coloropacity }})
+{% endif %}
+{% endmacro %}
+
+
+
+{# Section top content #}
+{% macro topContent(value,animations) %}
+{% if value.title or  value.content or value.button_group %}
+<div class="top_sec {% if not value.button_group %}noButton{% endif %} {% if not value.title and  not value.content %}no_top_content {% endif %}">
+  {% if value.button_group %}
+  <div class="flex_row ">
+    {% endif %}
+
+    {% if value.title or value.content %}
+    <div class="content_widget col8 " {% if animations.enable_animation %}data-aos="{{animations.animation_type}}" data-aos-delay="50"{% endif %}>
+      {% if value.title %}
+      <{{value.select_title_tag}} class="title">
+        {{value.title}}
+        </{{value.select_title_tag}}>
+        {% endif %}
+
+        {% if value.content %}
+        <div class="top_content" >
+      {{value.content}}
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {% if value.button_group %}
+  <div class="btn_row_wrap col4 " {% if animations.enable_animation %}data-aos="{{animations.animation_type}}" data-aos-delay="50"{% endif %}>
+    {{buttonWithPopupGroup(value.button_group, false, 'top_sec' ) }}
+  </div>
+  {% endif %}
+
+  {% if value.button_group %}
+</div>
+{% endif %}
+
+</div>
+{% endif %}
+{% endmacro %}
+
+
+{# Buttons group #}
+{% macro buttonGroup(items) %}
+
+{% if items %}
+<div class="btn_row">{% for item in items %}
+  {% set buttonIndex =  loop.index %}
+  {% if item.select_button_type %}  
+  <div class="btn_item ty_{{item.select_button_type}} index{{buttonIndex}}">                           
+    {% if item.select_button_type == "std" %}       
+    {% set href = item.button_link.url.href %}
+    {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+    {% elif item.button_link.url.type is equalto "CONTENT" %}
+    {% if item.bookmark_id %}
+    {% set href = href + '#'+ item.bookmark_id %}
+    {% else %}
+    {% set href = item.button_link.url.href %}
+    {% endif %}
+    {% endif %}
+    <a href="{{ href }}" class="{% if item.select_button_theme %}{{ item.select_button_theme }}{% else %}hs-button{% endif %} {% if item.remove_hover_effect %}hoverDisable{% endif %}"
+       {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+       {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}>
+      {{ item.button_text }}
+    </a>
+    {% elif item.select_button_type == "cta" %}
+    {% cta guid="{{ item.cta_field }}" %}
+    {% endif %}</div>{% endif %}{% endfor %}</div>
+{% endif %}
+{% endmacro %}
+
+
+
+{# Buttons with popup group #}
+{# checkPopupModal  #}
+{% macro buttonWithPopupGroup(items, checkPopupModal, class) %}
+
+{% if items %}
+
+{# to remove popup modal html#}
+{% if not checkPopupModal %}
+{% set count = items|length%}
+<div class="btn_row count_{{count}} {% if count == 1%}oneButton{% else%}moreButton{% endif %}">
+  {% for item in items %}
+  {% set buttonIndex =  loop.index %}
+
+  {% if checkId == true %}
+  {% set  checkCount = loop.index%}
+  {% endif %}
+
+  {% if item.select_button_type %}  
+  <div class="btn_item ty_{{item.select_button_type}} index{{buttonIndex}}" data-coun="{{checkCount}}">                           
+    {% if item.select_button_type == "std" %}       
+    {% set href = item.button_link.url.href %}
+    {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+    {% elif item.button_link.url.type is equalto "CONTENT" %}
+    {% if item.bookmark_id %}
+    {% set href = href + '#'+ item.bookmark_id %}
+    {% else %}
+    {% set href = item.button_link.url.href %}
+    {% endif %}
+    {% endif %}
+
+    {% if item.button_text %}
+    <a href="{{ href }}" class="{% if item.select_button_theme %}{{ item.select_button_theme }}{% else %}hs-button{% endif %} {% if item.remove_hover_effect %}hoverDisable{% endif %}"
+       {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+       {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}>
+      {{ item.button_text }}
+    </a>
+    {% endif %}
+
+    {% elif item.select_button_type == "popup_form" %}
+    {% if item.button_text %}
+    <a {% if class %} data-id="modal_{{name}}_{{class}}_ind{{loop.index}}" {% else %} data-id="modal_{{name}}_ind{{loop.index}}" {% endif %} href="javascript:;"  class="popupBtn popup_form {% if item.select_button_theme %}{{ item.select_button_theme }}{% else %}hs-button{% endif %} {% if item.remove_hover_effect %}hoverDisable{% endif %}">
+      {{ item.button_text }}
+    </a>
+    {% endif %}
+
+    {% elif item.select_button_type == "popup_content" %}
+    {% if item.button_text %}
+    <a {% if class %} data-id="modal_{{name}}_{{class}}_ind{{loop.index}}" {% else %} data-id="modal_{{name}}_ind{{loop.index}}" {% endif %} href="javascript:;"  class="popupBtn popup_content {% if item.select_button_theme %}{{ item.select_button_theme }}{% else %}hs-button{% endif %} {% if item.remove_hover_effect %}hoverDisable{% endif %}">
+      {{ item.button_text }}
+    </a>
+    {% endif %}
+
+    {% elif item.select_button_type == "popup_video" %}
+    {% if item.button_text %}
+    <a {% if class %} data-id="modal_{{name}}_{{class}}_ind{{loop.index}}" {% else %} data-id="modal_{{name}}_ind{{loop.index}}" {% endif %} href="javascript:;" class="popupBtn popup_video {% if item.select_button_theme %}{{ item.select_button_theme }}{% else %}hs-button{% endif %} {% if item.remove_hover_effect %}hoverDisable{% endif %}">
+      {# <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none">
+        <path d="M9.5 0.515869C4.52823 0.515869 0.5 4.5441 0.5 9.51587C0.5 14.4876 4.52823 18.5159 9.5 18.5159C14.4718 18.5159 18.5 14.4876 18.5 9.51587C18.5 4.5441 14.4718 0.515869 9.5 0.515869ZM13.6988 10.3868L7.31169 14.0522C6.73831 14.3715 6.01613 13.9614 6.01613 13.2901V5.74168C6.01613 5.07393 6.73468 4.66022 7.31169 4.97958L13.6988 8.86264C14.294 9.19651 14.294 10.0566 13.6988 10.3868Z"  style="&#10;"/>
+        </svg></span>  #}
+      <span class="text" style="color: inherit;">
+        {{ item.button_text }}
+      </span> 
+    </a>
+    {% endif %}
+
+    {% elif item.select_button_type == "cta" %}
+    {% cta guid="{{ item.cta_field }}" %}
+    {% endif %}
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>
+{% endif %}
+{# end #}
+
+{# to add popup modal html#}
+{% if checkPopupModal %}
+{% for item in items %}
+
+{% if checkId %}
+{% set  checkCount = loop.index%}
+{% endif %}
+
+{% if item.select_button_type == "popup_form" or item.select_button_type == "popup_content" or item.select_button_type == "popup_video" %} 
+<div class="popup_modal ty{{item.select_button_type}} {{item.popup_styles.select_background_theme}}_bg {{ item.popup_styles.select_color_theme }}_colr_th"   {% if class %} data-checkCount="{{checkCount}}" id="modal_{{name}}_{{class}}_ind{{loop.index}}" {% else %} id="modal_{{name}}_ind{{loop.index}}" {% endif %}>
+  <div class="popup_modal_inner">
+    <div class="popup_modal_box {{item.popup_styles.select_background_theme}} {{ item.popup_styles.select_color_theme }}">
+      <div class="popup_modal_box_inner">
+
+        {% if item.select_button_type == "popup_video" %}
+        {% if ( item.select_popup_video_type and item.select_video) or (item.select_popup_video_type and item.video_url)  %}
+        <div class="video_box">
+          {% if item.select_popup_video_type == "file" %}
+          {% if item.select_video %}
+          <div class="bnr_vid2"><video loop muted autoplay controls data-src="{{ item.select_video }}" src="" class="videoTag videoSrc"></video></div> 
+          {% endif %}
+          {% endif %}
+          {% if item.select_popup_video_type == "external" %}
+          {% if item.video_url %}
+          {% if item.video_url is string_containing "youtube.com" %}
+          <div class="bnr_vid2"><iframe src="" data-src="{{ item.video_url|split('?')|first }}?autoplay=1&loop=1&mute=1&showinfo=0&controls=0&playlist={{ item.video_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video videoSrc"></iframe></div> 
+          {% else %}
+          <div class="bnr_vid2"><iframe src="" data-src="{{ item.video_url|split('?')|first }}?autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video videoSrc"></iframe></div>
+          {% endif %}
+          {% endif %}
+          {% endif %}
+        </div>
+        {% endif %}
+        {% endif %}
+
+        {% if item.popup_content %}
+        <div class="content_box">
+          {{ item.popup_content }}
+        </div>
+        {% endif %}
+
+        {% if item.select_button_type == "popup_form" and item.select_form.form_id %}
+        <div class="form__box">
+          {% form
+            form_to_use="{{ item.select_form.form_id }}"
+            response_response_type="{{ item.select_form.response_type }}"
+            response_message="{{ item.select_form.message }}"
+            response_redirect_id="{{ item.select_form.redirect_id }}"
+            response_redirect_url="{{item.select_form.redirect_url}}"
+            gotowebinar_webinar_key="{{ item.select_form.gotowebinar_webinar_key }}"
+          %}
+        </div>
+        {% endif %}
+      </div>
+
+
+    </div>
+    <div class="closeIcon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="50px" height="50px"><path d="M 7.71875 6.28125 L 6.28125 7.71875 L 23.5625 25 L 6.28125 42.28125 L 7.71875 43.71875 L 25 26.4375 L 42.28125 43.71875 L 43.71875 42.28125 L 26.4375 25 L 43.71875 7.71875 L 42.28125 6.28125 L 25 23.5625 Z"></path></svg>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% require_css %}
+<style>
+
+
+  {% if item.popup_styles.select_background_theme == "custom" %}
+  {% if class %}
+  #modal_{{name}}_{{class}}_ind{{loop.index}} .popup_modal_box{
+    background: {{color(item.popup_styles.background_color)}};
+  }
+  {% else %}
+  #modal_{{name}}_ind{{loop.index}} .popup_modal_box{
+    background: {{color(item.popup_styles.background_color)}};
+  }
+  {% endif %}
+  {% endif %}
+
+  {% if item.popup_styles.select_color_theme == "custom" %}
+  {% if class %}
+  #modal_{{name}}_{{class}}_ind{{loop.index}} *:not(a[class]):not(input)  {
+    color: {{ color(item.popup_styles.color) }};
+  }
+  {% else %}
+  #modal_{{name}}_ind{{loop.index}} *:not(a[class]):not(input){
+    color: {{ color(item.popup_styles.color) }};
+  }
+  {% endif %}
+
+  {% endif %}
+</style>
+{% end_require_css %}
+
+{% endfor %}
+{% endif %}
+{# end #}
+
+
+{% endif %}
+
+{% endmacro %}
+
+
+{# Section background/content style options starts #}
+{% macro sectionBackgroundStyle(name,styleValue) %}
+
+{% if styleValue.background.select_background_type == "bgimage" and styleValue.background.background_image.src  %}
+{% if styleValue.background.enable_parallax %}
+
+{% if styleValue.background.background_image.background_position == "TOP_LEFT" %}
+{% set position = "left top" %}
+{% elif styleValue.background.background_image.background_position == "TOP_CENTER" %}
+{% set position = "center top" %}
+{% elif styleValue.background.background_image.background_position == "TOP_RIGHT" %}
+{% set position = "right top" %}
+{% elif styleValue.background.background_image.background_position == "MIDDLE_LEFT" %}
+{% set position = "left center" %}
+{% elif styleValue.background.background_image.background_position == "MIDDLE_RIGHT" %}
+{% set position = "right center" %}
+{% elif styleValue.background.background_image.background_position == "BOTTOM_LEFT" %}
+{% set position = "left bottom" %}
+{% elif styleValue.background.background_image.background_position == "BOTTOM_CENTER" %}
+{% set position = "center bottom" %}
+{% elif styleValue.background.background_image.background_position == "BOTTOM_RIGHT" %}
+{% set position = "right bottom" %}
+{% elif styleValue.background.background_image.background_position == "MIDDLE_CENTER" %}
+{% set position = "center center" %}
+{% endif %}
+
+<div class="simpleParallax_wrap">
+  <img class="thumbnail" src="{{styleValue.background.background_image.src }}" alt="Parallax Image" style="object-position:{{ position }}; object-fit:{% if styleValue.background.background_image.background_size == "auto" %}none{% else %}{{styleValue.background.background_image.background_size}}{% endif %}">
+</div>
+
+{% require_js %}
+<script>
+  var images = document.querySelectorAll('.{{name}} .simpleParallax_wrap img');
+                                         new simpleParallax(images);
+</script>
+
+{% end_require_js %}
+
+{% endif %}
+{% endif %}
+
+{% require_css %} 
+<style>
+
+  {% if styleValue.background.select_background_type == "bgimage" %}
+  {% if not styleValue.background.enable_parallax %}
+  .{{name}}{
+    {{ styleValue.background.background_image.css }};
+    background-repeat:no-repeat;
+  }
+  {% endif %} 
+
+  {% if styleValue.background.enable_parallax %}
+
+  {% endif %}
+
+  .{{name}}::before{
+    background-color: {{ color(styleValue.background.overlay_color) }};
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+  }
+  .{{name}}::before{
+    z-index: 2;
+  }
+  {% endif %}
+
+  {# #}
+
+  {% if styleValue.background.select_background_type == "bgcolor" %}
+  {% if styleValue.background.select_background_theme == "custom" %}
+  .{{name}}{
+    background-color: {{ color(styleValue.background.background_color) }};
+  }
+  {% endif %}
+  {% endif %}
+
+  {% if styleValue.background.select_background_type == "gradient" %}
+  {% if styleValue.background.select_gradient_theme == "theme_grdt" %}
+  .{{name}}{
+    background: linear-gradient({{ styleValue.background.direction }}, rgba({{ theme.global_colors.ac_primary_color.color|convert_rgb }}, {{ styleValue.background.primary_color_opacity / 100 }}), rgba({{ theme.global_colors.ac_secondary_color.color|convert_rgb }}, {{ styleValue.background.secondary_color_opacity / 100 }}));
+  }
+  {% endif %}
+
+  {% if styleValue.background.select_gradient_theme == "cstm_grdt" %}
+  .{{name}}{
+    background-image: {{ styleValue.background.gradient_color.css }};
+  }
+  {% endif %}
+  {% endif %}
+
+  {% if styleValue.content.select_color_theme == "custom" %}
+  .{{name}} *:not(a[class]):not(input):not(.popup_modal *){
+    color: {{ color(styleValue.content.color) }};
+  }
+  {% endif %}
+</style>
+{% end_require_css %}
+
+{% endmacro %}
+{# Section background/content style options end #}
+
+
+{# Column background/content style options #}
+{# Column background/content style options #}
+{% macro columnBackgroundStyle(class,styleValue) %}
+{% require_css %} 
+<style>
+
+
+  .{{name}} {{class}}{
+    {{ styleValue.spacing.css }}
+  }
+
+  {% if styleValue.change_mobile_spacing %}
+  @media(max-width:768px){
+    .{{name}} {{class}}{
+      {{ styleValue.mobile_spacing.css }}
+    }
+  }
+  {% endif %}
+
+
+  {% if styleValue.select_color_theme == "custom" %}
+  .{{name}} {{class}} *:not(a[class]):not(input):not(.popup_modal *):not(.description-cont){
+    color: {{ color(styleValue.color) }};
+  }
+  {% endif %}
+
+  {% if styleValue.select_background_type == "bgimage" %}
+
+  .{{name}} {{class}}{
+    {{ styleValue.background_image.css }};
+    background-repeat:no-repeat;
+    position: relative;
+  }
+
+  .{{name}} {{class}}::before{
+    background-color: {{ color(styleValue.overlay_color) }};
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image: {{ styleValue.overlay_gradient_color.css }};
+  }
+  .{{name}} {{class}}::before{
+    z-index: 2;
+  }
+
+  .{{name}} {{class}} > * {
+    z-index: 5;
+    position: relative;
+  }
+
+  {% endif %}
+
+  {# #}
+
+  {% if styleValue.select_background_type == "bgcolor" %}
+  {% if styleValue.select_background_theme == "custom" %}
+  .{{name}} {{class}}{
+    background-color: {{ color(styleValue.background_color) }};
+  }
+  {% endif %}
+  {% endif %}
+
+  {% if styleValue.select_background_type == "gradient" %}
+  {% if styleValue.select_gradient_theme == "theme_grdt" %}
+  .{{name}} {{class}}{
+    background: linear-gradient({{ styleValue.direction }}, rgba({{ theme.global_colors.ac_primary_color.color|convert_rgb }}, {{ styleValue.primary_color_opacity / 100 }}), rgba({{ theme.global_colors.ac_secondary_color.color|convert_rgb }}, {{ styleValue.secondary_color_opacity / 100 }}));
+  }
+  {% endif %}
+
+  {% if styleValue.select_gradient_theme == "cstm_grdt" %}
+  .{{name}} {{class}}{
+    background-image: {{ styleValue.gradient_color.css }};
+  }
+  {% endif %}
+  {% endif %}
+
+</style>
+{% end_require_css %}
+
+{% endmacro %}
+{# Column background/content style options end #}
+{# Column background/content style options end #}
+
+
+{# Section spacing options  #}
+{% macro sectionSpacing(name, spacingValue, class) %}
+{% require_css %} 
+<style>
+  .accordion_wrap.{{name}},
+  .{{name}} {{class}},
+  .{{name}}{
+    {{ spacingValue.spacing.spacing.css }}
+  }
+
+  {% if spacingValue.spacing.change_mobile_spacing %}
+  @media(max-width:768px){
+    .accordion_wrap.{{name}},
+    .{{name}} {{class}},
+    .{{name}}{
+      {{ spacingValue.spacing.mobile_spacing.css }}
+    }
+  }
+  {% endif %}
+</style>
+{% end_require_css%}
+{% endmacro %}
+
+
+{# Bcakground options group #}
+{% macro backgroundOptions(name, options) %}
+
+{% if options.select_background_type=="video" or options.select_background_type=="image" %}
+<div class="bg_el overlay_bg" style="background-color:{{color(options.overlay_color)}}"></div>
+{% endif %}
+
+{% if options.select_background_type=="image" %}
+{% if options.background_image.src %}
+{% if options.enable_parallax %}
+<div class="simpleParallax_wrap">
+  <img class="thumbnail" src="{{options.background_image.src }}" alt="{{options.background_image.alt}}" style="object-position: {{ options.background_image_position }};">
+</div>
+
+{% require_js %}
+<script>
+  var images = document.querySelectorAll('.{{name}} .simpleParallax_wrap img');
+                                         new simpleParallax(images);
+</script>
+{% end_require_js %}
+{% else %}
+<div class="bg_el bg_img" style="background-image:url({{options.background_image.src}});background-position:{% if options.background_image_position == "custom"%} {{options.custom_background_image_position}}{% else %}{{ options.background_image_position }}{% endif %}"></div>
+{% endif %}
+{% endif %}
+{% endif %}
+
+{% if options.select_background_type == "color" %}
+<div class="bg_el color_bg{% if options.select_color_theme != "custom" %} {{ options.select_color_theme }}{% endif %}"{% if options.select_color_theme == "custom" %} style="background-color: {{ color(options.background_color) }};"{% endif %}></div>
+{% endif %}
+
+{% if options.select_background_type == "gradient" %}
+<div class="bg_el color_bg gradient_bg" 
+     style="background-image:linear-gradient({{ options.select_gradient_direction }}, {% for item in options.select_color %}{{ color(item) }}{% if not loop.last%},{% endif %}{% endfor %})"></div>
+{% endif %}
+
+
+{% if options.select_background_type == "video" %}
+{% if options.select_video_type == "local" %}
+{% if options.select_video %}
+<div class="bnr_vid">
+  <video loop muted autoplay src="{{ options.select_video }}"></video>
+</div> 
+{% endif %}
+{% endif %}
+{% if options.select_video_type == "external" %}
+{% if options.video_url %}
+{% if options.video_url is string_containing "youtube.com" %}
+<div class="bnr_vid iframe_banner_vid">
+  <iframe src="{{ options.video_url|split('?')|first }}?autoplay=1&loop=1&mute=1&showinfo=0&controls=0&playlist={{ options.video_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
+</div> 
+{% else %}
+<div class="bnr_vid iframe_banner_vid">
+  <iframe src="{{ options.video_url|split('?')|first }}?autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
+</div>
+{% endif %}
+{% endif %}
+{% endif %}
+{% endif %}
+
+{% endmacro %}
+
+{# Container size option #}
+{% macro customContainer(name,size) %}
+{% require_css %} 
+<style>
+  {% if size.container.select_size == "custom" %}
+  .{{name}} .page-center{
+    max-width:{{ size.container.custom_width }}px;
+  }
+  {% endif %}
+</style>
+{% end_require_css %}  
+{% endmacro %}
+
+
+{# Slider options #}
+{% macro sliderControls(controls, items, animations) %}
+{% if controls.dots %}
+<div class="glide__bullets square_bullets" data-glide-el="controls[nav]" {% if animations %}data-aos="fade-in" data-aos-delay="600"{% endif %}>
+  {% for item in items %}
+  <div class="glide__bullet" data-glide-dir="={{loop.index0}}"></div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% if controls.arrows %}
+<div class="glide__arrows" data-glide-el="controls" {% if animations %}data-aos="fade-in"  {% endif %}>
+  <div class="glide__arrow glide__arrow--left" data-glide-dir="&lt;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <path d="M40 20C40 8.95313 31.0469 0 20 0C8.95313 0 0 8.95313 0 20C0 31.0469 8.95313 40 20 40C31.0469 40 40 31.0469 40 20ZM16.7969 9.92188C17.5312 9.1875 18.7187 9.1875 19.4453 9.92188C20.1719 10.6562 20.1797 11.8437 19.4453 12.5703L13.8984 18.1172L30.625 18.125C31.6641 18.125 32.5 18.9609 32.5 20C32.5 21.0391 31.6641 21.875 30.625 21.875H13.8984L19.4453 27.4219C20.1797 28.1562 20.1797 29.3437 19.4453 30.0703C18.7109 30.7969 17.5234 30.8047 16.7969 30.0703L8.04688 21.3281C7.3125 20.5938 7.3125 19.4063 8.04688 18.6797L16.7969 9.92188Z" fill="#B9BBBD"/>
+    </svg>
+  </div>
+  <div class="glide__arrow glide__arrow--right" data-glide-dir="&gt;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
+      <path d="M0 20C0 8.95313 8.95313 0 20 0C31.0469 0 40 8.95313 40 20C40 31.0469 31.0469 40 20 40C8.95313 40 0 31.0469 0 20ZM23.2031 9.92188C22.4688 9.1875 21.2813 9.1875 20.5547 9.92188C19.8281 10.6562 19.8203 11.8437 20.5547 12.5703L26.1016 18.1172L9.375 18.125C8.33594 18.125 7.5 18.9609 7.5 20C7.5 21.0391 8.33594 21.875 9.375 21.875H26.1016L20.5547 27.4219C19.8203 28.1562 19.8203 29.3437 20.5547 30.0703C21.2891 30.7969 22.4766 30.8047 23.2031 30.0703L31.9531 21.3281C32.6875 20.5938 32.6875 19.4063 31.9531 18.6797L23.2031 9.92188Z" fill="#026780"/>
+    </svg>
+  </div>
+</div>
+{% endif %}
+{% endmacro %}
+
+
+
+{% macro dateFormat(date_select, post, customm) %}
+
+{% if date_select == "custom" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat(customm) %}
+<span class="value_m">{{getdate}}</span>
+{% else %}
+
+{% if date_select == "type1" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat('%d %B, %Y') %}
+{% endif %}
+{% if date_select == "type2" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat('%d %b, %Y') %}
+{% endif %}
+{% if date_select == "type3" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat('%b %d, %Y') %}
+{% endif %}
+{% if date_select == "type4" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat('%d-%m-%Y') %}
+{% endif %}
+{% if date_select == "type6" %}
+{% set getdate =  post.publish_date_local_time|datetimeformat('%m/%d/%Y') %}
+{% endif %}
+
+
+{% if date_select == "type7" or date_select == "type8" %}
+
+{% set ordinalSuffix = "th" %}
+{% if post.publish_date_local_time|datetimeformat('%d') == 1 || post.publish_date_local_time|datetimeformat('%d') == 21 || post.publish_date_local_time|datetimeformat('%d') == 31  %}
+{% set ordinalSuffix = "st" %}
+{% endif %}
+{% if post.publish_date_local_time|datetimeformat('%d') == 2 || post.publish_date_local_time|datetimeformat('%d') == 22  %}
+{% set ordinalSuffix = "nd" %}
+{% endif %}
+{% if post.publish_date_local_time|datetimeformat('%d') == 3 || post.publish_date_local_time|datetimeformat('%d') == 23  %}
+{% set ordinalSuffix = "rd" %}
+{% endif %}
+
+{% if date_select == "type7" %}
+<span class="value_m">{{ post.publish_date_local_time|datetimeformat('%B') }} {{ post.publish_date_local_time|datetimeformat('%-d') }}{{ordinalSuffix}} {{ post.publish_date_local_time|datetimeformat('%Y') }}</span>
+{% endif %}
+{% if date_select == "type8" %}
+<span class="value_m"> {{ post.publish_date_local_time|datetimeformat('%-d') }}{{ordinalSuffix}}  {{ post.publish_date_local_time|datetimeformat('%B %Y') }}</span>
+{% endif %}
+
+{% else %}
+<span class="value_m">{{getdate}}</span>
+{% endif %}
+
+{% endif %}
+
+
+{% endmacro %}

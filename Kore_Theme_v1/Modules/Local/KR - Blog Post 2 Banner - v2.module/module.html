@@ -1,0 +1,77 @@
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+{% require_css %}
+<style>
+  .{{ name }} { 
+    background-color: #FE287A;    
+  }
+</style>
+{% end_require_css %}
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kr-blog-post-2-banner clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+
+      <div class="flex">
+        <div class="col">
+
+          {% if content.topic_list %}
+          <div class="blog-category-wrap"><span class="blog-category-label">Topic:</span>
+            {% for topic in content.topic_list %}
+            <a class="blog-category" href="{{ blog_tag_url(group.id, topic.slug) }}">
+              {{ topic.name }}
+
+            </a>{% if not loop.last %}{% endif %}
+            {% endfor %}
+
+          </div>
+          {% endif %}
+
+          {% if content.name %}
+          <div class="blog-post-title">
+            <h1>
+              {{ content.name }}
+            </h1>
+          </div>
+          {% endif %}
+
+          <div class="blog-author-wrap">
+            {% if content.blog_post_author.avatar %}
+            <div class="blog-author-image" style="background-image:url({{ content.blog_post_author.avatar }});"></div>
+            {% endif %}
+
+            <div>
+              <div class="blog-listing-author">
+                by
+                <a class="author-link" href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}">{{ content.blog_post_author.display_name }}</a>
+              </div>
+<!--               <div class="blog-listing-date">{{ content.publish_date_localized }}</div> -->
+            </div>
+
+          </div>
+          
+          <div class="social-share social-normal">
+            {% widget_block social_sharing "my_social_sharing" label='Social Sharing', use_page_url=True, overrideable=True  %}
+            {% widget_attribute "pinterest" is_json=True %}{"custom_link_format": "", "pinterest_media": "http://cdn1.hubspot.com/hub/158015/305390_10100548508246879_837195_59275782_6882128_n.jpg", "enabled": true, "network": "pinterest", "img_src": "https://static.hubspot.com/final/img/common/icons/social/pinterest-24x24.png"}{% end_widget_attribute %}
+            {% widget_attribute "twitter" is_json=True %}{"custom_link_format": "", "enabled": true, "network": "twitter", "img_src": "https://static.hubspot.com/final/img/common/icons/social/twitter-24x24.png"}{% end_widget_attribute %}
+            {% widget_attribute "google_plus" is_json=True %}{"custom_link_format": "", "enabled": true, "network": "google_plus", "img_src": "https://static.hubspot.com/final/img/common/icons/social/googleplus-24x24.png"}{% end_widget_attribute %}
+            {% widget_attribute "linkedin" is_json=True %}{"custom_link_format": "", "enabled": true, "network": "linkedin", "img_src": "https://static.hubspot.com/final/img/common/icons/social/linkedin-24x24.png"}{% end_widget_attribute %}
+            {% widget_attribute "facebook" is_json=True %}{"custom_link_format": "", "enabled": true, "network": "facebook", "img_src": "https://static.hubspot.com/final/img/common/icons/social/facebook-24x24.png"}{% end_widget_attribute %}
+            {% widget_attribute "email" is_json=True %}{"custom_link_format": "", "enabled": true, "network": "email", "img_src": "https://static.hubspot.com/final/img/common/icons/social/email-24x24.png"}{% end_widget_attribute %}
+            {% end_widget_block %}
+          </div>
+
+        </div>
+        <div class="col">
+          <img src="{{ content.post_list_summary_featured_image }}" alt="">
+        </div>
+      </div>
+
+    </div> 
+
+  </div>
+</div>
+
+{% endif %}

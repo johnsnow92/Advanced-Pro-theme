@@ -1,0 +1,85 @@
+{% if module.section_show_hide %}
+<!-- HTML to show when checked -->
+<style>
+  .{{name}}{ 
+    padding-top: {{ module.section_padding.desktop.top }}px;
+    padding-bottom: {{ module.section_padding.desktop.bottom }}px;
+  }
+  @media(max-width: 1024px){
+    .{{name}}{ 
+      padding-top: {{ module.section_padding.tablet.top }}px;
+      padding-bottom: {{ module.section_padding.tablet.bottom }}px;
+    }
+  }
+
+  @media(max-width: 767px){
+    .{{name}}{ 
+      padding-top: {{ module.section_padding.mobile.top }}px;
+      padding-bottom: {{ module.section_padding.mobile.bottom }}px;
+    }
+  }
+  .feature-rows .feature-row{
+    grid-template-columns: 2fr{% for item in module.column_heading.heading_1 %} 1fr{% endfor %};
+  } 
+  {% for item in module.rows %}
+  .feature-rows .feature-row-{{loop.index}}{
+    color: {{ item.color.color }};
+    background-color: {{ item.background_color.color }};
+  }
+  {% endfor %}
+  .feature-row.feature-header{
+    color: {{ module.column_heading.color.color }};
+    background-color: {{ module.column_heading.background_color.color }};
+  }
+</style>
+<div class="{{name}} feature-comparaison">
+  <div class="feature-rows">
+    <h2>{{ module.heading }}</h2>
+    <div class="feature-row feature-header">
+      <div class="feature-name">{{ module.column_heading.feature }}</div>
+      {% for item in module.column_heading.heading_1 %}
+      <div class="feature-competitor">
+        {{ item }}
+      </div>
+      {% endfor %}
+    </div>
+    {% for item in module.rows %}
+    <div class="feature-row feature-row-{{loop.index}} {% if item.feature_name_only %}feature-row--name-only{% endif %}">
+      <div class="feature-name">{{ item.feature_name }}</div>
+
+      {% for item2 in item.feature_cloudsmith %}
+      <div class="feature-value">
+        {% if item2.content_type == "text" %}
+        <div class="feature-text">{{ item2.text_field }}</div>
+        {% endif %}
+        {% if item2.content_type == "feature_checkbox" %}
+        <div class="feature-checkbox">
+          {% if item2.feature_include == true %}
+          <div class="feature-checkbox-green">
+            {% icon
+	name="{{ module.icon_checked.name }}"
+	style="{{ module.icon_checked.type }}"
+	unicode="{{ module.icon_checked.unicode }}"
+	icon_set="{{ module.icon_checked.icon_set }}"
+%}
+          </div>
+          {% endif %}
+          {% if item2.feature_include == false %}
+          <div class="feature-checkbox-unchecked">
+            {% icon
+	name="{{ module.icon_cross.name }}"
+	style="{{ module.icon_cross.type }}"
+	unicode="{{ module.icon_cross.unicode }}"
+	icon_set="{{ module.icon_cross.icon_set }}"
+%}
+          </div>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}

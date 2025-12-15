@@ -1,0 +1,50 @@
+<section class="sidebar-popup-wrap mfp-hide">
+  <div class="popup-wrap" id="popup-wrap" style="background-color:{{ module.background_color.color }};">
+    <div class="popup-img-heart">
+      {% if module.image_heart.src %}
+      {% set sizeAttrs = 'width="{{ module.image_heart.width }}" height="{{ module.image_heart.height }}"' %}
+      {% if module.image_heart.size_type == 'auto' %}
+      {% set sizeAttrs = 'width="{{ module.image_heart.width }}" height="{{ module.image_heart.height }}" style="max-width: 100%; height: auto;"' %}
+      {% elif module.image_heart.size_type == 'auto_custom_max' %}
+      {% set sizeAttrs = 'width="{{ module.image_heart.max_width }}" height="{{ module.image_heart.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+      {% set loadingAttr = module.image_heart.loading != 'disabled' ? 'loading="{{ module.image_heart.loading }}"' : '' %}
+      <img src="{{ module.image_heart.src }}" alt="{{ module.image_heart.alt }}" loading="lazy" {{ sizeAttrs }}>
+      {% endif %}
+    </div>
+    <div class="popup-body">
+      <div class="popup-content">
+        {{ module.content }}
+
+        <div class="popup-form">
+          {% form
+            form_to_use="{{ module.form.form_id }}"
+            response_response_type="{{ module.form.response_type }}"
+            response_message="{{ module.form.message }}"
+            response_redirect_id="{{ module.form.redirect_id }}"
+            response_redirect_url="{{module.form.redirect_url}}"
+            gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+          %}
+        </div>
+
+      </div>
+
+      <div class="popup-img">
+        {% if module.image.src %}
+        {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}"' %}
+        {% if module.image.size_type == 'auto' %}
+        {% set sizeAttrs = 'width="{{ module.image.width }}" height="{{ module.image.height }}" style="max-width: 100%; height: auto;"' %}
+        {% elif module.image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.image.max_width }}" height="{{ module.image.max_height }}" style="max-width: 100%; height: auto;"' %}
+        {% endif %}
+        {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+        <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" loading="lazy" {{ sizeAttrs }}>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% require_js %}
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+{% end_require_js %}

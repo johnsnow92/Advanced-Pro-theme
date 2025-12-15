@@ -1,0 +1,359 @@
+{% import "../../macros/_macros.html" as macros %}  
+
+{% if module.module_settings.number_of_columns == "one" %} 
+{% set col_count = "12" %}
+{% elif module.module_settings.number_of_columns == "two" %} 
+{% set col_count = "6" %}
+{% elif module.module_settings.number_of_columns == "three" %}
+{% set col_count = "4" %}
+{% elif module.module_settings.number_of_columns == "four" %} 
+{% set col_count = "3" %}
+{% endif %}
+
+<div class="pricing-table-gp {{name}} pricing_type_{{ module.select_pricing_type }} dnd_padd {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} {% if item.include_addition_features %}add_feat_add{% endif %} col_count_{{ module.module_settings.number_of_columns }} col{{col_count}}_row" 
+     {% if module.advanced_customization.css_id_selector %} id="{{ module.advanced_customization.css_id_selector }}" {% endif %}>
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}"> 
+    <div class="pricing-top {% if module.select_pricing_type != 'single' %} {{ module.module_settings.top_content_structure }}_structure {% if module.module_settings.top_content_structure == "two_col" %}flex_row{% endif %} {% else %} full_width_structure{% endif %}">
+      {% if module.top_content.heading  or module.top_content.button_group|length > 0 or module.top_content.content %}
+      <div class="content-col {% if not module.top_content.heading  and  module.top_content.button_group|length <= 0 and not module.top_content.content %} full {% endif %} {% if module.select_pricing_type != 'single' %}{% if module.module_settings.top_content_structure == "two_col" %}col8{% else %}col12{% endif %} {% else %} col12{% endif %}">
+        {% if module.top_content.heading %}
+        <div class="heading" {% if module.module_settings.enable_animation %}data-aos="{{module.module_settings.animation_type }}"{% endif %}>
+          <{{ module.top_content.heading_tag }}>{{ module.top_content.heading }}</{{ module.top_content.heading_tag }}>
+        </div>
+          {% endif %}
+          {% if module.top_content.content %}
+          <div class="pricing-content" {% if module.module_settings.enable_animation %}data-aos="{{module.module_settings.animation_type }}" data-aos-delay="100"{% endif %}>
+            {{ module.top_content.content }}
+          </div>
+          {% endif %}
+          <div class="cm_pr_btn"{% if module.module_settings.enable_animation %}data-aos="{{module.module_settings.animation_type }}" data-aos-delay="200"{% endif %}>
+            {{ macros.buttonWithPopupGroup(module.top_content.button_group, false, 'top_sec') }}
+          </div>
+          </div>
+          {% endif %}
+
+
+          {% if module.select_pricing_type != 'single' %}
+          <div class="toggle-btn {% if module.module_settings.top_content_structure == "two_col" %}col4{% endif %}" {% if module.module_settings.enable_animation %}data-aos="{{module.module_settings.animation_type }}" data-aos-delay="300"{% endif %}>
+            <span  class="toggle-left-text">{{ module.toggle_content.left_text }}</span><label class="switch">
+            <input type="checkbox" class="pricing-checbox" />
+            <span class="slider round"></span>
+            </label><span class="toggle-right-text">{{ module.toggle_content.right_text }}</span>
+          </div>
+          {% endif %}
+
+        </div>
+        <div class="pricing-table-itmes-wp {% if module.module_settings.number_of_columns == "three" %} ribon-on-three {% endif %} {% if module.module_settings.number_of_columns == "one" %} full_width_item_col {% endif %}">
+          <div class="row flex_row">
+            {% for item in module.pricing_table_items %}
+            <div {% if module.module_settings.enable_animation %}data-aos="{{module.module_settings.card_animation_type }}" data-aos-delay="{{loop.index * 200 }}"{% endif %} class="pricing-table-items {% if module.module_settings.number_of_columns == "one" %} col12 {% elif module.module_settings.number_of_columns == "two" %} col6 {% elif module.module_settings.number_of_columns == "three" %} col4 {% elif module.module_settings.number_of_columns == "four" %} col3{% else %} col4{% endif %} col-expend-{{name}}">
+              <div class="pricing-area {{module.style.card_section.select_border_theme}}  {% if item.show_popular_ribbon == true %} ribbon_add {{module.style.popular_card_section.select_border_theme}} popular-item {% endif %} {% if item.show_popular_ribbon == true %}{{module.style.popular_card_section.select_background_theme}} {% else %}{{module.style.card_section.select_background_theme}} {% endif %}" >
+                <div class="pricing-part">
+                  {% if item.show_popular_ribbon  %}
+                  <strong class="popular-ribon">{{item.popular_label}} </strong>
+                  {% endif %}
+                  {% if item.icon.select_icon_type %}
+                  <div class="price-icon icon_{{loop.index}} {{item.icon.select_icon_type}} ">
+                    {% if item.icon.select_icon_type == "image" %}
+                    {% if item.icon.image_field.src %}
+                    <div class="img-wrap">
+                      {% set loadingAttr = item.icon.image_field.loading != 'disabled' ? 'loading="{{ item.icon.image_field.loading }}"' : '' %}
+                      <img src="{{ item.icon.image_field.src }}" alt="{{ item.icon.image_field.alt }}" {{ loadingAttr }}>
+                    </div>
+                    {% endif %}
+
+                    {% elif item.icon.select_icon_type == "icon" %}
+                    {% if item.icon.icon_field.name %}
+                    <div class="icon-wrap {% if item.icon.select_icon_color_theme != "custom" %}{{ item.icon.select_icon_color_theme }}{% endif %}">
+                      {% icon
+          name="{{ item.icon.icon_field.name }}"
+          style="{{ item.icon.icon_field.type }}"
+          unicode="{{ item.icon.icon_field.unicode }}"
+          icon_set="{{ item.icon.icon_field.icon_set }}"
+        %}
+                    </div>
+                    {% endif %}
+                    {% endif %}
+                  </div>
+                  {% endif %}
+
+                  {% if item.title %}     
+                  <{{ item.title_tag }} class="plan-title">{{ item.title }}</{{ item.title_tag }}>
+                    {% endif %}
+                    {% if item.subtitle %}     
+                    <h6 class="plan-subtitle">{{ item.subtitle }}</h6>
+                {% endif %}
+
+                {% if module.select_pricing_type == 'single' %}
+
+
+                {% if item.pricing.plan_price == '0' %}
+                <h2 class="plan-price single-plan"><span class="prefix_text">{{ item.pricing.prefix_text }}</span>0<span class="suffix_text">{{ item.pricing.suffix_text }}</span></h2>
+                {% else %}
+                {% if item.pricing.plan_price %}
+                <h2 class="plan-price single-plan"><span class="prefix_text">{{ item.pricing.prefix_text }}</span>{{ item.pricing.plan_price }}<span class="suffix_text">{{ item.pricing.suffix_text }}</span></h2>
+                {% endif %}
+                {% endif %}
+
+
+                {% else %}
+
+                {% if item.monthly.monthly_plan_price == '0' %}   
+                <h2 class="plan-price monthly-plan"><span class="prefix_text">{{ item.monthly.prefix_text }}</span>0<span class="suffix_text">{{ item.monthly.suffix_text }}</span></h2>
+                {% else %}
+                {% if item.monthly.monthly_plan_price %}   
+                <h2 class="plan-price monthly-plan"><span class="prefix_text">{{ item.monthly.prefix_text }}</span>{{ item.monthly.monthly_plan_price }}<span class="suffix_text">{{ item.monthly.suffix_text }}</span></h2>
+                {% endif %}
+                {% endif %}
+
+                {% if item.yearly.yearly_plan_price == '0' %}   
+                <h2 class="plan-price yearly-plan"><span class="prefix_text">{{ item.yearly.prefix_text }}</span>0<span class="suffix_text">{{ item.yearly.suffix_text }}</span></h2>
+                {% else %}
+                {% if item.yearly.yearly_plan_price %}   
+                <h2 class="plan-price yearly-plan"><span class="prefix_text">{{ item.yearly.prefix_text }}</span>{{ item.yearly.yearly_plan_price }}<span class="suffix_text">{{ item.yearly.suffix_text }}</span></h2>
+                {% endif %}
+                {% endif %}
+
+                {% endif %}
+
+                {% if item.content_ad %}
+                <div class="content_box">
+                  {{ item.content_ad }}
+                </div>
+                {% endif %}
+                {% if item.features_list %}
+                <div class="texti-list features_list {% if not item.additional_features_list %} no_list {% endif %} {% if item.include_addition_features == "false" %} no-add-feat {% endif %}">
+                  {% if item.features_title %}
+                  <h6 class="features_title">
+                    {{ item.features_title}}
+                  </h6>
+                  {% endif %}
+                  <ul class="features_list_ul">
+                    {% for item2 in item.features_list %}
+                    {% if item2.label_text %}
+                    <li class="{% if item2.included_in_plan %}check{% else %}cross{% endif %} pric-tooltip">
+                      {% if item2.included_in_plan %}
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-check">
+                        <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
+                      </svg>
+                      {% else %}
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="icon-cross">
+                        <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"/>
+                      </svg>
+                      {% endif %}
+                      <div class="fea_text">
+                        {{ item2.label_text }}     
+                        {# tooltip #}
+                        {% if item2.tooltip %} 
+                        <div class="tooltip pwr-tooltip__icon tooltip-icon-price">
+                          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+                            <g>
+                              <path class="st0" d="M7.8,3.5c-0.4,0.1-1.3,0.1-1.7,0l0-1.4C6.5,2,7.4,2,7.9,2.1L7.8,3.5z M6.2,4.8c0.4-0.1,1.2-0.1,1.6,0v7.1   c-0.4,0.1-1.2,0.1-1.6,0V4.8z"/>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="featitem pwr-tooltip__text-wrapper tooltip-popup-price">
+                          <div class="pwr-tooltip__text tooltip-content  {% if item.show_popular_ribbon  %} {{module.style.popular_card_section.select_tooltip_background_theme}} {% else %} {{module.style.card_section.tooltip_background_theme}} {% endif %}" >
+                            <p class=" {% if item.show_popular_ribbon  %} {{module.style.popular_card_section.select_tooltip_content_theme}} {% else %} {{module.style.card_section.select_tooltip_content_theme}} {% endif %}">{{ item2.tooltip }}</p>
+                          </div>
+                        </div>
+                        {% endif %}
+                      </div>
+
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                    {% if item.include_addition_features %}
+                    <div class="additional-feature" id="cnnt-toggle-{{name}}" >
+                      {% for item2 in item.additional_features_list %}
+                      {% if item2.label_text %}
+                      <li class="{% if item2.included_in_plan %}check{% else %}cross{% endif %} pric-tooltip">
+                        {% if item2.included_in_plan %}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="icon-check">
+                          <path d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"/>
+                        </svg>
+                        {% else %}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" class="icon-cross">
+                          <path d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"/>
+                        </svg>
+                        {% endif %}
+                        <div class="fea_text">
+                          {{ item2.label_text }}   
+                          {# tooltip #}
+                          {% if item2.tooltip %} 
+                          <div class="tooltip pwr-tooltip__icon tooltip-icon-price">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 14 14" style="enable-background:new 0 0 14 14;" xml:space="preserve">
+                              <g>
+                                <path class="st0" d="M7.8,3.5c-0.4,0.1-1.3,0.1-1.7,0l0-1.4C6.5,2,7.4,2,7.9,2.1L7.8,3.5z M6.2,4.8c0.4-0.1,1.2-0.1,1.6,0v7.1   c-0.4,0.1-1.2,0.1-1.6,0V4.8z"/>
+                              </g>
+                            </svg>
+                          </div>
+                          <div class="featitem pwr-tooltip__text-wrapper tooltip-popup-price">
+                            <div class="pwr-tooltip__text tooltip-content  {% if item.show_popular_ribbon  %} {{module.style.popular_card_section.select_tooltip_background_theme}} {% else %} {{module.style.card_section.tooltip_background_theme}} {% endif %}" >
+                              <p class=" {% if item.show_popular_ribbon  %} {{module.style.popular_card_section.select_tooltip_content_theme}} {% else %} {{module.style.card_section.select_tooltip_content_theme}} {% endif %}">{{ item2.tooltip }}</p>
+                            </div>
+                          </div>
+                          {% endif %}
+                        </div>
+                      </li>
+                      {% endif %}
+
+                      {% endfor %}
+                    </div>
+                    {% if item.additional_features_list %}
+                    <span class="expend-btn" id="toggle-{{name}}{{loop.index}}">
+                      <h4>
+                        <span class="expend-arrow">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                            <path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/>
+                          </svg>
+                        </span><span class="default_text">{{ item.additional_button_text }}</span><span class="active_text">{{ item.additional_button_active_text }}</span>
+                      </h4>
+                    </span>
+                    {% endif %}
+                    {% endif %}
+                  </ul>
+                </div>
+                {% endif %}
+
+                {% if item.button_group %}
+                {{ macros.buttonWithPopupGroup(item.button_group, false) }}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="page-center {{ module.style.container.select_size }}" {% if module.module_settings.enable_animation %}data-aos="{{module.module_settings.animation_type }}" data-aos-delay="350"{% endif %}>
+      {% if module.include_bottom_content and module.bottom_content %}
+      <div class="pricing_mod_bottom_content">
+        {{ module.bottom_content }}
+      </div>
+      {% endif %}
+
+      {% if module.button_group %}
+      {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+      {% endif %}
+    </div>
+
+    {% for item in module.pricing_table_items %}
+    {{ macros.buttonWithPopupGroup(item.button_group, true) }}
+    {% endfor %}
+
+    {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+    {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+  </div>
+
+
+
+  {% require_css %}
+  <style>
+
+    {% for item in module.pricing_table_items %}
+    {% if item.show_popular_ribbon == true %}
+
+    {% if module.style.popular_card_section.select_background_theme == "custom" %}
+    .pricing-table-gp.{{name}} .pricing-area.popular-item {
+      background-color: {{ macros.color(module.style.popular_card_section.background_color) }};
+    }
+    {% endif %}
+
+    {% if module.style.popular_card_section.select_content_theme == "custom" %}
+    .pricing-table-gp.{{name}} .pricing-area.popular-item *:not(a,.popular-ribon,svg path){ 
+      color: {{ macros.color(module.style.popular_card_section.content_color) }};
+    }
+
+    .pricing-table-gp.{{name}} .pricing-area.popular-item .expend-arrow{
+      background-color: {{ macros.color(module.style.popular_card_section.content_color) }};
+    }
+
+    {% endif %}
+
+    {% else %}
+
+    {% if module.style.card_section.select_background_theme == "custom" %}
+    .pricing-table-gp.{{name}} .pricing-area:not(.popular-item){
+      background-color: {{ macros.color(module.style.card_section.background_color) }};
+    }
+    {% endif %}
+
+    {% if module.style.card_section.select_content_theme == "custom" %}
+    .pricing-table-gp.{{name}} .pricing-area:not(.popular-item) *:not(a),
+    .pricing-table-gp.{{name}} .pricing-area:not(.popular-item) *:not(a,.popular-ribon){
+      color: {{ macros.color(module.style.card_section.content_color) }};
+    }
+    {% endif %}
+
+    {% endif  %}
+    {% endfor %}
+
+    .pricing-table-gp.{{name}} .popular-ribon{
+      background: rgba({{ module.style.popular_card_section.popular_tag.background_color.color|convert_rgb }},{{ module.style.popular_card_section.popular_tag.background_color.opacity*0.01 }});
+      color: {{ macros.color(module.style.popular_card_section.popular_tag.text_color) }};
+    }
+    {% for item in module.pricing_table_items %}
+    {% if item.icon.select_icon_color_theme =='custom' %}
+    .pricing-table-gp.{{name}} .icon_{{loop.index}} svg {
+      fill:{{macros.color(item.icon.color_field)}};
+    }
+    {% endif %}
+    {% endfor %}
+
+
+    {% if module.style.card_section.tooltip_background_theme == "custom" %}
+    .pricing-table-gp.{{name}} .pricing-area:not(.popular-item) .tooltip-content{
+      background-color:rgba({{ module.style.card_section.tooltip_background_color.color|convert_rgb }},{{ module.style.card_section.tooltip_background_color.opacity*0.01 }});
+    }
+    {% endif %}
+
+    {% if module.style.card_section.select_tooltip_content_theme == "custom" %}
+    .pricing-table-gp.{{name}} .pricing-area:not(.popular-item) .tooltip-content p{
+      color:rgba({{ module.style.card_section.tooltip_content_color.color|convert_rgb }},{{ module.style.card_section.tooltip_content_color.opacity*0.01 }});
+    }
+    {% endif %}
+
+    {% if module.style.card_section.select_border_theme == "brd_custom" %}
+    .pricing-table-gp.{{name}} .pricing-area:not(.popular-item){
+      border-color:rgba({{ module.style.card_section.custom_border_color.color|convert_rgb }},{{ module.style.card_section.custom_border_color.opacity*0.01 }});
+    }
+    {% endif %}
+
+    {% if module.style.popular_card_section.select_border_theme == "brd_custom" %}
+    .pricing-table-gp.{{name}} .pricing-area.popular-item{
+      border-color:rgba({{ module.style.popular_card_section.custom_border_color.color|convert_rgb }},{{ module.style.popular_card_section.custom_border_color.opacity*0.01 }});
+    }
+    {% endif %}
+
+    {% if not module.style.card_section.select_border_theme %}
+    .pricing-table-gp.{{name}} .pricing-area:not(.popular-item){
+      border: none;
+    }
+    {% endif %}
+
+    {% if not module.style.popular_card_section.select_border_theme %}
+    .pricing-table-gp.{{name}} .pricing-area.popular-item {
+      border: none;
+    }
+    {% endif %}
+
+    {% if module.style.popular_card_section.select_tooltip_background_theme == "custom" %}
+    .pricing-table-gp.{{name}} .pricing-area.popular-item .tooltip-content{
+      background-color:rgba({{ module.style.popular_card_section.tooltip_background_color.color|convert_rgb }},{{ module.style.popular_card_section.tooltip_background_color.opacity*0.01 }});
+    }
+    {% endif %}
+
+    {% if module.style.popular_card_section.select_tooltip_content_theme == "custom" %}
+    .pricing-table-gp.{{name}} .pricing-area.popular-item .tooltip-content p{
+      color:rgba({{ module.style.popular_card_section.tooltip_content_color.color|convert_rgb }},{{ module.style.popular_card_section.tooltip_content_color.opacity*0.01 }});
+    }
+    {% endif %}
+
+  </style>
+  {% end_require_css %}

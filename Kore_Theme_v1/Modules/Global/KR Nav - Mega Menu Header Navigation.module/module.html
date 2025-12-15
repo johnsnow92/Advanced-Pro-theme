@@ -1,0 +1,159 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+{# Fontawesome for demo only, you need to place it on portal main CSS #}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+<div class="fa-header-menu kore-module test1">
+  <div class="page-width">
+    <div class="main-wrap">
+      <div class="menu-top-module">
+
+        <div class="flex">
+          <div class="col">
+            <div>
+              {% logo
+          override_inherited_src="{{ module.logo.override_inherited_src }}"
+          src="{{ module.logo.src }}"
+          alt="{{ module.logo.alt }}"
+          width="{{ module.logo.width }}"
+          height="{{ module.logo.height }}"
+          suppress_company_name="{{ module.logo.suppress_company_name }}"
+        %}
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="menu-container" id="mega">
+        <div class="menu">
+
+
+          {% macro print(node) %}
+          <ul id="mega-menu" class="mega-menu">
+
+
+
+            {% for child in node.children %}
+            {% set class = '' %}  
+            {% if child.level == 2 %}
+            {% set class = 'first' %}          
+            {% endif %}
+
+            <li class="{{ class }}">
+              <a href="{{ child.url }}" class="{{ 'has-children' if child.children }}" target="{{ child.linkTarget }}">{{ child.label }}</a>
+
+              {% if child.children %}
+              {{ print(child) }}
+              {% endif %}
+            </li>
+            {% endfor %}
+
+          </ul>
+          {% endmacro %}
+
+          {% set node = menu(module.menu) %}
+          {{ print(node) }}
+
+          {% if module.cta_1.cta_text or module.cta_2.cta_text %}
+          <div class="mobile-menu-ctas simple">
+            {% if module.cta_1.cta_text %}
+            {% set href = module.cta_1.cta_link.url.href %}
+            {% if module.cta_1.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            {% set rel = [] %}
+            {% if module.cta_1.cta_link.no_follow %}
+            {% do rel.append("nofollow") %}
+            {% endif %}
+            {% if module.cta_1.cta_link.open_in_new_tab %}
+            {% do rel.append("noopener") %}
+            {% endif %}
+            <div>
+              <a href="{{ href }}"
+                 {% if module.cta_1.cta_link.open_in_new_tab %}target="_blank"{% endif %}
+                 {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+                 >
+                {{ module.cta_1.cta_text }}
+              </a>
+            </div>
+            {% endif %}
+            {% if module.cta_2.cta_text %}
+            {% set href = module.cta_2.cta_link.url.href %}
+            {% if module.cta_2.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            {% set rel = [] %}
+            {% if module.cta_2.cta_link.no_follow %}
+            {% do rel.append("nofollow") %}
+            {% endif %}
+            {% if module.cta_2.cta_link.open_in_new_tab %}
+            {% do rel.append("noopener") %}
+            {% endif %}
+            <div>
+              <a href="{{ href }}"
+                 {% if module.cta_2.cta_link.open_in_new_tab %}target="_blank"{% endif %}
+                 {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+                 >
+                {{ module.cta_2.cta_text }}
+              </a>
+            </div>
+
+            {% endif %}
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+      {% if module.cta_1.cta_text or module.cta_2.cta_text %}
+      <div class="menu-ctas">
+        <ul>
+          {% if module.cta_1.cta_text %}
+          <li>
+            {% set href = module.cta_1.cta_link.url.href %}
+            {% if module.cta_1.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            {% set rel = [] %}
+            {% if module.cta_1.cta_link.no_follow %}
+            {% do rel.append("nofollow") %}
+            {% endif %}
+            {% if module.cta_1.cta_link.open_in_new_tab %}
+            {% do rel.append("noopener") %}
+            {% endif %}
+            <a href="{{ href }}"
+               {% if module.cta_1.cta_link.open_in_new_tab %}target="_blank"{% endif %}
+               {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+               >
+              {{ module.cta_1.cta_text }}
+            </a>
+          </li>
+          {% endif %}
+          {% if module.cta_2.cta_text %}
+          <li class="simple">
+            {% set href = module.cta_2.cta_link.url.href %}
+            {% if module.cta_2.cta_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            {% set rel = [] %}
+            {% if module.cta_2.cta_link.no_follow %}
+            {% do rel.append("nofollow") %}
+            {% endif %}
+            {% if module.cta_2.cta_link.open_in_new_tab %}
+            {% do rel.append("noopener") %}
+            {% endif %}
+            <a href="{{ href }}"
+               {% if module.cta_2.cta_link.open_in_new_tab %}target="_blank"{% endif %}
+               {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+               >
+              {{ module.cta_2.cta_text }}
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+</div>

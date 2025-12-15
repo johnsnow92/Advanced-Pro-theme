@@ -1,0 +1,27 @@
+<div class="cm-available-positions">
+  <div class="cm-title">
+    <h1>{{ module.section_heading }}</h1>
+  </div>
+  <div class="cm-lists">
+    {% for item in module.jobs %}
+    <div class="cm-item">
+      <div class="cm-left">
+        <p><strong>{{ item.position }}</strong></p>
+        <p>{{ item.location }}</p>
+      </div>
+      <div class="cm-right">
+        {% set href = item.button_link.url.href %}
+        {% if item.button_link.url.type is equalto "EMAIL_ADDRESS" %}
+        {% set href = "mailto:" + href %}
+        {% endif %}
+        <a href="{{ href }}"
+           {% if item.button_link.open_in_new_tab %}target="_blank"{% endif %}
+           {% if item.button_link.rel %}rel="{{ item.button_link.rel }}"{% endif %}
+           >
+          {{ item.button_text }}
+        </a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

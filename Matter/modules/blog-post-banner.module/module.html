@@ -1,0 +1,66 @@
+{% import "../../macros/_macros.html" as macros %}  
+
+{% set brd =  module.module_settings.select_breadcrumbs_alignment %}
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="{{name}} post_banner  simple-banner brd_{{brd}} dnd_padd {{ module.advanced_customization.css_class_selector }} {% if module.include_breadcrumb %}breadcrumb_add{% endif %} al_{{ module.module_settings.select_content_alignment }}">
+  {{ macros.backgroundOptions(name, module.background_options) }}
+  <div class="page-center {{ module.style.container.select_size }} {{ module.module_settings.select_content_alignment }}">
+    <div class="banner-content-inner" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+      <div class="top_sec">
+        {% if module.add_title %}
+        <{{ module.select_title_tag }}>
+        {{content.name}}
+        </{{ module.select_title_tag }}>
+        {% endif %}
+
+        {% if module.banner_content %}
+        {{ module.banner_content }}
+        {% endif %}
+      </div>
+        {% if module.button_group %}
+        {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+        {% endif %}
+
+
+        </div>
+      </div>
+      <div class="banner-breacrumb">
+        {% if module.include_breadcrumb %}
+        <div class="banner-breacrumb-inner">
+          <div class="page-center">
+            <ul class="hs-breadcrumb-menu" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="250" {% endif %}>
+              <li class="hs-breadcrumb-menu-item first-crumb">
+                {% set href = module.menu.link_field.url.href %}
+                {% if module.menu.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                {% set href = "mailto:" + href %}
+                {% endif %}
+                <a href="{{ href }}" class="hs-breadcrumb-label" 
+                   {% if module.menu.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                   {% if module.menu.link_field.rel %}rel="{{ module.menu.link_field.rel }}"{% endif %}
+                   >{{ module.menu.menu_text }}</a>
+              </li>
+              <li class="hs-breadcrumb-menu-item">
+                <a href="{{group.absolute_url}}"  class="hs-breadcrumb-label">{{group.public_title}}</a>
+              </li>
+              <li class="hs-breadcrumb-menu-item last-crumb">
+                <span class="hs-breadcrumb-label">{{content.name}}</span>
+              </li>
+            </ul> 
+          </div>
+        </div>
+        {% endif %}
+
+      </div>
+
+      {% if module.button_group %}
+      {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+      {% endif %}
+    </div>
+
+
+    {{ macros.sectionSpacing(name, module.style) }}
+    {{ macros.sectionBackgroundStyle(name, module.style) }}
+    {{ macros.customContainer(name, module.style) }}
+
+
+

@@ -1,0 +1,10 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "categories" : [ "COMMERCE" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 197621005454,
+  "label" : "Pricing Group",
+  "icon" : "../example_icon.png",
+  "is_available_for_new_content" : true
+}

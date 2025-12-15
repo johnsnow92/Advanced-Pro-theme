@@ -1,0 +1,232 @@
+[ {
+  "id" : "ff6fd1a9-2416-bf0d-bacb-f478db13b3ec",
+  "name" : "list_items",
+  "label" : "List Items",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "9df3cefc-3825-9157-e874-0cd6c4838c04",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "bda9d490-41f4-5ccb-50d8-d31457f8c972",
+    "name" : "list_item_link",
+    "label" : "List Item Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "9df3cefc-3825-9157-e874-0cd6c4838c04",
+    "name" : "list_item",
+    "label" : "List Item",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "21eb7530-4045-4591-8dba-4eafb658e272",
+  "name" : "cta_button",
+  "label" : "CTA Button",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "e9c7643a-97e0-9328-3c25-4a1831ef6629",
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "21d3ebcb-8c15-9d3f-d198-db4d01dfdffe",
+    "name" : "button_type",
+    "label" : "Button Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "primary-btn", "Primary" ], [ "secondary-btn", "Secondary" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null
+  }, {
+    "id" : "dd7dee45-2492-ec71-edb8-c834ba4f5f48",
+    "name" : "cta_link",
+    "label" : "CTA Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "e9c7643a-97e0-9328-3c25-4a1831ef6629",
+    "name" : "cta_text",
+    "label" : "CTA Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "2289f4be-2424-dd2a-825b-e17e75dc2d1f",
+  "name" : "logo_image",
+  "label" : "Logo Image",
+  "required" : false,
+  "locked" : true,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/surgepth-logo1.jfif",
+    "alt" : "surgepth-logo1",
+    "loading" : "lazy",
+    "width" : 500,
+    "height" : 500,
+    "max_width" : 500,
+    "max_height" : 500
+  }
+}, {
+  "id" : "9ed95ad2-254a-9908-452e-10522b20eef9",
+  "name" : "responsive_navbar",
+  "label" : "Responsive Navbar",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : 5,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 5
+  },
+  "children" : [ {
+    "id" : "b07848df-8387-240d-2d84-9e33268b9ad8",
+    "name" : "responsive_navbar_link",
+    "label" : "Responsive navbar link",
+    "required" : false,
+    "locked" : true,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Home"
+  }, {
+    "id" : "1d0cd9d8-e3d5-f8a2-5b7b-04fc08211fa5",
+    "name" : "responsive_nav_link",
+    "label" : "Responsive Nav Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "responsive_navbar_link" : "Home",
+    "responsive_nav_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "responsive_navbar_link" : "Home",
+    "responsive_nav_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "responsive_navbar_link" : "Home",
+    "responsive_nav_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "responsive_navbar_link" : "Home",
+    "responsive_nav_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "responsive_navbar_link" : "Home",
+    "responsive_nav_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ]
+} ]

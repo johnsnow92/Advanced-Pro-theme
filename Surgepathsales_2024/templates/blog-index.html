@@ -1,0 +1,41 @@
+<!--
+  templateType: "blog_listing"
+  label: "Boilerplate - blog listing"
+  screenshotPath: "../images/template-previews/blog-index.png"
+  isAvailableForNewContent: true
+-->
+<!-- FONT AWASOME  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+
+{% set template_css = "../../css/templates/blog.css" %}
+{% extends "./layouts/base.html" %}
+
+
+
+{% block body %}
+{% dnd_area "dnd_area"
+  label="Main section",
+  class="body-container body-container--blog-index"
+%}
+
+{# Blog Hero Section #}
+{% dnd_section padding={'top': '0', 'bottom': '0','left': '0', 'right': '0' }, full_width %}
+{% dnd_module path='/Surgepathsales_2024/modules/hero-section-BLog.module', label="Blog Hero Section" %}
+{% end_dnd_module %}
+{% end_dnd_section %}
+
+{# Blog Section #}
+{% dnd_section padding={'top': '0', 'bottom': '0','left': '0', 'right': '0' }, full_width %}
+{% dnd_module path='/Surgepathsales_2024/modules/three-col-blog-section.module', label="Blog Section" %}
+{% end_dnd_module %}
+{% end_dnd_section %}
+
+{# Grow Your Brand Section #}
+{% dnd_section padding={'top': '0', 'bottom': '0','left': '0', 'right': '0' }, full_width %}
+{% dnd_module path='/Surgepathsales_2024/modules/grow-your-brand.module', label="Grow Your Brand Section" %}
+{% end_dnd_module %}
+{% end_dnd_section %}
+
+{% end_dnd_area %}
+{% endblock body %}

@@ -1,0 +1,150 @@
+[ {
+  "id" : "9de0c29e-8864-fabb-8d44-3b588c08acd2",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/card-image.jpeg",
+    "alt" : "card-image",
+    "width" : 1280,
+    "height" : 853,
+    "max_width" : 1280,
+    "max_height" : 853
+  }
+}, {
+  "id" : "d82e8703-246b-2d00-fb6d-3f15180ab485",
+  "name" : "richtext_field",
+  "label" : "Rich text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h2>Ut enim ad minim veniam</h2>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+}, {
+  "id" : "d8e28159-62e3-fc90-e773-ad618ca0f3a8",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b4518e1f-a18d-ff0d-91ca-86d14ee6a4c0",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Button Text"
+  }, {
+    "id" : "b070c80e-13f0-a36c-0005-d8eefd2a8f23",
+    "name" : "link_field",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "e41a568c-3125-c63a-188e-85e6bb164bff",
+    "name" : "color_field",
+    "label" : "Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#CC0201",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "d5414a24-7653-dcb2-c9bd-3db5df1c0eb8",
+    "name" : "font_color",
+    "label" : "Font Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "button_text" : "Button Text",
+    "link_field" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "color_field" : {
+      "color" : "#CC0201",
+      "opacity" : 100
+    },
+    "font_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "d4557ff3-bc8a-ec16-e4a0-3357b46b140a",
+  "name" : "section_show_hide",
+  "label" : "Section Show/Hide",
+  "help_text" : "Disable this option to hide this section on the page.",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "842aa5d5-a60c-28ba-62c8-104048c2e361",
+  "name" : "background_color",
+  "label" : "Background Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#f4f4f4",
+    "opacity" : 100
+  }
+}, {
+  "id" : "c6a0a40b-e8fe-d6c0-e85a-384e0ed0bcd3",
+  "name" : "content_color",
+  "label" : "Content Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : "#444444",
+    "opacity" : 100
+  }
+} ]

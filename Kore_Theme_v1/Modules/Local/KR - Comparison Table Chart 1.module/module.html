@@ -1,0 +1,195 @@
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+{% require_css %}
+<style>
+	{% set settings = module.section_settings %}
+	{% if settings.section_background_type != '3' %}
+	.{{ name }} { 
+		{% if settings.section_background_type == '1' %}
+		{% if settings.section_background_image.src %}
+		background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+		{% endif %}
+		{% elif settings.section_background_type == '2' %}
+		background-color: {{ settings.section_background_color.color }};
+		{% endif %}
+	}
+	{% endif %}
+
+	.{{ name }} .tagline {
+		color: {{ module.content_color.color }};
+	}
+
+	.{{ name }} .heading,
+	.{{ name }} .heading * {
+		color: {{ module.content_color.color }};
+	}
+
+	.{{ name }} .sub-heading,
+	.{{ name }} .sub-heading * {
+		color: {{ module.content_color.color }};
+	}
+
+	.{{ name }} .content,
+	.{{ name }} .content * {
+		color: {{ module.content_color.color }};
+	}
+
+	.{{ name }} .content h2,
+	.{{ name }} .content h2 *{
+		color: {{ module.heading_color.color }}!important;
+	}
+
+	.{{ name }} .content a {
+		color: {{ module.content_link_color.color }};
+	}
+
+	.{{ name }} .content a:hover {
+		color: {{ module.content_link_color_hover.color }};
+	}
+
+	.{{ name }} #cta .kore-button,
+	.{{ name }} .kore-button,
+	.{{ name }} .simple a {
+		background-color: {{ module.button.button_background_color.color }} !important;
+		{% if module.button.button_background_color.color %}
+		background-image: none !important;
+		{% endif %}
+		color: {{ module.button.button_text_color.color }} !important;
+	}
+
+	.{{ name }} #cta .kore-button:hover,
+	.{{ name }} .kore-button:hover,
+	.{{ name }} .simple a:hover {
+		background-color: {{ module.button.button_color_hover.color }} !important;
+		{% if module.button.button_color_hover.color %}
+		background-image: none !important;
+		{% endif %}
+		color: {{ module.button.button_text_color_hover.color }} !important;
+	}
+
+	.{{ name }} .section-padding-desktop {
+		padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+		padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+	}
+
+	@media (max-width: 1139px) {
+
+		.{{ name }} .section-padding-tablet {
+			padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+			padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+		}
+
+	}
+
+	@media (max-width: 767px) {
+
+		.{{ name }} .section-padding-mobile {
+			padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+			padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+		}
+
+	}
+</style>
+{% end_require_css %}
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} comparison-table-1 clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+	<div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+		<div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+
+			<div class="c-tbl-wrap">
+				{% if module.content %}
+				<div class="content">
+					{{ module.content }}
+				</div>
+				{% endif %}
+
+				<div class="tbl-outer-wrap">
+					<div class="tbl-wrapper">
+
+
+						<div class="tbl-wrap-list">
+							<div class="tbl-inner-wrap">
+
+
+								<div class="tbl-heading-wrap">
+									{% for item in module.table_heading %}
+									<div class="tbl-heading-item">							
+										<div class="heading-text">{{ item.text }}</div>
+										<div class="col-color" style="background-color: {{ item.column_color.color }};"></div>
+									</div>
+									{% endfor %}
+								</div>
+
+								<div class="tbl-row-wrap">
+									{% for item in module.table_row %}
+									<div class="tbl-row">
+										{% for item2 in item.row_items %}
+										<div class="row-item">
+
+											{% if item2.option == '1' %}
+											<span>{{ item2.text }}</span>
+											{% endif %}
+
+											{% if item2.option == '2' %}
+											<div class="icon">
+												{% if item2.type == '1' %}
+												<img src="https://f.hubspotusercontent40.net/hubfs/8222496/Images/ellipse-blank.svg" alt="" loading="lazy">
+												{% endif %}
+												{% if item2.type == '2' %}
+												<img src="https://f.hubspotusercontent40.net/hubfs/8222496/Images/ellipse-25-percent.svg" alt="" loading="lazy">
+												{% endif %}
+												{% if item2.type == '3' %}
+												<img src="https://f.hubspotusercontent40.net/hubfs/8222496/Images/ellipse-50-percent.svg" alt="" loading="lazy">
+												{% endif %}
+												{% if item2.type == '4' %}
+												<img src="https://f.hubspotusercontent40.net/hubfs/8222496/Images/ellipse-75-percent.svg" alt="" loading="lazy">
+												{% endif %}
+												{% if item2.type == '5' %}
+												<img src="https://f.hubspotusercontent40.net/hubfs/8222496/Images/ellipse-100-percent.svg" alt="" loading="lazy">
+												{% endif %}	
+												{% if item2.type == '6' %}
+												<span>n/a</span>
+												{% endif %}	
+											</div>
+											{% endif %}
+
+										</div>
+										{% endfor %}
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+
+						</div>
+
+						<div class="tbl-bottom-section">
+							<div class="bottom-notes">
+								{{ module.bottom_notes }}
+							</div>
+							<div class="icons-overview">
+								<span>MOST</span>
+								<div class="icons-list">
+									<img src="https://f.hubspotusercontent40.net/hubfs/8222496/Images/ellipse-100-percent.svg" alt="" loading="lazy">
+									<img src="https://f.hubspotusercontent40.net/hubfs/8222496/Images/ellipse-75-percent.svg" alt="" loading="lazy">
+									<img src="https://f.hubspotusercontent40.net/hubfs/8222496/Images/ellipse-50-percent.svg" alt="" loading="lazy">
+									<img src="https://f.hubspotusercontent40.net/hubfs/8222496/Images/ellipse-25-percent.svg" alt="" loading="lazy">
+									<img src="https://f.hubspotusercontent40.net/hubfs/8222496/Images/ellipse-blank.svg" alt="" loading="lazy">
+								</div>
+								<span>LEAST</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+</div>
+
+{% endif %}

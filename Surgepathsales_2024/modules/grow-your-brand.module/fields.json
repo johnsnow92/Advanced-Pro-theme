@@ -1,0 +1,87 @@
+[ {
+  "id" : "f55d44c6-51f4-9206-6534-553588a2a062",
+  "name" : "grow_your_brand_heading",
+  "label" : "Grow Your Brand Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : " GROW YOUR BRAND WITH SURGEPATH INSIGHTS"
+}, {
+  "id" : "4350b50a-4bc5-0824-a324-71cd5f577f9a",
+  "name" : "grow_your_brand_text",
+  "label" : "Grow Your Brand Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : " We guarantee results!"
+}, {
+  "id" : "54102110-604e-7da1-24da-ebc897faefdf",
+  "name" : "cta_group",
+  "label" : "CTA group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "174d71cb-77a3-058b-878b-853a770d75e3",
+    "name" : "cta_text",
+    "label" : "CTA Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : " Let's talk about your project"
+  }, {
+    "id" : "b50bbc16-3e35-497f-43c7-78c51559bcdf",
+    "name" : "content_text",
+    "label" : "Content text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<ul style=\"list-style-type: circle;\">\n<li><em>Value Proposition</em>: \"Fuel your sales team's success with real-time data and actionable insights that close deals faster.\"</li>\n<li><em>Focused Messaging</em>: \"Streamline your sales process with powerful tools designed to convert leads into customers—efficiently and effectively.\"</li>\n<li><em>Call to&nbsp; Action</em>: \"Unlock your sales potential with Surgepath Sales. Request a demo and see the difference firsthand!\"</li>\n</ul>"
+  }, {
+    "id" : "f74beaf7-ae89-881a-8f29-24cbddcb7eff",
+    "name" : "cta_link",
+    "label" : "CTA Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "27b4d685-334e-79fc-9c20-1e9aab617003",
+  "name" : "grow_your_brand_para",
+  "label" : "grow your brand para",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Surgepath Sales is more than just a platform—it’s a partner in your success. We work alongside your team, offering personalized support, expert insights, and continuous innovation to ensure that your sales processes are always optimized for success. Ready to take your sales to the next level? Contact Us Today to learn how we can help you transform your sales performance and achieve measurable growth.</p>"
+} ]

@@ -1,0 +1,162 @@
+[ {
+  "id" : "slides",
+  "name" : "slides",
+  "label" : "Slides",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 10,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "slides.heading",
+    "name" : "heading",
+    "label" : "Heading",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Welcome to Our Site"
+  }, {
+    "id" : "slides.subheading",
+    "name" : "subheading",
+    "label" : "Subheading",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Discover amazing features"
+  }, {
+    "id" : "slides.button_text",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Learn More"
+  }, {
+    "id" : "slides.button_link",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "href" : "#"
+    }
+  }, {
+    "id" : "slides.background_image",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : ""
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "heading" : "Welcome to Our Site",
+    "subheading" : "Discover amazing features",
+    "button_text" : "Learn More",
+    "button_link" : {
+      "href" : "#"
+    },
+    "background_image" : {
+      "src" : "",
+      "alt" : ""
+    }
+  }, {
+    "heading" : "Build Something Great",
+    "subheading" : "Start your journey today",
+    "button_text" : "Get Started",
+    "button_link" : {
+      "href" : "#"
+    },
+    "background_image" : {
+      "src" : "",
+      "alt" : ""
+    }
+  }, {
+    "heading" : "Join Our Community",
+    "subheading" : "Connect with thousands of users",
+    "button_text" : "Sign Up",
+    "button_link" : {
+      "href" : "#"
+    },
+    "background_image" : {
+      "src" : "",
+      "alt" : ""
+    }
+  } ]
+}, {
+  "id" : "slider_height",
+  "name" : "slider_height",
+  "label" : "Slider Height (px)",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 600
+}, {
+  "id" : "autoplay",
+  "name" : "autoplay",
+  "label" : "Autoplay",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "autoplay_speed",
+  "name" : "autoplay_speed",
+  "label" : "Autoplay Speed (ms)",
+  "required" : false,
+  "locked" : false,
+  "display" : "text",
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 5000
+}, {
+  "id" : "show_navigation",
+  "name" : "show_navigation",
+  "label" : "Show Navigation Arrows",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "show_dots",
+  "name" : "show_dots",
+  "label" : "Show Dot Navigation",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+} ]

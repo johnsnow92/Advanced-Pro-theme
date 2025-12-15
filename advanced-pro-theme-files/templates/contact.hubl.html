@@ -1,0 +1,439 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Contact Us - Advanced Pro Theme
+  screenshotPath: ../images/templates/contact-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+
+  {% if page_meta.meta_description %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+  {% endif %}
+
+  <!-- Favicon -->
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}">
+  {% endif %}
+
+  <!-- Theme CSS -->
+  {{ require_css(get_asset_url("@projects/Advanced Pro Theme/theme/advanced-pro-theme/styles/main.css")) }}
+
+  <!-- Contact Page Specific Styles -->
+  <style>
+    .contact-hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+      color: white;
+      padding: var(--spacing-3xl) 0;
+      text-align: center;
+    }
+
+    .contact-hero h1 {
+      color: white;
+      margin-bottom: var(--spacing-md);
+      font-size: var(--font-size-4xl);
+    }
+
+    .contact-hero p {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: var(--font-size-lg);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-info-section {
+      padding: var(--spacing-3xl) 0;
+      background-color: var(--color-gray-50);
+    }
+
+    .contact-info-card {
+      background: white;
+      padding: var(--spacing-xl);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      text-align: center;
+      transition: transform var(--transition-normal) ease, box-shadow var(--transition-normal) ease;
+    }
+
+    .contact-info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-info-icon {
+      width: 64px;
+      height: 64px;
+      background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--spacing-md);
+      color: white;
+    }
+
+    .contact-info-card h3 {
+      margin-bottom: var(--spacing-sm);
+      font-size: var(--font-size-xl);
+    }
+
+    .contact-info-card p {
+      color: var(--color-gray-600);
+      margin-bottom: 0;
+    }
+
+    .contact-info-card a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-info-card a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-form-section {
+      padding: var(--spacing-3xl) 0;
+    }
+
+    .contact-form-wrapper {
+      background: white;
+      padding: var(--spacing-2xl);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-form-intro {
+      margin-bottom: var(--spacing-xl);
+      text-align: center;
+    }
+
+    .contact-form-intro h2 {
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .contact-form-intro p {
+      color: var(--color-gray-600);
+      font-size: var(--font-size-lg);
+    }
+
+    .contact-map-section {
+      padding: var(--spacing-3xl) 0;
+      background-color: var(--color-gray-50);
+    }
+
+    .contact-map-wrapper {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-map-placeholder {
+      width: 100%;
+      height: 450px;
+      background: linear-gradient(135deg, var(--color-gray-200), var(--color-gray-300));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-gray-600);
+      font-size: var(--font-size-lg);
+    }
+
+    @media (max-width: 767px) {
+      .contact-hero h1 {
+        font-size: var(--font-size-3xl);
+      }
+
+      .contact-form-wrapper {
+        padding: var(--spacing-xl);
+      }
+
+      .contact-map-placeholder {
+        height: 300px;
+      }
+    }
+  </style>
+
+  <!-- Theme JS -->
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+
+  <!-- Standard Header Includes -->
+  {{ standard_header_includes }}
+</head>
+
+<body class="{{ builtin_body_classes }}">
+
+  <div class="body-wrapper">
+
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Global Header -->
+    {% global_partial path="../partials/header.hubl.html" %}
+
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+
+      <!-- Hero Section - Drag and Drop Area -->
+      {% dnd_area "contact_hero"
+        label="Contact Hero Section",
+        class="contact-hero"
+      %}
+        {% dnd_section
+          vertical_alignment="MIDDLE"
+        %}
+          {% dnd_column
+            width=12,
+            offset=0
+          %}
+            {% dnd_row %}
+              {% dnd_module path="@hubspot/rich_text" %}
+                {% module_attribute "html" %}
+                  <div class="container">
+                    <h1>Get In Touch</h1>
+                    <p>Have a question or want to work together? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                  </div>
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+
+      <!-- Contact Information Section - Drag and Drop Area -->
+      {% dnd_area "contact_info"
+        label="Contact Information",
+        class="contact-info-section"
+      %}
+        {% dnd_section
+          vertical_alignment="TOP"
+        %}
+          {% dnd_column
+            width=12,
+            offset=0
+          %}
+            {% dnd_row %}
+              {% dnd_module path="@hubspot/rich_text" %}
+                {% module_attribute "html" %}
+                  <div class="container">
+                    <div class="row text-center mb-5">
+                      <div class="col-12">
+                        <h2>Contact Information</h2>
+                        <p class="lead">Multiple ways to reach us</p>
+                      </div>
+                    </div>
+                  </div>
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+
+        {% dnd_section
+          vertical_alignment="TOP"
+        %}
+          {% dnd_column
+            width=4,
+            offset=0
+          %}
+            {% dnd_row %}
+              {% dnd_module path="@hubspot/rich_text" %}
+                {% module_attribute "html" %}
+                  <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                      <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                      </svg>
+                    </div>
+                    <h3>Email Us</h3>
+                    <p>Send us an email anytime</p>
+                    <p><a href="mailto:info@example.com">info@example.com</a></p>
+                  </div>
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+
+          {% dnd_column
+            width=4,
+            offset=0
+          %}
+            {% dnd_row %}
+              {% dnd_module path="@hubspot/rich_text" %}
+                {% module_attribute "html" %}
+                  <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                      <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                      </svg>
+                    </div>
+                    <h3>Call Us</h3>
+                    <p>Mon-Fri from 8am to 5pm</p>
+                    <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+                  </div>
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+
+          {% dnd_column
+            width=4,
+            offset=0
+          %}
+            {% dnd_row %}
+              {% dnd_module path="@hubspot/rich_text" %}
+                {% module_attribute "html" %}
+                  <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                      <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                      </svg>
+                    </div>
+                    <h3>Visit Us</h3>
+                    <p>Come say hello at our office</p>
+                    <p>123 Business St<br>Suite 100<br>City, ST 12345</p>
+                  </div>
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+
+      <!-- Contact Form Section - Drag and Drop Area -->
+      {% dnd_area "contact_form"
+        label="Contact Form",
+        class="contact-form-section"
+      %}
+        {% dnd_section
+          vertical_alignment="TOP"
+        %}
+          {% dnd_column
+            width=8,
+            offset=2
+          %}
+            {% dnd_row %}
+              {% dnd_module path="@hubspot/rich_text" %}
+                {% module_attribute "html" %}
+                  <div class="contact-form-wrapper">
+                    <div class="contact-form-intro">
+                      <h2>Send Us a Message</h2>
+                      <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                    </div>
+                  </div>
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+
+            {% dnd_row %}
+              {% dnd_module path="@hubspot/form" %}
+                {% module_attribute "form_id" %}
+                  <!-- Replace with your HubSpot form ID -->
+                {% end_module_attribute %}
+                {% module_attribute "title" %}
+                  Contact Form
+                {% end_module_attribute %}
+                {% module_attribute "response_type" %}
+                  inline
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+
+      <!-- Map Section - Drag and Drop Area -->
+      {% dnd_area "contact_map"
+        label="Location Map",
+        class="contact-map-section"
+      %}
+        {% dnd_section
+          vertical_alignment="TOP"
+        %}
+          {% dnd_column
+            width=12,
+            offset=0
+          %}
+            {% dnd_row %}
+              {% dnd_module path="@hubspot/rich_text" %}
+                {% module_attribute "html" %}
+                  <div class="container">
+                    <div class="row mb-4">
+                      <div class="col-12 text-center">
+                        <h2>Find Us</h2>
+                        <p class="lead">Our office location</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="contact-map-wrapper">
+                          <!-- Placeholder for map embed -->
+                          <div class="contact-map-placeholder">
+                            <div>
+                              <p><strong>Map Integration</strong></p>
+                              <p>Add your Google Maps embed code or custom map module here</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+
+      <!-- Additional CTA Section - Drag and Drop Area (Optional) -->
+      {% dnd_area "contact_cta"
+        label="Additional CTA Section (Optional)"
+      %}
+        {% dnd_section
+          vertical_alignment="MIDDLE",
+          background_color={ "color": "#ffffff" }
+        %}
+          {% dnd_column
+            width=12,
+            offset=0
+          %}
+            {% dnd_row %}
+              {% dnd_module path="@hubspot/rich_text" %}
+                {% module_attribute "html" %}
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-12 col-lg-8" style="margin: 0 auto; text-align: center; padding: var(--spacing-2xl) 0;">
+                        <h2>Prefer to Chat?</h2>
+                        <p class="lead">Our team is available to answer your questions via live chat during business hours.</p>
+                        <div style="margin-top: var(--spacing-lg);">
+                          <a href="#" class="btn btn-primary btn-lg">Start Live Chat</a>
+                          <a href="/faq" class="btn btn-outline btn-lg">Visit FAQ</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                {% end_module_attribute %}
+              {% end_dnd_module %}
+            {% end_dnd_row %}
+          {% end_dnd_column %}
+        {% end_dnd_section %}
+      {% end_dnd_area %}
+
+    </main>
+
+    <!-- Global Footer -->
+    {% global_partial path="../partials/footer.hubl.html" %}
+
+  </div>
+
+  <!-- Standard Footer Includes -->
+  {{ standard_footer_includes }}
+
+</body>
+</html>

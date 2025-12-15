@@ -1,0 +1,104 @@
+.simple-banner .banner-breacrumb {
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  width:100%;
+}
+.simple-banner h1 {
+  margin-bottom: 24px;
+}
+.simple-banner .banner-breacrumb ul.hs-breadcrumb-menu li a.hs-breadcrumb-label,
+.simple-banner .banner-breacrumb ul.hs-breadcrumb-menu li span.hs-breadcrumb-label {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.48222222;
+  color: #B9BBBD;
+  display: inline-block;
+}
+
+.simple-banner .banner-breacrumb ul.hs-breadcrumb-menu li span.hs-breadcrumb-label {
+  color: #fff;
+}
+
+.simple-banner .banner-breacrumb ul.hs-breadcrumb-menu li:after {
+  content: "/";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: right;
+  color: #FFFFFF;
+  padding: 0 10px;
+  display: inline-block;
+  vertical-align: sub;
+}
+
+.simple-banner .banner-breacrumb ul.hs-breadcrumb-menu li span.hs-breadcrumb-menu-divider {
+  display: none;
+}
+
+.simple-banner .banner-breacrumb ul.hs-breadcrumb-menu li.hs-breadcrumb-menu-item {
+  padding: 0;
+  float: none;
+  display: inline-block;
+}
+
+.simple-banner .banner-breacrumb ul.hs-breadcrumb-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.simple-banner .banner-breacrumb ul.hs-breadcrumb-menu li.hs-breadcrumb-menu-item.last-crumb:after {
+  display: none;
+}
+
+.simple-banner {
+  min-height: 450px;
+  padding-bottom: 70px;
+  padding-top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.simple-banner .top_sec h4 {
+  margin-bottom: 24px;
+}
+
+.simple-banner .top_sec p:last-child {
+  margin-bottom: 0;
+}
+
+.simple-banner .top_sec {
+  margin-bottom: 0;
+  text-align: inherit;
+}
+
+.simple-banner .page-center {
+  width: 100%;
+}
+.simple-banner.brd_right .banner-breacrumb ul.hs-breadcrumb-menu {
+  justify-content: flex-end;
+}
+
+.simple-banner.brd_left .banner-breacrumb ul.hs-breadcrumb-menu {
+  justify-content: flex-start;
+}
+
+.simple-banner.brd_center .banner-breacrumb ul.hs-breadcrumb-menu {
+  justify-content: center;
+}
+@media (max-width:1200px) {
+
+  .simple-banner .banner-breacrumb {
+    right: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+}

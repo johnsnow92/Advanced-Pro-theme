@@ -1,0 +1,97 @@
+{% import "../../macros/_macros.html" as macros %}  
+
+{% if module.left_column.content or module.left_column.button_group or module.left_column.include_form  %}
+{% set rightColWidth = "col6" %}
+{% else %}
+{% set rightColWidth = "col12" %}
+{% endif %}
+
+{% if module.right_column.background_options %}
+{% set leftColWidth = "col6" %}
+{% else %}
+{% set leftColWidth = "col12" %}
+{% endif %}
+
+
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="banner_v2 dnd_padd {{name}} {{ module.advanced_customization.css_class_selector }} {% if module.right_column.background_options %}rightItemsAdd{% else %}noRightCol{% endif %} bg_{{ module.background_options.select_background_type }} th_{{ module.background_options.select_color_theme }} bg_vid_{{ module.background_options.select_video_type }} {% if module.background_options.enable_parallax %}enable_parallax{% endif %}">
+  {{ macros.backgroundOptions(name, module.background_options) }}
+  <div class="page-center {{ module.style.container.select_size }} {{ module.module_settings.select_content_alignment }}">
+    <div class="flex_row roww_1  media_{{ module.module_settings.media_column_vertical_alignment }} {{ module.module_settings.media_column_alignment }}">
+      {% if module.left_column.content or module.left_column.button_group or module.left_column.include_form  %}
+      <div class="left_col {{leftColWidth}} {% if module.left_column.include_form %}form_add{% endif %}">
+        <div class="left_col_inner">
+          {% if module.left_column.content %}
+          <div class="text_wrap" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.content_animation_type }}" {% endif %}>
+            {{ module.left_column.content }}
+          </div>
+          {% endif %}
+
+
+          {% if module.left_column.button_group %}
+          <div class="btn_wrap" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.content_animation_type }}" data-aos-delay="100" {% endif %}>
+            {{ macros.buttonWithPopupGroup(module.left_column.button_group, false) }}
+          </div>
+          {% endif %}
+
+          {% if module.left_column.include_form  %}
+          {% if  module.left_column.form_group.select_form.form_id or module.left_column.form_group.content %}
+          <div class="form_box">
+            {% if module.left_column.form_group.content %}
+            <div class="form_content" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.content_animation_type }}" data-aos-delay="150" {% endif %}>
+              {{ module.left_column.form_group.content }}
+            </div>
+            {% endif %}
+
+            {% if module.left_column.form_group.select_form.form_id  %}
+            <div class="bnr_form" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.content_animation_type }}" data-aos-delay="200" {% endif %}>
+              {% form
+                    form_to_use="{{ module.left_column.form_group.select_form.form_id }}"
+                    response_response_type="{{ module.left_column.form_group.select_form.response_type }}"
+                    response_message="{{ module.left_column.form_group.select_form.message }}"
+                    response_redirect_id="{{ module.left_column.form_group.select_form.redirect_id }}"
+                    response_redirect_url="{{module.left_column.form_group.select_form.redirect_url}}"
+                    gotowebinar_webinar_key="{{ module.left_column.form_group.select_form.gotowebinar_webinar_key }}"
+                  %}
+            </div>
+            {% endif %}
+          </div>
+          {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% set count = module.right_column.background_options|length %}
+      {% if count >= 2 %}
+      {% set colWidth = "col6" %}
+      {% else %}
+      {% set colWidth = "col12" %}
+      {% endif %}
+      {% if module.right_column.background_options %}
+      <div class="right_col count{{count}} {{rightColWidth}} {{ module.right_column.select_right_column_items_flow }}_flow">
+        <div class="flex_row roww_2">
+          {% for item in module.right_column.background_options %}
+          <div class="{{colWidth}} card_item it_{{loop.index}} bg_ty_{{ item.select_background_type }} vid_{{ item.select_video_type }} {% if item.enable_parallax %}enable_parallax{% endif %}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.media_animation_type }}" data-aos-delay="{{loop.index * 50 + 200}}" {% endif %} >
+            <div>
+              {{ macros.backgroundOptions(name, item) }}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if module.left_column.button_group %}
+  {{ macros.buttonWithPopupGroup(module.left_column.button_group, true) }}
+  {% endif %}
+
+</div>
+{{ macros.sectionSpacing(name, module.style) }}
+{{ macros.sectionBackgroundStyle(name, module.style) }}
+{{ macros.customContainer(name, module.style) }}
+
+
+

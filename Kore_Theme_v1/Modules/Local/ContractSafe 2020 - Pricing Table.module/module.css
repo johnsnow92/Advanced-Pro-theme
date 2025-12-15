@@ -1,0 +1,412 @@
+.contractsafe-pricing-table .line-divider {
+  width: 72px;
+  height: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 20px;
+  background-color: #0d4eb5;
+}
+
+.contractsafe-pricing-table .pricingtablecontainer {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+}
+
+.contractsafe-pricing-table .pricingtable {
+  flex: 1;
+  padding: 0 12px;
+}
+
+.contractsafe-pricing-table .pricingtable .js-yearlypricing {
+  display: none;
+}
+
+.contractsafe-pricing-table .pricingtable ul {
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 0 20px -5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding: 40px 20px 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.contractsafe-pricing-table .pricingtable ul.popular {
+  background-color: #0d4eb5;
+}
+
+.contractsafe-pricing-table .pricingtable ul.popular li {
+  color: #fff;
+}
+
+.contractsafe-pricing-table .pricingtable li {
+  display: flex;
+  padding: 0;
+  align-items: center;
+  flex: 1 1 0%;
+}
+
+.contractsafe-pricing-table .pricingtable li.features-item {
+  font-family: 'Open Sans', sans-serif;
+  color: #686c73;
+  font-size: 14px;
+  line-height: 1.6em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.contractsafe-pricing-table .pricingtable li.features-title {
+  margin-bottom: 5px;
+  font-family: 'Open Sans', sans-serif;
+  color: #03172c;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.contractsafe-pricing-table .pricingtable li.disable {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.contractsafe-pricing-table .pricingtable__head {
+  border: none !important;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: Montserrat, sans-serif;
+}
+
+.contractsafe-pricing-table .pricingtable__highlight {
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.contractsafe-pricing-table .pricingtable-text {
+  padding-bottom: 20px !important;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #686c73;
+  color: #686c73;
+  line-height: 1.4em;
+  text-align: left;
+}
+
+.contractsafe-pricing-table .popular .pricingtable-text {
+  border-bottom: 1px dashed #fff;
+}
+
+.contractsafe-pricing-table .pricingtable__popular {
+  background: #F0C80F;
+  border: none !important;
+  border-radius: 5px 5px 0 0;
+  color: white;
+  padding: 5px !important;
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.contractsafe-pricing-table .pricing-tag {
+  position: absolute;
+  left: auto;
+  top: 10px;
+  right: 0%;
+  bottom: auto;
+  display: block;
+  padding: 2.5px 20px !important;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  background-color: #03172c;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.contractsafe-pricing-table .pricingtable__btn {
+  border: none !important;
+  padding-top: 20px !important;
+}
+
+.contractsafe-pricing-table .pricingtable__btn a {
+  display: inline-block;
+  font-weight: 400;
+  color: #03172c;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: rgba(13, 78, 181, 0.05);
+  border: 1px solid transparent;
+  padding: 10px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 6px;
+}
+
+.contractsafe-pricing-table .pricingtable__btn a:hover {
+  color: #03172c !important;
+  background-color: rgba(13, 78, 181, 0.1);
+}
+
+.contractsafe-pricing-table .popular .pricingtable__btn a {
+  background-color: hsla(0, 0%, 100%, 0.1);
+  color: #fff;
+}
+
+.contractsafe-pricing-table .popular .pricingtable__btn a:hover {
+  color: #fff !important;
+  opacity: 1;
+}
+
+.contractsafe-pricing-table .pricingtable .popular {
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.contractsafe-pricing-table .slideToggle {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 50px;
+}
+
+.contractsafe-pricing-table .slideToggle i {
+  margin: 0 15px;
+}
+
+.contractsafe-pricing-table .form-switch {
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #0d4eb5;
+}
+
+.contractsafe-pricing-table .form-switch i {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  border: 1px solid #DFDFDF;
+  border-radius: 15px;
+  transition: all 0.3s linear;
+  background-color: #DFDFDF;
+}
+
+.contractsafe-pricing-table .form-switch i::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 19px;
+  height: 19px;
+  background-color: #00CE6C;
+  border-radius: 15px;
+  transform: translate3d(4px, 2.5px, 0);
+  transition: all 0.2s ease-in-out;
+}
+
+.contractsafe-pricing-table .form-switch input {
+  display: none;
+}
+
+.contractsafe-pricing-table .form-switch input:checked + i::after {
+  transform: translate3d(24px, 2.5px, 0);
+  background-color: #fff;
+}
+
+.contractsafe-pricing-table .form-switch input + i::after {
+  background-color: #fff;
+}
+
+.contractsafe-pricing-table .form-switch input + i {
+  background-color: #17cca3;
+  border-color: #17cca3;
+}
+
+.contractsafe-pricing-table .form-switch input:checked + i {
+  background-color: #17cca3;
+  border-color: #17cca3;
+}
+
+.contractsafe-pricing-table .form-switch .beforeinput.text-success {
+  font-weight: 700;
+}
+
+.contractsafe-pricing-table .form-switch input:checked + i + .text-success {
+  font-weight: 700;
+}
+
+.contractsafe-pricing-table .btn-features-in-tablet {
+  display: none;
+  display: inline-block;
+  font-weight: 700;
+  color: #0d4eb5;
+  text-align: left;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 10px 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-top: 1px solid #d0d3d4;
+  margin-top: 20px;
+  position: relative;
+}
+
+.contractsafe-pricing-table .popular .btn-features-in-tablet {
+  color: #fff;
+}
+
+.contractsafe-pricing-table .btn-features-in-tablet:before {
+  content: "\f078";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 15px;
+  position: absolute;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  right: 0;
+  top: 0;
+  opacity: 1;
+  height: 100%;
+  width: 40px;
+  -webkit-transition: all 0.2s linear 0s;
+  transition: all 0.2s linear 0s;
+}
+
+.contractsafe-pricing-table .btn-features-in-tablet.active:before {
+  content: "\f077";
+}
+
+.contractsafe-pricing-table .btn-features-in-tablet:focus {
+  outline: 0;
+}
+
+.contractsafe-pricing-table .fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+}
+
+.contractsafe-pricing-table .fade.in {
+  opacity: 1;
+}
+
+.contractsafe-pricing-table .collapse {
+  display: none;
+}
+
+.contractsafe-pricing-table .collapse.in {
+  display: block;
+}
+
+.contractsafe-pricing-table tr.collapse.in {
+  display: table-row;
+}
+
+.contractsafe-pricing-table tbody.collapse.in {
+  display: table-row-group;
+}
+
+.contractsafe-pricing-table .collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition-property: height, visibility;
+  -o-transition-property: height, visibility;
+  transition-property: height, visibility;
+  -webkit-transition-duration: 0.35s;
+  -o-transition-duration: 0.35s;
+  transition-duration: 0.35s;
+  -webkit-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+}
+
+@media(max-width:1139px) {
+  
+  .contractsafe-pricing-table .pricingtable__btn-desktop {
+    display: none !important;
+  }
+  
+  .contractsafe-pricing-table .pricingtable__btn-tablet {
+    display: block !important;
+    padding-top: 0 !important;
+  }
+  
+  .contractsafe-pricing-table .pricingtable__btn-tablet a {
+    width: 100%;
+  }
+  
+  .contractsafe-pricing-table .features-title {
+    display: none !important;
+  }
+  
+  .contractsafe-pricing-table .pricingtable-text,
+  .contractsafe-pricing-table .popular .pricingtable-text {
+    border-bottom: 1px none #686c73;
+    margin-bottom: 0;
+  }
+  
+  .contractsafe-pricing-table .pricingtable ul {
+    height: auto !important;
+  }
+  
+  .contractsafe-pricing-table .btn-features-in-tablet {
+    display: block;
+  }
+
+  .contractsafe-pricing-table .pricingtable {
+    flex: 0 0 50%;
+  }
+  
+  .contractsafe-pricing-table .pricingtable .popular {
+    transform: none;
+  }
+  
+}
+
+@media(max-width:767px) {
+
+  .contractsafe-pricing-table .pricingtable {
+    flex: 0 0 100%;
+  }
+
+}
+
+@media(min-width:1140px) {
+  
+  .contractsafe-pricing-table .collapse {
+    display: block;
+    height: auto !important;
+  }
+  
+  .contractsafe-pricing-table .pricingtable__btn-tablet,
+  .contractsafe-pricing-table .btn-features-in-tablet {
+    display: none !important;
+  }
+
+}

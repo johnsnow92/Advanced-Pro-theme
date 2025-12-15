@@ -1,0 +1,78 @@
+[ {
+  "id" : "section_title",
+  "name" : "section_title",
+  "label" : "Section Title",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Recent Blog Posts"
+}, {
+  "id" : "number_of_posts",
+  "name" : "number_of_posts",
+  "label" : "Number of Posts to Show",
+  "required" : false,
+  "locked" : false,
+  "display" : "slider",
+  "min" : 3,
+  "max" : 12,
+  "step" : 1,
+  "type" : "number",
+  "display_width" : null,
+  "default" : 6
+}, {
+  "id" : "columns",
+  "name" : "columns",
+  "label" : "Number of Columns",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "2", "2 Columns" ], [ "3", "3 Columns" ], [ "4", "4 Columns" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "3"
+}, {
+  "id" : "show_featured_image",
+  "name" : "show_featured_image",
+  "label" : "Show Featured Image",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "show_excerpt",
+  "name" : "show_excerpt",
+  "label" : "Show Excerpt",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "show_date",
+  "name" : "show_date",
+  "label" : "Show Publish Date",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "show_author",
+  "name" : "show_author",
+  "label" : "Show Author",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+} ]

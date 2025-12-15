@@ -1,0 +1,47 @@
+<!-- Contact Form Module -->
+<div class="contact-form-module"
+     data-column-layout="{{ module.column_layout }}"
+     style="background-color: rgba({{ module.background_color.color|convert_rgb }}, {{ module.background_color.opacity / 100 }}); color: rgba({{ module.text_color.color|convert_rgb }}, {{ module.text_color.opacity / 100 }});">
+
+  <div class="contact-form-container">
+
+    {% if module.form_title %}
+    <div class="form-header">
+      <h2 class="form-title">{{ module.form_title }}</h2>
+      {% if module.form_subtitle %}
+      <p class="form-subtitle">{{ module.form_subtitle }}</p>
+      {% endif %}
+    </div>
+    {% endif %}
+
+    <div class="form-wrapper {% if module.column_layout == '2' %}two-column-layout{% else %}single-column-layout{% endif %} {% if not module.show_labels %}hide-labels{% endif %}">
+      {% if module.form_selector.form_id %}
+        {% form
+          form_to_use="{{ module.form_selector.form_id }}"
+          response_type="{{ module.form_selector.response_type }}"
+          redirect_url="{{ module.form_selector.redirect_url }}"
+          message="{{ module.thank_you_message }}"
+        %}
+      {% else %}
+        <div class="form-placeholder">
+          <p>Please select a form in the module settings.</p>
+        </div>
+      {% endif %}
+    </div>
+
+  </div>
+</div>
+
+<!-- Custom styling passed from module fields -->
+<style>
+  .contact-form-module .hs-button.primary,
+  .contact-form-module .hs-submit .actions input[type="submit"] {
+    background-color: rgba({{ module.button_color.color|convert_rgb }}, {{ module.button_color.opacity / 100 }}) !important;
+    border-color: rgba({{ module.button_color.color|convert_rgb }}, {{ module.button_color.opacity / 100 }}) !important;
+  }
+
+  .contact-form-module .hs-button.primary:hover,
+  .contact-form-module .hs-submit .actions input[type="submit"]:hover {
+    opacity: 0.9;
+  }
+</style>

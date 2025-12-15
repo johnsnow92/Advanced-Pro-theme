@@ -1,0 +1,251 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Contact Page V2
+screenshotPath: ../images/template-previews/contact-page-v2.jpg
+
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper contact_page contact_page_v2">
+  {# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+  {% dnd_area 'top_area' class='cnt-tp-sec top-dnd-area', label='Top section' %}
+  <!-- Banner Start -->
+  {% dnd_section
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/contact-banner",
+        offset=0,
+        width=12,
+        background_options={
+          "background_image" : {
+            "alt" : "Contact Banner",
+            "src" : get_asset_url('../images/contact_bannerV2.jpg')
+          },
+          "overlay_color" : {
+            "color" : "#026780",
+            "opacity" : 90
+          },
+          "select_background_type" : "image"
+        },
+        bottom_image={
+          "alt" : "Contact",
+          "src" : get_asset_url('../images/contact_bnr-btm-img.png')
+        },
+        include_bottom_image=true,
+        left_content={
+          "button_group" : [ ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "details" : [ {
+            "color_field" : {
+              "color" : "#495057",
+              "opacity" : 100
+            },
+            "content" : "<a href='mailto:danghoang87hl@gmail.com'>danghoang87hl@gmail.com</a>",
+            "heading" : "Mail Me At",
+            "heading_tag" : "h4",
+            "icon_field" : { },
+            "image_field" : {
+              "alt" : "E-mail",
+              "src" : get_asset_url('../images/email-vector.png'),
+              "width" : 50
+            },
+            "select_icon_color_theme" : "bg_primary_svg",
+            "select_icon_type" : "image"
+          }, {
+            "color_field" : {
+              "color" : "#495057",
+              "opacity" : 100
+            },
+            "content" : "<a href='tel:(207) 555-0119'>(207) 555-0119</a>",
+            "heading" : "Phone No.",
+            "heading_tag" : "h4",
+            "icon_field" : { },
+            "image_field" : {
+              "alt" : "Phone",
+              "src" : get_asset_url('../images/phone-vector.png'),
+              "width" : 50
+            },
+            "select_icon_color_theme" : "bg_primary_svg",
+            "select_icon_type" : "image"
+          } ],
+          "heading" : "Get in Touch",
+          "heading_tag" : "h1"
+        },
+        module_settings={
+          "form_style" : {
+            "border_color" : {
+              "color" : "#B9BBBD",
+              "opacity" : 100
+            },
+            "content_color" : {
+              "color" : "#212429",
+              "opacity" : 100
+            },
+            "field_color" : {
+              "color" : "#B9BBBD",
+              "opacity" : 100
+            },
+            "form_max_width" : 550,
+            "label_color" : {
+              "color" : "#212429",
+              "opacity" : 100
+            },
+            "select_background_theme" : "custom"
+          },
+          "select_form_theme" : "custom"
+        },
+        right_content={
+          "form_field" : {
+          "form_type" : "HUBSPOT",
+          "message" : "Thanks for submitting the form.",
+          "response_type" : "inline"
+          },
+          "top_content" : "<h2>Let’s Talk</h2><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>"
+        },
+        style={
+          "content" : {
+             "select_size" : "theme_center"
+          },
+           "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : { },
+                "left" : { },
+                "right" : { },
+                "top" : {
+                  "units" : "px",
+                  "value" : 126
+                }
+              }
+            }
+          },
+          "form" : {
+            "inner_spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 54
+                },
+                "left" : {
+                  "units" : "px",
+                  "value" : 50
+                },
+                "right" : {
+                  "units" : "px",
+                  "value" : 50
+                },
+                "top" : {
+                  "units" : "px",
+                  "value" : 54
+                }
+              }
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% end_dnd_area %}
+
+  {% dnd_area 'mid_area' class='cnt-mid-sec main-dnd-area', label='Middle section' %}
+
+  <!-- Contact Details -->
+  {% dnd_section
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/content-with-top-image",
+        offset=0,
+        width=12,
+        button_group=[ ],
+          locations=[ {
+          "button_items" : [ ],
+          "content" : "<p>4140 Parker Ave, St. Louis, MO 63116</p>",
+          "image_field" : {
+            "alt" : "Our Headquarter",
+            "height" : 100,
+            "loading" : "lazy",
+            "max_height" : 151,
+            "max_width" : 151,
+            "size_type" : "exact",
+            "src" : get_asset_url('../images/mexico.png'),
+            "width" : 100
+          },
+          "title" : "Our Headquarter",
+          "title_tag" : "h5"
+        }, {
+
+          "content" : "<p>3891 Ranchview Dr. Richardson, California 62639</p>",
+          "image_field" : {
+            "alt" : "England",
+            "height" : 101,
+            "loading" : "lazy",
+            "max_height" : 151,
+            "max_width" : 150,
+            "size_type" : "exact",
+            "src" : get_asset_url('../images/england.png'),
+            "width" : 100
+          },
+          "title" : "Branch 1",
+          "title_tag" : "h5"
+        }, {
+
+          "content" : "<p>2972 Westheimer Rd. Santa Ana, Illinois 85486</p>",
+          "image_field" : {
+            "alt" : "Santa Ana",
+            "height" : 100,
+            "loading" : "lazy",
+            "max_height" : 151,
+            "max_width" : 151,
+            "size_type" : "exact",
+            "src" :get_asset_url('../images/Santa_Ana.png'),
+            "width" : 100
+          },
+          "title" : "Branch 2",
+          "title_tag" : "h5"
+        } ],
+        module_settings={
+          "number_of_column" : "col4"
+        },
+        style={ },
+        top_content={
+          "button_group" : [ ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "title" : "Our Offices"
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+
+  {% end_dnd_area %}
+
+  {% dnd_area 'btm__area' class='cnt-btm-sec bottom-dnd-area', label='Bottom section' %}
+
+  {% include_dnd_partial path="../sections/map-section.html" %}
+
+  {% include_dnd_partial path="../sections/bottom-pane-section.html" %}
+
+  {% end_dnd_area %}
+
+</main>
+{% endblock body %}

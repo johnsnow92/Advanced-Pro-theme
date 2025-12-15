@@ -1,0 +1,18 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 97122802979,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/plugins/parallax.js",
+    "name" : "parallax.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../js/plugins/isotop.js",
+    "name" : "isotop.js"
+  } ],
+  "label" : "Blog Feed V2",
+  "icon" : "fontawesome-5.14.0:rss:SOLID",
+  "is_available_for_new_content" : true
+}

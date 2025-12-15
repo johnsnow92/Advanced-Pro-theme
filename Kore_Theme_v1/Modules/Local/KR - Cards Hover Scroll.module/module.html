@@ -1,0 +1,75 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  {% for item in module.card %}
+  .{{ name }} .card-{{ loop.index }} .toc-block-wrap {
+    background-color: {{ item.background_color.color }};
+    color: {{ item.text_color.color }};
+  }
+  .{{ name }} .card-{{ loop.index }} .toc-block-wrap:hover {
+    color: {{ item.text_color_hover.color }} !important;
+    background-color: {{ item.background_color_hover.color }};
+    background-image: -webkit-gradient(linear, left top, left bottom, from({{ item.background_color_hover.color|convert_rgb}}, {% if item.background_color_hover.opacity != 100 %}0.{{ item.background_color_hover.opacity }}{% else %}1{% endif %}), to(rgba({{ item.background_color_hover.color|convert_rgb}}, {% if item.background_color_hover.opacity != 100 %}0.{{ item.background_color_hover.opacity }}{% else %}1{% endif %}))), url({{ item.background_image_hover.src }});
+    background-image: linear-gradient(180deg, rgba({{ item.background_color_hover.color|convert_rgb}}, {% if item.background_color_hover.opacity != 100 %}0.{{ item.background_color_hover.opacity }}{% else %}1{% endif %}), rgba({{ item.background_color_hover.color|convert_rgb}}, {% if item.background_color_hover.opacity != 100 %}0.{{ item.background_color_hover.opacity }}{% else %}1{% endif %})), url({{ item.background_image_hover.src }});
+  }
+  {% endfor %} 
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-cards-hover-scroll clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+      
+      <div class="flex">
+        {% for item in module.card %}
+        <div class="col card-{{ loop.index }}">
+          <a href="{{ item.url.href }}" class="toc-block-wrap font-size-24">
+            {{ item.text }}
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+       
+    </div> 
+  </div>
+</div>
+
+{% endif %}

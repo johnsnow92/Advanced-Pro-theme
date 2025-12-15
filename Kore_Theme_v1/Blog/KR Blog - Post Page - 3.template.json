@@ -1,0 +1,132 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 6,
+  "attachedStylesheets" : [ ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "blog",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_159399600763068",
+        "label" : "KR - Blog Banner 1",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Blog Banner 1",
+          "per_widget_wrapper_html" : "",
+          "section_settings" : {
+            "section_background_type" : "2",
+            "section_padding_desktop" : {
+              "top" : 100
+            },
+            "section_padding_tablet" : {
+              "top" : 100
+            },
+            "section_padding_mobile" : {
+              "top" : 100
+            }
+          },
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Blog Banner 1",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1573652029503110",
+        "label" : "Blog Content",
+        "type" : "custom_widget",
+        "params" : {
+          "css_style" : "",
+          "template_to_edit" : "post",
+          "css_id" : "",
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "@hubspot/blog_content",
+          "per_widget_wrapper_html" : "",
+          "blog_listing_source" : "",
+          "wrapping_html" : "",
+          "blog_post_source" : "<style>\n\n  .blog-post-body {\n    background-size: cover !important;\n    background-repeat: no-repeat !important;\n    background-position: center !important;\n  }\n  \n  .blog-post-body .page-wrapper {\n    float: none;\n    max-width: 945px;\n    margin: 0 auto;\n    padding: 50px 60px;\n    margin-top: -60px;\n    background-color: #fff;\n     position: relative;\n    z-index: 10;\n  }\n  \n  .blog-post-body .flex {\n    display: flex;\n    flex-flow: row;\n    flex-wrap: wrap;\n  }\n  \n  .blog-post-body .flex .col {\n    flex: 1;\n  }\n      \n  .blog-post-body .flex .col .hubsnacks-sidebar-subscribe-cta-wrap {\n    max-width: 300px;\n  }\n  \n  .hs-blog-post {\n    overflow-x: hidden;\n  }\n  \n  .hs-blog-post .bsft-blog-post-banner {\n    margin-top: 0;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body {\n    min-width: 700px;\n  }\n  \n  .hs-blog-post .blog-post-body .blog-category-wrap {\n    margin-bottom: 20px;\n  }\n  \n  .hs-blog-post .blog-post-body .blog-category {\n    display: inline-block;\n    margin-top: 0px;\n    margin-right: 5px;\n    margin-bottom: 0px;\n    padding: 5px 10px;\n    border: 1px none #94d11a;\n    -webkit-transition: all 200ms ease;\n    transition: all 200ms ease;\n    color: #FF0046;\n    font-size: 14px;\n    line-height: 1.3em;\n    font-weight: 400;\n    text-decoration: none;\n    text-transform: uppercase;\n  }\n  \n  .hs-blog-post .blog-post-body .blog-category:hover {\n    background-color: #FF0046;\n    color: #fff;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body figure {\n    padding: 0;\n    margin-left: 0;\n    margin-right: 0;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body img {\n    width: 100%;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body .hs-embed-wrapper {\n    max-width: 100% !important;\n    max-height: 100% !important;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body blockquote {\n    margin: 0 0 20px 0;\n    padding: 10px 20px;\n    border-left: 5px solid #FF0046;\n    font-size: 24px;\n    line-height: 1.3em;\n    font-weight: 700;\n    font-style: normal;\n  }\n\n  .hs-blog-post .blog-post-body .post-body {\n    line-height: 1.5;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body p {\n    margin-top: 0;\n    margin-bottom: 1rem;\n    line-height: 1.5;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body h1,\n  .hs-blog-post .blog-post-body .post-body h2,\n  .hs-blog-post .blog-post-body .post-body h3,\n  .hs-blog-post .blog-post-body .post-body h4,\n  .hs-blog-post .blog-post-body .post-body h5,\n  .hs-blog-post .blog-post-body .post-body h6 {\n    line-height: 1.2;\n    margin-top: 0;\n    margin-bottom: 0.5rem;\n    font-weight: 700;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body h2 {\n    font-size: 32px;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body h3 {\n    font-size: 24px;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body h4 {\n    font-size: 18px;\n  }\n\n  .hs-blog-post .blog-post-body .post-body h5 {\n    font-size: 14px;\n  }\n\n  .hs-blog-post .blog-post-body .post-body h6 {\n    font-size: 12px;\n  }\n    \n  .hs-blog-post .blog-post-body .post-body .blog-post-title h1 {\n    font-size: 38px;\n    line-height: 1.2;\n    color: #211656 !important;\n    margin-bottom: 20px;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body .blog-post-date {\n    font-size: 14px;\n    font-weight: 700;\n    margin-bottom: 20px;\n  }\n  \n  .hs-blog-post .blog-post-body #custom-cta .cta_button {\n    box-sizing: border-box !important;\n    -webkit-font-smoothing: antialiased !important;\n    cursor: pointer !important;\n    -moz-user-select: none !important;\n    -webkit-user-select: none !important;\n    -o-user-select: none !important;\n    user-select: none !important;\n    display: inline-block !important;\n    font-weight: normal !important;\n    text-align: center !important;\n    text-decoration: none !important;\n    -o-transition: all .4s ease !important;\n    background: #FF0046 !important;\n    border-radius: 290486px !important;\n    border-width: 1px !important;\n    color: rgb(255,255,255) !important;\n    font-family: 'Rotageek Font', sans-serif !important;\n    height: auto !important;\n    padding: 16px 20px !important;\n    text-shadow: none !important;\n    width: auto !important;\n    font-size: 15px !important; \n    line-height: 1.5em !important;\n    -webkit-transition: all 200ms ease !important;\n    transition: all 200ms ease !important;\n    text-transform: uppercase !important;\n    box-shadow: none !important;\n    letter-spacing: 1px !important;\n    position: relative;\n    z-index: 10;\n  }\n  \n  .hs-blog-post .blog-post-body #custom-cta .cta_button:hover {\n    -webkit-transform: translate(0px, -3px);\n    -ms-transform: translate(0px, -3px);\n    transform: translate(0px, -3px);\n  }\n\n  .hs-blog-post .blog-post-body .post-body .list-inline {\n    padding-left: 0;\n    list-style: none;\n  }\n\n  .hs-blog-post .blog-post-body .post-body .list-inline-item {\n    display: inline-block;\n  }\n\n  .hs-blog-post .blog-post-body .post-body .list-inline-item:not(:last-child) {\n    margin-right: 0.5rem;\n  }\n  \n  .hs-blog-post .blog-post-body .post-body .hs-responsive-embed-wrapper  {\n    max-width: 100% !important;\n    max-height: 100% !important;\n    margin-bottom: 20px !important;\n  }\n  \n  .hs-blog-post .blog-post-body .blog-post-social-share {\n    text-align: center;\n  }\n  \n  .hs-blog-post .blog-post-body .blog-post-social-share .list-inline-item:not(:last-child) {\n    margin-right: 0;\n  }\n  \n  .hs-blog-post .blog-post-body .blog-post-social-share.top {\n    text-align: right;\n    margin-top: 0;\n  }\n  \n  .hs-blog-post .blog-post-body .blog-post-social-share.top .text {\n    vertical-align: top;\n    padding-right: 15px;\n  }\n  \n  .hs-blog-post .blog-post-body .social-link-large {\n    width: 30px;\n    height: 30px;\n    margin-right: 2px;\n    margin-left: 2px;\n    border-radius: 50px;\n    background-color: #FF0046;\n    background-position: 50% 50%;\n    background-size: 125px;\n    -webkit-transition: all 200ms ease;\n    transition: all 200ms ease;\n    max-width: 100%;\n    display: inline-block;\n  }\n\n  .hs-blog-post .blog-post-body .social-link-large:hover {\n    -webkit-transform: translate(0px, -3px);\n    -ms-transform: translate(0px, -3px);\n    transform: translate(0px, -3px);\n  }\n\n  .hs-blog-post .blog-post-body .social-link-large.facebook {\n    margin-left: 0px;\n    background-image: url(https://cdn2.hubspot.net/hubfs/6442339/HubSnacks%20Standalone%20Module/Images/fb.svg);\n    background-size: 15px;\n    background-repeat: no-repeat;\n  }\n  \n  .hs-blog-post .blog-post-body .social-link-large.twitter {\n    background-image: url(https://cdn2.hubspot.net/hubfs/6442339/HubSnacks%20Standalone%20Module/Images/tw.png);\n    background-size: 15px;\n    background-repeat: no-repeat;\n  }\n  \n  .hs-blog-post .blog-post-body .social-link-large.linkedin {\n    background-image: url(https://cdn2.hubspot.net/hubfs/6442339/HubSnacks%20Standalone%20Module/Images/in.svg);\n    background-size: 15px;\n    background-repeat: no-repeat;\n  }\n  \n  .hs-blog-post .blog-post-body .social-link-large.mail {\n    background-image: url(https://cdn2.hubspot.net/hubfs/6442339/HubSnacks%20Standalone%20Module/Images/email.svg);\n    background-size: 19px;\n    background-repeat: no-repeat;\n  }\n  \n  .hs-blog-post .blog-post-body .comments-wrapper {\n    max-width: 400px;\n    margin: 0 auto;\n  }\n\n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"text\"],\n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"password\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"datetime\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"datetime-local\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"date\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"month\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"time\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"week\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"number\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"email\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"url\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"search\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"tel\"], \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"color\"],\n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"file\"],\n  .hs-blog-post .blog-post-body .comments-wrapper textarea,\n  .hs-blog-post .blog-post-body .comments-wrapper select {\n    width: 100%;\n  }\n  \n  .hs-blog-post .blog-post-body .comments-wrapper .hs-input {\n    border-radius: 0; \n    padding: 8px 12px;\n    height: auto;\n  }\n\n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"checkbox\"] {\n\n  }\n  \n  .hs-blog-post .comment-reply-to {\n    padding-left: 25px;\n  }\n  \n  .hs-blog-post button.comment-reply-to {\n    color: #FF0046;\n  }\n  \n  .hs-blog-post .blog-post-body .comments-wrapper .hs-submit {\n    margin-top: 20px;\n  }\n  \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"submit\"] {\n    background: #FF0046 !important;\n    padding: 12px 18px !important;\n    color: #fff !important;\n    border-color: transparent !important;\n    border-radius: 0;\n    font-weight: 400;\n    font-size: 15px;\n    text-transform: uppercase;\n    border-radius: 290486px !important;\n    -webkit-transition: all 200ms ease !important;\n    transition: all 200ms ease !important;\n  }\n  \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"submit\"]:hover {\n    -webkit-transform: translate(0px,-3px) !important;\n    -ms-transform: translate(0px,-3px) !important;\n    transform: translate(0px,-3px) !important;\n  }\n  \n  .hs-blog-post .blog-post-body .comments-wrapper input[type=\"submit\"]:focus {\n    outline: 0;\n  }\n  \n  .hs-blog-post .blog-post-body .comments-wrapper .hs_error_rollup {\n    display: none;\n  }\n  \n  {% if !blog_comments %}\n  .new-comments {\n    display: none;\n  }\n  {% endif %}\n  \n  .hs-blog-post .blog-post-body .about-author-sec {\n    text-align: center;\n    position: relative;\n    margin-top: 80px;\n    margin-bottom: 40px;\n    padding: 60px 30px 30px;\n    border-radius: 3px;\n    background-color: #fff;\n    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.15);\n  }\n  \n  .hs-blog-post .blog-post-body .about-author-sec h3 a {\n    color: #333;\n  }\n  \n  .hs-blog-post .blog-post-body .about-author-sec .image {\n    position: absolute;\n    border-style: solid;\n    border-width: 4px;\n    border-color: #FF0046;\n    border-radius: 200px;\n    background-position: 50% 50%;\n    background-size: cover;\n    background-color: #fff;\n    top: -50px;\n    width: 100px;\n    height: 100px;\n    left: 50%;\n    transform: translate(-50%, 0);\n  }\n  \n  .hs-blog-post .blog-post-body #hubspot-topic_data a {\n    display: inline-block;\n    margin-top: 0px;\n    margin-right: 5px;\n    margin-bottom: 0px;\n    padding: 10px 10px;\n    border: 1px none #94d11a;\n    -webkit-transition: all 200ms ease;\n    transition: all 200ms ease;\n    color: #FF0046;\n    font-size: 14px;\n    line-height: 1.3em;\n    font-weight: 400;\n    text-decoration: none;\n    text-transform: uppercase;\n  }\n\n  .hs-blog-post .blog-post-body #hubspot-topic_data a:hover {\n    background-color: #FF0046;\n    color: #fff;\n  }\n  \n  .hs-blog-post .blog-post-body #hubspot-topic_data .topic-label {\n    display: inline-block;\n    margin-right: 10px;\n  }\n  \n  .hs-blog-post .blog-post-body .hs-button.nav-back {\n    cursor: pointer;\n    line-height: inherit;\n    display: inline-block;\n    text-align: center;\n    letter-spacing: 1px;\n    text-decoration: none;\n    -webkit-transition: all 200ms ease;\n    transition: all 200ms ease;\n    margin-top: 10px;\n    margin-bottom: 10px;\n    padding: 13px 20px;\n    border: 2px solid transparent;\n    padding-left: 40px;\n    border-radius: 0px;\n    background-color: transparent;\n    background-image: url(https://www.rotageek.com/hubfs/Images/blog-back-arrow.svg);\n    background-position: 10% 50%;\n    background-size: 20px;\n    background-repeat: no-repeat;\n    color: #000;\n    font-weight: 700;\n    text-transform: none;\n  }\n  \n  .hs-blog-post .blog-post-body .hs-button.nav-back:hover {\n    background-position: 0% 50%;\n    -webkit-transform: none;\n    -ms-transform: none;\n    transform: none;\n  }\n   \n  @media(max-width:1139px) {\n    \n    .blog-post-body .flex .col {\n      flex: 0 0 100%;\n    }\n    \n    .blog-post-body .flex .col .content-half {\n      max-width: 100%;\n    }\n    \n    .hs-blog-post .blog-post-body .post-body {\n      min-width: 100%;\n    }\n    \n  } \n  \n  @media(max-width:767px) {\n    \n    .blog-post-body {\n      padding: 50px 0;\n    }\n\n    .blog-post-body .page-wrapper {\n      padding: 0 40px;\n      transform: none;\n      margin-top: 0;\n    }\n\n    .hs-blog-post .blog-post-body .post-body h2 {\n      font-size: 24px;\n    }\n\n    .hs-blog-post .blog-post-body .post-body h3 {\n      font-size: 20px;\n    }\n\n    .hs-blog-post .blog-post-body .post-body h4 {\n      font-size: 16px;\n    }\n    \n    .hs-blog-post .blog-post-body .blog-post-social-share.top {\n      display: none;\n    }\n\n    .hs-blog-post .blog-post-body .post-body .blog-post-title h1 {\n      font-size: 34px;\n    }\n\n    .hs-blog-post .blog-post-body .post-body blockquote {\n      font-size: 20px;\n    }\n    \n  } \n\n</style>\n\n<div class=\"blog-post-body\">\n  <div class=\"page-wrapper\">\n\n    <div class=\"flex\">\n      <div class=\"col\">\n\n        <div class=\"section post-body\" id=\"custom-cta\">\n          \n          <ul class=\"list-inline blog-post-social-share top\">\n            <li class=\"list-inline-item text\">\n              Share this article\n            </li>\n            <li class=\"list-inline-item\">\n              <a class=\"social-link-large facebook\" href=\"https://www.facebook.com/share.php?u={{ request.full_url|urlencode }}\" target=\"_blank\">\n\n              </a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a class=\"social-link-large twitter\" href=\"https://twitter.com/intent/tweet?original_referer={{ request.full_url|urlencode }}\" target=\"_blank\">\n\n              </a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a class=\"social-link-large linkedin\" href=\"https://www.linkedin.com/shareArticle?mini=true&amp;url={{ request.full_url|urlencode }}\" target=\"_blank\">\n\n              </a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a class=\"social-link-large mail\" href=\"mailto:?subject={{ module.social.email_subject }} site&amp;body=Check out this site {{ request.full_url }}\" target=\"_blank\">\n\n              </a>\n            </li>\n          </ul>\n          \n          {% if content.topic_list %}\n          <div class=\"blog-category-wrap\">\n            {% for topic in content.topic_list %}\n            <a class=\"blog-category\" href=\"{{ blog_tag_url(group.id, topic.slug) }}\">\n              {{ topic.name }}\n\n            </a>{% if not loop.last %}{% endif %}\n            {% endfor %}\n\n          </div>\n          {% endif %}\n          \n          {% if content.name %}\n          <div class=\"blog-post-title\">\n            <h1>\n              {{ content.name }}\n            </h1>\n          </div>\n          {% endif %}\n          \n          <div class=\"blog-post-date\">{{ content.publish_date_localized }}</div>\n          \n          {{ content.post_body }}\n\n          <div>\n            {% module \"module_15940034520213932\" path=\"/Kore_Theme_v1/Modules/Local/KR - Blog Post CTA 1\", label=\"KR - Blog Post CTA 1\" %}\n          </div>\n          \n\n          <ul class=\"list-inline blog-post-social-share\">\n            \n            <li class=\"list-inline-item\">\n              \n            </li>\n            \n            <li class=\"list-inline-item\">\n              <a class=\"social-link-large facebook\" href=\"https://www.facebook.com/share.php?u={{ request.full_url|urlencode }}\" target=\"_blank\">\n\n              </a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a class=\"social-link-large twitter\" href=\"https://twitter.com/intent/tweet?original_referer={{ request.full_url|urlencode }}\" target=\"_blank\">\n\n              </a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a class=\"social-link-large linkedin\" href=\"https://www.linkedin.com/shareArticle?mini=true&amp;url={{ request.full_url|urlencode }}\" target=\"_blank\">\n\n              </a>\n            </li>\n            <li class=\"list-inline-item\">\n              <a class=\"social-link-large mail\" href=\"mailto:?subject={{ module.social.email_subject }} site&amp;body=Check out this site {{ request.full_url }}\" target=\"_blank\">\n\n              </a>\n            </li>\n          </ul>\n\n          <div class=\"comments-wrapper\">\n            {% blog_comments \"blog_comments\" overrideable=False, label='Blog Comments' %}\n          </div>\n\n          {% if blog_comments %}\n          <div class=\"custom_listing_comments\" style=\"margin-top: 20px;\">\n            {% set comments_number =  content.comment_list|length %}\n            {% set comments_label = \"Comment\" if comments_number == 1 else \"Comments\" %}\n            {{ comments_number }} {{ comments_label }} <a href=\"{{content.absolute_url}}#comments-listing\">Click here to read/write comments</a>\n          </div>\n          {% endif %}\n\n          {% if content.blog_post_author.avatar and content.blog_post_author.bio %}\n          <!-- Optional: Blog Author Bio Box -->\n          <div class=\"about-author-sec\">\n            <div class=\"image\" style=\"background-image: url({{ content.blog_post_author.avatar }});\"></div>\n            <div class=\"col\">\n              <h3><a class=\"author-link\" href=\"{{ blog_author_url(group.id, content.blog_post_author.slug) }}\">{{ content.blog_post_author.display_name }}</a></h3>\n              <p>{{ content.blog_post_author.bio }}</p>\n              <a href=\"{{ blog_author_url(group.id, content.blog_post_author.slug) }}\">View All Articles</a>\n            </div>\n          </div>\n           {% endif %}\n\n          {% if content.topic_list %}\n          <p id=\"hubspot-topic_data\" ><span class=\"topic-label\">Topics from this blog:</span>\n            {% for topic in content.topic_list %}\n            <a class=\"topic-link\" href=\"{{ blog_tag_url(group.id, topic.slug) }}\">{{ topic.name }}</a>{% if not loop.last %}{% endif %}\n            {% endfor %}\n          </p>\n          {% endif %}\n          \n          <!-- Back: Change Icon color manually -->\n          <a href=\"{{ group.absolute_url }}\" class=\"hs-button nav-back w-button\">Back</a>\n\n        </div>\n\n      </div>\n    </div>\n    \n  </div>\n</div>",
+          "widget_name" : "Blog Content",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

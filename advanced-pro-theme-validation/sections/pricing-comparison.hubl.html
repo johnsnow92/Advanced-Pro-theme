@@ -1,0 +1,43 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Pricing - Comparison Cards
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: pricing-comparison.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  max_width=1200,
+  padding={"top": 80, "bottom": 80}
+%}
+  {% dnd_module path="@hubspot/rich_text" width=12, offset=0 %}
+    {% module_attribute "html" %}
+      <div style="text-align: center;">
+        <h2 style="font-size: 3rem; font-weight: 700; margin-bottom: 3rem;">Choose Your Plan</h2>
+        <div style="display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+          {% set plans = [
+            {"label": "Starter", "price": "$29", "popular": false, "features": ["&#10003; Core landing pages", "&#10003; Essential sections", "&#10003; Email & blog templates"]},
+            {"label": "Professional", "price": "$99", "popular": true, "features": ["&#10003; Everything in Starter", "&#10003; Marketing automation sections", "&#10003; Animation controls"]},
+            {"label": "Enterprise", "price": "$299", "popular": false, "features": ["&#10003; Everything in Professional", "&#10003; Membership & system pages", "&#10003; Priority support"]}
+          ] %}
+          {% for plan in plans %}
+            <div style="background: white; padding: 2.5rem; border-radius: 16px; box-shadow: 0 8px 30px rgba(0,0,0,0.1); text-align: center; border: {% if plan.popular %}3px solid #007bff{% else %}1px solid #dee2e6{% endif %}; {% if plan.popular %}transform: scale(1.02);{% endif %}">
+              {% if plan.popular %}
+                <div style="background: #007bff; color: white; padding: 0.375rem 1rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 1rem;">Popular</div>
+              {% endif %}
+              <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">{{ plan.label }}</h3>
+              <div style="font-size: 3.5rem; font-weight: 700; color: #007bff; margin-bottom: 1rem;">{{ plan.price }}</div>
+              <p style="color: #666; margin-bottom: 2rem;">per month</p>
+              <a href="#" style="display: block; padding: 1rem; background: {% if plan.popular %}#007bff{% else %}white{% endif %}; color: {% if plan.popular %}white{% else %}#007bff{% endif %}; text-decoration: none; border-radius: 8px; font-weight: 600; border: 2px solid #007bff; margin-bottom: 2rem;">Choose Plan</a>
+              <ul style="list-style: none; padding: 0; margin: 0; text-align: left;">
+                {% for feature in plan.features %}
+                  <li style="padding: 0.75rem 0; {% if not loop.last %}border-bottom: 1px solid #e9ecef;{% endif %}">{{ feature|safe }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% end_module_attribute %}
+  {% end_dnd_module %}
+{% end_dnd_section %}

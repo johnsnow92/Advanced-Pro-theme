@@ -1,0 +1,97 @@
+.content-form-wrap .maxContainer{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.col-flex-wrap{
+  display:flex;
+  flex-wrap: wrap;
+}
+.col-content{
+  width: 60%;
+  padding-right: 80px;
+}
+.col-form{
+  width: 40%;
+}
+.form-wrap h3.form-title{
+  display:none;
+}
+.col-content ul li:not(:last-child){
+  margin-bottom: 15px;
+}
+#form-wrap form{
+  margin-top: 25px;
+}
+#form-wrap form label{
+  margin-bottom: 3px;
+  color: #fff;
+}
+#form-wrap form .hs-form-field{
+  margin-bottom: 12px;
+}
+#form-wrap form .hs-form-field .input > input,
+#form-wrap form .hs-form-field .input > select,
+#form-wrap form .hs-form-field .input > textarea{
+  border: 1px solid #cecece;
+  height: 46px;
+  width: 100%;
+}
+#form-wrap form .hs-form-field .input > input:focus,
+#form-wrap form .hs-form-field .input > select:focus,
+#form-wrap form .hs-form-field .input > textarea:focus{
+  outline:none;
+}
+#form-wrap form .hs-form-field .input{
+  margin-right: 0;
+}
+#form-wrap form fieldset.form-columns-2 > div:first-child{
+  padding-right: 6px!important;
+}
+#form-wrap form fieldset.form-columns-2 > div:last-child{
+  padding-left: 6px!important;
+}
+#form-wrap form .legal-consent-container ul.inputs-list input{
+  margin-top: 3px;
+}
+#form-wrap form .legal-consent-container .hs-richtext,
+#form-wrap form .legal-consent-container .hs-richtext p{
+  color: #fff;
+}
+.col-form-wrap {
+  padding: 20px;
+  box-shadow: 0px 0px 12px rgba(51, 51, 51, 0.25);
+  background-color: #0B3B61;
+}
+.form-content *{
+  color: #fff!important;
+}
+
+@media screen and (max-width: 991px){
+  .col-content {
+    width: 50%;
+    padding-right: 40px;
+  }
+  .col-form {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 767px){
+  .col-content {
+    width: 100%;
+  }
+  .col-form{
+    width: 100%;
+    margin-top: 30px;
+  }
+  .col-content h2{
+    font-size: 34px;
+    line-height: 1.2;
+  }
+  #form-wrap form fieldset.form-columns-2 > div:last-child {
+    padding-left: 0 !important;
+  }
+  #form-wrap form fieldset.form-columns-2 > div:first-child {
+    padding-right: 0 !important;
+  }
+}
+

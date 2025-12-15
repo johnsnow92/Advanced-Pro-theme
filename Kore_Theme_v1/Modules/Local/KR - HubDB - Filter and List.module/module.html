@@ -1,0 +1,319 @@
+{################################
+########### FILTER ##############}
+
+{% macro filter_items() %}
+<div id="hub-db-filter" class="item--filter-wrap hub-db-filter">
+  <form id="product_filter" method="get" class="product--filter">
+    <div class="product--filter-wrap">
+      {% if module.hubdb_columns.filter_1.show_filter %}
+      <select name="filter1" form="product_filter" onChange="this.form.submit()" class="product--input">
+        <option value="show-all">{{ module.hubdb_columns.filter_1.filter_label }}</option>
+        {% set table_id = module.hubdb_table %}
+        {% set filter1 = hubdb_table_column(table_id, "filter1").options %}
+        {% for item in filter1 %}
+        {% if item.name == request.query_dict.filter1 %}
+        <option selected="selected" value="{{ item.name }}">{{ item.name }}</option>
+        {% else %}
+        <option value="{{ item.name }}" >{{ item.name }}</option>
+        {% endif %}
+        {% endfor %}
+      </select>
+      {% endif %}
+      {% if module.hubdb_columns.filter_2.show_filter %}
+      <select name="filter2" form="product_filter" onChange="this.form.submit()" class="product--input">
+        <option value="show-all">{{ module.hubdb_columns.filter_2.filter_label }}</option>
+        {% set filter2 = hubdb_table_column(table_id, "filter2").options %}
+        {% for item in filter2 %}
+        {% if item.name == request.query_dict.filter2 %}
+        <option selected="selected" value="{{ item.name }}">{{ item.name }}</option>
+        {% else %}
+        <option value="{{ item.name }}" >{{ item.name }}</option>
+        {% endif %}
+        {% endfor %}
+      </select>
+      {% endif %}
+      {% if module.hubdb_columns.filter_3.show_filter %}
+      <select name="filter3" form="product_filter" onChange="this.form.submit()" class="product--input">
+        <option value="show-all">{{ module.hubdb_columns.filter_3.filter_label }}</option>
+        {% set table_id = module.hubdb_table %}
+        {% set filter3 = hubdb_table_column(table_id, "filter3").options %}
+        {% for item in filter3 %}
+        {% if item.name == request.query_dict.filter3 %}
+        <option selected="selected" value="{{ item.name }}">{{ item.name }}</option>
+        {% else %}
+        <option value="{{ item.name }}" >{{ item.name }}</option>
+        {% endif %}
+        {% endfor %}
+      </select>
+      {% endif %}
+      <div id="hub-db-search" class="hub-db-search">
+        <input name="search" type="text" id="search-by" class="autocomplete process-tag" placeholder="Search..." value="{{ request.query_dict.search }}" >        
+        <button id="submit-button" type="submit" class="search-submit-btn kore-button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+  <a href="{{request.path}}" class="filter-reset">Reset filters</a>
+</div>
+{% endmacro %}
+
+{################################
+########### PAGINATION ##############}
+
+{% macro pagination(listQuery) %}
+
+{% set a = 'filter1='~request.query_dict.filter1  %}
+{% set b = '&filter2='~request.query_dict.filter2 %}
+{% set c = '&filter3='~request.query_dict.filter3 %}
+{% set s = '&search='~request.query_dict.search %}
+{% set pathLink = request.path~'?'~a~b~c~s %}
+{% set batch_num = module.section_settings.cards_per_page %}
+
+{% if not request.query_dict.page_num %}
+{% set page_num = 1 %}
+{% set offset_num = 0 %}
+
+{% elif request.query_dict.page_num %}
+{% set page_num = request.query_dict.page_num %}
+{% set offset_num = page_num|add(-1) * batch_num %}
+{% endif %}
+{% set table_id = module.hubdb_table %}
+{% set nav = hubdb_table_rows(table_id, listQuery) %}
+{% if nav|length|divisible(batch_num) %}
+{% set total_pages = nav|length|divide(batch_num) %}
+{% else %}
+{% set total_pages = nav|length|divide(batch_num) + 1 %}
+{% endif %}
+{% set more_pages = total_pages - page_num %}
+
+
+<div class="paginate-bar-section" style="position:relative;" data="{{nav|length ~ listQuery}}">
+  <nav> 
+    {% if page_num > 1 %}
+    <a class="previous-posts-link a-paginate" href="{{ pathLink }}&page_num={{ page_num|add(-1) }}" title="Older Posts">
+      Previous
+    </a>
+    {% endif %}
+    {% if more_pages == 0 %}
+    {% if page_num|add(-4) >= 1 %}
+    <a href="{{ pathLink }}&page_num={{ page_num|add(-4) }}"
+       class="a-paginate page"
+       >
+      {{ page_num|add(-4) }}
+    </a>  
+    {% endif %}
+    {% endif %}
+    {% if more_pages <= 1 %}
+    {% if page_num|add(-3) >= 1 %}
+    <a href="{{ pathLink }}&page_num={{ page_num|add(-3) }}"
+       class="a-paginate page"
+       >
+      {{ page_num|add(-3) }}
+    </a>
+    {% endif %}
+    {% endif %}
+    {% if page_num|add(-2) >= 1 %}
+    <a href="{{ pathLink }}&page_num={{ page_num|add(-2) }}"
+       class="a-paginate page"
+       >
+      {{ page_num|add(-2) }}
+    </a>
+    {% endif %}
+    {% if page_num|add(-1) >= 1 %}
+    <a href="{{ pathLink }}&page_num={{ page_num|add(-1) }}"
+       class="a-paginate page"
+       >
+      {{ page_num|add(-1) }}
+    </a>
+    {% endif %}
+    <a class="active a-paginate page" href="{{ pathLink }}&page_num={{ page_num }}" >
+      {{ page_num }}
+    </a>
+    {% if page_num|add(1) <= total_pages %}
+    <a href="{{ pathLink }}&page_num={{ page_num|add(1) }}"
+       class="a-paginate page"
+       >
+      {{ page_num|add(1) }}
+    </a>
+    {% endif %}
+    {% if page_num|add(2) <= total_pages %}
+    <a href="{{ pathLink }}&page_num={{ page_num|add(2) }}"
+       class="a-paginate page"
+       >{{ page_num|add(2) }}</a>
+    {% endif %}
+    {% if page_num <= 2 %}
+    {% if page_num|add(3) <= total_pages %}
+    <a href="{{ pathLink }}&page_num={{ page_num|add(3) }}"
+       class="a-paginate page"
+       >{{ page_num|add(3) }}</a>
+    {% endif %}
+    {% endif %}
+    {% if page_num == 1 %}
+    {% if page_num|add(4) <= total_pages %}
+    <a href="{{ pathLink }}&page_num={{ page_num|add(4) }}"
+       class="a-paginate page"
+       >{{ page_num|add(4) }}</a>
+    {% endif %}
+    {% endif %}
+    {% if total_pages > page_num %}
+    <a class="next-posts-link a-paginate" href="{{ pathLink }}&page_num={{ page_num|add(1) }}" title="Next">Next</a>
+    <a href="{{ pathLink }}&page_num={{ page_num|add(1) }}" 
+       onclick="return false;"
+       class="filter-reset show-more load-more-hubdb">Show more </a>
+    {% endif %}
+  </nav>
+</div>
+{% endmacro %}
+
+{################################
+########### LISTING ##############}
+
+{% macro listing() %}
+<div id="item-{{ row.hs_id }}" class="pan4">
+  <div class="process-box">
+    <div class="flex-col">
+      <div class="process-content">
+        <a href="{{ row["url"] }}">
+          <div class="process-image" 
+               style="background-image: url('{{ row["image"]["url"] }}');"></div>
+        </a>
+        <div class="process-desc">
+          <div class="hub-db-snacktype">
+            {% for item in row["filter1"] %}
+            {% set catlink = "?filter1="+item["name"]|replace(' ','+')+"&filter2=show-all&filter3=show-all&search=" %}
+            <a href="{{catlink}}" >
+              {{ item["name"] }}
+            </a>
+            {% endfor %}
+          </div>
+          <a href="{{ row["url"] }}">
+            <h3 class="process-heading"> {{ row["name"]|striptags }}</h3>
+            <div class="process-description">
+              {{ row["summary"] }}
+            </div>
+          </a>
+        </div>
+        <div class="process-read-more">
+          {% if row["link"] %}
+          <a href="{{ row['link'] }}" 
+             class="process-tag hub-db-docs kore-button" target="_blank">
+            READ MORE
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endmacro %}
+
+{################################
+####### lISTING HTML ###########}
+
+{% macro listing_html() %}
+{% set param = '' %}
+{% set t = request.query_dict.filter1  %}
+{% set e = request.query_dict.filter2 %}
+{% set b = request.query_dict.filter3 %}
+
+{# Single select DON'T use __contains #}
+{# Mutli-select use variable__contains #}
+{% if module.hubdb_columns.filter_1.column_type == "multi-select" %}
+{% set t_var = 'filter1__contains='~t  %}
+{% else %} {% set t_var = 'filter1='~t  %} {% endif %}
+
+{% if module.hubdb_columns.filter_2.column_type == "multi-select" %}
+{% set e_var = 'filter2__contains='~e %}
+{% else %} {% set e_var = 'filter2='~e  %} {% endif %}
+
+{% if module.hubdb_columns.filter_3.column_type == "multi-select" %}
+{% set b_var = 'filter3__contains='~b %}
+{% else %} {% set b_var = 'filter3='~b  %} {% endif %}
+
+{# check if t:snacks_type has value other than show-all and elem has value show-all #}
+{% if t and t != "show-all" and e == "show-all" and b == "show-all" %} 
+{% set param = t_var %} 
+{% endif %}
+
+{% if e and e != "show-all" and t == "show-all" and b == "show-all" %} 
+{% set param = e_var %} 
+{% endif %}
+
+{% if b and b != "show-all" and t == "show-all" and e == "show-all" %} 
+{% set param = b_var %} 
+{% endif %}
+
+{% if t and e and b %} 
+{% if t != "show-all" and e != "show-all" and b != "show-all" %} 
+{% set param = t_var~'&'~e_var~'&'~b_var %} 
+{% endif %}
+{% if t != "show-all" and e != "show-all" and b == "show-all" %} 
+{% set param = t_var~'&'~e_var %} 
+{% endif %}
+{% if b != "show-all" and e != "show-all" and t == "show-all" %} 
+{% set param = b_var~'&'~e_var %} 
+{% endif %}
+{% if b != "show-all" and t != "show-all" and e == "show-all" %} 
+{% set param = b_var~'&'~t_var %} 
+{% endif %}
+{% endif %}
+
+{# if any data name found with several words please concatenate with plus sign #}
+<!-- Product Listing -->
+{% set table_id = module.hubdb_table %}
+{% set query = param|replace(" ","+") %}   
+
+{# Search #}
+{% if request.query_dict.search and request.query_dict.search != "" %}
+{% set nd_var = "name__icontains="~request.query_dict.search|urlencode %}
+{% set query = query~'&'~nd_var %}
+{% endif %}   
+
+{% set batch_num = module.section_settings.cards_per_page %}
+{% if not request.query_dict.page_num %}
+{% set page_num = 1 %}
+{% set offset_num = 0 %}
+{% elif request.query_dict.page_num %}
+{% set page_num = request.query_dict.page_num %}
+{% set offset_num = page_num|add(-1) * batch_num %}
+{% endif %}
+{% set items = hubdb_table_rows( table_id, query~'&orderBy=-hs_id'~'&'~'limit='~batch_num~'&offset='~offset_num ) %}
+{% if items == [] %}
+<div class="process-wrap">
+  <p>{{ module.result_message }}</p>
+</div>
+{% else %}
+<div class="process-wrap listing-html">
+  {% for row in items %}
+  {{listing()}}
+  {% endfor %}
+</div>
+<div data="{{query}}">
+  {{ pagination(query) }}
+</div>
+{% endif %}
+{% endmacro %}
+{################################
+########### HTML ##############}
+
+<div class="products hubdb-filter-hub {{ module.section_settings.custom_class }} kore-module" >
+  <div class="hubdb-filter-wrap"
+       style="background-color: {{ module.section_settings.filter_background_color.color }}"
+       >
+    <div class="container-wrap maxWidth1140">  
+      {% if module.filter_header %}
+      <h1>{{ module.filter_header }}</h1>
+      {% endif %}
+      <div class="hub-db-search-filter">
+        {{ filter_items() }}
+      </div>
+    </div>
+  </div>
+  <div class="section-process bgArea {{ module.section_settings.custom_class }}" 
+       style="padding-bottom:100px;">
+    <div class="container-wrap maxWidth1140" >
+      {{listing_html()}}
+    </div>
+  </div>
+</div>

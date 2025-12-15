@@ -1,0 +1,50 @@
+<div class="cm-expect">
+  <div class="cm-wrapper">
+    <div class="cm-row">
+      <div class="cm-left">
+        {% if module.parallax_image.src or  module.image_field.src %}
+        <div class="parallax-section">
+          <div class="et_parallax_bg_wrap">
+            <div class="et_parallax_bg jarallax" style="background-image:url({{ module.parallax_image.src }});"></div>
+          </div> 
+          <div class="et_pb_image_wrap">
+            {% if module.image_field.src %}
+            {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}"' %}
+            {% if module.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ module.image_field.width }}" height="{{ module.image_field.height }}" style="max-width: 100%; height: auto;"' %}
+            {% elif module.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.image_field.max_width }}" height="{{ module.image_field.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = module.image_field.loading != 'disabled' ? 'loading="{{ module.image_field.loading }}"' : '' %}
+            <img src="{{ module.image_field.src }}" alt="{{ module.image_field.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+      <div class="cm-right">
+        {% if module.section_heading or module.content %}
+        <div class="right-top">
+          <h2>{{ module.section_heading }}</h2>
+          <div class="cm-divider"></div>
+          <div class="cm-text">
+            {{ module.content }}
+          </div>
+        </div>
+        {% endif %}
+        <div class="right-bottom clearfix">
+          {% for item in module.bottom_content %}
+          <div class="cm-item">
+            <div class="cm-text">
+              {{ item.content }}
+            </div>
+            {% if item.include_divider %}
+            <div class="cm-spacer"></div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

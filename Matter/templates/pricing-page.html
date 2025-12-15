@@ -1,0 +1,320 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Pricing Page
+screenshotPath: ../images/template-previews/pricing-page.jpg
+
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+{# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
+<main id="main-content" class="body-container-wrapper pricing_page">
+  {# All templates are recommended to have an h1 present for both accessibility and SEO best practice. This should be at the top of the template before any other textual content. The h1 element below is within a dnd area to allow content editors the ability to adjust the content and alignment of the text. #}
+  {% dnd_area 'top_area' class='pricing-tp-sec top-dnd-area', label='Top section' %}
+  <!-- Banner Start -->
+  {% dnd_section
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/banner",
+        offset=0,
+        width=12,
+        background_options={
+          "background_image" : {
+            "alt" : "Contact Banner",
+            "height" : 450,
+            "max_height" : 450,
+            "max_width" : 1440,
+            "src" :get_asset_url('../images/pricing-banner.jpg'),
+            "width" : 1440
+          },
+          "overlay_color" : {
+            "color" : "#026780",
+            "opacity" : 50
+          },
+          "select_background_type" : "image"
+        },
+        breadcrumb_menu=,
+        include_breadcrumb=true,
+        style={
+          "container" : {
+            "select_size" : "theme"
+          }
+        }
+      %}
+  {% module_attribute "banner_content" %}
+  <h1>Pricing</h1>
+  <p data-aos="fade-up" >It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% end_dnd_area %}
+
+  {% dnd_area 'mid_area' class='pricing-mid-sec main-dnd-area', label='Middle section' %}
+
+  <!-- Pricing -->
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/pricing",
+        offset=0,
+        width=12,
+        heading_tag="h2",
+        pricing_table_items=[ {
+          "additional_button_active_text" : "Less More",
+          "additional_button_text" : "Show More",
+          "additional_features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          } ],
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Buy now",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content_ad" : "<p>It is a long established fact that a reader will be distracted by the readable content.</p>",
+          "features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "Social media integration"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "30 days trial Features"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "10 hours of support"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "Unlimited Features"
+          } ],
+          "icon" : {
+            "color_field" : {
+              "color" : "#000",
+              "opacity" : 100
+            },
+            "icon_field" : { },
+            "image_field" : {
+              "alt" : "Startup",
+              "height" : 40,
+              "loading" : "lazy",
+              "max_height" : 40,
+              "max_width" : 40,
+              "size_type" : "auto",
+              "src" :get_asset_url('../images/icon-images/startup.svg'),
+              "width" : 40
+            },
+            "select_icon_color_theme" : "bg_primary_svg",
+            "select_icon_type" : "image"
+          },
+          "include_addition_features" : false,
+          "monthly" : {
+            "monthly_plan_price" : 10.25,
+            "prefix_text" : "$",
+            "suffix_text" : "/month"
+          },
+          "popular_label" : "Popular",
+          "show_popular_ribbon" : false,
+          "subtitle" : "For Startups",
+          "title" : "Basic",
+          "title_tag" : "h3",
+          "yearly" : {
+            "prefix_text" : "$",
+            "suffix_text" : "/yearly",
+            "yearly_plan_price" : 100.25
+          }
+        }, {
+          "additional_button_active_text" : "Less More",
+          "additional_button_text" : "Show More",
+          "additional_features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          } ],
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Buy now",
+            "select_button_theme" : "hs-sec-btn",
+            "select_button_type" : "std"
+          } ],
+          "content_ad" : "<p>It is a long established fact that a reader will be distracted by the readable content.</p>",
+          "features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "Social media integration"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "30 days trial Features"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "10 hours of support"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "Unlimited Features"
+          } ],
+          "icon" : {
+            "color_field" : {
+              "color" : "#000",
+              "opacity" : 100
+            },
+            "icon_field" : { },
+            "image_field" : {
+              "alt" : "Pro",
+              "height" : 40,
+              "loading" : "lazy",
+              "max_height" : 40,
+              "max_width" : 40,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/icon-images/link.svg'),
+              "width" : 40
+            },
+            "select_icon_color_theme" : "bg_primary_svg",
+            "select_icon_type" : "image"
+          },
+          "include_addition_features" : true,
+          "monthly" : {
+            "monthly_plan_price" : 24.25,
+            "prefix_text" : "$",
+            "suffix_text" : "/month"
+          },
+          "popular_label" : "Most Popular",
+          "show_popular_ribbon" : true,
+          "subtitle" : "Growing Team",
+          "title" : "Pro",
+          "title_tag" : "h3",
+          "yearly" : {
+            "prefix_text" : "$",
+            "suffix_text" : "/yearly",
+            "yearly_plan_price" : 240.5
+          }
+        }, {
+          "additional_button_active_text" : "Show Less",
+          "additional_button_text" : "Show More",
+          "additional_features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          } ],
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Buy now",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content_ad" : "<p>It is a long established fact that a reader will be distracted by the readable content.</p>",
+          "features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "Social media integration"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "30 days trial Features"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "10 hours of support"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "Unlimited Features"
+          } ],
+          "icon" : {
+            "color_field" : {
+              "color" : "#000",
+              "opacity" : 100
+            },
+            "icon_field" : { },
+            "image_field" : {
+              "alt" : "Enterprise",
+              "height" : 40,
+              "loading" : "lazy",
+              "max_height" : 40,
+              "max_width" : 40,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/icon-images/profit.svg'),
+              "width" : 40
+            },
+            "select_icon_color_theme" : "bg_primary_svg",
+            "select_icon_type" : "image"
+          },
+          "include_addition_features" : true,
+          "monthly" : {
+            "monthly_plan_price" : 64.25,
+            "prefix_text" : "$",
+            "suffix_text" : "/month"
+          },
+          "popular_label" : "Popular",
+          "show_popular_ribbon" : false,
+          "subtitle" : "Large Teams",
+          "title" : "Enterprise",
+          "title_tag" : "h3",
+          "yearly" : {
+            "prefix_text" : "$",
+            "suffix_text" : "/yearly",
+            "yearly_plan_price" : 650
+          }
+        } ]
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% end_dnd_area %}
+
+  {% dnd_area 'btm_area' class='pricing-btm-sec bottom-dnd-area', label='Bottom section' %}
+
+  {% include_dnd_partial path="../sections/accordion-section.html" %}
+
+  {% include_dnd_partial path="../sections/bottom-pane-section.html" %}
+
+  {% end_dnd_area %}
+
+</main>
+{% endblock body %}

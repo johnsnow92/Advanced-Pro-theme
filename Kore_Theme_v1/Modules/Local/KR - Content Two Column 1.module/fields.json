@@ -1,0 +1,988 @@
+[ {
+  "id" : "cd811e2a-62dc-3ecf-034b-ab38a07012c1",
+  "name" : "column",
+  "label" : "Column",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "ad21be49-b050-ff8a-a186-f99cdabbf263",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "right-image", "Right Image/Video" ], [ "left-image", "Left Image/Video" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "right-image"
+  }, {
+    "id" : "144a1e19-ba5c-5e66-4697-48e6044e2aad",
+    "name" : "tag_line",
+    "label" : "Tag Line",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "MORE INFO"
+  }, {
+    "id" : "8ece5ec5-6a4e-9828-c12d-3c9602991036",
+    "name" : "heading",
+    "label" : "Heading",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "6febd6af-6776-8c86-deb0-e49e19ef6fde",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Add a Value Proposition or The Benefits of Your Offer"
+    }, {
+      "id" : "ee2b041a-17fb-92af-cb01-9412bc3ca77f",
+      "name" : "type",
+      "label" : "Type",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "6febd6af-6776-8c86-deb0-e49e19ef6fde",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : null,
+        "property" : null,
+        "operator" : "NOT_EMPTY",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "h2"
+    }, {
+      "id" : "415a1397-cc8d-7a4d-fea0-6ef2b7c66222",
+      "name" : "font_size",
+      "label" : "Font Size",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "6febd6af-6776-8c86-deb0-e49e19ef6fde",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : null,
+        "property" : null,
+        "operator" : "NOT_EMPTY",
+        "access" : null
+      },
+      "display" : "text",
+      "max" : 100,
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 32
+    }, {
+      "id" : "8f2e26be-db8f-17c7-99e7-2d5ccbc0d740",
+      "name" : "font_weight",
+      "label" : "Font Weight",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "6febd6af-6776-8c86-deb0-e49e19ef6fde",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : null,
+        "property" : null,
+        "operator" : "NOT_EMPTY",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "font-weight-100", "Thin" ], [ "font-weight-300", "Light" ], [ "font-weight-400", "Regular" ], [ "font-weight-500", "Medium" ], [ "font-weight-600", "Semi Bold" ], [ "font-weight-700", "Bold" ], [ "font-weight-800", "Extra Bold" ], [ "font-weight-900", "Black" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "font-weight-700"
+    }, {
+      "id" : "d05509d1-3ae8-792a-d273-8e395ec4bcb1",
+      "name" : "font_color",
+      "label" : "Font Color",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "6febd6af-6776-8c86-deb0-e49e19ef6fde",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : null,
+        "property" : null,
+        "operator" : "NOT_EMPTY",
+        "access" : null
+      },
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "text" : "Add a Value Proposition or The Benefits of Your Offer",
+      "type" : "h2",
+      "font_size" : 32,
+      "font_weight" : "font-weight-700",
+      "font_color" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    }
+  }, {
+    "id" : "8a70c533-fba2-ef5f-7912-1ab422c300a2",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><strong>Use this area to go into detail about your offer. Get to the point fast and keep it impactful!<br></strong><span><br></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Conros elementum tristiqectetur adipiscing elit.</p>\n<ul>\n<li><strong>List the benefits of your offer.</strong></li>\n<li><strong>Or list the PAINS your offer solves for the visitor.</strong></li>\n<li><strong>Keep it impactful</strong></li>\n</ul>"
+  }, {
+    "id" : "cd437c2c-8942-7c99-e8d2-31aa37ecd0ee",
+    "name" : "column_inner",
+    "label" : "Column Inner",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "eb8a755a-826b-675e-85d1-168c0ff8e23d",
+    "name" : "column_inner_item",
+    "label" : "Column Inner Item",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 4
+    },
+    "visibility" : {
+      "controlling_field" : "cd437c2c-8942-7c99-e8d2-31aa37ecd0ee",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "13f25305-a2ed-9059-cc51-b8e2b6114233",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Heading"
+    }, {
+      "id" : "729787ed-a7f3-24b2-0aac-ba5519a10d59",
+      "name" : "type",
+      "label" : "Type",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "13f25305-a2ed-9059-cc51-b8e2b6114233",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : null,
+        "property" : null,
+        "operator" : "NOT_EMPTY",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "h3"
+    }, {
+      "id" : "a81e3f14-b65f-9164-4e70-08a4e346bd45",
+      "name" : "font_weight",
+      "label" : "Font Weight",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "13f25305-a2ed-9059-cc51-b8e2b6114233",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : null,
+        "property" : null,
+        "operator" : "NOT_EMPTY",
+        "access" : null
+      },
+      "display" : "select",
+      "choices" : [ [ "font-weight-100", "Thin" ], [ "font-weight-300", "Light" ], [ "font-weight-400", "Regular" ], [ "font-weight-500", "Medium" ], [ "font-weight-600", "Semi Bold" ], [ "font-weight-700", "Bold" ], [ "font-weight-800", "Extra Bold" ], [ "font-weight-900", "Black" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "font-weight-400"
+    }, {
+      "id" : "dd80a705-8432-8432-294c-fede5095a278",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "display_width" : null,
+      "default" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "title" : "Heading",
+      "type" : "h3",
+      "font_weight" : "font-weight-400",
+      "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+    }, {
+      "title" : "Heading",
+      "type" : "h3",
+      "font_weight" : "font-weight-400",
+      "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+    }, {
+      "title" : "Heading",
+      "type" : "h3",
+      "font_weight" : "font-weight-400",
+      "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+    }, {
+      "title" : "Heading",
+      "type" : "h3",
+      "font_weight" : "font-weight-400",
+      "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+    } ]
+  }, {
+    "id" : "8c1054bc-9ca9-e296-baf2-a94ad7fa9933",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "02e27397-33db-ee69-57a2-f69a56167e0d",
+      "name" : "type",
+      "label" : "Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "simple", "Simple" ], [ "cta", "CTA" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "simple"
+    }, {
+      "id" : "3b0347b0-ed10-beab-08ec-6f02b3480a1d",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "02e27397-33db-ee69-57a2-f69a56167e0d",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "simple",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "BUTTON TEXT"
+    }, {
+      "id" : "4f782ead-60e3-7d46-d738-24e146501e9b",
+      "name" : "url",
+      "label" : "URL",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "02e27397-33db-ee69-57a2-f69a56167e0d",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "simple",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "type" : "url",
+      "display_width" : null,
+      "default" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    }, {
+      "id" : "f9947ef6-6ed7-a725-d1be-e37c3fbe489e",
+      "name" : "cta",
+      "label" : "CTA",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "02e27397-33db-ee69-57a2-f69a56167e0d",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "cta",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "type" : "cta",
+      "display_width" : null,
+      "default" : "c48b6ac5-5f8a-41c6-9d02-bd62fda93d19"
+    }, {
+      "id" : "0a946d8c-280b-658c-4bfe-055b7c4d187f",
+      "name" : "cta_background_color",
+      "label" : "CTA Background Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    }, {
+      "id" : "7568ea23-728a-be15-2f1f-9c9683893129",
+      "name" : "cta_background_color_hover",
+      "label" : "CTA Background Color Hover",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "type" : "simple",
+      "text" : "BUTTON TEXT",
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "cta" : "c48b6ac5-5f8a-41c6-9d02-bd62fda93d19",
+      "cta_background_color" : {
+        "color" : null,
+        "opacity" : 100
+      },
+      "cta_background_color_hover" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    }
+  }, {
+    "id" : "3280f164-868a-60ca-a5f0-09a6c95d6b67",
+    "name" : "element",
+    "label" : "Element",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "image", "Image" ], [ "video", "Video" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "image"
+  }, {
+    "id" : "929e5203-0ecf-5f9f-9ba9-215d9b96d51c",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "3280f164-868a-60ca-a5f0-09a6c95d6b67",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "d9b116be-0c9d-abcc-e469-27d4a3d1bb80",
+      "name" : "type",
+      "label" : "Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "background", "Background" ], [ "image", "Image" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "background"
+    }, {
+      "id" : "a383a3cf-cb2b-9ea5-9e2c-ad47cac3072b",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "display_width" : null,
+      "default" : {
+        "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/pexels-photo-326505.jpeg",
+        "alt" : "pexels-photo-326505",
+        "size_type" : "auto",
+        "width" : 1920,
+        "height" : 1063,
+        "max_width" : 1920,
+        "max_height" : 1063
+      }
+    }, {
+      "id" : "2216c0b7-2cb3-7e90-502f-e2e4f16f3fd4",
+      "name" : "is_rounded_circle",
+      "label" : "Is Rounded Circle",
+      "required" : false,
+      "locked" : false,
+      "visibility" : {
+        "controlling_field" : "d9b116be-0c9d-abcc-e469-27d4a3d1bb80",
+        "controlling_field_path" : null,
+        "controlling_value_regex" : "background",
+        "property" : null,
+        "operator" : "EQUAL",
+        "access" : null
+      },
+      "display" : "checkbox",
+      "type" : "boolean",
+      "display_width" : null,
+      "default" : false
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "type" : "background",
+      "image" : {
+        "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/pexels-photo-326505.jpeg",
+        "alt" : "pexels-photo-326505",
+        "size_type" : "auto",
+        "width" : 1920,
+        "height" : 1063,
+        "max_width" : 1920,
+        "max_height" : 1063
+      },
+      "is_rounded_circle" : false
+    }
+  }, {
+    "id" : "5356d1cb-244d-96b8-8e3c-a48a755fda32",
+    "name" : "video",
+    "label" : "Video",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "3280f164-868a-60ca-a5f0-09a6c95d6b67",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "video",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<div class=\"hs-responsive-embed-wrapper hs-responsive-embed\" style=\"width: 100%; height: auto; position: relative; overflow: hidden; padding: 0; max-width: 560px; max-height: 315px; min-width: 256px; margin: 0px auto; display: block;\">\n<div class=\"hs-responsive-embed-inner-wrapper\" style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0;\"><iframe class=\"hs-responsive-embed-iframe\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\" xml=\"lang\" src=\"//www.youtube.com/embed/-nWbTB_4E9w\" width=\"560\" height=\"315\" data-service=\"youtube\" allowfullscreen=\"1\"></iframe></div>\n</div>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "type" : "right-image",
+    "tag_line" : "MORE INFO",
+    "heading" : {
+      "text" : "Add a Value Proposition or The Benefits of Your Offer",
+      "type" : "h2",
+      "font_size" : 32,
+      "font_weight" : "font-weight-700",
+      "font_color" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    },
+    "description" : "<p><strong>Use this area to go into detail about your offer. Get to the point fast and keep it impactful!<br></strong><span><br></span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Conros elementum tristiqectetur adipiscing elit.</p>\n<ul>\n<li><strong>List the benefits of your offer.</strong></li>\n<li><strong>Or list the PAINS your offer solves for the visitor.</strong></li>\n<li><strong>Keep it impactful</strong></li>\n</ul>",
+    "column_inner" : false,
+    "column_inner_item" : [ {
+      "title" : "Heading",
+      "type" : "h3",
+      "font_weight" : "font-weight-400",
+      "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+    }, {
+      "title" : "Heading",
+      "type" : "h3",
+      "font_weight" : "font-weight-400",
+      "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+    }, {
+      "title" : "Heading",
+      "type" : "h3",
+      "font_weight" : "font-weight-400",
+      "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+    }, {
+      "title" : "Heading",
+      "type" : "h3",
+      "font_weight" : "font-weight-400",
+      "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.</span></p>"
+    } ],
+    "button" : {
+      "type" : "simple",
+      "text" : "BUTTON TEXT",
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "cta" : "c48b6ac5-5f8a-41c6-9d02-bd62fda93d19",
+      "cta_background_color" : {
+        "color" : null,
+        "opacity" : 100
+      },
+      "cta_background_color_hover" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    },
+    "element" : "image",
+    "image" : {
+      "type" : "background",
+      "image" : {
+        "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/pexels-photo-326505.jpeg",
+        "alt" : "pexels-photo-326505",
+        "size_type" : "auto",
+        "width" : 1920,
+        "height" : 1063,
+        "max_width" : 1920,
+        "max_height" : 1063
+      }
+    },
+    "video" : "<div class=\"hs-responsive-embed-wrapper hs-responsive-embed\" style=\"width: 100%; height: auto; position: relative; overflow: hidden; padding: 0; max-width: 560px; max-height: 315px; min-width: 256px; margin: 0px auto; display: block;\">\n<div class=\"hs-responsive-embed-inner-wrapper\" style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.25%; margin: 0;\"><iframe class=\"hs-responsive-embed-iframe\" style=\"position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;\" xml=\"lang\" src=\"//www.youtube.com/embed/-nWbTB_4E9w\" width=\"560\" height=\"315\" data-service=\"youtube\" allowfullscreen=\"1\"></iframe></div>\n</div>"
+  } ]
+}, {
+  "id" : "a60a630d-6e37-a9de-4af8-64ff57c96863",
+  "name" : "content_color",
+  "label" : "Content Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "d08df02b-38fb-fc3b-20ca-69f03ee7bce9",
+  "name" : "content_link_color",
+  "label" : "Content Link Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "94787cb1-1d38-3343-f519-e8a0c59dc0d6",
+  "name" : "content_link_color_hover",
+  "label" : "Content Link Color Hover",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "ee1e14b7-878b-5cab-7011-101a46363ab4",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "93448879-955b-2e09-f8e3-8f7a91698487",
+    "name" : "section_text_alignment",
+    "label" : "Section Text Alignment",
+    "help_text" : "The horizontal alignment of the text.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-left", "Left" ], [ "text-center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-left"
+  }, {
+    "id" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+    "name" : "section_background_type",
+    "label" : "Section Background Type",
+    "help_text" : "Choose the kind of background that displays on the section.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "1", "Image" ], [ "2", "Color" ], [ "3", "Default Color" ], [ "4", "Default Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "2"
+  }, {
+    "id" : "68d4dfad-7a62-af61-6246-8df16b3b34dc",
+    "name" : "section_background_image",
+    "label" : "Section Background Image",
+    "help_text" : "Specify an image to use as the background of the section.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    }
+  }, {
+    "id" : "a0ffcf0e-2357-9fd9-13ce-6170160f44c6",
+    "name" : "section_background_image_overlay",
+    "label" : "Section Background Image Overlay",
+    "help_text" : "Add a layer of color on top of the background image. You can also specify the opacity (e.g. 85%)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#272727",
+      "opacity" : 85
+    }
+  }, {
+    "id" : "182f6412-ec15-59c2-5efa-57608ac42370",
+    "name" : "section_background_color",
+    "label" : "Section Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "f027df04-aa00-57fb-ea75-e3d542256802",
+    "name" : "section_padding",
+    "label" : "Section Padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "custom", "Custom" ], [ "py-0", "Padding Top & Bottom - 0" ], [ "py-5", "Padding Top & Bottom - 5px" ], [ "py-10", "Padding Top & Bottom - 10px" ], [ "py-15", "Padding Top & Bottom - 15px" ], [ "py-20", "Padding Top & Bottom - 20px" ], [ "py-25", "Padding Top & Bottom - 25px" ], [ "py-30", "Padding Top & Bottom - 30px" ], [ "py-35", "Padding Top & Bottom - 35px" ], [ "py-40", "Padding Top & Bottom - 40px" ], [ "py-45", "Padding Top & Bottom - 45px" ], [ "py-50", "Padding Top & Bottom - 50px" ], [ "py-55", "Padding Top & Bottom - 55px" ], [ "py-60", "Padding Top & Bottom - 60px" ], [ "py-65", "Padding Top & Bottom - 65px" ], [ "py-70", "Padding Top & Bottom - 70px" ], [ "py-75", "Padding Top & Bottom - 75px" ], [ "py-80", "Padding Top & Bottom - 80px" ], [ "py-85", "Padding Top & Bottom - 85px" ], [ "py-90", "Padding Top & Bottom - 90px" ], [ "py-95", "Padding Top & Bottom - 95px" ], [ "py-100", "Padding Top & Bottom - 100px" ], [ "py-120", "Padding Top & Bottom - 120px" ], [ "py-150", "Padding Top & Bottom - 150px" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "custom"
+  }, {
+    "id" : "e554bde3-d218-ed89-edef-0570e08827ab",
+    "name" : "section_padding_desktop",
+    "label" : "Section Padding Desktop",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "f027df04-aa00-57fb-ea75-e3d542256802",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "bc904e2c-b96c-a5c5-55fd-30941378008e",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 30
+    }, {
+      "id" : "b82314f1-3e08-86de-547e-b99d421c3b84",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 30
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 30,
+      "bottom" : 30
+    }
+  }, {
+    "id" : "b6922ec7-eaf9-6e56-7977-7a5b1469ab19",
+    "name" : "section_padding_tablet",
+    "label" : "Section Padding Tablet",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "f027df04-aa00-57fb-ea75-e3d542256802",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "227688bf-9703-aec1-0c18-a4237164fa6f",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 30
+    }, {
+      "id" : "2fe010ba-2be9-b381-f93d-0a36a51ae168",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 30
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 30,
+      "bottom" : 30
+    }
+  }, {
+    "id" : "0abdcf16-b08f-7c67-3f40-8e684d59b70a",
+    "name" : "section_padding_mobile",
+    "label" : "Section Padding Mobile",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "f027df04-aa00-57fb-ea75-e3d542256802",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "db60ef9c-19eb-f55f-4f12-10141740f586",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 30
+    }, {
+      "id" : "402c0835-f997-b1a4-e5c1-35a14c531c53",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 30
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 30,
+      "bottom" : 30
+    }
+  }, {
+    "id" : "96c75b2e-592c-4982-2f7c-5413f63c5def",
+    "name" : "section_id",
+    "label" : "Section ID",
+    "help_text" : "Enter a unique ID. This will be used to jump directly on this section.\n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "ee8ee9b8-cbf2-3314-a4e6-47e7f94c845f",
+    "name" : "section_class",
+    "label" : "Section Class",
+    "help_text" : "Add a few extra CSS class on this section so you can customize even further. \n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "8e03c6e1-ee46-8348-4e15-b93e986067a8",
+    "name" : "section_use_existing_portal_style",
+    "label" : "Section Use Existing Portal Style",
+    "help_text" : "Enable this option to use existing portal styling.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "4de3cddd-abe4-711a-e427-637386591162",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "help_text" : "Disable this option to hide this section on the page.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "215cac8f-576a-6b7d-23fc-dc7b2bde7a9e",
+    "name" : "filler",
+    "label" : "Filler",
+    "required" : false,
+    "locked" : false,
+    "children" : [ ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_text_alignment" : "text-left",
+    "section_background_type" : "2",
+    "section_background_image" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    },
+    "section_background_image_overlay" : {
+      "color" : "#272727",
+      "opacity" : 85
+    },
+    "section_background_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "section_padding" : "custom",
+    "section_padding_desktop" : {
+      "top" : 30,
+      "bottom" : 30
+    },
+    "section_padding_tablet" : {
+      "top" : 30,
+      "bottom" : 30
+    },
+    "section_padding_mobile" : {
+      "top" : 30,
+      "bottom" : 30
+    },
+    "section_id" : "",
+    "section_class" : "",
+    "section_use_existing_portal_style" : false,
+    "section_show_hide" : true,
+    "filler" : { }
+  }
+} ]

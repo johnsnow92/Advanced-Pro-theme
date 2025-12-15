@@ -1,0 +1,81 @@
+[ {
+  "id" : "2d044a46-e030-567f-22ed-d855484941ee",
+  "name" : "h4_text",
+  "label" : "h4 text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Key Highlights"
+}, {
+  "id" : "4048918f-155c-1851-33f1-2b235834a43f",
+  "name" : "heading_2",
+  "label" : "Heading 2",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Why Choose Us?"
+}, {
+  "id" : "29c9546a-2a85-0394-8c83-155b6c2d1c42",
+  "name" : "card_group",
+  "label" : "Card group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 3,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "1c91d899-2c5b-83e4-9a5a-4c146f5b4d3c",
+    "name" : "card_heading",
+    "label" : "Card Heading",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : " Data-Driven Decisions"
+  }, {
+    "id" : "352e83ff-dbb3-855c-55e3-3b4d784a6b5a",
+    "name" : "read_more_button",
+    "label" : "Read More Button",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Read More"
+  }, {
+    "id" : "cb05bcbe-4431-6d91-7ba6-5d20cdb8e093",
+    "name" : "card_para",
+    "label" : "Card Para",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Our cutting-edge platform uses predictive analytics and AI to provide real-time insights, helping your team focus on the most promising leads and take the guesswork out of sales.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "card_heading" : " Data-Driven Decisions",
+    "read_more_button" : "Read More",
+    "card_para" : "<p>Our cutting-edge platform uses predictive analytics and AI to provide real-time insights, helping your team focus on the most promising leads and take the guesswork out of sales.</p>"
+  }, {
+    "card_heading" : " Data-Driven Decisions",
+    "read_more_button" : "Read More",
+    "card_para" : "<p>Our cutting-edge platform uses predictive analytics and AI to provide real-time insights, helping your team focus on the most promising leads and take the guesswork out of sales.</p>"
+  }, {
+    "card_heading" : " Data-Driven Decisions",
+    "read_more_button" : "Read More",
+    "card_para" : "<p>Our cutting-edge platform uses predictive analytics and AI to provide real-time insights, helping your team focus on the most promising leads and take the guesswork out of sales.</p>"
+  } ]
+} ]

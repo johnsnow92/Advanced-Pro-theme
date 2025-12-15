@@ -1,0 +1,22 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 129533505447,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/plugins/parallax.js",
+    "name" : "parallax.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../js/plugins/purecounter_vanilla.js",
+    "name" : "purecounter_vanilla.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../js/plugins/isotop.js",
+    "name" : "isotop.js"
+  } ],
+  "label" : "Two Column Content",
+  "icon" : "fontawesome-5.14.0:Columns:SOLID",
+  "is_available_for_new_content" : true
+}

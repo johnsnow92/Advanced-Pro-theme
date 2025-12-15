@@ -1,0 +1,50 @@
+<section class="our-team">
+  <div class="container">
+    <h2>
+      {{ module.meet_our_team_heading }}
+    </h2>
+
+
+    <div class="team-member-row">
+      {% for item in module.team_member_card_groups %}
+      <div class="team-member">
+
+        <div class="team-member-img">
+          {% if item.team_member_image.src %}
+          {% set sizeAttrs = 'width="{{ item.team_member_image.width|escape_attr }}" height="{{ item.team_member_image.height|escape_attr }}"' %}
+          {% if item.team_member_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.team_member_image.width|escape_attr }}" height="{{ item.team_member_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.team_member_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.team_member_image.max_width|escape_attr }}" height="{{ item.team_member_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = item.team_member_image.loading != 'disabled' ? 'loading="{{ item.team_member_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.team_member_image.src|escape_url }}" alt="{{ item.team_member_image.alt|escape_attr }}">
+          {% endif %}
+        </div>
+
+        <div class="team-member-details">
+          <div class="team-member-name">
+            {{ item.team_meamber_name }}
+          </div>
+          <div class="line"></div>
+          <div class="team-member-designation">
+            {{ item.team_member_designation }}
+          </div>
+
+          <div class="link">
+            <a>{{ item.team_member_link }}</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+

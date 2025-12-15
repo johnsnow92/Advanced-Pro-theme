@@ -1,0 +1,246 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 27,
+  "attachedStylesheets" : [ ],
+  "attachedJs" : [ ],
+  "customHead" : "<style>\n   \n  /* Search Header Wrap */ \n  .container-fluid .row-fluid .search-header-wrap {\n    background: #f6f6f6;\n    text-align: center;\n    padding: 50px 0;\n  } \n  \n  .container-fluid .row-fluid .search-header-wrap .page-width {\n    float: none;\n    max-width: 690px;\n    margin: 0 auto;\n    padding: 0 20px;\n  }\n   \n  .container-fluid .row-fluid .search-header-wrap .header {\n    margin-bottom: 20px;\n    background: none;\n    padding: 0;\n    position: static;\n  }\n\n  .container-fluid .row-fluid .search-header-wrap .header, \n  .container-fluid .row-fluid .search-header-wrap .header * {\n    font-size: 38px;\n    line-height: 1.2;\n    font-weight: 700;\n  }\n\n  .hs-search-field {\n    position: relative;\n  }\n\n  .container-fluid .row-fluid .search-header-wrap .hs-search-field__input {\n    -webkit-appearance: none;\n    max-width: 420px;\n    margin-right: auto;\n    margin-left: auto;\n    padding-right: 20px;\n    padding-left: 20px;\n    border-radius: 50px;\n    font-size: 18px;\n    border: 0;\n    padding: 10px 18px;\n    vertical-align: middle;\n    background-color: #fff;\n    border: 1px solid #ccc;\n    line-height: 1.5;\n  }\n\n  .container-fluid .row-fluid .search-header-wrap .hs-search-field__input:focus {\n    outline: 0;\n  }\n  \n  .hs-search-field__suggestions {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n  }\n  \n  .hs-search-results__pagination a:empty {\n    display: none;\n  }\n  \n  .hs-search-results__description {\n    font-size: 16px;\n    line-height: 1.4em;\n    color: #414141;\n  }\n  \n  .hs-search__no-results * {\n    font-size: 16px;\n    line-height: 1.5;\n  }\n  \n  .search-header-wrap h1{\n    color: #002D56;\n    padding-bottom: 5px;\n    margin: 0;\n  }\n  \n  @media (max-width: 767px) {\n    \n    .container-fluid .row-fluid .search-header-wrap .header, \n    .container-fluid .row-fluid .search-header-wrap .header * {\n      font-size: 25px;\n    }\n    \n  }\n  \n  /* Search Result Wrap */\n  .container-fluid .row-fluid .search-result-wrap {\n    padding: 50px 0;\n    background: #fff;\n    min-height: 100vh;\n  }\n  \n  .container-fluid .row-fluid .search-result-wrap .page-width {\n    float: none;\n    max-width: 850px;\n    margin: 0 auto;\n    padding: 0 20px;\n  }\n  \n  .hs-search-results__listing {\n    margin: 0;\n    padding: 0;\n    list-style: none;\n  }\n  \n  .hs-search-results__listing li {\n    margin: 0;\n    padding: 0;\n  }\n  \n  .container-fluid .row-fluid .search-result-wrap .hs-search-results__listing li {\n    padding: 25px 20px;\n    border-bottom: 1px solid rgba(0,0,0,0.1);\n    -webkit-transition: all 200ms ease;\n    transition: all 200ms ease;\n  }\n  \n  .container-fluid .row-fluid .search-result-wrap .hs-search-results__listing li:hover {\n    padding-left: 24px;\n    color: #87946B;\n  }\n  \n  .container-fluid .row-fluid .search-result-wrap .hs-search-results__listing li:hover a {\n    color: #87946B;\n  }\n  \n  .container-fluid .row-fluid .search-result-wrap .hs-search-results__listing li a {\n    color: #212529;\n    text-decoration: none;\n  }\n  \n  .container-fluid .row-fluid .search-result-wrap .hs-search-results__listing li .hs-search-results__title {\n    font-size: 32px;\n    line-height: 1.2;\n/*     margin-bottom: 10px; */\n    display: inline-block;  \n    color: #002D56;\n  }\n   \n  \n  .container-fluid .row-fluid .search-header-wrap .hs-search-field--open .hs-search-field__suggestions {\n    max-width: 300px;\n    margin: 0 auto;\n    border: 0;\n  } \n  \n  .hs-search-field__suggestions a, .hs-search-field__suggestions #results-for {\n    display: block;\n  }\n  \n  .container-fluid .row-fluid .search-header-wrap .hs-search-field--open .hs-search-field__suggestions a {\n    text-decoration: none;\n    color: #94d11a;\n  }\n  \n  .hs-search-results__next-page {\n    float: right;\n  }\n  \n  .hs-search-results__pagination{\n    padding-top: 30px;\n  }\n  .hs-search-results__pagination a{\n    color: #fff;\n    text-decoration: none;\n    background-color: #002D56;\n    padding: 14px 15px;\n    border-radius: 4px;\n    -webkit-transition: all 200ms ease;\n    -o-transition: all 200ms ease;\n    transition: all 200ms ease;\n  }\n  .hs-search-results__pagination a:hover{\n    -webkit-transform: translate(0px, -2px);\n    -ms-transform: translate(0px, -2px);\n    transform: translate(0px, -2px);\n  }\n  \n  \n  @media (max-width: 767px) {\n    \n    .container-fluid .row-fluid .search-result-wrap .hs-search-results__listing li .hs-search-results__title {\n      font-size: 23px;\n    } \n    .hs-search-results__pagination a{\n      padding: 12px 12px;\n      font-size: 15px;\n    }\n    .container-fluid .row-fluid .search-result-wrap{\n      padding: 20px 0 50px;\n    }\n    .container-fluid .row-fluid .search-header-wrap .hs-search-field__input{\n      font-size: 16px;\n    }\n    \n  }\n    \n</style> \n",
+  "customFooter" : "",
+  "bodyClass" : "",
+  "bodyCss" : " ",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_15737177790773140",
+        "label" : "Search Header Wrap",
+        "type" : "cell",
+        "params" : {
+          "css_class" : "search-header-wrap",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ {
+          "0" : {
+            "x" : 0,
+            "w" : 12,
+            "name" : "module_15737177304263125",
+            "label" : "Page Width",
+            "type" : "cell",
+            "params" : {
+              "css_class" : "page-width",
+              "per_widget_wrapper_html" : "",
+              "css_style" : "",
+              "wrapping_html" : "",
+              "css_id" : "",
+              "css_id_str" : "",
+              "overrideable" : false
+            },
+            "rows" : [ {
+              "0" : {
+                "x" : 0,
+                "w" : 12,
+                "name" : "module_15737181502423456",
+                "label" : "Header",
+                "type" : "custom_widget",
+                "params" : {
+                  "css_class" : "header",
+                  "schema_version" : 2,
+                  "path" : "@hubspot/header",
+                  "per_widget_wrapper_html" : "",
+                  "css_style" : "",
+                  "wrapping_html" : "",
+                  "css_id" : "",
+                  "value" : "Search Our Blog",
+                  "widget_name" : "Header",
+                  "css_id_str" : "",
+                  "overrideable" : true
+                },
+                "rows" : [ ],
+                "rowMetaData" : [ ],
+                "cells" : [ ],
+                "cssId" : "",
+                "cssClass" : "header",
+                "cssStyle" : "",
+                "styles" : null,
+                "widgets" : [ ]
+              }
+            }, {
+              "0" : {
+                "x" : 0,
+                "w" : 12,
+                "name" : "module_1520438259515148",
+                "label" : "Site Search Input",
+                "type" : "custom_widget",
+                "params" : {
+                  "css_class" : "",
+                  "schema_version" : 2,
+                  "path" : "@hubspot/search_input",
+                  "per_widget_wrapper_html" : "",
+                  "css_style" : "",
+                  "wrapping_html" : "",
+                  "css_id" : "",
+                  "widget_name" : "Search Field",
+                  "css_id_str" : "",
+                  "overrideable" : true
+                },
+                "rows" : [ ],
+                "rowMetaData" : [ ],
+                "cells" : [ ],
+                "cssId" : "",
+                "cssClass" : "",
+                "cssStyle" : "",
+                "styles" : null,
+                "widgets" : [ ]
+              }
+            } ],
+            "rowMetaData" : [ ],
+            "cells" : [ ],
+            "cssId" : "",
+            "cssClass" : "page-width",
+            "cssStyle" : "",
+            "styles" : null,
+            "widgets" : [ ]
+          }
+        } ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "search-header-wrap",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_15737189574123490",
+        "label" : "Search Result Wrap",
+        "type" : "cell",
+        "params" : {
+          "css_class" : "search-result-wrap",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ {
+          "0" : {
+            "x" : 0,
+            "w" : 12,
+            "name" : "module_15737189711113505",
+            "label" : "Page Width",
+            "type" : "cell",
+            "params" : {
+              "css_class" : "page-width",
+              "per_widget_wrapper_html" : "",
+              "css_style" : "",
+              "wrapping_html" : "",
+              "css_id" : "",
+              "css_id_str" : "",
+              "overrideable" : false
+            },
+            "rows" : [ {
+              "0" : {
+                "x" : 0,
+                "w" : 12,
+                "name" : "module_1520438261786150",
+                "label" : "Site Search Results",
+                "type" : "custom_widget",
+                "params" : {
+                  "css_class" : "",
+                  "schema_version" : 2,
+                  "path" : "@hubspot/search_results",
+                  "per_widget_wrapper_html" : "",
+                  "css_style" : "",
+                  "wrapping_html" : "",
+                  "css_id" : "",
+                  "widget_name" : "Search Results",
+                  "css_id_str" : "",
+                  "overrideable" : true
+                },
+                "rows" : [ ],
+                "rowMetaData" : [ ],
+                "cells" : [ ],
+                "cssId" : "",
+                "cssClass" : "",
+                "cssStyle" : "",
+                "styles" : null,
+                "widgets" : [ ]
+              }
+            } ],
+            "rowMetaData" : [ ],
+            "cells" : [ ],
+            "cssId" : "",
+            "cssClass" : "page-width",
+            "cssStyle" : "",
+            "styles" : null,
+            "widgets" : [ ]
+          }
+        } ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "search-result-wrap",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

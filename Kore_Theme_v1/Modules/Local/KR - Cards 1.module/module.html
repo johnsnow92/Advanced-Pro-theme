@@ -1,0 +1,245 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .tagline {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .sub-heading,
+  .{{ name }} .sub-heading * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .sub-heading a {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .sub-heading a:hover {
+    color: {{ module.content_link_color_hover.color }} !important;
+  }
+
+  {% for item in module.cards %}
+  .{{ name }} .card .card-text-{{ loop.index }} a {
+    color: {{ item.text_link_color.color }};
+  }
+
+  .{{ name }} .card .card-text-{{ loop.index }} a:hover {
+    color: {{ item.text_link_color_hover.color }} !important;
+  }
+  
+  .{{ name }} .simple.simple-{{ loop.index }} a {
+    background-color: {{ item.button.button_background_color.color }} !important;
+    {% if item.button.button_background_color.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ item.button.button_text_color.color }} !important;
+  }
+
+  .{{ name }} .simple.simple-{{ loop.index }} a:hover {
+    background-color: {{ item.button.button_background_color_hover.color }} !important;
+    {% if item.button.button_background_color_hover.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ item.button.button_text_color_hover.color }} !important;
+  }
+  
+  {% endfor %}
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-lp-cards-1 clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+    
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+      
+      {% if module.tag_line %}
+      <div class="tagline font-size-14 {% if module.heading.text %}mb-20{% else %}mb-20{% endif %}">
+        {{ module.tag_line }}
+      </div>
+      {% endif %}
+      
+      {% if module.heading.text %}
+      {% if module.heading.type == "h1" %} 
+      <div class="heading {% if module.sub_heading %}mb-20{% else %}mb-40{% endif %}">
+        <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+          {{ module.heading.text }}
+        </h1>
+      </div>
+      {% elif module.heading.type == "h2" %}
+      <div class="heading {% if module.sub_heading %}mb-20{% else %}mb-40{% endif %}">
+        <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+          {{ module.heading.text }}
+        </h2>
+      </div>
+      {% elif module.heading.type == "h3" %}
+      <div class="heading {% if module.sub_heading %}mb-20{% else %}mb-40{% endif %}">
+        <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+          {{ module.heading.text }}
+        </h3>
+      </div>
+      {% elif module.heading.type == "h4" %}
+      <div class="heading {% if module.sub_heading %}mb-20{% else %}mb-40{% endif %}">
+        <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+          {{ module.heading.text }}
+        </h4>
+      </div>
+      {% elif module.heading.type == "h5" %}
+      <div class="heading {% if module.sub_heading %}mb-20{% else %}mb-40{% endif %}">
+        <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+          {{ module.heading.text }}
+        </h5>
+      </div>
+      {% elif module.heading.type == "h6" %}
+      <div class="heading {% if module.sub_heading %}mb-20{% else %}mb-40{% endif %}">
+        <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+          {{ module.heading.text }}
+        </h6>
+      </div>
+      {% endif %}
+      {% endif %}
+
+      {% if module.sub_heading %}
+      <div class="sub-heading font-size-16 mb-40 max-width-850 mr-auto ml-auto">
+        {{ module.sub_heading }}
+      </div>
+      {% endif %}
+      
+      <div class="flex">
+        {% for item in module.cards %}
+
+        <div class="card {{ item.align }} {% if item.border_radius %}border-radius{% else %}no-border-radius{% endif %}" style="background-color:{{ item.background_color.color }}">
+
+          {% if item.symbol.type == "icon" %}
+            {% if item.symbol.icon.name %}
+            <div class="icon" style="width: {{item.symbol.width}}px; fill: {{ item.symbol.icon_color.color }};">
+              {% icon
+              name="{{ item.symbol.icon.name }}"
+              style="{{ item.symbol.icon.type }}"
+              unicode="{{ item.symbol.icon.unicode }}"
+            %}
+            </div>
+            {% endif %}
+          {% elif item.symbol.type == "image" %}
+          {% if item.symbol.image.src %}
+          <div class="image {% if item.symbol.is_circle %}circle{% endif %}" style="width: {{item.symbol.width}}px; border-radius: {{item.symbol.width}}px;">
+            <img {% if item.symbol.is_circle %}style="width: {{item.symbol.width}}px !important; height: {{item.symbol.width}}px; border-radius: {{item.symbol.width}}px;"{% endif %} src="{{ item.symbol.image.src }}" alt="{{ item.symbol.image.alt }}">
+          </div>
+          {% endif %}
+          {% elif item.symbol.type == "background-image" %}
+          <div class="background-image" style="background-image: url({{ item.symbol.background_image.src }}); height: {{ item.symbol.background_image_height }}px;"></div>
+          {% endif %}
+
+          <div class="card-body">
+            {% if item.title %}
+
+            <div class="card-title {% if item.title_background_enable %}card-title-bg {% if item.title_background_space %}card-title-bg-no-space{% endif %}{% endif %}" {% if item.title_background_enable %}style="background-color:{{ item.title_background_color.color }};"{% endif %}>
+              <h3 class="font-size-24 line-height-12 font-weight-400 mb-0" style="color:{{ item.title_text_color.color }};">{{ item.title }}</h3>
+            </div>
+            {% endif %}
+            {% if item.text %}
+            <div class="card-text card-text-{{ loop.index }}" style="color:{{ item.text_color.color }}">
+              {{ item.text }}
+            </div>
+            {% endif %}
+
+            {% if item.button.text and item.button.url.href  %}
+            <div class="simple simple-{{ loop.index }} mt-20">
+              <a href="{{ item.button.url.href }}">
+                {{ item.button.text }}
+              </a>
+            </div>
+            {% endif %}
+            
+          </div>
+          
+          {% if item.testimonial.title or item.testimonial.description %}
+          <div class="quote-auth mt-20">
+            {% if item.testimonial.image.src %}
+            <div class="landing-page-quote-image" style="background-image: url({{ item.testimonial.image.src }});"></div>
+            {% endif %}
+            {% if item.testimonial.title or item.testimonial.description %}
+            <p class="landing-page-quote-desc">
+              <strong>
+                {{ item.testimonial.title }}
+              </strong>
+              <br>
+              {{ item.testimonial.description }}
+            </p>
+            {% endif %}
+          </div>
+          {% endif %}
+          
+        </div>
+
+        {% if loop.index % module.cards_column_per_row == 0 %}
+
+        <div class="divider"></div>
+
+        {% endif %}
+
+
+        {% if loop.last %}
+        {% set count = loop.index % module.cards_column_per_row %}
+        {% for i in range(module.cards_column_per_row-count) %}
+        <div class="card invisible"></div>
+        {% endfor %}
+        {% endif %}
+
+        {% endfor %}
+      </div>
+      
+      {% if module.footer_text %}
+      <div class="footer-text mt-15 text-center">
+        {{ module.footer_text }}
+      </div>
+      {% endif %}
+
+    </div> 
+    
+  </div>
+</div>
+
+{% endif %}

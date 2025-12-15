@@ -1,0 +1,87 @@
+{% require_css %}
+<style type="text/css">
+  {% scope_css %}
+  .accordion-section{
+    background-color: {{ module.settings.background_color.color }};
+  }
+  .accordion-section{
+    padding: {{ module.settings.padding_desktop.top }}px 20px {{ module.settings.padding_desktop.bottom }}px;
+  }
+
+
+  @media screen and (max-width: 991px){
+    .accordion-section{
+      padding: {{ module.settings.padding_tablet.top }}px 20px {{ module.settings.padding_tablet.bottom }}px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .accordion-section{
+      padding: {{ module.settings.padding_mobile_.top }}px 20px {{ module.settings.padding_mobile_.bottom }}px;
+    }
+  }
+
+  {% end_scope_css %} 
+</style>
+{% end_require_css %}
+
+<div class="accordion-section">
+  <div class="maxContainer">
+    <div class="acc-heading-content">
+      {{ module.content }}
+    </div>
+    <div class="acc-flex-wrap">
+
+      <div class="accordion-lists">
+        {% for item in module.accordion %}
+        <div class="acc-item" data-acc="media-acc-{{ loop.index }}">
+          <div class="acc-heading">
+            <div class="acc-icon">
+              <img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}">
+            </div>
+            <span>{{ item.title }}</span>
+          </div> 
+          <div class="acc-body">
+            {{ item.content }}
+            <div class="acc-media-mobile">
+              {% if item.media_type == 'image' %}
+              <div class="media-acc-{{ loop.index }} media-img media-acc">
+                <div class="img-item" style="background-image: url('{{ item.image.src }}');"></div>
+              </div>
+              {% endif %}
+              {% if item.media_type == 'video' %}
+              <div class="media-acc-{{ loop.index }} media-video media-acc">
+                <div class="media-video-wrap" style="min-height: 430px;">
+                  <video src="{{ item.video_file }}" autoplay="" loop="" poster="{{ item.poster_image.src }}" muted="" playsinline=""></video>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          </div>
+          <div class="acc-collapse">
+            <img src="https://yembo.ai/hubfs/add.png" alt="Plus" class="icon-coll plus">
+            <img src="https://yembo.ai/hubfs/minus.png" alt="Minus" class="icon-coll minus">
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      <div class="acc-media-col">
+        {% for item in module.accordion %}
+        {% if item.media_type == 'image' %}
+        <div class="media-acc-{{ loop.index }} media-img media-acc" style="{% if loop.index == 1 %}display:block;{% endif %}">
+          <div class="img-item" style="background-image: url('{{ item.image.src }}');"></div>
+        </div>
+        {% endif %}
+        {% if item.media_type == 'video' %}
+        <div class="media-acc-{{ loop.index }} media-video media-acc" style="{% if loop.index == 1 %}display:block;{% endif %}">
+          <div class="media-video-wrap" style="min-height: 430px;">
+            <video src="{{ item.video_file }}" autoplay="" loop="" poster="{{ item.poster_image.src }}" muted="" playsinline=""></video>
+          </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+      </div>
+
+    </div>
+
+  </div>
+</div>

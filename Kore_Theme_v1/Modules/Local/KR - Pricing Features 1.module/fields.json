@@ -1,0 +1,908 @@
+[ {
+  "id" : "30d3c7c0-893f-80e1-34b2-57dbee7adef3",
+  "name" : "tagline",
+  "label" : "Tag Line",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "LOREM IPSUM DOLOR SIT"
+}, {
+  "id" : "4e845533-c040-f7f1-8c4a-53857bfc2ad1",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Lorem ipsum dolor sit"
+  }, {
+    "id" : "3f7dbd9d-b933-afa4-3236-de1e6c98749d",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "h2"
+  }, {
+    "id" : "94c60699-141a-6a27-065b-1098f4d00ac7",
+    "name" : "font_size",
+    "label" : "Font Size",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "text",
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 32
+  }, {
+    "id" : "f165ad00-29b1-c18e-1932-a11c783406d7",
+    "name" : "font_weight",
+    "label" : "Font Weight",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "font-weight-100", "Thin" ], [ "font-weight-300", "Light" ], [ "font-weight-400", "Regular" ], [ "font-weight-500", "Medium" ], [ "font-weight-600", "Semi Bold" ], [ "font-weight-700", "Bold" ], [ "font-weight-800", "Extra Bold" ], [ "font-weight-900", "Black" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "font-weight-700"
+  }, {
+    "id" : "6fdcd2c0-3f94-8d4e-deee-c015896110f4",
+    "name" : "font_color",
+    "label" : "Font Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "10e1c01c-81e2-5783-bd2b-0493e89f1299",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "Lorem ipsum dolor sit",
+    "type" : "h2",
+    "font_size" : 32,
+    "font_weight" : "font-weight-700",
+    "font_color" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "ca664f73-f8a3-ef92-4c84-67e07e6b84fa",
+  "name" : "sub_heading",
+  "label" : "Sub Heading",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "76074975-f35b-be74-1bd7-411638cc50c4",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "0386a416-c940-6cad-62aa-e650169bf36b",
+  "name" : "content_image_border_radius",
+  "label" : "Content Image Border Radius",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : false
+}, {
+  "id" : "d95fb173-9eaf-ffa0-8ad3-6657e9443a67",
+  "name" : "content_color",
+  "label" : "Content Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "778dd49a-cccb-b961-8dfe-1dad7f784ab1",
+  "name" : "content_link_color",
+  "label" : "Content Link Color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "76074975-f35b-be74-1bd7-411638cc50c4",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "baf41429-3312-db24-5b53-1692cc3debb1",
+  "name" : "content_link_color_hover",
+  "label" : "Content Link Color Hover",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "76074975-f35b-be74-1bd7-411638cc50c4",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "0ccb5db9-b2a5-7d69-edae-6a2e9c3470b5",
+  "name" : "pricing_table",
+  "label" : "Pricing Table",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "3670cfe3-8efa-7dff-e7ec-1a90ccbee344",
+    "name" : "top_heading_text",
+    "label" : "Top heading text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "PRICING PLANS"
+  }, {
+    "id" : "91bfeb69-afd4-381b-48e7-4dadab58083f",
+    "name" : "main_heading",
+    "label" : "Main Heading",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : 2,
+      "sorting_label_field" : null,
+      "default" : 2
+    },
+    "children" : [ {
+      "id" : "ec1f045f-bd54-404e-2d8e-bc2ad2989397",
+      "name" : "tagline",
+      "label" : "Tagline",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Gold"
+    }, {
+      "id" : "8f846e7b-3f08-c2c0-0db3-54d90c3612c4",
+      "name" : "price",
+      "label" : "Price",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "$49/week"
+    }, {
+      "id" : "8b37af86-f553-5de9-11d0-77e8113e197e",
+      "name" : "copy",
+      "label" : "Copy",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "One-time registration and onboarding fee $249"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "tagline" : "Gold",
+      "pricing" : "$49/week",
+      "copy" : "One-time registration and onboarding fee $249"
+    }, {
+      "tagline" : "Gold",
+      "pricing" : "$49/week",
+      "copy" : "One-time registration and onboarding fee $249"
+    } ]
+  }, {
+    "id" : "716369c6-b647-ad68-ee7c-fd3d4f7b72f6",
+    "name" : "feature_list",
+    "label" : "Feature List",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "32a9ddc3-9b3a-2fed-6cee-0d4aaaaf6a5d",
+      "name" : "heading_text",
+      "label" : "Heading text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Lorem ipsum dolor sit amet"
+    }, {
+      "id" : "cf02e739-4832-b711-cf9b-0d6c20a5bba7",
+      "name" : "items",
+      "label" : "Items",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : 1
+      },
+      "children" : [ {
+        "id" : "961b188a-53e0-6c51-1b8f-4712e3cdb027",
+        "name" : "text",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "Lorem ipsum"
+      }, {
+        "id" : "fc5f2917-550f-fd81-df03-d1fb1a2dca25",
+        "name" : "pricing_plan_1",
+        "label" : "Pricing Plan 1",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "00b26a5e-1b22-399e-a083-edc914ef8e5c",
+        "name" : "content_type_pricing1",
+        "label" : "Content type",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "fc5f2917-550f-fd81-df03-d1fb1a2dca25",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "1", "Checkbox" ], [ "2", "Text" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : ""
+      }, {
+        "id" : "33507a80-d0ea-bfe8-dc2e-eb0cee55d4f1",
+        "name" : "text_pricing1",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "00b26a5e-1b22-399e-a083-edc914ef8e5c",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "2",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "10% off"
+      }, {
+        "id" : "40e9bf0c-2927-3049-9cf4-1fb8a939be9c",
+        "name" : "feature_include_pricing1",
+        "label" : "Feature include?",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "00b26a5e-1b22-399e-a083-edc914ef8e5c",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "1",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "0191ce8e-5ae0-f55b-acd8-9d55d18f45ee",
+        "name" : "pricing_plan_2",
+        "label" : "Pricing Plan 2",
+        "required" : false,
+        "locked" : false,
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      }, {
+        "id" : "51f777b7-29dd-8dc6-80ab-c2802085ae90",
+        "name" : "content_type_pricing2",
+        "label" : "Content type",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "0191ce8e-5ae0-f55b-acd8-9d55d18f45ee",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "true",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "select",
+        "choices" : [ [ "1", "Checkbox" ], [ "2", "Text" ] ],
+        "multiple" : false,
+        "reordering_enabled" : true,
+        "preset" : null,
+        "type" : "choice",
+        "display_width" : null,
+        "default" : ""
+      }, {
+        "id" : "0c254cf6-a08b-876b-891d-37bb290c118a",
+        "name" : "text_pricing2",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "51f777b7-29dd-8dc6-80ab-c2802085ae90",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "2",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "allow_new_line" : false,
+        "type" : "text",
+        "display_width" : null,
+        "default" : "10% off"
+      }, {
+        "id" : "ffb1c019-4432-6d1b-0740-74ee261f865e",
+        "name" : "feature_include_pricing2",
+        "label" : "Feature include?",
+        "required" : false,
+        "locked" : false,
+        "visibility" : {
+          "controlling_field" : "51f777b7-29dd-8dc6-80ab-c2802085ae90",
+          "controlling_field_path" : null,
+          "controlling_value_regex" : "1",
+          "property" : null,
+          "operator" : "EQUAL",
+          "access" : null
+        },
+        "display" : "checkbox",
+        "type" : "boolean",
+        "display_width" : null,
+        "default" : false
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : [ {
+        "text" : "Lorem ipsum",
+        "pricing_plan_1" : false,
+        "content_type_pricing1" : "",
+        "text_pricing1" : "10% off",
+        "feature_include_pricing1" : false,
+        "pricing_plan_2" : false,
+        "content_type_pricing2" : "",
+        "text_pricing2" : "10% off",
+        "feature_include_pricing2" : false
+      } ]
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "heading_text" : "Lorem ipsum dolor sit amet",
+      "items" : [ {
+        "text" : "Lorem ipsum",
+        "pricing_plan_1" : false,
+        "content_type_pricing1" : "",
+        "text_pricing1" : "10% off",
+        "feature_include_pricing1" : false,
+        "pricing_plan_2" : false,
+        "content_type_pricing2" : "",
+        "text_pricing2" : "10% off",
+        "feature_include_pricing2" : false
+      } ]
+    } ]
+  }, {
+    "id" : "35436f62-e1c4-1f36-a05d-0125cdfdcb4c",
+    "name" : "features_bottom_text",
+    "label" : "Features bottom text",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod lacus vel magna consequat.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "top_heading_text" : "PRICING PLANS",
+    "main_heading" : [ {
+      "tagline" : "Gold",
+      "pricing" : "$49/week",
+      "copy" : "One-time registration and onboarding fee $249"
+    }, {
+      "tagline" : "Gold",
+      "pricing" : "$49/week",
+      "copy" : "One-time registration and onboarding fee $249"
+    } ],
+    "feature_list" : [ {
+      "heading_text" : "Lorem ipsum dolor sit amet",
+      "items" : [ {
+        "text" : "Lorem ipsum",
+        "pricing_plan_1" : false,
+        "content_type_pricing1" : "",
+        "text_pricing1" : "10% off",
+        "feature_include_pricing1" : false,
+        "pricing_plan_2" : false,
+        "content_type_pricing2" : "",
+        "text_pricing2" : "10% off",
+        "feature_include_pricing2" : false
+      } ]
+    } ],
+    "features_bottom_text" : "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod lacus vel magna consequat.</p>"
+  }
+}, {
+  "id" : "ee1e14b7-878b-5cab-7011-101a46363ab4",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "93448879-955b-2e09-f8e3-8f7a91698487",
+    "name" : "section_text_alignment",
+    "label" : "Section Text Alignment",
+    "help_text" : "The horizontal alignment of the text.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-left", "Left" ], [ "text-center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-center"
+  }, {
+    "id" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+    "name" : "section_background_type",
+    "label" : "Section Background Type",
+    "help_text" : "Choose the kind of background that displays on the section.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "1", "Image" ], [ "2", "Color" ], [ "3", "Default Color" ], [ "4", "Default Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "2"
+  }, {
+    "id" : "68d4dfad-7a62-af61-6246-8df16b3b34dc",
+    "name" : "section_background_image",
+    "label" : "Section Background Image",
+    "help_text" : "Specify an image to use as the background of the section.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    }
+  }, {
+    "id" : "a0ffcf0e-2357-9fd9-13ce-6170160f44c6",
+    "name" : "section_background_image_overlay",
+    "label" : "Section Background Image Overlay",
+    "help_text" : "Add a layer of color on top of the background image. You can also specify the opacity (e.g. 85%)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#272727",
+      "opacity" : 85
+    }
+  }, {
+    "id" : "182f6412-ec15-59c2-5efa-57608ac42370",
+    "name" : "section_background_color",
+    "label" : "Section Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+    "name" : "section_padding",
+    "label" : "Section Padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "custom", "Custom" ], [ "py-0", "Padding Top & Bottom - 0" ], [ "py-5", "Padding Top & Bottom - 5px" ], [ "py-10", "Padding Top & Bottom - 10px" ], [ "py-15", "Padding Top & Bottom - 15px" ], [ "py-20", "Padding Top & Bottom - 20px" ], [ "py-25", "Padding Top & Bottom - 25px" ], [ "py-30", "Padding Top & Bottom - 30px" ], [ "py-35", "Padding Top & Bottom - 35px" ], [ "py-40", "Padding Top & Bottom - 40px" ], [ "py-45", "Padding Top & Bottom - 45px" ], [ "py-50", "Padding Top & Bottom - 50px" ], [ "py-55", "Padding Top & Bottom - 55px" ], [ "py-60", "Padding Top & Bottom - 60px" ], [ "py-65", "Padding Top & Bottom - 65px" ], [ "py-70", "Padding Top & Bottom - 70px" ], [ "py-75", "Padding Top & Bottom - 75px" ], [ "py-80", "Padding Top & Bottom - 80px" ], [ "py-85", "Padding Top & Bottom - 85px" ], [ "py-90", "Padding Top & Bottom - 90px" ], [ "py-95", "Padding Top & Bottom - 95px" ], [ "py-100", "Padding Top & Bottom - 100px" ], [ "py-120", "Padding Top & Bottom - 120px" ], [ "py-150", "Padding Top & Bottom - 150px" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "custom"
+  }, {
+    "id" : "0b3d38f7-baa1-1c9b-40e2-c7c214a3260b",
+    "name" : "section_padding_desktop",
+    "label" : "Section Padding Desktop",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "95e41b90-9549-9e40-0adf-5461297f2276",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    }, {
+      "id" : "43ff9bc4-59cf-ca82-c684-675e8c4ae6fe",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 40,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "b1ffa917-3258-b89f-6ecc-901a79833a17",
+    "name" : "section_padding_tablet",
+    "label" : "Section Padding Tablet",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "fccc8999-bf4b-d6a4-facd-edda112c75b4",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    }, {
+      "id" : "1d9fd413-fde3-918e-b5a9-340769bca61e",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 40,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "178bf22b-d104-7eea-1c5b-70fb4655249a",
+    "name" : "section_padding_mobile",
+    "label" : "Section Padding Mobile",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "44a00dc9-10b3-0728-205b-2fb516857a42",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    }, {
+      "id" : "213e5ea8-36bb-a1a9-db56-9d8bfe455db2",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 40,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "9f85a98d-19a3-8e72-b63f-7dc8927eefbe",
+    "name" : "container_width",
+    "label" : "Container Width",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "max-width-850", "Max Width 850" ], [ "max-width-650", "Max Width 650" ], [ "no-max-width", "Default Container Width" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "max-width-850"
+  }, {
+    "id" : "96c75b2e-592c-4982-2f7c-5413f63c5def",
+    "name" : "section_id",
+    "label" : "Section ID",
+    "help_text" : "Enter a unique ID. This will be used to jump directly on this section.\n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "ee8ee9b8-cbf2-3314-a4e6-47e7f94c845f",
+    "name" : "section_class",
+    "label" : "Section Class",
+    "help_text" : "Add a few extra CSS class on this section so you can customize even further. \n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "190b3884-6ee7-f9bd-50b8-194570111d17",
+    "name" : "section_use_existing_portal_style",
+    "label" : "Section Use Existing Portal Style",
+    "help_text" : "Enable this option to use existing portal styling.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "4de3cddd-abe4-711a-e427-637386591162",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "help_text" : "Disable this option to hide this section on the page.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "215cac8f-576a-6b7d-23fc-dc7b2bde7a9e",
+    "name" : "filler",
+    "label" : "Filler",
+    "required" : false,
+    "locked" : false,
+    "children" : [ ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_text_alignment" : "text-center",
+    "section_background_type" : "2",
+    "section_background_image" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    },
+    "section_background_image_overlay" : {
+      "color" : "#272727",
+      "opacity" : 85
+    },
+    "section_background_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "section_padding" : "custom",
+    "section_padding_desktop" : {
+      "top" : 40,
+      "bottom" : 40
+    },
+    "section_padding_tablet" : {
+      "top" : 40,
+      "bottom" : 40
+    },
+    "section_padding_mobile" : {
+      "top" : 40,
+      "bottom" : 40
+    },
+    "container_width" : "max-width-850",
+    "section_id" : "",
+    "section_class" : "",
+    "section_use_existing_portal_style" : false,
+    "section_show_hide" : true,
+    "filler" : { }
+  }
+} ]

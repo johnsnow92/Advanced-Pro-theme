@@ -1,0 +1,93 @@
+.cm-equipment {
+  position: relative;
+  background-position: 50%;
+  background-size: cover;
+  display: flex;
+}
+
+.cm-equipment:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  pointer-events: none;
+  background-color: rgba(107,107,107,0.61);
+}
+
+.cm-equipment .page-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 8;
+}
+
+.cm-equipment .cm-content {
+  margin: 20px auto;
+  width: 80%;
+  padding: 10px;
+  text-align: center;
+}
+
+.cm-equipment .cm-content h1 {
+  font-size: 80px;
+  color: #fff;
+}
+
+.cm-equipment .banner_scroll {
+  width: 100%;
+  min-height: 30px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 9;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.cm-equipment .banner_scroll a {
+  display: inline-block;
+  pointer-events: all;
+}
+
+.cm-equipment .banner_scroll.style1 a .scroll-down, .cm-equipment .banner_scroll.style2 a .scroll-down {
+  font-family: ETmodules;
+  speak: none;
+  font-weight: 400;
+  -webkit-font-feature-settings: normal;
+  font-feature-settings: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-size: 96px;
+  font-style: normal;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  direction: ltr;
+  color: #fff;
+  font-size: 3.5em;
+}
+
+
+@media (max-width:767px) {
+  .cm-equipment {
+    height: 400px;
+  }
+  .cm-equipment .cm-content {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .cm-equipment .cm-content h1 {
+    font-size: 35px;
+  }
+}

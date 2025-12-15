@@ -1,0 +1,18 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE" ],
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 129533732756,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/plugins/parallax.js",
+    "name" : "parallax.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../js/plugins/tooltip.js",
+    "name" : "tooltip.js"
+  } ],
+  "label" : "Key Features",
+  "icon" : "fontawesome-5.14.0:key:SOLID",
+  "is_available_for_new_content" : true
+}

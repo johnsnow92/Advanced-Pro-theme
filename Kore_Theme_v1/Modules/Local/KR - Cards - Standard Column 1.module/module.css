@@ -1,0 +1,89 @@
+.kr-cards-col3-section1 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kr-cards-col3-section1.v1 {
+  background-size: contain !important;
+  background-position: inherit !important;
+}
+
+.kr-cards-col3-section1 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kr-cards-col3-section1 .page-width.text-center {
+  text-align: center; 
+}
+
+.kr-cards-col3-section1 .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.kr-cards-col3-section1 #cta .kore-button,
+.kr-cards-col3-section1 .kore-button {
+  display: inline-block !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  border: 1px solid transparent !important;
+  padding: 13px 20px !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  border-radius: 290486px !important;
+  -webkit-transition: all 200ms ease !important;
+  transition: all 200ms ease !important;
+  letter-spacing: 1px !important;
+}
+
+.kr-cards-col3-section1 #cta .kore-button:hover,
+.kr-cards-col3-section1 .kore-button:hover {
+  -webkit-transform: translate(0px, -3px) !important;
+  -ms-transform: translate(0px, -3px) !important;
+  transform: translate(0px, -3px) !important;
+  color: #fff !important;
+}
+
+.kr-cards-col3-section1 .hs-embed-wrapper {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.kr-cards-col3-section1 .kr-col3-card-items{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+.kr-cards-col3-section1 .kr-card{
+  width: 33.33%;
+  padding: 15px;
+}
+.kr-cards-col3-section1 .card-img{
+  text-align: center;
+  margin-bottom: 14px;
+}
+.kr-cards-col3-section1 .card-img img{
+  width: 150px;
+}
+.kr-cards-col3-section1 .kr-card-body{
+  padding-bottom: 15px;
+}
+
+@media screen and (max-width: 767px){
+  .kr-cards-col3-section1 .kr-card {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+}

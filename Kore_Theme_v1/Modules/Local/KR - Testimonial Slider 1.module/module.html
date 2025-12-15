@@ -1,0 +1,175 @@
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+{% require_css %}
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  {% for item in module.card_items %}
+  .{{ name }} .card-col3-item.card-item-{{ loop.index }} img.graph-icon{
+    top: {{ item.graph_icon_top_position }}px;
+    right: {{ item.graph_icon_right_position }}px;
+  }
+  /*   .{{ name }} .card-col3-item.card-item-{{ loop.index }} .card-copy{
+  color: {{ item.text_color.color }};
+  }
+  .{{ name }} .card-frame-item.card-item-{{ loop.index }} .card-cf-inner{
+  background-color: {{ item.background_color.color }};
+  }
+  .{{ name }} .card-frame-item.card-item-{{ loop.index }} .card-cf-inner:after{
+  border-top: 90px solid {{ item.background_color.color }};    
+  }
+  .{{ name }} .card-frame-item.card-item-{{ loop.index }} .card-cf-inner .card-line{
+  background-color: {{ item.background_color.color }};
+  display: block;
+  height: 8px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  }
+  .{{ name }} .card-frame-item.card-item-{{ loop.index }} .card-cf-inner .cf-content *{
+  color: {{ item.content_color.color }}!important;
+  } */
+  .{{ name }} .card-frame-item.card-item-{{ loop.index }} .cf-img.bg-type-1{
+    background-position: 100% {{ item.cover_image_position }}%;
+  }
+  {% endfor %}
+
+  .{{ name }} .cards-frame-heading h2 span{
+    font-size: {{ module.sub_heading_font_size }}px;
+    color: {{ module.sub_heading_color.color }};
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+{% end_require_css %}
+
+<div class="{{ name }} hub-testimonial-db" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+
+      <div class="hub-testimonial-wrap">
+
+        <div class="cards-frame-heading">
+          <h2 style="font-size: {{ module.main_heading_font_size }}px; color: {{ module.main_heading_color.color }};">{{ module.main_heading }} {% if module.sub_heading %}<span>{{ module.sub_heading }}</span>{% endif %}</h2>
+        </div>
+        <div class="cards-frame-items cards-align-{{ module.card_items_text_position }}">
+
+          {% for item in module.card_items %}
+
+          {% set loop_val = loop.index %}
+
+          {% set col_name = item.hubdbrow_field.columns.name %}
+
+          {% set table_id = item.hubdbrow_field.table_id %}
+
+          {% set query = 'name='~col_name %}
+          {% set items = hubdb_table_rows(table_id, query) %}
+          {% for row in items %}
+
+          <div class="card-frame-item card-item-{{ loop_val }}">
+            <div class="card-cf-inner">
+              <div class="card-content-wrap">
+
+                <div class="item-img" style="background-image: url('{{ row.image.url }}');border: 15px solid {{ item.card_color.color }};"></div>
+
+                <div class="item-content">
+                  {{ row.testimonial }}
+                </div>
+
+                <div class="item-info">
+                  {% if row.name %}<div class="item-name">{{ row.name }}</div>{% endif %}
+                  {% if row.professional_title %}<div class="item-position" style="color: {{ row.professional_title_color }};">{{ row.professional_title }}</div>{% endif %}
+                </div>
+
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          {% endfor %}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% require_js %}
+<script>
+
+  $(function() {
+
+    $('.{{ name }} .cards-frame-items').slick({
+      slidesToShow: 2,
+      slidesToScroll: 1,
+      autoplay: false,
+      autoplaySpeed: 3000,
+      arrows: true,
+      dots: true,
+      pauseOnHover: false,
+      rows: 0,
+      responsive: [{
+      breakpoint: 1200,
+      settings: {
+      slidesToShow: 2
+      }
+      }, {
+      breakpoint: 990,
+      settings: {
+      slidesToShow: 1,
+      }
+      }, {
+      breakpoint: 767,
+      settings: {
+      slidesToShow: 1,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 6000
+      }
+      }]
+      });
+
+  });
+
+</script>
+{% end_require_js %}
+
+
+{% endif %}

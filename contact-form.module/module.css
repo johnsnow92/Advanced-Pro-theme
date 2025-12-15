@@ -1,0 +1,300 @@
+/* Contact Form Module Styles */
+
+.contact-form-module {
+  padding: 60px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Form Header */
+.form-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.form-title {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.form-subtitle {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin: 0;
+}
+
+/* Form Wrapper */
+.form-wrapper {
+  margin-top: 30px;
+}
+
+.form-placeholder {
+  text-align: center;
+  padding: 40px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  color: #6c757d;
+}
+
+/* Two Column Layout */
+.two-column-layout .hs-form fieldset.form-columns-2 .hs-form-field,
+.two-column-layout .hs-form .hs-form-field {
+  width: 48%;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 2%;
+}
+
+.two-column-layout .hs-form .hs-form-field:nth-child(2n) {
+  margin-right: 0;
+}
+
+.two-column-layout .hs-form .hs-submit,
+.two-column-layout .hs-form .hs-richtext,
+.two-column-layout .hs-form .hs_recaptcha {
+  width: 100%;
+  display: block;
+  margin-right: 0;
+}
+
+/* Single Column Layout */
+.single-column-layout .hs-form .hs-form-field {
+  width: 100%;
+  display: block;
+}
+
+/* Hide Labels Option */
+.hide-labels .hs-form label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Form Field Styling */
+.contact-form-module .hs-form-field {
+  margin-bottom: 20px;
+}
+
+.contact-form-module .hs-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.contact-form-module .hs-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid #dfe3e8;
+  border-radius: 4px;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+
+.contact-form-module .hs-input:focus {
+  outline: none;
+  border-color: #0091ae;
+  box-shadow: 0 0 0 3px rgba(0, 145, 174, 0.1);
+}
+
+.contact-form-module textarea.hs-input {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form-module select.hs-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+}
+
+/* Error Styling */
+.contact-form-module .hs-error-msgs {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0 0;
+}
+
+.contact-form-module .hs-error-msg {
+  color: #d33;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.contact-form-module .hs-form-field.error .hs-input {
+  border-color: #d33;
+}
+
+/* Submit Button */
+.contact-form-module .hs-submit {
+  margin-top: 30px;
+}
+
+.contact-form-module .hs-button.primary,
+.contact-form-module .hs-submit .actions input[type="submit"] {
+  padding: 14px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
+  display: inline-block;
+  min-width: 180px;
+}
+
+.contact-form-module .hs-button.primary:hover,
+.contact-form-module .hs-submit .actions input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contact-form-module .hs-button.primary:active,
+.contact-form-module .hs-submit .actions input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Thank You Message */
+.contact-form-module .submitted-message {
+  text-align: center;
+  padding: 40px;
+  background: #f0f9ff;
+  border: 2px solid #0091ae;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.contact-form-module .submitted-message h3 {
+  color: #0091ae;
+  margin-top: 0;
+}
+
+/* Legal Consent */
+.contact-form-module .hs-form-booleancheckbox,
+.contact-form-module .legal-consent-container {
+  margin: 20px 0;
+}
+
+.contact-form-module .hs-form-booleancheckbox label,
+.contact-form-module .legal-consent-container label {
+  display: inline;
+  margin-left: 8px;
+  font-weight: normal;
+}
+
+.contact-form-module .hs-form-booleancheckbox input[type="checkbox"],
+.contact-form-module .legal-consent-container input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Required Field Indicator */
+.contact-form-module .hs-form-required {
+  color: #d33;
+  margin-left: 4px;
+}
+
+/* Form Field Description */
+.contact-form-module .hs-field-desc {
+  font-size: 13px;
+  color: #6c757d;
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-form-module {
+    padding: 40px 15px;
+  }
+
+  .form-title {
+    font-size: 28px;
+  }
+
+  .form-subtitle {
+    font-size: 16px;
+  }
+
+  .two-column-layout .hs-form .hs-form-field {
+    width: 100%;
+    display: block;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-title {
+    font-size: 24px;
+  }
+
+  .contact-form-module .hs-button.primary,
+  .contact-form-module .hs-submit .actions input[type="submit"] {
+    width: 100%;
+    min-width: unset;
+  }
+}
+
+/* Loading State */
+.contact-form-module .hs-loading {
+  position: relative;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.contact-form-module .hs-loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 4px solid rgba(0, 145, 174, 0.2);
+  border-top-color: #0091ae;
+  border-radius: 50%;
+  animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Recaptcha Styling */
+.contact-form-module .hs-recaptcha {
+  margin: 20px 0;
+}
+
+/* Multi-line Text */
+.contact-form-module .hs-richtext {
+  width: 100%;
+}
+
+.contact-form-module .hs-richtext p {
+  margin: 0 0 15px 0;
+  line-height: 1.6;
+}

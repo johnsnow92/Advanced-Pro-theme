@@ -1,0 +1,603 @@
+[ {
+  "id" : "52c96635-05e2-7f26-95b9-d0cd75429467",
+  "name" : "main_heading_text",
+  "label" : "Main Heading text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Pricing"
+}, {
+  "id" : "d3804a2f-aadf-ae9a-d36a-d765a4d0e95b",
+  "name" : "pricing_plan",
+  "label" : "Pricing Plan",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : 3,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "2caa8945-d4b6-9586-fb3c-b81a0bda921b",
+    "name" : "featured_column",
+    "label" : "Make this Featured Column:",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "78767180-8f4c-79f5-1081-7ddb128202eb",
+    "name" : "featured_color",
+    "label" : "Featured Box Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "2caa8945-d4b6-9586-fb3c-b81a0bda921b",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "true",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ce9b2c",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "1046b0e2-6d5c-426a-a85d-46f6e4a6b3a7",
+    "name" : "monthly_annual_sec",
+    "label" : "Show/Hide: Monthly and Annual Section",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "dd0a3ff9-0672-255b-3093-8201d3b1247b",
+    "name" : "image",
+    "label" : "Image (40 x 40)",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-enterprise.png",
+      "alt" : "icon-enterprise",
+      "width" : 40,
+      "height" : 41,
+      "max_width" : 40,
+      "max_height" : 41
+    }
+  }, {
+    "id" : "2c814b62-6e5a-022e-b424-66227fd2f758",
+    "name" : "heading_text",
+    "label" : "Heading Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "ENTERPRISE"
+  }, {
+    "id" : "c593fcdb-b872-bc6c-4da6-6b91ecd3e205",
+    "name" : "enterprise_text",
+    "label" : "Inner title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "71c49a90-6835-264f-9174-819dbd35d3bc",
+    "name" : "price",
+    "label" : "Price (Month)",
+    "help_text" : "No dollar sign",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "99"
+  }, {
+    "id" : "b313e35d-309a-dcd2-1f51-061e6e7fa608",
+    "name" : "discount_value",
+    "label" : "Discount Value (In decimal)",
+    "help_text" : "(In decimal)",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "0.2"
+  }, {
+    "id" : "fc54fee9-b9fd-e717-681a-ba713bda98e3",
+    "name" : "icon_discount",
+    "label" : "Icon Discount",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-30percent.png",
+      "alt" : "icon-30percent",
+      "width" : 42,
+      "height" : 20,
+      "max_width" : 42,
+      "max_height" : 20
+    }
+  }, {
+    "id" : "f99efc9c-5e70-727a-3353-686f16fd38ff",
+    "name" : "text1",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "00ff0e27-792e-2604-0b49-ab8ec6ef5c08",
+      "name" : "text_month",
+      "label" : "Text (Month)",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "per month"
+    }, {
+      "id" : "c2cd3b9e-7365-30f3-400a-83b45a8c82a3",
+      "name" : "text_annual",
+      "label" : "Text (Annual)",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "(<strong>$total</strong>  billed annually)"
+    }, {
+      "id" : "ba58020d-03c3-a66f-625f-ecff5a05e366",
+      "name" : "text_per_month",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "/mo"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "text_month" : "per month",
+      "text_annual" : "(<strong>$total</strong>  billed annually)",
+      "text_per_month" : "/mo"
+    }
+  }, {
+    "id" : "ed8c509f-6e23-0845-1af9-8a5b86d02750",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "a99fc4b3-84bc-2f70-f374-def2e59cda62",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Start Trial"
+    }, {
+      "id" : "0e913a90-17c9-c9ca-749f-20ed99272dee",
+      "name" : "url",
+      "label" : "URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "type" : "url",
+      "display_width" : null,
+      "default" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.g2fp.com/",
+        "content_id" : null
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "text" : "Start Trial",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.g2fp.com/",
+        "content_id" : null
+      }
+    }
+  }, {
+    "id" : "54104da5-d6ff-c5d8-5227-df2b5e2d8afc",
+    "name" : "featured_items1",
+    "label" : "Featured Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "8a145080-772a-7541-c640-56f91c12065b",
+      "name" : "featured_item",
+      "label" : "Item",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Lorem ipsum dolor sit ameting"
+    }, {
+      "id" : "369ec00b-bf90-2705-51a3-04fd5b6690b6",
+      "name" : "exclude_item",
+      "label" : "Exclude: Yes or No",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "yes", "Yes" ], [ "no", "No" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "no"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    } ]
+  }, {
+    "id" : "f4a4e0eb-906b-6913-85ee-f9e53593a976",
+    "name" : "more_featured_items1",
+    "label" : "More Featured Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "76ca9d81-f404-57d4-6878-61c2d910dee9",
+      "name" : "featured_item",
+      "label" : "Item",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Lorem ipsum dolor sit ameting"
+    }, {
+      "id" : "fffc9c1c-6052-6661-f10e-0c5fd3b85e0a",
+      "name" : "exclude_item",
+      "label" : "Exclude: Yes or No",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "yes", "Yes" ], [ "no", "No" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "no"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    } ]
+  }, {
+    "id" : "c5d75dc1-a5cb-0ee2-7364-cf5a8223ec02",
+    "name" : "custom_class",
+    "label" : "Custom Class",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "featured_column" : false,
+    "featured_color" : {
+      "color" : "#ce9b2c",
+      "opacity" : 100
+    },
+    "monthly_annual_sec" : true,
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-enterprise.png",
+      "alt" : "icon-enterprise",
+      "width" : 40,
+      "height" : 41,
+      "max_width" : 40,
+      "max_height" : 41
+    },
+    "heading_text" : "ENTERPRISE",
+    "enterprise_text" : "",
+    "price" : "99",
+    "discount_value" : "0.2",
+    "icon_discount" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-30percent.png",
+      "alt" : "icon-30percent",
+      "width" : 42,
+      "height" : 20,
+      "max_width" : 42,
+      "max_height" : 20
+    },
+    "text1" : {
+      "text_month" : "per month",
+      "text_annual" : "(<strong>$total</strong>  billed annually)",
+      "text_per_month" : "/mo"
+    },
+    "button" : {
+      "text" : "Start Trial",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.g2fp.com/",
+        "content_id" : null
+      }
+    },
+    "featured_items1" : [ {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    } ],
+    "more_featured_items1" : [ {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    } ]
+  }, {
+    "featured_column" : false,
+    "featured_color" : {
+      "color" : "#ce9b2c",
+      "opacity" : 100
+    },
+    "monthly_annual_sec" : true,
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-enterprise.png",
+      "alt" : "icon-enterprise",
+      "width" : 40,
+      "height" : 41,
+      "max_width" : 40,
+      "max_height" : 41
+    },
+    "heading_text" : "ENTERPRISE",
+    "enterprise_text" : "",
+    "price" : "99",
+    "discount_value" : "0.2",
+    "icon_discount" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-30percent.png",
+      "alt" : "icon-30percent",
+      "width" : 42,
+      "height" : 20,
+      "max_width" : 42,
+      "max_height" : 20
+    },
+    "text1" : {
+      "text_month" : "per month",
+      "text_annual" : "(<strong>$total</strong>  billed annually)",
+      "text_per_month" : "/mo"
+    },
+    "button" : {
+      "text" : "Start Trial",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.g2fp.com/",
+        "content_id" : null
+      }
+    },
+    "featured_items1" : [ {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    } ],
+    "more_featured_items1" : [ {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    } ]
+  }, {
+    "featured_column" : false,
+    "featured_color" : {
+      "color" : "#ce9b2c",
+      "opacity" : 100
+    },
+    "monthly_annual_sec" : true,
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-enterprise.png",
+      "alt" : "icon-enterprise",
+      "width" : 40,
+      "height" : 41,
+      "max_width" : 40,
+      "max_height" : 41
+    },
+    "heading_text" : "ENTERPRISE",
+    "enterprise_text" : "",
+    "price" : "99",
+    "discount_value" : "0.2",
+    "icon_discount" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-30percent.png",
+      "alt" : "icon-30percent",
+      "width" : 42,
+      "height" : 20,
+      "max_width" : 42,
+      "max_height" : 20
+    },
+    "text1" : {
+      "text_month" : "per month",
+      "text_annual" : "(<strong>$total</strong>  billed annually)",
+      "text_per_month" : "/mo"
+    },
+    "button" : {
+      "text" : "Start Trial",
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://www.g2fp.com/",
+        "content_id" : null
+      }
+    },
+    "featured_items1" : [ {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    } ],
+    "more_featured_items1" : [ {
+      "featured_item" : "Lorem ipsum dolor sit ameting",
+      "exclude_item" : "no"
+    } ]
+  } ]
+}, {
+  "id" : "67eef528-e065-e92b-604b-7eb6ed0c1e62",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "faea98c3-623c-daab-a901-6966a68dd493",
+    "name" : "show_hide_module",
+    "label" : "Show/Hide: Module",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "3816925e-f661-8c29-c20e-4272726085ef",
+    "name" : "section_background_color",
+    "label" : "Section Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "d977486f-2843-3cf5-e064-4f9cd6911d76",
+    "name" : "section_padding_top_and_bottom",
+    "label" : "Section Padding: Top and Bottom",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d9282fd8-f30a-aeb3-5bbe-e89e7062bb55",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 10,
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    }, {
+      "id" : "6c5a4e50-4c51-bf3a-02eb-d41aba031a2b",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "min" : 10,
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 40,
+      "bottom" : 40
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "show_hide_module" : true,
+    "section_background_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "section_padding_top_and_bottom" : {
+      "top" : 40,
+      "bottom" : 40
+    }
+  }
+} ]

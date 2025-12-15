@@ -1,0 +1,44 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+<section class="advantage-section in-ad">
+  <div class="container">
+   {# <div class="about-sub-heading">
+      <h4>
+        {{ module.sub_heading }}
+      </h4>
+    </div>   #}
+    <h2>{{ module.main_heading }}</h2>
+
+    <div class="advantage-collection">
+      {% for item in module.advantage_card_group %}
+      <div class="ad-card">
+        <div class="ad-img">
+          {% if item.card_image.src %}
+          {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}"' %}
+          {% if item.card_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.card_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.card_image.max_width|escape_attr }}" height="{{ item.card_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = item.card_image.loading != 'disabled' ? 'loading="{{ item.card_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.card_image.src|escape_url }}" alt="{{ item.card_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+        </div>
+        
+        <div class="ad-contant">
+          <h3>
+            {{ item.card_heading }}
+          </h3>         
+          <div class="ad-para">
+            {{ item.card_content }}
+          </div>
+
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>

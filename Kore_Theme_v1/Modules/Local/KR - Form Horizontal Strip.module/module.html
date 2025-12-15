@@ -1,0 +1,46 @@
+{# Use for Blog Template #}
+{% if module.section_settings.section_show_hide %}
+	<div class="fix_sign_up_section_v2" 
+       style="background-color:{{ module.section_settings.strip_background_color.color }}">
+    <div class="signup_form clearfix">
+      <div class="form_bottom_text">{{ module.content }}</div>
+      
+      {% if module.form_field.form_id %}
+      <div class="form-app">
+        {% form
+          form_to_use="{{ module.form_field.form_id }}"
+          response_response_type="{{ module.form_field.response_type }}"
+          response_message="{{ module.form_field.message }}"
+          response_redirect_id="{{ module.form_field.redirect_id }}"
+          response_redirect_url="{{module.form_field.redirect_url}}"
+          gotowebinar_webinar_key="{{ module.form_field.gotowebinar_webinar_key }}"
+        %}
+      </div>
+      {% endif %}
+      
+    </div>
+  </div>    
+  <style>
+    .fix_sign_up_section .signup_form form div input[type="submit"] {
+      background-color:{{ module.section_settings.button_background_color.color }};
+      color: {{ module.section_settings.button_font_color.color }}
+    }
+    .fix_sign_up_section .signup_form form div input[type="submit"]:hover {
+      color:{{ module.section_settings.button_background_color.color }};
+      background-color: {{ module.section_settings.button_font_color.color }}
+    }
+    .fix_sign_up_section .form_bottom_text a,
+    .fix_sign_up_section .form_bottom_text,
+    .fix_sign_up_section .signup_form h3,
+    .fix_sign_up_section *{
+      color: {{ module.section_settings.strip_font_color.color }};
+    }
+    .fix_sign_up_section .social_icons .icons {
+      background-color:{{ module.section_settings.social_background_color.color }};
+      color:{{ module.section_settings.social_font_color.color }};
+    }
+    .fix_sign_up_section .social_icons .icons .fa {
+      color:{{ module.section_settings.social_font_color.color }};
+    }
+  </style>
+{% endif %}

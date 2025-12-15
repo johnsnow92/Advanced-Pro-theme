@@ -1,0 +1,839 @@
+[ {
+  "id" : "30d3c7c0-893f-80e1-34b2-57dbee7adef3",
+  "name" : "tagline",
+  "label" : "Tag Line",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "76074975-f35b-be74-1bd7-411638cc50c4",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<div class=\"heading mb-15\" style=\"color: #000000; background-color: #f6f6f6; text-align: left; font-family: sans-serif; font-size: medium;\">\n<h2 class=\"font-size-38 font-weight-700 line-height-12\" style=\"font-weight: bold; font-size: 38px; line-height: 1.2;\">Thank You Bob!</h2>\n</div>\n<div class=\"content parent font-size-16\" id=\"cta\" style=\"color: #000000; background-color: #f6f6f6; text-align: left; font-family: sans-serif; font-size: medium;\">\n<p class=\"hero-paragraph-5 bold\"><strong style=\"font-weight: bolder;\">Make visitors love you for giving you their details. A decent appreciation goes a long way!</strong></p>\n<p class=\"hero-paragraph-5\">Also, remember to tell them they can view their download by clicking the</p>\n</div>"
+}, {
+  "id" : "d95fb173-9eaf-ffa0-8ad3-6657e9443a67",
+  "name" : "content_color",
+  "label" : "Content Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "778dd49a-cccb-b961-8dfe-1dad7f784ab1",
+  "name" : "content_link_color",
+  "label" : "Content Link Color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "76074975-f35b-be74-1bd7-411638cc50c4",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "baf41429-3312-db24-5b53-1692cc3debb1",
+  "name" : "content_link_color_hover",
+  "label" : "Content Link Color Hover",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "76074975-f35b-be74-1bd7-411638cc50c4",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "7f7365bb-90e3-5afb-d7f8-d3f91b2be9a1",
+  "name" : "button_wrap",
+  "label" : "Button Wrap",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7d61b3e2-d193-4ef5-6cb9-917dd61f054c",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<h3 class=\"bloglisting-sidebarcta-heading ty\" style=\"text-align: center;\">Get Your Crew Trained.<br>Login. Learn. Sell.</h3>\n<div><img src=\"https://assets.website-files.com/5b470b40b998deae1a0058d6/5b5062cd953aa0778c913e81_salesrx-376x94.png\" alt=\"\" class=\"blog-list-sidebar-cta-logo\" width=\"100\" style=\"width: 100px; display: block; margin: 0px auto;\"></div>"
+  }, {
+    "id" : "9d9f8db1-a9f9-6d88-d607-7c73e294e559",
+    "name" : "content_text_color",
+    "label" : "Content Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "cf5e727f-583c-c4ce-5f32-aae601d09c31",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "f4bc9dbc-4d31-a695-4f54-30485184e4e3",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "Train Your Team Now"
+    }, {
+      "id" : "dbc4a1e4-c234-f8d8-800a-ce3b22a390c0",
+      "name" : "url",
+      "label" : "URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "type" : "url",
+      "display_width" : null,
+      "default" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      }
+    }, {
+      "id" : "1b61d0c9-6395-59a4-3165-c52138aaef1b",
+      "name" : "button_background_color",
+      "label" : "Button Background Color",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    }, {
+      "id" : "5dfa0384-0a75-640a-173d-fca10046c70f",
+      "name" : "button_background_color_hover",
+      "label" : "Button Background Color Hover",
+      "required" : false,
+      "locked" : false,
+      "type" : "color",
+      "display_width" : null,
+      "default" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "text" : "Train Your Team Now",
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "button_background_color" : {
+        "color" : null,
+        "opacity" : 100
+      },
+      "button_background_color_hover" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    }
+  }, {
+    "id" : "a686777d-6fce-9c76-5b9f-85b16ac4c231",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/cta-bg.png",
+      "alt" : "cta-bg",
+      "width" : 649,
+      "height" : 281,
+      "max_width" : 649,
+      "max_height" : 281
+    }
+  }, {
+    "id" : "c8d886b3-ffd6-014f-e647-271bf94f6305",
+    "name" : "background_image_overlay",
+    "label" : "Background Image Overlay",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#e0232e",
+      "opacity" : 75
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "content" : "<h3 class=\"bloglisting-sidebarcta-heading ty\" style=\"text-align: center;\">Get Your Crew Trained.<br>Login. Learn. Sell.</h3>\n<div><img src=\"https://assets.website-files.com/5b470b40b998deae1a0058d6/5b5062cd953aa0778c913e81_salesrx-376x94.png\" alt=\"\" class=\"blog-list-sidebar-cta-logo\" width=\"100\" style=\"width: 100px; display: block; margin: 0px auto;\"></div>",
+    "content_text_color" : {
+      "color" : "#ffffff",
+      "opacity" : 100
+    },
+    "button" : {
+      "text" : "Train Your Team Now",
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "button_background_color" : {
+        "color" : null,
+        "opacity" : 100
+      },
+      "button_background_color_hover" : {
+        "color" : null,
+        "opacity" : 100
+      }
+    },
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/cta-bg.png",
+      "alt" : "cta-bg",
+      "width" : 649,
+      "height" : 281,
+      "max_width" : 649,
+      "max_height" : 281
+    },
+    "background_image_overlay" : {
+      "color" : "#e0232e",
+      "opacity" : 75
+    }
+  }
+}, {
+  "id" : "2a9478c8-2c81-f563-e4b0-a0deeced2c32",
+  "name" : "social_share_text",
+  "label" : "Social Share Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Share this content"
+}, {
+  "id" : "239eb952-4fba-e786-a6a6-a41babc6d7e8",
+  "name" : "social_share",
+  "label" : "Social Share",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d1966890-c835-0654-8cd4-65d8fb09ddc8",
+    "name" : "fb",
+    "label" : "Facebook",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "facebook-f",
+      "unicode" : "f39e",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "4225db4b-8ae6-e63e-942c-3998a3c05e4d",
+    "name" : "tw",
+    "label" : "Twitter",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "twitter",
+      "unicode" : "f099",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "b3df0893-536a-b169-4fb4-e9a0a475e694",
+    "name" : "linkedin",
+    "label" : "LinkedIn",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "linkedin-in",
+      "unicode" : "f0e1",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "fbb9b57d-e415-c1e3-33ae-8a37ea1c88b9",
+    "name" : "pinterest",
+    "label" : "Pinterest",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "pinterest-p",
+      "unicode" : "f231",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "ec6d2eaa-5980-c8a1-c440-8d953fc713ce",
+    "name" : "email",
+    "label" : "Email",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "envelope",
+      "unicode" : "f0e0",
+      "type" : "SOLID"
+    }
+  }, {
+    "id" : "1edf3fc1-2c2f-a246-b674-f85b223b98c4",
+    "name" : "border_color",
+    "label" : "Border Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#1683D0",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "81235c40-1c4b-229d-283c-a840305e9008",
+    "name" : "icon_color",
+    "label" : "Icon Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#fff",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "98a5f03c-457f-802a-76f4-670b8f48cce5",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#1683D0",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "fb" : {
+      "name" : "facebook-f",
+      "unicode" : "f39e",
+      "type" : "REGULAR"
+    },
+    "tw" : {
+      "name" : "twitter",
+      "unicode" : "f099",
+      "type" : "REGULAR"
+    },
+    "linkedin" : {
+      "name" : "linkedin-in",
+      "unicode" : "f0e1",
+      "type" : "REGULAR"
+    },
+    "pinterest" : {
+      "name" : "pinterest-p",
+      "unicode" : "f231",
+      "type" : "REGULAR"
+    },
+    "email" : {
+      "name" : "envelope",
+      "unicode" : "f0e0",
+      "type" : "SOLID"
+    },
+    "border_color" : {
+      "color" : "#1683D0",
+      "opacity" : 100
+    },
+    "icon_color" : {
+      "color" : "#fff",
+      "opacity" : 100
+    },
+    "background_color" : {
+      "color" : "#1683D0",
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "7063920f-bf0e-6a46-5e94-e8d688c0f1e1",
+  "name" : "recent_blog",
+  "label" : "Recent Blog",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c6d6ad51-8ff9-5d53-6ea0-a9af2ea59681",
+    "name" : "tag_line",
+    "label" : "Tag Line",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Don't want to wait? Read our latest blog posts."
+  }, {
+    "id" : "98bc0c4f-4bc5-5af9-1534-d1acb56bd6fd",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Latest posts from our blog"
+  }, {
+    "id" : "f7f75c28-7c7c-d0fc-d138-39f4c3c40de4",
+    "name" : "blog",
+    "label" : "Blog",
+    "required" : false,
+    "locked" : false,
+    "type" : "blog",
+    "display_width" : null,
+    "default" : 2438573630
+  }, {
+    "id" : "9d26a16f-85df-b159-0237-b30566c0250c",
+    "name" : "blog_post_limit",
+    "label" : "Blog Post Limit",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 5
+  }, {
+    "id" : "7f2532e4-3792-a4ca-e61b-44376ee806ae",
+    "name" : "blog_all_link_text",
+    "label" : "Blog All Link Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "VIEW ALL BLOGS >"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "tag_line" : "Don't want to wait? Read our latest blog posts.",
+    "title" : "Latest posts from our blog",
+    "blog" : 2438573630,
+    "blog_post_limit" : 5,
+    "blog_all_link_text" : "VIEW ALL BLOGS >"
+  }
+}, {
+  "id" : "ee1e14b7-878b-5cab-7011-101a46363ab4",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "93448879-955b-2e09-f8e3-8f7a91698487",
+    "name" : "section_text_alignment",
+    "label" : "Section Text Alignment",
+    "help_text" : "The horizontal alignment of the text.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-left", "Left" ], [ "text-center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-left"
+  }, {
+    "id" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+    "name" : "section_background_type",
+    "label" : "Section Background Type",
+    "help_text" : "Choose the kind of background that displays on the section.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "1", "Image" ], [ "2", "Color" ], [ "3", "Default Color" ], [ "4", "Default Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "2"
+  }, {
+    "id" : "68d4dfad-7a62-af61-6246-8df16b3b34dc",
+    "name" : "section_background_image",
+    "label" : "Section Background Image",
+    "help_text" : "Specify an image to use as the background of the section.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    }
+  }, {
+    "id" : "a0ffcf0e-2357-9fd9-13ce-6170160f44c6",
+    "name" : "section_background_image_overlay",
+    "label" : "Section Background Image Overlay",
+    "help_text" : "Add a layer of color on top of the background image. You can also specify the opacity (e.g. 85%)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#272727",
+      "opacity" : 85
+    }
+  }, {
+    "id" : "182f6412-ec15-59c2-5efa-57608ac42370",
+    "name" : "section_background_color",
+    "label" : "Section Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#f6f6f6",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+    "name" : "section_padding",
+    "label" : "Section Padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "custom", "Custom" ], [ "py-0", "Padding Top & Bottom - 0" ], [ "py-5", "Padding Top & Bottom - 5px" ], [ "py-10", "Padding Top & Bottom - 10px" ], [ "py-15", "Padding Top & Bottom - 15px" ], [ "py-20", "Padding Top & Bottom - 20px" ], [ "py-25", "Padding Top & Bottom - 25px" ], [ "py-30", "Padding Top & Bottom - 30px" ], [ "py-35", "Padding Top & Bottom - 35px" ], [ "py-40", "Padding Top & Bottom - 40px" ], [ "py-45", "Padding Top & Bottom - 45px" ], [ "py-50", "Padding Top & Bottom - 50px" ], [ "py-55", "Padding Top & Bottom - 55px" ], [ "py-60", "Padding Top & Bottom - 60px" ], [ "py-65", "Padding Top & Bottom - 65px" ], [ "py-70", "Padding Top & Bottom - 70px" ], [ "py-75", "Padding Top & Bottom - 75px" ], [ "py-80", "Padding Top & Bottom - 80px" ], [ "py-85", "Padding Top & Bottom - 85px" ], [ "py-90", "Padding Top & Bottom - 90px" ], [ "py-95", "Padding Top & Bottom - 95px" ], [ "py-100", "Padding Top & Bottom - 100px" ], [ "py-120", "Padding Top & Bottom - 120px" ], [ "py-150", "Padding Top & Bottom - 150px" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "custom"
+  }, {
+    "id" : "0b3d38f7-baa1-1c9b-40e2-c7c214a3260b",
+    "name" : "section_padding_desktop",
+    "label" : "Section Padding Desktop",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "95e41b90-9549-9e40-0adf-5461297f2276",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    }, {
+      "id" : "43ff9bc4-59cf-ca82-c684-675e8c4ae6fe",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 60,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "b1ffa917-3258-b89f-6ecc-901a79833a17",
+    "name" : "section_padding_tablet",
+    "label" : "Section Padding Tablet",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "fccc8999-bf4b-d6a4-facd-edda112c75b4",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    }, {
+      "id" : "1d9fd413-fde3-918e-b5a9-340769bca61e",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 60,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "178bf22b-d104-7eea-1c5b-70fb4655249a",
+    "name" : "section_padding_mobile",
+    "label" : "Section Padding Mobile",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "37a9077d-c224-0e67-d3e5-1ef8e3c4e790",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "44a00dc9-10b3-0728-205b-2fb516857a42",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    }, {
+      "id" : "213e5ea8-36bb-a1a9-db56-9d8bfe455db2",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 40
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 50,
+      "bottom" : 40
+    }
+  }, {
+    "id" : "96c75b2e-592c-4982-2f7c-5413f63c5def",
+    "name" : "section_id",
+    "label" : "Section ID",
+    "help_text" : "Enter a unique ID. This will be used to jump directly on this section.\n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "ee8ee9b8-cbf2-3314-a4e6-47e7f94c845f",
+    "name" : "section_class",
+    "label" : "Section Class",
+    "help_text" : "Add a few extra CSS class on this section so you can customize even further. \n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "190b3884-6ee7-f9bd-50b8-194570111d17",
+    "name" : "section_use_existing_portal_style",
+    "label" : "Section Use Existing Portal Style",
+    "help_text" : "Enable this option to use existing portal styling.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "4de3cddd-abe4-711a-e427-637386591162",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "help_text" : "Disable this option to hide this section on the page.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "215cac8f-576a-6b7d-23fc-dc7b2bde7a9e",
+    "name" : "filler",
+    "label" : "Filler",
+    "required" : false,
+    "locked" : false,
+    "children" : [ ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_text_alignment" : "text-left",
+    "section_background_type" : "2",
+    "section_background_image" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    },
+    "section_background_image_overlay" : {
+      "color" : "#272727",
+      "opacity" : 85
+    },
+    "section_background_color" : {
+      "color" : "#f6f6f6",
+      "opacity" : 100
+    },
+    "section_padding" : "custom",
+    "section_padding_desktop" : {
+      "top" : 60,
+      "bottom" : 40
+    },
+    "section_padding_tablet" : {
+      "top" : 60,
+      "bottom" : 40
+    },
+    "section_padding_mobile" : {
+      "top" : 50,
+      "bottom" : 40
+    },
+    "section_id" : "",
+    "section_class" : "",
+    "section_use_existing_portal_style" : false,
+    "section_show_hide" : true,
+    "filler" : { }
+  }
+} ]

@@ -1,0 +1,51 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Landing Page - Opt 2 - Advanced Pro Theme
+  screenshotPath: ../images/templates/landing-opt-2-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}<meta name="description" content="{{ page_meta.meta_description }}">{% endif %}
+  {% if brand_settings.favicon is defined and brand_settings.favicon.src %}<link rel="shortcut icon" href="{{ brand_settings.favicon.src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }} landing-page landing-centered">
+  <div class="body-wrapper">
+    <main id="main-content" role="main">
+      <section class="section hero-landing-centered" style="min-height: 100vh; display: flex; align-items: center; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+              <div class="text-center">
+                <h1 style="color: white; font-size: 4rem; margin-bottom: var(--spacing-xl);">{% module "hero_headline" path="@hubspot/text", label="Hero Headline", html="One Solution. Infinite Possibilities." %}</h1>
+                <p class="lead" style="color: rgba(255,255,255,0.9); font-size: 1.75rem; margin-bottom: var(--spacing-2xl);">{% module "hero_subheadline" path="@hubspot/text", label="Hero Subheadline", html="Start your free trial today. No credit card required." %}</p>
+                <div style="max-width: 500px; margin: 0 auto;">
+                  {% module "hero_form" path="@hubspot/form", label="Hero Lead Form" %}
+                </div>
+                <p style="margin-top: var(--spacing-lg); color: rgba(255,255,255,0.7); font-size: var(--font-size-sm);">14-day free trial • No credit card • Cancel anytime</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          {% module "content_sections" path="@hubspot/rich_text", label="Content Sections" %}
+        </div>
+      </section>
+    </main>
+  </div>
+  {{ standard_footer_includes }}
+  <style>
+  .landing-centered { background: white; }
+  .hero-landing-centered h1 { line-height: 1.1; }
+  </style>
+</body>
+</html>

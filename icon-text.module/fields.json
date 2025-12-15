@@ -1,0 +1,201 @@
+[ {
+  "id" : "b5e3e8c3-5d3a-0e9e-0c5d-3c0b3e7e8c3e",
+  "name" : "heading",
+  "label" : "Section Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Our Features"
+}, {
+  "id" : "a7d2f1b4-8c9e-4f2a-9d1c-5e3b7a9f2c1d",
+  "name" : "subheading",
+  "label" : "Section Subheading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : ""
+}, {
+  "id" : "c9e2d4a6-7b8c-4e3f-8d2a-1c4e9b7f3a2d",
+  "name" : "grid_columns",
+  "label" : "Grid Columns",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "2", "2 Columns" ], [ "3", "3 Columns" ], [ "4", "4 Columns" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "3"
+}, {
+  "id" : "d4f6a8b2-9e1c-4d3f-7a2b-8c5e1f9d3a7b",
+  "name" : "items",
+  "label" : "Icon Text Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 2,
+    "max" : 6,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "e8a3b7c5-4d2f-9e1a-6c3b-7d8f2a5e9c1b",
+    "name" : "icon_type",
+    "label" : "Icon Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "radio",
+    "choices" : [ [ "icon", "Icon" ], [ "image", "Image" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "icon"
+  }, {
+    "id" : "f2b9d5a7-3e8c-4f1a-9d2b-6c7e8a3f5d1c",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "e8a3b7c5-4d2f-9e1a-6c3b-7d8f2a5e9c1b",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "icon",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    }
+  }, {
+    "id" : "a5c8e2b9-7d3f-4a1c-8e2b-9f5d3a7c1e8b",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "e8a3b7c5-4d2f-9e1a-6c3b-7d8f2a5e9c1b",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : ""
+    }
+  }, {
+    "id" : "b7d3f9a5-8e2c-4f1a-9d3b-7c8e5a2f1d9b",
+    "name" : "heading",
+    "label" : "Heading",
+    "required" : true,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Feature Title"
+  }, {
+    "id" : "c9e5a7b3-4d2f-8a1c-9e3b-6d7f2a5c8e1b",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "Add a compelling description of your feature here."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "icon_type" : "icon",
+    "icon" : {
+      "name" : "star",
+      "unicode" : "f005",
+      "type" : "SOLID"
+    },
+    "heading" : "Feature One",
+    "description" : "<p>Describe your first amazing feature here.</p>"
+  }, {
+    "icon_type" : "icon",
+    "icon" : {
+      "name" : "heart",
+      "unicode" : "f004",
+      "type" : "SOLID"
+    },
+    "heading" : "Feature Two",
+    "description" : "<p>Describe your second amazing feature here.</p>"
+  }, {
+    "icon_type" : "icon",
+    "icon" : {
+      "name" : "bolt",
+      "unicode" : "f0e7",
+      "type" : "SOLID"
+    },
+    "heading" : "Feature Three",
+    "description" : "<p>Describe your third amazing feature here.</p>"
+  } ]
+}, {
+  "id" : "e3a7c9b5-8d2f-4e1a-9c3b-7d8f5a2e1c9b",
+  "name" : "card_style",
+  "label" : "Card Style",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "default", "Default" ], [ "bordered", "Bordered" ], [ "shadow", "Shadow" ], [ "elevated", "Elevated" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "shadow"
+}, {
+  "id" : "f8b2d5a9-7c3e-4f1a-8d2b-9e5c7a3f1d8b",
+  "name" : "icon_size",
+  "label" : "Icon Size",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "small", "Small (32px)" ], [ "medium", "Medium (48px)" ], [ "large", "Large (64px)" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "medium"
+}, {
+  "id" : "a9c5e7b3-4d2f-8e1a-9c3b-6d7f2a5c8e1b",
+  "name" : "text_alignment",
+  "label" : "Text Alignment",
+  "required" : false,
+  "locked" : false,
+  "display" : "radio",
+  "choices" : [ [ "left", "Left" ], [ "center", "Center" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "center"
+} ]

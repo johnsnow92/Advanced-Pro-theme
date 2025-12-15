@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 197620752394,
+  "label" : "Contact Form",
+  "icon" : "../cdn2.hubspot.net/hub/53/file-733888619-png/assets/hubspot.com/product/ui-kit/icons/icon-form.svg",
+  "is_available_for_new_content" : true
+}

@@ -1,0 +1,792 @@
+[ {
+  "id" : "200cf6fa-1e6f-0b82-f663-ee39ca5a9844",
+  "name" : "tagline_image",
+  "label" : "Tag Line Image",
+  "help_text" : "",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "d00081f2-0f6e-1f12-b952-92d7b2e201ca",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : "form",
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+    "alt" : "adult-business-businessman",
+    "width" : 3000,
+    "height" : 2000,
+    "max_width" : 3000,
+    "max_height" : 2000
+  }
+}, {
+  "id" : "d00081f2-0f6e-1f12-b952-92d7b2e201ca",
+  "name" : "tag_line",
+  "label" : "Tag Line",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Available <strong>FREE</strong> for a limited time only"
+}, {
+  "id" : "dfee9fa0-d7e6-cfa9-bb2f-daf3a3ecd9af",
+  "name" : "tag_line_text_color",
+  "label" : "Tag Line Text Color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "d00081f2-0f6e-1f12-b952-92d7b2e201ca",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "7f01ac2e-e858-3250-9629-eb7809a0d073",
+  "name" : "tag_line_background_color",
+  "label" : "Tag Line Background Color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "d00081f2-0f6e-1f12-b952-92d7b2e201ca",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "aea28e51-8fbe-72d6-2621-1bdaaa7186d7",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "878420c4-df07-28df-f30c-4d12132c05a9",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Get this [offer] for [persona] to solve your [pain]."
+  }, {
+    "id" : "9a3de232-883a-a95c-16e9-539c0d1384a3",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "878420c4-df07-28df-f30c-4d12132c05a9",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "h1", "H1" ], [ "h2", "H2" ], [ "h3", "H3" ], [ "h4", "H4" ], [ "h5", "H5" ], [ "h6", "H6" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "h2"
+  }, {
+    "id" : "4a965bbd-8b95-6daf-e17b-bdabe8fc875b",
+    "name" : "font_size",
+    "label" : "Font Size",
+    "help_text" : "Pixel Unit",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "878420c4-df07-28df-f30c-4d12132c05a9",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "text",
+    "max" : 100,
+    "step" : 1,
+    "type" : "number",
+    "display_width" : null,
+    "default" : 38
+  }, {
+    "id" : "5db8201a-1fe1-823d-6ca2-e79c6d7329c8",
+    "name" : "font_weight",
+    "label" : "Font Weight",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "878420c4-df07-28df-f30c-4d12132c05a9",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "display" : "select",
+    "choices" : [ [ "font-weight-100", "Thin" ], [ "font-weight-300", "Light" ], [ "font-weight-400", "Regular" ], [ "font-weight-500", "Medium" ], [ "font-weight-600", "Semi Bold" ], [ "font-weight-700", "Bold" ], [ "font-weight-800", "Extra Bold" ], [ "font-weight-900", "Black" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "font-weight-500"
+  }, {
+    "id" : "0b4627d3-a09a-afe5-fcb0-1386ce1778a8",
+    "name" : "font_color",
+    "label" : "Font Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "878420c4-df07-28df-f30c-4d12132c05a9",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : null,
+      "property" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "text" : "Get this [offer] for [persona] to solve your [pain].",
+    "type" : "h2",
+    "font_size" : 38,
+    "font_weight" : "font-weight-500",
+    "font_color" : {
+      "color" : null,
+      "opacity" : 100
+    }
+  }
+}, {
+  "id" : "c8590b7f-fd51-e1f9-e782-2caf95d09348",
+  "name" : "sub_heading",
+  "label" : "Sub Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Your [pain point] can be solved by our [your methods] covered in this [offer type]."
+}, {
+  "id" : "3f6657b9-af0a-422f-c4c5-b03f70189c54",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p><strong>Add an explanation</strong><span>&nbsp;</span>- Here's why you should get this [offer type]:<strong><br></strong></p>\n<ul>\n<li>Name a compelling benefit of your offer.</li>\n<li>Clarity on how you'll solve their pain.</li>\n<li>Give a fastest/easiest way to reap the benefits.</li>\n</ul>"
+}, {
+  "id" : "5c7b5844-b641-83e6-246e-0926ef358093",
+  "name" : "content_color",
+  "label" : "Content Color",
+  "required" : false,
+  "locked" : false,
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "151bd341-f0a1-a75c-7bb2-bd7a74ccc353",
+  "name" : "content_link_color",
+  "label" : "Content Link Color",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "3f6657b9-af0a-422f-c4c5-b03f70189c54",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "5cc933ff-8c37-b55a-e1a0-2aae04865659",
+  "name" : "content_link_color_hover",
+  "label" : "Content Link Color Hover",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "3f6657b9-af0a-422f-c4c5-b03f70189c54",
+    "controlling_field_path" : null,
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : "NOT_EMPTY",
+    "access" : null
+  },
+  "type" : "color",
+  "display_width" : null,
+  "default" : {
+    "color" : null,
+    "opacity" : 100
+  }
+}, {
+  "id" : "e9be08f3-27ef-9906-c2c5-441b9b03e386",
+  "name" : "social_share",
+  "label" : "Social Share",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "550fd13b-4ec2-4f07-c66b-2b58ce506823",
+    "name" : "fb",
+    "label" : "Facebook",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "ced5034d-90b1-c196-d928-29cc2c8c0d08",
+    "name" : "tw",
+    "label" : "Twitter",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "d8486de4-3264-35bd-124b-a8e72d1f4556",
+    "name" : "linkedin",
+    "label" : "LinkedIn",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : { }
+  }, {
+    "id" : "cb484f45-1162-78cd-25fb-44bb844aa3c8",
+    "name" : "pinterest",
+    "label" : "Pinterest",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "fb" : { },
+    "tw" : { },
+    "linkedin" : { },
+    "pinterest" : { }
+  }
+}, {
+  "id" : "6ac9a17e-c9e3-d762-9a9d-53b732fae814",
+  "name" : "side_image",
+  "label" : "Side Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : null
+  }
+}, {
+  "id" : "e30ade2d-665e-443f-4d5d-de51d3dac9dd",
+  "name" : "form_settings",
+  "label" : "Form Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "13999c73-fbc9-409b-59fd-bf45e95a6083",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "form", "Form" ], [ "meeting", "Meeting" ], [ "embed", "Embed" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "embed"
+  }, {
+    "id" : "56d2051d-300a-a500-6697-e261a74beff4",
+    "name" : "form_title",
+    "label" : "Form Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Complete the form below to get your [offer] now."
+  }, {
+    "id" : "7a4f8a98-a3f3-bc91-56a1-9147bd387573",
+    "name" : "form",
+    "label" : "Form",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "13999c73-fbc9-409b-59fd-bf45e95a6083",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "form",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "form",
+    "display_width" : null,
+    "default" : {
+      "form_id" : "",
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form.",
+      "gotowebinar_webinar_key" : null,
+      "form_type" : "HUBSPOT"
+    }
+  }, {
+    "id" : "44981496-7c59-a04d-43ce-117c4e0fe25a",
+    "name" : "form_footer",
+    "label" : "Form Footer",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "13999c73-fbc9-409b-59fd-bf45e95a6083",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "form",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><em>Insert a benefit and a scarcity limitation - example: \"100% Free for the next 24 Hours</em></p>"
+  }, {
+    "id" : "39ebe664-d18d-3690-2b3a-972fddae6345",
+    "name" : "meeting",
+    "label" : "Meetings links",
+    "help_text" : "Choose a link from any of the Sales Starter users on your hub.",
+    "required" : false,
+    "locked" : false,
+    "embeddable" : false,
+    "type" : "meeting",
+    "display_width" : null
+  }, {
+    "id" : "a22be46b-a0a2-7e73-84c4-35a157f76fd8",
+    "name" : "embed",
+    "label" : "Embed",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "13999c73-fbc9-409b-59fd-bf45e95a6083",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "embed",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "type" : "embed",
+    "form_title" : "Complete the form below to get your [offer] now.",
+    "form" : {
+      "form_id" : "",
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form.",
+      "gotowebinar_webinar_key" : null,
+      "form_type" : "HUBSPOT"
+    },
+    "form_footer" : "<p><em>Insert a benefit and a scarcity limitation - example: \"100% Free for the next 24 Hours</em></p>"
+  }
+}, {
+  "id" : "eb8448b1-09ff-cf64-5ada-fe5ae1950bd7",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d8a1e445-268c-4efb-16fc-598f3477a516",
+    "name" : "section_background_type",
+    "label" : "Section Background Type",
+    "help_text" : "Choose the kind of background that displays on the section.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "1", "Image" ], [ "2", "Color" ], [ "3", "Default Color" ], [ "4", "Default Gradient" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "4"
+  }, {
+    "id" : "58d0410c-ba0e-759e-0b26-e3a186ba56b5",
+    "name" : "section_background_image",
+    "label" : "Section Background Image",
+    "help_text" : "Specify an image to use as the background of the section.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "d8a1e445-268c-4efb-16fc-598f3477a516",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+      "alt" : "adult-business-businessman",
+      "size_type" : "exact",
+      "width" : 3000,
+      "height" : 2000
+    }
+  }, {
+    "id" : "54a09d06-132f-38a5-6797-b85560aba59b",
+    "name" : "section_background_image_overlay",
+    "label" : "Section Background Image Overlay",
+    "help_text" : "Add a layer of color on top of the background image. You can also specify the opacity (e.g. 85%)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "d8a1e445-268c-4efb-16fc-598f3477a516",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#00aff0",
+      "opacity" : 90
+    }
+  }, {
+    "id" : "10aa8cd2-9ce1-df0b-eb98-ae9a3478e7e8",
+    "name" : "section_background_color",
+    "label" : "Section Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "d8a1e445-268c-4efb-16fc-598f3477a516",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#00AFF0",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "bae42df6-1135-b09e-a74a-aeafc0e79f03",
+    "name" : "section_padding",
+    "label" : "Section Padding",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "custom", "Custom" ], [ "py-0", "Padding Top & Bottom - 0" ], [ "py-5", "Padding Top & Bottom - 5px" ], [ "py-10", "Padding Top & Bottom - 10px" ], [ "py-15", "Padding Top & Bottom - 15px" ], [ "py-20", "Padding Top & Bottom - 20px" ], [ "py-25", "Padding Top & Bottom - 25px" ], [ "py-30", "Padding Top & Bottom - 30px" ], [ "py-35", "Padding Top & Bottom - 35px" ], [ "py-40", "Padding Top & Bottom - 40px" ], [ "py-45", "Padding Top & Bottom - 45px" ], [ "py-50", "Padding Top & Bottom - 50px" ], [ "py-55", "Padding Top & Bottom - 55px" ], [ "py-60", "Padding Top & Bottom - 60px" ], [ "py-65", "Padding Top & Bottom - 65px" ], [ "py-70", "Padding Top & Bottom - 70px" ], [ "py-75", "Padding Top & Bottom - 75px" ], [ "py-80", "Padding Top & Bottom - 80px" ], [ "py-85", "Padding Top & Bottom - 85px" ], [ "py-90", "Padding Top & Bottom - 90px" ], [ "py-95", "Padding Top & Bottom - 95px" ], [ "py-100", "Padding Top & Bottom - 100px" ], [ "py-120", "Padding Top & Bottom - 120px" ], [ "py-150", "Padding Top & Bottom - 150px" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "custom"
+  }, {
+    "id" : "254447ff-6c95-1a00-f4f1-1bf4cda417e9",
+    "name" : "section_padding_desktop",
+    "label" : "Section Padding Desktop",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "bae42df6-1135-b09e-a74a-aeafc0e79f03",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "56487f4a-1fcb-eddf-7e13-f5f08af8c4f4",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    }, {
+      "id" : "b9277b17-7195-044e-cd03-8a25b63e5e5a",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 60,
+      "bottom" : 60
+    }
+  }, {
+    "id" : "6f6e9e37-39d2-bfc3-85e7-8ff84b43857f",
+    "name" : "section_padding_tablet",
+    "label" : "Section Padding Tablet",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "bae42df6-1135-b09e-a74a-aeafc0e79f03",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "6c0604ff-d625-2b95-3ec6-a9e066ec133b",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    }, {
+      "id" : "4791e2b6-a0d5-b1e9-cc53-f6f33b1adedb",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 60
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 60,
+      "bottom" : 60
+    }
+  }, {
+    "id" : "d1d88d44-e0e7-ba1f-547f-c3f31674af6f",
+    "name" : "section_padding_mobile",
+    "label" : "Section Padding Mobile",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "bae42df6-1135-b09e-a74a-aeafc0e79f03",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "custom",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "children" : [ {
+      "id" : "395ab101-52af-6d55-abb6-47f188298ee6",
+      "name" : "top",
+      "label" : "Top",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    }, {
+      "id" : "bcad4da3-64b0-4391-2f36-fbbd89452d0e",
+      "name" : "bottom",
+      "label" : "Bottom",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number",
+      "display_width" : null,
+      "default" : 50
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "top" : 50,
+      "bottom" : 50
+    }
+  }, {
+    "id" : "23f73513-bf35-e72c-b62e-b68a42bd9983",
+    "name" : "section_id",
+    "label" : "Section ID",
+    "help_text" : "Enter a unique ID. This will be used to jump directly on this section. \n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "674cab0a-9933-3042-6871-0c799febba40",
+    "name" : "section_class",
+    "label" : "Section Class",
+    "help_text" : "Add a few extra CSS class on this section so you can customize even further. \n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "e20bf474-51d5-a853-3274-84e0f956c97f",
+    "name" : "section_use_existing_portal_style",
+    "label" : "Section Use Existing Portal Style",
+    "help_text" : "Enable this option to use existing portal styling.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "923adb24-0ab4-f40f-3ff2-508d97f3ccf9",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "help_text" : "Disable this option to hide this section on the page.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "d92e38e5-c8da-60e4-381f-bb3dee9c0f8d",
+    "name" : "filler",
+    "label" : "Filler",
+    "required" : false,
+    "locked" : false,
+    "children" : [ ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_background_type" : "4",
+    "section_background_image" : {
+      "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/adult-business-businessman.jpg",
+      "alt" : "adult-business-businessman",
+      "size_type" : "exact",
+      "width" : 3000,
+      "height" : 2000
+    },
+    "section_background_image_overlay" : {
+      "color" : "#00aff0",
+      "opacity" : 90
+    },
+    "section_background_color" : {
+      "color" : "#00AFF0",
+      "opacity" : 100
+    },
+    "section_padding" : "custom",
+    "section_padding_desktop" : {
+      "top" : 60,
+      "bottom" : 60
+    },
+    "section_padding_tablet" : {
+      "top" : 60,
+      "bottom" : 60
+    },
+    "section_padding_mobile" : {
+      "top" : 50,
+      "bottom" : 50
+    },
+    "section_id" : "",
+    "section_use_existing_portal_style" : false,
+    "section_show_hide" : true,
+    "filler" : { }
+  }
+} ]

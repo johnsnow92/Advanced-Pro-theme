@@ -1,0 +1,513 @@
+[ {
+  "id" : "52c96635-05e2-7f26-95b9-d0cd75429467",
+  "name" : "main_heading_text",
+  "label" : "Main Heading text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "What do you get?"
+}, {
+  "id" : "91a3c082-314b-34a9-e07b-e7462d58fe61",
+  "name" : "footer_text",
+  "label" : "Footer text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "BUNDLE PRICE $40,30 + GET PER MONTH"
+}, {
+  "id" : "d3804a2f-aadf-ae9a-d36a-d765a4d0e95b",
+  "name" : "pricing_plan",
+  "label" : "Pricing Plan",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 3,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 3
+  },
+  "children" : [ {
+    "id" : "2caa8945-d4b6-9586-fb3c-b81a0bda921b",
+    "name" : "featured_column",
+    "label" : "Make this Featured Column:",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : false
+  }, {
+    "id" : "1046b0e2-6d5c-426a-a85d-46f6e4a6b3a7",
+    "name" : "monthly_annual_sec",
+    "label" : "Show/Hide: Monthly and Annual Section",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "2c814b62-6e5a-022e-b424-66227fd2f758",
+    "name" : "heading_text",
+    "label" : "Heading Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "ENTERPRISE"
+  }, {
+    "id" : "71c49a90-6835-264f-9174-819dbd35d3bc",
+    "name" : "price",
+    "label" : "Price",
+    "help_text" : "No dollar sign",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "1250"
+  }, {
+    "id" : "e9f2d1e9-18f2-d318-2a07-d734dd81e30f",
+    "name" : "discount_value",
+    "label" : "Discount Value",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "0.3"
+  }, {
+    "id" : "239eda64-2b34-8c3f-0ba4-b6e836a3c4cc",
+    "name" : "p_text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "per month when paid annually"
+  }, {
+    "id" : "7287b3dd-d50f-36f3-7877-616373eac384",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Contact us"
+  }, {
+    "id" : "6f2fa9dc-0377-1648-298a-023d7d773f52",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "fc54fee9-b9fd-e717-681a-ba713bda98e3",
+    "name" : "icon_discount",
+    "label" : "Icon Discount",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-30percent.png",
+      "alt" : "icon-30percent",
+      "width" : 42,
+      "height" : 20,
+      "max_width" : 42,
+      "max_height" : 20
+    }
+  }, {
+    "id" : "54104da5-d6ff-c5d8-5227-df2b5e2d8afc",
+    "name" : "featured_items",
+    "label" : "Featured Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 3,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "8a145080-772a-7541-c640-56f91c12065b",
+      "name" : "featured_item",
+      "label" : "Item",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "12.000 annual interactions"
+    }, {
+      "id" : "369ec00b-bf90-2705-51a3-04fd5b6690b6",
+      "name" : "exclude_item",
+      "label" : "Exclude: Yes or No",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "yes", "Yes" ], [ "no", "No" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "no"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ]
+  }, {
+    "id" : "f4a4e0eb-906b-6913-85ee-f9e53593a976",
+    "name" : "more_featured_items",
+    "label" : "More Featured Items",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : 1
+    },
+    "children" : [ {
+      "id" : "76ca9d81-f404-57d4-6878-61c2d910dee9",
+      "name" : "featured_item",
+      "label" : "Item",
+      "required" : false,
+      "locked" : false,
+      "allow_new_line" : false,
+      "type" : "text",
+      "display_width" : null,
+      "default" : "12.000 annual interactions"
+    }, {
+      "id" : "fffc9c1c-6052-6661-f10e-0c5fd3b85e0a",
+      "name" : "exclude_item",
+      "label" : "Exclude: Yes or No",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "yes", "Yes" ], [ "no", "No" ] ],
+      "multiple" : false,
+      "reordering_enabled" : true,
+      "preset" : null,
+      "type" : "choice",
+      "display_width" : null,
+      "default" : "no"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ]
+  }, {
+    "id" : "5e09ac3c-af74-8f6d-e5e4-6c79ef4b17bf",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Rich%20Text%20Pasting/unknown-1593331110932.png",
+      "alt" : "unknown-1593331110932",
+      "width" : 1034,
+      "height" : 377,
+      "max_width" : 1034,
+      "max_height" : 377
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "featured_column" : false,
+    "monthly_annual_sec" : true,
+    "heading_text" : "ENTERPRISE",
+    "price" : "1250",
+    "discount_value" : "0.3",
+    "p_text" : "per month when paid annually",
+    "button_text" : "Contact us",
+    "button_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "icon_discount" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-30percent.png",
+      "alt" : "icon-30percent",
+      "width" : 42,
+      "height" : 20,
+      "max_width" : 42,
+      "max_height" : 20
+    },
+    "featured_items" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ],
+    "more_featured_items" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ],
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Rich%20Text%20Pasting/unknown-1593331110932.png",
+      "alt" : "unknown-1593331110932",
+      "width" : 1034,
+      "height" : 377,
+      "max_width" : 1034,
+      "max_height" : 377
+    }
+  }, {
+    "featured_column" : false,
+    "monthly_annual_sec" : true,
+    "heading_text" : "ENTERPRISE",
+    "price" : "1250",
+    "discount_value" : "0.3",
+    "p_text" : "per month when paid annually",
+    "button_text" : "Contact us",
+    "button_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "icon_discount" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-30percent.png",
+      "alt" : "icon-30percent",
+      "width" : 42,
+      "height" : 20,
+      "max_width" : 42,
+      "max_height" : 20
+    },
+    "featured_items" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ],
+    "more_featured_items" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ],
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Rich%20Text%20Pasting/unknown-1593331110932.png",
+      "alt" : "unknown-1593331110932",
+      "width" : 1034,
+      "height" : 377,
+      "max_width" : 1034,
+      "max_height" : 377
+    }
+  }, {
+    "featured_column" : false,
+    "monthly_annual_sec" : true,
+    "heading_text" : "ENTERPRISE",
+    "price" : "1250",
+    "discount_value" : "0.3",
+    "p_text" : "per month when paid annually",
+    "button_text" : "Contact us",
+    "button_link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "icon_discount" : {
+      "size_type" : "auto",
+      "src" : "https://cdn2.hubspot.net/hubfs/853574/Images/icon-30percent.png",
+      "alt" : "icon-30percent",
+      "width" : 42,
+      "height" : 20,
+      "max_width" : 42,
+      "max_height" : 20
+    },
+    "featured_items" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    }, {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ],
+    "more_featured_items" : [ {
+      "featured_item" : "12.000 annual interactions",
+      "exclude_item" : "no"
+    } ],
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://info.juicetactics.com/hubfs/Rich%20Text%20Pasting/unknown-1593331110932.png",
+      "alt" : "unknown-1593331110932",
+      "width" : 1034,
+      "height" : 377,
+      "max_width" : 1034,
+      "max_height" : 377
+    }
+  } ]
+}, {
+  "id" : "43526f39-6e44-a0be-dcab-ce357da98302",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "c5d75dc1-a5cb-0ee2-7364-cf5a8223ec02",
+    "name" : "custom_class",
+    "label" : "Custom Class",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null
+  }, {
+    "id" : "52619542-c635-2b15-1088-722bda6b4563",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#134F5C",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "36fe2dd4-677b-f960-c851-1bb6bac4e4ca",
+    "name" : "font_color",
+    "label" : "Font Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#f4f4f4",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "74823fc7-4b40-1ef7-482d-380ad10f19b1",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "e088f864-f6ed-8833-9145-258fb123ad03",
+    "name" : "button_background_color",
+    "label" : "Button Background Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#e4e413",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "89e84683-fe96-08df-0f1c-333798803a37",
+    "name" : "button_font_color",
+    "label" : "Button Font Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#000",
+      "opacity" : 100
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_color" : {
+      "color" : "#134F5C",
+      "opacity" : 100
+    },
+    "font_color" : {
+      "color" : "#f4f4f4",
+      "opacity" : 100
+    },
+    "section_show_hide" : true,
+    "button_background_color" : {
+      "color" : "#e4e413",
+      "opacity" : 100
+    },
+    "button_font_color" : {
+      "color" : "#000",
+      "opacity" : 100
+    }
+  }
+} ]

@@ -1,0 +1,26 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Hero - Full Height
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: hero-full-height.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  vertical_alignment="MIDDLE",
+  max_width=1920
+%}
+  {% dnd_column width=12 %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center;">
+          <div style="max-width: 900px; padding: 2rem;">
+            <h1 style="font-size: 5rem; font-weight: 700; margin-bottom: 1.5rem;">Full Height Hero</h1>
+            <p style="font-size: 1.75rem; color: #495057; margin-bottom: 3rem; line-height: 1.6;">Take over the entire viewport for maximum impact</p>
+            <a href="#" style="display: inline-block; padding: 1.25rem 3rem; background: linear-gradient(135deg, #667eea, #764ba2); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; font-size: 1.125rem;">Get Started</a>
+          </div>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

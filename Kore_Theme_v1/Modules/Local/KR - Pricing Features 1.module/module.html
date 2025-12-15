@@ -1,0 +1,221 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .tagline {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .sub-heading,
+  .{{ name }} .sub-heading * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .content,
+  .{{ name }} .content * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .content a {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .content a:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  .kore-lp-richtext-1 .tagline.tagline-border{
+    border-bottom: 1px solid {{ module.tagline_border_color.color }};
+    color: {{ module.tagline_color.color }};
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+    
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-pricing-features-1 clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+    
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+      {% if module.section_settings.container_width %}
+      {% set containerWidth = module.section_settings.container_width %}
+      {% else %}
+      {% set containerWidth = 'max-width-850' %}
+      {% endif %}
+      <div class="{{ containerWidth }} mr-auto ml-auto">
+        {% if module.tagline %}
+        <div class="tagline mb-15 font-size-14 font-weight-400 {% if module.tagline_border_line %}tagline-border{% endif %}">
+          {{ module.tagline }}
+        </div>
+        {% endif %}
+
+        {% if module.heading.text %}
+        {% if module.heading.type == "h1" %} 
+        <div class="heading mb-15">
+          <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h1>
+        </div>
+        {% elif module.heading.type == "h2" %}
+        <div class="heading mb-15">
+          <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h2>
+        </div>
+        {% elif module.heading.type == "h3" %}
+        <div class="heading mb-15">
+          <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h3>
+        </div>
+        {% elif module.heading.type == "h4" %}
+        <div class="heading mb-15">
+          <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h4>
+        </div>
+        {% elif module.heading.type == "h5" %}
+        <div class="heading mb-15">
+          <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h5>
+        </div>
+        {% elif module.heading.type == "h6" %}
+        <div class="heading mb-15">
+          <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h6>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        {% if module.sub_heading %}
+        <div class="sub-heading font-size-22 mb-20">
+          {{ module.sub_heading }}
+        </div>
+        {% endif %}
+
+        {% if module.content %}
+        <div class="content {% if module.content_image_border_radius %}image-border-radius{% endif %} parent font-size-16" id="cta">
+          {{ module.content }}
+        </div>
+        {% endif %}
+        
+      </div>
+      
+      <div class="pricing-table-wrapper">
+        <div class="pricing-table-items">
+          <div class="pricing-tbl-head row-tbl-head">{{ module.pricing_table.top_heading_text }}</div>
+          <!-- Main heading items -->
+          <div class="pricing-main-head">
+            <div class="pricing-head"></div>
+            {% for item in module.pricing_table.main_heading %}
+            <div class="pricing-head pricing-head{{ loop.index }}">
+              <div class="pricing-tagline">{{ item.tagline }}</div>
+              <div class="pricing-price">{{ item.price }}</div>
+              <div class="pricing-copy">{{ item.copy }}</div>
+            </div>
+            {% endfor %}
+          </div>
+          <!-- Start: Featured Items -->
+          <div class="table-feature-items__wrap">
+            {% for item in module.pricing_table.feature_list %}
+            <div class="table-feature-item">
+              <div class="row-tbl-head">{{ item.heading_text }}</div>
+              <div class="table-feature-lists">
+                {% for item2 in item.items %}
+                <div class="feature-list-item">
+                  <div class="tbl-feature-text tbl-col3">{{ item2.text }}</div>
+                  <!-- Start: Pricing Plan 1 Options -->
+                  <div class="pricing-plan-1 tbl-col3">
+                    {% if item2.pricing_plan_1 %}
+                      {% if item2.content_type_pricing1 == "2" %}
+                      <div class="list-item-text">{{ item2.text_pricing1 }}</div>
+                      {% endif %}
+                      {% if item2.content_type_pricing1 == "1" %}
+                      {% if item2.feature_include_pricing1 %}
+                      <div class="icon-check"><img src="https://f.hubspotusercontent40.net/hubfs/1602894/Images/icon-check-green.png" alt="" width="25"></div>
+                      {% else %}
+                      <div class="icon-close"><img src="https://f.hubspotusercontent40.net/hubfs/1602894/Images/icon-close-blue.png" alt="" width="20"></div>
+                      {% endif %}
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                  <!-- End: Pricing Plan 1 Options -->
+                  
+                  <!-- Start: Pricing Plan 2 Options -->
+                  <div class="pricing-plan-2 tbl-col3">
+                    {% if item2.pricing_plan_2 %}
+                      {% if item2.content_type_pricing2 == "2" %}
+                      <div class="list-item-text">{{ item2.text_pricing2 }}</div>
+                      {% endif %}
+                      {% if item2.content_type_pricing2 == "1" %}
+                      {% if item2.feature_include_pricing2 %}
+                      <div class="icon-check"><img src="https://f.hubspotusercontent40.net/hubfs/1602894/Images/icon-check-green.png" alt="" width="25"></div>
+                      {% else %}
+                      <div class="icon-close"><img src="https://f.hubspotusercontent40.net/hubfs/1602894/Images/icon-close-blue.png" alt="" width="20"></div>
+                      {% endif %}
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                  <!-- End: Pricing Plan 2 Options -->
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+            {% if module.pricing_table.features_bottom_text %}
+            <div class="table-feature-item">
+              <div class="row-tbl-head feature-bottom-text">{{ module.pricing_table.features_bottom_text }}</div>
+            </div>
+            {% endif %}
+          </div>
+          <!-- End: Featured Items -->
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% endif %}

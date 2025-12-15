@@ -1,0 +1,63 @@
+[ {
+  "id" : "a80dfc61-793a-5caa-bcd9-6359b3d64000",
+  "name" : "section_heading",
+  "label" : "Section Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Overview"
+}, {
+  "id" : "2959dd0c-eb82-56d2-c640-0c0c8538d832",
+  "name" : "top_content",
+  "label" : "Top Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>The design team at Dynamics Group is comprised of experienced professionals who are familiar with the unique demands of the industrial equipment and automotive industries. We fully support all leading CAD platforms and have the cutting-edge hardware necessary to quickly develop industry-leading designs. Our team can handle any size job, and we excel at working with short lead-time projects. We can work independently or act as an extension to your design team.</p>\n<p>If you’re interested in learning more about how Design Dynamics can help your company, give us a call.</p>\n<p>&nbsp;</p>"
+}, {
+  "id" : "335a7f05-5dc7-ddac-3df6-514cae16abfc",
+  "name" : "bottom_content",
+  "label" : "Bottom Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h2>Capable</h2>\n<p>We can work with all popular CAD systems, including Catia, SolidWorks, NX, and Autocad.</p>\n<h2>Experienced</h2>\n<p>Over 75 years of industry experience</p>\n<h2>Customer Focused</h2>\n<p>Our team will work with yours throughout the design process to ensure you are happy with the end result.</p>"
+}, {
+  "id" : "627dd98a-96ed-aaad-480e-cc26da104586",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "4f25d320-1f9e-aece-be2b-e3c5499d1b3d",
+  "name" : "parallax_image",
+  "label" : "Parallax Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+} ]

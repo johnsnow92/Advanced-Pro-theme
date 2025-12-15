@@ -1,0 +1,40 @@
+{% set bg_style = "" %}
+{% if module.style_variant == "solid" %}
+  {% set bg_style = "background-color: " ~ module.background_color.color ~ ";" %}
+{% elif module.style_variant == "gradient" %}
+  {% set bg_style = "background: linear-gradient(135deg, " ~ module.background_color.color ~ " 0%, " ~ module.gradient_end_color.color ~ " 100%);" %}
+{% elif module.style_variant == "image" and module.background_image.src %}
+  {% set bg_style = "background-image: url('" ~ module.background_image.src ~ "');" %}
+{% endif %}
+
+<div class="cta-banner cta-banner--{{ module.style_variant }}" style="{{ bg_style }} color: {{ module.text_color.color }};">
+  {% if module.style_variant == "image" %}
+  <div class="cta-banner__overlay" style="opacity: {{ module.overlay_opacity / 100 }};"></div>
+  {% endif %}
+  
+  <div class="cta-banner__content">
+    <div class="container">
+      {% if module.heading %}
+      <h2 class="cta-banner__heading">{{ module.heading }}</h2>
+      {% endif %}
+      
+      {% if module.subheading %}
+      <p class="cta-banner__subheading">{{ module.subheading }}</p>
+      {% endif %}
+      
+      <div class="cta-banner__buttons">
+        {% if module.primary_button.text %}
+        <a href="{{ module.primary_button.url.href }}" class="btn btn-primary cta-banner__button cta-banner__button--primary">
+          {{ module.primary_button.text }}
+        </a>
+        {% endif %}
+        
+        {% if module.secondary_button.text %}
+        <a href="{{ module.secondary_button.url.href }}" class="btn btn-secondary cta-banner__button cta-banner__button--secondary">
+          {{ module.secondary_button.text }}
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

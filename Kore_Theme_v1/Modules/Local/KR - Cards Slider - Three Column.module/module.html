@@ -1,0 +1,46 @@
+{% require_css %}
+<style type="text/css">
+  .{{ name }}{
+    background-color: {{ module.settings.background_color.color }};
+  }
+  .{{ name }}{
+    padding: {{ module.settings.padding_desktop.top }}px 20px {{ module.settings.padding_desktop.bottom }}px;
+  }
+
+
+  @media screen and (max-width: 991px){
+    .{{ name }}{
+      padding: {{ module.settings.padding_tablet.top }}px 20px {{ module.settings.padding_tablet.bottom }}px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .{{ name }}{
+      padding: {{ module.settings.padding_mobile_.top }}px 20px {{ module.settings.padding_mobile_.bottom }}px;
+    }
+  }
+
+</style>
+{% end_require_css %}
+
+<div class="col3-slider-section {{ name }}">
+  <div class="maxContainer">
+    <div class="col3-slides-heading">
+      {{ module.content }}
+      <div class="grey-box"></div>
+    </div>
+    <div class="col3-slides-wrap">
+      {% for item in module.items %}
+      <div class="col-item">
+        <div class="col-inner">
+          <div class="card-img" style="background-image: url('{{ item.image.src }}');"></div>
+          <h3>{{ item.title }}</h3>
+          <div class="card-desc">{{ item.content|truncatehtml(150,' ...', false) }}</div>
+          <a href="{{ item.url.href }}" class="card-btn">{{ item.link_text }}</a>
+          <a href="{{ item.url.href }}" class="card-link"></a>
+          
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,179 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 6,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-rtldoc-listing.css"
+  } ],
+  "attachedJs" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/JS/kore-blog-listing-page-6.js"
+  } ],
+  "customHead" : "<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css\">\n<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css\">\n<link rel=\"stylesheet\" href=\"https://cdn2.hubspot.net/hubfs/92116/slick-slider/slick.css\">\n<link rel=\"stylesheet\" href=\"https://cdn2.hubspot.net/hubfs/92116/slick-slider/slick-theme.css\">",
+  "customFooter" : "<script src=\"https://cdn2.hubspot.net/hubfs/92116/jquery.matchHeight-min.js\"></script>\n<script src=\"https://cdn2.hubspot.net/hubfs/92116/slick-slider/slick.min.js\"></script>",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_151456959128069",
+        "label" : "Module Group",
+        "type" : "cell",
+        "params" : {
+          "css_class" : "blog_post_main",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "blog_post_main",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ {
+          "0" : {
+            "x" : 0,
+            "w" : 12,
+            "name" : "module_151456960811572",
+            "label" : "Blog Content",
+            "type" : "custom_widget",
+            "params" : {
+              "css_style" : "",
+              "template_to_edit" : "listing",
+              "css_id" : "",
+              "css_class" : "",
+              "schema_version" : 2,
+              "path" : "@hubspot/blog_content",
+              "per_widget_wrapper_html" : "",
+              "blog_listing_source" : "<div class=\"blog_listing_section\">\n\n  {% if not blog_author %}\n  <div class=\"main_section_wrapper\">\n    <div class=\"main_section clearfix\" id=\"main_section\">\n      <div class=\"heading_google_search clearfix\">\n        <div class=\"heading_slider\">\n          <h1>HubSnacks Blog</h1>\n        </div>\n        \n        <!-- Custom Site Search Form -->\n        <div class=\"custom_form_wrapper clearfix\">  \n          <form action=\"/{{ site_settings.content_search_results_page_path }}\">\n              <input class=\"search\" type=\"search\" name=\"term\" placeholder=\"Search Articles...\">\n              <input class=\"search_btn\" type=\"submit\" value=\" \">\n          </form>\n        </div>        \n      </div>\n\n      <!-- Slider -->\n      <div class=\"slider_post_wrapper\">\n        {% set featured_posts = blog_recent_topic_posts('{{ group.id }}', 'Featured', 3) %}\n        {% for featured_post in featured_posts %}\n        <div class=\"featured_posts clearfix\">\n          <div class=\"featured_img_wrapper\" style=\"background-image: url({{ featured_post.post_list_summary_featured_image }})\">\n            <a href=\"{{featured_post.absolute_url}}\" class=\"featured_img_link\"></a>  \n          </div>  \n          <div class=\"featured_body\" onClick=\"window.location.href='{{featured_post.absolute_url}}'\">\n            <div class=\"featured_body_inner\">\n              <h2 class=\"featured_title\">{{ featured_post.name }}</h2>    \n              <div class=\"preview_text\">{{ featured_post.post_list_content|truncatehtml(170, '...' , false) }}</div>\n              <a class=\"read_more\" href=\"{{featured_post.absolute_url}}\">Read the article</a>\n            </div>    \n          </div>\n        </div>\n        {% endfor %}\n      </div>\n\n      <!-- Sidebar -->\n      <div class=\"blog_sidebar\">\n\n        <!-- Sidebar CTA -->\n        <div class=\"sidebar_cta\" \n             style=\"background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(239, 90, 40, 0.9)), to(rgba(239, 90, 40, 0.9))), url(https://cdn2.hubspot.net/hubfs/92116/Blog%20Images/basement-cost-calculator.jpg); background-image: linear-gradient(180deg, rgba(239, 90, 40, 0.9), rgba(239, 90, 40, 0.9)), url(https://cdn2.hubspot.net/hubfs/92116/Blog%20Images/basement-cost-calculator.jpg);\">\n          <div class=\"cta_body\">\n            <h3>Insert your call-to-action heading in here.</h3>\n            <!--HubSpot Call-to-Action Code --><span class=\"hs-cta-wrapper\" id=\"hs-cta-wrapper-41f14fc9-8961-439b-aa10-c6eb39634b29\"><span class=\"hs-cta-node hs-cta-41f14fc9-8961-439b-aa10-c6eb39634b29\" id=\"hs-cta-41f14fc9-8961-439b-aa10-c6eb39634b29\"><!--[if lte IE 8]><div id=\"hs-cta-ie-element\"></div><![endif]--><a href=\"https://cta-redirect.hubspot.com/cta/redirect/92116/41f14fc9-8961-439b-aa10-c6eb39634b29\" ><img class=\"hs-cta-img\" id=\"hs-cta-img-41f14fc9-8961-439b-aa10-c6eb39634b29\" style=\"border-width:0px;\" src=\"https://no-cache.hubspot.com/cta/default/92116/41f14fc9-8961-439b-aa10-c6eb39634b29.png\"  alt=\"Get your guide\"/></a></span><script charset=\"utf-8\" src=\"https://js.hscta.net/cta/current.js\"></script><script type=\"text/javascript\"> hbspt.cta.load(92116, '41f14fc9-8961-439b-aa10-c6eb39634b29', {}); </script></span><!-- end HubSpot Call-to-Action Code -->\n          </div>\n        </div>\n\n        <!-- Email Subscribe -->\n        <div class=\"listing_email_subscribe\">\n          {% blog_subscribe \"subscribe_designers_blog\" select_blog='{{ group.id }}', title='Subscribe to our newsletter', response_message='Thanks for Subscribing!', label='Blog Email Subscription', overrideable=False %}\n          <p>HubSnacks uses the contact information you provide to us to contact you about our products and services. You may unsubscribe from these communications at anytime.</p>\n          {# widget_block form \"subscribe_designers_blog_sidebar\" form_follow_ups_follow_up_type='', response_redirect_id=None, form_to_use='9232f54a-94e5-4b98-8697-c1a894e7010a', title='Subscribe to our newsletter', notifications_are_overridden=True, sfdc_campaign='', response_message='Thanks for Subscribing!', response_response_type='inline', response_redirect_url='', overrideable=False, gotowebinar_webinar_key='', label='Form', response=None #}\n          {# widget_attribute \"notifications_override_email_addresses\" is_json=True %}[\"\"]{% end_widget_attribute #}\n          {# end_widget_block #}                  \n        </div>            \n      </div>\n    </div>\n  </div>\n  {% endif %}\n\n  <div class=\"main_listing\">\n    \n    {% if blog_author %}\n    <div class=\"blog__author__details__section\">\n      <div class=\"author__split__bg\"></div>\n      <div class=\"blog__author__wrap\">\n        <div class=\"blog__author__details\">\n          {% if blog_author.avatar %}<div class=\"author__img\" style=\"background-image: url('{{ blog_author.avatar }}');\"></div>{% endif %}\n          <h3>{{ blog_author.display_name }}</h3>\n          {% if blog_author.bio %}<div class=\"author__bio\">{{ blog_author.bio }}</div>{% endif %}\n        </div>\n      </div>\n    </div>\n    {% endif %}\n    \n    <div class=\"main_listing_inner\">\n      <!-- Recent Posts -->\n      <div class=\"recent_posts_wrapper\">\n        <div class=\"headting_title clearfix\">\n          <div class=\"span6\">\n            <p class=\"recent_text\">Recent Articles</p>      \n          </div>\n          <div class=\"span6 cat_dropdown\">\n            <div class=\"url_slug\">{{ request.path|split('/', 3)|last|lower|replace('-', ' ') }}</div>\n            <div class=\"tag_section\">\n              <div class=\"text\">Posts by topic <i class=\"fa fa-angle-down\" aria-hidden=\"true\"></i></div>\n              {% set topics_list = blog_topics('{{ group.id }}', 250) %}            \n              <ul>\n                {% for topic in topics_list %}\n                <li><a href=\"{{ blog_tag_url(group.id, topic.slug) }}\">{{ topic.name }}</a></li>\n                {% endfor %}\n              </ul>\n            </div>            \n          </div>\n        </div>\n        {# simple_list_page indicates the \"blog/all\" page, which is a list of links to every blog post #}\n        <div class=\"post_listing clearfix {% if simple_list_page %}-simple{% endif %}\">\n          {% for content in contents %}\n          <div class=\"post_item\">\n            <div class=\"inner\">\n              {% if not simple_list_page %}\n\n              {% if content.post_list_summary_featured_image %}\n              <div class=\"list_featured_img\" style=\"background-image: url('{{ content.post_list_summary_featured_image }}');\">\n                <a href=\"{{content.absolute_url}}\" title=\"\" class=\"list_img_link\"></a>                  \n              </div>\n              {% endif %}\n\n              <div class=\"list_post_body clearfix\">\n                <div class=\"post_tags\">\n                  {% for topic in content.topic_list %}\n                  <a href=\"{{ blog_tag_url(group.id, topic.slug) }}\">{{ topic.name }}</a>\n                  {% endfor %}                \n                </div>\n                <!--post summary-->\n                <div class=\"post_header\">\n                  <h2><a href=\"{{content.absolute_url}}\">{{ content.name }}</a></h2>\n                </div>\n                <div class=\"list_preview_text\">\n                  {{ content.post_list_content|truncatehtml(150, '...' , false) }}\n                  <a class=\"list_preview_a\" href=\"{{content.absolute_url}}\"></a>\n                </div>\n                <!--\n                <div class=\"link_wrapper\">\n                  <a href=\"{{content.absolute_url}}\">Read The Article</a>\n                </div>\n                -->\n              </div>\n\n              {% else %}\n              <!-- Start: All listing page -->\n\n              <div id=\"all_listing_page\"></div>\n\n              {% if content.post_list_summary_featured_image %}\n              <div class=\"list_featured_img_wrapper\">\n                <a href=\"{{content.absolute_url}}\" title=\"\" class=\"list_img_link\">\n                  <img src=\"{{ content.post_list_summary_featured_image }}\" class=\"list_featured_img\">\n                </a>\n              </div>\n              {% endif %}\n\n              <div class=\"list_post_body clearfix\">\n                <!--post summary-->\n                <div class=\"post_header\">\n                  <h2><a href=\"{{content.absolute_url}}\">{{ content.name }}</a></h2>\n                </div>\n                <div class=\"list_preview_text\">\n                  {{ content.post_list_content|truncatehtml(120, '...' , false) }}\n                  <a class=\"list_preview_a\" href=\"{{content.absolute_url}}\"></a>\n                </div>\n              </div>\n              <!-- End: All listing page -->\n              {% endif %}\n            </div>\n          </div>\t\n          \n          {% endfor %}\n        </div>\n        \n        {% if blog_author %}\n        <div class=\"blog__author__pagination\">\n          {% if last_page_num %}\n          <a class=\"prev__post\" href=\"{{ blog_page_link(last_page_num) }}\">Previous</a>\n          {% endif %}\n          {% if next_page_num %}\n          <a class=\"next__post\" href=\"{{ blog_page_link(next_page_num) }}\">Next</a>\n          {% endif %}\n        </div>\n        {% endif %}\n                \n        <!--\n        <div class=\"bottom_post_tags\">\n          <span>Topics:</span>\n          {% set topics_list_bottom = blog_topics('{{ group.id }}', 250) %}\n          {% for topic in topics_list_bottom %}\n          <a href=\"{{ blog_tag_url(group.id, topic.slug) }}\">{{ topic.name }}</a>\n          {% endfor %}                \n        </div>\n        -->\n        \n        {% if not blog_author %}\n        <div class=\"btn_section\">\n          <div class=\"load_more_btn btn_sec\">More recent articles</div> <div class=\"all_articles_btn\"><a class=\"btn_sec view-all\" href=\"{{ group.absolute_url }}/all\">View all articles</a></div>\n        </div>\n        {% endif %}\n      </div>\n    </div>\n  </div>\n\n  <!-- Social Sharing -->\n  <!--<div class=\"social_sharing\" id=\"social_sharing\">\n  {% widget_block social_sharing \"my_social_sharing\" label='Social Sharing', use_page_url=True, overrideable=True  %}\n  {% widget_attribute \"pinterest\" is_json=True %}{\"custom_link_format\": \"\", \"pinterest_media\": \"http://cdn1.hubspot.com/hub/158015/305390_10100548508246879_837195_59275782_6882128_n.jpg\", \"enabled\": true, \"network\": \"pinterest\", \"img_src\": \"https://static.hubspot.com/final/img/common/icons/social/pinterest-24x24.png\"}{% end_widget_attribute %}\n  {% widget_attribute \"twitter\" is_json=True %}{\"custom_link_format\": \"\", \"enabled\": true, \"network\": \"twitter\", \"img_src\": \"https://cdn2.hubspot.net/hubfs/1564584/Files/Images/icon-twitter-white.svg\"}{% end_widget_attribute %}\n  {% widget_attribute \"google_plus\" is_json=True %}{\"custom_link_format\": \"\", \"enabled\": true, \"network\": \"google_plus\", \"img_src\": \"https://cdn2.hubspot.net/hubfs/1564584/Files/Images/004-google-plus-logo.svg\"}{% end_widget_attribute %}\n  {% widget_attribute \"linkedin\" is_json=True %}{\"custom_link_format\": \"\", \"enabled\": true, \"network\": \"linkedin\", \"img_src\": \"https://cdn2.hubspot.net/hubfs/1564584/Files/Images/002-linkedin-logo.svg\"}{% end_widget_attribute %}\n  {% widget_attribute \"facebook\" is_json=True %}{\"custom_link_format\": \"\", \"enabled\": true, \"network\": \"facebook\", \"img_src\": \"https://cdn2.hubspot.net/hubfs/1564584/Files/Images/003-facebook-logo.svg\"}{% end_widget_attribute %}\n  {% widget_attribute \"email\" is_json=True %}{\"custom_link_format\": \"\", \"enabled\": true, \"network\": \"email\", \"img_src\": \"https://cdn2.hubspot.net/hubfs/1564584/Files/Images/001-envelope.svg\"}{% end_widget_attribute %}\n  {% end_widget_block %}                    \n  </div>   --> \n\n</div>\n",
+              "wrapping_html" : "",
+              "blog_post_source" : "",
+              "widget_name" : "Blog Content",
+              "css_id_str" : "",
+              "overrideable" : false
+            },
+            "rows" : [ ],
+            "rowMetaData" : [ ],
+            "cells" : [ ],
+            "cssId" : "",
+            "cssClass" : "",
+            "cssStyle" : "",
+            "styles" : null,
+            "widgets" : [ ]
+          }
+        }, {
+          "0" : {
+            "x" : 0,
+            "w" : 12,
+            "name" : "module_1616068001905175",
+            "label" : "KR - CTA 1",
+            "type" : "custom_widget",
+            "params" : {
+              "css_class" : "",
+              "schema_version" : 2,
+              "path" : "/Kore_Theme_v1/Modules/Local/KR - CTA 1",
+              "per_widget_wrapper_html" : "",
+              "css_style" : "",
+              "wrapping_html" : "",
+              "css_id" : "",
+              "widget_name" : "KR - CTA 1",
+              "css_id_str" : "",
+              "overrideable" : true
+            },
+            "rows" : [ ],
+            "rowMetaData" : [ ],
+            "cells" : [ ],
+            "cssId" : "",
+            "cssClass" : "",
+            "cssStyle" : "",
+            "styles" : null,
+            "widgets" : [ ]
+          }
+        } ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "blog_post_main",
+        "cssClass" : "blog_post_main",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1616068118497244",
+        "label" : "KR - Sticky Subscribe",
+        "type" : "custom_widget",
+        "params" : {
+          "css_class" : "",
+          "schema_version" : 2,
+          "path" : "/Kore_Theme_v1/Modules/Local/KR - Sticky Subscribe",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "widget_name" : "KR - Sticky Subscribe",
+          "css_id_str" : "",
+          "overrideable" : true
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

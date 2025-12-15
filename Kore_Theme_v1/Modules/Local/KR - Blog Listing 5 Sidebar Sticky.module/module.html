@@ -1,0 +1,114 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .main-wrap {
+    background-color: {{ module.subscribe_background.color }};
+  }
+  
+  .{{ name }} .main-wrap * {
+     color: {{ module.subscribe_color.color }};
+  }
+
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-blog-listing-5-sidebar-sticky clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %}">
+      
+      {% if module.image.src %}
+      <div class="image" style="background-image: url({{ module.image.src }});"></div>
+    {% endif %}
+    
+    <div class="main-wrap">
+      
+      {% if module.heading %}
+      <div class="heading">
+        <h2>
+          {{ module.heading }}
+        </h2>
+      </div>
+      {% endif %}
+      
+      {% if module.content %}
+      <div class="content">
+        {{ module.content }}
+      </div>
+      {% endif %}
+
+      {% blog_subscribe "subscribe_designers_blog" select_blog='default', no_title='true', response_message='Thanks for Subscribing!', label='Blog Email Subscription', overrideable=False %}
+      
+      {% if module.button.type == "cta" %}
+
+        {% if module.button.cta %}
+        <div id="cta" class="mt-20">
+          {% cta guid="{{ module.button.cta }}" %}
+        </div>
+        {% endif %}
+
+      {% elif module.button.type == "simple" %}
+
+        {% if module.button.text %}
+        <div class="simple mt-20">
+          <a href="{{ module.button.url.href }}">
+            {{ module.button.text }}
+          </a>
+        </div>
+        {% endif %}
+
+      {% endif %}
+      
+      {% if module.bottom_text %}
+      <div class="bottom-text">
+        {{ module.bottom_text }}
+      </div>
+      {% endif %}
+      
+    </div>
+
+      {% post_listing "top_posts" select_blog='default', label='Recent Posts', overrideable=False, list_title='POPULAR POSTS', listing_type='popular_all_time', max_links=5 %}
+       
+    </div> 
+   
+  </div>
+</div>
+
+{% endif %}

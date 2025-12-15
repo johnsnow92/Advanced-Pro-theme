@@ -1,0 +1,47 @@
+<div class="row-fluid col-2-bottom-sec">
+  <div class="form-content-sec" style="">
+    <div class="form-content">
+      {% if module.top_text %}<div class="top-text">{{ module.top_text }}</div>{% endif %}
+      {{ module.content }}
+  
+      {% if module.options == '1' %}
+      {% if module.button.text %}
+      <div class="btn-wrap">
+        <a href="{{ module.button.url.href }}">{{ module.button.text }}</a>
+      </div>
+      {% endif %}
+      {% endif %}
+      
+      {% if module.options == '2' %}
+      <div class="form-wrapper">
+        {% form
+          form_to_use="{{ module.form.form.form_id }}"
+          response_response_type="{{ module.form.form.response_type }}"
+          response_message="{{ module.form.form.message }}"
+          response_redirect_id="{{ module.form.form.redirect_id }}"
+          response_redirect_url="{{module.form.form.redirect_url}}"
+          gotowebinar_webinar_key="{{ module.form.form.gotowebinar_webinar_key }}"
+        %}      
+      </div>
+      {% if module.form.bottom_text %}<div class="bottom-text">{{ module.form.bottom_text }}</div>{% endif %}
+      {% endif %}
+
+    </div>
+  </div>    
+
+  <div class="blog-recent-wrapper">
+    <div class="inner">
+      <h4>Our latest blog posts:</h4>
+      {% set rec_posts = blog_recent_posts('{{ group.id }}', 5) %}
+      {% for rec_post in rec_posts %}
+      <div class="row-fluid recent-post">
+        <div class="featured-image mheight" style="background-image: url({{ rec_post.featured_image }});">
+          <a href="{{ rec_post.absolute_url }}"></a>
+        </div>
+        <p class="post-title mheight"><a href="{{ rec_post.absolute_url }}">{{ rec_post.name }}</a></p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>  
+
+</div>

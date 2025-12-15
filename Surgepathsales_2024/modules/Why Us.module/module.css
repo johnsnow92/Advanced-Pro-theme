@@ -1,0 +1,251 @@
+.Why_Us{
+  padding: 60px 0;
+  position: relative;
+  overflow:hidden;
+  background: #fff !important;
+}
+
+.Why_Us .our-mission-images .philosophy-sec-img-1 img{
+  border: 9px solid #00234c; border-radius: 6px;
+}
+
+.philosophy .row{
+  display: flex;
+  align-items: center;
+}
+
+.philosophy:after{
+  content: url(https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Vector%204-1.png);
+  position: absolute;
+  right: -161px;
+  bottom: 0;
+}
+
+.philosophy:before{
+  content: url(https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Vector%206-1.svg);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+
+.philosophy .row{
+  gap: 40px;
+}
+.Why_Us .our-mission-content h2 {
+  MARGIN-BOTTOM: 25px !important;
+  color: #00234C !important;
+  line-height: 50px !important;
+}
+
+.Why_Us li ul li{list-style-type: circle; 
+  color: #000 !important;
+  font-weight: 500;
+  font-size: 16px;
+}
+.our-mission-images,.our-mission-content{
+  width: 50%
+}
+
+.half-image{
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  align-items: center;
+} 
+
+.our-mission-images .row{
+  align-items: center;
+}
+.our-mission-images .row img{
+  vertical-align: bottom;
+}
+
+.our-mission-content h2{
+  font-weight: 700;
+  color: #C5DFFF;
+}
+
+.our-mission-content p{
+  color: #fff;
+  font-weight: 500;
+}
+
+.philosophy .row .our-mission-content .btn-section .secondary-btn{
+  background-color: #fff;
+  border: none;
+}
+
+.philosophy .row .our-mission-content .btn-section .secondary-btn:hover{
+  background-color: #c5dfff;
+  border: none;
+  color: #00234c;
+}
+
+.philosophy::after,.philosophy::before{
+  display: none;
+}
+
+.philosophy .row{
+  gap: 120px;
+}
+
+.our-mission-images{
+  position: relative;
+}
+
+.philosophy .our-mission-content, .our-mission-images{
+  width: 100%;
+}
+
+.philosophy-sec-img-1{
+  z-index: 1;
+  position: relative;
+}
+
+.philosophy-sec-img-2 {
+  bottom: 0;
+  position: absolute;
+  right: 84px;
+  z-index: 1;
+}
+
+.philosophy-sec-img-3 {
+  bottom: -24px;
+  left: 0px;
+  position: absolute;
+}
+
+.philosophy-sec-img-4 {
+  position: absolute;
+  right: 63px;
+  top: -36px;
+}
+
+@media(max-width: 1200px){
+
+  .philosophy-sec-img-3 {
+    bottom: -14px;
+    left: 225px;
+    position: absolute;
+  }
+
+  .philosophy-sec-img-4 {
+    position: absolute;
+    right: 197px;
+    top: -36px;
+  }
+
+  .philosophy-sec-img-2 {
+    bottom: 0;
+    position: absolute;
+    right: 176px;
+    z-index: 1;
+  }
+
+  .philosophy .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .philosophy{
+    padding: 59px 0;
+  }
+
+  .our-mission-content h2{
+    text-align: center;
+    line-height: 2;
+  }
+
+  .our-mission-content p{
+    text-align: justify;
+  }
+  .philosophy .btn-section {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media(max-width: 1023px){
+  .philosophy-sec-img-3 {
+    bottom: -14px;
+    left: 141px;
+    position: absolute;
+  }
+
+  .philosophy-sec-img-4 {
+    position: absolute;
+    right: 79px;
+    top: -32px;
+  }
+
+  .philosophy-sec-img-2 {
+    bottom: 0;
+    position: absolute;
+    right: 90px;
+    z-index: 1;
+  }
+
+}
+
+
+@media(max-width: 805px){
+  .philosophy-sec-img-4 {
+    position: absolute;
+    right: 11px;
+    top: -32px;
+  }
+
+  .philosophy-sec-img-2 {
+    bottom: 0;
+    position: absolute;
+    right: 32px;
+    z-index: 1;
+  }
+
+  .philosophy-sec-img-3 {
+    bottom: -14px;
+    left: 29px;
+    position: absolute;
+  }
+
+}
+
+@media(max-width: 630px){
+  .philosophy-sec-img-3 {
+    bottom: -14px;
+    left: -17px;
+    position: absolute;
+  }
+
+  .philosophy-sec-img-4 {
+    position: absolute;
+    right: -17px;
+    top: -116px;
+  }
+
+  .philosophy-sec-img-2 {
+    bottom: -61px;
+    position: absolute;
+    right: -14px;
+    z-index: 1;
+  }
+}
+
+@media(max-width: 350px){
+  .philosophy-sec-img-4 {
+    position: absolute;
+    right: -17px;
+    top: -146px;
+  }
+
+  .philosophy-sec-img-2 {
+    bottom: -61px;
+    position: absolute;
+    right: -24px;
+    z-index: 1;
+  }
+}

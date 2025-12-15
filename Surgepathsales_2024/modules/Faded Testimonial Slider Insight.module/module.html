@@ -1,0 +1,55 @@
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+
+<section class="faded-testimonial">
+  <div class="container">
+    <h2>
+      {{ module.heading }}
+    </h2> 
+
+
+    <div class="arrows">
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div>
+
+    <div class="fade-slider swiper mySwiper">
+
+      <div class="swiper-wrapper">
+        {% for item in module.field_group %}
+        <div class="slide1 swiper-slide">
+          <div class="image">
+            {% if item.image_field.src %}
+            {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}"' %}
+            {% if item.image_field.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.image_field.width|escape_attr }}" height="{{ item.image_field.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.image_field.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.image_field.max_width|escape_attr }}" height="{{ item.image_field.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.image_field.src|escape_url }}" alt="{{ item.image_field.alt|escape_attr }}">
+            {% endif %}
+          </div>
+
+          <div class="content">
+            {{ item.content_text }}
+
+            <div class="line"></div>
+
+            <span>
+              {{ item.details_text }}
+            </span>
+          </div>
+
+        </div>
+        {% endfor %}
+      </div>  
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

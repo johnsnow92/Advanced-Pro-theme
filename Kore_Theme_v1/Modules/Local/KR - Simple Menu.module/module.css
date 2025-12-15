@@ -1,0 +1,34 @@
+.kore-simple-menu {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-simple-menu .hs-menu-wrapper ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.kore-simple-menu .hs-menu-wrapper ul li {
+  display: inline-block;
+}
+
+.kore-simple-menu .hs-menu-wrapper ul li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.kore-simple-menu .hs-menu-wrapper ul li a {
+  text-decoration: none;
+  padding: 20px 15px;
+  display: inline-block;
+}
+
+@media (max-width: 767px) {
+  
+  .kore-simple-menu .hs-menu-wrapper ul li,
+  .kore-simple-menu .hs-menu-wrapper ul li a {
+    display: block;
+  }
+  
+}

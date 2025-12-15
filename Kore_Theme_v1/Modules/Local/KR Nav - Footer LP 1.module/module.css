@@ -1,0 +1,24 @@
+.kore-lp-footer-1 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-lp-footer-1 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-lp-footer-1 .simple-menu ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.kore-lp-footer-1 .simple-menu ul li {
+  display: inline-block;
+}
+
+.kore-lp-footer-1 .simple-menu ul li:not(:last-child) {
+  margin-right: 0.5rem;
+}

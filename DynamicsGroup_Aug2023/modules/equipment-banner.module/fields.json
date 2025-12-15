@@ -1,0 +1,55 @@
+[ {
+  "id" : "656798f4-fd4a-823c-0bb4-cbdd7e254382",
+  "name" : "banner_heading",
+  "label" : "Banner Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Our Equipment"
+}, {
+  "id" : "0182cec0-6fba-d97d-1cdd-d610c05659d0",
+  "name" : "bookmark_id",
+  "label" : "Bookmark Id",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "2d872a59-11bc-8a4d-d504-cb434e04f64c",
+  "name" : "bookmark_icon",
+  "label" : "Bookmark Icon",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "style1", "Style1" ], [ "style2", "Style2" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "style1"
+}, {
+  "id" : "e2879f73-2363-46c9-3d6a-ddc40cb8ecbf",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/Vertical-Mill-1.jpg",
+    "alt" : "Vertical-Mill-1",
+    "loading" : "lazy",
+    "width" : 1309,
+    "height" : 500,
+    "max_width" : 1309,
+    "max_height" : 500
+  }
+} ]

@@ -1,0 +1,363 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 4,
+  "attachedStylesheets" : [ {
+    "type" : "cos_extension_resource",
+    "path" : "/Kore_Theme_v1/Coded Files/CSS/kore-master-style.css"
+  } ],
+  "attachedJs" : [ ],
+  "customHead" : "",
+  "customFooter" : "",
+  "bodyClass" : "kore-template",
+  "bodyCss" : "",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1617106720694484",
+        "label" : "Flexible column",
+        "type" : "widget_container",
+        "params" : {
+          "css_class" : "",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617696823424540",
+          "label" : "KR - Hero Single Column 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Hero Single Column 1",
+            "per_widget_wrapper_html" : "",
+            "section_settings" : {
+              "section_background_type" : "4",
+              "section_text_alignment" : "text-center"
+            },
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Hero Single Column 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617697270842677",
+          "label" : "KR - Rich Text 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text 1",
+            "per_widget_wrapper_html" : "",
+            "section_settings" : {
+              "section_padding_desktop" : {
+                "bottom" : 60,
+                "top" : 60
+              },
+              "section_padding_mobile" : {
+                "bottom" : 50,
+                "top" : 50
+              },
+              "section_padding_tablet" : {
+                "bottom" : 50,
+                "top" : 50
+              },
+              "section_text_alignment" : "text-left"
+            },
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</span></p>\n<div class=\"hs-embed-wrapper\" data-service=\"youtube\" data-responsive=\"true\" style=\"position: relative; overflow: hidden; width: 100%; height: auto; padding: 0; max-width: 200px; max-height: 113px; min-width: 256px; display: block; margin: auto;\"><div class=\"hs-embed-content-wrapper\"><div style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.5%; margin: 0px;\"><iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/DMmd2kzN1-Y?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\" style=\"position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;\"></iframe></div></div></div>\n<p>&nbsp;</p>\n<p><span><img src=\"https://f.hubspotusercontent40.net/hubfs/2661297/footer_bg_image.jpg\" alt=\"footer_bg_image\" width=\"1920\" loading=\"lazy\" style=\"width: 1920px;\"></span></p>\n<p>&nbsp;</p>",
+            "widget_name" : "KR - Rich Text 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617697521490780",
+          "label" : "KR - Stats Counter",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Stats Counter",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Stats Counter",
+            "card" : [ {
+              "number_field" : 300,
+              "content" : "<p class=\"p-14\"><span>More brand awareness</span></p>",
+              "suffix" : "%",
+              "background_color" : {
+                "color" : "#f4f4f4",
+                "opacity" : 100
+              }
+            }, {
+              "number_field" : 300,
+              "content" : "<p class=\"p-14\"><span>More brand awareness</span></p>",
+              "suffix" : "%",
+              "background_color" : {
+                "color" : "#f4f4f4",
+                "opacity" : 100
+              }
+            }, {
+              "number_field" : 300,
+              "content" : "<p class=\"p-14\"><span>More brand awareness</span></p>",
+              "suffix" : "%",
+              "background_color" : {
+                "color" : "#f4f4f4",
+                "opacity" : 100
+              }
+            } ],
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617697597429833",
+          "label" : "KR - Rich Text 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Rich Text 1",
+            "per_widget_wrapper_html" : "",
+            "section_settings" : {
+              "section_padding_desktop" : {
+                "bottom" : 60,
+                "top" : 60
+              },
+              "section_padding_mobile" : {
+                "bottom" : 50,
+                "top" : 50
+              },
+              "section_padding_tablet" : {
+                "bottom" : 50,
+                "top" : 50
+              },
+              "section_text_alignment" : "text-left"
+            },
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "content" : "<p><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.</span></p>\n<div class=\"hs-embed-wrapper\" data-service=\"youtube\" data-responsive=\"true\" style=\"position: relative; overflow: hidden; width: 100%; height: auto; padding: 0; max-width: 200px; max-height: 113px; min-width: 256px; display: block; margin: auto;\"><div class=\"hs-embed-content-wrapper\"><div style=\"position: relative; overflow: hidden; max-width: 100%; padding-bottom: 56.5%; margin: 0px;\"><iframe width=\"200\" height=\"113\" src=\"https://www.youtube.com/embed/DMmd2kzN1-Y?feature=oembed\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen=\"\" style=\"position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; border: none;\"></iframe></div></div></div>\n<p>&nbsp;</p>\n<p><span><img src=\"https://f.hubspotusercontent40.net/hubfs/2661297/footer_bg_image.jpg\" alt=\"footer_bg_image\" width=\"1920\" loading=\"lazy\" style=\"width: 1920px;\"></span></p>\n<p>&nbsp;</p>",
+            "widget_name" : "KR - Rich Text 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617697530456782",
+          "label" : "KR - CTA 3",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - CTA 3",
+            "per_widget_wrapper_html" : "",
+            "heading" : {
+              "text" : "Call to action headline here",
+              "font_weight" : ""
+            },
+            "css_style" : "",
+            "tagline" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - CTA 3",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617697277167679",
+          "label" : "KR - CTA 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - CTA 1",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - CTA 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617697756519960",
+          "label" : "KR - Blog Recent Posts 1",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Blog Recent Posts 1",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Blog Recent Posts 1",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        }, {
+          "x" : 0,
+          "w" : 12,
+          "name" : "module_1617697762305962",
+          "label" : "KR - Blog Recent Posts 2",
+          "type" : "custom_widget",
+          "params" : {
+            "css_class" : "",
+            "schema_version" : 2,
+            "path" : "/Kore_Theme_v1/Modules/Local/KR - Blog Recent Posts 2",
+            "per_widget_wrapper_html" : "",
+            "css_style" : "",
+            "wrapping_html" : "",
+            "css_id" : "",
+            "widget_name" : "KR - Blog Recent Posts 2",
+            "css_id_str" : "",
+            "overrideable" : true
+          },
+          "rows" : [ ],
+          "rowMetaData" : [ ],
+          "cells" : [ ],
+          "cssId" : "",
+          "cssClass" : "",
+          "cssStyle" : "",
+          "styles" : null,
+          "widgets" : [ ]
+        } ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

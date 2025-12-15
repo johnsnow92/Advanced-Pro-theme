@@ -1,0 +1,805 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Service Listing V2
+screenshotPath: ../images/template-previews/service-listing-v2-page.jpg
+
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main id="main-content" class="body-container-wrapper service-listing-page-v2">
+
+  <div class="banner-section">
+    {% dnd_area 'header_area', label='Header Section' ,class="top-dnd-area" %}
+    {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+    {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+    {% dnd_module
+        path="../modules/banner",
+        offset=0,
+        width=12,
+        background_options={
+          "background_image" : {
+            "alt" : "Union",
+            "height" : 976,
+            "max_height" : 976,
+            "max_width" : 2160,
+            "src" : get_asset_url('../images/service-listing2-banner.jpg'),
+            "width" : 2160
+          },
+         "background_image_position" : "center center",
+          "enable_parallax" : true,
+          "overlay_color" : {
+            "color" : "#026780",
+            "opacity" : 50
+          },
+          "select_background_type" : "image"
+        },
+        breadcrumb_menu=,
+        include_breadcrumb=true,
+        module_settings={
+          "animation_type" : "fade-up",
+          "enable_animation" : true
+        },
+        style={ }
+      %}
+    {% module_attribute "banner_content" %}
+    <h1>Services V2</h1>
+    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+    {% end_module_attribute %}
+    {% end_dnd_module %}
+    {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% end_dnd_section %}
+    {% end_dnd_area %}
+  </div>
+
+
+  {% dnd_area 'main_area', class="service_list2_main_sec main-dnd-area" ,label='Main Section' %}
+
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/card-gallery",
+        offset=0,
+        width=12,
+        top_content={
+          "title" : "Our Best Services For You"
+        },
+        items_group=[ {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "After-Sale Consultation",
+            "height" : 60,
+            "loading" : "lazy",
+            "max_height" : 60,
+            "max_width" : 78,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/megaphone.svg'),
+            "width" : 78
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "After-Sale Consultation"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Pre-Purchase Consultation",
+            "height" : 60,
+            "loading" : "lazy",
+            "max_height" : 60,
+            "max_width" : 78,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/video.svg'),
+            "width" : 78
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Pre-Purchase Consultation"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Your Purchase is Refundable",
+            "height" : 60,
+            "loading" : "lazy",
+            "max_height" : 60,
+            "max_width" : 78,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/shield.svg'),
+            "width" : 78
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Your Purchase is Refundable"
+        }, {
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Free Live-Chat Support",
+            "height" : 60,
+            "loading" : "lazy",
+            "max_height" : 60,
+            "max_width" : 78,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/megaphone.svg'),
+            "width" : 78
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Free Live-Chat Support"
+        } ,{
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Website Optimization",
+            "height" : 60,
+            "loading" : "lazy",
+            "max_height" : 60,
+            "max_width" : 78,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/video.svg'),
+            "width" : 78
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Website Optimization"
+        } ,{
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Learn More",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>",
+          "icon_image" : {
+            "alt" : "Customization Service",
+            "height" : 60,
+            "loading" : "lazy",
+            "max_height" : 60,
+            "max_width" : 78,
+            "size_type" : "auto",
+            "src" : get_asset_url('../images/icon-images/shield.svg'),
+            "width" : 78
+          },
+          "image_border_radius" : 0,
+          "item_settings" : {
+            "background_image" : {
+              "loading" : "lazy",
+              "size_type" : "auto",
+              "src" : ""
+            },
+            "background_opacity" : 75,
+            "content_color" : {
+              "color" : "#FFF",
+              "opacity" : 100
+            },
+            "icon_settings" : {
+              "icon_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "icon_hover_background_color" : {
+                "color" : "#F8FDFF",
+                "opacity" : 100
+              },
+              "icon_hover_color" : {
+                "color" : "#026780",
+                "opacity" : 100
+              },
+              "select_icon_background_color" : "",
+              "select_icon_color" : "bg_secondary",
+              "select_icon_hover_background_color" : "",
+              "select_icon_hover_color" : ""
+            },
+            "overlay_background_color" : {
+              "color" : "#026780",
+              "opacity" : 75
+            },
+            "select_hover_content_color" : "",
+            "select_overlay_background_color" : ""
+          },
+          "select_icon" : { },
+          "select_icon_type" : "image",
+          "title" : "Customization Service"
+        } ],
+        module_settings={
+          "animation_type" : "fade-up",
+          "enable_animation" : true,
+          "enable_masonry" : false,
+          "enable_slider" : false,
+          "select_columns_count_in_row" : "col4"
+        },
+        style={
+          "card" : {
+            "include_shadow_effect" : true,
+            "select_content_alignment" : "left",
+            "select_icon_size" : "small"
+          },
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : { 
+                "units" : "px",
+                  "value" : 0
+                  },
+                "left" : { },
+                "right" : { },
+                "top" : { }
+              }
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% include_dnd_partial path="../sections/team-v2-section.html" %} 
+
+  {% include_dnd_partial path="../sections/testimonials-slider-v2-section.html" %}  
+
+  {% dnd_section
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/pricing",
+        offset=0,
+        width=12,
+        module_settings={
+          "top_content_structure" : "two_col"
+        },
+        heading_tag="h2",
+        pricing_table_items=[ {
+          "additional_button_active_text" : "Less More",
+          "additional_button_text" : "Show More",
+          "additional_features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          } ],
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Buy now",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content_ad" : "<p>It is a long established fact that a reader will be distracted by the readable content.</p>",
+          "features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "Social media integration"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "30 days trial Features"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "10 hours of support"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "Unlimited Features"
+          } ],
+          "icon" : {
+            "color_field" : {
+              "color" : "#000",
+              "opacity" : 100
+            },
+            "icon_field" : { },
+            "image_field" : {
+              "alt" : "Startup",
+              "height" : 40,
+              "loading" : "lazy",
+              "max_height" : 40,
+              "max_width" : 40,
+              "size_type" : "auto",
+              "src" :get_asset_url('../images/icon-images/startup.svg'),
+              "width" : 40
+            },
+            "select_icon_color_theme" : "bg_primary_svg",
+            "select_icon_type" : "image"
+          },
+          "include_addition_features" : false,
+          "monthly" : {
+            "monthly_plan_price" : 10.25,
+            "prefix_text" : "$",
+            "suffix_text" : "/month"
+          },
+          "popular_label" : "Popular",
+          "show_popular_ribbon" : false,
+          "subtitle" : "For Startups",
+          "title" : "Basic",
+          "title_tag" : "h3",
+          "yearly" : {
+            "prefix_text" : "$",
+            "suffix_text" : "/yearly",
+            "yearly_plan_price" : 100.25
+          }
+        }, {
+          "additional_button_active_text" : "Less More",
+          "additional_button_text" : "Show More",
+          "additional_features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          } ],
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Buy now",
+            "select_button_theme" : "hs-sec-btn",
+            "select_button_type" : "std"
+          } ],
+          "content_ad" : "<p>It is a long established fact that a reader will be distracted by the readable content.</p>",
+          "features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "Social media integration"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "30 days trial Features"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "10 hours of support"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "Unlimited Features"
+          } ],
+          "icon" : {
+            "color_field" : {
+              "color" : "#000",
+              "opacity" : 100
+            },
+            "icon_field" : { },
+            "image_field" : {
+              "alt" : "Pro",
+              "height" : 40,
+              "loading" : "lazy",
+              "max_height" : 40,
+              "max_width" : 40,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/icon-images/link.svg'),
+              "width" : 40
+            },
+            "select_icon_color_theme" : "bg_primary_svg",
+            "select_icon_type" : "image"
+          },
+          "include_addition_features" : true,
+          "monthly" : {
+            "monthly_plan_price" : 24.25,
+            "prefix_text" : "$",
+            "suffix_text" : "/month"
+          },
+          "popular_label" : "Most Popular",
+          "show_popular_ribbon" : true,
+          "subtitle" : "Growing Team",
+          "title" : "Pro",
+          "title_tag" : "h3",
+          "yearly" : {
+            "prefix_text" : "$",
+            "suffix_text" : "/yearly",
+            "yearly_plan_price" : 240.5
+          }
+        }, {
+          "additional_button_active_text" : "Show Less",
+          "additional_button_text" : "Show More",
+          "additional_features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          } ],
+          "button_group" : [ {
+            "button_link" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "button_text" : "Buy now",
+            "select_button_theme" : "hs-button",
+            "select_button_type" : "std"
+          } ],
+          "content_ad" : "<p>It is a long established fact that a reader will be distracted by the readable content.</p>",
+          "features_list" : [ {
+            "included_in_plan" : true,
+            "label_text" : "Synced to cloud database"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "Social media integration"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "30 days trial Features"
+          }, {
+            "included_in_plan" : true,
+            "label_text" : "10 hours of support"
+          }, {
+            "included_in_plan" : false,
+            "label_text" : "Unlimited Features"
+          } ],
+          "icon" : {
+            "color_field" : {
+              "color" : "#000",
+              "opacity" : 100
+            },
+            "icon_field" : { },
+            "image_field" : {
+              "alt" : "Enterprise",
+              "height" : 40,
+              "loading" : "lazy",
+              "max_height" : 40,
+              "max_width" : 40,
+              "size_type" : "auto",
+              "src" : get_asset_url('../images/icon-images/profit.svg'),
+              "width" : 40
+            },
+            "select_icon_color_theme" : "bg_primary_svg",
+            "select_icon_type" : "image"
+          },
+          "include_addition_features" : true,
+          "monthly" : {
+            "monthly_plan_price" : 64.25,
+            "prefix_text" : "$",
+            "suffix_text" : "/month"
+          },
+          "popular_label" : "Popular",
+          "show_popular_ribbon" : false,
+          "subtitle" : "Large Teams",
+          "title" : "Enterprise",
+          "title_tag" : "h3",
+          "yearly" : {
+            "prefix_text" : "$",
+            "suffix_text" : "/yearly",
+            "yearly_plan_price" : 650
+          }
+        } ],
+        style={
+          "content" : {
+            "popular_card_section" : {
+              "select_content_theme" : "custom"
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+
+  {% end_dnd_area %}
+
+
+  {% dnd_area 'bottom_area_hs',class="service_list2_bottom_sec bottom-dnd-area" , label='Bottom Section' %}
+  {% include_dnd_partial path="../sections/bottom-pane-section.html" %} 
+  {% end_dnd_area %}
+
+</main>
+{% endblock body %}
+
+
+
+

@@ -1,0 +1,18 @@
+{
+  "global" : false,
+  "content_types" : [ "LANDING_PAGE", "SITE_PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "host_template_types" : [ "PAGE", "BLOG_LISTING", "BLOG_POST" ],
+  "module_id" : 129526275329,
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../js/plugins/parallax.js",
+    "name" : "parallax.js"
+  }, {
+    "autoload" : true,
+    "path" : "../../js/plugins/purecounter_vanilla.js",
+    "name" : "purecounter_vanilla.js"
+  } ],
+  "label" : "Service Features",
+  "icon" : "fontawesome-5.14.0:Alternate%20Pencil:SOLID",
+  "is_available_for_new_content" : true
+}

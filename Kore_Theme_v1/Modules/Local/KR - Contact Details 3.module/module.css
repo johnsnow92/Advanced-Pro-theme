@@ -1,0 +1,268 @@
+.kore-contact-details-3 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-contact-details-3 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-contact-details-3 .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-contact-details-3 .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+
+.kore-contact-details-3 #cta .kore-button,
+.kore-contact-details-3 .kore-button {
+  display: inline-block !important;
+  font-weight: 400 !important;
+  color: #fff !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+  border: 1px solid transparent !important;
+  padding: 13px 20px !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  border-radius: 290486px !important;
+  -webkit-transition: all 200ms ease !important;
+  transition: all 200ms ease !important;
+  letter-spacing: 1px !important;
+}
+
+.kore-contact-details-3 #cta .kore-button:hover,
+.kore-contact-details-3 .kore-button:hover {
+  -webkit-transform: translate(0px, -3px) !important;
+  -ms-transform: translate(0px, -3px) !important;
+  transform: translate(0px, -3px) !important;
+  color: #fff !important;
+}
+
+.kore-contact-details-3 .flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.kore-contact-details-3 .flex .col {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-contact-details-3 .content .hs-responsive-embed-wrapper {
+  max-width: 100% !important;
+  max-height: 100% !important;
+}
+
+.kore-contact-details-3 .content iframe {
+  width: 100% !important;
+  border: 0;
+}
+
+.kore-contact-details-3 form {
+  font-size: 14px;
+  margin: 0;
+}
+
+.kore-contact-details-3 form fieldset {
+  margin-bottom: 0;
+  max-width: 100%;
+}
+
+.kore-contact-details-3 form .hs-form-field > label {
+  color: #fff;
+  padding: 0;
+  margin-bottom: 2px;
+}
+
+.kore-contact-details-3 form .hs-form-field > label > span{
+  font-size: 15px;  
+}
+
+.kore-contact-details-3 form ul.inputs-list.multi-container {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  -webkit-column-count: 3;
+  -moz-column-count: 3;
+  column-count: 3;
+}
+
+.kore-contact-details-3 form .input {
+  margin-right: 0 !important;
+  padding: 0;
+}
+
+.kore-contact-details-3 form .hs-input {
+  display: block;
+  width: 100% !important;
+  padding: 10px 12px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212121;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.kore-contact-details-3 form ul.inputs-list.multi-container .hs-input {
+  margin-right: 5px;
+  width: auto !important;
+  display: inline-block;
+}
+
+.kore-contact-details-3 form ul.inputs-list.multi-container .hs-input + span {
+  color: #fff;
+}
+
+.kore-contact-details-3 form input[type="radio"],
+.kore-contact-details-3 form input[type="checkbox"] {
+  width: auto !important;
+}
+
+.kore-contact-details-3 form .inputs-list {
+  padding: 0;
+  list-style: none;
+  color: #fff;
+}
+
+.kore-contact-details-3 form .inputs-list .hs-input {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.kore-contact-details-3 form textarea {
+  min-height: 100px;
+  width: 100% !important;
+}
+
+.kore-contact-details-3 form .hs-submit {
+  margin-top: 15px;
+  padding: 0;
+}
+
+.kore-contact-details-3 form .hs-error-msgs {
+  padding:0 0;
+  margin: 0;
+  color: #fff;
+  list-style: none;
+}
+
+.kore-contact-details-3 .form-wrap .form-title{
+  display: none!important;
+}
+.kore-contact-details-3 .form-wrap{
+  background-color: transparent;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 20px;
+}
+.kore-contact-details-3 .form-wrap form{
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+.kore-contact-details-3 .form-wrap form .hs-form-field > label,
+.kore-contact-details-3 .form-wrap form .hs-form-field > label > span{
+  color: #fff;
+}
+.kore-contact-details-3 form fieldset.form-columns-2 > div:first-child{
+  padding-right: 6px!important;
+}
+.kore-contact-details-3 form fieldset.form-columns-2 > div:last-child{
+  padding-left: 6px!important;
+}
+.kore-contact-details-3 .form-wrap h3{
+  display: block!important;
+  margin-bottom: 25px;
+  color: #fff;  
+  font-size: 30px;
+}
+.kore-contact-details-3 form .hs-form-field{
+  margin-bottom: 15px;  
+}
+.kore-contact-details-3 form .hs-form-field input,
+.kore-contact-details-3 form .hs-form-field select{
+  font-size: 15px;
+  height: 48px;
+}
+.kore-contact-details-3 form .hs-form-field select{
+  background-image: url(https://21998434.fs1.hubspotusercontent-na1.net/hubfs/21998434/drop-down-arrow-1.png);
+    background-repeat: no-repeat;
+    background-size: 12px;
+    background-position: 97% 55%;
+    appearance: none;
+}
+.kore-contact-details-3 form .hs-fieldtype-select .input:after{
+  display: none;
+}
+.kore-contact-details-3 form .legal-consent-container *{
+  color: #fff!important;
+}
+.kore-contact-details-3 form .hs-error-msgs ul,
+.kore-contact-details-3 form .hs-error-msgs ul li{
+  margin: 0;
+  padding: 0;
+}
+.kore-contact-details-3 form .hs-error-msgs ul li label{
+  margin: 0;
+  font-size: 13px;
+}
+.kore-contact-details-3 form .legal-consent-container ul.inputs-list{
+  margin: 16px 0 10px;
+}
+.kore-contact-details-3 form .legal-consent-container ul.inputs-list li{
+  margin: 0;
+}
+.kore-contact-details-3 form .legal-consent-container ul.inputs-list li label{
+  margin: 0;
+}
+.kore-contact-details-3 form .legal-consent-container ul.inputs-list li label input{
+  height: auto;
+}
+.kore-contact-details-3 form .hs_submit input{
+  background-color: #14385E!important;
+    margin-top: 8px;
+}
+
+@media(max-width:767px) {
+
+  .kore-contact-details-3 .flex .col {
+    flex: 0 0 100%;
+  }
+
+  .kore-contact-details-3 form ul.inputs-list.multi-container {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+  }
+  .kore-contact-details-3 form fieldset.form-columns-2 > div:first-child{
+    padding-right: 0!important;
+  }
+  .kore-contact-details-3 form fieldset.form-columns-2 > div:last-child{
+    padding-left: 0!important;
+  }
+  .kore-contact-details-3 .form-wrap{
+    padding: 0;
+    margin-top: 10px;
+  }
+  .kore-contact-details-3 .form-wrap h3{
+    font-size: 26px;
+  }
+
+}

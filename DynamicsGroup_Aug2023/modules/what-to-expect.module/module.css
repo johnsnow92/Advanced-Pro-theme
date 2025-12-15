@@ -1,0 +1,228 @@
+.cm-expect .cm-wrapper {
+  padding-right: 10vw;
+  padding-bottom: 100px;
+  background-color: #eaeaf1;
+}
+
+.cm-expect .cm-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cm-expect .cm-left {
+  width: 48.5%;
+  margin-right: 3%;
+  padding-bottom: 2.855%;
+}
+
+.cm-expect .parallax-section {
+  position: relative;
+}
+
+.cm-expect .parallax-section .et_parallax_bg_wrap {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0; 
+  left: 0;
+}
+.cm-expect .parallax-section .et_parallax_bg {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index:1;
+}
+
+.cm-expect  .et_pb_image_wrap {
+  display: inline-block;
+  position: relative;
+  max-width: 100%;
+}
+
+.cm-expect .et_pb_image_wrap img {
+  position: relative;
+  z-index:2;
+}
+
+.cm-expect .cm-right {
+  width: 48.5%;
+  position: relative;
+  z-index:9;
+}
+
+.cm-expect .right-top {
+  margin-top: 100px;
+  max-width: 600px;
+  padding: 5.82% 0;
+}
+
+.cm-expect .right-top h2 {
+  font-family: 'Khand',Helvetica,Arial,Lucida,sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 60px;
+  line-height: 1.2em;
+  margin-bottom: 18px;
+}
+
+.cm-expect .right-top .cm-divider {
+  height: 10px;
+  max-width: 100px;
+  transform: skewX(-20deg) skewY(0deg);
+  margin-bottom: 3.093%;
+  position: relative;
+}
+
+.cm-expect .right-top .cm-divider:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  border-top-color: #f71635;
+  border-top-style: double;
+  border-top-width: 10px;
+}
+
+.cm-expect .right-top  p {
+  font-weight: 600;
+  line-height: 2em;
+}
+
+.cm-expect .right-top p:last-child {
+  margin: 0;
+}
+
+.cm-expect .right-bottom { 
+  padding-top: 60px;
+  padding-right: 50px;
+  padding-bottom: 42px;
+  padding-left: 50px;
+  margin-top: 40px;
+  margin-left: -30vw;
+  background-color: #ffffff;
+  box-shadow: 6px 28px 40px 0px rgba(0,0,0,0.1);
+  width: 70vw;
+}
+
+.cm-expect .right-bottom .cm-item {
+  width: 29.21%;
+  float: left;
+  margin-right: 6.186%;
+}
+@media (min-width:1200px) {
+  .cm-expect .right-bottom .cm-item:nth-child(3n) {
+    margin-right: 0;
+  }
+}
+
+.cm-expect .right-bottom  h4 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 2px;
+  line-height: 1.2em;
+}
+
+.cm-expect .right-bottom p {
+  line-height: 2em;
+  margin-bottom:     38px;
+  font-weight: 600;
+}
+
+.cm-expect .right-bottom .cm-spacer {
+  margin: 0 0 28px;
+  position: relative;
+  height: 2px;
+  max-width: 70px;
+  transform: skewX(-20deg) skewY(0deg);
+}
+
+.cm-expect .right-bottom .cm-spacer:before {
+  content: "";
+  width: 100%;
+  height: 1px;
+  border-top-style: solid;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  border-top-color: #f71635;
+  border-top-width: 2px;
+}
+
+.cm-expect ul {
+  font-weight: 600;
+}
+
+.cm-expect ul {
+  margin-bottom: 10.588%;
+}
+
+@media (max-width:1199px) {
+  .cm-expect .right-bottom .cm-item {
+    width: 48.5%;
+    margin-right: 3%;
+  }
+  .cm-expect .right-bottom .cm-item:nth-child(2n) {
+    margin-right: 0;
+  }
+}
+
+
+@media (max-width:767px) {
+  .cm-expect .cm-left {
+    width: 100%;
+    margin-right: 0;
+    padding-bottom: 30px;
+  }
+  .cm-expect .cm-right {
+    padding-left: 10vw;
+    width: 100%;
+  }
+  .cm-expect .right-top {
+    margin-top: 0;
+    padding: 30px 0;
+  }
+  .cm-expect .right-top h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+  .cm-expect .right-top .cm-divider {
+    margin-bottom: 30px;
+  }
+  .cm-expect .right-bottom {
+    padding: 30px;
+    width: auto;
+    margin: 0;
+  }
+  .cm-expect .right-bottom .cm-item {
+    width: 100%;
+    margin-right: 0;
+  }
+  .cm-expect .right-bottom h4 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 16px;
+    letter-spacing: 2px;
+    line-height: 1.2em;
+  }
+  .cm-expect .right-bottom p {
+    margin-bottom: 30px;
+  }
+  .cm-expect .right-bottom .cm-spacer {
+    margin-bottom: 30px;
+  }
+  .cm-expect ul {
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,216 @@
+{% import "../../macros/_macros.html" as macros %}  
+<div class="cm_pg_wrp {{name}} {{ module.advanced_customization.css_class_selector }} {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.pagination.previous.select_icon_type }}_prev_ic_ty {{ module.pagination.next.select_icon_type }}_prev_ic_ty {{ module.social_share.button.select_icon_type }}_share_icon" 
+     {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  <div class="page-center  {{ module.style.container.select_size }}">
+    <div class="pagination-row flex_row {% if not module.social_share.button.select_icon_type and not module.social_share.social_icon %} pg-center {% endif %} {% if not module.pagination.previous.text_field and not module.pagination.previous.select_icon_type and not module.pagination.next.text_field and not module.pagination.next.select_icon_type  %}
+  hide-pagination
+{% elif not module.social_share.button.select_icon_type and not module.social_share.social_icon and not module.social_share.button.text_field %}
+hide-share
+{% endif %}">
+      <div class="left-col {% if not module.social_share.button.select_icon_type and not module.social_share.social_icon and not module.social_share.button.text_field  %} col12 {% else %} col6 {% endif %}">
+        <div class="prev-pagi" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+          <div class="prev-pagi-inner">
+            {% set href = module.pagination.previous.link_field.url.href %}
+            {% if module.pagination.previous.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            <a href="{{ href }}" class="{{ module.style.pagination.select_button_theme }}"
+               {% if module.pagination.previous.link_field.open_in_new_tab %}target="_blank"{% endif %}
+               {% if module.pagination.previous.link_field.rel %}rel="{{ module.pagination.previous.link_field.rel }}"{% endif %}
+               >
+              {% if module.pagination.previous.select_icon_type == "image" or module.pagination.previous.select_icon_type == "icon" %}
+              <div class="icon-cnt">
+                {% if module.pagination.previous.select_icon_type == "image" %}
+                {% if module.pagination.previous.image_field.src %}
+                <div class="img-wrap">
+                  {% set loadingAttr = module.pagination.previous.image_field.loading != 'disabled' ? 'loading="{{ module.pagination.previous.image_field.loading }}"' : '' %}
+                  <img src="{{ module.pagination.previous.image_field.src }}" alt="{{ module.pagination.previous.image_field.alt }}" {{ loadingAttr }}>
+                </div>
+                {% endif %}
+                {% elif module.pagination.previous.select_icon_type == "icon" %}
+                {% if module.pagination.previous.icon_field.name %}
+                <div class="icon-wrap {% if module.pagination.previous.select_icon_color_theme != "custom" %}{{ module.pagination.previous.select_icon_color_theme }}{% endif %}">
+                  {% icon
+                        name="{{ module.pagination.previous.icon_field.name }}"
+                        style="{{ module.pagination.previous.icon_field.type }}"
+                        unicode="{{ module.pagination.previous.icon_field.unicode }}"
+                        icon_set="{{ module.pagination.previous.icon_field.icon_set }}"
+                      %}
+                </div>
+                {% endif %}
+                {% endif %}
+              </div>
+              {% endif %}
+              <span>{{ module.pagination.previous.text_field }}</span>
+            </a>
+          </div>
+        </div>
+        <div class="next-pagi" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="300" {% endif %}>
+          <div class="next-pagi-inner">
+            {% set href = module.pagination.next.link_field.url.href %}
+            {% if module.pagination.next.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% endif %}
+            <a href="{{ href }}" class="{{ module.style.pagination.select_button_theme }}" 
+               {% if module.pagination.next.link_field.open_in_new_tab %}target="_blank"{% endif %}
+               {% if module.pagination.next.link_field.rel %}rel="{{ module.pagination.next.link_field.rel }}"{% endif %}
+               >
+              <span>{{ module.pagination.next.text_field }}</span>
+              {% if module.pagination.next.select_icon_type == "image" or module.pagination.next.select_icon_type == "icon" %}
+              <div class="icon-cnt">
+                {% if module.pagination.next.select_icon_type == "image" %}
+                {% if module.pagination.next.image_field.src %}
+                <div class="img-wrap">
+                  {% set loadingAttr = module.pagination.next.image_field.loading != 'disabled' ? 'loading="{{ module.pagination.next.image_field.loading }}"' : '' %}
+                  <img src="{{ module.pagination.next.image_field.src }}" alt="{{ module.pagination.next.image_field.alt }}" {{ loadingAttr }}>
+                </div>
+                {% endif %}
+                {% elif module.pagination.next.select_icon_type == "icon" %}
+                {% if module.pagination.next.icon_field.name %}
+                <div class="icon-wrap {% if module.pagination.next.select_icon_color_theme != "custom" %}{{ module.pagination.next.select_icon_color_theme }}{% endif %}">
+                  {% icon
+                    name="{{ module.pagination.next.icon_field.name }}"
+                    style="{{ module.pagination.next.icon_field.type }}"
+                    unicode="{{ module.pagination.next.icon_field.unicode }}"
+                    icon_set="{{ module.pagination.next.icon_field.icon_set }}"
+                  %}
+                </div>
+                {% endif %}
+                {% endif %}
+              </div>
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-col {% if not module.pagination.previous.text_field and not module.pagination.previous.select_icon_type and not module.pagination.next.text_field and not module.pagination.next.select_icon_type %} col12 {% else %} col6 {% endif %}">
+        <div class="social-share" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="400" {% endif %}>
+          <div class="social-share-inn {% if not module.social_share.button.select_icon_type %} no_pad {% endif %}">
+            {% if module.social_share.button.mobile_social_title_text %}
+            <h3 class="mobile_share_title {% if module.social_share.button.override_mobile_button_color %} cm_color{% endif %}">
+              {{ module.social_share.button.mobile_social_title_text }}  
+            </h3>
+            {% endif %}
+            {% if  module.social_share.button.select_icon_type or  module.social_share.button.text_field   %}
+            <a class="{{ module.style.social_share.select_button_theme }} share-btn desktop-title-text" >
+              {% if module.social_share.button.select_icon_type %}
+              <div class="icon-cnt">
+                {% if module.social_share.button.select_icon_type == "image" %}
+                {% if module.social_share.button.image_field.src %}
+                <div class="img-wrap">
+                  {% set loadingAttr = module.social_share.button.image_field.loading != 'disabled' ? 'loading="{{ module.social_share.button.image_field.loading }}"' : '' %}
+                  <img src="{{ module.social_share.button.image_field.src }}" alt="{{ module.social_share.button.image_field.alt }}" {{ loadingAttr }}>
+                </div>
+                {% endif %}
+                {% elif module.social_share.button.select_icon_type == "icon" %}
+                {% if module.social_share.button.icon_field.name %}
+                <div class="icon-wrap {% if module.social_share.button.select_icon_color_theme != "custom" %}{{ module.social_share.button.select_icon_color_theme }}{% endif %}">
+                  {% icon
+                      name="{{ module.social_share.button.icon_field.name }}"
+                      style="{{ module.social_share.button.icon_field.type }}"
+                      unicode="{{ module.social_share.button.icon_field.unicode }}"
+                      icon_set="{{ module.social_share.button.icon_field.icon_set }}"
+                    %}
+                </div>
+                {% endif %}
+                {% endif %}
+              </div>
+              {% endif %}
+              <span>{{ module.social_share.button.text_field }}</span>
+            </a>
+            {% endif %}
+
+
+
+
+            <div class="social-share-icon  {% if not module.social_share.button.select_icon_type and not module.social_share.button.text_field %}  no_btn {% endif %}">
+              <ul class="cm_pg_wrp_social_ul">
+                {% for item in module.social_share.social_icon %}
+                <li>
+                  {% set href = item.link_field.url.href %}
+                  {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                  {% endif %}
+                  <a href="{{ href }}" class="{{ module.style.social_share.select_button_theme }}  {% if item.select_icon_type == "image" %} share-img {% endif %}" 
+                     {% if item.link_field.open_in_new_tab %}target="_blank"{% endif %}
+                     {% if item.link_field.rel %}rel="{{ item.link_field.rel }}"{% endif %}
+                     >
+                    <div class="icon-cnt">
+                      {% if item.select_icon_type == "image" %}
+                      {% if item.image_field.src %}
+                      <div class="img-wrap">
+                        {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+                        <img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }}>
+                      </div>
+                      {% endif %}
+                      {% elif item.select_icon_type == "icon" %}
+                      {% if item.icon_field.name %}
+                      <div class="icon-wrap {% if module.social_share.button.select_icon_color_theme != "custom" %}{{ module.social_share.button.select_icon_color_theme }}{% endif %}">
+                        {% icon
+                              name="{{ item.icon_field.name }}"
+                              style="{{ item.icon_field.type }}"
+                              unicode="{{ item.icon_field.unicode }}"
+                              icon_set="{{ item.icon_field.icon_set }}"
+                            %}
+                      </div>
+                      {% endif %}
+                      {% endif %}
+                    </div>
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ macros.sectionBackgroundStyle(name, module.style) }}
+{{ macros.sectionSpacing(name, module.style) }}
+{{ macros.customContainer(name, module.style) }}
+
+
+
+{% require_css %}
+
+<style>
+
+  {% if module.style.pagination.select_button_theme == "custom" %}
+  .cm_pg_wrp.{{name}} .left-col a{
+    background-color:rgba({{ module.style.pagination.background_color.color|convert_rgb }},{{ module.style.pagination.background_color.opacity*0.01 }});
+    color:rgba({{ module.style.pagination.text_color.color|convert_rgb }},{{ module.style.pagination.text_color.opacity*0.01 }});
+  }
+
+  .cm_pg_wrp.{{name}} .left-col a:hover{
+    color:rgba({{ module.style.pagination.background_color.color|convert_rgb }},{{ module.style.pagination.background_color.opacity*0.01 }});
+    background-color:rgba({{ module.style.pagination.text_color.color|convert_rgb }},{{ module.style.pagination.text_color.opacity*0.01 }});
+  }
+
+  {% endif %}
+
+  {% if module.style.social_share.select_button_theme == "custom" %}
+  .cm_pg_wrp.{{name}} .right-col .social-share a:not(.share-img){
+    background-color:rgba({{ module.style.social_share.background_color.color|convert_rgb }},{{ module.style.social_share.background_color.opacity*0.01 }});
+    color:rgba({{ module.style.social_share.text_color.color|convert_rgb }},{{ module.style.social_share.text_color.opacity*0.01 }});
+  }
+
+  .cm_pg_wrp.{{name}} .right-col .social-share .open a.share-btn:not(.share-img),
+  .cm_pg_wrp.{{name}} .right-col .social-share a:not(.share-img):hover{
+    color:rgba({{ module.style.social_share.background_color.color|convert_rgb }},{{ module.style.social_share.background_color.opacity*0.01 }});
+    background-color:rgba({{ module.style.social_share.text_color.color|convert_rgb }},{{ module.style.social_share.text_color.opacity*0.01 }});
+  }
+
+  {% endif %}
+  {% if module.social_share.button.override_mobile_button_color %}
+  .cm_pg_wrp.{{name}} h3.mobile_share_title.cm_color{
+    color:{{ macros.color(module.social_share.button.color_field) }};
+  }
+  {% endif %}
+
+</style>
+{% end_require_css %}
+

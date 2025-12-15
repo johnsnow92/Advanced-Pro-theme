@@ -1,0 +1,232 @@
+{% import "../../macros/_macros.html" as macros %}
+
+<div {% if module.advanced_customization.css_id_selector %} id="{{ module.advanced_customization.css_id_selector }}"{% endif %} 
+     class="brn_{{name}} bnr_wrp {{ module.style.content.content_alignment }} {{ module.module_settings.select_slider_effect }}_effect {{ module.module_settings.banner_height }}  {{ module.style.color.font_color_theme}} {{ module.slider_setting.navigator_alignment }} {{ module.slider_setting.select_navigator_type }} {{ module.advanced_customization.css_class_selector }}  {% if module.slider_setting.autoplay %}autoPlay_true{% endif %} {% if module.slider_setting.loop %}loopTrue{% endif %}">
+  <div class="glide">
+    <div class="glide__track" data-glide-el="track" > 
+      <ul class="glide__slides">
+        {% for item in module.slides_group %}
+        <li class="glide__slide   {{ item.select_content_alignment }}  ty_{{ item.background_options.select_background_type }} vid_{{ item.background_options.select_video_type }} {% if item.background_options.enable_parallax %}parallax_enable{% endif %}">
+          <div {% if item.background_options.select_background_type == "gradient" %}style="background-image:linear-gradient({{ item.background_options.select_gradient_direction }}, {% for item2 in item.background_options.select_color %}{{ macros.color(item2) }}{% if not loop.last%},{% endif %}{% endfor %})" {% endif %} class="glide_slide_bg {{loop.index}}_gadient" {% if item.background_options.select_background_type == "image" or item.background_options.select_background_type == "video"  %} {% if macros.color(item.background_options.overlay_color)|length > 0 %} style="background-color:{{ macros.color(item.background_options.overlay_color) }};" {% endif %}{% endif %} >
+          </div>
+          {% if item.background_options.enable_parallax %}
+          {% if item.background_options.background_image.src %}
+          <div class="hs_parallax">
+            <div class="simpleParallax_wrap">
+              <img  class="thumbnail" src="{{item.background_options.background_image.src }}" alt="{{item.background_options.background_image.alt}}">
+            </div>
+          </div>
+          {% endif %} 
+          {% endif %}
+          <div class="glide_background {{name}}  {{ item.background_options.select_color_theme }} "   {% if item.background_options.select_color_theme=="custom" %}style="background-color:{{ macros.color(item.background_options.background_color) }}"{% endif %} 
+               {% if item.background_options.select_background_type =='image' %} style="background-image:url({{item.background_options.background_image.src}}); background-position:{% if item.background_options.background_image_position == "custom"%} {{item.background_options.custom_background_image_position}} {% else %} {{item.background_options.background_image_position}} {% endif %}"{% endif %}>
+
+            {% if item.background_options.select_background_type=="video" %}
+            {% if item.background_options.select_video_type=="local" %}
+            <div class="bnr_vid">
+              <video loop muted autoplay >
+                <source src="{{ item.background_options.select_video }}" type="video/mp4">
+              </video>
+            </div> 
+            {% endif %}
+            {% if item.background_options.select_video_type=="external" %}
+            {% if item.background_options.video_url %}
+            {% if item.background_options.video_url is string_containing "youtube.com" %}
+            <div class="bnr_vid iframe_banner_vid">
+              <iframe src="{{ item.background_options.video_url|split('?')|first }}?autoplay=1&loop=1&mute=1&showinfo=0&controls=0&playlist={{ item.background_options.video_url|split('?')|first|split('/')|last }}" frameborder="0" allowFullScreen class="iframe_video"></iframe>
+            </div> 
+            {% else %}
+            <div class="bnr_vid iframe_banner_vid">
+              <iframe src="{{ item.background_options.video_url|split('?')|first }}?autoplay=1&loop=1&autopause=0&muted=1&title=0&byline=0&portrait=0&sidedock=0" frameborder="0" allow="autoplay; fullscreen" allowFullScreen class="iframe_video"></iframe>
+            </div>
+            {% endif %}
+            {% endif %}
+            {% endif %}
+            {% endif %}
+            <div class="page-center {{ module.style.container.select_size }}">
+              <div class="glide_content cm_trns  pdlr15 cm_anima {% if item.animations.enable_animation %} {{ item.animations.animation_type }} {% endif %}" >
+                {% if item.heading %}
+                <div class="glide_title " {% if loop.first and item.animations.enable_animation %} data-aos="{{ item.animations.animation_type }}" {% endif %}>
+                  <{{ item.select_slider_heading_type }}>
+                  {{ item.heading }}
+                  </{{ item.select_slider_heading_type }}>
+                </div>
+
+                  {% endif %}
+                  {% if item.content %}
+                  <div class="glide_subtitle" {% if loop.first and item.animations.enable_animation %} data-aos="{{ item.animations.animation_type }}" {% endif %}>
+                    {{ item.content }}
+                  </div>
+                  {% endif %}
+
+                  {% if item.button_group %}
+                  <div  {% if loop.first and item.animations.enable_animation %} data-aos="{{ item.animations.animation_type }}" {% endif %}>
+                    {{ macros.buttonWithPopupGroup(item.button_group, false) }}
+                  </div>
+                  {% endif %}
+
+                  </div>
+                </div>
+              </div>
+              </li>
+            {% endfor %}
+            </ul>
+        </div>
+      {% if module.slider_setting.navigation_group.pagination_type != 'custom_nav' %}  
+      {% if module.slider_setting.dots %}
+      <div  class="glide__bullets {{ module.slider_setting.select_navigator_type }} {{ module.slider_setting.navigator_alignment }}" data-glide-el="controls[nav]">
+        {% for item in module.slides_group %}
+        <div {% for item in module.slides_group %}{% if loop.first %} {% if item.animations.enable_animation %} data-aos="fade" data-aos-offset="-300" {% endif %} {% endif %}{% endfor %}  class="glide__bullet" data-glide-dir="={{loop.index - 1}}"><span class="cm_dots_number">{{loop.index}}</span></div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% endif %}
+      {% if  module.slider_setting.navigation_group.pagination_type == 'custom_nav' %} 
+      {% if  module.slider_setting.navigator_alignment  != 'bottom' %}
+      {% if module.slider_setting.dots %}
+      <div class="glide__bullets {{ module.slider_setting.select_navigator_type }} {{ module.slider_setting.navigator_alignment }}" data-glide-el="controls[nav]">
+        {% for item in module.slides_group %}
+        <div class="glide__bullet" data-glide-dir="={{loop.index - 1}}"><span class="cm_dots_number">{{loop.index}}</span></div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      {% endif %}
+      {% endif %}
+
+      {% if module.slider_setting.navigation_group.pagination_type == 'custom_nav' %}
+      <div class="page-center cm_pag {{ module.style.container.select_size }}">
+        <div class="cm_pagination_wr">
+          {% if module.slider_setting.navigation %}
+          <div class="glide_arrows" data-glide-el="controls"> 
+            <div class="glide_arrow glide_arrow-left" data-glide-dir="&lt;"><h4>{{ module.slider_setting.navigation_group.previous_text }}</h4></div>
+            <span class="cm_pg_seprate">/</span>
+            <div class="glide_arrow glide_arrow-right" data-glide-dir="&gt;"><h4>{{ module.slider_setting.navigation_group.next_button_text }}</h4></div>
+          </div>
+          {% endif %}
+          {% if  module.slider_setting.navigator_alignment  == 'bottom' %}
+          {% if module.slider_setting.dots %}
+          {% if  module.slider_setting.select_navigator_type  == 'number_bullets' %}
+          <div class="glide__bullets   {{ module.slider_setting.select_navigator_type }} {{ module.slider_setting.navigator_alignment }}" data-glide-el="controls[nav]">
+            {% for item in module.slides_group %}
+            <div class="glide__bullet" data-glide-dir="={{loop.index - 1}}"><span class="cm_dots_number h4">{% if loop.index < 10 %}0{% endif %}{{loop.index}}</span></div>
+            {% endfor %}
+          </div>
+          {% elif module.slider_setting.select_navigator_type  == 'circle_bullets' %}
+          <div class="glide__bullets {{ module.slider_setting.select_navigator_type }} {{ module.slider_setting.navigator_alignment }}" data-glide-el="controls[nav]">
+            {% for item in module.slides_group %}
+            <div class="glide__bullet" data-glide-dir="={{loop.index - 1}}"><span class="cm_dots_number">{{loop.index}}</span></div>
+            {% endfor %}
+          </div>
+          {% elif module.slider_setting.select_navigator_type  == 'square_bullets' %}
+          <div class="glide__bullets {{ module.slider_setting.select_navigator_type }} {{ module.slider_setting.navigator_alignment }}" data-glide-el="controls[nav]">
+            {% for item in module.slides_group %}
+            <div class="glide__bullet" data-glide-dir="={{loop.index - 1}}"><span class="cm_dots_number">{{loop.index}}</span></div>
+            {% endfor %}
+          </div>
+          {% else %}
+          {% endif %}
+          {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      {% if module.slider_setting.navigation %}
+      {% if module.slider_setting.navigation_group.pagination_type == 'arrows' %}
+      <div class="glide__arrows" data-glide-el="controls">
+        <div class="glide__arrow glide__arrow--left" data-glide-dir="&lt;">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M40 20C40 8.95312 31.0469 0 20 0C8.95312 0 0 8.95312 0 20C0 31.0469 8.95312 40 20 40C31.0469 40 40 31.0469 40 20ZM16.7969 9.92188C17.5312 9.1875 18.7188 9.1875 19.4453 9.92188C20.1719 10.6562 20.1797 11.8437 19.4453 12.5703L13.8984 18.1172L30.625 18.125C31.6641 18.125 32.5 18.9609 32.5 20C32.5 21.0391 31.6641 21.875 30.625 21.875H13.8984L19.4453 27.4219C20.1797 28.1562 20.1797 29.3438 19.4453 30.0703C18.7109 30.7969 17.5234 30.8047 16.7969 30.0703L8.04688 21.3281C7.3125 20.5938 7.3125 19.4062 8.04688 18.6797L16.7969 9.92188Z" fill="#B9BBBD"/>
+          </svg>
+        </div>
+        <div class="glide__arrow glide__arrow--right" data-glide-dir="&gt;"> 
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 20C0 8.95312 8.95312 0 20 0C31.0469 0 40 8.95312 40 20C40 31.0469 31.0469 40 20 40C8.95312 40 0 31.0469 0 20ZM23.2031 9.92188C22.4688 9.1875 21.2812 9.1875 20.5547 9.92188C19.8281 10.6562 19.8203 11.8437 20.5547 12.5703L26.1016 18.1172L9.375 18.125C8.33594 18.125 7.5 18.9609 7.5 20C7.5 21.0391 8.33594 21.875 9.375 21.875H26.1016L20.5547 27.4219C19.8203 28.1562 19.8203 29.3438 20.5547 30.0703C21.2891 30.7969 22.4766 30.8047 23.2031 30.0703L31.9531 21.3281C32.6875 20.5938 32.6875 19.4062 31.9531 18.6797L23.2031 9.92188Z" fill="#026780"/>
+          </svg>
+        </div>
+      </div>
+      {% endif %}
+      {% endif %}
+    </div> 
+
+    {% for item in module.slides_group %}
+    {% if item.button_group %}
+    {{ macros.buttonWithPopupGroup(item.button_group, true) }}
+    {% endif %}
+    {% endfor %}
+  </div> 
+
+
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+  {% if module.style.content.select_color_theme == 'custom' %}
+  {% require_css %}
+  <style>
+
+    .brn_{{name}} {
+      margin-top: {{ module.style.spacing.spacing.margin.top.value }}{{ module.style.spacing.spacing.margin.top.units }};
+      margin-bottom: {{ module.style.spacing.spacing.margin.bottom.value }}{{ module.style.spacing.spacing.margin.bottom.units }};
+    }
+    .brn_{{name}} .glide_background {
+      padding-top: {{ module.style.spacing.spacing.padding.top.value }}{{ module.style.spacing.spacing.padding.top.units }};
+      padding-bottom: {{ module.style.spacing.spacing.padding.bottom.value }}{{ module.style.spacing.spacing.padding.bottom.units }};
+      padding-left: {{ module.style.spacing.spacing.padding.left.value }}{{ module.style.spacing.spacing.padding.left.units }};
+      padding-right: {{ module.style.spacing.spacing.padding.right.value }}{{ module.style.spacing.spacing.padding.right.units }};
+    }
+    {% if module.style.spacing.change_mobile_spacing %}
+    @media(max-width:768px){
+      .brn_{{name}} {
+        margin-top: {{ module.style.spacing.mobile_spacing.margin.top.value }}{{ module.style.spacing.mobile_spacing.margin.top.units }};
+        margin-bottom: {{ module.style.spacing.mobile_spacing.margin.bottom.value }}{{ module.style.spacing.mobile_spacing.margin.bottom.units }};
+      }
+      .brn_{{name}} .glide_background {
+        padding-top: {{ module.style.spacing.mobile_spacing.padding.top.value }}{{ module.style.spacing.mobile_spacing.padding.top.units }};
+        padding-bottom: {{ module.style.spacing.mobile_spacing.padding.bottom.value }}{{ module.style.spacing.mobile_spacing.padding.bottom.units }};
+        padding-left: {{ module.style.spacing.mobile_spacing.padding.left.value }}{{ module.style.spacing.mobile_spacing.padding.left.units }};
+        padding-right: {{ module.style.spacing.mobile_spacing.padding.right.value }}{{ module.style.spacing.mobile_spacing.padding.right.units }};
+      }
+    }
+    {% endif %}
+    .brn_{{name}} .number_bullets span.cm_dots_number,
+    .brn_{{name}} .cm_pagination_wr,
+    .brn_{{name}} .cm_pagination_wr h4 {
+      color:{{ macros.color(module.style.content.color) }};
+    }
+    .brn_{{name}}  .glide__bullets.number_bullets .glide__bullet:after{
+      background-color:{{ macros.color(module.style.content.color) }};
+    }
+  </style>
+  {% end_require_css %}
+  {% endif %}
+  {% require_js %}
+  <script>
+
+    document.addEventListener('DOMContentLoaded',function(){
+      var images = document.querySelectorAll('.brn_{{name}} .simpleParallax_wrap img');
+                                             new simpleParallax(images);
+
+      var config = {
+        {% if module.slider_setting.loop %}
+        type:'carousel',
+        {% endif %}
+        {% if not module.slider_setting.loop %}
+        rewind:false,
+        {% endif %}
+        perTouch:1,
+        perView:1,
+        gap:0,
+        {% if module.slider_setting.autoplay %}
+        autoplay: {{ module.slider_setting.autoplay_speed * 1000 }},
+        {% endif %}
+      }
+      var glide = new Glide(".brn_{{name}} .glide",config)
+                            glide.mount()
+
+      })
+
+
+  </script>
+  {% end_require_js %}
+
+
+
+

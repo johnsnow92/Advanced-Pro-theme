@@ -1,0 +1,286 @@
+[ {
+  "id" : "50940c27-65da-32f5-c926-80e373c03717",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "show_loading" : false,
+  "type" : "logo",
+  "display_width" : null,
+  "default" : {
+    "override_inherited_src" : true,
+    "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/hubsnackslogo.svg",
+    "alt" : "hubsnackslogo",
+    "width" : 400,
+    "height" : 400
+  }
+}, {
+  "id" : "02532c5c-72be-f9ef-9ef7-ccccc5c75166",
+  "name" : "simple_menu_1_heading",
+  "label" : "Simple Menu 1 Heading",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Who We Are"
+}, {
+  "id" : "477bd06b-f8ff-17f7-32f2-524cc1d70e98",
+  "name" : "simple_menu_1",
+  "label" : "Simple Menu 1",
+  "required" : false,
+  "locked" : true,
+  "type" : "simplemenu",
+  "display_width" : null,
+  "default" : [ {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Careers",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Contact Us",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Leadership",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  } ]
+}, {
+  "id" : "3ccccf8b-a8a2-b518-17ef-e43076616cf4",
+  "name" : "simple_menu_2_heading",
+  "label" : "Simple Menu 2 Heading",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "About Us"
+}, {
+  "id" : "21c180bf-a67f-8f07-4df4-5974b7b3deb3",
+  "name" : "simple_menu_2",
+  "label" : "Simple menu 2",
+  "required" : false,
+  "locked" : true,
+  "type" : "simplemenu",
+  "display_width" : null,
+  "default" : [ {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Custody",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "OTC Solutions",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Settlement",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Risk Management Solutions",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  }, {
+    "isPublished" : false,
+    "pageLinkId" : null,
+    "pageLinkName" : null,
+    "isDeleted" : null,
+    "categoryId" : null,
+    "subCategory" : null,
+    "contentType" : null,
+    "state" : null,
+    "linkLabel" : "Frequently Asked Questions",
+    "linkUrl" : null,
+    "linkParams" : null,
+    "linkTarget" : null,
+    "type" : "PAGE_LINK",
+    "children" : [ ]
+  } ]
+}, {
+  "id" : "4c79a9b7-bc23-0034-07b5-6a1c8c5e75d6",
+  "name" : "copyright",
+  "label" : "Copyright",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>© {{ year }} CompanyName. All Rights Reserved. Website designed by CompanyName. Sitemap | Suppliers | Privacy | Terms of Use</p>"
+}, {
+  "id" : "9cfe06ea-1bd3-a123-def4-fd50e1e60e30",
+  "name" : "social_icon",
+  "label" : "Social Icon",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : "9cab389d-36fc-9a3b-ad84-6ac245d1787d",
+    "default" : 5
+  },
+  "children" : [ {
+    "id" : "9cab389d-36fc-9a3b-ad84-6ac245d1787d",
+    "name" : "icon",
+    "label" : "Icon",
+    "required" : false,
+    "locked" : false,
+    "icon_set" : "fontawesome-5.0.10",
+    "type" : "icon",
+    "display_width" : null,
+    "default" : {
+      "name" : "facebook-f",
+      "unicode" : "f39e",
+      "type" : "REGULAR"
+    }
+  }, {
+    "id" : "645e0354-8783-e4f0-744a-5786696b0089",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "icon" : {
+      "name" : "facebook-f",
+      "unicode" : "f39e",
+      "type" : "REGULAR"
+    },
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "icon" : {
+      "name" : "facebook-f",
+      "unicode" : "f39e",
+      "type" : "REGULAR"
+    },
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "icon" : {
+      "name" : "facebook-f",
+      "unicode" : "f39e",
+      "type" : "REGULAR"
+    },
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "icon" : {
+      "name" : "facebook-f",
+      "unicode" : "f39e",
+      "type" : "REGULAR"
+    },
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "icon" : {
+      "name" : "facebook-f",
+      "unicode" : "f39e",
+      "type" : "REGULAR"
+    },
+    "url" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  } ]
+} ]

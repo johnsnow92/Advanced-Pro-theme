@@ -1,0 +1,85 @@
+<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      />
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<section class="about-testimonial services-testimonial">
+  <div class="container">
+    <div class="about-testimonial-heading">
+      <h4>
+        {{ module.our_history }}
+      </h4>
+
+      <h2>
+        {{ module.about_testimonial_heading }}
+      </h2>
+
+      <p>
+        {{ module.about_heading_para }}
+      </p>
+    </div>
+
+
+    <!--  Tabbing    -->
+    <div class="tabs-row swiper mySwiper">
+      <div class="slider swiper-wrapper">
+
+        {% for item in module.card_group %}
+        <div class="slide swiper-slide" style="margin-right: 110px !important;">
+          <div class="slide-img">
+            {% if item.blog_testimonial_img.src %}
+            {% set sizeAttrs = 'width="{{ item.blog_testimonial_img.width|escape_attr }}" height="{{ item.blog_testimonial_img.height|escape_attr }}"' %}
+            {% if item.blog_testimonial_img.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.blog_testimonial_img.width|escape_attr }}" height="{{ item.blog_testimonial_img.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.blog_testimonial_img.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.blog_testimonial_img.max_width|escape_attr }}" height="{{ item.blog_testimonial_img.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.blog_testimonial_img.loading != 'disabled' ? 'loading="{{ item.blog_testimonial_img.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.blog_testimonial_img.src|escape_url }}" alt="{{ item.blog_testimonial_img.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+
+          <div class="slide-content">
+            {{ item.testimonial_para }}
+          </div>
+
+          <div class="slide-footer">
+            <p>
+              {{ item.testimonial_card_footer_text }}
+            </p>
+            <span>
+              {{ item.card_footer_text }}
+            </span>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <!--end Tabbing -->
+
+    <div class="sec-video">
+      {% if module.videoplayer_field.player_id %}
+      {% set max_width = module.videoplayer_field.size_type == 'auto_custom_max' ? module.videoplayer_field.max_width : module.videoplayer_field.width %}
+      {% set max_height = module.videoplayer_field.size_type == 'auto_custom_max' ? module.videoplayer_field.max_height : module.videoplayer_field.height %}
+      {% video_player "embed_player"
+    player_id={{ module.videoplayer_field.player_id }}
+    type={{ module.videoplayer_field.player_type || 'scriptV4' }}
+    full_width={{ module.videoplayer_field.size_type == 'auto_full_width' }},
+    conversion_asset={{ module.videoplayer_field.conversion_asset|tojson|safe }}
+    autoplay={{ module.videoplayer_field.autoplay }}
+    hidden_controls={{ module.videoplayer_field.hide_controls }}
+    loop={{ module.videoplayer_field.loop_video }}
+    muted={{ module.videoplayer_field.mute_by_default }}
+     %}
+      {% endif %}
+    </div>
+
+  </div>
+
+
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+

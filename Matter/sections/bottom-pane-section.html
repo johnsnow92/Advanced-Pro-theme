@@ -1,0 +1,76 @@
+<!--
+templateType: section
+label: Bottom Pane Section
+isAvailableForNewContent: false
+-->
+
+{% dnd_section
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+    {% dnd_row %}
+      {% dnd_module
+        path="../modules/content-with-background",
+        offset=0,
+        width=12,
+        background_options={
+          "background_image" : {
+            "alt" : "Bottom Banner",
+            "height" : 400,
+            "max_height" : 400,
+            "max_width" : 1440,
+            "src" : "{{ get_asset_url('../images/bottom-pane-bg.png') }}",
+            "width" : 1440
+          },
+          "overlay_color" : {
+            "color" : "#212429",
+            "opacity" : 50
+          }
+        },
+        title="If You are Stuck Anywhere We Are With You for Any Help !",
+          button_group=[ {
+          "button_link" : {
+            "no_follow" : false,
+            "open_in_new_tab" : false,
+            "url" : {
+              "href" : "",
+              "type" : "EXTERNAL"
+            }
+          },
+          "button_text" : "Contact Us",
+             "select_button_theme" : "hs-button",
+          "select_button_type" : "std",
+          } ],
+        style={
+          "container" : {
+            "custom_width" : 550,
+            "select_size" : "custom"
+          },
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 74
+                },
+                "left" : { },
+                "right" : { },
+                "top" : {
+                  "units" : "px",
+                  "value" : 74
+                }
+              }
+            }
+          }
+        }
+      %}
+        {% module_attribute "content_rich" %}
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_row %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

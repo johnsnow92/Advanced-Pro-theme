@@ -1,0 +1,131 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<section class="case-study">
+  <div class="container">
+    <h2>
+      {{ module.main_heading }}
+    </h2>
+
+    <div class="main-blog">
+
+      {% for item in module.post_group %}
+      <div class="blog-1">
+        <div class="blog-img">
+          {% if item.post_image.src %}
+          {% set sizeAttrs = 'width="{{ item.post_image.width|escape_attr }}" height="{{ item.post_image.height|escape_attr }}"' %}
+          {% if item.post_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.post_image.width|escape_attr }}" height="{{ item.post_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.post_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.post_image.max_width|escape_attr }}" height="{{ item.post_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = item.post_image.loading != 'disabled' ? 'loading="{{ item.post_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.post_image.src|escape_url }}" alt="{{ item.post_image.alt|escape_attr }}">
+          {% endif %}        
+        </div>
+        <div class="blog-content">
+          <div class="b-name">
+            <div class="b-img">
+              {% if item.author_image.src %}
+              {% set sizeAttrs = 'width="{{ item.author_image.width|escape_attr }}" height="{{ item.author_image.height|escape_attr }}"' %}
+              {% if item.author_image.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.author_image.width|escape_attr }}" height="{{ item.author_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.author_image.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.author_image.max_width|escape_attr }}" height="{{ item.author_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.author_image.loading != 'disabled' ? 'loading="{{ item.author_image.loading|escape_attr }}"' : '' %}
+              <img src="{{ item.author_image.src|escape_url }}" alt="{{ item.author_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+
+              <div class="blog-head">
+                <h5>
+                  {% set href = item.link_field.url.href %}
+                  {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+                  {% set href = "mailto:" + href %}
+                  {% endif %}
+                  <a
+                     {% if item.link_field.url.type is equalto "CALL_TO_ACTION"  %}
+                     href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+                     {% else %}
+                     href="{{ href|escape_url }}"
+                     {% endif %}
+                     {% if item.link_field.open_in_new_tab %}
+                     target="_blank"
+                     {% endif %}
+                     {% if item.link_field.rel %}
+                     rel="{{ item.link_field.rel|escape_attr }}"
+                     {% endif %}
+                     >
+                    {{ item.author_name }}
+                  </a>
+                </h5>
+                <div class="date"> {{ item.post_date }} </div>
+              </div>
+            </div>
+            {% if item.dot_image.src %}
+            {% set sizeAttrs = 'width="{{ item.dot_image.width|escape_attr }}" height="{{ item.dot_image.height|escape_attr }}"' %}
+            {% if item.dot_image.size_type == 'auto' %}
+            {% set sizeAttrs = 'width="{{ item.dot_image.width|escape_attr }}" height="{{ item.dot_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% elif item.dot_image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ item.dot_image.max_width|escape_attr }}" height="{{ item.dot_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+            {% set loadingAttr = item.dot_image.loading != 'disabled' ? 'loading="{{ item.dot_image.loading|escape_attr }}"' : '' %}
+            <img src="{{ item.dot_image.src|escape_url }}" alt="{{ item.dot_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+            {% endif %}
+          </div>
+
+          <div class="a-heading">
+            <div class="tags-t"> {{ item.tag }} </div>
+
+         {% set href = item.link_field.url.href %}
+          {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a
+             {% if item.link_field.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+             {% else %}
+             href="{{ href|escape_url }}"
+             {% endif %}
+             {% if item.link_field.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if item.link_field.rel %}
+             rel="{{ item.link_field.rel|escape_attr }}"
+             {% endif %}
+             class="truncate">
+              {{ item.post_heading }}
+            </a>
+          </div>
+
+          {{ item.post_detail }}      
+
+
+
+          {% set href = item.link_field.url.href %}
+          {% if item.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+          {% set href = "mailto:" + href %}
+          {% endif %}
+          <a
+             {% if item.link_field.url.type is equalto "CALL_TO_ACTION"  %}
+             href="{{ href }}" {# The href here is not escaped as it is not editable and functions as a JavaScript call to the associated CTA #}
+             {% else %}
+             href="{{ href|escape_url }}"
+             {% endif %}
+             {% if item.link_field.open_in_new_tab %}
+             target="_blank"
+             {% endif %}
+             {% if item.link_field.rel %}
+             rel="{{ item.link_field.rel|escape_attr }}"
+             {% endif %}
+             class="card-link" >
+            {{ item.read_more_btn_text }}</a>
+        </div>
+
+      </div>
+      {% endfor %}
+    </div>
+
+
+
+  </div>
+</section>

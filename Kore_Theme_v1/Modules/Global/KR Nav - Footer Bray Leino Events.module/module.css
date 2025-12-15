@@ -1,0 +1,129 @@
+.kore-navigation-bray-leino-events-footer {
+  background-color: #333b48;
+  padding: 40px 0;
+  font-size: 14px;
+}
+
+.kore-navigation-bray-leino-events-footer .page-width {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-navigation-bray-leino-events-footer .flex {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  margin: 0 -20px;
+}
+
+.kore-navigation-bray-leino-events-footer .flex .col {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.kore-navigation-bray-leino-events-footer p {
+  font-size: 12px; 
+  color: hsla(0, 0%, 100%, 0.8);
+}
+
+.kore-navigation-bray-leino-events-footer a {
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  color: hsla(0, 0%, 100%, 0.8);
+  font-size: 12px; 
+  text-decoration: none;
+}
+
+.kore-navigation-bray-leino-events-footer h4 {
+  color: #00346d;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+
+.kore-navigation-bray-leino-events-footer a:hover {
+  text-decoration: underline; 
+}
+
+.kore-navigation-bray-leino-events-footer ul {
+  margin: 0;
+  list-style: disc !important;
+  color: #fff;
+  padding: 0;
+  padding-left: 16px;
+}
+
+
+.kore-navigation-bray-leino-events-footer .list-inline {
+  padding-left: 0;
+  list-style: none;
+}
+
+.kore-navigation-bray-leino-events-footer .list-inline-item {
+  display: inline-block;
+}
+
+.kore-navigation-bray-leino-events-footer .list-inline-item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.kore-navigation-bray-leino-events-footer .horizontal-simple-menu {
+  margin-bottom: 0;
+}
+
+.kore-navigation-bray-leino-events-footer .horizontal-simple-menu ul {
+  list-style: none !important;
+  padding: 0;
+}
+
+.kore-navigation-bray-leino-events-footer .horizontal-simple-menu ul li {
+  display: inline-block;
+}
+
+.kore-navigation-bray-leino-events-footer .horizontal-simple-menu ul li:not(:last-child) {
+  margin-right: 0.7rem;
+}
+
+.kore-navigation-bray-leino-events-footer .horizontal-simple-menu ul li a {
+  font-size: 12px; 
+  letter-spacing: 1px;
+}
+
+.kore-navigation-bray-leino-events-footer .image {
+  text-align: right; 
+}
+
+@media(max-width:767px) {
+  
+  .kore-navigation-bray-leino-events-footer .social {
+    text-align: center;
+  }
+  
+  .kore-navigation-bray-leino-events-footer .hs-menu-wrapper.hs-menu-flow-vertical>ul {
+    list-style: disc !important;
+    padding-left: 14px;
+    margin: 0;
+  }
+  
+  .kore-navigation-bray-leino-events-footer .hs-menu-wrapper.hs-menu-flow-vertical>ul li {
+    display: list-item;
+  }
+
+  .kore-navigation-bray-leino-events-footer .flex .col {
+    flex: 0 0 100%;
+    margin-bottom: 20px;
+    text-align: center !important;
+  }
+  
+  .kore-navigation-bray-leino-events-footer .flex .col:last-child {
+    margin-bottom: 0;
+  }
+  
+  .kore-navigation-bray-leino-events-footer .social-icons {
+    text-align: center; 
+  }
+
+}

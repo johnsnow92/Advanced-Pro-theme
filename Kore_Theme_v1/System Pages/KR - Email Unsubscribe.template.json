@@ -1,0 +1,133 @@
+{
+  "isAvailableForNewContent" : true,
+  "templateType" : 14,
+  "attachedStylesheets" : [ ],
+  "attachedJs" : [ ],
+  "customHead" : "<style>\n  /* Email Unsubscribe */\n  .email-unsubscribe {\n    padding: 50px 0;\n    min-height: 100vh !important;\n  }\n\n  .email-unsubscribe .email-unsubscribes-container .page-header {\n    border-bottom: 1px solid rgba(0,0,0,.1);\n    margin-bottom: 20px;\n  }\n\n  .email-unsubscribe .email-unsubscribes-container .page-header h1 {\n    font-size: 38px;\n    font-weight: bold;\n    color: #333;\n    padding-bottom: 10px;\n    line-height: 1.2;\n  }\n\n  #email-prefs-form {\n    margin-bottom: 0px;\n  }\n\n  .email-unsubscribe #email-prefs-form h3 {\n    font-size: 24px;\n    font-weight: bold !important;\n    color: #333;\n  }\n\n  .email-unsubscribe input.email-edit.hs-input {\n    margin-top: 10px;\n    border: 1px solid #ccc;\n    padding: 9px 12px !important;\n  }\n\n  #email-prefs-form .email-edit {\n    width: 100% !important;\n    max-width: 507px !important;\n  }\n\n  #submitbutton {\n    white-space: normal;\n    cursor: pointer;\n    -webkit-appearance: none;\n    text-decoration: none !important;\n    display: inline-block;\n    color: #fff;\n    text-align: center;\n    vertical-align: middle;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    -ms-user-select: none;\n    user-select: none;\n    background-color: #94d11a;\n    border: 1px solid transparent;\n    padding: 9px 15px;\n    line-height: 1.5;\n    border-radius: none;\n    -webkit-transition: all 200ms ease;\n    transition: all 200ms ease;\n    font-weight: 700;\n    letter-spacing: .5px;\n    background-image: none;\n    background-position: 119% 50%;\n    background-repeat: no-repeat;\n    background-size: 20px;\n    text-transform: uppercase;\n    font-size: 14px;\n    font-family: 'Eina03W01', sans-serif;\n    font-weight: 600;\n  }\n\n  #submitbutton:hover {\n    padding-right: 45px;\n    background-color: #94d11a;\n    background-image: url(https://cdn2.hubspot.net/hubfs/6106837/Expereo/Images/right-arrow.svg);\n    background-position: 95% 50%;\n    background-size: 20px;\n    color: #fff;\n  }\n\n  #submitbutton {\n    margin-bottom: 0px;\n  }\n\n\n\n  /* Expereo - Subscription Preferences */\n  .subscription-preferences {\n    padding: 50px 0;\n    min-height: 100vh !important;\n  }\n\n  .subscription-preferences .subscription-preferences-container #email-prefs-form .page-header h1 {\n    font-size: 38px;\n    font-weight: 700;\n    color: #333;\n    line-height: 1.2;\n    margin-bottom: 15px;\n  }\n\n  .subscription-preferences .subscription-preferences-container #email-prefs-form .page-header h2 {\n    display: inline-block;\n    margin-top: 10px;\n    padding: 10px 20px 12px;\n    border-style: solid;\n    border-width: 1px;\n    border-color: rgba(0,0,0,.1);\n    border-radius: 200px;\n    background-color: transparent;\n    color: rgba(51,51,51,.5);\n    font-size: 16px;\n    line-height: 18px;\n    font-weight: 400;\n  }\n\n  .subscription-preferences .subscription-preferences-container #email-prefs-form .page-header p {\n    color: rgba(51,51,51,.8);\n    font-size: 12px;\n    line-height: 1.3;\n    padding: 10px 0 15px;\n  }\n\n  .email-prefs .item {\n    -moz-user-select: none;\n    -webkit-user-select: none;\n    -o-user-select: none;\n    user-select: none;\n    padding-bottom: 1px;\n    position: relative;\n    margin: 20px 0px;\n    cursor: pointer;\n  }\n\n  .email-prefs .item .item-inner {\n    -moz-user-select: none;\n    -webkit-user-select: none;\n    -o-user-select: none;\n    user-select: none;\n    -webkit-border-radius: 8px;\n    -moz-border-radius: 8px;\n    border-radius: 8px;\n    -moz-transition-property: background;\n    -webkit-transition-property: background;\n    -o-transition-property: background;\n    transition-property: background;\n    -moz-transition-duration: 0.15s;\n    -webkit-transition-duration: 0.15s;\n    -o-transition-duration: 0.15s;\n    transition-duration: 0.15s;\n    -moz-transition-timing-function: linear;\n    -webkit-transition-timing-function: linear;\n    -o-transition-timing-function: linear;\n    transition-timing-function: linear;\n    border: 1px solid #E4E4E4;\n    overflow: hidden;\n    margin-top: 0;\n    padding: 15px;\n    background: #f7f7f7;\n  }\n\n  .subscription-preferences .subscription-preferences-container .email-prefs .item .item-inner {\n    border-radius: 0;\n    padding: 15px 20px;\n  }\n\n  .subscribe-options {\n    margin-bottom: 12px;\n    overflow: hidden;\n  }\n\n  .subscription-preferences .subscription-preferences-container .subscribe-options {\n    border-top: 1px solid rgba(0,0,0,.1);\n    padding-top: 15px;\n  }\n\n  .subscription-preferences .subscription-preferences-container .subscribe-options .header {\n    font-size: 18px !important;\n  }\n\n  .subscription-preferences .subscription-preferences-container #email-prefs-form #content .header {\n    color: #0f80ba;\n    font-weight: 300;\n    font-size: 24px;\n    margin-bottom: 15px;\n    padding: 5px 0;\n    margin-left: 0;\n  }\n\n  .subscription-preferences .subscription-preferences-container .subscribe-options .header+p {\n    margin-bottom: 15px;\n    padding: 15px 20px;\n    border-style: solid;\n    border-width: 1px;\n    border-color: rgba(0,0,0,.1);\n    background: #fff;\n  }\n\n  .subscription-preferences .subscription-preferences-container .subscribe-options .footer-unsubscribe-text {\n    color: #444 !important;\n    font-size: 14px !important;\n    margin-top: 5px;\n    display: inline-block;\n    font-weight: normal !important;\n  }\n\n  .subscription-preferences .subscription-preferences-container .subscribe-options #globalunsub+span span {\n    margin-left: 0;\n    color: #444;\n    font-size: 16px;\n    font-weight: 600;\n  }\n\n  .subscription-preferences .subscription-preferences-container .subscribe-options #globalunsub {\n    position: absolute;\n    margin-top: 4px;\n  }\n\n  .subscription-preferences .subscription-preferences-container .subscribe-options label {\n    margin-left: 0;\n  }\n\n  .subscription-preferences .subscription-preferences-container .subscribe-options #globalunsub+span {\n    display: inline-block;\n    margin-left: 27px;\n    color: rgba(0,0,0,.4);\n    font-size: 13px;\n  }\n\n  .subscription-preferences .subscription-preferences-container .email-prefs .item .item-inner .checkbox-row span.fakelabel span {\n    margin-left: 15px;\n  }\n\n\n  /* Expereo - Subscription Update Confirmation */\n  .subscription-update-confirmation {\n    padding: 50px 0;\n    min-height: 100vh !important;\n  }\n\n  .subscription-update-confirmation .subscription-update-confirmation-container .page-header h1 {\n    font-size: 38px;\n    font-weight: 700;\n    color: #333;\n    line-height: 1.2;\n    margin-bottom: 15px;\n  }\n\n  .subscription-update-confirmation .subscription-update-confirmation-container .page-header h2 {\n    display: inline-block;\n    margin-top: 10px;\n    padding: 10px 20px 12px;\n    border-style: solid;\n    border-width: 1px;\n    border-color: rgba(0,0,0,.1);\n    border-radius: 200px;\n    background-color: transparent;\n    color: rgba(51,51,51,.5);\n    font-size: 16px;\n    line-height: 18px;\n    font-weight: 400;\n  }\n\n  .subscription-update-confirmation .subscription-update-confirmation-container .page-header p {\n    color: rgba(51,51,51,.8);\n    font-size: 12px;\n    line-height: 1.3;\n    padding: 10px 0 15px;\n  }\n\n  .subscription-update-confirmation .subscription-update-confirmation-container .success {\n    color: #0f80ba;\n    font-weight: 300;\n    font-size: 24px;\n  }\n\n\n\n  /* Global Email Subscribe Page */\n  .container-fluid .row-fluid .subscription-update-confirmation-container, \n  .container-fluid .row-fluid .subscription-preferences-container, \n  .container-fluid .row-fluid .email-unsubscribes-container {\n    max-width: 900px;\n    margin: 0 auto;\n    padding: 40px 35px;\n    float: none;\n    background: #F1F5FD;\n  }\n\n  .custom-email-add {\n    display: inline-block;\n    margin-right: 20px !important;\n    font-weight: 700 !important;\n  }\n\n  .checkboxrow-fieldlabel {\n    margin-bottom: 0px;\n    margin-left: 10px;\n    font-weight: 600;\n  }\n\n  .checkbox-row span.fakelabel span {\n    font-weight: 600; \n  }\n\n  .email-prefs .item p {\n    margin: 5px 0px 0px 28px;\n  }\n\n  @media screen and (-webkit-min-device-pixel-ratio: 0) {\n\n    .checkbox-row input {\n      position: relative;\n      top: 5px;\n    }\n\n  }\n\n  /* Media Queries */\n  @media (max-width: 1139px) {\n\n    .email-unsubscribe,\n    .subscription-preferences,\n    .subscription-update-confirmation {\n      padding: 40px 20px;\n    }\n\n    .container-fluid .row-fluid .email-unsubscribe .email-unsubscribes-container,\n    .container-fluid .row-fluid .subscription-preferences .subscription-preferences-container,\n    .container-fluid .row-fluid .subscription-update-confirmation .subscription-update-confirmation-container {\n      padding: 40px 20px;\n    }\n\n  }\n\n  @media (max-width: 767px) {\n\n    .email-unsubscribe .email-unsubscribes-container .page-header h1, \n    .subscription-update-confirmation .subscription-update-confirmation-container .page-header h1 {\n      font-size: 25px;\n    }\n\n    .email-unsubscribe #email-prefs-form h3, \n    .subscription-update-confirmation .subscription-update-confirmation-container .success {\n      font-size: 20px;\n    }\n\n    .subscription-preferences .subscription-preferences-container #email-prefs-form .page-header h1 {\n      font-size: 30px;\n    }\n\n    .subscription-preferences .subscription-preferences-container #email-prefs-form #content .header {\n      font-size: 20px; \n    }\n\n  } \n</style>\n\n{% require_js position=\"footer\" %}\n<script>\n\n  $(function() {\n\n    $( \".subscription-update-confirmation .subscription-update-confirmation-container .page-header h1, .subscription-preferences .subscription-preferences-container #email-prefs-form .page-header h1\" ).after( \"<p class='custom-email-add'>Your Email Address:</p>\" );\n\n  });\n\n</script>\n{% end_require_js %}",
+  "customFooter" : "",
+  "bodyClass" : "",
+  "bodyCss" : " ",
+  "bodyEditable" : false,
+  "layoutData" : {
+    "x" : 0,
+    "w" : 12,
+    "name" : "",
+    "label" : "",
+    "type" : "cell",
+    "params" : { },
+    "rows" : [ {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "module_1556280908114469",
+        "label" : "Email Unsubscribe",
+        "type" : "cell",
+        "params" : {
+          "css_class" : "email-unsubscribe py-50 min-height-75vh",
+          "per_widget_wrapper_html" : "",
+          "css_style" : "",
+          "wrapping_html" : "",
+          "css_id" : "",
+          "css_id_str" : "",
+          "overrideable" : false
+        },
+        "rows" : [ {
+          "0" : {
+            "x" : 0,
+            "w" : 12,
+            "name" : "module_1556280906510460",
+            "label" : "Module group",
+            "type" : "cell",
+            "params" : {
+              "css_class" : "email-unsubscribes-container",
+              "per_widget_wrapper_html" : "",
+              "css_style" : "",
+              "wrapping_html" : "",
+              "css_id" : "",
+              "css_id_str" : "",
+              "overrideable" : false
+            },
+            "rows" : [ {
+              "0" : {
+                "x" : 0,
+                "w" : 12,
+                "name" : "email_simple_subscription",
+                "label" : "Backup Unsubscribe",
+                "type" : "email_simple_subscription",
+                "params" : {
+                  "header" : "Email Unsubscribe",
+                  "button_text" : "Unsubscribe",
+                  "input_help_text" : "Your email address:",
+                  "input_placeholder" : "email@example.com"
+                },
+                "rows" : [ ],
+                "rowMetaData" : [ ],
+                "cells" : [ ],
+                "cssId" : "",
+                "cssClass" : "",
+                "cssStyle" : "",
+                "styles" : null,
+                "widgets" : [ ]
+              }
+            } ],
+            "rowMetaData" : [ ],
+            "cells" : [ ],
+            "cssId" : "",
+            "cssClass" : "email-unsubscribes-container",
+            "cssStyle" : "",
+            "styles" : null,
+            "widgets" : [ ]
+          }
+        } ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "email-unsubscribe py-50 min-height-75vh",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    }, {
+      "0" : {
+        "x" : 0,
+        "w" : 12,
+        "name" : "",
+        "label" : "",
+        "type" : "section_delimiter",
+        "params" : { },
+        "rows" : [ ],
+        "rowMetaData" : [ ],
+        "cells" : [ ],
+        "cssId" : "",
+        "cssClass" : "",
+        "cssStyle" : "",
+        "styles" : null,
+        "widgets" : [ ]
+      }
+    } ],
+    "rowMetaData" : [ ],
+    "cells" : [ ],
+    "cssId" : "",
+    "cssClass" : "",
+    "cssStyle" : "",
+    "styles" : null,
+    "widgets" : [ ]
+  }
+}

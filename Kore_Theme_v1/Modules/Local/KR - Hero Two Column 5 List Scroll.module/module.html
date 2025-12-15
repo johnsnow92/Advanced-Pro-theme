@@ -1,0 +1,261 @@
+{% if module.section_settings.section_show_hide %}
+<!-- HTML to show when checked -->
+
+{% require_css %}
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(90deg, rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay_2.color|convert_rgb}}, {% if settings.section_background_image_overlay_2.opacity != 100 %}0.{{ settings.section_background_image_overlay_2.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .back-to-blog-link {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .back-to-blog-link:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+  
+  .{{ name }} .tagline {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .sub-heading,
+  .{{ name }} .sub-heading * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .content,
+  .{{ name }} .content * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .content a {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .content a:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+  
+  .{{ name }} .lists li a {
+    color: {{ module.content_link_color.color }};
+  }
+  
+  .{{ name }} .lists li a:hover {
+    color: {{ module.content_link_color_hover.color }} !important;
+  }
+  
+  .{{ name }} #cta .cta_button {
+    background-color: {{ module.content_cta.background_color.color }} !important;
+  }
+
+  .{{ name }} #cta .cta_button:hover {
+    background-color: {{ module.content_cta.background_color_hover.color }} !important;
+  }
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  .{{ name }} .col .heading *{
+    color: {{ module.heading.font_color.color }}!important;
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+    
+  }
+</style>
+{% end_require_css %}
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-lp-two-column-with-lists-scroll clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+
+  {% if module.logo.src %}
+  <div class="logo">
+    <a href="{{ module.logo_url.href }}">
+      <img src="{{ module.logo.src }}" alt="{{ module.logo.alt }}">
+    </a>
+    {% if module.back_link %}
+    <a href="{{ module.back_link_url.href }}" class="back-to-blog-link w-hidden-tiny">{{ module.back_link }}</a>
+    {% endif %}
+  </div>
+  {% endif %}
+  
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+    
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+
+      <div class="flex">
+        
+        <div class="col">
+
+          <div class="">
+            {% if module.tagline %}
+            <div class="tagline mb-25 font-size-14 font-weight-400">
+              {{ module.tagline }}
+            </div>
+            {% endif %}
+
+            {% if module.heading.text %}
+            {% if module.heading.types == "h1" %} 
+            <div class="heading mb-15">
+              <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-13">
+                {{ module.heading.text }}
+              </h1>
+            </div>
+            {% elif module.heading.types == "h2" %}
+            <div class="heading mb-15">
+              <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-13">
+                {{ module.heading.text }}
+              </h2>
+            </div>
+            {% elif module.heading.types == "h3" %}
+            <div class="heading mb-15">
+              <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-13">
+                {{ module.heading.text }}
+              </h3>
+            </div>
+            {% elif module.heading.types == "h4" %}
+            <div class="heading mb-15">
+              <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-13">
+                {{ module.heading.text }}
+              </h4>
+            </div>
+            {% elif module.heading.types == "h5" %}
+            <div class="heading mb-15">
+              <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-13">
+                {{ module.heading.text }}
+              </h5>
+            </div>
+            {% elif module.heading.types == "h6" %}
+            <div class="heading mb-15">
+              <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-13">
+                {{ module.heading.text }}
+              </h6>
+            </div>
+            {% endif %}
+            {% endif %}
+
+            {% if module.sub_heading %}
+            <div class="sub-heading font-size-22 mb-20">
+              {{ module.sub_heading }}
+            </div>
+            {% endif %}
+
+            <ul class="lists">
+              {% for item in module.lists %}
+
+              {% if item.text %}
+              <li>
+                <a href="{{ item.url.href }}" class="font-size-14">
+                  {{ item.text }}
+                </a>
+              </li>
+              {% endif %}
+
+              {% endfor %}
+            </ul>
+
+            {% if module.content %}
+            <div class="content parent font-size-18 font-weight-300" id="cta">
+              {{ module.content }}
+            </div>
+            {% endif %}
+
+            {% if module.arrow_down %}
+            <a href="{{ module.arrow_down_url.href }}">
+              <img src="https://cdn2.hubspot.net/hubfs/2661297/DFS/arrow-down-sign-to-navigate.svg" alt="Arrow Down" width="25">
+            </a>
+            {% endif %}
+          </div>
+
+
+        </div>
+
+        <div class="col form-col">
+
+          {% if module.form_options == "1" %}
+          <div class="form">
+            {% if module.default_form_with_gdpr_options.form_text %}
+            <div class="form-text">
+              {{ module.default_form_with_gdpr_options.form_text }}
+            </div>
+            {% endif %}
+            
+            {% form
+              form_to_use="{{ module.default_form_with_gdpr_options.form.form_id }}"
+              response_response_type="{{ module.default_form_with_gdpr_options.form.response_type }}"
+              response_message="{{ module.default_form_with_gdpr_options.form.message }}"
+              response_redirect_id="{{ module.default_form_with_gdpr_options.form.redirect_id }}"
+              response_redirect_url="{{module.default_form_with_gdpr_options.form.redirect_url}}"
+              gotowebinar_webinar_key="{{ module.default_form_with_gdpr_options.form.gotowebinar_webinar_key }}"
+              title='{{ module.default_form_with_gdpr_options.form_title }}'
+            %}
+            
+          </div>
+          
+          {% elif module.form_options == "2" %}
+          <div class="form">
+            {% if module.form_without_gdpr.form_text %}
+            <div class="form-text">
+              {{ module.form_without_gdpr.form_text }}
+            </div>
+            {% endif %}
+            
+            {% form
+              form_to_use="{{ module.form_without_gdpr.form.form_id }}"
+              response_response_type="{{ module.form_without_gdpr.form.response_type }}"
+              response_message="{{ module.form_without_gdpr.form.message }}"
+              response_redirect_id="{{ module.form_without_gdpr.form.redirect_id }}"
+              response_redirect_url="{{module.form_without_gdpr.form.redirect_url}}"
+              gotowebinar_webinar_key="{{ module.form_without_gdpr.form.gotowebinar_webinar_key }}"
+               title='{{ module.form_without_gdpr.form_title }}'
+            %}
+            
+            {% if module.form_without_gdpr.form_footer_text %}
+            <div class="font-size-12 font-weight-300 mt-25">
+              {{ module.form_without_gdpr.form_footer_text }}
+            </div>
+            {% endif %}
+            
+          </div>
+          {% endif %}
+          
+        </div>
+        
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% endif %}

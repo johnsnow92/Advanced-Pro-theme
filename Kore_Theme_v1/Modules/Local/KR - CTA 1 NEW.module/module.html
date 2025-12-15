@@ -1,0 +1,204 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  {% set cta_wrap_settings = module.cta_wrap_settings %}
+  {% if cta_wrap_settings.cta_wrap_background_type != '3' %}
+  .{{ name }} .cta-wrap { 
+    {% if cta_wrap_settings.cta_wrap_background_type == '1' %}
+    {% if cta_wrap_settings.cta_wrap_background_image.src %}
+    background: linear-gradient(rgba({{ cta_wrap_settings.cta_wrap_background_image_overlay.color|convert_rgb}}, {% if cta_wrap_settings.cta_wrap_background_image_overlay.opacity != 100 %}0.{{ cta_wrap_settings.cta_wrap_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ cta_wrap_settings.cta_wrap_background_image_overlay.color|convert_rgb}}, {% if cta_wrap_settings.cta_wrap_background_image_overlay.opacity != 100 %}0.{{ cta_wrap_settings.cta_wrap_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ cta_wrap_settings.cta_wrap_background_image.src }});
+    {% endif %}
+    {% elif cta_wrap_settings.cta_wrap_background_type == '2' %}
+    background-color: {{ cta_wrap_settings.cta_wrap_background_color.color }};
+    {% endif %}
+  }
+
+  {% endif %}
+  
+  .{{ name }} .cta-wrap .tagline,
+  .{{ name }} .cta-wrap .tagline * {
+    color: {{ cta_wrap_settings.cta_wrap_text_color.color }};
+  }
+  
+  .{{ name }} .cta-wrap .heading, 
+  .{{ name }} .cta-wrap .heading * {
+    color: {{ cta_wrap_settings.cta_wrap_text_color.color }};
+  }
+  
+  .{{ name }} .cta-wrap .content, 
+  .{{ name }} .cta-wrap .content * {
+    color: {{ cta_wrap_settings.cta_wrap_text_color.color }};
+  }
+  
+  .{{ name }} .cta-wrap .content a {
+    color: {{ module.cta_wrap_settings.cta_wrap_link_color.color }};
+  }
+
+  .{{ name }} .cta-wrap .content a:hover {
+    color: {{ module.cta_wrap_settings.cta_wrap_link_color_hover.color }};
+  }
+  
+  .{{ name }} .cta-wrap .cta-form .form-title {
+    color: {{ cta_wrap_settings.cta_wrap_text_color.color }};
+  }
+
+  .{{ name }} .cta-wrap .cta-offer, 
+  .{{ name }} .cta-wrap .cta-offer * {
+    color: {{ cta_wrap_settings.cta_wrap_text_color.color }};
+  }
+  
+  .{{ name }} #cta .kore-button,
+  .{{ name }} .kore-button,
+  .{{ name }} .simple a {
+    background-color: {{ module.button.button_background_color.color }} !important;
+    {% if module.button.button_background_color.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ module.button.button_text_color.color }} !important;
+  }
+
+  .{{ name }} #cta .kore-button:hover,
+  .{{ name }} .kore-button:hover,
+  .{{ name }} .simple a:hover {
+    background-color: {{ module.button.button_color_hover.color }} !important;
+    {% if module.button.button_color_hover.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ module.button.button_text_color_hover.color }} !important;
+  }
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+  
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-lp-cta-1 clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+
+      <div class="cta-wrap max-width-800 mr-auto ml-auto p-40 {% if module.cta_wrap_settings.cta_wrap_background_type == '3' %}default-bg-color{% elif module.cta_wrap_settings.cta_wrap_background_type == '4' %}default-bg-gradient{% endif %}">
+        {% if module.tag_line %}
+        <div class="tagline font-size-14 font-weight-400 mb-20">
+          {{ module.tag_line }}
+        </div>
+        {% endif %}
+
+        {% if module.heading.text %}
+        {% if module.heading.heading_type == "h1" %} 
+        <div class="heading mb-10">
+          <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h1>
+        </div>
+        {% elif module.heading.heading_type == "h2" %}
+        <div class="heading mb-10">
+          <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h2>
+        </div>
+        {% elif module.heading.types == "h3" %}
+        <div class="heading mb-10">
+          <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h3>
+        </div>
+        {% elif module.heading.types == "h4" %}
+        <div class="heading mb-10">
+          <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h4>
+        </div>
+        {% elif module.heading.types == "h5" %}
+        <div class="heading mb-10">
+          <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h5>
+        </div>
+        {% elif module.heading.types == "h6" %}
+        <div class="heading mb-10">
+          <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+            {{ module.heading.text }}
+          </h6>
+        </div>
+        {% endif %}
+        {% endif %}
+
+        {% if module.content %}
+        <div class="content font-size-18 parent">
+          {{ module.content }}
+        </div>
+        {% endif %}
+
+        {% if module.button.text %}
+        <div class="simple mt-20">
+          <a href="{{ module.button.url.href }}">
+            {{ module.button.text }}
+          </a>
+        </div>
+        {% endif %}
+
+        {% if module.cta_form_show_hide %}
+        <div class="cta-form mt-20">
+          {% form
+          form_to_use="{{ module.cta_form.form_id }}"
+          title="{{ module.cta_form_title }}"
+          response_response_type="{{ module.cta_form.response_type }}"
+          response_message="{{ module.cta_form.message }}"
+          response_redirect_id="{{ module.cta_form.redirect_id }}"
+          response_redirect_url="{{module.cta_form.redirect_url}}"
+          gotowebinar_webinar_key="{{ module.cta_form.gotowebinar_webinar_key }}"
+        %}
+        </div>
+        {% endif %}
+
+        {% if module.cta_offer %}
+        <div class="cta-offer font-size-14 mt-20">
+          {{ module.cta_offer }}
+        </div>
+        {% endif %}
+
+      </div>
+
+    </div> 
+
+  </div>
+</div>
+
+{% endif %}

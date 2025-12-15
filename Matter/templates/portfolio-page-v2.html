@@ -1,0 +1,451 @@
+<!--
+templateType: page
+isAvailableForNewContent: true
+label: Portfolio Page V2
+screenshotPath: ../images/template-previews/portfolio-page-v2.jpg
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<main id="main-content" class="body-container-wrapper portfolio_page_v2">
+  {% dnd_area 'header__area', label='Header Section' ,class="top-dnd-area" %}
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/banner",
+        offset=0,
+        width=12,
+        background_options={
+          "background_image" : {
+            "alt" : "Union",
+            "height" : 976,
+            "max_height" : 976,
+            "max_width" : 2160,
+            "src" : get_asset_url('../images/pawel.jpg'),
+            "width" : 2160
+          },
+          "overlay_color" : {
+            "color" : "#026780",
+            "opacity" : 50
+          },
+          "select_background_type" : "image"
+        },
+        breadcrumb_menu=,
+        include_breadcrumb=true,
+        module_settings={
+          "animation_type" : "fade-up"
+        },
+        style={
+          "container" : {
+            "select_size" : "theme_center"
+          }
+        }
+      %}
+  {% module_attribute "banner_content" %}
+  <h1>Portfolio V2</h1>
+  <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+  {% end_module_attribute %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+  {% dnd_area 'main_area', label='Main Section' ,class="main-dnd-area" %}
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/latest-projects",
+        offset=0,
+        width=12,
+        button_group=[ ],
+         projects_group=[ {
+          "background_image" : {
+            "alt" : "work",
+            "height" : 219,
+            "loading" : "lazy",
+            "max_height" : 219,
+            "max_width" : 370,
+            "size_type" : "auto",
+            "src" :  get_asset_url('../images/project-images/project1.jpg') ,
+            "width" : 370
+          },
+          "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+          "field_group" : {
+            "select_item_height" : "small",
+            "select_column_width" : "col4"
+          },
+          "image" : {
+            "loading" : "lazy",
+            "size_type" : "auto",
+            "src" : ""
+          },
+          "item_settings" : {
+            "select_item_height" : "large",
+            "select_column_width" : "col4"
+          },
+             "select_icon" : {
+            "name" : ""
+          },
+          "select_icon_type" : "",
+          "title" : "Project One"
+        }, {
+          "background_image" : {
+            "alt" : "landing-banner-dfive",
+            "height" : 1051,
+            "loading" : "lazy",
+            "max_height" : 1051,
+            "max_width" : 2160,
+            "size_type" : "auto",
+              "src" :  get_asset_url('../images/project-images/project2.jpg') ,
+            "width" : 2160
+          },
+          "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+          "image" : {
+            "loading" : "lazy",
+            "size_type" : "auto",
+            "src" : ""
+          },
+          "item_settings" : {
+            "select_item_height" : "small",
+            "select_column_width" : "col8"
+          },
+             "select_icon" : {
+            "name" : ""
+          },
+          "select_icon_type" : "",
+          "title" : "Project Two"
+        }, {
+          "background_image" : {
+            "alt" : "landing-banner-dfive",
+            "height" : 1051,
+            "loading" : "lazy",
+            "max_height" : 1051,
+            "max_width" : 2160,
+            "size_type" : "auto",
+            "src" :  get_asset_url('../images/project-images/project3.jpg') ,
+            "width" : 2160
+          },
+          "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+          "image" : {
+            "loading" : "lazy",
+            "size_type" : "auto",
+            "src" : ""
+          },
+          "item_settings" : {
+            "select_item_height" : "small",
+            "select_column_width" : "col4"
+          },
+           "select_icon" : {
+            "name" : ""
+          },
+          "select_icon_type" : "",
+          "title" : "Project Three"
+        }, {
+          "background_image" : {
+            "alt" : "landing-banner-dfive",
+            "height" : 1051,
+            "loading" : "lazy",
+            "max_height" : 1051,
+            "max_width" : 2160,
+            "size_type" : "auto",
+             "src" :  get_asset_url('../images/project-images/project4.jpg') ,
+            "width" : 2160
+          },
+          "content" : "<p>It is a long established fact that a reader will be distracted.</p>",
+          "image" : {
+            "loading" : "lazy",
+            "size_type" : "auto",
+            "src" : ""
+          },
+          "item_settings" : {
+            "select_item_height" : "small",
+            "select_column_width" : "col4"
+          },
+            "select_icon" : {
+            "name" : ""
+          },
+          "select_icon_type" : "",
+          "title" : "Project Four"
+        } ],
+        style={
+          "spacing" : {
+            "change_mobile_spacing" : true,
+            "mobile_spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 50
+                },
+                "left" : { },
+                "right" : { },
+                "top" : {
+                  "units" : "px",
+                  "value" : 50
+                }
+              }
+            },
+            "spacing" : {
+              "padding" : {
+                "bottom" : { },
+                "left" : { },
+                "right" : { },
+                "top" : { }
+              }
+            }
+          },
+            "card_styles" : {
+            "change_one_column_height" : 283
+          }
+        },
+        top_content={
+          "button_group" : [ ],
+          "title" : "See Our Top Awarded Projects"
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% dnd_section
+  padding={
+    "default" : {
+      "bottom" : "0px",
+      "left" : "0px",
+      "right" : "0px",
+      "top" : "0px"
+    }
+  },
+  full_width=true
+%}
+  {% dnd_column
+    offset=0,
+    width=12
+  %}
+  {% dnd_row %}
+  {% dnd_module
+        path="../modules/content-filter",
+        offset=0,
+        width=12,
+        top_content={
+        "title": "Amazing Collection Of Projects",
+        "button_group" : [ ]
+        },
+        button_group=[ ],
+        card_group={
+          "cards" : [ {
+            "button_group" : [ ],
+            "category" : "DevOps",
+            "content" : "",
+            "image_field" : {
+              "alt" : "DevOps",
+              "height" : 1280,
+              "loading" : "lazy",
+              "max_height" : 1280,
+              "max_width" : 1920,
+              "size_type" : "auto",
+              "src" :  get_asset_url('../images/Rectangle 34.jpg'),
+              "width" : 1920
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum is simply dummy text of the printing."
+          }, {
+            "button_group" : [ ],
+            "category" : "Application Development",
+            "content" : "",
+            "image_field" : {
+              "alt" : "Application Development",
+              "height" : 480,
+              "loading" : "lazy",
+              "max_height" : 480,
+              "max_width" : 265,
+              "size_type" : "auto",
+              "src" :  get_asset_url('../images/Rectangle 35.jpg'),
+              "width" : 265
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum is simply dummy text of the printing."
+          }, {
+            "button_group" : [ ],
+            "category" : "Web Development",
+            "content" : "",
+            "image_field" : {
+              "alt" : "Web Development",
+              "height" : 400,
+              "loading" : "lazy",
+              "max_height" : 400,
+              "max_width" : 1440,
+              "size_type" : "auto",
+               "src" :  get_asset_url('../images/Rectangle 36.jpg'),
+              "width" : 1440
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum is simply dummy text of the printing."
+          }, {
+            "button_group" : [ ],
+            "category" : "Mobile Application",
+            "content" : "",
+            "image_field" : {
+              "alt" : "Mobile Application",
+              "height" : 400,
+              "loading" : "lazy",
+              "max_height" : 400,
+              "max_width" : 1440,
+              "size_type" : "auto",
+              "src" :  get_asset_url('../images/Rectangle 37.jpg'),
+              "width" : 1440
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum is simply dummy text of the printing."
+          }, {
+            "button_group" : [ ],
+            "category" : "Web Development",
+            "content" : "",
+            "image_field" : {
+              "alt" : "Web Development",
+              "height" : 400,
+              "loading" : "lazy",
+              "max_height" : 400,
+              "max_width" : 1440,
+              "size_type" : "auto",
+             "src" :  get_asset_url('../images/Rectangle 38.jpg'),
+              "width" : 1440
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum is simply dummy text of the printing."
+          }, {
+            "button_group" : [ ],
+            "category" : "User Interface Design",
+            "content" : "",
+            "image_field" : {
+              "alt" : "User Interface Design",
+              "height" : 400,
+              "loading" : "lazy",
+              "max_height" : 400,
+              "max_width" : 1440,
+              "size_type" : "auto",
+             "src" :  get_asset_url('../images/Rectangle 39.jpg'),
+              "width" : 1440
+            },
+            "link_field" : {
+              "no_follow" : false,
+              "open_in_new_tab" : false,
+              "url" : {
+                "href" : "",
+                "type" : "EXTERNAL"
+              }
+            },
+            "read_more_text" : "Read More",
+            "title" : "Lorem Ipsum is simply dummy text of the printing."
+          } ],
+          "include_all_text" : true
+        },
+        module_settings={
+        "overlay_color" : {
+        "color" : "#212429",
+        "opacity" : 70
+          },
+          "column_count" : "col6",
+          "select_content_alignment" : "text_left",
+          "select_filter_style" : "type_3",
+          "select_overlay_color" : "custom"
+        },
+        style={
+          "card" : {
+            "select_title_tag" : "h3"
+          },
+          "spacing" : {
+            "spacing" : {
+              "padding" : {
+                "bottom" : {
+                  "units" : "px",
+                  "value" : 27
+                },
+                "left" : { },
+                "right" : { },
+                "top" : {
+                  "units" : "px",
+                  "value" : 0
+                }
+              }
+            }
+          }
+        }
+      %}
+  {% end_dnd_module %}
+  {% end_dnd_row %}
+  {% end_dnd_column %}
+  {% end_dnd_section %}
+  {% end_dnd_area %}
+  {% dnd_area 'bottom_area_hs', label='Bottom Section' ,class="bottom-dnd-area" %}
+  {% include_dnd_partial path="../sections/bottom-pane-section.html" %} 
+  {% end_dnd_area %}
+</main>
+{% endblock body %}

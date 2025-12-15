@@ -1,0 +1,147 @@
+[ {
+  "id" : "sidebar_position",
+  "name" : "sidebar_position",
+  "label" : "Sidebar Position",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "left", "Left" ], [ "right", "Right" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null,
+  "default" : "right"
+}, {
+  "id" : "main_content",
+  "name" : "main_content",
+  "label" : "Main Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Enter your main content here...</p>"
+}, {
+  "id" : "sidebar_items",
+  "name" : "sidebar_items",
+  "label" : "Sidebar Items",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 0,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : 1
+  },
+  "children" : [ {
+    "id" : "item_title",
+    "name" : "item_title",
+    "label" : "Item Title",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Sidebar Item"
+  }, {
+    "id" : "item_type",
+    "name" : "item_type",
+    "label" : "Item Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text", "Text" ], [ "image", "Image" ], [ "cta", "Call to Action" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text"
+  }, {
+    "id" : "item_text_content",
+    "name" : "item_text_content",
+    "label" : "Text Content",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "item_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "text",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>Enter text content...</p>"
+  }, {
+    "id" : "item_image",
+    "name" : "item_image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "item_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "image",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "",
+      "alt" : ""
+    }
+  }, {
+    "id" : "cta_text",
+    "name" : "cta_text",
+    "label" : "CTA Button Text",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "item_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "Learn More"
+  }, {
+    "id" : "cta_url",
+    "name" : "cta_url",
+    "label" : "CTA URL",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "item_type",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "cta",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "type" : "EXTERNAL",
+      "content_id" : null,
+      "href" : "",
+      "href_with_scheme" : ""
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null
+} ]

@@ -1,0 +1,155 @@
+[ {
+  "id" : "87092cd1-8c2e-4fbe-35e6-d90e566dc3d1",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Design"
+}, {
+  "id" : "fa894e61-1a51-e90b-2476-dc98461d13e5",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Our experienced design team at Dynamics Group can go to work for you – either starting from scratch or working with your existing design</p>"
+}, {
+  "id" : "d3c6ab0a-bfe2-1344-cca4-31483704ba5d",
+  "name" : "button_type",
+  "label" : "Button Type",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "std", "Standard" ], [ "cta", "Call to Action" ] ],
+  "multiple" : false,
+  "reordering_enabled" : true,
+  "preset" : null,
+  "type" : "choice",
+  "display_width" : null
+}, {
+  "id" : "e6335aa3-488f-3a4a-797f-e81b0a122d3b",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "button_type",
+    "controlling_value_regex" : "std",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null
+}, {
+  "id" : "b5fab68d-d80e-3b93-5e86-0d1cb632907d",
+  "name" : "button_link",
+  "label" : "Button Link",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "button_type",
+    "controlling_value_regex" : "std",
+    "property" : null,
+    "operator" : "EQUAL",
+    "access" : null
+  },
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : null,
+      "type" : "EXTERNAL",
+      "href" : ""
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+}, {
+  "id" : "704ac232-bc3a-7629-3b38-7030dfa9734f",
+  "name" : "cta_field",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : null,
+    "controlling_field_path" : "button_type",
+    "controlling_value_regex" : null,
+    "property" : null,
+    "operator" : null,
+    "access" : null
+  },
+  "type" : "cta",
+  "display_width" : null
+}, {
+  "id" : "2920d45c-3aaa-7eef-36c4-c03484f369cb",
+  "name" : "contact_number",
+  "label" : "Contact Number",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "248-251-5779"
+}, {
+  "id" : "82088864-d1eb-42ca-7d98-f8b23cb90ef1",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/mechanic-73.png",
+    "alt" : "Design",
+    "loading" : "lazy",
+    "width" : 1920,
+    "height" : 1100,
+    "max_width" : 1920,
+    "max_height" : 1100
+  }
+}, {
+  "id" : "7e7a12b1-9f35-eb9f-f2a6-33dc812b4b1e",
+  "name" : "parallax_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/design11.png",
+    "alt" : "Design",
+    "loading" : "lazy",
+    "width" : 830,
+    "height" : 657,
+    "max_width" : 830,
+    "max_height" : 657
+  }
+}, {
+  "id" : "f4de6d9e-a969-9d80-089c-80e6416133af",
+  "name" : "boolean_field",
+  "label" : "Parallax on Background",
+  "required" : false,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+} ]

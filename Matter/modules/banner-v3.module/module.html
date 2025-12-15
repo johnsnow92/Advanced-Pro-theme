@@ -1,0 +1,107 @@
+{% import "../../macros/_macros.html" as macros %}  
+
+{% set borderImg =  get_asset_url('../../images/banner-images/Subtract.png')  %}
+
+
+
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="banner_v3 dnd_padd {{name}}  {{ module.advanced_customization.css_class_selector }} sg_{{module.module_settings.curve_shape_type}} sh_{{ module.module_settings.curve_shape_theme }} bg_ty_{{ module.background_options.select_background_type }} vid_ty_{{ module.background_options.select_video_type }} {% if module.background_options.enable_parallax %}enable_parallax{% endif %}">
+  <div class="bnr_bg">
+    {{ macros.backgroundOptions(name, module.background_options) }}
+  </div>
+  <div class="page-center  {{ module.style.container.select_size }} {{ module.module_settings.select_content_alignment }}">
+
+
+    <div class="banner_container">
+      {% if module.content_field %}
+      <div class="banner_content" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation }}"  {% endif %}>
+        {{ module.content_field }}
+      </div>
+      {% endif %}
+      {% if module.button_group %}
+      <div class="btn_wrap" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation }}" data-aos-delay="300" {% endif %}>
+        {{ macros.buttonWithPopupGroup(module.button_group, false) }}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  
+  {{ macros.buttonWithPopupGroup(module.button_group, true) }}
+
+
+  {% if module.module_settings.add_curved_shape %}
+  {% if module.module_settings.curve_shape_type == "type1" %}
+  <div class="cm_lb_svg type1">
+    <svg class="{{ module.module_settings.curve_shape_theme }}" xmlns="http://www.w3.org/2000/svg" width="1440" height="179" viewBox="0 0 1440 179" fill="{{ macros.color(theme.global_colors.body_background_color) }}">
+      <path d="M1440 178.115V79.854L1392 54.5009C1344 28.6723 1248 -21.3194 1152 9.98481C1107.44 24.7363 1062.88 57.2592 1018.32 89.7822C966.881 127.327 915.44 164.871 864 175.076C853.484 177.162 842.968 178.106 832.452 178.115H1440Z" fill="white"/>
+      <path d="M832.133 178.115H0V117.943L48 130.679L53.8662 132.182C103.53 144.932 195.766 168.611 288 156.032C323.727 151.159 359.453 141.176 395.18 131.193C455.453 114.352 515.727 97.5092 576 105.207C614.386 110.299 652.771 125.535 691.157 140.77C738.149 159.422 785.141 178.073 832.133 178.115Z" fill="white"/>
+    </svg>
+  </div>
+  {% endif %}
+  {% if module.module_settings.curve_shape_type == "type2" %}
+  <div class="cm_lb_svg type2">
+    <svg class="{{ module.module_settings.curve_shape_theme }}" width="1440" height="77" viewBox="0 0 1440 77" fill="{{ macros.color(theme.global_colors.body_background_color) }}" xmlns="http://www.w3.org/2000/svg">
+      <path d="M1440 76.6308V14.4047L1360 8.84221C1280 2.8593 1120 -7.63679 960 8.84221C893.676 15.9335 827.352 27.6606 761.027 39.3871C667.352 55.9501 573.676 72.5136 480 76.016C320 81.579 160 47.9921 80 31.1982L0 14.4047V76.6308H1440Z" />
+    </svg>
+  </div>
+  {% endif %}
+  {% endif %}
+
+</div>
+
+
+
+{{ macros.sectionSpacing(name, module.style) }}
+{{ macros.sectionBackgroundStyle(name, module.style) }}
+{{ macros.customContainer(name, module.style) }}
+{% require_css %}
+<style>
+
+  {% if not module.style.spacing.spacing.css  %}
+  .{{name}}.sg_type2{
+    padding-bottom: 81px;
+  }
+
+  .{{name}} .cm_lb_svg.type2 {
+    margin-bottom: -81px;
+  }
+
+  .{{name}}.sg_type1{
+    padding-bottom: 236px;
+  }
+
+  .{{name}} .cm_lb_svg.type1 {
+    margin-bottom: -236px;
+  }
+
+  {% endif %}
+
+  {% if module.module_settings.curve_shape_theme == "custom" %}
+  .{{name}} .cm_lb_svg svg path,
+  .{{name}} .cm_lb_svg svg{
+    fill : {{macros.color(module.module_settings.curve_shape_color )}}
+  }
+  {% endif %}
+
+
+  {% if module.style.spacing.spacing %}
+  .{{name}}.banner_v3 .cm_lb_svg {
+    margin-bottom: -{{ module.style.spacing.spacing.padding.bottom.value }}{{ module.style.spacing.spacing.padding.bottom.units }};
+    margin-right: -{{ module.style.spacing.spacing.padding.right.value }}{{ module.style.spacing.spacing.padding.right.units }};
+    margin-left: -{{ module.style.spacing.spacing.padding.left.value }}{{ module.style.spacing.spacing.padding.left.units }};
+  }
+  {% endif %}
+
+  {% if module.style.spacing.change_mobile_spacing %}
+  {% if module.style.spacing.mobile_spacing %}
+  @media(max-width:767px){
+    .{{name}}.banner_v3 .cm_lb_svg {
+      margin-bottom: -{{ module.style.spacing.mobile_spacing.padding.bottom.value }}{{ module.style.spacing.mobile_spacing.padding.bottom.units }};
+      margin-right: -{{ module.style.spacing.mobile_spacing.padding.right.value }}{{ module.style.spacing.mobile_spacing.padding.right.units }};
+      margin-left: -{{ module.style.spacing.mobile_spacing.padding.left.value }}{{ module.style.spacing.mobile_spacing.padding.left.units }};
+    }
+  }
+  {% endif %}
+  {% endif %}
+</style>
+{% end_require_css%}

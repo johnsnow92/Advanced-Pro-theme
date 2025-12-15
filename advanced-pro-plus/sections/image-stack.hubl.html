@@ -1,0 +1,90 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Image Stack Section - Advanced Pro Theme
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: image-stack.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  vertical_alignment="MIDDLE",
+  max_width=1200,
+  padding={
+    "top": 60,
+    "bottom": 60
+  }
+%}
+  {% dnd_row %}
+    {% dnd_column
+      width=6,
+      offset=0
+    %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Stack Content"
+      %}
+        {% module_attribute "html" %}
+          <h2>Image Stack Section</h2>
+          <p>Showcase multiple images in an attractive stacked layout.</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+
+    {% dnd_column
+      width=6,
+      offset=0
+    %}
+      {% dnd_module
+        path="@hubspot/linked_image",
+        label="Image 1"
+      %}
+        {% module_attribute "img" %}
+          {
+            "alt": "Image 1",
+            "loading": "lazy",
+            "src": "https://via.placeholder.com/600x400"
+          }
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+
+      {% dnd_module
+        path="@hubspot/linked_image",
+        label="Image 2"
+      %}
+        {% module_attribute "img" %}
+          {
+            "alt": "Image 2",
+            "loading": "lazy",
+            "src": "https://via.placeholder.com/600x400"
+          }
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+
+      {% dnd_module
+        path="@hubspot/linked_image",
+        label="Image 3"
+      %}
+        {% module_attribute "img" %}
+          {
+            "alt": "Image 3",
+            "loading": "lazy",
+            "src": "https://via.placeholder.com/600x400"
+          }
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+  {% end_dnd_row %}
+{% end_dnd_section %}
+
+<style>
+.image-stack img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.image-stack img:hover {
+  transform: translateY(-4px);
+}
+</style>

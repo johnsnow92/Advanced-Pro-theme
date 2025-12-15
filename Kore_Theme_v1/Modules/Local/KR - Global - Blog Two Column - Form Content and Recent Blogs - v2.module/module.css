@@ -1,0 +1,310 @@
+.col-2-bottom-sec{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.form-content-sec{
+  padding: 60px 40px;
+  background-color: #103eaf;
+  width: 60%;
+  float: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.form-content{
+  /*   max-width: 600px; */
+  width: 600px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+}
+.top-text{
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.form-content h2{
+  color: #fff;
+}  
+.form-content h3{
+  color: #fff;
+  margin-bottom: 10px;
+}
+.form-content ul li{
+  margin-bottom: 5px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  list-style: none;
+}
+.form-content p{
+  margin-bottom: 5px;
+  color: #fff;
+}
+.bottom-text{
+  display: inline-block;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.4em;
+  max-width: 400px;
+  margin: 10px auto 0;
+}
+.form-wrapper{
+  padding-top: 5px;
+}
+.form-wrapper h3.form-title{
+  display: none;
+}
+.form-wrapper form{
+  max-width: 84%;
+  margin: 14px auto 0;
+}
+.form-wrapper form:before,
+.form-wrapper form:after{
+  content: '';
+  clear: both;
+  display: table;
+  visibility: hidden;
+}
+.form-wrapper form div input{
+  min-height: 48px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #6d6e71;
+  vertical-align: middle;
+  padding-left: 12px;
+  border-radius: 0;
+}
+.form-wrapper form div input:focus{
+  outline: none;
+}
+.form-wrapper form label{
+  display: none;
+}
+.form-wrapper form div.hs_email{
+  float: left;
+  width: 66%;
+  margin: 0;
+}
+.form-wrapper form div.hs_submit{
+  float: left;
+  width: 34%;
+  margin: 0;
+}
+.form-wrapper form div.hs_submit input{
+  width: 100%;
+  background-color: #fff;
+  -webkit-appearance: button;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-size: 18px;
+  letter-spacing: 0;
+  text-transform: none;
+  cursor: pointer;
+  border-radius: 0;
+  color: #fff;
+  margin: 0;
+  height: 48px;
+  min-height: 48px;
+  border: 2px solid #fff;
+    background-color: #00ce90;
+  padding: 0;
+}
+.form-wrapper form div.hs_submit input:hover{
+  color: #fff;
+  background-color: #00ce90;
+}
+.form-wrapper form div ul.hs-error-msgs{
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+.form-wrapper form div ul.hs-error-msgs li label{
+  display: block;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+  padding-top: 4px;
+}
+.form-wrapper input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #cecece;
+}
+.form-wrapper input::-moz-placeholder { /* Firefox 19+ */
+  color: #cecece;
+}
+.form-wrapper input:-ms-input-placeholder { /* IE 10+ */
+  color: #cecece;
+}
+.form-wrapper input:-moz-placeholder { /* Firefox 18- */
+  color: #cecece;
+}
+
+/* Recent Blog Posts */
+
+.blog-recent-wrapper{
+  width: 40%;
+  padding: 40px 30px 60px 40px;
+  float: left;
+  background-color: #edf0f5;
+}
+.blog-recent-wrapper h4{
+  padding-bottom: 0;
+    font-weight: bold;
+}
+.featured-image{
+  float: left;
+  background-color: #45555f;
+  background-position: 0px 0px;
+  background-size: cover;
+  background-repeat: repeat;
+  position: relative;
+  width: 16%;
+  min-height: 75px;
+}
+.featured-image a{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+p.post-title{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 16px 16px 16px 16px;
+  background-color: #fff;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-size: 16px;
+  line-height: 22px;
+  text-decoration: none;
+  cursor: pointer;
+  float: left;
+  width: 84%;
+  display: flex;
+  align-items: center;
+}
+.form-content .btn-wrap a{
+  color: #151923;
+  text-decoration: none;
+  font-weight: 600;
+}
+.post-title a{
+  font-weight: 700;
+}
+p.post-title:hover a{
+  color: #ff4500;
+  text-decoration: none;
+}
+.recent-post {
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.form-content ul{
+  padding: 0;
+}
+.form-content .btn-wrap a{
+  background-color: #fff;
+    color: #00326d;
+    display: inline-block;
+    margin-top: 18px;
+    padding: 11px 30px;
+    border-radius: 40px;
+    font-size: 16px;
+  font-weight: 700;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+.form-content .btn-wrap a:hover{
+  -webkit-transform: translate(0px, -2px);
+-ms-transform: translate(0px, -2px);
+transform: translate(0px, -2px);
+}
+
+
+@media screen and (max-width: 990px){
+  .form-content-sec{
+    float: none;
+    width: 100%;  
+    order: 2;
+  }
+  .blog-recent-wrapper{
+    width: 100%;
+    float: none;
+  }
+  .col-2-bottom-sec{
+    display: flex;
+    flex-direction: column;
+  }
+  .blog-recent-wrapper .inner{
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .cta-content h3{
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .post-cta .cta-content{
+    padding: 20px;
+  }
+  .post-cta .cta-content span.hs-cta-wrapper a.cta_button{
+    padding: 14px 16px !important;
+    text-align: center!important;
+    font-size: 15px!important;
+  }
+}
+@media screen and (max-width: 767px){
+  .form-content-sec{
+    float: none;
+    padding: 30px 20px;
+    width: 100%;
+  }
+  .blog-recent-wrapper{
+    width: 100%;
+    float: none;
+  }
+  .form-content-sec{
+  }
+  .form-content h3{
+    font-size: 21px;
+  }
+  .form-wrapper form div.hs_email {
+    float: none;
+    width: 100%;
+  }
+  .form-wrapper form div.hs_submit {
+    float: none;
+    width: 100%;
+  }
+  .blog-recent-wrapper{
+    padding: 30px 20px 30px 20px;
+  }
+  .form-wrapper form div.hs_submit input{
+    margin-top: 6px;
+  }
+  .form-content h2{
+    font-size: 32px;
+  }
+}
+
+

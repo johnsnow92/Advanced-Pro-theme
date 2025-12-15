@@ -1,0 +1,189 @@
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+{% require_css %}
+<style type="text/css">
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+
+  .{{ name }} .tagline {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .sub-heading,
+  .{{ name }} .sub-heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .content,
+  .{{ name }} .content * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .content a {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .content a:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+
+  .{{ name }} #cta .kore-button,
+  .{{ name }} .kore-button,
+  .{{ name }} .simple a {
+    background-color: {{ module.button.button_background_color.color }} !important;
+    {% if module.button.button_background_color.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ module.button.button_text_color.color }} !important;
+  }
+
+  .{{ name }} #cta .kore-button:hover,
+  .{{ name }} .kore-button:hover,
+  .{{ name }} .simple a:hover {
+    background-color: {{ module.button.button_color_hover.color }} !important;
+    {% if module.button.button_color_hover.color %}
+    background-image: none !important;
+    {% endif %}
+    color: {{ module.button.button_text_color_hover.color }} !important;
+  }
+
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+{% end_require_css %}
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kr-product-detail-1 clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+
+      <div class="product-main">
+        <div class="product-gallery">
+          <div class="product-gallery-items">
+            {% for item in module.product_images.image %}
+            <div class="img-item">
+              {% if item.src %}
+              {% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"' %}
+              {% if item.size_type == 'auto' %}
+              {% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}" style="max-width: 100%; height: auto;"' %}
+              {% elif item.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ item.max_width }}" height="{{ item.max_height }}" style="max-width: 100%; height: auto;"' %}
+              {% endif %}
+              {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
+              <img src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+              {% endif %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="product-details-wrap">
+
+          <div class="prod-readcrumbs">
+            <a href="">All Products</a> <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 1L5 5L1 9" stroke="CurrentColor"></path></svg>
+            <a href="{{ module.product_link.href }}">{{ module.product_name }}</a>
+          </div>
+
+          <div class="product-content">
+            {{ module.content }}
+          </div>
+
+          <div class="prod-type">
+            <h4 class="p-text">Power: <span>{{ module.power.text }}</span></h4>
+            <div class="type-btn">
+              {% for item in module.power.power_type %}
+              <a href="{{ item.url.href }}" class="{{ item.color }}">{{ item.text }}</a>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="prod-cta-strip">
+            <div class="cta-btn simple">
+              <a href="{{ module.cta_strip.buttton.url.href }}">{{ module.cta_strip.buttton.text }}</a>
+            </div>
+            <div class="cta-content">
+              {{ module.cta_strip.content }}  
+            </div>
+          </div>
+
+          <div class="prod-type prod-ideal">
+            <h4 class="p-text">Ideal for:</h4>
+            <div class="type-btn">
+              {% for item in module.ideal_items %}
+              <span style="color: {{ item.color.color }}">{{ item.text }}</span>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="prod-charging-est">
+            {% if module.charging_estimator.heading_text %}<h3>{{ module.charging_estimator.heading_text }}</h3>{% endif %}
+            <div class="prod-charging-col">
+              <div class="charging-time charging-col">
+                <div class="val">{{ module.charging_estimator.charging_time }} <span>min</span></div>
+                <div class="charging-text">Charging time</div>
+              </div>
+              <div class="charging-time charging-col">
+                <div class="val">{{ module.charging_estimator.distance }} <span>km</span></div>
+                <div class="charging-text">Distance</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="prod-type vehicle-type">
+            <h4 class="p-text">Vehicle Type: <span>{{ module.vehicle_type.text }}</span></h4>
+            <div class="type-btn">
+              {% for item in module.vehicle_type.power_type %}
+              <a href="{{ item.url.href }}" class="{{ item.color }}">{{ item.text }}</a>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="product-notes">
+            {{ module.notes }}
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+{% endif %}

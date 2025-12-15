@@ -1,0 +1,25 @@
+[ {
+  "id" : "32bdc9ce-00c0-c9e4-1022-0fd9dc5e1fa7",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : true,
+  "show_loading" : false,
+  "type" : "logo",
+  "display_width" : null,
+  "default" : {
+    "override_inherited_src" : true,
+    "src" : "https://info.juicetactics.com/hubfs/Kore%20Theme/hubsnackslogo.svg",
+    "alt" : "hubsnackslogo",
+    "width" : 400,
+    "height" : 400
+  }
+}, {
+  "id" : "b895d7b9-e708-ef25-cf2c-7349d5eed6e4",
+  "name" : "menu",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu",
+  "display_width" : null
+} ]

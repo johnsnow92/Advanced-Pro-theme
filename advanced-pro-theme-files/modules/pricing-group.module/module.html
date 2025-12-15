@@ -1,0 +1,53 @@
+{% set grid_class = "pricing-grid-" ~ module.grid_columns %}
+
+<div class="pricing-group-module">
+  {% if module.section_heading or module.section_subheading %}
+  <div class="pricing-header">
+    {% if module.section_heading %}
+    <h2 class="pricing-heading">{{ module.section_heading }}</h2>
+    {% endif %}
+    {% if module.section_subheading %}
+    <p class="pricing-subheading">{{ module.section_subheading }}</p>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <div class="pricing-grid {{ grid_class }}">
+    {% for card in module.pricing_cards %}
+    <div class="pricing-card {% if card.is_highlighted %}pricing-card-highlighted{% endif %}">
+      {% if card.is_highlighted and card.highlight_badge %}
+      <div class="pricing-badge">{{ card.highlight_badge }}</div>
+      {% endif %}
+
+      <div class="pricing-card-header">
+        <h3 class="pricing-card-title">{{ card.card_title }}</h3>
+        {% if card.description %}
+        <p class="pricing-card-description">{{ card.description }}</p>
+        {% endif %}
+      </div>
+
+      <div class="pricing-card-price">
+        <span class="price-currency">{{ card.currency_symbol }}</span>
+        <span class="price-amount">{{ card.price }}</span>
+        {% if card.billing_period %}
+        <span class="price-period">{{ card.billing_period }}</span>
+        {% endif %}
+      </div>
+
+      {% if card.features %}
+      <div class="pricing-card-features">
+        {{ card.features }}
+      </div>
+      {% endif %}
+
+      {% if card.button_text and card.button_link.url.href %}
+      <div class="pricing-card-cta">
+        <a href="{{ card.button_link.url.href }}" class="pricing-button {% if card.is_highlighted %}pricing-button-highlighted{% endif %}">
+          {{ card.button_text }}
+        </a>
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>

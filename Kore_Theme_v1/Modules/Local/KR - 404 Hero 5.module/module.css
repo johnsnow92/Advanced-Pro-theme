@@ -1,0 +1,75 @@
+.kore-404-hero-v2 .heading {
+  border-bottom: 1px solid lightgray; 
+}
+.kore-404-hero-v2 p {
+  font-size: 18px;
+    line-height: 1.4;
+}
+.kore-404-hero-v2 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.kore-404-hero-v2 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-404-hero-v2 .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-404-hero-v2 .tagline {
+  opacity: 0.8;
+  letter-spacing: 2px;
+}
+.kore-404-hero-v2 .buttons-404 {
+  margin-top:20px;
+}
+.kore-404-hero-v2 .buttons-404 a{
+  text-align:center;
+  padding: 14px 70px;
+  margin: 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  border-radius: 50px;
+}
+.kore-404-hero-v2 .buttons-404 a:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+.kore-404-hero-v2 .content h2,
+.kore-404-hero-v2 .content h2 span{
+  color: #000;
+}
+.kore-404-hero-v2 .content h2{
+  font-size: 28px;
+  padding-bottom: 12px;
+}
+.kore-404-hero-v2 .error-text h1{
+  font-size: 230px;
+  font-weight: bold;
+  letter-spacing: 8px;  
+}
+
+@media screen and (max-width: 1390px){
+  .kore-404-hero-v2 .error-text h1{
+    font-size: 200px;
+  }
+}
+@media screen and (max-width: 767px){
+  .kore-404-hero-v2 .error-text h1{
+    font-size: 145px;
+  }
+  .kore-404-hero-v2 .content h2{
+    font-size: 24px;
+  }
+  .kore-404-hero-v2 .buttons-404 a{
+    margin-bottom: 3px;
+  }
+}
+
+

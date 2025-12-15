@@ -1,0 +1,67 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+{# Fontawesome for demo only, you need to place it on portal main CSS #}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+<div class="kore-navigation-bray-leino-header">
+  <div class="main-wrap">
+    <div class="menu-top-module">
+
+      <div class="flex">
+        <div class="col">
+          <div>
+            {% logo
+          override_inherited_src="{{ module.logo.override_inherited_src }}"
+          src="{{ module.logo.src }}"
+          alt="{{ module.logo.alt }}"
+          width="{{ module.logo.width }}"
+          height="{{ module.logo.height }}"
+          suppress_company_name="{{ module.logo.suppress_company_name }}"
+        %}
+          </div>
+         
+        </div>
+      </div>
+
+    </div>
+    <div class="menu-container" id="mega">
+      <div class="menu">
+
+
+        {% macro print(node) %}
+        <ul>
+          
+            
+          
+          {% for child in node.children %}
+          {% if child.level == 2 and loop.length >= 3 and loop.first %}
+          {% set class = 'first' %}
+          {% elif child.level == 2 and loop.length == 4 and !loop.first %}
+          {% set class = 'column-33-percent' %}
+          {% elif child.level == 2 and loop.length == 3 and !loop.first %}
+          {% set class = 'column-50-percent' %}
+          {% elif child.level == 2 and loop.length == 2 %}
+          {% set class = 'column-50-percent' %}
+          {% elif child.level == 2 and loop.length == 1 %}
+          {% set class = 'column-100-percent' %}
+          {% endif %}
+
+          <li class="{{ class }}">
+            <a href="{{ child.url }}" class="{{ 'has-children' if child.children }}" target="{{ child.linkTarget }}">{{ child.label }}</a>
+
+            {% if child.children %}
+            {{ print(child) }}
+            {% endif %}
+          </li>
+          {% endfor %}
+         
+        </ul>
+        {% endmacro %}
+
+        {% set node = menu(module.menu) %}
+        {{ print(node) }}
+
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,352 @@
+[ {
+  "id" : "1d72d27a-bba0-860e-ec03-41da968c9603",
+  "name" : "heading",
+  "label" : "Heading",
+  "required" : false,
+  "locked" : true,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Sign up for our newsletter"
+}, {
+  "id" : "e05fbbd0-7ca1-35e7-f7ff-c8a0de86be91",
+  "name" : "form",
+  "label" : "Form",
+  "required" : false,
+  "locked" : true,
+  "type" : "form",
+  "display_width" : null,
+  "default" : {
+    "response_type" : "inline",
+    "message" : "Thanks for submitting the form.",
+    "form_type" : "HUBSPOT"
+  }
+}, {
+  "id" : "ee1e14b7-878b-5cab-7011-101a46363ab4",
+  "name" : "section_settings",
+  "label" : "Section Settings",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "93448879-955b-2e09-f8e3-8f7a91698487",
+    "name" : "section_text_alignment",
+    "label" : "Section Text Alignment",
+    "help_text" : "The horizontal alignment of the text.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "text-left", "Left" ], [ "text-center", "Center" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "text-center"
+  }, {
+    "id" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+    "name" : "section_background_type",
+    "label" : "Section Background Type",
+    "help_text" : "Choose the kind of background that displays on the section.",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "1", "Image" ], [ "2", "Color" ], [ "3", "None" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "2"
+  }, {
+    "id" : "68d4dfad-7a62-af61-6246-8df16b3b34dc",
+    "name" : "section_background_image",
+    "label" : "Section Background Image",
+    "help_text" : "Specify an image to use as the background of the section.",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : false,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    }
+  }, {
+    "id" : "a0ffcf0e-2357-9fd9-13ce-6170160f44c6",
+    "name" : "section_background_image_overlay",
+    "label" : "Section Background Image Overlay",
+    "help_text" : "Add a layer of color on top of the background image. You can also specify the opacity (e.g. 85%)",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "1",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#272727",
+      "opacity" : 85
+    }
+  }, {
+    "id" : "182f6412-ec15-59c2-5efa-57608ac42370",
+    "name" : "section_background_color",
+    "label" : "Section Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : "5d0fd2bd-048e-dbd9-e96c-94c062d8ca3d",
+      "controlling_field_path" : null,
+      "controlling_value_regex" : "2",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#84898C",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "96c75b2e-592c-4982-2f7c-5413f63c5def",
+    "name" : "section_id",
+    "label" : "Section ID",
+    "help_text" : "Enter a unique ID. This will be used to jump directly on this section.\n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "ee8ee9b8-cbf2-3314-a4e6-47e7f94c845f",
+    "name" : "section_class",
+    "label" : "Section Class",
+    "help_text" : "Add a few extra CSS class on this section so you can customize even further. \n<br><br>\nNote: May require developer/designer assistance.",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  }, {
+    "id" : "4de3cddd-abe4-711a-e427-637386591162",
+    "name" : "section_show_hide",
+    "label" : "Section Show/Hide",
+    "help_text" : "Disable this option to hide this section on the page.",
+    "required" : false,
+    "locked" : false,
+    "display" : "checkbox",
+    "type" : "boolean",
+    "display_width" : null,
+    "default" : true
+  }, {
+    "id" : "215cac8f-576a-6b7d-23fc-dc7b2bde7a9e",
+    "name" : "filler",
+    "label" : "Filler",
+    "required" : false,
+    "locked" : false,
+    "children" : [ ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : { }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "section_text_alignment" : "text-center",
+    "section_background_type" : "2",
+    "section_background_image" : {
+      "src" : "https://cdn2.hubspot.net/hubfs/2661297/Images/Pillar%20Page/img_2.jpeg",
+      "alt" : "img_2",
+      "width" : 1280,
+      "height" : 960
+    },
+    "section_background_image_overlay" : {
+      "color" : "#272727",
+      "opacity" : 85
+    },
+    "section_background_color" : {
+      "color" : "#84898C",
+      "opacity" : 100
+    },
+    "section_id" : "",
+    "section_class" : "",
+    "section_show_hide" : true,
+    "filler" : { }
+  }
+}, {
+  "id" : "79845d0e-4b48-8a9e-7387-4002d3bb9666",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : true,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Get our weekly newsletter updates.</p>"
+}, {
+  "id" : "bd16e7c2-7ac3-757e-3062-8eba955fa9a1",
+  "name" : "footer_settings",
+  "label" : "Footer Settings",
+  "required" : false,
+  "locked" : true,
+  "children" : [ {
+    "id" : "f55d611d-2cf5-7c02-b691-16ae550fd838",
+    "name" : "copyright",
+    "label" : "Copyright",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p><span>Copyright © {{ year }}, officereferral.com</span></p>"
+  }, {
+    "id" : "797ff3dd-553b-5519-6319-f455621fbd3e",
+    "name" : "simple_menu",
+    "label" : "Simple Menu",
+    "required" : false,
+    "locked" : false,
+    "type" : "simplemenu",
+    "display_width" : null,
+    "default" : [ {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Privacy Policy",
+      "linkUrl" : null,
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "PAGE_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Terms of Use",
+      "linkUrl" : null,
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "PAGE_LINK",
+      "children" : [ ]
+    } ]
+  }, {
+    "id" : "04a5523c-b9c5-6010-c1b6-a7e60b6278a0",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://f.hubspotusercontent30.net/hubfs/7967936/Logo%20Horizontal%20White%20980x188.png",
+      "alt" : "Logo Horizontal White 980x188",
+      "width" : 980,
+      "height" : 188,
+      "max_width" : 367,
+      "max_height" : 70
+    }
+  }, {
+    "id" : "965081f5-7520-bdcb-6c79-7400cc8d2077",
+    "name" : "image_url",
+    "label" : "Image URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "display_width" : null,
+    "default" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.officereferral.com/",
+      "content_id" : null
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "copyright" : "<p><span>Copyright © {{ year }}, officereferral.com</span></p>",
+    "simple_menu" : [ {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Privacy Policy",
+      "linkUrl" : null,
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "PAGE_LINK",
+      "children" : [ ]
+    }, {
+      "isPublished" : false,
+      "pageLinkId" : null,
+      "pageLinkName" : null,
+      "isDeleted" : null,
+      "categoryId" : null,
+      "subCategory" : null,
+      "contentType" : null,
+      "state" : null,
+      "linkLabel" : "Terms of Use",
+      "linkUrl" : null,
+      "linkParams" : null,
+      "linkTarget" : null,
+      "type" : "PAGE_LINK",
+      "children" : [ ]
+    } ],
+    "image_field" : {
+      "size_type" : "auto_custom_max",
+      "src" : "https://f.hubspotusercontent30.net/hubfs/7967936/Logo%20Horizontal%20White%20980x188.png",
+      "alt" : "Logo Horizontal White 980x188",
+      "width" : 980,
+      "height" : 188,
+      "max_width" : 367,
+      "max_height" : 70
+    },
+    "image_url" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.officereferral.com/",
+      "content_id" : null
+    }
+  }
+} ]

@@ -1,0 +1,78 @@
+{% set video_url = module.video_url %}
+{% set aspect_ratio = module.aspect_ratio %}
+{% set autoplay = module.autoplay %}
+{% set show_controls = module.show_controls %}
+{% set mute = module.mute %}
+{% set loop = module.loop %}
+
+{# Determine video platform and extract video ID #}
+{% set is_youtube = 'youtube.com' in video_url or 'youtu.be' in video_url %}
+{% set is_vimeo = 'vimeo.com' in video_url %}
+{% set is_custom = not is_youtube and not is_vimeo %}
+
+{# Extract YouTube video ID #}
+{% if is_youtube %}
+  {% if 'youtu.be/' in video_url %}
+    {% set video_id = video_url.split('youtu.be/')[1].split('?')[0].split('&')[0] %}
+  {% elif 'v=' in video_url %}
+    {% set video_id = video_url.split('v=')[1].split('&')[0] %}
+  {% else %}
+    {% set video_id = '' %}
+  {% endif %}
+{% endif %}
+
+{# Extract Vimeo video ID #}
+{% if is_vimeo %}
+  {% set vimeo_parts = video_url.split('vimeo.com/') %}
+  {% if vimeo_parts|length > 1 %}
+    {% set video_id = vimeo_parts[1].split('/')[0].split('?')[0] %}
+  {% else %}
+    {% set video_id = '' %}
+  {% endif %}
+{% endif %}
+
+<div class="video-embed-module">
+  {% if module.section_title %}
+    <h2 class="video-section-title">{{ module.section_title }}</h2>
+  {% endif %}
+
+  <div class="video-container aspect-ratio-{{ aspect_ratio|replace(':', '-') }}">
+    {% if is_youtube and video_id %}
+      {# YouTube Embed #}
+      <iframe
+        class="video-iframe"
+        src="https://www.youtube.com/embed/{{ video_id }}?autoplay={{ '1' if autoplay else '0' }}&controls={{ '1' if show_controls else '0' }}&mute={{ '1' if mute else '0' }}&loop={{ '1' if loop else '0' }}{% if loop %}&playlist={{ video_id }}{% endif %}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    {% elif is_vimeo and video_id %}
+      {# Vimeo Embed #}
+      <iframe
+        class="video-iframe"
+        src="https://player.vimeo.com/video/{{ video_id }}?autoplay={{ '1' if autoplay else '0' }}&controls={{ '1' if show_controls else '0' }}&muted={{ '1' if mute else '0' }}&loop={{ '1' if loop else '0' }}"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    {% elif is_custom and video_url %}
+      {# Custom Video (MP4, WebM, etc.) #}
+      <video
+        class="video-custom"
+        {% if autoplay %}autoplay{% endif %}
+        {% if show_controls %}controls{% endif %}
+        {% if mute %}muted{% endif %}
+        {% if loop %}loop{% endif %}
+        playsinline>
+        <source src="{{ video_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    {% else %}
+      <div class="video-placeholder">
+        <p>Please enter a valid YouTube, Vimeo, or video URL</p>
+      </div>
+    {% endif %}
+  </div>
+</div>

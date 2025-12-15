@@ -1,0 +1,330 @@
+{% import "../../macros/_macros.html" as macros %}
+
+{% if module.style.card.select_card_background_theme %}
+{% if module.style.card.select_card_background_theme == "custom" %}
+{% set bgClass = "itemBg" %}
+{% else %}
+{% set bgClass = module.style.card.select_card_background_theme %}
+{% endif %}
+{% endif %}
+
+{% if module.style.card.select_card_color_theme %}
+{% if module.style.card.select_card_color_theme == "custom" %}
+{% set textColor = "itemColor" %}
+{% else %}
+{% set textColor = module.style.card.select_card_color_theme %}
+{% endif %}
+{% endif %}
+
+{% if module.style.background_color.select_background_theme  %}
+{% if module.style.background_color.select_background_theme == "custom" %}
+{% set parentBg = "parentBg" %}
+{% else %}
+{% set parentBg = module.style.background_color.select_background_theme %}
+{% endif %}
+{% endif %}
+
+<div {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}
+     class="card_gallery dnd_padd {{ module.module_settings.slider_options.slides_per_view }}_per_view {{ module.module_settings.select_columns_count_in_row }}_row {{name}} styleChanges {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }} {% if module.module_settings.enable_slider %}sliderEnable {% if module.module_settings.slider_options.autoplay %}autoplay_true{% endif %} {% if module.module_settings.slider_options.dots %}dots_true{% endif %} {% if module.module_settings.slider_options.arrows %}arrows_true{% endif %} {% if module.module_settings.slider_options.loop %}loop_true{% endif %} {% endif %}" >
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="page-center {{ module.style.container.select_size }}">
+    {{ macros.topContent(module.top_content, module.module_settings) }}
+
+    <div class="bottom_row {% if not module.style.card.include_shadow_effect %}notshadow{% endif %} {% if module.module_settings.enable_slider %}glide{% endif %} {% if module.module_settings.enable_masonry and not module.module_settings.enable_slider %}masonadded{% endif %}">
+      {% if module.module_settings.enable_slider %}<div class=" glide__track " data-glide-el="track">  {% endif %}
+      <div class="flex_row {% if module.module_settings.enable_slider %}glide__slides{% else %}rowGap15{% endif %}" >
+        {% for item in module.items_group %}
+        <div class="card_item {% if item.include_overlay_link %}overlayLink_add{% endif %} {% if module.style.card.include_hover_effect %}hoverAdde{% endif %} {% if module.style.card.include_shadow_effect %}shadowAdded{% endif %} text_{{ module.style.card.select_content_alignment }} it{{loop.index}} {{ module.module_settings.select_columns_count_in_row }} ty_{{ item.select_icon_type }}">
+          <div class="card_inner  {{textColor}} " {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="{{loop.index * 150 + 200}}" {% endif %}>
+
+            {% if item.include_overlay_link %}
+            {% set href = item.overlay_link.url.href %}
+            {% if item.overlay_link.url.type is equalto "EMAIL_ADDRESS" %}
+            {% set href = "mailto:" + href %}
+            {% elif item.overlay_link.url.type is equalto "CONTENT" %}
+            {% if item.bookmark_id %}
+            {% set href = href + '#'+ item.bookmark_id %}
+            {% else %}
+            {% set href = item.overlay_link.url.href %}
+            {% endif %}
+            {% endif %}
+            <a href="{{ href }}" class="ovelar_link_add bg_el"
+               {% if item.overlay_link.open_in_new_tab %}target="_blank"{% endif %}
+               {% if item.overlay_link.rel %}rel="{{ item.overlay_link.rel }}"{% endif %}>
+            </a>
+            {% endif %}
+            
+            <div class="card_box {% if item.item_settings.select_hover_content_color %} hvrFontColr_{{item.item_settings.select_hover_content_color}}{% endif %}">
+            
+              {% if (item.select_icon_type == "image" and item.icon_image.src) or (item.select_icon_type == "fw" and item.select_icon.name) %}
+              <div class="icon_box  {{iconBg}} {{iconColor}} {% if module.style.card.include_hover_effect %}{{iconHoverBg}} {{iconHoverColor}}{% endif %} {{ module.style.card.select_icon_size }}_sz {% if (item.item_settings.icon_settings.select_icon_background_color) or (item.item_settings.icon_settings.select_icon_hover_background_color) %}bgAdded{% endif %}">
+
+                <div class="icon_inner {{module.style.card.select_card_color_theme}} icBg_{{ item.item_settings.icon_settings.select_icon_background_color }} icColr_{{ item.item_settings.icon_settings.select_icon_color }} icBgHvr_{{ item.item_settings.icon_settings.select_icon_hover_background_color }} icColrHvr_{{ item.item_settings.icon_settings.select_icon_hover_color }}">
+                  {% if item.select_icon_type == "image" and item.icon_image.src  %}
+                  <span class="icon_img icon_sp">
+                    <img src="{{ item.icon_image.src }}" alt="{{ item.icon_image.alt }}" >
+                  </span>
+                  {% endif %}
+                  {% if item.select_icon_type == "fw" and item.select_icon.name  %}
+                  <span class="icon_svg icon_sp">
+                    {% icon
+                  name="{{ item.select_icon.name }}"
+                  style="{{ item.select_icon.type }}"
+                  unicode="{{ item.select_icon.unicode }}"
+                  icon_set="{{ item.select_icon.icon_set }}"
+                %}
+                  </span>
+                  {% endif %}
+                </div>
+              </div>
+              {% endif %}
+
+              {% if item.title or item.content %}
+              <div class="card_content">
+                {% if item.title %}
+                <{{ module.style.card.select_title_tag }} class="it_title">
+                  {{ item.title }}
+                  </{{ module.style.card.select_title_tag }}>
+                  {% endif %}
+                  {{ item.content }}
+                  </div>
+                {% endif %}
+                {% if item.button_group %}
+                {{ macros.buttonWithPopupGroup(item.button_group, false,'parent_index'~loop.index) }}
+                   {% endif %}
+              </div>
+
+              <div class="main_overlay_bg bg_el {{bgClass}}">
+              </div>
+
+              {% if module.style.card.include_hover_effect %}
+              <div class="overlay_bg bg_el {% if item.item_settings.select_overlay_background_color == "custom" %}custom{% else %}{{item.item_settings.select_overlay_background_color}} {% endif %}">
+              </div>
+
+              {% if item.item_settings.background_image.src %}
+              <div class="hover_img bg_el" style="background-image: url({{ item.item_settings.background_image.src }})">
+              </div>
+              {% endif %}
+              {% endif %}
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+
+        {% if module.module_settings.enable_slider %}
+      </div>
+      {% endif %}
+      {% if module.module_settings.enable_slider %}
+      {{ macros.sliderControls(module.module_settings.slider_options , module.items_group, module.module_settings.enable_animation) }}
+      {% endif %}
+      </div>
+
+      {% if module.button_group %}
+      <div class="slider_btn_footer pdlr10" {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+        {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+      </div>
+      {% endif %}
+    </div>
+
+
+    {% if module.button_group %}
+    {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+    {% endif %}
+
+    {% for item in module.items_group %}
+    {{ macros.buttonWithPopupGroup(item.button_group, true ,'parent_index'~loop.index) }}
+    {% endfor %}
+
+    {{ macros.buttonWithPopupGroup(module.top_content.button_group, true, 'top_sec') }}
+  </div>
+  <!--  -->
+  {% require_css %}
+  <style>
+    {% for item in module.items_group %}
+
+    .{{name}}.card_gallery .it{{loop.index}} .icon_box .icon_img img {
+      border-radius: {{ item.image_border_radius }}%;
+    }
+
+    {% if item.item_settings.select_overlay_background_color == "custom" %}
+    .{{name}}.styleChanges .it{{loop.index}}.hoverAdde .overlay_bg{
+      background:  {{ macros.color(item.item_settings.overlay_background_color) }};
+    }
+    {% else %}
+    .{{name}}.styleChanges .it{{loop.index}}.hoverAdde .card_inner:hover .overlay_bg{
+      opacity: 	{{ item.item_settings.background_opacity/100 }};
+    }
+    {% endif %}
+
+    {% if item.item_settings.select_hover_content_color == "custom" %}
+
+    .{{name}}.styleChanges .it{{loop.index}}.hoverAdde .card_inner .card_content >* {
+      transition:0.2s ease;
+    }
+    .{{name}}.styleChanges .it{{loop.index}}.hoverAdde .card_inner:hover .card_content >* {
+      color:  {{ macros.color(item.item_settings.content_color) }};
+    }
+    {% endif %}
+
+    .{{name}}.styleChanges .it{{loop.index}} .icon_inner{
+      {% if item.item_settings.icon_settings.select_icon_background_color == "custom" %}
+      background:  {{ macros.color(item.item_settings.icon_settings.icon_background_color) }};
+      {% endif %}
+
+      {% if item.item_settings.icon_settings.select_icon_color == "custom" %}
+      color:  {{ macros.color(item.item_settings.icon_settings.icon_color) }};
+      {% endif %}
+    }
+
+    {% if item.item_settings.icon_settings.select_icon_color == "custom" %}
+    .{{name}}.styleChanges .it{{loop.index}} .icon_inner svg{
+      fill:  {{ macros.color(item.item_settings.icon_settings.icon_color) }};
+    }
+    {% endif %}
+
+
+    .{{name}}.styleChanges .it{{loop.index}}.hoverAdde .card_inner:hover .icon_inner{
+      {% if item.item_settings.icon_settings.select_icon_hover_background_color == "custom" %}
+      background:  {{ macros.color(item.item_settings.icon_settings.icon_hover_background_color) }};
+      {% endif %}
+
+      {% if item.item_settings.icon_settings.select_icon_hover_color == "custom" %}
+      color:  {{ macros.color(item.item_settings.icon_settings.icon_hover_color) }};
+      {% endif %}
+    }
+
+    {% if item.item_settings.icon_settings.select_icon_hover_color == "custom" %}
+    .{{name}}.styleChanges .it{{loop.index}}.hoverAdde .card_inner:hover .icon_inner svg{
+      fill:  {{ macros.color(item.item_settings.icon_settings.icon_hover_color) }};
+    }
+    {% endif %}
+
+    {% endfor %}
+
+    /*    */
+
+    {% if module.style.background_color.select_background_theme == "custom" %}
+    .{{name}} .parentBg{
+      background: {{ macros.color(module.style.background_color.background_color) }};
+    }
+    {% endif %}
+
+
+    {% if module.style.card.select_card_background_theme != "custom" %}
+    .{{name}} .card_item .main_overlay_bg{
+      filter: opacity({{ module.style.card.opacity/100 }});
+    }
+    {% endif %}
+
+    {% if module.style.card.select_card_background_theme == "custom" %}
+    .{{name}} .itemBg{
+      background: {{ macros.color(module.style.card.card_background_color) }};
+    }
+    {% endif %}
+
+    {% if module.style.card.select_card_color_theme == "custom" %}
+    .{{name}} .itemColor svg{
+      fill : {{ macros.color(module.style.card.card_color) }};
+    }
+    .{{name}} .itemColor  *:not(a[class]):not(input):not(.popup_modal *){
+      color: {{ macros.color(module.style.card.card_color) }} ;
+    }
+    {% endif %}
+
+    {% if module.style.container.select_size == "custom" %}
+    .{{name}} .page-center{
+      max-width:  {{ module.style.container.container_width }}px;
+    }
+    {% endif %}
+
+
+
+    {% if module.style.card.spacing.spacing %}
+    .card_gallery.{{name}} .card_inner{
+      {{ module.style.card.spacing.spacing.css }}
+    }
+    {% endif %}
+
+
+    {% if module.style.card.spacing.change_mobile_spacing %}
+    @media(max-width:767px){
+      .card_gallery.{{name}} .card_inner{
+        {{ module.style.card.spacing.mobile_spacing.css }}
+      }
+    }
+    {% endif %}
+
+  </style>
+  {% end_require_css %}
+
+  {% require_js %}
+  <script>
+
+    {# slider options #}
+    {% if module.module_settings.enable_slider %}
+    {% if module.module_settings.slider_options.slides_per_view > 3 %}
+    {% set tabslides = 3 %}
+    {% else %}
+    {% set tabslides = module.module_settings.slider_options.slides_per_view %}
+    {% endif %}
+
+    {% if module.module_settings.slider_options.slides_per_view > 2%}
+    {% set slides768 = 2 %}
+    {% else %}
+    {% set slides768 = module.module_settings.slider_options.slides_per_view %}
+    {% endif %}
+
+    {% set gtename = name|replace("-","_")%}
+
+    var config_{{gtename}} = {
+      {% if module.module_settings.slider_options.loop %}
+      type:'carousel',
+      {% endif %}
+      {% if not module.module_settings.slider_options.loop %}
+      rewind: false,
+      {% endif %}
+      {% if  module.module_settings.slider_options.slides_per_view %}
+      perView:{{ module.module_settings.slider_options.slides_per_view }},
+      {% endif %}
+      perTouch: 1,
+      gap:0,
+      {% if module.module_settings.slider_options.autoplay %}
+      autoplay: {{ module.module_settings.slider_options.autoplay_speed * 1000 }},
+      {% endif %}
+      breakpoints: {
+      992: {
+      perView: {{tabslides}}
+    },
+        768: {
+          perView: {{slides768}}
+        },
+          600: {
+            perView: 1
+          }
+        }
+    }
+    var glide = new Glide(".{{name}}.card_gallery .glide",config_{{gtename}})
+    glide.mount()
+
+    {% endif %}
+
+    {% if module.module_settings.enable_masonry and not module.module_settings.enable_slider %}
+    var iso = new Isotope( '.card_gallery.{{name}} .flex_row', {
+                          itemSelector: '.card_item',
+                          //                         layoutMode: 'fitRows'
+                          });
+    document.addEventListener('DOMContentLoaded', function () {
+      var iso = new Isotope( '.card_gallery.{{name}} .flex_row', {
+                            itemSelector: '.card_item',
+                            //                           layoutMode: 'fitRows'
+                            });
+    })
+    {% endif %}
+
+
+  </script>
+  {% end_require_js %}
+

@@ -1,0 +1,40 @@
+<section class="why_choose_us insight">
+  <div class="container">
+
+    <div class="about-sub-heading">
+      <h2>
+        {{ module.heading_2 }}
+      </h2>
+      
+     {{ module.richtext_field }}
+    </div>
+
+    <div class="why_choose_us_row">
+      {% for item in module.card_group %}
+      <div class="why_choose_us_col">
+        <div class="why_choose_us_card">
+          {% if item.card_image.src %}
+          {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}"' %}
+          {% if item.card_image.size_type == 'auto' %}
+          {% set sizeAttrs = 'width="{{ item.card_image.width|escape_attr }}" height="{{ item.card_image.height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% elif item.card_image.size_type == 'auto_custom_max' %}
+          {% set sizeAttrs = 'width="{{ item.card_image.max_width|escape_attr }}" height="{{ item.card_image.max_height|escape_attr }}" style="max-width: 100%; height: auto;"' %}
+          {% endif %}
+          {% set loadingAttr = item.card_image.loading != 'disabled' ? 'loading="{{ item.card_image.loading|escape_attr }}"' : '' %}
+          <img src="{{ item.card_image.src|escape_url }}" alt="{{ item.card_image.alt|escape_attr }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+          <div class="card-para">
+            {{ item.card_para }}
+          </div>
+
+          {#  <div class="content read-more-slide">{{ module.content }}</div>
+
+            <button class="moreless-button">{{ item.read_more_button }}</button> #}
+
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

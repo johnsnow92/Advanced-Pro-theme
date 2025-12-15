@@ -1,0 +1,99 @@
+{% import "../../macros/_macros.html" as macros %}  
+
+<div class="contact-details-wrap {{name}} dnd_padd {% if module.style.background.select_background_type == "bgcolor" %}{% if module.style.background.select_background_theme != "custom"%}{{module.style.background.select_background_theme}}{% endif %}{% endif %} {{ module.advanced_customization.css_class_selector }}" {% if module.advanced_customization.css_id_selector %}id="{{ module.advanced_customization.css_id_selector }}"{% endif %}>
+  {{ macros.sectionBackgroundStyle(name, module.style) }}
+  {{ macros.sectionSpacing(name, module.style) }}
+  {{ macros.customContainer(name, module.style) }}
+
+  <div class="contact-details-inner">
+    <div class="page-center {{ module.style.container.select_size }}">
+      {% if module.top_content %}
+      <div class="top_cnt" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+        {{ module.top_content }}
+      </div>
+      {% endif %}
+      <div class="flex_row">
+        {% for item in module.details %}
+        <div class="cnt-detail-item {{ item.select_icon_type }}_ic_ty ic{{loop.index}}" {% if module.module_settings.enable_animation %}data-aos="{{ module.module_settings.animation_type }}" data-aos-delay="200" {% endif %}>
+          <div class="cnt-detail-item-inn">
+            {% if item.select_icon_type == "image" or item.select_icon_type == "icon" %}
+            <div class="icon-cnt">
+              {% if item.select_icon_type == "image" %}
+              {% if item.image_field.src %}
+              <div class="img-wrap">
+                {% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+                <img src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }}>
+              </div>
+              {% endif %}
+
+              {% elif item.select_icon_type == "icon" %}
+              {% if item.icon_field.name %}
+              <div class="icon-wrap {% if item.select_icon_color_theme != "custom" %}{{ item.select_icon_color_theme }}{% endif %}">
+                {% icon
+      name="{{ item.icon_field.name }}"
+      style="{{ item.icon_field.type }}"
+      unicode="{{ item.icon_field.unicode }}"
+      icon_set="{{ item.icon_field.icon_set }}"
+    %}
+              </div>
+              {% endif %}
+              {% endif %}
+
+            </div>
+            {% endif %}
+            {% if item.heading or item.content %}
+            <div class="cnt-detail-cnt">
+              {% if item.heading %}
+              <div class="cnt-detail-title">
+                <{{ item.heading_tag }}>
+                {{ item.heading }}
+                </{{ item.heading_tag }}>
+              </div>
+                {% endif %}
+                {% if item.content %}
+                <div class="detail-content">
+                  {{ item.content }}
+                </div>
+                {% endif %}  
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          {% if module.button_group %}
+          <div class="bottom_btn" {% if module.module_settings.enable_animation %}  data-aos-delay="200" data-aos="{{ module.module_settings.animation_type }}"{% endif %}>
+            {{ macros.buttonWithPopupGroup(module.button_group, false,'bottom_sec') }}
+          </div>
+          {% endif %}
+
+        </div>
+      </div>
+      {% if module.button_group %}
+      {{ macros.buttonWithPopupGroup(module.button_group, true,'bottom_sec') }}
+      {% endif %}
+    </div>
+
+
+    {% require_css %}
+    <style>
+
+      {% for item in module.details %}
+      {% if item.select_icon_type == "icon" %}
+      {% if item.select_icon_color_theme == "custom" %}
+      .contact-details-wrap.{{name}} .ic{{loop.index}} .icon-cnt .icon-wrap svg{
+        fill: rgba({{ item.color_field.color|convert_rgb }},{{ item.color_field.opacity/100 }});
+      }
+      {% endif %}
+      {% endif %}
+
+      {% endfor %}
+    </style>
+    {% end_require_css %}
+
+
+
+
+
+

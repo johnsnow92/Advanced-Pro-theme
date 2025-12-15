@@ -1,0 +1,97 @@
+[ {
+  "id" : "82088864-d1eb-42ca-7d98-f8b23cb90ef1",
+  "name" : "image_field",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/mechanic-73.png",
+    "alt" : "Design",
+    "loading" : "lazy",
+    "width" : 1920,
+    "height" : 1100,
+    "max_width" : 1920,
+    "max_height" : 1100
+  }
+}, {
+  "id" : "7e7a12b1-9f35-eb9f-f2a6-33dc812b4b1e",
+  "name" : "parallax_image",
+  "label" : "Parallax Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/DynamicsGroup_Aug2023/Images/design11.png",
+    "alt" : "Design",
+    "loading" : "lazy",
+    "width" : 830,
+    "height" : 657,
+    "max_width" : 830,
+    "max_height" : 657
+  }
+}, {
+  "id" : "d7d6d08f-8046-feb2-9099-b21e79af4236",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<p>Dynamics Group is committed to employing the latest techniques and technologies to produce high-quality products. Regardless of which of our services you employ, you can expect personalized care and service throughout the entire job.</p>"
+}, {
+  "id" : "6aec4db7-afac-29dc-3bbb-65fed4e91c83",
+  "name" : "services",
+  "label" : "Services",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Customer Service"
+}, {
+  "id" : "dbd71bbb-3e45-d0b8-e9d8-4ff5bfe104db",
+  "name" : "button_text",
+  "label" : "Button Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Our Services"
+}, {
+  "id" : "bcb2b241-13cb-4589-8956-e74a31678e84",
+  "name" : "button_link",
+  "label" : "Button Link",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+  "show_advanced_rel_options" : false,
+  "type" : "link",
+  "display_width" : null,
+  "default" : {
+    "url" : {
+      "content_id" : 129562484480,
+      "href" : null,
+      "type" : "CONTENT"
+    },
+    "open_in_new_tab" : false,
+    "no_follow" : false
+  }
+} ]

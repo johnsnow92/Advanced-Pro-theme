@@ -1,0 +1,379 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .sub-heading,
+  .{{ name }} .sub-heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .content,
+  .{{ name }} .content * {
+    color: {{ module.content_color.color }};
+  }
+  
+  .{{ name }} .content a {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .content a:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-lp-two-column-hero-3 clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width">
+
+     <div class="flex">
+        <div class="col {% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+          
+          <div class="content-half">
+
+            {% if module.tag_line %}
+            <div class="tagline font-size-14 mb-20">
+              {{ module.tag_line }}
+            </div>
+            {% endif %}
+
+            {% if module.heading.text %}
+            {% if module.heading.type == "h1" %} 
+            <div class="heading mb-25">
+              <h1 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                {{ module.heading.text }}
+              </h1>
+            </div>
+            {% elif module.heading.type == "h2" %}
+            <div class="heading mb-25">
+              <h2 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                {{ module.heading.text }}
+              </h2>
+            </div>
+            {% elif module.heading.type == "h3" %}
+            <div class="heading mb-25">
+              <h3 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                {{ module.heading.text }}
+              </h3>
+            </div>
+            {% elif module.heading.type == "h4" %}
+            <div class="heading mb-25">
+              <h4 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                {{ module.heading.text }}
+              </h4>
+            </div>
+            {% elif module.heading.type == "h5" %}
+            <div class="heading mb-25">
+              <h5 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                {{ module.heading.text }}
+              </h5>
+            </div>
+            {% elif module.heading.type == "h6" %}
+            <div class="heading mb-25">
+              <h6 class="font-size-{{ module.heading.font_size }} {{ module.heading.font_weight }} line-height-12" style="color: {{ module.heading.font_color.color }};">
+                {{ module.heading.text }}
+              </h6>
+            </div>
+            {% endif %}
+            {% endif %}
+
+            {% if module.sub_heading %}
+            <div class="sub-heading mb-15">
+              <h2 class="font-size-24 line-height-12 font-weight-400">
+                {{ module.sub_heading }}
+              </h2>
+            </div>
+            {% endif %}
+
+            <!-- Content -->
+            {% if module.content %}
+            <div class="content font-size-18">
+              {{ module.content }}
+            </div>
+            {% endif %}
+
+            {% if module.social_share.fb.name or module.social_share.tw.name or module.social_share.linkedin.name or module.social_share.pinterest.name %}
+            <div class="social-share mt-25">
+              <ul class="list-inline">
+
+                {% if module.social_share.fb.name %}
+                <li class="list-inline-item">
+                  <a href="https://www.facebook.com/share.php?u={{ request.full_url|urlencode }}" target="_blank">
+                    {% icon
+                    name="{{ module.social_share.fb.name }}"
+                    style="{{ module.social_share.fb.type }}"
+                    unicode="{{ module.social_share.fb.unicode }}"
+                  %}
+                  </a>
+                </li>
+                {% endif %}
+                {% if module.social_share.tw.name %}
+                <li class="list-inline-item">
+                  <a href="https://twitter.com/intent/tweet?text={{ request.full_url|urlencode }}" target="_blank">
+                    {% icon
+                    name="{{ module.social_share.tw.name }}"
+                    style="{{ module.social_share.tw.type }}"
+                    unicode="{{ module.social_share.tw.unicode }}"
+                  %}
+                  </a>
+                </li>
+                {% endif %}
+                {% if module.social_share.linkedin.name %}
+                <li class="list-inline-item">
+                  <a href="https://www.linkedin.com/shareArticle?url={{ request.full_url|urlencode }}" target="_blank">
+                    {% icon
+                    name="{{ module.social_share.linkedin.name }}"
+                    style="{{ module.social_share.linkedin.type }}"
+                    unicode="{{ module.social_share.linkedin.unicode }}"
+                  %}
+                  </a>
+                </li>
+                {% endif %}
+                {% if module.social_share.pinterest.name %}
+                <li class="list-inline-item">
+                  <a href="https://pinterest.com/pin/create/button/?url={{ request.full_url|urlencode }}" target="_blank">
+                    {% icon
+                    name="{{ module.social_share.pinterest.name }}"
+                    style="{{ module.social_share.pinterest.type }}"
+                    unicode="{{ module.social_share.pinterest.unicode }}"
+                  %}
+                  </a>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+            {% endif %}
+            
+            <div class="form">
+
+            {% if module.form_settings.meeting or module.form_settings.form.form_id or module.form_settings.embed %}
+            <div>
+              {% if module.form_settings.type == "meeting" %}
+
+              {% if module.form_settings.meeting %}
+
+              <div class="meeting-type">
+
+                {% if module.form_settings.form_title %}
+                <div class="form-title mb-15">
+                  <h3 class="font-size-12 font-weight-600 line-height-12">
+                    {{ module.form_settings.form_title }}
+                  </h3>
+                </div>
+                {% endif %}
+
+                <div class="meetings-iframe-container" data-src="{{ module.form_settings.meeting }}?embed=true"></div>
+                <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+                
+              </div>
+              {% endif %}
+
+              {% elif module.form_settings.type == "form" %}
+
+              {% if module.form_settings.form.form_id %}
+
+              <div class="form-type">
+                
+                {% if module.form_settings.form_heading %}
+                <div class="form-heading mb-15">
+                  <h2 class="font-size-32 line-height-12 font-weight-700 text-center">
+                    {{ module.form_settings.form_heading }}
+                  </h2>
+                </div>
+                {% endif %}
+
+                {% if module.form_settings.datetime %}
+                <div class="count-down-flex text-center line-height-13">
+                  <div class="col-item">
+                    <div class="count-down-item right">
+                      <div class="numbering font-size-42 font-weight-500" id="days"></div>
+                      <div class="count-down-text font-size-14 font-weight-300">Days</div>
+                    </div>
+                  </div>
+                  <div class="col-item">
+                    <div class="count-down-item right">
+                      <div class="numbering font-size-42 font-weight-500" id="hours"></div>
+                      <div class="count-down-text font-size-14 font-weight-300">Hours</div>
+                    </div>
+                  </div>
+                  <div class="col-item">
+                    <div class="count-down-item right">
+                      <div class="numbering font-size-42 font-weight-500" id="minutes"></div>
+                      <div class="count-down-text font-size-14 font-weight-300" id="timer-secs">Minutes</div>
+                    </div>
+                  </div>
+                  <div class="col-item">
+                    <div class="count-down-item left">
+                      <div class="numbering font-size-42 font-weight-500" id="seconds"></div>
+                      <div class="count-down-text font-size-14 font-weight-300">Seconds</div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+                
+                {% if module.form_settings.form_date or module.form_settings.form_location %}
+                <div class="details-wrapper mb-30">
+                  {% if module.form_settings.form_date %}
+                  <div class="details-item font-size-14">
+                    <div class="date-icon">
+                      {% icon
+                        name="{{ module.form_settings.form_date_icon.name }}"
+                        style="{{ module.form_settings.form_date_icon.type }}"
+                        unicode="{{ module.form_settings.form_date_icon.unicode }}"
+                      %}
+                    </div>
+                    <div class="details-text">{{ module.form_settings.form_date }}</div>
+                  </div>
+                  {% endif %}
+                  {% if module.form_settings.form_location %}
+                  <div class="details-item font-size-14">
+                    <div class="location-icon">
+                    {% icon
+                      name="{{ module.form_settings.form_location_icon.name }}"
+                      style="{{ module.form_settings.form_location_icon.type }}"
+                      unicode="{{ module.form_settings.form_location_icon.unicode }}"
+                    %}
+                    </div>
+                    <div class="details-text">{{ module.form_settings.form_location }}</div>
+                  </div>
+                  {% endif %}
+                </div>
+                {% endif %}
+
+                {% if module.form_settings.form_image.src %}
+                <div class="form-image" style="background-image: url({{ module.form_settings.form_image.src }});">
+                </div>
+                {% endif %}
+
+                {% if module.form_settings.form_title %}
+                <div class="form-title mb-15">
+                  <h3 class="font-size-23 font-weight-400 line-height-12">
+                    {{ module.form_settings.form_title }}
+                  </h3>
+                </div>
+                {% endif %}
+
+                <div>
+                  {% form
+              form_to_use="{{ module.form_settings.form.form_id }}"
+              response_response_type="{{ module.form_settings.form.response_type }}"
+              response_message="{{ module.form_settings.form.message }}"
+              response_redirect_id="{{ module.form_settings.form.redirect_id }}"
+              response_redirect_url="{{module.form_settings.form.redirect_url}}"
+              gotowebinar_webinar_key="{{ module.form_settings.form.gotowebinar_webinar_key }}"
+            %}
+                </div>
+                
+                {% if module.form_settings.form_footer %}
+                <div class="form-footer font-size-13 line-height-14 mt-10">
+                  {{ module.form_settings.form_footer }}
+                </div>
+                {% endif %}
+
+              </div>
+
+              {% endif %}
+
+              {% elif module.form_settings.type == "embed" %}
+
+              {% if module.form_settings.embed %}
+              <div>
+                {{ module.form_settings.embed }}
+              </div>
+              {% endif %}
+
+              {% endif %}
+            </div>
+            {% endif %}
+          </div>
+
+          </div>
+          
+        </div>
+        <div class="col" style="background-image:url({{ module.side_image.src }}) !important;"> 
+
+          <div class="content-half"></div>
+
+        </div>
+      </div>
+
+  </div>
+</div>
+
+{% endif %}
+
+{% require_js position="footer" %}
+<script>
+  $(function() {
+
+    function makeTimer() {
+
+      var endTime = new Date("{{ module.form_settings.datetime|datetimeformat('%b %e, %Y %H:%M:%S') }}");			
+      endTime = (Date.parse(endTime) / 1000);
+
+      var now = new Date();
+      now = (Date.parse(now) / 1000);
+
+      var timeLeft = endTime - now;
+
+      var days = Math.floor(timeLeft / 86400); 
+      var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+      var minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+      var seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+      if (hours < "10") { hours = "0" + hours; }
+      if (minutes < "10") { minutes = "0" + minutes; }
+      if (seconds < "10") { seconds = "0" + seconds; }
+
+      $(".{{ name }} #days").html(days);
+      $(".{{ name }} #hours").html(hours);
+      $(".{{ name }} #minutes").html(minutes);
+      $(".{{ name }} #seconds").html(seconds);		
+
+    }
+
+    setInterval(function() { makeTimer(); }, 1000);
+  });
+</script>
+{% end_require_js %}

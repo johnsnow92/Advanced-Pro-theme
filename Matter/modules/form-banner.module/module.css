@@ -1,0 +1,161 @@
+
+.landing-banner .cm_lb_svg {
+  position: relative;
+  min-height: 174px;
+  z-index: 3;
+  pointer-events: none;
+  bottom: -1px;
+}
+
+.landing-banner .cm_lb_svg svg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  height: auto;
+}
+
+.landing-banner {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  display: inline-block;
+  padding: 60px 0;
+}
+
+.landing-banner .landing-banner-row {
+  align-items: center;
+}
+
+.landing-banner .landing-content p:last-child {
+  margin-bottom: 0;
+}
+
+.landing-banner .landing-content {
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.landing-banner .form-top h4 {
+  margin-bottom: 15px;
+}
+
+.landing-banner .form-top p:last-child {
+  margin-bottom: 0;
+}
+
+.landing-banner .form-top {
+  margin-bottom: 24px;
+}
+
+.landing-banner .form-row {
+}
+
+.landing-banner .form-row h3.form-title:empty {
+  display: none;
+}
+
+.landing-banner .form-row .hs-form-field > label {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  margin-bottom: 12px;
+}
+
+.landing-banner form .hs-form-field input {
+  padding: 17px 27px 13px;
+}
+
+.landing-banner form .hs-form-field {
+  margin-bottom: 20px;
+}
+
+.landing-banner form .hs-submit {
+  margin-top: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+.landing-banner form .hs-submit input.hs-button {
+  width: 100%;
+}
+
+.landing-banner .right-content {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.landing-banner .form-align-left .right-content {
+  justify-content: flex-start;
+}
+
+.landing-banner form .hs-form-field input::-webkit-input-placeholder{
+  color: currentColor;
+}
+
+.landing-banner form .hs-form-field input::-moz-placeholder{
+  color: currentColor;
+}
+
+.landing-banner form .hs-form-field input:-ms-input-placeholder{
+  color: currentColor;
+}
+
+.landing-banner form .hs-form-field input:-moz-placeholder{
+  color: currentColor;
+}
+
+.landing-banner form .hs-form-field input::placeholder{
+  color: currentColor;
+}
+
+.landing-banner .page-center {
+  position: relative;
+  z-index: 4;
+}
+
+.landing-banner .ld-btm-image {
+  position: absolute;
+  bottom: -1px;
+  left: auto;
+  width: 100%;
+  z-index: 3;
+  right: auto;
+}
+
+.landing-banner .ld-btm-image img {
+  width: 100%;
+}
+
+.landing-banner .form-section {
+  backdrop-filter: blur(75px);
+  padding:20px;
+}
+
+.landing-banner {
+  display: block;
+}
+
+
+.landing-banner form .hs-form-field textarea,
+.landing-banner form .hs-form-field select,
+.landing-banner form .hs-form-field input:not([type="radio"]):not([type="checkbox"]){
+  width: 100% !important;
+}
+
+@media (max-width:767px) {
+
+  .landing-banner .left-content {
+    margin-bottom: 50px;
+  }
+
+  .landing-banner .form-section {
+    width: 100%;
+    padding: 25px !important;
+  }
+
+}

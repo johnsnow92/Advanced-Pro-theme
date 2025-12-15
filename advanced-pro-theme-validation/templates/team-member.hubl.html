@@ -1,0 +1,62 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Team Member - Advanced Pro Theme
+  screenshotPath: ../images/templates/team-member-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}<meta name="description" content="{{ page_meta.meta_description }}">{% endif %}
+  {% if brand_settings.favicon is defined and brand_settings.favicon.src %}<link rel="shortcut icon" href="{{ brand_settings.favicon.src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% include '../partials/header.hubl.html' %}
+    <main id="main-content" role="main">
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12"><a href="/team" class="back-link">← Back to Team</a></div>
+          </div>
+          <div class="row" style="margin-top: var(--spacing-xl);">
+            <div class="col-12 col-lg-4">
+              <div class="member-profile-card">
+                {% module "member_photo" path="@hubspot/linked_image", label="Team Member Photo" %}
+                <h1>{{ page_meta.name }}</h1>
+                <p class="member-role">{% module "member_role" path="@hubspot/text", label="Role/Title", html="Senior Developer" %}</p>
+                <div class="member-social">
+                  {% module "member_social_links" path="@hubspot/rich_text", label="Social Links" %}
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-8">
+              <h2>About</h2>
+              {% module "member_bio" path="@hubspot/rich_text", label="Biography", html="<p>Add team member biography here.</p>" %}
+              <h3>Expertise</h3>
+              {% module "member_expertise" path="@hubspot/rich_text", label="Expertise/Skills" %}
+              <h3>Experience</h3>
+              {% module "member_experience" path="@hubspot/rich_text", label="Experience" %}
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% include '../partials/footer.hubl.html' %}
+  </div>
+  {{ standard_footer_includes }}
+  <style>
+  .back-link { display: inline-block; color: var(--color-primary); text-decoration: none; font-weight: 600; }
+  .member-profile-card { padding: var(--spacing-2xl); background: var(--color-gray-50); border-radius: var(--radius-lg); text-align: center; position: sticky; top: calc(var(--spacing-2xl) + 70px); }
+  .member-role { color: var(--color-gray-600); font-size: var(--font-size-lg); margin: var(--spacing-md) 0; }
+  .member-social { margin-top: var(--spacing-lg); }
+  </style>
+</body>
+</html>

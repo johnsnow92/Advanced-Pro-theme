@@ -1,0 +1,148 @@
+[ {
+  "id" : "657b545e-3a9f-8cff-8359-68a363b95b02",
+  "name" : "services_heading",
+  "label" : "Services heading",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : " Our Services"
+}, {
+  "id" : "072cc978-f82a-a56e-9389-862bf08b91f8",
+  "name" : "service_card_group",
+  "label" : "Service Card Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 6,
+    "max" : 6,
+    "sorting_label_field" : null,
+    "default" : 6
+  },
+  "children" : [ {
+    "id" : "7d57ab44-e598-1cc3-ed51-314c41fa6327",
+    "name" : "filter",
+    "label" : "filter",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/filter-1.png",
+      "alt" : "filter-1",
+      "loading" : "lazy",
+      "width" : 128,
+      "height" : 128,
+      "max_width" : 128,
+      "max_height" : 128
+    }
+  }, {
+    "id" : "e4d2ec6d-ddc0-e199-e1b9-b5dfdc849374",
+    "name" : "service_content",
+    "label" : "Service Content",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : "  Lead Generation & List Building:"
+  }, {
+    "id" : "6ebfea10-a9b2-0c24-edde-120db4dbd8cb",
+    "name" : "content",
+    "label" : "content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "display_width" : null,
+    "default" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ {
+    "filter" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/filter-1.png",
+      "alt" : "filter-1",
+      "loading" : "lazy",
+      "width" : 128,
+      "height" : 128,
+      "max_width" : 128,
+      "max_height" : 128
+    },
+    "service_content" : "  Lead Generation & List Building:",
+    "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>"
+  }, {
+    "filter" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/filter-1.png",
+      "alt" : "filter-1",
+      "loading" : "lazy",
+      "width" : 128,
+      "height" : 128,
+      "max_width" : 128,
+      "max_height" : 128
+    },
+    "service_content" : "  Lead Generation & List Building:",
+    "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>"
+  }, {
+    "filter" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/filter-1.png",
+      "alt" : "filter-1",
+      "loading" : "lazy",
+      "width" : 128,
+      "height" : 128,
+      "max_width" : 128,
+      "max_height" : 128
+    },
+    "service_content" : "  Lead Generation & List Building:",
+    "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>"
+  }, {
+    "filter" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/filter-1.png",
+      "alt" : "filter-1",
+      "loading" : "lazy",
+      "width" : 128,
+      "height" : 128,
+      "max_width" : 128,
+      "max_height" : 128
+    },
+    "service_content" : "  Lead Generation & List Building:",
+    "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>"
+  }, {
+    "filter" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/filter-1.png",
+      "alt" : "filter-1",
+      "loading" : "lazy",
+      "width" : 128,
+      "height" : 128,
+      "max_width" : 128,
+      "max_height" : 128
+    },
+    "service_content" : "  Lead Generation & List Building:",
+    "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>"
+  }, {
+    "filter" : {
+      "size_type" : "auto",
+      "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/filter-1.png",
+      "alt" : "filter-1",
+      "loading" : "lazy",
+      "width" : 128,
+      "height" : 128,
+      "max_width" : 128,
+      "max_height" : 128
+    },
+    "service_content" : "  Lead Generation & List Building:",
+    "content" : "<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters</p>"
+  } ]
+} ]

@@ -1,0 +1,67 @@
+<!--
+templateType: none
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8">
+    {% if page_meta.html_title %}<title>{{ page_meta.html_title }}</title>{% endif %}
+    {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    {% block template_stylesheets %}
+    {# This block is intended to be used if a template requires template specific style sheets #}
+    {% endblock template_stylesheets %}
+    {{ require_css(get_asset_url("../../css/main.css")) }}
+    {{ require_css("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css") }}
+    {{ require_css(get_asset_url("../../css/theme-overrides.css")) }}
+    {{ require_css("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap")}}
+    {{ require_css("https://fonts.googleapis.com/css?family=Khand:300,regular,500,600,700|Crimson+Text:regular,italic,600,600italic,700,700italic&#038;subset=devanagari,latin,latin-ext&#038;display=swap")}}
+    {{ require_css("https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@1,700&family=Lato:ital,wght@1,700&family=Montserrat:wght@500;700&display=swap")}}
+    
+    {# To see a full list of what is included via standard_header_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
+    {{ require_js(get_asset_url("../../child.js")) }}
+    {{ standard_header_includes }}
+    {{ require_css(get_public_template_url("../../child.css")) }}
+  </head>
+  <body>
+    <div class="body-wrapper {{ builtin_body_classes }}">
+      {% block header %}
+      {% module "page_settings" path="../../modules/page-settings", export_to_template_context=True %}
+      {% if widget_data.page_settings.select_header == 'lp_header' %}
+      {% global_partial path='../partials/header-no-navigation.html' %}
+      {% elif widget_data.page_settings.select_header == 'site_header' %}
+      {% global_partial path='../partials/header.html' %}
+      {% endif %}
+      {% endblock header %}
+
+      {% block body %}
+      {% endblock body %}
+
+      {% block footer %}
+      {% if widget_data.page_settings.select_footer == 'lp_footer' %}
+      {% global_partial path='../partials/footer-no-navigation.html' %}
+      {% elif widget_data.page_settings.select_footer == 'site_footer' %}
+      {% global_partial path='../partials/footer.html' %}
+      {% endif %}
+      {% endblock footer %}
+    </div>
+    {{ require_js(get_asset_url('../../js/plugins/aos.js')) }}
+    {% require_js %}
+    <script>
+      AOS.init({
+        once: true,
+        duration: 500
+      });
+    </script>
+    {% end_require_js %}
+    {#
+       {{ require_js(get_asset_url('../../js/main.js')) }}
+    #}
+
+    {# To see a full list of what is included via standard_footer_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
+    {{ standard_footer_includes }}
+    {% block footer_scripts %}
+    {# This block is intended to be used if a template requires template specific javascript #}
+    {% endblock footer_scripts %}
+  </body>
+</html>

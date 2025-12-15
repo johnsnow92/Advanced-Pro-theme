@@ -1,0 +1,202 @@
+[ {
+  "id" : "bedfa632-abc7-ffdd-a6bf-e23c800f930d",
+  "name" : "our_mission_content_h2",
+  "label" : "our-mission-content-h2",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Why Choose Surgepath Sales?"
+}, {
+  "id" : "26cce40b-216b-a5ec-7bf6-270d8a276117",
+  "name" : "our_mission_content_text",
+  "label" : "our-mission-content-text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<ul style=\"list-style-type: circle;\">\n<li><strong>Actionable Insights</strong>: Our platform delivers real-time insights that empower your sales team to prioritize leads, tailor outreach, and close deals more efficiently.</li>\n<li><strong>Streamlined Sales Processes</strong>: From lead generation to deal closure, we help you optimize your sales funnel and eliminate inefficiencies that slow down progress.</li>\n<li><strong>Scalable Solutions</strong>: Whether you're a startup or a large enterprise, our solutions grow with you, ensuring your sales processes are always ready to meet increased demand and new opportunities.</li>\n<li><strong>Proven Results</strong>: Our clients see measurable improvements in sales performance, from shortened sales cycles to increased close rates. We provide the tools and insights that drive real impact.&nbsp;</li>\n</ul>"
+}, {
+  "id" : "5481f07e-e857-cd88-9001-c3fd7970a94e",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "a04a8970-ac7a-c853-3294-6d8d3145aac0",
+    "name" : "button_type",
+    "label" : "Button Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "primary-btn", "Primary" ], [ "secondary-btn", "Secondary" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "primary-btn"
+  }, {
+    "id" : "7bfea355-333b-3475-f18d-8e559ee27d86",
+    "name" : "button_link",
+    "label" : "Button Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG", "CALL_TO_ACTION", "PHONE_NUMBER", "WHATSAPP_NUMBER", "PAYMENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "display_width" : null,
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "9b1092e1-2554-d407-a708-e7fcece001c4",
+    "name" : "button_text",
+    "label" : "Button Text",
+    "required" : false,
+    "locked" : false,
+    "allow_new_line" : false,
+    "type" : "text",
+    "display_width" : null,
+    "default" : ""
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : [ ]
+}, {
+  "id" : "d4b4e46d-c006-4426-e99a-8db18246c6a0",
+  "name" : "right_image_1",
+  "label" : "Right Image 1",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 2,
+    "max" : 2,
+    "sorting_label_field" : null,
+    "default" : 2
+  },
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : [ {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/our-mission-img-2-3.png",
+    "alt" : "our-mission-img-2-3",
+    "loading" : "lazy",
+    "width" : 200,
+    "height" : 235,
+    "max_width" : 200,
+    "max_height" : 235
+  }, {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/our-mission-img-2-3.png",
+    "alt" : "our-mission-img-2-3",
+    "loading" : "lazy",
+    "width" : 200,
+    "height" : 235,
+    "max_width" : 200,
+    "max_height" : 235
+  } ]
+}, {
+  "id" : "9bd41c5d-6adf-f98a-a05c-35ac057d2af1",
+  "name" : "philosophy_section_image_1",
+  "label" : "Philosophy Section Image 1",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/philosophy-1.png",
+    "alt" : "philosophy-1",
+    "loading" : "lazy",
+    "width" : 480,
+    "height" : 480,
+    "max_width" : 480,
+    "max_height" : 480
+  }
+}, {
+  "id" : "2e1b95b9-57cf-b38f-b418-ac2c48b537d7",
+  "name" : "philosophy_section_image2",
+  "label" : "Philosophy Section Image2",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/philosophy-2.png",
+    "alt" : "philosophy-2",
+    "loading" : "lazy",
+    "width" : 231,
+    "height" : 231,
+    "max_width" : 231,
+    "max_height" : 231
+  }
+}, {
+  "id" : "ee78d71b-655c-f6e6-b9ee-5e3f326d9769",
+  "name" : "philosophy_section_image3",
+  "label" : "Philosophy Section Image3",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/orange-bg.svg",
+    "alt" : "orange-bg",
+    "loading" : "lazy",
+    "width" : 92,
+    "height" : 92,
+    "max_width" : 92,
+    "max_height" : 92
+  }
+}, {
+  "id" : "6ba19743-110d-1f09-c21a-956855861217",
+  "name" : "philosophy_section_image4",
+  "label" : "Philosophy Section Image4",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://6697562.fs1.hubspotusercontent-na1.net/hubfs/6697562/Orange-bg-2.png",
+    "alt" : "Orange-bg-2",
+    "loading" : "lazy",
+    "width" : 230,
+    "height" : 231,
+    "max_width" : 230,
+    "max_height" : 231
+  }
+} ]

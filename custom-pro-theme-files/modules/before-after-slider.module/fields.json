@@ -1,0 +1,61 @@
+[ {
+  "id" : "before_image",
+  "name" : "before_image",
+  "label" : "Before Image",
+  "required" : true,
+  "locked" : false,
+  "responsive" : false,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "",
+    "alt" : "Before"
+  }
+}, {
+  "id" : "after_image",
+  "name" : "after_image",
+  "label" : "After Image",
+  "required" : true,
+  "locked" : false,
+  "responsive" : false,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "display_width" : null,
+  "default" : {
+    "src" : "",
+    "alt" : "After"
+  }
+}, {
+  "id" : "show_labels",
+  "name" : "show_labels",
+  "label" : "Show Labels",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "display_width" : null,
+  "default" : true
+}, {
+  "id" : "before_label",
+  "name" : "before_label",
+  "label" : "Before Label Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "Before"
+}, {
+  "id" : "after_label",
+  "name" : "after_label",
+  "label" : "After Label Text",
+  "required" : false,
+  "locked" : false,
+  "allow_new_line" : false,
+  "type" : "text",
+  "display_width" : null,
+  "default" : "After"
+} ]

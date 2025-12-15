@@ -1,0 +1,173 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% elif settings.section_background_type == 'custom' %}
+    -webkit-box-pack: center !important;
+    -webkit-justify-content: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+    -webkit-box-align: center !important;
+    -webkit-align-items: center !important;
+    -ms-flex-align: center !important;
+    align-items: center !important;
+    background-position: 0% 100% !important;
+    background-size: 50% !important;
+    background-repeat: no-repeat !important;
+    {% endif %}
+  }
+  {% endif %}
+
+  .{{ name }} .tagline {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .heading,
+  .{{ name }} .heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .sub-heading,
+  .{{ name }} .sub-heading * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .content,
+  .{{ name }} .content * {
+    color: {{ module.content_color.color }};
+  }
+
+  .{{ name }} .content a {
+    color: {{ module.content_link_color.color }};
+  }
+
+  .{{ name }} .content a:hover {
+    color: {{ module.content_link_color_hover.color }};
+  }
+
+  .{{ name }} #cta .cta_button,
+  .{{ name }} .simple a {
+    background-color: {{ module.button.cta_background_color.color }} !important;
+    {% if module.button.cta_background_color.color %}
+      background-image: none !important;
+    {% endif %}
+  }
+
+  .{{ name }} #cta .cta_button:hover,
+  .{{ name }} .simple a:hover {
+    background-color: {{ module.button.cta_background_color_hover.color }} !important;
+    {% if module.button.cta_background_color_hover.color %}
+    background-image: none !important;
+    {% endif %}
+  }
+
+  {% for item in module.card %}
+  .{{ name }} .loop-{{ loop.index }} #cta .cta_button,
+  .{{ name }} .loop-{{ loop.index }} .simple a {
+    background-color: {{ item.button.cta_background_color.color }} !important;
+  }
+
+  .{{ name }} .loop-{{ loop.index }} #cta .cta_button:hover,
+  .{{ name }} .loop-{{ loop.index }} .simple a:hover {
+    background-color: {{ item.button.cta_background_color_hover.color }} !important;
+  }
+  {% endfor %}
+
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+
+  @media (max-width: 1139px) {
+
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+
+  @media (max-width: 767px) {
+
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kr-stats-counter clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width {{ module.section_settings.section_text_alignment }}">
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+      
+      {% if module.heading %}
+      <div class="text-center">
+        <div class="heading">
+          <h2>{{ module.heading }}</h2>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="flex">
+        {% for item in module.card %}
+        <div class="col">
+          <div class="card-wrap">
+            <div class="card-inner-wrapper">          
+              <div class="card-body"
+                   style="background-color: {{ item.background_color.color }};"
+                   >
+
+                <div class="inner-flex">
+                  <div class="kr-st-counter-num">
+                    <span class="kr-st-counter-number kr-stats-count">{{ item.number_field }}</span> <span>{{ item.suffix }}</span>
+                  </div>
+                  <div class="content inner-col">
+                    {{ item.content }}
+                  </div>
+                </div>
+              </div>
+                
+            </div>
+            
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      
+      {% if module.button.type == "cta" %}
+
+      {% if module.button.cta %}
+      <div id="cta" class="mt-20 text-center">
+        {% cta guid="{{ module.button.cta }}" %}
+      </div>
+      {% endif %}
+
+      {% elif module.button.type == "simple" %}
+
+      {% if module.button.text %}
+      <div class="simple mt-20 text-center">
+        <a href="{{ module.button.url.href }}">
+          {{ module.button.text }}
+        </a>
+      </div>
+      {% endif %}
+
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+
+{% endif %}

@@ -1,0 +1,66 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<div class="kore-navigation-etana-footer">
+  <div class="page-width">
+    <div class="flex">
+      <div class="col">
+        
+        <div class="logo">
+          {% logo
+          override_inherited_src="{{ module.logo.override_inherited_src }}"
+          src="{{ module.logo.src }}"
+          alt="{{ module.logo.alt }}"
+          width="{{ module.logo.width }}"
+          height="{{ module.logo.height }}"
+          suppress_company_name="{{ module.logo.suppress_company_name }}"
+        %}
+        </div>
+     
+        <div class="kore-module">
+          <ul class="list-inline social">
+
+              {% for item in module.social_icon %}
+              <li class="list-inline-item">
+                <a href="{{ item.url.href }}" target="_blank">
+                  {% icon name="{{ item.icon.name }}" style="{{ item.icon.type }}" unicode="{{ item.icon.unicode }}"
+	%}
+                </a>
+              </li>
+              {% endfor %}
+
+            </ul>
+        </div>
+
+      </div> 
+      <div class="col">
+        {% if module.simple_menu_1_heading %}
+        <h4>
+          {{ module.simple_menu_1_heading }}
+        </h4>
+        {% endif %}
+        
+        <div class="horizontal-simple-menu">
+          {% simple_menu menu_tree="{{ module.simple_menu_1 }}" orientation='vertical' %}
+        </div>
+      </div>  
+      <div class="col">
+        {% if module.simple_menu_2_heading %}
+        <h4>
+          {{ module.simple_menu_2_heading }}
+        </h4>
+        {% endif %}
+        <div class="horizontal-simple-menu">
+          {% simple_menu menu_tree="{{ module.simple_menu_2 }}" orientation='vertical' %}
+        </div> 
+      </div>
+    </div>
+  </div>
+  
+  <div class="copyright">
+    <div class="page-width">
+      {% if module.copyright %}
+        {{ module.copyright }}
+      {% endif %}
+    </div>
+  </div>
+</div>

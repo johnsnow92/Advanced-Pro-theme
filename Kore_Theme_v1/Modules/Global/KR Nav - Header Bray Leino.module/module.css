@@ -1,0 +1,427 @@
+.kore-navigation-bray-leino-header {
+  background-color: #41A9CC;
+}
+
+.kore-navigation-bray-leino-header .menu-top-module .hs_cos_wrapper_type_logo a img {
+  width: 134px !important;
+  margin-top: 5px;
+}
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+megamenu.js STYLE STARTS HERE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+Screen style's
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.kore-navigation-bray-leino-header .menu-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.kore-navigation-bray-leino-header .menu-container a {
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+
+
+.kore-navigation-bray-leino-header .menu-mobile {
+  display: none;
+  position: absolute;
+  top: -42px;
+  right: 20px;
+  background: transparent;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+   color: rgba(0, 0, 0, 0.4);
+}
+
+.kore-navigation-bray-leino-header .menu-mobile:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0c9";
+  font-weight: 900;
+  font-size: 30px;
+  padding: 0;
+  float: right;
+  position: relative;
+  color: #fff;
+}
+
+.kore-navigation-bray-leino-header .menu-dropdown-icon:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f078";
+  display: inline-block;
+  padding-left: 7px;
+  vertical-align: middle;
+  font-weight: 900;
+  display: none;
+  cursor: pointer;
+  float: right;
+  padding: 1.5em 2em;
+  background: #fff;
+  color: #333;
+}
+
+.kore-navigation-bray-leino-header .menu > ul {
+  margin: 0 auto;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li {
+  padding: 0;
+  margin: 0;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li a {
+  text-decoration: none;
+  padding: 8px 15px;
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li.menu-dropdown-icon > a:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f078";
+  display: inline-block;
+  padding-left: 7px;
+  vertical-align: middle;
+  font-weight: 900;
+  line-height: 1;
+  font-size: 16px;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > a:focus {
+   color: #fff;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li:hover > a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li:hover > a.has-children {
+  background-color: #98d0c3;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul {
+  display: none;
+  width: 100%;
+  left: 0;
+  padding: 20px 20px 40px;
+  position: absolute;
+  z-index: 99;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+  background-color: #98d0c3;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul:before,
+.kore-navigation-bray-leino-header .menu > ul > li > ul:after {
+  content: "";
+  display: table;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul:after {
+  clear: both;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li {
+  margin: 0;
+  padding-bottom: 0;
+  list-style: none;
+  background: none;
+  float: left;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li.first {
+  width: 100%; 
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li.column-33-percent {
+  width:33.333333%;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li.column-50-percent {
+  width: 50%; 
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li.column-100-percent {
+  width: 100%; 
+  text-align: center;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li {
+  width: 33.333333% !important;
+  padding: 0 10px;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li a {
+  color: #777;
+  padding: 10px 0;
+  width: 100%;
+  display: block;
+  font-size: 13px;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li > a {
+  color: #095aa6;
+  font-weight: bold;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li.first > a {
+  color: #333;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li a:empty {
+  display: none;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li > a:hover {
+  cursor:default !important;
+}  
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li.first > a:hover {
+  color: #095aa6;
+  text-decoration: underline;
+  cursor:pointer !important;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li > ul {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li > ul:before,
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li > ul:after {
+  content: "";
+  display: table;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li > ul:after {
+  clear: both;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li > ul > li {
+  float: left;
+  width: 100%;
+  padding: 3px 0;
+  margin: 0;
+  border-bottom: 1px solid #000;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li > ul > li:hover {
+   border-bottom: 1px solid #fff;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul > li > ul > li a {
+  border: 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul.normal-sub {
+  width: 300px;
+  left: auto;
+  padding: 10px 20px;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul.normal-sub > li {
+  width: 100%;
+}
+
+.kore-navigation-bray-leino-header .menu > ul > li > ul.normal-sub > li a {
+  border: 0;
+  padding: 1em 0;
+}
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––––––
+Mobile style's
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media (max-width: 1139px) {
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul > li {
+    padding: 0 20px; 
+  }
+  
+  .kore-navigation-bray-leino-header .menu-mobile {
+    display: block;
+  }
+  
+  .kore-navigation-bray-leino-header .menu-container {
+    width: 100%;
+  }
+  
+  .kore-navigation-bray-leino-header .menu {
+    padding: 0;
+    position: relative;
+    margin: 0 -20px;
+    background-color: #98d0c3;
+  }
+  
+  .kore-navigation-bray-leino-header .menu-top-module .hs_cos_wrapper_type_logo a img {
+     width: 110px !important;
+  }
+
+  .kore-navigation-bray-leino-header .menu-dropdown-icon:before {
+    display: block;
+    padding: 10px 20px;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul {
+    display: none;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li {
+    width: 100%;
+    float: none;
+    display: block;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li a {
+    padding: 1.5em;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: block;
+  }
+
+  .kore-navigation-bray-leino-header .menu > ul > li > a:after {
+    content: none;  
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul {
+    position: relative;
+    transform: none;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul.normal-sub {
+    width: 100%;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul > li {
+    float: none;
+    width: 100% !important;
+    margin-top: 20px;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul > li:first-child {
+    margin: 0;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul > li.column-33-percent {
+    width: auto;
+  }
+
+  .kore-navigation-bray-leino-header .menu > ul > li > ul > li.column-50-percent {
+    width: auto;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul > li > ul {
+    position: relative;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul > li > ul > li {
+    float: none;
+  }
+  
+  .kore-navigation-bray-leino-header .menu .show-on-mobile {
+    
+    margin-bottom: -10px; 
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li.menu-dropdown-icon > a:after {
+    content: none; 
+  }
+
+  .kore-navigation-bray-leino-header .main-wrap {
+    padding: 10px 20px;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul > li > a {
+    display: none 
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul > li a {
+    text-align: left !important;
+    padding: 6px 20px;
+    font-size: 16px;
+    text-decoration: none;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul > li a:hover {
+   text-decoration: none; 
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul > li > ul > li {
+    border-bottom: 1px solid 000;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul {
+    padding: 0;
+  }
+  
+  .kore-navigation-bray-leino-header .main-wrap {
+    max-height: 568px;
+    overflow-y: auto;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  .kore-navigation-bray-leino-header .menu > ul > li a {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+}
+
+@media (min-width: 1140px) {
+  
+  .kore-navigation-bray-leino-header .main-wrap {
+    display: flex;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: flex-end;
+    padding: 10px 0;
+
+  }
+  
+  .kore-navigation-bray-leino-header .menu-container {
+    position: static; 
+  }
+  
+  .kore-navigation-bray-leino-header .menu {
+    margin-top: 0;  
+    padding-right: 7px;
+    position: relative;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul {
+    position: static; 
+    text-align: right;
+    display: block !important;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li {
+    float: none;
+    display: inline-block;
+  }
+  
+  .kore-navigation-bray-leino-header .menu > ul > li > ul {
+    margin-top: 0; 
+    text-align: left;
+  }
+  
+}

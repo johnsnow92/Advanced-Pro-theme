@@ -1,0 +1,105 @@
+.kore-lp-testimonial-1 {
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  position: relative;
+}
+
+.kore-lp-testimonial-1 .page-width {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.kore-lp-testimonial-1 .page-width.text-center {
+  text-align: center; 
+}
+
+.kore-lp-testimonial-1 .customer-testimonial {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease;
+  -webkit-transition: opacity 1s ease;
+}
+
+.kore-lp-testimonial-1 .customer-testimonial.slick-initialized {
+  visibility: visible;
+  opacity: 1;    
+}
+
+.kore-lp-testimonial-1 .slick-prev,
+.kore-lp-testimonial-1 .slick-next {
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+}
+
+.kore-lp-testimonial-1 .slick-prev {
+  left: -100px; 
+}
+
+.kore-lp-testimonial-1 .slick-next {
+  right: -100px;
+}
+
+/* Adjust left & right margins based on .slide padding */
+.kore-lp-testimonial-1 .customer-testimonial {
+  margin: 0 -20px;
+}
+
+.kore-lp-testimonial-1 .customer-testimonial .slide {
+  padding: 0 20px; 
+}
+
+.kore-lp-testimonial-1 .customer-testimonial .slide .quote-icon img {
+  width: 40px;
+  display: block;
+}
+
+.kore-lp-testimonial-1 .customer-testimonial .slide .quote-name {
+  display: inline-block;
+  border-bottom: 1px solid hsla(0, 0%, 100%, 0.5);
+  padding: 0 20px;
+  margin-bottom: 20px;
+}
+
+.kore-lp-testimonial-1 .customer-testimonial .slide .quote-name,
+.kore-lp-testimonial-1 .customer-testimonial .slide .quote-name * {
+  opacity: 0.9;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.kore-lp-testimonial-1 .customer-testimonial .slide .quote-description,
+.kore-lp-testimonial-1 .customer-testimonial .slide .quote-description * {
+  font-size: 18px;
+}
+
+.kore-lp-testimonial-1 .customer-testimonial .slide .quote-description p:last-child {
+  margin-bottom: 0; 
+}
+@media(max-width:1139px) {
+  
+  .kore-lp-testimonial-1 .customer-testimonial .slide .quote-description,
+  .kore-lp-testimonial-1 .customer-testimonial .slide .quote-description * {
+    font-size: 16px;
+  }
+  
+  .kore-lp-testimonial-1 .slick-slider {
+    position: static;  
+  }
+  
+  .kore-lp-testimonial-1 .slick-prev {
+    left: 0;
+  }
+  
+  .kore-lp-testimonial-1 .slick-next {
+    right: 0;
+  }
+  
+  .kore-lp-testimonial-1 .customer-testimonial .slide {
+    padding: 0 40px;
+  }
+  
+}

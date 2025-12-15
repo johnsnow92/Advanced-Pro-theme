@@ -1,0 +1,172 @@
+{# http://www-juicetactics-com.sandbox.hs-sites.com/kore-theme-documentation #}
+
+<!-- HTML to show when checked -->
+{% if module.section_settings.section_show_hide %}
+
+<style>
+  {% set settings = module.section_settings %}
+  {% if settings.section_background_type != '3' %}
+  .{{ name }} { 
+    {% if settings.section_background_type == '1' %}
+    {% if settings.section_background_image.src %}
+    background: linear-gradient(rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %}), rgba({{ settings.section_background_image_overlay.color|convert_rgb}}, {% if settings.section_background_image_overlay.opacity != 100 %}0.{{ settings.section_background_image_overlay.opacity }}{% else %}1{% endif %})), url({{ settings.section_background_image.src }});
+    {% endif %}
+    {% elif settings.section_background_type == '2' %}
+    background-color: {{ settings.section_background_color.color }};
+    {% endif %}
+  }
+  {% endif %}
+  
+  .{{ name }} .flex .col:last-child,
+  .{{ name }} .flex .col:last-child * {
+    color: {{ module.phone.text_color.color }};
+  }
+
+  .{{ name }} .flex .col:last-child a {
+    color: {{ module.phone.number_color.color }};
+  }
+
+  .{{ name }} .flex .col:last-child a:hover {
+    color: {{ module.phone.number_color_hover.color }} !important;
+  }
+  
+  .{{ name }} .section-padding-desktop {
+    padding-top: {{ module.section_settings.section_padding_desktop.top }}px;
+    padding-bottom: {{ module.section_settings.section_padding_desktop.bottom }}px;
+  }
+  
+  @media (max-width: 1139px) {
+    
+    .{{ name }} .section-padding-tablet {
+      padding-top: {{ module.section_settings.section_padding_tablet.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_tablet.bottom }}px;
+    }
+
+  }
+  
+  @media (max-width: 767px) {
+    
+    .{{ name }} .section-padding-mobile {
+      padding-top: {{ module.section_settings.section_padding_mobile.top }}px;
+      padding-bottom: {{ module.section_settings.section_padding_mobile.bottom }}px;
+    }
+
+  }
+/* overlap nav */
+  {% if module.section_settings.overlap_nav %}
+  .header-container.container-fluid * {
+    line-height: 0;
+    min-height: 0;
+  }
+  .kore-lp-header-1 {
+    margin-bottom: -90px;
+    position: relative;
+    z-index: 1;
+  }
+  {% endif %}
+  
+/*   Full-width ctaoniner */
+  {% if module.section_settings.full_width %}
+  .kore-module.{{name}} .page-width {
+    max-width: 100% !important;
+  }
+  {% endif %}
+  
+</style>
+
+<div class="{% if module.section_settings.section_use_existing_portal_style %}kore-module-off{% else %}kore-module{% endif %} kore-lp-header-1 clear-module {{ module.section_settings.section_class|replace('.', '')|replace(' ', '')|lower }} {% if module.section_settings.section_background_type == '3' %}default-bg-color{% elif module.section_settings.section_background_type == '4' %}default-bg-gradient{% endif %} {{ name }}" id="{{ module.section_settings.section_id|replace('#', '')|replace(' ', '')|lower }}">
+  <div class="page-width">
+    
+    <div class="{% if module.section_settings.section_padding == "custom" %}section-padding-desktop section-padding-tablet section-padding-mobile{% else %}{{ module.section_settings.section_padding }}{% endif %} ">
+
+      <div class="flex">
+
+        {% if module.logo_type == "left-logo" %}
+        <div class="col text-left">
+
+          <a href="{{ module.logo.url.href }}">
+            {% if module.logo.image.src %}
+            {% set sizeAttrs = 'width="{{ module.logo.image.width }}" height="{{ module.logo.image.height }}"' %}
+            {% if module.logo.image.size_type == 'auto' %}
+            {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+            {% elif module.logo.image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.logo.image.max_width }}px; max-height: {{ module.logo.image.max_height }}px"' %}
+            {% endif %}
+            <img src="{{ module.logo.image.src }}" alt="{{ module.logo.image.alt }}" {{ sizeAttrs }}>
+            {% endif %}
+          </a>
+
+        </div>
+        
+        <div class="col text-right font-size-12">
+
+          {% if module.phone.number %}
+          {% if module.phone.icon.src %}
+          <img class="mr-5" src="{{ module.phone.icon.src }}" alt="{{ module.phone.icon.alt }} "style="width: 20px;">
+          {% endif %}
+          {% if module.phone.text %}
+          <span>
+            {{ module.phone.text }}
+          </span>
+          {% endif %}
+          {% endif %}
+
+          {% if module.phone.number %}
+          <a href="tel:{{ module.phone.tel_link|replace(' ', '') }}">
+            {{ module.phone.number }}
+          </a>
+          {% endif %}
+
+        </div>
+ 
+        {% elif module.logo_type == "center-logo" %}
+        <div class="col center-logo-blank"></div>
+        <div class="col center-logo text-center text-tablet-left">
+
+          <a href="{{ module.logo.url.href }}">
+            {% if module.logo.image.src %}
+            {% set sizeAttrs = 'width="{{ module.logo.image.width }}" height="{{ module.logo.image.height }}"' %}
+            {% if module.logo.image.size_type == 'auto' %}
+            {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+            {% elif module.logo.image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="100%" height="auto" style="max-width: {{ module.logo.image.max_width }}px; max-height: {{ module.logo.image.max_height }}px"' %}
+            {% endif %}
+            <img src="{{ module.logo.image.src }}" alt="{{ module.logo.image.alt }}" {{ sizeAttrs }}>
+            {% endif %}
+          </a>
+
+        </div>
+        <div class="col text-right font-size-12 {% if module.phone.number %}{% else %}hidden-phone hidden-tablet{% endif %}">
+
+          {% if module.phone.number %}
+
+          {% if module.phone.icon.src %}
+          <img class="mr-5" src="{{ module.phone.icon.src }}" alt="{{ module.phone.icon.alt }} "style="width: 20px;">
+          {% endif %}
+
+            {% if module.phone.text %}
+              <span>
+                {{ module.phone.text }}
+              </span>
+            {% endif %}
+          
+
+            {% if module.phone.number %}
+            <a href="tel:{{ module.phone.number|replace(' ', '') }}">
+              {{ module.phone.number }}
+            </a>
+            {% endif %}
+          
+          {% endif %}
+
+        </div>
+        {% endif %}
+
+      </div>
+      
+    </div> 
+
+  </div>
+</div>
+
+{% endif %}

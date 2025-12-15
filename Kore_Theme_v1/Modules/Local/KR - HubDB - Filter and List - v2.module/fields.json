@@ -1,0 +1,256 @@
+[ {
+  "id" : "b3b9c15d-c04f-d386-f4d1-97b211f800a1",
+  "name" : "styles",
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "930ab3cc-55af-642f-911a-9d26f1a130e9",
+    "name" : "background_type",
+    "label" : "Background Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "bg-color", "Background Color" ], [ "bg-img", "Background Image" ] ],
+    "multiple" : false,
+    "reordering_enabled" : true,
+    "preset" : null,
+    "type" : "choice",
+    "display_width" : null,
+    "default" : "bg-color"
+  }, {
+    "id" : "6746fada-7467-bd09-10ec-c1ecc51af175",
+    "name" : "background_color",
+    "label" : "Background Color",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "styles.background_type",
+      "controlling_value_regex" : "bg-color",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "type" : "color",
+    "display_width" : null,
+    "default" : {
+      "color" : "#F5F5F5",
+      "opacity" : 100
+    }
+  }, {
+    "id" : "52df7fdf-9a8c-ddd1-f354-9ca155f4fc28",
+    "name" : "background_image",
+    "label" : "Background Image",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_field_path" : "styles.background_type",
+      "controlling_value_regex" : "bg-img",
+      "property" : null,
+      "operator" : "EQUAL",
+      "access" : null
+    },
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "display_width" : null,
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://www.usbiotek.com/hubfs/Webinar_Banner3.jpg",
+      "alt" : "Webinar_Banner3",
+      "loading" : "lazy",
+      "width" : 1500,
+      "height" : 844,
+      "max_width" : 1500,
+      "max_height" : 844
+    }
+  }, {
+    "id" : "de4c0097-fc01-0ea7-0147-751367d4071f",
+    "name" : "spacing",
+    "label" : "Spacing",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "39949cd0-18c4-12e7-8433-46da96c84ea7",
+      "name" : "desktop",
+      "label" : "Desktop",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "222f86d5-f55c-bdc0-5a46-1f73488c7fcc",
+        "name" : "padding_top",
+        "label" : "Padding Top",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 50
+      }, {
+        "id" : "ac29c987-5b94-793c-440f-5b8d9a8fb2c5",
+        "name" : "padding_bottom",
+        "label" : "Padding Bottom",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 60
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "padding_top" : 50,
+        "padding_bottom" : 60
+      }
+    }, {
+      "id" : "6f282399-e807-7b16-7eef-f66a684f69bb",
+      "name" : "tablet",
+      "label" : "Tablet",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "41dc9763-3211-bdb0-5db5-d4c8e3c26141",
+        "name" : "padding_top",
+        "label" : "Padding Top",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 40
+      }, {
+        "id" : "c520db33-be20-8452-bacb-6ecc9aa8122a",
+        "name" : "padding_bottom",
+        "label" : "Padding Bottom",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 60
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "padding_top" : 40,
+        "padding_bottom" : 60
+      }
+    }, {
+      "id" : "7d43946c-b1c7-aa95-e542-7c689c92ddd7",
+      "name" : "mobile",
+      "label" : "Mobile",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "64f1f683-408b-024d-ed94-4f7f777d7960",
+        "name" : "padding_top",
+        "label" : "Padding Top",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 40
+      }, {
+        "id" : "011de650-ef6d-5174-bc4d-bdb1848a0db4",
+        "name" : "padding_bottom",
+        "label" : "Padding Bottom",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number",
+        "display_width" : null,
+        "default" : 50
+      } ],
+      "tab" : "STYLE",
+      "expanded" : false,
+      "group_occurrence_meta" : null,
+      "type" : "group",
+      "display_width" : null,
+      "default" : {
+        "padding_top" : 40,
+        "padding_bottom" : 50
+      }
+    } ],
+    "tab" : "STYLE",
+    "expanded" : false,
+    "group_occurrence_meta" : null,
+    "type" : "group",
+    "display_width" : null,
+    "default" : {
+      "desktop" : {
+        "padding_top" : 50,
+        "padding_bottom" : 60
+      },
+      "tablet" : {
+        "padding_top" : 40,
+        "padding_bottom" : 60
+      },
+      "mobile" : {
+        "padding_top" : 40,
+        "padding_bottom" : 50
+      }
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "group_occurrence_meta" : null,
+  "type" : "group",
+  "display_width" : null,
+  "default" : {
+    "background_type" : "bg-color",
+    "background_color" : {
+      "color" : "#F5F5F5",
+      "opacity" : 100
+    },
+    "background_image" : {
+      "size_type" : "auto",
+      "src" : "https://www.usbiotek.com/hubfs/Webinar_Banner3.jpg",
+      "alt" : "Webinar_Banner3",
+      "loading" : "lazy",
+      "width" : 1500,
+      "height" : 844,
+      "max_width" : 1500,
+      "max_height" : 844
+    },
+    "spacing" : {
+      "desktop" : {
+        "padding_top" : 50,
+        "padding_bottom" : 60
+      },
+      "tablet" : {
+        "padding_top" : 40,
+        "padding_bottom" : 60
+      },
+      "mobile" : {
+        "padding_top" : 40,
+        "padding_bottom" : 50
+      }
+    }
+  }
+}, {
+  "id" : "e2952b0e-2076-8324-ac55-8c3c9637d334",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "display_width" : null,
+  "default" : "<h1>Wellness Webinars Available on demand</h1>\n<p style=\"font-size: 20px;\">Select from our library of previously presented webinars and watch at your convenience!</p>"
+} ]
