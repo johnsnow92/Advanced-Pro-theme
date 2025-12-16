@@ -102,6 +102,67 @@ hs upload [theme-folder] [dest-path]
 hs watch [theme-folder] [dest-path]
 ```
 
+## Version Management
+
+This repository uses **Git tags + GitHub Releases** for version control and snapshots.
+
+### Current Version
+
+- **Version**: 2.0.0
+- **Tag**: `v2.0.0`
+- **Release**: [GitHub Releases](https://github.com/johnsnow92/Advanced-Pro-theme/releases)
+
+### Versioning Workflow
+
+When making changes to the theme:
+
+```bash
+# 1. Make changes locally
+# 2. Test in HubSpot
+hs upload . advanced-pro-enterprise --account 50730820
+
+# 3. Commit changes
+git add .
+git commit -m "Description of changes"
+
+# 4. Update CHANGELOG.md with changes
+
+# 5. Bump version in theme.json
+
+# 6. Create version tag
+git tag -a vX.X.X -m "Version description"
+
+# 7. Push changes and tag
+git push origin main
+git push origin vX.X.X
+
+# 8. Create GitHub Release from the tag
+```
+
+### Deploying a Specific Version
+
+To deploy a previous version:
+
+```bash
+# List available versions
+git tag -l
+
+# Checkout specific version
+git checkout v2.0.0
+
+# Upload to HubSpot
+hs upload . advanced-pro-enterprise --account 50730820
+
+# Return to latest
+git checkout main
+```
+
+### Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md) for detailed version history.
+
+---
+
 ## Module Integration
 
 Individual modules can be used across different themes:
