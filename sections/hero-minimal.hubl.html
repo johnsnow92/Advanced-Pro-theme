@@ -1,0 +1,25 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Hero - Minimal
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: hero-minimal.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  vertical_alignment="MIDDLE",
+  max_width=1200,
+  padding={"top": 100, "bottom": 100}
+%}
+  {% dnd_column width=12 %}
+    {% dnd_module path="@hubspot/rich_text" %}
+      {% module_attribute "html" %}
+        <div style="max-width: 700px;">
+          <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2;">Minimal Hero</h1>
+          <p style="font-size: 1.25rem; color: #666; margin-bottom: 2rem; line-height: 1.75;">Clean and focused. Perfect for content-first websites.</p>
+          <a href="#" style="display: inline-block; padding: 0.875rem 2rem; background: #212529; color: white; text-decoration: none; border-radius: 6px; font-weight: 600;">Explore →</a>
+        </div>
+      {% end_module_attribute %}
+    {% end_dnd_module %}
+  {% end_dnd_column %}
+{% end_dnd_section %}

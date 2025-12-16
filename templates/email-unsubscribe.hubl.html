@@ -1,0 +1,48 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Email Unsubscribe - Advanced Pro Theme
+
+  screenshotPath: ../assets/template-placeholder.png-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unsubscribe | {{ site_settings.company_name }}</title>
+  <meta name="robots" content="noindex, nofollow">
+  {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    {% global_partial path="../partials/header.hubl.html" %}
+    <main id="main-content" role="main">
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8 text-center" style="margin: 0 auto;">
+              <h1>Unsubscribe from Emails</h1>
+              <p class="lead">We're sorry to see you go!</p>
+              {% module "unsubscribe_form"
+                path="@hubspot/form",
+                label="Unsubscribe Form",
+                form={
+                  "form_id": "",
+                  "response_type": "inline",
+                  "message": "You have been unsubscribed successfully."
+                }
+              %}
+              <p style="margin-top: var(--spacing-2xl);">Changed your mind? <a href="/email-subscriptions">Manage your email preferences</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% global_partial path="../partials/footer.hubl.html" %}
+  </div>
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_footer_includes }}
+</body>
+</html>

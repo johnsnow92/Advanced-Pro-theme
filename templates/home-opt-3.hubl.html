@@ -1,0 +1,41 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Home - Opt 3 - Advanced Pro Theme
+  screenshotPath: ../images/templates/home-opt-3-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}<meta name="description" content="{{ page_meta.meta_description }}">{% endif %}
+  {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% global_partial path="../partials/header.hubl.html" %}
+    <main id="main-content" role="main">
+      <section class="section hero-video" style="min-height: 80vh; display: flex; align-items: center; position: relative; background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white;">
+        <div class="container" style="position: relative; z-index: 2;">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto; text-align: center;">
+              <h1 style="color: white; font-size: 4rem;">{% module "hero_headline" path="@hubspot/text", label="Headline", html="Innovation Meets Design" %}</h1>
+              <p class="lead" style="color: rgba(255,255,255,0.9); font-size: 1.5rem;">{% module "hero_subheadline" path="@hubspot/text", label="Subheadline" %}</p>
+              {% module "hero_video" path="@hubspot/video", label="Hero Video" %}
+            </div>
+          </div>
+        </div>
+      </section>
+      {% module "home_sections" path="@hubspot/rich_text", label="Content Sections" %}
+    </main>
+    {% global_partial path="../partials/footer.hubl.html" %}
+  </div>
+  {{ standard_footer_includes }}
+</body>
+</html>

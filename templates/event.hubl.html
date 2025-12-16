@@ -1,0 +1,125 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Event - Advanced Pro Theme
+  screenshotPath: ../images/templates/event-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}<meta name="description" content="{{ page_meta.meta_description }}">{% endif %}
+  {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% global_partial path="../partials/header.hubl.html" %}
+    <main id="main-content" role="main">
+
+      <!-- Event Hero -->
+      <section class="section event-hero" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; padding: var(--spacing-4xl) 0;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <div class="event-badge">Upcoming Event</div>
+              <h1 style="color: white;">{{ page_meta.name }}</h1>
+              <p class="lead" style="color: rgba(255,255,255,0.9);">{% module "event_subtitle" path="@hubspot/text", label="Event Subtitle" %}</p>
+              <div class="event-meta-hero">
+                <div class="meta-item"><span>📅</span> {% module "event_date" path="@hubspot/text", label="Event Date", html="March 15, 2025" %}</div>
+                <div class="meta-item"><span>🕐</span> {% module "event_time" path="@hubspot/text", label="Event Time", html="9:00 AM - 5:00 PM" %}</div>
+                <div class="meta-item"><span>📍</span> {% module "event_location" path="@hubspot/text", label="Location", html="San Francisco, CA" %}</div>
+              </div>
+              <div class="event-cta-hero">
+                <a href="#register" class="btn btn-lg" style="background: white; color: var(--color-primary);">Register Now</a>
+                <a href="#details" class="btn btn-outline btn-lg" style="border-color: white; color: white;">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Event Overview -->
+      <section id="details" class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <h2>About This Event</h2>
+              {% module "event_description" path="@hubspot/rich_text", label="Event Description", html="<p>Join us for an unforgettable experience filled with learning, networking, and inspiration.</p>" %}
+            </div>
+            <div class="col-12 col-lg-4">
+              <div class="event-details-card">
+                <h3>Event Details</h3>
+                <div class="detail-item"><strong>Date:</strong> {% module "event_date_detail" path="@hubspot/text", label="Event Date", html="March 15, 2025" %}</div>
+                <div class="detail-item"><strong>Time:</strong> {% module "event_time_detail" path="@hubspot/text", label="Event Time", html="9:00 AM - 5:00 PM" %}</div>
+                <div class="detail-item"><strong>Venue:</strong> {% module "event_venue" path="@hubspot/text", label="Venue Name", html="Convention Center" %}</div>
+                <div class="detail-item"><strong>Address:</strong> {% module "event_address" path="@hubspot/text", label="Address", html="123 Main St, San Francisco, CA" %}</div>
+                <div class="detail-item"><strong>Capacity:</strong> {% module "event_capacity" path="@hubspot/text", label="Capacity", html="500 attendees" %}</div>
+                <div class="detail-item"><strong>Price:</strong> {% module "event_price" path="@hubspot/text", label="Ticket Price", html="$99" %}</div>
+                <a href="#register" class="btn btn-primary btn-block" style="margin-top: var(--spacing-lg);">Register Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Event Schedule -->
+      <section class="section" style="background-color: var(--color-gray-50);">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="text-center mb-5">Event Schedule</h2>
+              {% module "event_schedule" path="@hubspot/rich_text", label="Event Schedule", html="<p>Add detailed schedule here</p>" %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Speakers -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2>Featured Speakers</h2>
+              <p class="lead">Meet the industry experts who will be sharing their insights</p>
+            </div>
+          </div>
+          <div class="row">
+            {% module "event_speakers" path="@hubspot/rich_text", label="Speakers Grid", html="<p>Add speaker cards here</p>" %}
+          </div>
+        </div>
+      </section>
+
+      <!-- Registration Form -->
+      <section id="register" class="section" style="background-color: var(--color-gray-50);">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+              <h2 class="text-center mb-5">Register for This Event</h2>
+              {% module "event_registration_form" path="@hubspot/form", label="Registration Form" %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    {% global_partial path="../partials/footer.hubl.html" %}
+  </div>
+  {{ standard_footer_includes }}
+  <style>
+  .event-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: var(--spacing-xs) var(--spacing-md); border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: 600; margin-bottom: var(--spacing-md); }
+  .event-meta-hero { display: flex; gap: var(--spacing-xl); margin: var(--spacing-xl) 0; flex-wrap: wrap; }
+  .event-meta-hero .meta-item { color: rgba(255,255,255,0.9); display: flex; align-items: center; gap: var(--spacing-xs); }
+  .event-cta-hero { display: flex; gap: var(--spacing-md); margin-top: var(--spacing-2xl); flex-wrap: wrap; }
+  .event-details-card { padding: var(--spacing-2xl); background: white; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); position: sticky; top: calc(var(--spacing-2xl) + 70px); }
+  .event-details-card h3 { margin-bottom: var(--spacing-lg); }
+  .detail-item { padding: var(--spacing-md) 0; border-bottom: 1px solid var(--color-gray-200); }
+  .detail-item:last-of-type { border-bottom: none; }
+  </style>
+</body>
+</html>

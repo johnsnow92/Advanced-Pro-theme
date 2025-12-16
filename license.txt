@@ -1,0 +1,44 @@
+Advanced Pro Enterprise Theme License Agreement
+
+Copyright (c) 2024 Jonathon Tamm / Metro Mind
+All rights reserved.
+
+TERMS OF USE
+
+1. LICENSE GRANT
+Upon purchase, you are granted a non-exclusive, non-transferable license to use this theme on one (1) HubSpot portal. Multi-portal licenses are available for an additional fee.
+
+2. PERMITTED USES
+- Install and use the theme on one HubSpot portal
+- Customize colors, fonts, and content to match your brand
+- Create derivative pages and content using provided templates and modules
+- Receive theme updates for the duration of your HubSpot subscription
+
+3. PROHIBITED USES
+- Redistribute, resell, or share this theme with third parties
+- Use on multiple HubSpot portals without purchasing additional licenses
+- Remove or modify copyright notices or attribution
+- Use theme code to create competing themes for sale
+
+4. SUPPORT
+Theme support is provided via email at support@metro-mind.com. Support includes:
+- Installation assistance
+- Bug fixes and compatibility updates
+- Basic customization guidance
+
+5. UPDATES
+Theme updates are provided at no additional cost. Updates include:
+- Bug fixes and security patches
+- HubSpot platform compatibility updates
+- New features (at developer's discretion)
+
+6. WARRANTY DISCLAIMER
+This theme is provided "as is" without warranty of any kind. The developer does not guarantee uninterrupted operation or compatibility with all third-party tools.
+
+7. LIMITATION OF LIABILITY
+In no event shall the developer be liable for any indirect, incidental, special, or consequential damages arising from the use of this theme.
+
+8. REFUND POLICY
+Due to the digital nature of this product, refunds are not provided after download/installation. Please review the demo thoroughly before purchase.
+
+For licensing questions, contact: support@metro-mind.com

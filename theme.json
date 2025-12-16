@@ -1,0 +1,20 @@
+{
+  "label": "Advanced Pro Enterprise",
+  "preview_path": "./templates/home.hubl.html",
+  "screenshot_path": "./assets/theme-preview.png",
+  "enable_domain_stylesheets": false,
+  "version": "2.0.0",
+  "author": {
+    "name": "Jonathon Tamm",
+    "email": "support@metro-mind.com",
+    "url": "https://metro-mind.com"
+  },
+  "documentation_url": "https://metro-mind.com/docs/advanced-pro",
+  "example_url": "https://metro-mind.com/demo/advanced-pro",
+  "license": "./license.txt",
+  "is_available_for_new_content": true,
+  "external_js": [
+    "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js",
+    "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+  ]
+}

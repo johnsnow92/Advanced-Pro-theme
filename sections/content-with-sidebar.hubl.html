@@ -1,0 +1,52 @@
+<!--
+  templateType: section
+  isAvailableForNewContent: true
+  label: Content with Sidebar Section - Advanced Pro Theme
+
+  screenshotPath: ../assets/section-placeholder.png
+  description: content-with-sidebar.hubl section for Advanced Pro Theme
+-->
+{% dnd_section
+  vertical_alignment="MIDDLE",
+  max_width=1200
+%}
+  {% dnd_row %}
+    {% dnd_column
+      width=8,
+      offset=0
+    %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Main Content"
+      %}
+        {% module_attribute "html" %}
+          <h2>Main Content</h2>
+          <p>Add your main content here.</p>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+
+    {% dnd_column
+      width=4,
+      offset=0
+    %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        label="Sidebar Content"
+      %}
+        {% module_attribute "html" %}
+          <div style="padding: 20px; background: #f5f5f5; border-radius: 8px;">
+            <h3>Sidebar</h3>
+            <p>Add sidebar widgets or content here.</p>
+          </div>
+        {% end_module_attribute %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+  {% end_dnd_row %}
+{% end_dnd_section %}
+
+<style>
+.content-with-sidebar-section {
+  padding: var(--spacing-3xl) 0;
+}
+</style>

@@ -1,0 +1,47 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Membership Access Denied - Advanced Pro Theme
+
+  screenshotPath: ../assets/template-placeholder.png-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Access Denied | {{ site_settings.company_name }}</title>
+  <meta name="robots" content="noindex, nofollow">
+  {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    {% global_partial path="../partials/header.hubl.html" %}
+    <main id="main-content" role="main">
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8 text-center" style="margin: 0 auto;">
+              <div class="access-denied-icon">🔒</div>
+              <h1>Access Denied</h1>
+              <p class="lead">You don't have permission to view this content.</p>
+              <p>This content is restricted to members only. Please sign in or upgrade your membership to access it.</p>
+              <div style="display: flex; gap: var(--spacing-md); justify-content: center; margin-top: var(--spacing-2xl); flex-wrap: wrap;">
+                <a href="/login" class="btn btn-primary btn-lg">Sign In</a>
+                <a href="/pricing" class="btn btn-outline btn-lg">View Membership Plans</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% global_partial path="../partials/footer.hubl.html" %}
+  </div>
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_footer_includes }}
+  <style>
+  .access-denied-icon { width: 120px; height: 120px; background: var(--color-gray-200); color: var(--color-gray-600); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 4rem; margin: var(--spacing-4xl) auto var(--spacing-xl); }
+  </style>
+</body>
+</html>

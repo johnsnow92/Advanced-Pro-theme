@@ -1,0 +1,97 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Landing Page - Opt 1 - Advanced Pro Theme
+  screenshotPath: ../images/templates/landing-opt-1-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+  {% if page_meta.meta_description %}<meta name="description" content="{{ page_meta.meta_description }}">{% endif %}
+  {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}">{% endif %}
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+<body class="{{ builtin_body_classes }} landing-page">
+  <div class="body-wrapper">
+    {% global_partial path="../partials/header.hubl.html" %}
+    <main id="main-content" role="main">
+      <section class="section hero-landing" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white; padding: var(--spacing-4xl) 0;">
+        <div class="container">
+          <div class="row align-center">
+            <div class="col-12 col-lg-6">
+              <h1 style="color: white; font-size: 3.5rem;">{% module "hero_headline" path="@hubspot/text", label="Hero Headline", html="Transform Your Business Today" %}</h1>
+              <p class="lead" style="color: rgba(255,255,255,0.9); font-size: 1.5rem;">{% module "hero_subheadline" path="@hubspot/text", label="Hero Subheadline", html="Get results in 30 days or your money back" %}</p>
+              <div style="margin-top: var(--spacing-2xl);">
+                {% module "hero_form" path="@hubspot/form", label="Hero Lead Form" %}
+              </div>
+            </div>
+            <div class="col-12 col-lg-6">
+              {% module "hero_image" path="@hubspot/linked_image", label="Hero Image" %}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section" style="background-color: var(--color-gray-50);">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-12 col-md-4"><div class="stat-item"><div class="stat-number">10K+</div><div class="stat-label">Happy Customers</div></div></div>
+            <div class="col-12 col-md-4"><div class="stat-item"><div class="stat-number">99%</div><div class="stat-label">Satisfaction Rate</div></div></div>
+            <div class="col-12 col-md-4"><div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Support Available</div></div></div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2>{% module "features_headline" path="@hubspot/text", label="Features Headline", html="Why Choose Us?" %}</h2>
+              <p class="lead">{% module "features_subheadline" path="@hubspot/text", label="Features Subheadline", html="Everything you need to succeed" %}</p>
+            </div>
+          </div>
+          {% module "features_section" path="@hubspot/rich_text", label="Features Section" %}
+        </div>
+      </section>
+      <section class="section" style="background-color: var(--color-gray-50);">
+        <div class="container">
+          <div class="row align-center">
+            <div class="col-12 text-center mb-5">
+              <h2>{% module "testimonials_headline" path="@hubspot/text", label="Testimonials Headline", html="What Our Customers Say" %}</h2>
+            </div>
+          </div>
+          {% module "testimonials_section" path="@hubspot/rich_text", label="Testimonials Section" %}
+        </div>
+      </section>
+      <section class="section cta-final" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+              <div class="text-center">
+                <h2 style="color: white; font-size: 3rem;">{% module "cta_headline" path="@hubspot/text", label="CTA Headline", html="Ready to Get Started?" %}</h2>
+                <p class="lead" style="color: rgba(255,255,255,0.9); font-size: 1.5rem;">{% module "cta_subheadline" path="@hubspot/text", label="CTA Subheadline", html="Join thousands of satisfied customers" %}</p>
+                <div style="margin-top: var(--spacing-2xl);">
+                  {% module "cta_form" path="@hubspot/form", label="CTA Form" %}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    {% global_partial path="../partials/footer.hubl.html" %}
+  </div>
+  {{ standard_footer_includes }}
+  <style>
+  .landing-page { background: white; }
+  .hero-landing h1 { line-height: 1.1; margin-bottom: var(--spacing-lg); }
+  .stat-item { padding: var(--spacing-xl); }
+  .stat-number { font-size: 3rem; font-weight: 700; color: var(--color-primary); margin-bottom: var(--spacing-sm); }
+  .stat-label { font-size: var(--font-size-lg); color: var(--color-gray-600); }
+  .cta-final { padding: var(--spacing-4xl) 0; }
+  </style>
+</body>
+</html>

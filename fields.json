@@ -1,0 +1,482 @@
+[
+  {
+    "type": "group",
+    "name": "colors",
+    "label": "Colors",
+    "expanded": true,
+    "children": [
+      {
+        "type": "color",
+        "name": "primary_color",
+        "label": "Primary Color",
+        "default": {
+          "color": "#102a43",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "secondary_color",
+        "label": "Secondary Color",
+        "default": {
+          "color": "#14b8a6",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "accent_color",
+        "label": "Accent Color",
+        "default": {
+          "color": "#0d9488",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "text_color",
+        "label": "Text Color",
+        "default": {
+          "color": "#102a43",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "background_color",
+        "label": "Background Color",
+        "default": {
+          "color": "#fafcff",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "hyperlink_color",
+        "label": "Hyperlink Color",
+        "default": {
+          "color": "#14b8a6",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "hyperlink_hover_color",
+        "label": "Hyperlink Hover Color",
+        "default": {
+          "color": "#0d9488",
+          "opacity": 100
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "typography",
+    "label": "Typography",
+    "expanded": false,
+    "children": [
+      {
+        "type": "font",
+        "name": "heading_font",
+        "label": "Heading Font (Default)",
+        "load_external_fonts": true,
+        "default": {
+          "size": 36,
+          "font": "Outfit",
+          "font_set": "GOOGLE",
+          "size_unit": "px",
+          "color": "#2D3748",
+          "styles": {
+            "font-weight": "700",
+            "font-style": "normal",
+            "text-decoration": "none"
+          }
+        }
+      },
+      {
+        "type": "font",
+        "name": "h1_font",
+        "label": "H1 Font",
+        "load_external_fonts": true,
+        "default": {
+          "size": 48,
+          "font": "Outfit",
+          "font_set": "GOOGLE",
+          "size_unit": "px",
+          "color": "#2D3748",
+          "styles": {
+            "font-weight": "700",
+            "font-style": "normal",
+            "text-decoration": "none"
+          }
+        }
+      },
+      {
+        "type": "font",
+        "name": "h2_font",
+        "label": "H2 Font",
+        "load_external_fonts": true,
+        "default": {
+          "size": 36,
+          "font": "Outfit",
+          "font_set": "GOOGLE",
+          "size_unit": "px",
+          "color": "#2D3748",
+          "styles": {
+            "font-weight": "700",
+            "font-style": "normal",
+            "text-decoration": "none"
+          }
+        }
+      },
+      {
+        "type": "font",
+        "name": "h3_font",
+        "label": "H3 Font",
+        "load_external_fonts": true,
+        "default": {
+          "size": 28,
+          "font": "Outfit",
+          "font_set": "GOOGLE",
+          "size_unit": "px",
+          "color": "#2D3748",
+          "styles": {
+            "font-weight": "600",
+            "font-style": "normal",
+            "text-decoration": "none"
+          }
+        }
+      },
+      {
+        "type": "font",
+        "name": "h4_font",
+        "label": "H4 Font",
+        "load_external_fonts": true,
+        "default": {
+          "size": 24,
+          "font": "Outfit",
+          "font_set": "GOOGLE",
+          "size_unit": "px",
+          "color": "#2D3748",
+          "styles": {
+            "font-weight": "600",
+            "font-style": "normal",
+            "text-decoration": "none"
+          }
+        }
+      },
+      {
+        "type": "font",
+        "name": "h5_font",
+        "label": "H5 Font",
+        "load_external_fonts": true,
+        "default": {
+          "size": 20,
+          "font": "Outfit",
+          "font_set": "GOOGLE",
+          "size_unit": "px",
+          "color": "#2D3748",
+          "styles": {
+            "font-weight": "600",
+            "font-style": "normal",
+            "text-decoration": "none"
+          }
+        }
+      },
+      {
+        "type": "font",
+        "name": "h6_font",
+        "label": "H6 Font",
+        "load_external_fonts": true,
+        "default": {
+          "size": 16,
+          "font": "Outfit",
+          "font_set": "GOOGLE",
+          "size_unit": "px",
+          "color": "#2D3748",
+          "styles": {
+            "font-weight": "600",
+            "font-style": "normal",
+            "text-decoration": "none"
+          }
+        }
+      },
+      {
+        "type": "font",
+        "name": "body_font",
+        "label": "Body Font",
+        "load_external_fonts": true,
+        "default": {
+          "size": 16,
+          "font": "DM Sans",
+          "font_set": "GOOGLE",
+          "size_unit": "px",
+          "color": "#4A5568",
+          "styles": {
+            "font-weight": "400",
+            "font-style": "normal",
+            "text-decoration": "none"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "forms",
+    "label": "Form Styles",
+    "expanded": false,
+    "children": [
+      {
+        "type": "color",
+        "name": "form_background_color",
+        "label": "Form Background Color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "form_border_color",
+        "label": "Form Border Color",
+        "default": {
+          "color": "#E2E8F0",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "form_label_color",
+        "label": "Form Label Color",
+        "default": {
+          "color": "#2D3748",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "form_field_background_color",
+        "label": "Form Field Background Color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "form_field_border_color",
+        "label": "Form Field Border Color",
+        "default": {
+          "color": "#CBD5E0",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "form_field_text_color",
+        "label": "Form Field Text Color",
+        "default": {
+          "color": "#2D3748",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "form_field_placeholder_color",
+        "label": "Form Field Placeholder Color",
+        "default": {
+          "color": "#A0AEC0",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "form_button_text_color",
+        "label": "Form Button Text Color",
+        "default": {
+          "color": "#FFFFFF",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "form_button_background_color",
+        "label": "Form Button Background Color",
+        "default": {
+          "color": "#14b8a6",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "form_button_hover_color",
+        "label": "Form Button Hover Color",
+        "default": {
+          "color": "#0d9488",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "number",
+        "name": "form_field_border_radius",
+        "label": "Form Field Border Radius (px)",
+        "default": 4,
+        "min": 0,
+        "max": 20,
+        "step": 1
+      },
+      {
+        "type": "number",
+        "name": "form_button_border_radius",
+        "label": "Form Button Border Radius (px)",
+        "default": 4,
+        "min": 0,
+        "max": 50,
+        "step": 1
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "spacing",
+    "label": "Spacing",
+    "expanded": false,
+    "children": [
+      {
+        "type": "number",
+        "name": "base_spacing",
+        "label": "Base Spacing Unit (px)",
+        "default": 8,
+        "min": 4,
+        "max": 16,
+        "step": 2
+      },
+      {
+        "type": "number",
+        "name": "section_padding",
+        "label": "Section Padding (px)",
+        "default": 80,
+        "min": 40,
+        "max": 160,
+        "step": 10
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "buttons",
+    "label": "Button Styles",
+    "expanded": false,
+    "children": [
+      {
+        "type": "number",
+        "name": "button_border_radius",
+        "label": "Button Border Radius (px)",
+        "default": 4,
+        "min": 0,
+        "max": 50,
+        "step": 1
+      },
+      {
+        "type": "choice",
+        "name": "button_style",
+        "label": "Default Button Style",
+        "choices": [
+          ["solid", "Solid"],
+          ["outline", "Outline"],
+          ["ghost", "Ghost"]
+        ],
+        "default": "solid"
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "layout",
+    "label": "Layout",
+    "expanded": false,
+    "children": [
+      {
+        "type": "number",
+        "name": "max_content_width",
+        "label": "Max Content Width (px)",
+        "default": 1200,
+        "min": 960,
+        "max": 1920,
+        "step": 40
+      },
+      {
+        "type": "boolean",
+        "name": "enable_boxed_layout",
+        "label": "Enable Boxed Layout",
+        "default": false
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "dark_mode",
+    "label": "Dark Mode",
+    "expanded": false,
+    "children": [
+      {
+        "type": "boolean",
+        "name": "enable_dark_mode_toggle",
+        "label": "Show Dark Mode Toggle Button",
+        "default": true
+      },
+      {
+        "type": "color",
+        "name": "dark_background",
+        "label": "Dark Mode Background",
+        "default": {
+          "color": "#1a202c",
+          "opacity": 100
+        }
+      },
+      {
+        "type": "color",
+        "name": "dark_text",
+        "label": "Dark Mode Text",
+        "default": {
+          "color": "#f8f9fa",
+          "opacity": 100
+        }
+      }
+    ]
+  },
+  {
+    "type": "group",
+    "name": "features",
+    "label": "Features",
+    "expanded": false,
+    "children": [
+      {
+        "type": "boolean",
+        "name": "enable_lazy_loading",
+        "label": "Enable Lazy Loading",
+        "default": true
+      },
+      {
+        "type": "boolean",
+        "name": "enable_scroll_progress",
+        "label": "Show Scroll Progress Bar",
+        "default": true
+      },
+      {
+        "type": "boolean",
+        "name": "enable_animations",
+        "label": "Enable Scroll Animations",
+        "default": true
+      },
+      {
+        "type": "boolean",
+        "name": "show_back_to_top",
+        "label": "Show Back to Top Button",
+        "default": true
+      }
+    ]
+  }
+]

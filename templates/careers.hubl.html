@@ -1,0 +1,305 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Careers - Advanced Pro Theme
+  screenshotPath: ../images/templates/careers-preview.png
+-->
+<!DOCTYPE html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_meta.html_title }}</title>
+
+  {% if page_meta.meta_description %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+  {% endif %}
+
+  {% if site_settings.favicon_src %}
+    <link rel="shortcut icon" href="{{ site_settings.favicon_src }}">
+  {% endif %}
+
+  {{ require_css(get_asset_url("../styles/main.css")) }}
+  {{ require_js(get_asset_url("../assets/main.js")) }}
+  {{ standard_header_includes }}
+</head>
+
+<body class="{{ builtin_body_classes }}">
+  <div class="body-wrapper">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    {% global_partial path="../partials/header.hubl.html" %}
+
+    <main id="main-content" role="main">
+
+      <!-- Page Hero -->
+      <section class="section section-hero section-hero-page" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));">
+        <div class="container">
+          <div class="row align-center">
+            <div class="col-12 col-lg-10 text-center">
+              <h1 style="color: white;">Join Our Team</h1>
+              <p class="lead" style="color: rgba(255,255,255,0.9);">Help us build the future of digital experiences</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Work Here -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2>Why Work With Us?</h2>
+              <p class="lead">Join a team that values innovation, growth, and work-life balance</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="benefit-card">
+                <div class="benefit-icon">💼</div>
+                <h4>Competitive Salary</h4>
+                <p>Industry-leading compensation and benefits package</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="benefit-card">
+                <div class="benefit-icon">🏠</div>
+                <h4>Remote Friendly</h4>
+                <p>Work from anywhere with flexible hours</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="benefit-card">
+                <div class="benefit-icon">📚</div>
+                <h4>Learning & Growth</h4>
+                <p>Continuous learning opportunities and career development</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+              <div class="benefit-card">
+                <div class="benefit-icon">🎉</div>
+                <h4>Great Culture</h4>
+                <p>Collaborative environment with amazing people</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Open Positions -->
+      <section class="section" style="background-color: var(--color-gray-50);">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2>Open Positions</h2>
+              <p class="lead">Find your next career opportunity</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 col-lg-8" style="margin: 0 auto;">
+
+              <!-- Job Listing 1 -->
+              <div class="job-listing">
+                <div class="job-header">
+                  <h3>Senior Frontend Developer</h3>
+                  <span class="job-type">Full-time</span>
+                </div>
+                <div class="job-meta">
+                  <span>📍 Remote</span>
+                  <span>💼 Engineering</span>
+                  <span>⏰ Full-time</span>
+                </div>
+                <p>We're looking for an experienced frontend developer to help build our next-generation web applications.</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+
+              <!-- Job Listing 2 -->
+              <div class="job-listing">
+                <div class="job-header">
+                  <h3>Product Designer</h3>
+                  <span class="job-type">Full-time</span>
+                </div>
+                <div class="job-meta">
+                  <span>📍 San Francisco, CA</span>
+                  <span>🎨 Design</span>
+                  <span>⏰ Full-time</span>
+                </div>
+                <p>Join our design team to create beautiful, user-centered experiences that delight our customers.</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+
+              <!-- Job Listing 3 -->
+              <div class="job-listing">
+                <div class="job-header">
+                  <h3>Marketing Manager</h3>
+                  <span class="job-type">Full-time</span>
+                </div>
+                <div class="job-meta">
+                  <span>📍 New York, NY</span>
+                  <span>📈 Marketing</span>
+                  <span>⏰ Full-time</span>
+                </div>
+                <p>Lead our marketing efforts and help grow our brand presence in key markets.</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+
+              <!-- Job Listing 4 -->
+              <div class="job-listing">
+                <div class="job-header">
+                  <h3>Backend Engineer</h3>
+                  <span class="job-type">Full-time</span>
+                </div>
+                <div class="job-meta">
+                  <span>📍 Remote</span>
+                  <span>💼 Engineering</span>
+                  <span>⏰ Full-time</span>
+                </div>
+                <p>Build scalable backend systems and APIs that power our platform.</p>
+                <a href="#" class="btn btn-primary">View Details</a>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 text-center" style="margin-top: var(--spacing-2xl);">
+              <p>Don't see a position that fits? <a href="/contact">Get in touch anyway</a> - we're always looking for talented people!</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hiring Process -->
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2>Our Hiring Process</h2>
+              <p class="lead">What to expect when you apply</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-md-3">
+              <div class="process-step">
+                <div class="process-number">01</div>
+                <h4>Apply</h4>
+                <p>Submit your application and resume</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="process-step">
+                <div class="process-number">02</div>
+                <h4>Phone Screen</h4>
+                <p>Initial conversation with our team</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="process-step">
+                <div class="process-number">03</div>
+                <h4>Interview</h4>
+                <p>Technical and cultural fit interviews</p>
+              </div>
+            </div>
+            <div class="col-12 col-md-3">
+              <div class="process-step">
+                <div class="process-number">04</div>
+                <h4>Offer</h4>
+                <p>Welcome to the team!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section section-cta" style="background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); color: white;">
+        <div class="container">
+          <div class="row align-center">
+            <div class="col-12 col-lg-8 text-center">
+              <h2 style="color: white;">Ready to Make an Impact?</h2>
+              <p class="lead" style="color: rgba(255,255,255,0.9);">Apply today and join our growing team</p>
+              <a href="#open-positions" class="btn btn-lg" style="background: white; color: var(--color-primary);">View Open Positions</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    {% global_partial path="../partials/footer.hubl.html" %}
+  </div>
+
+  {{ standard_footer_includes }}
+
+  <style>
+  .benefit-card {
+    text-align: center;
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+  }
+  .benefit-icon {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+  }
+  .benefit-card h4 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-gray-900);
+  }
+  .job-listing {
+    padding: var(--spacing-2xl);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: var(--spacing-lg);
+    transition: all var(--transition-normal) ease;
+  }
+  .job-listing:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+  }
+  .job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+  .job-header h3 {
+    margin: 0;
+    color: var(--color-gray-900);
+  }
+  .job-type {
+    background: var(--color-primary);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-600);
+    font-size: var(--font-size-sm);
+  }
+  .job-listing p {
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-gray-700);
+  }
+  .process-step {
+    text-align: center;
+    padding: var(--spacing-lg);
+  }
+  .process-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    opacity: 0.3;
+    margin-bottom: var(--spacing-md);
+  }
+  </style>
+</body>
+</html>
