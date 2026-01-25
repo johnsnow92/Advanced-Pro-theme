@@ -7,25 +7,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const handle = slider.querySelector('.slider-handle');
     let isDragging = false;
 
-    function updateSlider(x) {
+    function updateSlider(clientX) {
       const rect = container.getBoundingClientRect();
-      let position = ((x - rect.left) / rect.width) * 100;
+      let position = ((clientX - rect.left) / rect.width) * 100;
       position = Math.max(0, Math.min(100, position));
 
       afterImage.style.clipPath = `inset(0 ${100 - position}% 0 0)`;
       handle.style.left = position + '%';
     }
 
-    function handleMove(e) {
+    function handleMove(event) {
       if (!isDragging) return;
-      const x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-      updateSlider(x);
+      const clientX = event.type.includes('touch') ? event.touches[0].clientX : event.clientX;
+      updateSlider(clientX);
     }
 
-    function startDrag(e) {
+    function startDrag(event) {
       isDragging = true;
       container.classList.add('dragging');
-      handleMove(e);
+      handleMove(event);
     }
 
     function stopDrag() {
@@ -44,9 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('touchend', stopDrag);
 
     // Click to position
-    container.addEventListener('click', function(e) {
-      const x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
-      updateSlider(x);
+    container.addEventListener('click', function(event) {
+      const clientX = event.type.includes('touch') ? event.touches[0].clientX : event.clientX;
+      updateSlider(clientX);
     });
   });
 });

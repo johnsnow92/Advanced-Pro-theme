@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const isActive = item.classList.contains('active');
 
       // Close all accordion items
-      document.querySelectorAll('.accordion-menu__item').forEach(function(el) {
-        el.classList.remove('active');
-        const elContent = el.querySelector('.accordion-menu__content');
-        if (elContent) elContent.style.maxHeight = null;
+      document.querySelectorAll('.accordion-menu__item').forEach(function(accordionItem) {
+        accordionItem.classList.remove('active');
+        const accordionItemContent = accordionItem.querySelector('.accordion-menu__content');
+        if (accordionItemContent) accordionItemContent.style.maxHeight = null;
       });
 
       // Open clicked item if it wasn't active

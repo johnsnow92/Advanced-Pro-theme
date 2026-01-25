@@ -450,11 +450,11 @@
 
     get: function(name) {
       const nameEQ = name + "=";
-      const ca = document.cookie.split(';');
-      for (let i = 0; i < ca.length; i++) {
-        let c = ca[i];
-        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+      const cookieArray = document.cookie.split(';');
+      for (let i = 0; i < cookieArray.length; i++) {
+        let cookieItem = cookieArray[i];
+        while (cookieItem.charAt(0) === ' ') cookieItem = cookieItem.substring(1, cookieItem.length);
+        if (cookieItem.indexOf(nameEQ) === 0) return cookieItem.substring(nameEQ.length, cookieItem.length);
       }
       return null;
     },
@@ -619,10 +619,10 @@
     const params = {};
     const queryString = window.location.search.substring(1);
     const regex = /([^&=]+)=([^&]*)/g;
-    let m;
+    let match;
 
-    while (m = regex.exec(queryString)) {
-      params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+    while (match = regex.exec(queryString)) {
+      params[decodeURIComponent(match[1])] = decodeURIComponent(match[2]);
     }
 
     return params;
