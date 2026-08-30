@@ -5,6 +5,24 @@ var open_videos_ext = document.querySelectorAll('.video-wrap iframe:not(.no_trig
 var open_videos_ext_normalVideo = document.querySelectorAll('.video-wrap iframe.no_trigger_iframe');
 var ifram_box = document.querySelectorAll('.iframe_box ');
 
+function getSafeTabberMediaUrl(element) {
+  var candidate = element.getAttribute('data-src');
+  if (!candidate) {
+    return '';
+  }
+
+  try {
+    var parsed = new URL(candidate, window.location.href);
+    if (parsed.protocol === 'https:' || parsed.origin === window.location.origin) {
+      return parsed.href;
+    }
+  } catch (error) {
+    return '';
+  }
+
+  return '';
+}
+
 if(open_videos){
   var close_video_btn = document.querySelectorAll('.tab-title-item');
   Array.prototype.slice.call(close_video_btn).forEach(function(el) {
@@ -19,7 +37,10 @@ if(open_videos){
         ext.setAttribute("src", "");
       }); 
       Array.prototype.slice.call(open_videos_ext_normalVideo).forEach(function(ext) {
-        ext.setAttribute("src", ext.getAttribute("data-src"));
+        var safeMediaUrl = getSafeTabberMediaUrl(ext);
+        if (safeMediaUrl) {
+          ext.setAttribute("src", safeMediaUrl);
+        }
       });
       Array.prototype.slice.call(open_videos_file).forEach(function(vd) {
         vd.load();
@@ -33,8 +54,10 @@ if(videoContent){
   var iframeTrigger = document.querySelectorAll('.iframe_box .video_trigger');
   Array.prototype.slice.call(iframeTrigger).forEach(function(ele, index) {
     ele.addEventListener('click', function(e) {
-      var getIframeSrc = ele.nextElementSibling.getAttribute('data-src');
-      ele.nextElementSibling.setAttribute('src',getIframeSrc);
+      var safeMediaUrl = getSafeTabberMediaUrl(ele.nextElementSibling);
+      if (safeMediaUrl) {
+        ele.nextElementSibling.setAttribute('src', safeMediaUrl);
+      }
       ele.parentNode.parentNode.classList.toggle('activeVideo');
 
     });

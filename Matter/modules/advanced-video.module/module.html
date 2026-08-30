@@ -209,14 +209,34 @@
 {% require_js%}
 <script>
 
+  function getSafeAdvancedVideoUrl(element) {
+    var candidate = element.getAttribute('data-src');
+    if (!candidate) {
+      return '';
+    }
+
+    try {
+      var parsed = new URL(candidate, window.location.href);
+      if (parsed.protocol === 'https:' || parsed.origin === window.location.origin) {
+        return parsed.href;
+      }
+    } catch (error) {
+      return '';
+    }
+
+    return '';
+  }
+
   var videoContainer = document.querySelectorAll('.adv_video_module');
   if(videoContainer){
 
     var getIframeTrigger = document.querySelectorAll('.iframe_box .play_trigger');
     Array.prototype.slice.call(getIframeTrigger).forEach(function(ele, index) {
       ele.addEventListener('click', function(e) {
-        var getIframeSrc = ele.nextElementSibling.getAttribute('data-src');
-        ele.nextElementSibling.setAttribute('src',getIframeSrc);
+        var safeMediaUrl = getSafeAdvancedVideoUrl(ele.nextElementSibling);
+        if (safeMediaUrl) {
+          ele.nextElementSibling.setAttribute('src', safeMediaUrl);
+        }
         ele.parentNode.parentNode.classList.add('activeVideo');
 
       });
@@ -226,9 +246,11 @@
     var getIVideoTrigger = document.querySelectorAll('.video_box .play_trigger');
     Array.prototype.slice.call(getIVideoTrigger).forEach(function(ele, index) {
       ele.addEventListener('click', function(e) {
-        var getVideoSrc = ele.nextElementSibling.getAttribute('data-src');
-        ele.nextElementSibling.setAttribute('src',getVideoSrc);
-        ele.nextElementSibling.play();
+        var safeMediaUrl = getSafeAdvancedVideoUrl(ele.nextElementSibling);
+        if (safeMediaUrl) {
+          ele.nextElementSibling.setAttribute('src', safeMediaUrl);
+          ele.nextElementSibling.play();
+        }
         ele.parentNode.parentNode.classList.add('activeVideo');
 
       });
@@ -243,8 +265,10 @@
         modalId.classList.add('show');
         var iframeTag = modalId.querySelector('iframe');
         if(iframeTag){
-          var getAtrr =  iframeTag.getAttribute('data-src');
-          iframeTag.setAttribute('src',getAtrr);
+          var safeMediaUrl = getSafeAdvancedVideoUrl(iframeTag);
+          if (safeMediaUrl) {
+            iframeTag.setAttribute('src', safeMediaUrl);
+          }
         }
 
         setTimeout(function(){
@@ -262,9 +286,11 @@
         modalId.classList.add('show');
         var videoTag = modalId.querySelector('video');
         if(videoTag){
-          var getAtrr =  videoTag.getAttribute('data-src');
-          videoTag.setAttribute('src',getAtrr);
-          videoTag.play();
+          var safeMediaUrl = getSafeAdvancedVideoUrl(videoTag);
+          if (safeMediaUrl) {
+            videoTag.setAttribute('src', safeMediaUrl);
+            videoTag.play();
+          }
         }
 
         setTimeout(function(){
@@ -301,4 +327,3 @@
 
 </script>
 {% end_require_js%}
-

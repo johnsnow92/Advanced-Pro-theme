@@ -1,3 +1,21 @@
+function getSafeFooterMediaUrl(element) {
+  var candidate = element.getAttribute('data-src');
+  if (!candidate) {
+    return '';
+  }
+
+  try {
+    var parsed = new URL(candidate, window.location.href);
+    if (parsed.protocol === 'https:' || parsed.origin === window.location.origin) {
+      return parsed.href;
+    }
+  } catch (error) {
+    return '';
+  }
+
+  return '';
+}
+
 //  popup open
 var modalElement = document.querySelectorAll('.ftr_btn_item .popup');
 if(modalElement){
@@ -10,8 +28,10 @@ if(modalElement){
       var video2 = modalId.querySelector('.videoSrc');
 //       console.log(video2);
       if (video2) {
-        var videoSrc = video2.getAttribute('data-src');
-        video2.setAttribute('src', videoSrc);
+        var safeMediaUrl = getSafeFooterMediaUrl(video2);
+        if (safeMediaUrl) {
+          video2.setAttribute('src', safeMediaUrl);
+        }
       }      
       ele.parentElement.classList.toggle('ftr-search-open');
       e.preventDefault();
