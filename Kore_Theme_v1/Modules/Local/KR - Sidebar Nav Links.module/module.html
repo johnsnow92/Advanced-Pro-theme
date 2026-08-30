@@ -124,10 +124,15 @@
     $('.article-wrap h2').each(function(){
       let $this = $(this);
       let heading_text = $this.text();
-      let heading_text_val = heading_text.toLowerCase().replace(/ /g, '-').replace('&', '');
+      let heading_text_val = heading_text.toLowerCase().trim()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '') || 'section';
       $this.addClass(heading_text_val);
       $this.attr('data-text', heading_text_val);
-      $('.heading-nav').append('<div class="item-link '+heading_text_val+'" data-text="'+heading_text_val+'">'+ heading_text +'</div>')
+      $('<div>', {
+        'class': 'item-link ' + heading_text_val,
+        'data-text': heading_text_val
+      }).text(heading_text).appendTo('.heading-nav');
     });
 
     // stick sidebar nav on scroll
