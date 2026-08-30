@@ -2,6 +2,24 @@
 
 var bodyTag = document.querySelector('body');
 
+function getSafeHeaderMediaUrl(element) {
+  var candidate = element.getAttribute('data-src');
+  if (!candidate) {
+    return '';
+  }
+
+  try {
+    var parsed = new URL(candidate, window.location.href);
+    if (parsed.protocol === 'https:' || parsed.origin === window.location.origin) {
+      return parsed.href;
+    }
+  } catch (error) {
+    return '';
+  }
+
+  return '';
+}
+
 //  //  menu open
 var modalElement1 = document.querySelectorAll('.cst-humburger-icon');
 if(modalElement1){
@@ -34,9 +52,11 @@ if(modalElement3){
       var modalId = document.getElementById(getDataId);
       var video2 = modalId.querySelector('header .videoSrc');
       if (video2) {
-        var videoSrc = video2.getAttribute('data-src');
-        video2.setAttribute('src', videoSrc);
-        if(video2.classList.contains('videoTag')){
+        var safeMediaUrl = getSafeHeaderMediaUrl(video2);
+        if (safeMediaUrl) {
+          video2.setAttribute('src', safeMediaUrl);
+        }
+        if(safeMediaUrl && video2.classList.contains('videoTag')){
           video2.play();
         }
       } 
@@ -490,4 +510,3 @@ if (
     });
   });
 }
-
