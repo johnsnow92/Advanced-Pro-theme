@@ -349,7 +349,7 @@
 				$(container).addClass('reforged');
 				$(container).find('.widget-wrap').each(function () {
 					let title = $(this).find('.widget-title').text();
-					$(this).prepend('<div class="widget-tab-title">' + title + '</div>');
+					$('<div>', { 'class': 'widget-tab-title' }).text(title).prependTo(this);
 				})
 			}
 		} else {
