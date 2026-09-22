@@ -1,0 +1,36 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+# Review baseline: the johnsnow92 CodeRabbit organization settings, merged in via
+# inheritance. Keep only repository-specific overrides here. A custom check or
+# path instruction with the same name/path as an organization entry replaces it,
+# so do not redefine "Scope integrity", "Verification evidence", or the
+# organization's workflow/migration/auth/broker path instructions.
+inheritance: true
+
+reviews:
+  request_changes_workflow: true
+  fail_commit_status: true
+  poem: false
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    drafts: false
+  path_instructions:
+    - path: "**/*"
+      instructions: |
+        Review only the requested outcome. Flag unrelated refactors, generated output, dependency churn, secrets in git, unverified claims, and weakened tests.
+
+# Public repository: keep private organization context (MCP servers, issue
+# trackers, organization-wide learnings, other issues/PRs) out of public reviews.
+knowledge_base:
+  learnings:
+    scope: local
+  issues:
+    scope: local
+  pull_requests:
+    scope: local
+  mcp:
+    usage: disabled
+  linear:
+    usage: disabled
+  jira:
+    usage: disabled
