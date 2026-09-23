@@ -8,21 +8,102 @@ on:
 
 jobs:
   opencode:
-    if: |
-      contains(github.event.comment.body, '/oc') ||
-      contains(github.event.comment.body, '/opencode')
+    if: >-
+      (github.event.comment.author_association == 'OWNER' ||
+       github.event.comment.author_association == 'MEMBER' ||
+       github.event.comment.author_association == 'COLLABORATOR') &&
+      (startsWith(github.event.comment.body, '/oc') ||
+       startsWith(github.event.comment.body, '/opencode'))
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       id-token: write
     steps:
+      - name: Validate OpenCode command
+        id: command
+        env:
+          COMMENT_BODY: ${{ github.event.comment.body }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os
+          import re
+
+          body = os.environ["COMMENT_BODY"].strip()
+          valid = re.match(r"^/(?:oc|opencode)(?:\s|$)", body) is not None
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"valid={'true' if valid else 'false'}\n")
+          PY
+
+      - name: Require a trusted content boundary
+        id: boundary
+        if: steps.command.outputs.valid == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import urllib.request
+
+          with open(os.environ["GITHUB_EVENT_PATH"], encoding="utf-8") as event_file:
+              event = json.load(event_file)
+
+          repository = os.environ["REPOSITORY"]
+          event_name = os.environ["GITHUB_EVENT_NAME"]
+
+          if event_name == "pull_request_review_comment":
+              head_repository = event["pull_request"]["head"]["repo"]["full_name"]
+          elif event.get("issue", {}).get("pull_request"):
+              request = urllib.request.Request(
+                  event["issue"]["pull_request"]["url"],
+                  headers={
+                      "Accept": "application/vnd.github+json",
+                      "Authorization": f"Bearer {os.environ['GH_TOKEN']}",
+                      "X-GitHub-Api-Version": "2022-11-28",
+                  },
+              )
+              with urllib.request.urlopen(request) as response:
+                  head_repository = json.load(response)["head"]["repo"]["full_name"]
+          else:
+              head_repository = repository
+
+          trusted = head_repository == repository
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"trusted={'true' if trusted else 'false'}\n")
+
+          if not trusted:
+              print(f"Skipping OpenCode for fork content from {head_repository}")
+          PY
+
       - name: Checkout repository
-        uses: actions/checkout@v4
+        if: steps.command.outputs.valid == 'true' && steps.boundary.outputs.trusted == 'true'
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
           fetch-depth: 1
+          # OpenCode temporarily replaces and then restores this read-only header.
+          persist-credentials: true
 
-      - name: Run OpenCode
-        uses: sst/opencode/github@latest
+      - name: Install verified OpenCode v1.18.25
+        if: steps.command.outputs.valid == 'true' && steps.boundary.outputs.trusted == 'true'
+        shell: bash
+        run: |
+          archive="${RUNNER_TEMP}/opencode-linux-x64.tar.gz"
+          curl --fail --location --silent --show-error \
+            --output "${archive}" \
+            "https://github.com/anomalyco/opencode/releases/download/v1.18.25/opencode-linux-x64.tar.gz"
+          echo "58a3729a6f3432dd6d2917fcc4a949788891a035818646ad480e12c947f56e78  ${archive}" \
+            | sha256sum --check --strict
+          mkdir -p "${RUNNER_TEMP}/opencode-bin"
+          tar -xzf "${archive}" -C "${RUNNER_TEMP}/opencode-bin"
+          echo "${RUNNER_TEMP}/opencode-bin" >> "${GITHUB_PATH}"
+
+      - name: Run OpenCode v1.18.25
+        if: steps.command.outputs.valid == 'true' && steps.boundary.outputs.trusted == 'true'
+        shell: bash
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        with:
-          model: anthropic/claude-sonnet-4-20250514
+          MODEL: anthropic/claude-sonnet-4-20250514
+        run: opencode github run
